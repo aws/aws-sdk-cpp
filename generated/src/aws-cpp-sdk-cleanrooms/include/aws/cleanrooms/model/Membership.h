@@ -11,7 +11,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanrooms/model/MLMemberAbilities.h>
 #include <aws/cleanrooms/model/MembershipQueryLogStatus.h>
+#include <aws/cleanrooms/model/MembershipJobLogStatus.h>
 #include <aws/cleanrooms/model/MembershipProtectedQueryResultConfiguration.h>
+#include <aws/cleanrooms/model/MembershipProtectedJobResultConfiguration.h>
 #include <aws/cleanrooms/model/MembershipPaymentConfiguration.h>
 #include <aws/cleanrooms/model/MemberAbility.h>
 #include <utility>
@@ -197,10 +199,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the ML member abilities that are granted to a collaboration
-     * member.</p> <p>Custom ML modeling is in beta release and is subject to change.
-     * For beta terms and conditions, see <i>Betas and Previews</i> in the <a
-     * href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
-     * Terms</a>.</p>
+     * member.</p>
      */
     inline const MLMemberAbilities& GetMlMemberAbilities() const{ return m_mlMemberAbilities; }
     inline bool MlMemberAbilitiesHasBeenSet() const { return m_mlMemberAbilitiesHasBeenSet; }
@@ -213,7 +212,9 @@ namespace Model
     ///@{
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * membership.</p>
+     * membership.</p> <p>When <code>ENABLED</code>, Clean Rooms logs details about
+     * queries run within this collaboration and those logs can be viewed in Amazon
+     * CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
      */
     inline const MembershipQueryLogStatus& GetQueryLogStatus() const{ return m_queryLogStatus; }
     inline bool QueryLogStatusHasBeenSet() const { return m_queryLogStatusHasBeenSet; }
@@ -221,6 +222,21 @@ namespace Model
     inline void SetQueryLogStatus(MembershipQueryLogStatus&& value) { m_queryLogStatusHasBeenSet = true; m_queryLogStatus = std::move(value); }
     inline Membership& WithQueryLogStatus(const MembershipQueryLogStatus& value) { SetQueryLogStatus(value); return *this;}
     inline Membership& WithQueryLogStatus(MembershipQueryLogStatus&& value) { SetQueryLogStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An indicator as to whether job logging has been enabled or disabled for the
+     * collaboration. </p> <p>When <code>ENABLED</code>, Clean Rooms logs details about
+     * jobs run within this collaboration and those logs can be viewed in Amazon
+     * CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+     */
+    inline const MembershipJobLogStatus& GetJobLogStatus() const{ return m_jobLogStatus; }
+    inline bool JobLogStatusHasBeenSet() const { return m_jobLogStatusHasBeenSet; }
+    inline void SetJobLogStatus(const MembershipJobLogStatus& value) { m_jobLogStatusHasBeenSet = true; m_jobLogStatus = value; }
+    inline void SetJobLogStatus(MembershipJobLogStatus&& value) { m_jobLogStatusHasBeenSet = true; m_jobLogStatus = std::move(value); }
+    inline Membership& WithJobLogStatus(const MembershipJobLogStatus& value) { SetJobLogStatus(value); return *this;}
+    inline Membership& WithJobLogStatus(MembershipJobLogStatus&& value) { SetJobLogStatus(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -234,6 +250,18 @@ namespace Model
     inline void SetDefaultResultConfiguration(MembershipProtectedQueryResultConfiguration&& value) { m_defaultResultConfigurationHasBeenSet = true; m_defaultResultConfiguration = std::move(value); }
     inline Membership& WithDefaultResultConfiguration(const MembershipProtectedQueryResultConfiguration& value) { SetDefaultResultConfiguration(value); return *this;}
     inline Membership& WithDefaultResultConfiguration(MembershipProtectedQueryResultConfiguration&& value) { SetDefaultResultConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The default job result configuration for the membership.</p>
+     */
+    inline const MembershipProtectedJobResultConfiguration& GetDefaultJobResultConfiguration() const{ return m_defaultJobResultConfiguration; }
+    inline bool DefaultJobResultConfigurationHasBeenSet() const { return m_defaultJobResultConfigurationHasBeenSet; }
+    inline void SetDefaultJobResultConfiguration(const MembershipProtectedJobResultConfiguration& value) { m_defaultJobResultConfigurationHasBeenSet = true; m_defaultJobResultConfiguration = value; }
+    inline void SetDefaultJobResultConfiguration(MembershipProtectedJobResultConfiguration&& value) { m_defaultJobResultConfigurationHasBeenSet = true; m_defaultJobResultConfiguration = std::move(value); }
+    inline Membership& WithDefaultJobResultConfiguration(const MembershipProtectedJobResultConfiguration& value) { SetDefaultJobResultConfiguration(value); return *this;}
+    inline Membership& WithDefaultJobResultConfiguration(MembershipProtectedJobResultConfiguration&& value) { SetDefaultJobResultConfiguration(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -288,8 +316,14 @@ namespace Model
     MembershipQueryLogStatus m_queryLogStatus;
     bool m_queryLogStatusHasBeenSet = false;
 
+    MembershipJobLogStatus m_jobLogStatus;
+    bool m_jobLogStatusHasBeenSet = false;
+
     MembershipProtectedQueryResultConfiguration m_defaultResultConfiguration;
     bool m_defaultResultConfigurationHasBeenSet = false;
+
+    MembershipProtectedJobResultConfiguration m_defaultJobResultConfiguration;
+    bool m_defaultJobResultConfigurationHasBeenSet = false;
 
     MembershipPaymentConfiguration m_paymentConfiguration;
     bool m_paymentConfigurationHasBeenSet = false;

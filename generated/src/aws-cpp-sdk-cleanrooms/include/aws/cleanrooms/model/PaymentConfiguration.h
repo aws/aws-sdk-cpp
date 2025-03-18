@@ -7,6 +7,7 @@
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/model/QueryComputePaymentConfig.h>
 #include <aws/cleanrooms/model/MLPaymentConfig.h>
+#include <aws/cleanrooms/model/JobComputePaymentConfig.h>
 #include <utility>
 
 namespace Aws
@@ -64,6 +65,18 @@ namespace Model
     inline PaymentConfiguration& WithMachineLearning(const MLPaymentConfig& value) { SetMachineLearning(value); return *this;}
     inline PaymentConfiguration& WithMachineLearning(MLPaymentConfig&& value) { SetMachineLearning(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The compute configuration for the job.</p>
+     */
+    inline const JobComputePaymentConfig& GetJobCompute() const{ return m_jobCompute; }
+    inline bool JobComputeHasBeenSet() const { return m_jobComputeHasBeenSet; }
+    inline void SetJobCompute(const JobComputePaymentConfig& value) { m_jobComputeHasBeenSet = true; m_jobCompute = value; }
+    inline void SetJobCompute(JobComputePaymentConfig&& value) { m_jobComputeHasBeenSet = true; m_jobCompute = std::move(value); }
+    inline PaymentConfiguration& WithJobCompute(const JobComputePaymentConfig& value) { SetJobCompute(value); return *this;}
+    inline PaymentConfiguration& WithJobCompute(JobComputePaymentConfig&& value) { SetJobCompute(std::move(value)); return *this;}
+    ///@}
   private:
 
     QueryComputePaymentConfig m_queryCompute;
@@ -71,6 +84,9 @@ namespace Model
 
     MLPaymentConfig m_machineLearning;
     bool m_machineLearningHasBeenSet = false;
+
+    JobComputePaymentConfig m_jobCompute;
+    bool m_jobComputeHasBeenSet = false;
   };
 
 } // namespace Model

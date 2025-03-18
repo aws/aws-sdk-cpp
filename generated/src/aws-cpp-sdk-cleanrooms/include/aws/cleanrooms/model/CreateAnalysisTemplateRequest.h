@@ -11,6 +11,7 @@
 #include <aws/cleanrooms/model/AnalysisSource.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cleanrooms/model/AnalysisSchema.h>
 #include <aws/cleanrooms/model/AnalysisParameter.h>
 #include <utility>
 
@@ -139,6 +140,16 @@ namespace Model
     inline CreateAnalysisTemplateRequest& AddAnalysisParameters(const AnalysisParameter& value) { m_analysisParametersHasBeenSet = true; m_analysisParameters.push_back(value); return *this; }
     inline CreateAnalysisTemplateRequest& AddAnalysisParameters(AnalysisParameter&& value) { m_analysisParametersHasBeenSet = true; m_analysisParameters.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    
+    inline const AnalysisSchema& GetSchema() const{ return m_schema; }
+    inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
+    inline void SetSchema(const AnalysisSchema& value) { m_schemaHasBeenSet = true; m_schema = value; }
+    inline void SetSchema(AnalysisSchema&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
+    inline CreateAnalysisTemplateRequest& WithSchema(const AnalysisSchema& value) { SetSchema(value); return *this;}
+    inline CreateAnalysisTemplateRequest& WithSchema(AnalysisSchema&& value) { SetSchema(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_description;
@@ -161,6 +172,9 @@ namespace Model
 
     Aws::Vector<AnalysisParameter> m_analysisParameters;
     bool m_analysisParametersHasBeenSet = false;
+
+    AnalysisSchema m_schema;
+    bool m_schemaHasBeenSet = false;
   };
 
 } // namespace Model

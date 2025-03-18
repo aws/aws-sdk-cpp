@@ -1,0 +1,75 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/cleanrooms/model/ProtectedJobS3OutputConfigurationOutput.h>
+#include <aws/cleanrooms/model/ProtectedJobMemberOutputConfigurationOutput.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace CleanRooms
+{
+namespace Model
+{
+
+  /**
+   * <p> The protected job output configuration output.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ProtectedJobOutputConfigurationOutput">AWS
+   * API Reference</a></p>
+   */
+  class ProtectedJobOutputConfigurationOutput
+  {
+  public:
+    AWS_CLEANROOMS_API ProtectedJobOutputConfigurationOutput();
+    AWS_CLEANROOMS_API ProtectedJobOutputConfigurationOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLEANROOMS_API ProtectedJobOutputConfigurationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    ///@{
+    /**
+     * <p>If present, the output for a protected job with an `S3` output type.</p>
+     */
+    inline const ProtectedJobS3OutputConfigurationOutput& GetS3() const{ return m_s3; }
+    inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
+    inline void SetS3(const ProtectedJobS3OutputConfigurationOutput& value) { m_s3HasBeenSet = true; m_s3 = value; }
+    inline void SetS3(ProtectedJobS3OutputConfigurationOutput&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
+    inline ProtectedJobOutputConfigurationOutput& WithS3(const ProtectedJobS3OutputConfigurationOutput& value) { SetS3(value); return *this;}
+    inline ProtectedJobOutputConfigurationOutput& WithS3(ProtectedJobS3OutputConfigurationOutput&& value) { SetS3(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The member output configuration for a protected job.</p>
+     */
+    inline const ProtectedJobMemberOutputConfigurationOutput& GetMember() const{ return m_member; }
+    inline bool MemberHasBeenSet() const { return m_memberHasBeenSet; }
+    inline void SetMember(const ProtectedJobMemberOutputConfigurationOutput& value) { m_memberHasBeenSet = true; m_member = value; }
+    inline void SetMember(ProtectedJobMemberOutputConfigurationOutput&& value) { m_memberHasBeenSet = true; m_member = std::move(value); }
+    inline ProtectedJobOutputConfigurationOutput& WithMember(const ProtectedJobMemberOutputConfigurationOutput& value) { SetMember(value); return *this;}
+    inline ProtectedJobOutputConfigurationOutput& WithMember(ProtectedJobMemberOutputConfigurationOutput&& value) { SetMember(std::move(value)); return *this;}
+    ///@}
+  private:
+
+    ProtectedJobS3OutputConfigurationOutput m_s3;
+    bool m_s3HasBeenSet = false;
+
+    ProtectedJobMemberOutputConfigurationOutput m_member;
+    bool m_memberHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace CleanRooms
+} // namespace Aws

@@ -19,6 +19,7 @@ CreateConfiguredTableRequest::CreateConfiguredTableRequest() :
     m_allowedColumnsHasBeenSet(false),
     m_analysisMethod(AnalysisMethod::NOT_SET),
     m_analysisMethodHasBeenSet(false),
+    m_selectedAnalysisMethodsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -59,6 +60,17 @@ Aws::String CreateConfiguredTableRequest::SerializePayload() const
   if(m_analysisMethodHasBeenSet)
   {
    payload.WithString("analysisMethod", AnalysisMethodMapper::GetNameForAnalysisMethod(m_analysisMethod));
+  }
+
+  if(m_selectedAnalysisMethodsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> selectedAnalysisMethodsJsonList(m_selectedAnalysisMethods.size());
+   for(unsigned selectedAnalysisMethodsIndex = 0; selectedAnalysisMethodsIndex < selectedAnalysisMethodsJsonList.GetLength(); ++selectedAnalysisMethodsIndex)
+   {
+     selectedAnalysisMethodsJsonList[selectedAnalysisMethodsIndex].AsString(SelectedAnalysisMethodMapper::GetNameForSelectedAnalysisMethod(m_selectedAnalysisMethods[selectedAnalysisMethodsIndex]));
+   }
+   payload.WithArray("selectedAnalysisMethods", std::move(selectedAnalysisMethodsJsonList));
+
   }
 
   if(m_tagsHasBeenSet)

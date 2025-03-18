@@ -2087,10 +2087,11 @@ namespace Route53
          * you specify both Name and Type</dt> <dd> <p>The results begin with the first
          * resource record set in the list whose name is greater than or equal to
          * <code>Name</code>, and whose type is greater than or equal to
-         * <code>Type</code>.</p> </dd> </dl> <p> <b>Resource record sets that are
-         * PENDING</b> </p> <p>This action returns the most current version of the records.
-         * This includes records that are <code>PENDING</code>, and that are not yet
-         * available on all Route 53 DNS servers.</p> <p> <b>Changing resource record
+         * <code>Type</code>.</p>  <p>Type is only used to sort between records with
+         * the same record Name.</p>  </dd> </dl> <p> <b>Resource record sets that
+         * are PENDING</b> </p> <p>This action returns the most current version of the
+         * records. This includes records that are <code>PENDING</code>, and that are not
+         * yet available on all Route 53 DNS servers.</p> <p> <b>Changing resource record
          * sets</b> </p> <p>To ensure that you get an accurate listing of the resource
          * record sets for a hosted zone at a point in time, do not submit a
          * <code>ChangeResourceRecordSets</code> request while you're paging through the

@@ -10,6 +10,7 @@
 #include <aws/cleanrooms/model/MemberStatus.h>
 #include <aws/cleanrooms/model/DataEncryptionMetadata.h>
 #include <aws/cleanrooms/model/CollaborationQueryLogStatus.h>
+#include <aws/cleanrooms/model/CollaborationJobLogStatus.h>
 #include <aws/cleanrooms/model/AnalyticsEngine.h>
 #include <utility>
 
@@ -208,7 +209,9 @@ namespace Model
     ///@{
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * collaboration.</p>
+     * collaboration.</p> <p>When <code>ENABLED</code>, Clean Rooms logs details about
+     * queries run within this collaboration and those logs can be viewed in Amazon
+     * CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
      */
     inline const CollaborationQueryLogStatus& GetQueryLogStatus() const{ return m_queryLogStatus; }
     inline bool QueryLogStatusHasBeenSet() const { return m_queryLogStatusHasBeenSet; }
@@ -216,6 +219,21 @@ namespace Model
     inline void SetQueryLogStatus(CollaborationQueryLogStatus&& value) { m_queryLogStatusHasBeenSet = true; m_queryLogStatus = std::move(value); }
     inline Collaboration& WithQueryLogStatus(const CollaborationQueryLogStatus& value) { SetQueryLogStatus(value); return *this;}
     inline Collaboration& WithQueryLogStatus(CollaborationQueryLogStatus&& value) { SetQueryLogStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An indicator as to whether job logging has been enabled or disabled for the
+     * collaboration. </p> <p>When <code>ENABLED</code>, Clean Rooms logs details about
+     * jobs run within this collaboration and those logs can be viewed in Amazon
+     * CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+     */
+    inline const CollaborationJobLogStatus& GetJobLogStatus() const{ return m_jobLogStatus; }
+    inline bool JobLogStatusHasBeenSet() const { return m_jobLogStatusHasBeenSet; }
+    inline void SetJobLogStatus(const CollaborationJobLogStatus& value) { m_jobLogStatusHasBeenSet = true; m_jobLogStatus = value; }
+    inline void SetJobLogStatus(CollaborationJobLogStatus&& value) { m_jobLogStatusHasBeenSet = true; m_jobLogStatus = std::move(value); }
+    inline Collaboration& WithJobLogStatus(const CollaborationJobLogStatus& value) { SetJobLogStatus(value); return *this;}
+    inline Collaboration& WithJobLogStatus(CollaborationJobLogStatus&& value) { SetJobLogStatus(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -269,6 +287,9 @@ namespace Model
 
     CollaborationQueryLogStatus m_queryLogStatus;
     bool m_queryLogStatusHasBeenSet = false;
+
+    CollaborationJobLogStatus m_jobLogStatus;
+    bool m_jobLogStatusHasBeenSet = false;
 
     AnalyticsEngine m_analyticsEngine;
     bool m_analyticsEngineHasBeenSet = false;

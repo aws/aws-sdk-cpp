@@ -101,10 +101,6 @@ namespace Model
     ///@{
     /**
      * <p>Provides a summary of the ML abilities for the collaboration member.</p>
-     * <p>Custom ML modeling is in beta release and is subject to change. For beta
-     * terms and conditions, see <i>Betas and Previews</i> in the <a
-     * href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
-     * Terms</a>.</p>
      */
     inline const MLMemberAbilities& GetMlAbilities() const{ return m_mlAbilities; }
     inline bool MlAbilitiesHasBeenSet() const { return m_mlAbilitiesHasBeenSet; }

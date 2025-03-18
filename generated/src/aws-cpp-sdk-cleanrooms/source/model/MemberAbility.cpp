@@ -22,6 +22,7 @@ namespace Aws
 
         static const int CAN_QUERY_HASH = HashingUtils::HashString("CAN_QUERY");
         static const int CAN_RECEIVE_RESULTS_HASH = HashingUtils::HashString("CAN_RECEIVE_RESULTS");
+        static const int CAN_RUN_JOB_HASH = HashingUtils::HashString("CAN_RUN_JOB");
 
 
         MemberAbility GetMemberAbilityForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == CAN_RECEIVE_RESULTS_HASH)
           {
             return MemberAbility::CAN_RECEIVE_RESULTS;
+          }
+          else if (hashCode == CAN_RUN_JOB_HASH)
+          {
+            return MemberAbility::CAN_RUN_JOB;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "CAN_QUERY";
           case MemberAbility::CAN_RECEIVE_RESULTS:
             return "CAN_RECEIVE_RESULTS";
+          case MemberAbility::CAN_RUN_JOB:
+            return "CAN_RUN_JOB";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     EXACT,
-    GOP_MULTIPLE
+    GOP_MULTIPLE,
+    MATCH
   };
 
 namespace DashIsoSegmentLengthControlMapper

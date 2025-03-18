@@ -22,6 +22,7 @@ namespace Aws
 
         static const int AUTO_HASH = HashingUtils::HashString("AUTO");
         static const int SECONDS_HASH = HashingUtils::HashString("SECONDS");
+        static const int MILLISECONDS_HASH = HashingUtils::HashString("MILLISECONDS");
 
 
         TsPtsOffset GetTsPtsOffsetForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == SECONDS_HASH)
           {
             return TsPtsOffset::SECONDS;
+          }
+          else if (hashCode == MILLISECONDS_HASH)
+          {
+            return TsPtsOffset::MILLISECONDS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "AUTO";
           case TsPtsOffset::SECONDS:
             return "SECONDS";
+          case TsPtsOffset::MILLISECONDS:
+            return "MILLISECONDS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

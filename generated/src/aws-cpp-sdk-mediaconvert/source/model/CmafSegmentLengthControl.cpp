@@ -22,6 +22,7 @@ namespace Aws
 
         static const int EXACT_HASH = HashingUtils::HashString("EXACT");
         static const int GOP_MULTIPLE_HASH = HashingUtils::HashString("GOP_MULTIPLE");
+        static const int MATCH_HASH = HashingUtils::HashString("MATCH");
 
 
         CmafSegmentLengthControl GetCmafSegmentLengthControlForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == GOP_MULTIPLE_HASH)
           {
             return CmafSegmentLengthControl::GOP_MULTIPLE;
+          }
+          else if (hashCode == MATCH_HASH)
+          {
+            return CmafSegmentLengthControl::MATCH;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "EXACT";
           case CmafSegmentLengthControl::GOP_MULTIPLE:
             return "GOP_MULTIPLE";
+          case CmafSegmentLengthControl::MATCH:
+            return "MATCH";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

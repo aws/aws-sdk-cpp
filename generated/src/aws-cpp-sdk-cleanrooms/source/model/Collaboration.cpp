@@ -34,6 +34,8 @@ Collaboration::Collaboration() :
     m_dataEncryptionMetadataHasBeenSet(false),
     m_queryLogStatus(CollaborationQueryLogStatus::NOT_SET),
     m_queryLogStatusHasBeenSet(false),
+    m_jobLogStatus(CollaborationJobLogStatus::NOT_SET),
+    m_jobLogStatusHasBeenSet(false),
     m_analyticsEngine(AnalyticsEngine::NOT_SET),
     m_analyticsEngineHasBeenSet(false)
 {
@@ -138,6 +140,13 @@ Collaboration& Collaboration::operator =(JsonView jsonValue)
     m_queryLogStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("jobLogStatus"))
+  {
+    m_jobLogStatus = CollaborationJobLogStatusMapper::GetCollaborationJobLogStatusForName(jsonValue.GetString("jobLogStatus"));
+
+    m_jobLogStatusHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("analyticsEngine"))
   {
     m_analyticsEngine = AnalyticsEngineMapper::GetAnalyticsEngineForName(jsonValue.GetString("analyticsEngine"));
@@ -224,6 +233,11 @@ JsonValue Collaboration::Jsonize() const
   if(m_queryLogStatusHasBeenSet)
   {
    payload.WithString("queryLogStatus", CollaborationQueryLogStatusMapper::GetNameForCollaborationQueryLogStatus(m_queryLogStatus));
+  }
+
+  if(m_jobLogStatusHasBeenSet)
+  {
+   payload.WithString("jobLogStatus", CollaborationJobLogStatusMapper::GetNameForCollaborationJobLogStatus(m_jobLogStatus));
   }
 
   if(m_analyticsEngineHasBeenSet)

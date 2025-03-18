@@ -58,6 +58,8 @@ namespace Aws
         static const int ca_west_1_HASH = HashingUtils::HashString("ca-west-1");
         static const int ap_southeast_5_HASH = HashingUtils::HashString("ap-southeast-5");
         static const int mx_central_1_HASH = HashingUtils::HashString("mx-central-1");
+        static const int us_isof_south_1_HASH = HashingUtils::HashString("us-isof-south-1");
+        static const int us_isof_east_1_HASH = HashingUtils::HashString("us-isof-east-1");
         static const int ap_southeast_7_HASH = HashingUtils::HashString("ap-southeast-7");
 
 
@@ -216,6 +218,14 @@ namespace Aws
           {
             return VPCRegion::mx_central_1;
           }
+          else if (hashCode == us_isof_south_1_HASH)
+          {
+            return VPCRegion::us_isof_south_1;
+          }
+          else if (hashCode == us_isof_east_1_HASH)
+          {
+            return VPCRegion::us_isof_east_1;
+          }
           else if (hashCode == ap_southeast_7_HASH)
           {
             return VPCRegion::ap_southeast_7;
@@ -312,6 +322,10 @@ namespace Aws
             return "ap-southeast-5";
           case VPCRegion::mx_central_1:
             return "mx-central-1";
+          case VPCRegion::us_isof_south_1:
+            return "us-isof-south-1";
+          case VPCRegion::us_isof_east_1:
+            return "us-isof-east-1";
           case VPCRegion::ap_southeast_7:
             return "ap-southeast-7";
           default:

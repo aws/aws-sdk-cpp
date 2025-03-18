@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanrooms/model/AnalysisMethod.h>
 #include <aws/cleanrooms/model/ConfiguredTableAnalysisRuleType.h>
+#include <aws/cleanrooms/model/SelectedAnalysisMethod.h>
 #include <utility>
 
 namespace Aws
@@ -152,8 +153,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The analysis method for the configured table. The only valid value is
-     * currently `DIRECT_QUERY`.</p>
+     * <p>The analysis method for the configured table.</p> <p>
+     * <code>DIRECT_QUERY</code> allows SQL queries to be run directly on this
+     * table.</p> <p> <code>DIRECT_JOB</code> allows PySpark jobs to be run directly on
+     * this table.</p> <p> <code>MULTIPLE</code> allows both SQL queries and PySpark
+     * jobs to be run directly on this table.</p>
      */
     inline const AnalysisMethod& GetAnalysisMethod() const{ return m_analysisMethod; }
     inline bool AnalysisMethodHasBeenSet() const { return m_analysisMethodHasBeenSet; }
@@ -177,6 +181,20 @@ namespace Model
     inline ConfiguredTable& AddAllowedColumns(const Aws::String& value) { m_allowedColumnsHasBeenSet = true; m_allowedColumns.push_back(value); return *this; }
     inline ConfiguredTable& AddAllowedColumns(Aws::String&& value) { m_allowedColumnsHasBeenSet = true; m_allowedColumns.push_back(std::move(value)); return *this; }
     inline ConfiguredTable& AddAllowedColumns(const char* value) { m_allowedColumnsHasBeenSet = true; m_allowedColumns.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p> The selected analysis methods for the configured table.</p>
+     */
+    inline const Aws::Vector<SelectedAnalysisMethod>& GetSelectedAnalysisMethods() const{ return m_selectedAnalysisMethods; }
+    inline bool SelectedAnalysisMethodsHasBeenSet() const { return m_selectedAnalysisMethodsHasBeenSet; }
+    inline void SetSelectedAnalysisMethods(const Aws::Vector<SelectedAnalysisMethod>& value) { m_selectedAnalysisMethodsHasBeenSet = true; m_selectedAnalysisMethods = value; }
+    inline void SetSelectedAnalysisMethods(Aws::Vector<SelectedAnalysisMethod>&& value) { m_selectedAnalysisMethodsHasBeenSet = true; m_selectedAnalysisMethods = std::move(value); }
+    inline ConfiguredTable& WithSelectedAnalysisMethods(const Aws::Vector<SelectedAnalysisMethod>& value) { SetSelectedAnalysisMethods(value); return *this;}
+    inline ConfiguredTable& WithSelectedAnalysisMethods(Aws::Vector<SelectedAnalysisMethod>&& value) { SetSelectedAnalysisMethods(std::move(value)); return *this;}
+    inline ConfiguredTable& AddSelectedAnalysisMethods(const SelectedAnalysisMethod& value) { m_selectedAnalysisMethodsHasBeenSet = true; m_selectedAnalysisMethods.push_back(value); return *this; }
+    inline ConfiguredTable& AddSelectedAnalysisMethods(SelectedAnalysisMethod&& value) { m_selectedAnalysisMethodsHasBeenSet = true; m_selectedAnalysisMethods.push_back(std::move(value)); return *this; }
     ///@}
   private:
 
@@ -209,6 +227,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_allowedColumns;
     bool m_allowedColumnsHasBeenSet = false;
+
+    Aws::Vector<SelectedAnalysisMethod> m_selectedAnalysisMethods;
+    bool m_selectedAnalysisMethodsHasBeenSet = false;
   };
 
 } // namespace Model

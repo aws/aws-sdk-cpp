@@ -22,6 +22,8 @@ CreateCollaborationRequest::CreateCollaborationRequest() :
     m_dataEncryptionMetadataHasBeenSet(false),
     m_queryLogStatus(CollaborationQueryLogStatus::NOT_SET),
     m_queryLogStatusHasBeenSet(false),
+    m_jobLogStatus(CollaborationJobLogStatus::NOT_SET),
+    m_jobLogStatusHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_creatorPaymentConfigurationHasBeenSet(false),
     m_analyticsEngine(AnalyticsEngine::NOT_SET),
@@ -88,6 +90,11 @@ Aws::String CreateCollaborationRequest::SerializePayload() const
   if(m_queryLogStatusHasBeenSet)
   {
    payload.WithString("queryLogStatus", CollaborationQueryLogStatusMapper::GetNameForCollaborationQueryLogStatus(m_queryLogStatus));
+  }
+
+  if(m_jobLogStatusHasBeenSet)
+  {
+   payload.WithString("jobLogStatus", CollaborationJobLogStatusMapper::GetNameForCollaborationJobLogStatus(m_jobLogStatus));
   }
 
   if(m_tagsHasBeenSet)

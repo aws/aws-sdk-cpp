@@ -59,6 +59,7 @@
 #include <aws/cleanrooms/model/GetIdNamespaceAssociationResult.h>
 #include <aws/cleanrooms/model/GetMembershipResult.h>
 #include <aws/cleanrooms/model/GetPrivacyBudgetTemplateResult.h>
+#include <aws/cleanrooms/model/GetProtectedJobResult.h>
 #include <aws/cleanrooms/model/GetProtectedQueryResult.h>
 #include <aws/cleanrooms/model/GetSchemaResult.h>
 #include <aws/cleanrooms/model/GetSchemaAnalysisRuleResult.h>
@@ -78,11 +79,13 @@
 #include <aws/cleanrooms/model/ListMembershipsResult.h>
 #include <aws/cleanrooms/model/ListPrivacyBudgetTemplatesResult.h>
 #include <aws/cleanrooms/model/ListPrivacyBudgetsResult.h>
+#include <aws/cleanrooms/model/ListProtectedJobsResult.h>
 #include <aws/cleanrooms/model/ListProtectedQueriesResult.h>
 #include <aws/cleanrooms/model/ListSchemasResult.h>
 #include <aws/cleanrooms/model/ListTagsForResourceResult.h>
 #include <aws/cleanrooms/model/PopulateIdMappingTableResult.h>
 #include <aws/cleanrooms/model/PreviewPrivacyImpactResult.h>
+#include <aws/cleanrooms/model/StartProtectedJobResult.h>
 #include <aws/cleanrooms/model/StartProtectedQueryResult.h>
 #include <aws/cleanrooms/model/TagResourceResult.h>
 #include <aws/cleanrooms/model/UntagResourceResult.h>
@@ -97,6 +100,7 @@
 #include <aws/cleanrooms/model/UpdateIdNamespaceAssociationResult.h>
 #include <aws/cleanrooms/model/UpdateMembershipResult.h>
 #include <aws/cleanrooms/model/UpdatePrivacyBudgetTemplateResult.h>
+#include <aws/cleanrooms/model/UpdateProtectedJobResult.h>
 #include <aws/cleanrooms/model/UpdateProtectedQueryResult.h>
 #include <aws/cleanrooms/model/ListCollaborationsRequest.h>
 #include <aws/cleanrooms/model/ListConfiguredTablesRequest.h>
@@ -182,6 +186,7 @@ namespace Aws
       class GetIdNamespaceAssociationRequest;
       class GetMembershipRequest;
       class GetPrivacyBudgetTemplateRequest;
+      class GetProtectedJobRequest;
       class GetProtectedQueryRequest;
       class GetSchemaRequest;
       class GetSchemaAnalysisRuleRequest;
@@ -201,11 +206,13 @@ namespace Aws
       class ListMembershipsRequest;
       class ListPrivacyBudgetTemplatesRequest;
       class ListPrivacyBudgetsRequest;
+      class ListProtectedJobsRequest;
       class ListProtectedQueriesRequest;
       class ListSchemasRequest;
       class ListTagsForResourceRequest;
       class PopulateIdMappingTableRequest;
       class PreviewPrivacyImpactRequest;
+      class StartProtectedJobRequest;
       class StartProtectedQueryRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
@@ -220,6 +227,7 @@ namespace Aws
       class UpdateIdNamespaceAssociationRequest;
       class UpdateMembershipRequest;
       class UpdatePrivacyBudgetTemplateRequest;
+      class UpdateProtectedJobRequest;
       class UpdateProtectedQueryRequest;
       /* End of service model forward declarations required in CleanRoomsClient header */
 
@@ -265,6 +273,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetIdNamespaceAssociationResult, CleanRoomsError> GetIdNamespaceAssociationOutcome;
       typedef Aws::Utils::Outcome<GetMembershipResult, CleanRoomsError> GetMembershipOutcome;
       typedef Aws::Utils::Outcome<GetPrivacyBudgetTemplateResult, CleanRoomsError> GetPrivacyBudgetTemplateOutcome;
+      typedef Aws::Utils::Outcome<GetProtectedJobResult, CleanRoomsError> GetProtectedJobOutcome;
       typedef Aws::Utils::Outcome<GetProtectedQueryResult, CleanRoomsError> GetProtectedQueryOutcome;
       typedef Aws::Utils::Outcome<GetSchemaResult, CleanRoomsError> GetSchemaOutcome;
       typedef Aws::Utils::Outcome<GetSchemaAnalysisRuleResult, CleanRoomsError> GetSchemaAnalysisRuleOutcome;
@@ -284,11 +293,13 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListMembershipsResult, CleanRoomsError> ListMembershipsOutcome;
       typedef Aws::Utils::Outcome<ListPrivacyBudgetTemplatesResult, CleanRoomsError> ListPrivacyBudgetTemplatesOutcome;
       typedef Aws::Utils::Outcome<ListPrivacyBudgetsResult, CleanRoomsError> ListPrivacyBudgetsOutcome;
+      typedef Aws::Utils::Outcome<ListProtectedJobsResult, CleanRoomsError> ListProtectedJobsOutcome;
       typedef Aws::Utils::Outcome<ListProtectedQueriesResult, CleanRoomsError> ListProtectedQueriesOutcome;
       typedef Aws::Utils::Outcome<ListSchemasResult, CleanRoomsError> ListSchemasOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, CleanRoomsError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PopulateIdMappingTableResult, CleanRoomsError> PopulateIdMappingTableOutcome;
       typedef Aws::Utils::Outcome<PreviewPrivacyImpactResult, CleanRoomsError> PreviewPrivacyImpactOutcome;
+      typedef Aws::Utils::Outcome<StartProtectedJobResult, CleanRoomsError> StartProtectedJobOutcome;
       typedef Aws::Utils::Outcome<StartProtectedQueryResult, CleanRoomsError> StartProtectedQueryOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, CleanRoomsError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, CleanRoomsError> UntagResourceOutcome;
@@ -303,6 +314,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateIdNamespaceAssociationResult, CleanRoomsError> UpdateIdNamespaceAssociationOutcome;
       typedef Aws::Utils::Outcome<UpdateMembershipResult, CleanRoomsError> UpdateMembershipOutcome;
       typedef Aws::Utils::Outcome<UpdatePrivacyBudgetTemplateResult, CleanRoomsError> UpdatePrivacyBudgetTemplateOutcome;
+      typedef Aws::Utils::Outcome<UpdateProtectedJobResult, CleanRoomsError> UpdateProtectedJobOutcome;
       typedef Aws::Utils::Outcome<UpdateProtectedQueryResult, CleanRoomsError> UpdateProtectedQueryOutcome;
       /* End of service model Outcome class definitions */
 
@@ -348,6 +360,7 @@ namespace Aws
       typedef std::future<GetIdNamespaceAssociationOutcome> GetIdNamespaceAssociationOutcomeCallable;
       typedef std::future<GetMembershipOutcome> GetMembershipOutcomeCallable;
       typedef std::future<GetPrivacyBudgetTemplateOutcome> GetPrivacyBudgetTemplateOutcomeCallable;
+      typedef std::future<GetProtectedJobOutcome> GetProtectedJobOutcomeCallable;
       typedef std::future<GetProtectedQueryOutcome> GetProtectedQueryOutcomeCallable;
       typedef std::future<GetSchemaOutcome> GetSchemaOutcomeCallable;
       typedef std::future<GetSchemaAnalysisRuleOutcome> GetSchemaAnalysisRuleOutcomeCallable;
@@ -367,11 +380,13 @@ namespace Aws
       typedef std::future<ListMembershipsOutcome> ListMembershipsOutcomeCallable;
       typedef std::future<ListPrivacyBudgetTemplatesOutcome> ListPrivacyBudgetTemplatesOutcomeCallable;
       typedef std::future<ListPrivacyBudgetsOutcome> ListPrivacyBudgetsOutcomeCallable;
+      typedef std::future<ListProtectedJobsOutcome> ListProtectedJobsOutcomeCallable;
       typedef std::future<ListProtectedQueriesOutcome> ListProtectedQueriesOutcomeCallable;
       typedef std::future<ListSchemasOutcome> ListSchemasOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PopulateIdMappingTableOutcome> PopulateIdMappingTableOutcomeCallable;
       typedef std::future<PreviewPrivacyImpactOutcome> PreviewPrivacyImpactOutcomeCallable;
+      typedef std::future<StartProtectedJobOutcome> StartProtectedJobOutcomeCallable;
       typedef std::future<StartProtectedQueryOutcome> StartProtectedQueryOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -386,6 +401,7 @@ namespace Aws
       typedef std::future<UpdateIdNamespaceAssociationOutcome> UpdateIdNamespaceAssociationOutcomeCallable;
       typedef std::future<UpdateMembershipOutcome> UpdateMembershipOutcomeCallable;
       typedef std::future<UpdatePrivacyBudgetTemplateOutcome> UpdatePrivacyBudgetTemplateOutcomeCallable;
+      typedef std::future<UpdateProtectedJobOutcome> UpdateProtectedJobOutcomeCallable;
       typedef std::future<UpdateProtectedQueryOutcome> UpdateProtectedQueryOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -434,6 +450,7 @@ namespace Aws
     typedef std::function<void(const CleanRoomsClient*, const Model::GetIdNamespaceAssociationRequest&, const Model::GetIdNamespaceAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdNamespaceAssociationResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::GetMembershipRequest&, const Model::GetMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMembershipResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::GetPrivacyBudgetTemplateRequest&, const Model::GetPrivacyBudgetTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPrivacyBudgetTemplateResponseReceivedHandler;
+    typedef std::function<void(const CleanRoomsClient*, const Model::GetProtectedJobRequest&, const Model::GetProtectedJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProtectedJobResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::GetProtectedQueryRequest&, const Model::GetProtectedQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProtectedQueryResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::GetSchemaRequest&, const Model::GetSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSchemaResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::GetSchemaAnalysisRuleRequest&, const Model::GetSchemaAnalysisRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSchemaAnalysisRuleResponseReceivedHandler;
@@ -453,11 +470,13 @@ namespace Aws
     typedef std::function<void(const CleanRoomsClient*, const Model::ListMembershipsRequest&, const Model::ListMembershipsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMembershipsResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::ListPrivacyBudgetTemplatesRequest&, const Model::ListPrivacyBudgetTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPrivacyBudgetTemplatesResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::ListPrivacyBudgetsRequest&, const Model::ListPrivacyBudgetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPrivacyBudgetsResponseReceivedHandler;
+    typedef std::function<void(const CleanRoomsClient*, const Model::ListProtectedJobsRequest&, const Model::ListProtectedJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProtectedJobsResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::ListProtectedQueriesRequest&, const Model::ListProtectedQueriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProtectedQueriesResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::ListSchemasRequest&, const Model::ListSchemasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSchemasResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::PopulateIdMappingTableRequest&, const Model::PopulateIdMappingTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PopulateIdMappingTableResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::PreviewPrivacyImpactRequest&, const Model::PreviewPrivacyImpactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PreviewPrivacyImpactResponseReceivedHandler;
+    typedef std::function<void(const CleanRoomsClient*, const Model::StartProtectedJobRequest&, const Model::StartProtectedJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartProtectedJobResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::StartProtectedQueryRequest&, const Model::StartProtectedQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartProtectedQueryResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -472,6 +491,7 @@ namespace Aws
     typedef std::function<void(const CleanRoomsClient*, const Model::UpdateIdNamespaceAssociationRequest&, const Model::UpdateIdNamespaceAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIdNamespaceAssociationResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::UpdateMembershipRequest&, const Model::UpdateMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMembershipResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::UpdatePrivacyBudgetTemplateRequest&, const Model::UpdatePrivacyBudgetTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePrivacyBudgetTemplateResponseReceivedHandler;
+    typedef std::function<void(const CleanRoomsClient*, const Model::UpdateProtectedJobRequest&, const Model::UpdateProtectedJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProtectedJobResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::UpdateProtectedQueryRequest&, const Model::UpdateProtectedQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProtectedQueryResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace CleanRooms
