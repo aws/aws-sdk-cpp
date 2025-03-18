@@ -40,7 +40,7 @@ namespace Model
   class PostCallAnalyticsSettings
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API PostCallAnalyticsSettings();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API PostCallAnalyticsSettings() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API PostCallAnalyticsSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API PostCallAnalyticsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,12 @@ namespace Model
      * <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li>
      * </ol>
      */
-    inline const Aws::String& GetOutputLocation() const{ return m_outputLocation; }
+    inline const Aws::String& GetOutputLocation() const { return m_outputLocation; }
     inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
-    inline void SetOutputLocation(const Aws::String& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
-    inline void SetOutputLocation(Aws::String&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
-    inline void SetOutputLocation(const char* value) { m_outputLocationHasBeenSet = true; m_outputLocation.assign(value); }
-    inline PostCallAnalyticsSettings& WithOutputLocation(const Aws::String& value) { SetOutputLocation(value); return *this;}
-    inline PostCallAnalyticsSettings& WithOutputLocation(Aws::String&& value) { SetOutputLocation(std::move(value)); return *this;}
-    inline PostCallAnalyticsSettings& WithOutputLocation(const char* value) { SetOutputLocation(value); return *this;}
+    template<typename OutputLocationT = Aws::String>
+    void SetOutputLocation(OutputLocationT&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::forward<OutputLocationT>(value); }
+    template<typename OutputLocationT = Aws::String>
+    PostCallAnalyticsSettings& WithOutputLocation(OutputLocationT&& value) { SetOutputLocation(std::forward<OutputLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +74,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
      * ARNs</a>.</p>
      */
-    inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
+    inline const Aws::String& GetDataAccessRoleArn() const { return m_dataAccessRoleArn; }
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
-    inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
-    inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
-    inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
-    inline PostCallAnalyticsSettings& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
-    inline PostCallAnalyticsSettings& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
-    inline PostCallAnalyticsSettings& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
+    template<typename DataAccessRoleArnT = Aws::String>
+    void SetDataAccessRoleArn(DataAccessRoleArnT&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::forward<DataAccessRoleArnT>(value); }
+    template<typename DataAccessRoleArnT = Aws::String>
+    PostCallAnalyticsSettings& WithDataAccessRoleArn(DataAccessRoleArnT&& value) { SetDataAccessRoleArn(std::forward<DataAccessRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +90,10 @@ namespace Model
      * that to include <code>ContentRedactionOutput</code> in your request, you must
      * enable content redaction (<code>ContentRedactionType</code>).</p>
      */
-    inline const ContentRedactionOutput& GetContentRedactionOutput() const{ return m_contentRedactionOutput; }
+    inline ContentRedactionOutput GetContentRedactionOutput() const { return m_contentRedactionOutput; }
     inline bool ContentRedactionOutputHasBeenSet() const { return m_contentRedactionOutputHasBeenSet; }
-    inline void SetContentRedactionOutput(const ContentRedactionOutput& value) { m_contentRedactionOutputHasBeenSet = true; m_contentRedactionOutput = value; }
-    inline void SetContentRedactionOutput(ContentRedactionOutput&& value) { m_contentRedactionOutputHasBeenSet = true; m_contentRedactionOutput = std::move(value); }
-    inline PostCallAnalyticsSettings& WithContentRedactionOutput(const ContentRedactionOutput& value) { SetContentRedactionOutput(value); return *this;}
-    inline PostCallAnalyticsSettings& WithContentRedactionOutput(ContentRedactionOutput&& value) { SetContentRedactionOutput(std::move(value)); return *this;}
+    inline void SetContentRedactionOutput(ContentRedactionOutput value) { m_contentRedactionOutputHasBeenSet = true; m_contentRedactionOutput = value; }
+    inline PostCallAnalyticsSettings& WithContentRedactionOutput(ContentRedactionOutput value) { SetContentRedactionOutput(value); return *this;}
     ///@}
 
     ///@{
@@ -124,14 +118,12 @@ namespace Model
      * <p>Note that the role making the request must have permission to use the
      * specified KMS key.</p>
      */
-    inline const Aws::String& GetOutputEncryptionKMSKeyId() const{ return m_outputEncryptionKMSKeyId; }
+    inline const Aws::String& GetOutputEncryptionKMSKeyId() const { return m_outputEncryptionKMSKeyId; }
     inline bool OutputEncryptionKMSKeyIdHasBeenSet() const { return m_outputEncryptionKMSKeyIdHasBeenSet; }
-    inline void SetOutputEncryptionKMSKeyId(const Aws::String& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = value; }
-    inline void SetOutputEncryptionKMSKeyId(Aws::String&& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = std::move(value); }
-    inline void SetOutputEncryptionKMSKeyId(const char* value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId.assign(value); }
-    inline PostCallAnalyticsSettings& WithOutputEncryptionKMSKeyId(const Aws::String& value) { SetOutputEncryptionKMSKeyId(value); return *this;}
-    inline PostCallAnalyticsSettings& WithOutputEncryptionKMSKeyId(Aws::String&& value) { SetOutputEncryptionKMSKeyId(std::move(value)); return *this;}
-    inline PostCallAnalyticsSettings& WithOutputEncryptionKMSKeyId(const char* value) { SetOutputEncryptionKMSKeyId(value); return *this;}
+    template<typename OutputEncryptionKMSKeyIdT = Aws::String>
+    void SetOutputEncryptionKMSKeyId(OutputEncryptionKMSKeyIdT&& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = std::forward<OutputEncryptionKMSKeyIdT>(value); }
+    template<typename OutputEncryptionKMSKeyIdT = Aws::String>
+    PostCallAnalyticsSettings& WithOutputEncryptionKMSKeyId(OutputEncryptionKMSKeyIdT&& value) { SetOutputEncryptionKMSKeyId(std::forward<OutputEncryptionKMSKeyIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -141,7 +133,7 @@ namespace Model
     Aws::String m_dataAccessRoleArn;
     bool m_dataAccessRoleArnHasBeenSet = false;
 
-    ContentRedactionOutput m_contentRedactionOutput;
+    ContentRedactionOutput m_contentRedactionOutput{ContentRedactionOutput::NOT_SET};
     bool m_contentRedactionOutputHasBeenSet = false;
 
     Aws::String m_outputEncryptionKMSKeyId;

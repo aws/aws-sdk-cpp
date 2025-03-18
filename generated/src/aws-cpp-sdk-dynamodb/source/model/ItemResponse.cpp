@@ -18,13 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ItemResponse::ItemResponse() : 
-    m_itemHasBeenSet(false)
-{
-}
-
 ItemResponse::ItemResponse(JsonView jsonValue)
-  : ItemResponse()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ItemResponse& ItemResponse::operator =(JsonView jsonValue)
     }
     m_itemHasBeenSet = true;
   }
-
   return *this;
 }
 

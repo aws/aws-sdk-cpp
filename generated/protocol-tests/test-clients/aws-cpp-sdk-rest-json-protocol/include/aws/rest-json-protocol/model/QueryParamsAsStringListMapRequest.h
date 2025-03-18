@@ -27,7 +27,7 @@ namespace Model
   class QueryParamsAsStringListMapRequest : public RestJsonProtocolRequest
   {
   public:
-    AWS_RESTJSONPROTOCOL_API QueryParamsAsStringListMapRequest();
+    AWS_RESTJSONPROTOCOL_API QueryParamsAsStringListMapRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,30 +42,26 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetQux() const{ return m_qux; }
+    inline const Aws::String& GetQux() const { return m_qux; }
     inline bool QuxHasBeenSet() const { return m_quxHasBeenSet; }
-    inline void SetQux(const Aws::String& value) { m_quxHasBeenSet = true; m_qux = value; }
-    inline void SetQux(Aws::String&& value) { m_quxHasBeenSet = true; m_qux = std::move(value); }
-    inline void SetQux(const char* value) { m_quxHasBeenSet = true; m_qux.assign(value); }
-    inline QueryParamsAsStringListMapRequest& WithQux(const Aws::String& value) { SetQux(value); return *this;}
-    inline QueryParamsAsStringListMapRequest& WithQux(Aws::String&& value) { SetQux(std::move(value)); return *this;}
-    inline QueryParamsAsStringListMapRequest& WithQux(const char* value) { SetQux(value); return *this;}
+    template<typename QuxT = Aws::String>
+    void SetQux(QuxT&& value) { m_quxHasBeenSet = true; m_qux = std::forward<QuxT>(value); }
+    template<typename QuxT = Aws::String>
+    QueryParamsAsStringListMapRequest& WithQux(QuxT&& value) { SetQux(std::forward<QuxT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetFoo() const{ return m_foo; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetFoo() const { return m_foo; }
     inline bool FooHasBeenSet() const { return m_fooHasBeenSet; }
-    inline void SetFoo(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_fooHasBeenSet = true; m_foo = value; }
-    inline void SetFoo(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_fooHasBeenSet = true; m_foo = std::move(value); }
-    inline QueryParamsAsStringListMapRequest& WithFoo(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetFoo(value); return *this;}
-    inline QueryParamsAsStringListMapRequest& WithFoo(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetFoo(std::move(value)); return *this;}
-    inline QueryParamsAsStringListMapRequest& AddFoo(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_fooHasBeenSet = true; m_foo.emplace(key, value); return *this; }
-    inline QueryParamsAsStringListMapRequest& AddFoo(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_fooHasBeenSet = true; m_foo.emplace(std::move(key), value); return *this; }
-    inline QueryParamsAsStringListMapRequest& AddFoo(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_fooHasBeenSet = true; m_foo.emplace(key, std::move(value)); return *this; }
-    inline QueryParamsAsStringListMapRequest& AddFoo(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_fooHasBeenSet = true; m_foo.emplace(std::move(key), std::move(value)); return *this; }
-    inline QueryParamsAsStringListMapRequest& AddFoo(const char* key, Aws::Vector<Aws::String>&& value) { m_fooHasBeenSet = true; m_foo.emplace(key, std::move(value)); return *this; }
-    inline QueryParamsAsStringListMapRequest& AddFoo(const char* key, const Aws::Vector<Aws::String>& value) { m_fooHasBeenSet = true; m_foo.emplace(key, value); return *this; }
+    template<typename FooT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetFoo(FooT&& value) { m_fooHasBeenSet = true; m_foo = std::forward<FooT>(value); }
+    template<typename FooT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    QueryParamsAsStringListMapRequest& WithFoo(FooT&& value) { SetFoo(std::forward<FooT>(value)); return *this;}
+    template<typename FooKeyT = Aws::String, typename FooValueT = Aws::Vector<Aws::String>>
+    QueryParamsAsStringListMapRequest& AddFoo(FooKeyT&& key, FooValueT&& value) {
+      m_fooHasBeenSet = true; m_foo.emplace(std::forward<FooKeyT>(key), std::forward<FooValueT>(value)); return *this;
+    }
     ///@}
   private:
 

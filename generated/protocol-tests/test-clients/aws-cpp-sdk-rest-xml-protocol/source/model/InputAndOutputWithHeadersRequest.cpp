@@ -16,35 +16,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-InputAndOutputWithHeadersRequest::InputAndOutputWithHeadersRequest() : 
-    m_headerStringHasBeenSet(false),
-    m_headerByte(0),
-    m_headerByteHasBeenSet(false),
-    m_headerShort(0),
-    m_headerShortHasBeenSet(false),
-    m_headerInteger(0),
-    m_headerIntegerHasBeenSet(false),
-    m_headerLong(0),
-    m_headerLongHasBeenSet(false),
-    m_headerFloat(0.0),
-    m_headerFloatHasBeenSet(false),
-    m_headerDouble(0.0),
-    m_headerDoubleHasBeenSet(false),
-    m_headerTrueBool(false),
-    m_headerTrueBoolHasBeenSet(false),
-    m_headerFalseBool(false),
-    m_headerFalseBoolHasBeenSet(false),
-    m_headerStringListHasBeenSet(false),
-    m_headerStringSetHasBeenSet(false),
-    m_headerIntegerListHasBeenSet(false),
-    m_headerBooleanListHasBeenSet(false),
-    m_headerTimestampListHasBeenSet(false),
-    m_headerEnum(FooEnum::NOT_SET),
-    m_headerEnumHasBeenSet(false),
-    m_headerEnumListHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
 
 Aws::String InputAndOutputWithHeadersRequest::SerializePayload() const
 {

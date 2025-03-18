@@ -30,7 +30,7 @@ namespace Model
   class BatchWriteItemRequest : public DynamoDBRequest
   {
   public:
-    AWS_DYNAMODB_API BatchWriteItemRequest();
+    AWS_DYNAMODB_API BatchWriteItemRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -73,28 +73,24 @@ namespace Model
      * those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<WriteRequest>>& GetRequestItems() const{ return m_requestItems; }
+    inline const Aws::Map<Aws::String, Aws::Vector<WriteRequest>>& GetRequestItems() const { return m_requestItems; }
     inline bool RequestItemsHasBeenSet() const { return m_requestItemsHasBeenSet; }
-    inline void SetRequestItems(const Aws::Map<Aws::String, Aws::Vector<WriteRequest>>& value) { m_requestItemsHasBeenSet = true; m_requestItems = value; }
-    inline void SetRequestItems(Aws::Map<Aws::String, Aws::Vector<WriteRequest>>&& value) { m_requestItemsHasBeenSet = true; m_requestItems = std::move(value); }
-    inline BatchWriteItemRequest& WithRequestItems(const Aws::Map<Aws::String, Aws::Vector<WriteRequest>>& value) { SetRequestItems(value); return *this;}
-    inline BatchWriteItemRequest& WithRequestItems(Aws::Map<Aws::String, Aws::Vector<WriteRequest>>&& value) { SetRequestItems(std::move(value)); return *this;}
-    inline BatchWriteItemRequest& AddRequestItems(const Aws::String& key, const Aws::Vector<WriteRequest>& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, value); return *this; }
-    inline BatchWriteItemRequest& AddRequestItems(Aws::String&& key, const Aws::Vector<WriteRequest>& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(std::move(key), value); return *this; }
-    inline BatchWriteItemRequest& AddRequestItems(const Aws::String& key, Aws::Vector<WriteRequest>&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, std::move(value)); return *this; }
-    inline BatchWriteItemRequest& AddRequestItems(Aws::String&& key, Aws::Vector<WriteRequest>&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(std::move(key), std::move(value)); return *this; }
-    inline BatchWriteItemRequest& AddRequestItems(const char* key, Aws::Vector<WriteRequest>&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, std::move(value)); return *this; }
-    inline BatchWriteItemRequest& AddRequestItems(const char* key, const Aws::Vector<WriteRequest>& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, value); return *this; }
+    template<typename RequestItemsT = Aws::Map<Aws::String, Aws::Vector<WriteRequest>>>
+    void SetRequestItems(RequestItemsT&& value) { m_requestItemsHasBeenSet = true; m_requestItems = std::forward<RequestItemsT>(value); }
+    template<typename RequestItemsT = Aws::Map<Aws::String, Aws::Vector<WriteRequest>>>
+    BatchWriteItemRequest& WithRequestItems(RequestItemsT&& value) { SetRequestItems(std::forward<RequestItemsT>(value)); return *this;}
+    template<typename RequestItemsKeyT = Aws::String, typename RequestItemsValueT = Aws::Vector<WriteRequest>>
+    BatchWriteItemRequest& AddRequestItems(RequestItemsKeyT&& key, RequestItemsValueT&& value) {
+      m_requestItemsHasBeenSet = true; m_requestItems.emplace(std::forward<RequestItemsKeyT>(key), std::forward<RequestItemsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const ReturnConsumedCapacity& GetReturnConsumedCapacity() const{ return m_returnConsumedCapacity; }
+    inline ReturnConsumedCapacity GetReturnConsumedCapacity() const { return m_returnConsumedCapacity; }
     inline bool ReturnConsumedCapacityHasBeenSet() const { return m_returnConsumedCapacityHasBeenSet; }
-    inline void SetReturnConsumedCapacity(const ReturnConsumedCapacity& value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = value; }
-    inline void SetReturnConsumedCapacity(ReturnConsumedCapacity&& value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = std::move(value); }
-    inline BatchWriteItemRequest& WithReturnConsumedCapacity(const ReturnConsumedCapacity& value) { SetReturnConsumedCapacity(value); return *this;}
-    inline BatchWriteItemRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity&& value) { SetReturnConsumedCapacity(std::move(value)); return *this;}
+    inline void SetReturnConsumedCapacity(ReturnConsumedCapacity value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = value; }
+    inline BatchWriteItemRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity value) { SetReturnConsumedCapacity(value); return *this;}
     ///@}
 
     ///@{
@@ -104,22 +100,20 @@ namespace Model
      * any, that were modified during the operation are returned in the response. If
      * set to <code>NONE</code> (the default), no statistics are returned.</p>
      */
-    inline const ReturnItemCollectionMetrics& GetReturnItemCollectionMetrics() const{ return m_returnItemCollectionMetrics; }
+    inline ReturnItemCollectionMetrics GetReturnItemCollectionMetrics() const { return m_returnItemCollectionMetrics; }
     inline bool ReturnItemCollectionMetricsHasBeenSet() const { return m_returnItemCollectionMetricsHasBeenSet; }
-    inline void SetReturnItemCollectionMetrics(const ReturnItemCollectionMetrics& value) { m_returnItemCollectionMetricsHasBeenSet = true; m_returnItemCollectionMetrics = value; }
-    inline void SetReturnItemCollectionMetrics(ReturnItemCollectionMetrics&& value) { m_returnItemCollectionMetricsHasBeenSet = true; m_returnItemCollectionMetrics = std::move(value); }
-    inline BatchWriteItemRequest& WithReturnItemCollectionMetrics(const ReturnItemCollectionMetrics& value) { SetReturnItemCollectionMetrics(value); return *this;}
-    inline BatchWriteItemRequest& WithReturnItemCollectionMetrics(ReturnItemCollectionMetrics&& value) { SetReturnItemCollectionMetrics(std::move(value)); return *this;}
+    inline void SetReturnItemCollectionMetrics(ReturnItemCollectionMetrics value) { m_returnItemCollectionMetricsHasBeenSet = true; m_returnItemCollectionMetrics = value; }
+    inline BatchWriteItemRequest& WithReturnItemCollectionMetrics(ReturnItemCollectionMetrics value) { SetReturnItemCollectionMetrics(value); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::Vector<WriteRequest>> m_requestItems;
     bool m_requestItemsHasBeenSet = false;
 
-    ReturnConsumedCapacity m_returnConsumedCapacity;
+    ReturnConsumedCapacity m_returnConsumedCapacity{ReturnConsumedCapacity::NOT_SET};
     bool m_returnConsumedCapacityHasBeenSet = false;
 
-    ReturnItemCollectionMetrics m_returnItemCollectionMetrics;
+    ReturnItemCollectionMetrics m_returnItemCollectionMetrics{ReturnItemCollectionMetrics::NOT_SET};
     bool m_returnItemCollectionMetricsHasBeenSet = false;
   };
 

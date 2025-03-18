@@ -25,7 +25,7 @@ namespace Model
   class NestedPayload
   {
   public:
-    AWS_RESTXMLPROTOCOL_API NestedPayload();
+    AWS_RESTXMLPROTOCOL_API NestedPayload() = default;
     AWS_RESTXMLPROTOCOL_API NestedPayload(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RESTXMLPROTOCOL_API NestedPayload& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -34,26 +34,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetGreeting() const{ return m_greeting; }
+    inline const Aws::String& GetGreeting() const { return m_greeting; }
     inline bool GreetingHasBeenSet() const { return m_greetingHasBeenSet; }
-    inline void SetGreeting(const Aws::String& value) { m_greetingHasBeenSet = true; m_greeting = value; }
-    inline void SetGreeting(Aws::String&& value) { m_greetingHasBeenSet = true; m_greeting = std::move(value); }
-    inline void SetGreeting(const char* value) { m_greetingHasBeenSet = true; m_greeting.assign(value); }
-    inline NestedPayload& WithGreeting(const Aws::String& value) { SetGreeting(value); return *this;}
-    inline NestedPayload& WithGreeting(Aws::String&& value) { SetGreeting(std::move(value)); return *this;}
-    inline NestedPayload& WithGreeting(const char* value) { SetGreeting(value); return *this;}
+    template<typename GreetingT = Aws::String>
+    void SetGreeting(GreetingT&& value) { m_greetingHasBeenSet = true; m_greeting = std::forward<GreetingT>(value); }
+    template<typename GreetingT = Aws::String>
+    NestedPayload& WithGreeting(GreetingT&& value) { SetGreeting(std::forward<GreetingT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline NestedPayload& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline NestedPayload& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline NestedPayload& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    NestedPayload& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListDirectoryBucketsResult::ListDirectoryBucketsResult()
-{
-}
-
 ListDirectoryBucketsResult::ListDirectoryBucketsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,17 +32,20 @@ ListDirectoryBucketsResult& ListDirectoryBucketsResult::operator =(const Aws::Am
     if(!bucketsNode.IsNull())
     {
       XmlNode bucketsMember = bucketsNode.FirstChild("Bucket");
+      m_bucketsHasBeenSet = !bucketsMember.IsNull();
       while(!bucketsMember.IsNull())
       {
         m_buckets.push_back(bucketsMember);
         bucketsMember = bucketsMember.NextNode("Bucket");
       }
 
+      m_bucketsHasBeenSet = true;
     }
     XmlNode continuationTokenNode = resultNode.FirstChild("ContinuationToken");
     if(!continuationTokenNode.IsNull())
     {
       m_continuationToken = Aws::Utils::Xml::DecodeEscapedXmlText(continuationTokenNode.GetText());
+      m_continuationTokenHasBeenSet = true;
     }
   }
 
@@ -55,6 +54,7 @@ ListDirectoryBucketsResult& ListDirectoryBucketsResult::operator =(const Aws::Am
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

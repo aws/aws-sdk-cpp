@@ -18,17 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-ClinicalNoteGenerationResult::ClinicalNoteGenerationResult() : 
-    m_clinicalNoteOutputLocationHasBeenSet(false),
-    m_transcriptOutputLocationHasBeenSet(false),
-    m_status(ClinicalNoteGenerationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 ClinicalNoteGenerationResult::ClinicalNoteGenerationResult(JsonView jsonValue)
-  : ClinicalNoteGenerationResult()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ClinicalNoteGenerationResult& ClinicalNoteGenerationResult::operator =(JsonView 
   if(jsonValue.ValueExists("ClinicalNoteOutputLocation"))
   {
     m_clinicalNoteOutputLocation = jsonValue.GetString("ClinicalNoteOutputLocation");
-
     m_clinicalNoteOutputLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TranscriptOutputLocation"))
   {
     m_transcriptOutputLocation = jsonValue.GetString("TranscriptOutputLocation");
-
     m_transcriptOutputLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ClinicalNoteGenerationStatusMapper::GetClinicalNoteGenerationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

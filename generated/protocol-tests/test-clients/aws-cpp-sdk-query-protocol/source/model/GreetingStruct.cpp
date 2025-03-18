@@ -20,13 +20,7 @@ namespace QueryProtocol
 namespace Model
 {
 
-GreetingStruct::GreetingStruct() : 
-    m_hiHasBeenSet(false)
-{
-}
-
 GreetingStruct::GreetingStruct(const XmlNode& xmlNode)
-  : GreetingStruct()
 {
   *this = xmlNode;
 }

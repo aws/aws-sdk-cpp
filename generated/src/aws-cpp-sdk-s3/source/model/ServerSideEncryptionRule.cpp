@@ -20,15 +20,7 @@ namespace S3
 namespace Model
 {
 
-ServerSideEncryptionRule::ServerSideEncryptionRule() : 
-    m_applyServerSideEncryptionByDefaultHasBeenSet(false),
-    m_bucketKeyEnabled(false),
-    m_bucketKeyEnabledHasBeenSet(false)
-{
-}
-
 ServerSideEncryptionRule::ServerSideEncryptionRule(const XmlNode& xmlNode)
-  : ServerSideEncryptionRule()
 {
   *this = xmlNode;
 }

@@ -17,13 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateJobPriorityRequest::UpdateJobPriorityRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
-{
-}
 
 Aws::String UpdateJobPriorityRequest::SerializePayload() const
 {

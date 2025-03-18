@@ -26,7 +26,7 @@ namespace Model
   class UpdateGlobalTableSettingsRequest : public DynamoDBRequest
   {
   public:
-    AWS_DYNAMODB_API UpdateGlobalTableSettingsRequest();
+    AWS_DYNAMODB_API UpdateGlobalTableSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The name of the global table</p>
      */
-    inline const Aws::String& GetGlobalTableName() const{ return m_globalTableName; }
+    inline const Aws::String& GetGlobalTableName() const { return m_globalTableName; }
     inline bool GlobalTableNameHasBeenSet() const { return m_globalTableNameHasBeenSet; }
-    inline void SetGlobalTableName(const Aws::String& value) { m_globalTableNameHasBeenSet = true; m_globalTableName = value; }
-    inline void SetGlobalTableName(Aws::String&& value) { m_globalTableNameHasBeenSet = true; m_globalTableName = std::move(value); }
-    inline void SetGlobalTableName(const char* value) { m_globalTableNameHasBeenSet = true; m_globalTableName.assign(value); }
-    inline UpdateGlobalTableSettingsRequest& WithGlobalTableName(const Aws::String& value) { SetGlobalTableName(value); return *this;}
-    inline UpdateGlobalTableSettingsRequest& WithGlobalTableName(Aws::String&& value) { SetGlobalTableName(std::move(value)); return *this;}
-    inline UpdateGlobalTableSettingsRequest& WithGlobalTableName(const char* value) { SetGlobalTableName(value); return *this;}
+    template<typename GlobalTableNameT = Aws::String>
+    void SetGlobalTableName(GlobalTableNameT&& value) { m_globalTableNameHasBeenSet = true; m_globalTableName = std::forward<GlobalTableNameT>(value); }
+    template<typename GlobalTableNameT = Aws::String>
+    UpdateGlobalTableSettingsRequest& WithGlobalTableName(GlobalTableNameT&& value) { SetGlobalTableName(std::forward<GlobalTableNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
      * capacity mode</a>. </p> </li> </ul>
      */
-    inline const BillingMode& GetGlobalTableBillingMode() const{ return m_globalTableBillingMode; }
+    inline BillingMode GetGlobalTableBillingMode() const { return m_globalTableBillingMode; }
     inline bool GlobalTableBillingModeHasBeenSet() const { return m_globalTableBillingModeHasBeenSet; }
-    inline void SetGlobalTableBillingMode(const BillingMode& value) { m_globalTableBillingModeHasBeenSet = true; m_globalTableBillingMode = value; }
-    inline void SetGlobalTableBillingMode(BillingMode&& value) { m_globalTableBillingModeHasBeenSet = true; m_globalTableBillingMode = std::move(value); }
-    inline UpdateGlobalTableSettingsRequest& WithGlobalTableBillingMode(const BillingMode& value) { SetGlobalTableBillingMode(value); return *this;}
-    inline UpdateGlobalTableSettingsRequest& WithGlobalTableBillingMode(BillingMode&& value) { SetGlobalTableBillingMode(std::move(value)); return *this;}
+    inline void SetGlobalTableBillingMode(BillingMode value) { m_globalTableBillingModeHasBeenSet = true; m_globalTableBillingMode = value; }
+    inline UpdateGlobalTableSettingsRequest& WithGlobalTableBillingMode(BillingMode value) { SetGlobalTableBillingMode(value); return *this;}
     ///@}
 
     ///@{
@@ -84,7 +80,7 @@ namespace Model
      * <p>The maximum number of writes consumed per second before DynamoDB returns a
      * <code>ThrottlingException.</code> </p>
      */
-    inline long long GetGlobalTableProvisionedWriteCapacityUnits() const{ return m_globalTableProvisionedWriteCapacityUnits; }
+    inline long long GetGlobalTableProvisionedWriteCapacityUnits() const { return m_globalTableProvisionedWriteCapacityUnits; }
     inline bool GlobalTableProvisionedWriteCapacityUnitsHasBeenSet() const { return m_globalTableProvisionedWriteCapacityUnitsHasBeenSet; }
     inline void SetGlobalTableProvisionedWriteCapacityUnits(long long value) { m_globalTableProvisionedWriteCapacityUnitsHasBeenSet = true; m_globalTableProvisionedWriteCapacityUnits = value; }
     inline UpdateGlobalTableSettingsRequest& WithGlobalTableProvisionedWriteCapacityUnits(long long value) { SetGlobalTableProvisionedWriteCapacityUnits(value); return *this;}
@@ -95,12 +91,12 @@ namespace Model
      * <p>Auto scaling settings for managing provisioned write capacity for the global
      * table.</p>
      */
-    inline const AutoScalingSettingsUpdate& GetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate() const{ return m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate; }
+    inline const AutoScalingSettingsUpdate& GetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate() const { return m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate; }
     inline bool GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet() const { return m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet; }
-    inline void SetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(const AutoScalingSettingsUpdate& value) { m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate = value; }
-    inline void SetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate&& value) { m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate = std::move(value); }
-    inline UpdateGlobalTableSettingsRequest& WithGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(const AutoScalingSettingsUpdate& value) { SetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(value); return *this;}
-    inline UpdateGlobalTableSettingsRequest& WithGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate&& value) { SetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(std::move(value)); return *this;}
+    template<typename GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdateT = AutoScalingSettingsUpdate>
+    void SetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdateT&& value) { m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate = std::forward<GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdateT>(value); }
+    template<typename GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdateT = AutoScalingSettingsUpdate>
+    UpdateGlobalTableSettingsRequest& WithGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdateT&& value) { SetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(std::forward<GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,14 +104,14 @@ namespace Model
      * <p>Represents the settings of a global secondary index for a global table that
      * will be modified.</p>
      */
-    inline const Aws::Vector<GlobalTableGlobalSecondaryIndexSettingsUpdate>& GetGlobalTableGlobalSecondaryIndexSettingsUpdate() const{ return m_globalTableGlobalSecondaryIndexSettingsUpdate; }
+    inline const Aws::Vector<GlobalTableGlobalSecondaryIndexSettingsUpdate>& GetGlobalTableGlobalSecondaryIndexSettingsUpdate() const { return m_globalTableGlobalSecondaryIndexSettingsUpdate; }
     inline bool GlobalTableGlobalSecondaryIndexSettingsUpdateHasBeenSet() const { return m_globalTableGlobalSecondaryIndexSettingsUpdateHasBeenSet; }
-    inline void SetGlobalTableGlobalSecondaryIndexSettingsUpdate(const Aws::Vector<GlobalTableGlobalSecondaryIndexSettingsUpdate>& value) { m_globalTableGlobalSecondaryIndexSettingsUpdateHasBeenSet = true; m_globalTableGlobalSecondaryIndexSettingsUpdate = value; }
-    inline void SetGlobalTableGlobalSecondaryIndexSettingsUpdate(Aws::Vector<GlobalTableGlobalSecondaryIndexSettingsUpdate>&& value) { m_globalTableGlobalSecondaryIndexSettingsUpdateHasBeenSet = true; m_globalTableGlobalSecondaryIndexSettingsUpdate = std::move(value); }
-    inline UpdateGlobalTableSettingsRequest& WithGlobalTableGlobalSecondaryIndexSettingsUpdate(const Aws::Vector<GlobalTableGlobalSecondaryIndexSettingsUpdate>& value) { SetGlobalTableGlobalSecondaryIndexSettingsUpdate(value); return *this;}
-    inline UpdateGlobalTableSettingsRequest& WithGlobalTableGlobalSecondaryIndexSettingsUpdate(Aws::Vector<GlobalTableGlobalSecondaryIndexSettingsUpdate>&& value) { SetGlobalTableGlobalSecondaryIndexSettingsUpdate(std::move(value)); return *this;}
-    inline UpdateGlobalTableSettingsRequest& AddGlobalTableGlobalSecondaryIndexSettingsUpdate(const GlobalTableGlobalSecondaryIndexSettingsUpdate& value) { m_globalTableGlobalSecondaryIndexSettingsUpdateHasBeenSet = true; m_globalTableGlobalSecondaryIndexSettingsUpdate.push_back(value); return *this; }
-    inline UpdateGlobalTableSettingsRequest& AddGlobalTableGlobalSecondaryIndexSettingsUpdate(GlobalTableGlobalSecondaryIndexSettingsUpdate&& value) { m_globalTableGlobalSecondaryIndexSettingsUpdateHasBeenSet = true; m_globalTableGlobalSecondaryIndexSettingsUpdate.push_back(std::move(value)); return *this; }
+    template<typename GlobalTableGlobalSecondaryIndexSettingsUpdateT = Aws::Vector<GlobalTableGlobalSecondaryIndexSettingsUpdate>>
+    void SetGlobalTableGlobalSecondaryIndexSettingsUpdate(GlobalTableGlobalSecondaryIndexSettingsUpdateT&& value) { m_globalTableGlobalSecondaryIndexSettingsUpdateHasBeenSet = true; m_globalTableGlobalSecondaryIndexSettingsUpdate = std::forward<GlobalTableGlobalSecondaryIndexSettingsUpdateT>(value); }
+    template<typename GlobalTableGlobalSecondaryIndexSettingsUpdateT = Aws::Vector<GlobalTableGlobalSecondaryIndexSettingsUpdate>>
+    UpdateGlobalTableSettingsRequest& WithGlobalTableGlobalSecondaryIndexSettingsUpdate(GlobalTableGlobalSecondaryIndexSettingsUpdateT&& value) { SetGlobalTableGlobalSecondaryIndexSettingsUpdate(std::forward<GlobalTableGlobalSecondaryIndexSettingsUpdateT>(value)); return *this;}
+    template<typename GlobalTableGlobalSecondaryIndexSettingsUpdateT = GlobalTableGlobalSecondaryIndexSettingsUpdate>
+    UpdateGlobalTableSettingsRequest& AddGlobalTableGlobalSecondaryIndexSettingsUpdate(GlobalTableGlobalSecondaryIndexSettingsUpdateT&& value) { m_globalTableGlobalSecondaryIndexSettingsUpdateHasBeenSet = true; m_globalTableGlobalSecondaryIndexSettingsUpdate.emplace_back(std::forward<GlobalTableGlobalSecondaryIndexSettingsUpdateT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -123,24 +119,24 @@ namespace Model
      * <p>Represents the settings for a global table in a Region that will be
      * modified.</p>
      */
-    inline const Aws::Vector<ReplicaSettingsUpdate>& GetReplicaSettingsUpdate() const{ return m_replicaSettingsUpdate; }
+    inline const Aws::Vector<ReplicaSettingsUpdate>& GetReplicaSettingsUpdate() const { return m_replicaSettingsUpdate; }
     inline bool ReplicaSettingsUpdateHasBeenSet() const { return m_replicaSettingsUpdateHasBeenSet; }
-    inline void SetReplicaSettingsUpdate(const Aws::Vector<ReplicaSettingsUpdate>& value) { m_replicaSettingsUpdateHasBeenSet = true; m_replicaSettingsUpdate = value; }
-    inline void SetReplicaSettingsUpdate(Aws::Vector<ReplicaSettingsUpdate>&& value) { m_replicaSettingsUpdateHasBeenSet = true; m_replicaSettingsUpdate = std::move(value); }
-    inline UpdateGlobalTableSettingsRequest& WithReplicaSettingsUpdate(const Aws::Vector<ReplicaSettingsUpdate>& value) { SetReplicaSettingsUpdate(value); return *this;}
-    inline UpdateGlobalTableSettingsRequest& WithReplicaSettingsUpdate(Aws::Vector<ReplicaSettingsUpdate>&& value) { SetReplicaSettingsUpdate(std::move(value)); return *this;}
-    inline UpdateGlobalTableSettingsRequest& AddReplicaSettingsUpdate(const ReplicaSettingsUpdate& value) { m_replicaSettingsUpdateHasBeenSet = true; m_replicaSettingsUpdate.push_back(value); return *this; }
-    inline UpdateGlobalTableSettingsRequest& AddReplicaSettingsUpdate(ReplicaSettingsUpdate&& value) { m_replicaSettingsUpdateHasBeenSet = true; m_replicaSettingsUpdate.push_back(std::move(value)); return *this; }
+    template<typename ReplicaSettingsUpdateT = Aws::Vector<ReplicaSettingsUpdate>>
+    void SetReplicaSettingsUpdate(ReplicaSettingsUpdateT&& value) { m_replicaSettingsUpdateHasBeenSet = true; m_replicaSettingsUpdate = std::forward<ReplicaSettingsUpdateT>(value); }
+    template<typename ReplicaSettingsUpdateT = Aws::Vector<ReplicaSettingsUpdate>>
+    UpdateGlobalTableSettingsRequest& WithReplicaSettingsUpdate(ReplicaSettingsUpdateT&& value) { SetReplicaSettingsUpdate(std::forward<ReplicaSettingsUpdateT>(value)); return *this;}
+    template<typename ReplicaSettingsUpdateT = ReplicaSettingsUpdate>
+    UpdateGlobalTableSettingsRequest& AddReplicaSettingsUpdate(ReplicaSettingsUpdateT&& value) { m_replicaSettingsUpdateHasBeenSet = true; m_replicaSettingsUpdate.emplace_back(std::forward<ReplicaSettingsUpdateT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_globalTableName;
     bool m_globalTableNameHasBeenSet = false;
 
-    BillingMode m_globalTableBillingMode;
+    BillingMode m_globalTableBillingMode{BillingMode::NOT_SET};
     bool m_globalTableBillingModeHasBeenSet = false;
 
-    long long m_globalTableProvisionedWriteCapacityUnits;
+    long long m_globalTableProvisionedWriteCapacityUnits{0};
     bool m_globalTableProvisionedWriteCapacityUnitsHasBeenSet = false;
 
     AutoScalingSettingsUpdate m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate;

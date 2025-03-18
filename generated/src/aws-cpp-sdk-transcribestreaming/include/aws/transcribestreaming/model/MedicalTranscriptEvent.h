@@ -34,7 +34,7 @@ namespace Model
   class MedicalTranscriptEvent
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalTranscriptEvent();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalTranscriptEvent() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalTranscriptEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalTranscriptEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
      * transcriptions, channel identification, partial result stabilization, language
      * identification, and other transcription-related data.</p>
      */
-    inline const MedicalTranscript& GetTranscript() const{ return m_transcript; }
+    inline const MedicalTranscript& GetTranscript() const { return m_transcript; }
     inline bool TranscriptHasBeenSet() const { return m_transcriptHasBeenSet; }
-    inline void SetTranscript(const MedicalTranscript& value) { m_transcriptHasBeenSet = true; m_transcript = value; }
-    inline void SetTranscript(MedicalTranscript&& value) { m_transcriptHasBeenSet = true; m_transcript = std::move(value); }
-    inline MedicalTranscriptEvent& WithTranscript(const MedicalTranscript& value) { SetTranscript(value); return *this;}
-    inline MedicalTranscriptEvent& WithTranscript(MedicalTranscript&& value) { SetTranscript(std::move(value)); return *this;}
+    template<typename TranscriptT = MedicalTranscript>
+    void SetTranscript(TranscriptT&& value) { m_transcriptHasBeenSet = true; m_transcript = std::forward<TranscriptT>(value); }
+    template<typename TranscriptT = MedicalTranscript>
+    MedicalTranscriptEvent& WithTranscript(TranscriptT&& value) { SetTranscript(std::forward<TranscriptT>(value)); return *this;}
     ///@}
   private:
 

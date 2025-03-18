@@ -18,15 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-AttributeDefinition::AttributeDefinition() : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeType(ScalarAttributeType::NOT_SET),
-    m_attributeTypeHasBeenSet(false)
-{
-}
-
 AttributeDefinition::AttributeDefinition(JsonView jsonValue)
-  : AttributeDefinition()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AttributeDefinition& AttributeDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttributeName"))
   {
     m_attributeName = jsonValue.GetString("AttributeName");
-
     m_attributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeType"))
   {
     m_attributeType = ScalarAttributeTypeMapper::GetScalarAttributeTypeForName(jsonValue.GetString("AttributeType"));
-
     m_attributeTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

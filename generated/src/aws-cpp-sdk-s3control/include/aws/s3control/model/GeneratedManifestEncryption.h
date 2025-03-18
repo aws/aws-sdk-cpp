@@ -32,7 +32,7 @@ namespace Model
   class GeneratedManifestEncryption
   {
   public:
-    AWS_S3CONTROL_API GeneratedManifestEncryption();
+    AWS_S3CONTROL_API GeneratedManifestEncryption() = default;
     AWS_S3CONTROL_API GeneratedManifestEncryption(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API GeneratedManifestEncryption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>Specifies the use of SSE-S3 to encrypt generated manifest objects.</p>
      */
-    inline const SSES3Encryption& GetSSES3() const{ return m_sSES3; }
+    inline const SSES3Encryption& GetSSES3() const { return m_sSES3; }
     inline bool SSES3HasBeenSet() const { return m_sSES3HasBeenSet; }
-    inline void SetSSES3(const SSES3Encryption& value) { m_sSES3HasBeenSet = true; m_sSES3 = value; }
-    inline void SetSSES3(SSES3Encryption&& value) { m_sSES3HasBeenSet = true; m_sSES3 = std::move(value); }
-    inline GeneratedManifestEncryption& WithSSES3(const SSES3Encryption& value) { SetSSES3(value); return *this;}
-    inline GeneratedManifestEncryption& WithSSES3(SSES3Encryption&& value) { SetSSES3(std::move(value)); return *this;}
+    template<typename SSES3T = SSES3Encryption>
+    void SetSSES3(SSES3T&& value) { m_sSES3HasBeenSet = true; m_sSES3 = std::forward<SSES3T>(value); }
+    template<typename SSES3T = SSES3Encryption>
+    GeneratedManifestEncryption& WithSSES3(SSES3T&& value) { SetSSES3(std::forward<SSES3T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p>Configuration details on how SSE-KMS is used to encrypt generated manifest
      * objects.</p>
      */
-    inline const SSEKMSEncryption& GetSSEKMS() const{ return m_sSEKMS; }
+    inline const SSEKMSEncryption& GetSSEKMS() const { return m_sSEKMS; }
     inline bool SSEKMSHasBeenSet() const { return m_sSEKMSHasBeenSet; }
-    inline void SetSSEKMS(const SSEKMSEncryption& value) { m_sSEKMSHasBeenSet = true; m_sSEKMS = value; }
-    inline void SetSSEKMS(SSEKMSEncryption&& value) { m_sSEKMSHasBeenSet = true; m_sSEKMS = std::move(value); }
-    inline GeneratedManifestEncryption& WithSSEKMS(const SSEKMSEncryption& value) { SetSSEKMS(value); return *this;}
-    inline GeneratedManifestEncryption& WithSSEKMS(SSEKMSEncryption&& value) { SetSSEKMS(std::move(value)); return *this;}
+    template<typename SSEKMST = SSEKMSEncryption>
+    void SetSSEKMS(SSEKMST&& value) { m_sSEKMSHasBeenSet = true; m_sSEKMS = std::forward<SSEKMST>(value); }
+    template<typename SSEKMST = SSEKMSEncryption>
+    GeneratedManifestEncryption& WithSSEKMS(SSEKMST&& value) { SetSSEKMS(std::forward<SSEKMST>(value)); return *this;}
     ///@}
   private:
 

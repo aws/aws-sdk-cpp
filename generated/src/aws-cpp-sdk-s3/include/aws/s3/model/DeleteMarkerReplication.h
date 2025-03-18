@@ -45,7 +45,7 @@ namespace Model
   class DeleteMarkerReplication
   {
   public:
-    AWS_S3_API DeleteMarkerReplication();
+    AWS_S3_API DeleteMarkerReplication() = default;
     AWS_S3_API DeleteMarkerReplication(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API DeleteMarkerReplication& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -57,16 +57,14 @@ namespace Model
      * <p>Indicates whether to replicate delete markers.</p>  <p>Indicates
      * whether to replicate delete markers.</p> 
      */
-    inline const DeleteMarkerReplicationStatus& GetStatus() const{ return m_status; }
+    inline DeleteMarkerReplicationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DeleteMarkerReplicationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DeleteMarkerReplicationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DeleteMarkerReplication& WithStatus(const DeleteMarkerReplicationStatus& value) { SetStatus(value); return *this;}
-    inline DeleteMarkerReplication& WithStatus(DeleteMarkerReplicationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DeleteMarkerReplicationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DeleteMarkerReplication& WithStatus(DeleteMarkerReplicationStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    DeleteMarkerReplicationStatus m_status;
+    DeleteMarkerReplicationStatus m_status{DeleteMarkerReplicationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

@@ -10,12 +10,6 @@
 using namespace Aws::EC2Protocol::Model;
 using namespace Aws::Utils;
 
-QueryIdempotencyTokenAutoFillRequest::QueryIdempotencyTokenAutoFillRequest() : 
-    m_token(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_tokenHasBeenSet(true)
-{
-}
-
 Aws::String QueryIdempotencyTokenAutoFillRequest::SerializePayload() const
 {
   Aws::StringStream ss;

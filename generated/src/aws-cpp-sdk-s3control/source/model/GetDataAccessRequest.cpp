@@ -17,19 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetDataAccessRequest::GetDataAccessRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_permission(Permission::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false),
-    m_privilege(Privilege::NOT_SET),
-    m_privilegeHasBeenSet(false),
-    m_targetType(S3PrefixType::NOT_SET),
-    m_targetTypeHasBeenSet(false)
-{
-}
 
 Aws::String GetDataAccessRequest::SerializePayload() const
 {

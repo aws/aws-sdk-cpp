@@ -25,7 +25,7 @@ namespace Model
   class ConstantAndVariableQueryStringRequest : public RestXmlProtocolRequest
   {
   public:
-    AWS_RESTXMLPROTOCOL_API ConstantAndVariableQueryStringRequest();
+    AWS_RESTXMLPROTOCOL_API ConstantAndVariableQueryStringRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,26 +40,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetBaz() const{ return m_baz; }
+    inline const Aws::String& GetBaz() const { return m_baz; }
     inline bool BazHasBeenSet() const { return m_bazHasBeenSet; }
-    inline void SetBaz(const Aws::String& value) { m_bazHasBeenSet = true; m_baz = value; }
-    inline void SetBaz(Aws::String&& value) { m_bazHasBeenSet = true; m_baz = std::move(value); }
-    inline void SetBaz(const char* value) { m_bazHasBeenSet = true; m_baz.assign(value); }
-    inline ConstantAndVariableQueryStringRequest& WithBaz(const Aws::String& value) { SetBaz(value); return *this;}
-    inline ConstantAndVariableQueryStringRequest& WithBaz(Aws::String&& value) { SetBaz(std::move(value)); return *this;}
-    inline ConstantAndVariableQueryStringRequest& WithBaz(const char* value) { SetBaz(value); return *this;}
+    template<typename BazT = Aws::String>
+    void SetBaz(BazT&& value) { m_bazHasBeenSet = true; m_baz = std::forward<BazT>(value); }
+    template<typename BazT = Aws::String>
+    ConstantAndVariableQueryStringRequest& WithBaz(BazT&& value) { SetBaz(std::forward<BazT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetMaybeSet() const{ return m_maybeSet; }
+    inline const Aws::String& GetMaybeSet() const { return m_maybeSet; }
     inline bool MaybeSetHasBeenSet() const { return m_maybeSetHasBeenSet; }
-    inline void SetMaybeSet(const Aws::String& value) { m_maybeSetHasBeenSet = true; m_maybeSet = value; }
-    inline void SetMaybeSet(Aws::String&& value) { m_maybeSetHasBeenSet = true; m_maybeSet = std::move(value); }
-    inline void SetMaybeSet(const char* value) { m_maybeSetHasBeenSet = true; m_maybeSet.assign(value); }
-    inline ConstantAndVariableQueryStringRequest& WithMaybeSet(const Aws::String& value) { SetMaybeSet(value); return *this;}
-    inline ConstantAndVariableQueryStringRequest& WithMaybeSet(Aws::String&& value) { SetMaybeSet(std::move(value)); return *this;}
-    inline ConstantAndVariableQueryStringRequest& WithMaybeSet(const char* value) { SetMaybeSet(value); return *this;}
+    template<typename MaybeSetT = Aws::String>
+    void SetMaybeSet(MaybeSetT&& value) { m_maybeSetHasBeenSet = true; m_maybeSet = std::forward<MaybeSetT>(value); }
+    template<typename MaybeSetT = Aws::String>
+    ConstantAndVariableQueryStringRequest& WithMaybeSet(MaybeSetT&& value) { SetMaybeSet(std::forward<MaybeSetT>(value)); return *this;}
     ///@}
   private:
 

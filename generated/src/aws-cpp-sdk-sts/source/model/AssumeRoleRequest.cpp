@@ -10,23 +10,6 @@
 using namespace Aws::STS::Model;
 using namespace Aws::Utils;
 
-AssumeRoleRequest::AssumeRoleRequest() : 
-    m_roleArnHasBeenSet(false),
-    m_roleSessionNameHasBeenSet(false),
-    m_policyArnsHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_transitiveTagKeysHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_tokenCodeHasBeenSet(false),
-    m_sourceIdentityHasBeenSet(false),
-    m_providedContextsHasBeenSet(false)
-{
-}
-
 Aws::String AssumeRoleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

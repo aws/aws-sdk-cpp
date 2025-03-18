@@ -35,7 +35,7 @@ namespace Model
   class RoutingRule
   {
   public:
-    AWS_S3_API RoutingRule();
+    AWS_S3_API RoutingRule() = default;
     AWS_S3_API RoutingRule(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API RoutingRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,12 +50,12 @@ namespace Model
      * request results in HTTP error 4xx, redirect request to another host where you
      * might process the error.</p>
      */
-    inline const Condition& GetCondition() const{ return m_condition; }
+    inline const Condition& GetCondition() const { return m_condition; }
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-    inline void SetCondition(const Condition& value) { m_conditionHasBeenSet = true; m_condition = value; }
-    inline void SetCondition(Condition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-    inline RoutingRule& WithCondition(const Condition& value) { SetCondition(value); return *this;}
-    inline RoutingRule& WithCondition(Condition&& value) { SetCondition(std::move(value)); return *this;}
+    template<typename ConditionT = Condition>
+    void SetCondition(ConditionT&& value) { m_conditionHasBeenSet = true; m_condition = std::forward<ConditionT>(value); }
+    template<typename ConditionT = Condition>
+    RoutingRule& WithCondition(ConditionT&& value) { SetCondition(std::forward<ConditionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +64,12 @@ namespace Model
      * host, to another page, or with another protocol. In the event of an error, you
      * can specify a different error code to return.</p>
      */
-    inline const Redirect& GetRedirect() const{ return m_redirect; }
+    inline const Redirect& GetRedirect() const { return m_redirect; }
     inline bool RedirectHasBeenSet() const { return m_redirectHasBeenSet; }
-    inline void SetRedirect(const Redirect& value) { m_redirectHasBeenSet = true; m_redirect = value; }
-    inline void SetRedirect(Redirect&& value) { m_redirectHasBeenSet = true; m_redirect = std::move(value); }
-    inline RoutingRule& WithRedirect(const Redirect& value) { SetRedirect(value); return *this;}
-    inline RoutingRule& WithRedirect(Redirect&& value) { SetRedirect(std::move(value)); return *this;}
+    template<typename RedirectT = Redirect>
+    void SetRedirect(RedirectT&& value) { m_redirectHasBeenSet = true; m_redirect = std::forward<RedirectT>(value); }
+    template<typename RedirectT = Redirect>
+    RoutingRule& WithRedirect(RedirectT&& value) { SetRedirect(std::forward<RedirectT>(value)); return *this;}
     ///@}
   private:
 

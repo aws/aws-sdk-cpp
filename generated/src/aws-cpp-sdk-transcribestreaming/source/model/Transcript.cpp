@@ -18,13 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-Transcript::Transcript() : 
-    m_resultsHasBeenSet(false)
-{
-}
-
 Transcript::Transcript(JsonView jsonValue)
-  : Transcript()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ Transcript& Transcript::operator =(JsonView jsonValue)
     }
     m_resultsHasBeenSet = true;
   }
-
   return *this;
 }
 

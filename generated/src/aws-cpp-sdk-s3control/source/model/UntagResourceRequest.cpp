@@ -17,12 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UntagResourceRequest::UntagResourceRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
-{
-}
 
 Aws::String UntagResourceRequest::SerializePayload() const
 {

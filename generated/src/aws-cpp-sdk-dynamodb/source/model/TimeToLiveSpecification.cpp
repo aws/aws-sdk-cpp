@@ -18,15 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-TimeToLiveSpecification::TimeToLiveSpecification() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_attributeNameHasBeenSet(false)
-{
-}
-
 TimeToLiveSpecification::TimeToLiveSpecification(JsonView jsonValue)
-  : TimeToLiveSpecification()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TimeToLiveSpecification& TimeToLiveSpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeName"))
   {
     m_attributeName = jsonValue.GetString("AttributeName");
-
     m_attributeNameHasBeenSet = true;
   }
-
   return *this;
 }
 

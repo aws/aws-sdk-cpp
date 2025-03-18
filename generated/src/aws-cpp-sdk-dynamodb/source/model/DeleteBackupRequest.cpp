@@ -12,11 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBackupRequest::DeleteBackupRequest() : 
-    m_backupArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBackupRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTablesResult::ListTablesResult()
-{
-}
-
 ListTablesResult::ListTablesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListTablesResult& ListTablesResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_tableNames.push_back(tableNamesJsonList[tableNamesIndex].AsString());
     }
+    m_tableNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastEvaluatedTableName"))
   {
     m_lastEvaluatedTableName = jsonValue.GetString("LastEvaluatedTableName");
-
+    m_lastEvaluatedTableNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

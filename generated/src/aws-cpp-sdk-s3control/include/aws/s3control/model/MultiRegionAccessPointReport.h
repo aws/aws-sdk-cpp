@@ -36,7 +36,7 @@ namespace Model
   class MultiRegionAccessPointReport
   {
   public:
-    AWS_S3CONTROL_API MultiRegionAccessPointReport();
+    AWS_S3CONTROL_API MultiRegionAccessPointReport() = default;
     AWS_S3CONTROL_API MultiRegionAccessPointReport(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API MultiRegionAccessPointReport& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The name of the Multi-Region Access Point.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline MultiRegionAccessPointReport& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline MultiRegionAccessPointReport& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline MultiRegionAccessPointReport& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    MultiRegionAccessPointReport& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,36 +63,34 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Rules
      * for naming Amazon S3 Multi-Region Access Points</a>.</p>
      */
-    inline const Aws::String& GetAlias() const{ return m_alias; }
+    inline const Aws::String& GetAlias() const { return m_alias; }
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
-    inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
-    inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
-    inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
-    inline MultiRegionAccessPointReport& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
-    inline MultiRegionAccessPointReport& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
-    inline MultiRegionAccessPointReport& WithAlias(const char* value) { SetAlias(value); return *this;}
+    template<typename AliasT = Aws::String>
+    void SetAlias(AliasT&& value) { m_aliasHasBeenSet = true; m_alias = std::forward<AliasT>(value); }
+    template<typename AliasT = Aws::String>
+    MultiRegionAccessPointReport& WithAlias(AliasT&& value) { SetAlias(std::forward<AliasT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the Multi-Region Access Point create request was received.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline MultiRegionAccessPointReport& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline MultiRegionAccessPointReport& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    MultiRegionAccessPointReport& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const PublicAccessBlockConfiguration& GetPublicAccessBlock() const{ return m_publicAccessBlock; }
+    inline const PublicAccessBlockConfiguration& GetPublicAccessBlock() const { return m_publicAccessBlock; }
     inline bool PublicAccessBlockHasBeenSet() const { return m_publicAccessBlockHasBeenSet; }
-    inline void SetPublicAccessBlock(const PublicAccessBlockConfiguration& value) { m_publicAccessBlockHasBeenSet = true; m_publicAccessBlock = value; }
-    inline void SetPublicAccessBlock(PublicAccessBlockConfiguration&& value) { m_publicAccessBlockHasBeenSet = true; m_publicAccessBlock = std::move(value); }
-    inline MultiRegionAccessPointReport& WithPublicAccessBlock(const PublicAccessBlockConfiguration& value) { SetPublicAccessBlock(value); return *this;}
-    inline MultiRegionAccessPointReport& WithPublicAccessBlock(PublicAccessBlockConfiguration&& value) { SetPublicAccessBlock(std::move(value)); return *this;}
+    template<typename PublicAccessBlockT = PublicAccessBlockConfiguration>
+    void SetPublicAccessBlock(PublicAccessBlockT&& value) { m_publicAccessBlockHasBeenSet = true; m_publicAccessBlock = std::forward<PublicAccessBlockT>(value); }
+    template<typename PublicAccessBlockT = PublicAccessBlockConfiguration>
+    MultiRegionAccessPointReport& WithPublicAccessBlock(PublicAccessBlockT&& value) { SetPublicAccessBlock(std::forward<PublicAccessBlockT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,12 +103,10 @@ namespace Model
      * Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete
      * request to finish the deletion of the Multi-Region Access Point.</p>
      */
-    inline const MultiRegionAccessPointStatus& GetStatus() const{ return m_status; }
+    inline MultiRegionAccessPointStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const MultiRegionAccessPointStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(MultiRegionAccessPointStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline MultiRegionAccessPointReport& WithStatus(const MultiRegionAccessPointStatus& value) { SetStatus(value); return *this;}
-    inline MultiRegionAccessPointReport& WithStatus(MultiRegionAccessPointStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(MultiRegionAccessPointStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline MultiRegionAccessPointReport& WithStatus(MultiRegionAccessPointStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -120,14 +114,14 @@ namespace Model
      * <p>A collection of the Regions and buckets associated with the Multi-Region
      * Access Point.</p>
      */
-    inline const Aws::Vector<RegionReport>& GetRegions() const{ return m_regions; }
+    inline const Aws::Vector<RegionReport>& GetRegions() const { return m_regions; }
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
-    inline void SetRegions(const Aws::Vector<RegionReport>& value) { m_regionsHasBeenSet = true; m_regions = value; }
-    inline void SetRegions(Aws::Vector<RegionReport>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
-    inline MultiRegionAccessPointReport& WithRegions(const Aws::Vector<RegionReport>& value) { SetRegions(value); return *this;}
-    inline MultiRegionAccessPointReport& WithRegions(Aws::Vector<RegionReport>&& value) { SetRegions(std::move(value)); return *this;}
-    inline MultiRegionAccessPointReport& AddRegions(const RegionReport& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
-    inline MultiRegionAccessPointReport& AddRegions(RegionReport&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
+    template<typename RegionsT = Aws::Vector<RegionReport>>
+    void SetRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions = std::forward<RegionsT>(value); }
+    template<typename RegionsT = Aws::Vector<RegionReport>>
+    MultiRegionAccessPointReport& WithRegions(RegionsT&& value) { SetRegions(std::forward<RegionsT>(value)); return *this;}
+    template<typename RegionsT = RegionReport>
+    MultiRegionAccessPointReport& AddRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions.emplace_back(std::forward<RegionsT>(value)); return *this; }
     ///@}
   private:
 
@@ -137,13 +131,13 @@ namespace Model
     Aws::String m_alias;
     bool m_aliasHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     PublicAccessBlockConfiguration m_publicAccessBlock;
     bool m_publicAccessBlockHasBeenSet = false;
 
-    MultiRegionAccessPointStatus m_status;
+    MultiRegionAccessPointStatus m_status{MultiRegionAccessPointStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<RegionReport> m_regions;

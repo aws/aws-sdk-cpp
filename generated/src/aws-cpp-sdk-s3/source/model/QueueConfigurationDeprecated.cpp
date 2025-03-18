@@ -20,15 +20,7 @@ namespace S3
 namespace Model
 {
 
-QueueConfigurationDeprecated::QueueConfigurationDeprecated() : 
-    m_idHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_queueHasBeenSet(false)
-{
-}
-
 QueueConfigurationDeprecated::QueueConfigurationDeprecated(const XmlNode& xmlNode)
-  : QueueConfigurationDeprecated()
 {
   *this = xmlNode;
 }
@@ -49,6 +41,7 @@ QueueConfigurationDeprecated& QueueConfigurationDeprecated::operator =(const Xml
     if(!eventsNode.IsNull())
     {
       XmlNode eventMember = eventsNode;
+      m_eventsHasBeenSet = !eventMember.IsNull();
       while(!eventMember.IsNull())
       {
         m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventMember.GetText().c_str())));

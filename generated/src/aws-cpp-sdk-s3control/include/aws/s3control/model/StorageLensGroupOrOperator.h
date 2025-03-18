@@ -38,7 +38,7 @@ namespace Model
   class StorageLensGroupOrOperator
   {
   public:
-    AWS_S3CONTROL_API StorageLensGroupOrOperator();
+    AWS_S3CONTROL_API StorageLensGroupOrOperator() = default;
     AWS_S3CONTROL_API StorageLensGroupOrOperator(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API StorageLensGroupOrOperator& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,68 +49,66 @@ namespace Model
     /**
      * <p> Filters objects that match any of the specified prefixes. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetMatchAnyPrefix() const{ return m_matchAnyPrefix; }
+    inline const Aws::Vector<Aws::String>& GetMatchAnyPrefix() const { return m_matchAnyPrefix; }
     inline bool MatchAnyPrefixHasBeenSet() const { return m_matchAnyPrefixHasBeenSet; }
-    inline void SetMatchAnyPrefix(const Aws::Vector<Aws::String>& value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix = value; }
-    inline void SetMatchAnyPrefix(Aws::Vector<Aws::String>&& value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix = std::move(value); }
-    inline StorageLensGroupOrOperator& WithMatchAnyPrefix(const Aws::Vector<Aws::String>& value) { SetMatchAnyPrefix(value); return *this;}
-    inline StorageLensGroupOrOperator& WithMatchAnyPrefix(Aws::Vector<Aws::String>&& value) { SetMatchAnyPrefix(std::move(value)); return *this;}
-    inline StorageLensGroupOrOperator& AddMatchAnyPrefix(const Aws::String& value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix.push_back(value); return *this; }
-    inline StorageLensGroupOrOperator& AddMatchAnyPrefix(Aws::String&& value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix.push_back(std::move(value)); return *this; }
-    inline StorageLensGroupOrOperator& AddMatchAnyPrefix(const char* value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix.push_back(value); return *this; }
+    template<typename MatchAnyPrefixT = Aws::Vector<Aws::String>>
+    void SetMatchAnyPrefix(MatchAnyPrefixT&& value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix = std::forward<MatchAnyPrefixT>(value); }
+    template<typename MatchAnyPrefixT = Aws::Vector<Aws::String>>
+    StorageLensGroupOrOperator& WithMatchAnyPrefix(MatchAnyPrefixT&& value) { SetMatchAnyPrefix(std::forward<MatchAnyPrefixT>(value)); return *this;}
+    template<typename MatchAnyPrefixT = Aws::String>
+    StorageLensGroupOrOperator& AddMatchAnyPrefix(MatchAnyPrefixT&& value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix.emplace_back(std::forward<MatchAnyPrefixT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> Filters objects that match any of the specified suffixes. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetMatchAnySuffix() const{ return m_matchAnySuffix; }
+    inline const Aws::Vector<Aws::String>& GetMatchAnySuffix() const { return m_matchAnySuffix; }
     inline bool MatchAnySuffixHasBeenSet() const { return m_matchAnySuffixHasBeenSet; }
-    inline void SetMatchAnySuffix(const Aws::Vector<Aws::String>& value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix = value; }
-    inline void SetMatchAnySuffix(Aws::Vector<Aws::String>&& value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix = std::move(value); }
-    inline StorageLensGroupOrOperator& WithMatchAnySuffix(const Aws::Vector<Aws::String>& value) { SetMatchAnySuffix(value); return *this;}
-    inline StorageLensGroupOrOperator& WithMatchAnySuffix(Aws::Vector<Aws::String>&& value) { SetMatchAnySuffix(std::move(value)); return *this;}
-    inline StorageLensGroupOrOperator& AddMatchAnySuffix(const Aws::String& value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix.push_back(value); return *this; }
-    inline StorageLensGroupOrOperator& AddMatchAnySuffix(Aws::String&& value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix.push_back(std::move(value)); return *this; }
-    inline StorageLensGroupOrOperator& AddMatchAnySuffix(const char* value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix.push_back(value); return *this; }
+    template<typename MatchAnySuffixT = Aws::Vector<Aws::String>>
+    void SetMatchAnySuffix(MatchAnySuffixT&& value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix = std::forward<MatchAnySuffixT>(value); }
+    template<typename MatchAnySuffixT = Aws::Vector<Aws::String>>
+    StorageLensGroupOrOperator& WithMatchAnySuffix(MatchAnySuffixT&& value) { SetMatchAnySuffix(std::forward<MatchAnySuffixT>(value)); return *this;}
+    template<typename MatchAnySuffixT = Aws::String>
+    StorageLensGroupOrOperator& AddMatchAnySuffix(MatchAnySuffixT&& value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix.emplace_back(std::forward<MatchAnySuffixT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> Filters objects that match any of the specified S3 object tags. </p>
      */
-    inline const Aws::Vector<S3Tag>& GetMatchAnyTag() const{ return m_matchAnyTag; }
+    inline const Aws::Vector<S3Tag>& GetMatchAnyTag() const { return m_matchAnyTag; }
     inline bool MatchAnyTagHasBeenSet() const { return m_matchAnyTagHasBeenSet; }
-    inline void SetMatchAnyTag(const Aws::Vector<S3Tag>& value) { m_matchAnyTagHasBeenSet = true; m_matchAnyTag = value; }
-    inline void SetMatchAnyTag(Aws::Vector<S3Tag>&& value) { m_matchAnyTagHasBeenSet = true; m_matchAnyTag = std::move(value); }
-    inline StorageLensGroupOrOperator& WithMatchAnyTag(const Aws::Vector<S3Tag>& value) { SetMatchAnyTag(value); return *this;}
-    inline StorageLensGroupOrOperator& WithMatchAnyTag(Aws::Vector<S3Tag>&& value) { SetMatchAnyTag(std::move(value)); return *this;}
-    inline StorageLensGroupOrOperator& AddMatchAnyTag(const S3Tag& value) { m_matchAnyTagHasBeenSet = true; m_matchAnyTag.push_back(value); return *this; }
-    inline StorageLensGroupOrOperator& AddMatchAnyTag(S3Tag&& value) { m_matchAnyTagHasBeenSet = true; m_matchAnyTag.push_back(std::move(value)); return *this; }
+    template<typename MatchAnyTagT = Aws::Vector<S3Tag>>
+    void SetMatchAnyTag(MatchAnyTagT&& value) { m_matchAnyTagHasBeenSet = true; m_matchAnyTag = std::forward<MatchAnyTagT>(value); }
+    template<typename MatchAnyTagT = Aws::Vector<S3Tag>>
+    StorageLensGroupOrOperator& WithMatchAnyTag(MatchAnyTagT&& value) { SetMatchAnyTag(std::forward<MatchAnyTagT>(value)); return *this;}
+    template<typename MatchAnyTagT = S3Tag>
+    StorageLensGroupOrOperator& AddMatchAnyTag(MatchAnyTagT&& value) { m_matchAnyTagHasBeenSet = true; m_matchAnyTag.emplace_back(std::forward<MatchAnyTagT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> Filters objects that match the specified object age range. </p>
      */
-    inline const MatchObjectAge& GetMatchObjectAge() const{ return m_matchObjectAge; }
+    inline const MatchObjectAge& GetMatchObjectAge() const { return m_matchObjectAge; }
     inline bool MatchObjectAgeHasBeenSet() const { return m_matchObjectAgeHasBeenSet; }
-    inline void SetMatchObjectAge(const MatchObjectAge& value) { m_matchObjectAgeHasBeenSet = true; m_matchObjectAge = value; }
-    inline void SetMatchObjectAge(MatchObjectAge&& value) { m_matchObjectAgeHasBeenSet = true; m_matchObjectAge = std::move(value); }
-    inline StorageLensGroupOrOperator& WithMatchObjectAge(const MatchObjectAge& value) { SetMatchObjectAge(value); return *this;}
-    inline StorageLensGroupOrOperator& WithMatchObjectAge(MatchObjectAge&& value) { SetMatchObjectAge(std::move(value)); return *this;}
+    template<typename MatchObjectAgeT = MatchObjectAge>
+    void SetMatchObjectAge(MatchObjectAgeT&& value) { m_matchObjectAgeHasBeenSet = true; m_matchObjectAge = std::forward<MatchObjectAgeT>(value); }
+    template<typename MatchObjectAgeT = MatchObjectAge>
+    StorageLensGroupOrOperator& WithMatchObjectAge(MatchObjectAgeT&& value) { SetMatchObjectAge(std::forward<MatchObjectAgeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Filters objects that match the specified object size range. </p>
      */
-    inline const MatchObjectSize& GetMatchObjectSize() const{ return m_matchObjectSize; }
+    inline const MatchObjectSize& GetMatchObjectSize() const { return m_matchObjectSize; }
     inline bool MatchObjectSizeHasBeenSet() const { return m_matchObjectSizeHasBeenSet; }
-    inline void SetMatchObjectSize(const MatchObjectSize& value) { m_matchObjectSizeHasBeenSet = true; m_matchObjectSize = value; }
-    inline void SetMatchObjectSize(MatchObjectSize&& value) { m_matchObjectSizeHasBeenSet = true; m_matchObjectSize = std::move(value); }
-    inline StorageLensGroupOrOperator& WithMatchObjectSize(const MatchObjectSize& value) { SetMatchObjectSize(value); return *this;}
-    inline StorageLensGroupOrOperator& WithMatchObjectSize(MatchObjectSize&& value) { SetMatchObjectSize(std::move(value)); return *this;}
+    template<typename MatchObjectSizeT = MatchObjectSize>
+    void SetMatchObjectSize(MatchObjectSizeT&& value) { m_matchObjectSizeHasBeenSet = true; m_matchObjectSize = std::forward<MatchObjectSizeT>(value); }
+    template<typename MatchObjectSizeT = MatchObjectSize>
+    StorageLensGroupOrOperator& WithMatchObjectSize(MatchObjectSizeT&& value) { SetMatchObjectSize(std::forward<MatchObjectSizeT>(value)); return *this;}
     ///@}
   private:
 

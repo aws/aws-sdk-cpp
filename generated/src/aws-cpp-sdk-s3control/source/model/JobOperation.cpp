@@ -20,21 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-JobOperation::JobOperation() : 
-    m_lambdaInvokeHasBeenSet(false),
-    m_s3PutObjectCopyHasBeenSet(false),
-    m_s3PutObjectAclHasBeenSet(false),
-    m_s3PutObjectTaggingHasBeenSet(false),
-    m_s3DeleteObjectTaggingHasBeenSet(false),
-    m_s3InitiateRestoreObjectHasBeenSet(false),
-    m_s3PutObjectLegalHoldHasBeenSet(false),
-    m_s3PutObjectRetentionHasBeenSet(false),
-    m_s3ReplicateObjectHasBeenSet(false)
-{
-}
-
 JobOperation::JobOperation(const XmlNode& xmlNode)
-  : JobOperation()
 {
   *this = xmlNode;
 }

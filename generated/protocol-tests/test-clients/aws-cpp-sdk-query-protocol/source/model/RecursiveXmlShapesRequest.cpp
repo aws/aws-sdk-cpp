@@ -10,10 +10,6 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-RecursiveXmlShapesRequest::RecursiveXmlShapesRequest()
-{
-}
-
 Aws::String RecursiveXmlShapesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

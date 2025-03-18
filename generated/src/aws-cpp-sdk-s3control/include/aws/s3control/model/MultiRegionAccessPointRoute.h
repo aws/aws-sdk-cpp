@@ -38,7 +38,7 @@ namespace Model
   class MultiRegionAccessPointRoute
   {
   public:
-    AWS_S3CONTROL_API MultiRegionAccessPointRoute();
+    AWS_S3CONTROL_API MultiRegionAccessPointRoute() = default;
     AWS_S3CONTROL_API MultiRegionAccessPointRoute(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API MultiRegionAccessPointRoute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,14 +52,12 @@ namespace Model
      * value must be provided. If both are provided, the bucket must be in the
      * specified Region.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline MultiRegionAccessPointRoute& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline MultiRegionAccessPointRoute& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline MultiRegionAccessPointRoute& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    MultiRegionAccessPointRoute& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * value must be provided. If both are provided, the bucket must be in the
      * specified Region.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline MultiRegionAccessPointRoute& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline MultiRegionAccessPointRoute& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline MultiRegionAccessPointRoute& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    MultiRegionAccessPointRoute& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,7 +88,7 @@ namespace Model
      * configuration are designated as passive, you'll receive an
      * <code>InvalidRequest</code> error.</p>
      */
-    inline int GetTrafficDialPercentage() const{ return m_trafficDialPercentage; }
+    inline int GetTrafficDialPercentage() const { return m_trafficDialPercentage; }
     inline bool TrafficDialPercentageHasBeenSet() const { return m_trafficDialPercentageHasBeenSet; }
     inline void SetTrafficDialPercentage(int value) { m_trafficDialPercentageHasBeenSet = true; m_trafficDialPercentage = value; }
     inline MultiRegionAccessPointRoute& WithTrafficDialPercentage(int value) { SetTrafficDialPercentage(value); return *this;}
@@ -105,7 +101,7 @@ namespace Model
     Aws::String m_region;
     bool m_regionHasBeenSet = false;
 
-    int m_trafficDialPercentage;
+    int m_trafficDialPercentage{0};
     bool m_trafficDialPercentageHasBeenSet = false;
   };
 

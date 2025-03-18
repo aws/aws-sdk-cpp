@@ -18,14 +18,7 @@ namespace RestJsonProtocol
 namespace Model
 {
 
-NestedPayload::NestedPayload() : 
-    m_greetingHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 NestedPayload::NestedPayload(JsonView jsonValue)
-  : NestedPayload()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NestedPayload& NestedPayload::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("greeting"))
   {
     m_greeting = jsonValue.GetString("greeting");
-
     m_greetingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

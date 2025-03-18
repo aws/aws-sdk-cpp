@@ -14,11 +14,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-HttpRequestWithGreedyLabelInPathRequest::HttpRequestWithGreedyLabelInPathRequest() : 
-    m_fooHasBeenSet(false),
-    m_bazHasBeenSet(false)
-{
-}
 
 Aws::String HttpRequestWithGreedyLabelInPathRequest::SerializePayload() const
 {

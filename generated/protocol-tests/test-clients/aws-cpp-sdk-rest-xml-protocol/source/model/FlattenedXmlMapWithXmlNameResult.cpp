@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-FlattenedXmlMapWithXmlNameResult::FlattenedXmlMapWithXmlNameResult()
-{
-}
-
 FlattenedXmlMapWithXmlNameResult::FlattenedXmlMapWithXmlNameResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ FlattenedXmlMapWithXmlNameResult& FlattenedXmlMapWithXmlNameResult::operator =(c
     if(!myMapNode.IsNull())
     {
       XmlNode kVPEntry = myMapNode;
+      m_myMapHasBeenSet = !kVPEntry.IsNull();
       while(!kVPEntry.IsNull())
       {
         XmlNode keyNode = kVPEntry.FirstChild("K");
@@ -45,6 +42,7 @@ FlattenedXmlMapWithXmlNameResult& FlattenedXmlMapWithXmlNameResult::operator =(c
         kVPEntry = kVPEntry.NextNode("KVP");
       }
 
+      m_myMapHasBeenSet = true;
     }
   }
 
@@ -53,6 +51,7 @@ FlattenedXmlMapWithXmlNameResult& FlattenedXmlMapWithXmlNameResult::operator =(c
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

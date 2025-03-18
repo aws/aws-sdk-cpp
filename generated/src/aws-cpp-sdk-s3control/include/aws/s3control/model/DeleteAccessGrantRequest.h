@@ -21,7 +21,7 @@ namespace Model
   class DeleteAccessGrantRequest : public S3ControlRequest
   {
   public:
-    AWS_S3CONTROL_API DeleteAccessGrantRequest();
+    AWS_S3CONTROL_API DeleteAccessGrantRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline DeleteAccessGrantRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline DeleteAccessGrantRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline DeleteAccessGrantRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    DeleteAccessGrantRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The ID of the access grant. S3 Access Grants auto-generates this ID when you
      * create the access grant.</p>
      */
-    inline const Aws::String& GetAccessGrantId() const{ return m_accessGrantId; }
+    inline const Aws::String& GetAccessGrantId() const { return m_accessGrantId; }
     inline bool AccessGrantIdHasBeenSet() const { return m_accessGrantIdHasBeenSet; }
-    inline void SetAccessGrantId(const Aws::String& value) { m_accessGrantIdHasBeenSet = true; m_accessGrantId = value; }
-    inline void SetAccessGrantId(Aws::String&& value) { m_accessGrantIdHasBeenSet = true; m_accessGrantId = std::move(value); }
-    inline void SetAccessGrantId(const char* value) { m_accessGrantIdHasBeenSet = true; m_accessGrantId.assign(value); }
-    inline DeleteAccessGrantRequest& WithAccessGrantId(const Aws::String& value) { SetAccessGrantId(value); return *this;}
-    inline DeleteAccessGrantRequest& WithAccessGrantId(Aws::String&& value) { SetAccessGrantId(std::move(value)); return *this;}
-    inline DeleteAccessGrantRequest& WithAccessGrantId(const char* value) { SetAccessGrantId(value); return *this;}
+    template<typename AccessGrantIdT = Aws::String>
+    void SetAccessGrantId(AccessGrantIdT&& value) { m_accessGrantIdHasBeenSet = true; m_accessGrantId = std::forward<AccessGrantIdT>(value); }
+    template<typename AccessGrantIdT = Aws::String>
+    DeleteAccessGrantRequest& WithAccessGrantId(AccessGrantIdT&& value) { SetAccessGrantId(std::forward<AccessGrantIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -21,7 +21,7 @@ namespace Model
   class GetSessionTokenRequest : public STSRequest
   {
   public:
-    AWS_STS_API GetSessionTokenRequest();
+    AWS_STS_API GetSessionTokenRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,7 +45,7 @@ namespace Model
      * 3,600 seconds (one hour). If the duration is longer than one hour, the session
      * for Amazon Web Services account owners defaults to one hour.</p>
      */
-    inline int GetDurationSeconds() const{ return m_durationSeconds; }
+    inline int GetDurationSeconds() const { return m_durationSeconds; }
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
     inline GetSessionTokenRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
@@ -65,14 +65,12 @@ namespace Model
      * characters with no spaces. You can also include underscores or any of the
      * following characters: =,.@:/-</p>
      */
-    inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
+    inline const Aws::String& GetSerialNumber() const { return m_serialNumber; }
     inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }
-    inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
-    inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::move(value); }
-    inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
-    inline GetSessionTokenRequest& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
-    inline GetSessionTokenRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(std::move(value)); return *this;}
-    inline GetSessionTokenRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
+    template<typename SerialNumberT = Aws::String>
+    void SetSerialNumber(SerialNumberT&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::forward<SerialNumberT>(value); }
+    template<typename SerialNumberT = Aws::String>
+    GetSessionTokenRequest& WithSerialNumber(SerialNumberT&& value) { SetSerialNumber(std::forward<SerialNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,18 +83,16 @@ namespace Model
      * authentication.</p> <p>The format for this parameter, as described by its regex
      * pattern, is a sequence of six numeric digits.</p>
      */
-    inline const Aws::String& GetTokenCode() const{ return m_tokenCode; }
+    inline const Aws::String& GetTokenCode() const { return m_tokenCode; }
     inline bool TokenCodeHasBeenSet() const { return m_tokenCodeHasBeenSet; }
-    inline void SetTokenCode(const Aws::String& value) { m_tokenCodeHasBeenSet = true; m_tokenCode = value; }
-    inline void SetTokenCode(Aws::String&& value) { m_tokenCodeHasBeenSet = true; m_tokenCode = std::move(value); }
-    inline void SetTokenCode(const char* value) { m_tokenCodeHasBeenSet = true; m_tokenCode.assign(value); }
-    inline GetSessionTokenRequest& WithTokenCode(const Aws::String& value) { SetTokenCode(value); return *this;}
-    inline GetSessionTokenRequest& WithTokenCode(Aws::String&& value) { SetTokenCode(std::move(value)); return *this;}
-    inline GetSessionTokenRequest& WithTokenCode(const char* value) { SetTokenCode(value); return *this;}
+    template<typename TokenCodeT = Aws::String>
+    void SetTokenCode(TokenCodeT&& value) { m_tokenCodeHasBeenSet = true; m_tokenCode = std::forward<TokenCodeT>(value); }
+    template<typename TokenCodeT = Aws::String>
+    GetSessionTokenRequest& WithTokenCode(TokenCodeT&& value) { SetTokenCode(std::forward<TokenCodeT>(value)); return *this;}
     ///@}
   private:
 
-    int m_durationSeconds;
+    int m_durationSeconds{0};
     bool m_durationSecondsHasBeenSet = false;
 
     Aws::String m_serialNumber;

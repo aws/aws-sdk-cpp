@@ -18,14 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-ConfigurationEvent::ConfigurationEvent() : 
-    m_channelDefinitionsHasBeenSet(false),
-    m_postCallAnalyticsSettingsHasBeenSet(false)
-{
-}
-
 ConfigurationEvent::ConfigurationEvent(JsonView jsonValue)
-  : ConfigurationEvent()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ ConfigurationEvent& ConfigurationEvent::operator =(JsonView jsonValue)
     }
     m_channelDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostCallAnalyticsSettings"))
   {
     m_postCallAnalyticsSettings = jsonValue.GetObject("PostCallAnalyticsSettings");
-
     m_postCallAnalyticsSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

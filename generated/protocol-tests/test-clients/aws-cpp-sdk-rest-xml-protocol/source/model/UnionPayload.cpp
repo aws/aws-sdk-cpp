@@ -20,13 +20,7 @@ namespace RestXmlProtocol
 namespace Model
 {
 
-UnionPayload::UnionPayload() : 
-    m_greetingHasBeenSet(false)
-{
-}
-
 UnionPayload::UnionPayload(const XmlNode& xmlNode)
-  : UnionPayload()
 {
   *this = xmlNode;
 }

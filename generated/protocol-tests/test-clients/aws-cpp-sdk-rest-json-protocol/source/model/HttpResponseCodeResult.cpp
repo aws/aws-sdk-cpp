@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-HttpResponseCodeResult::HttpResponseCodeResult() : 
-    m_status(0)
-{
-}
-
 HttpResponseCodeResult::HttpResponseCodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : HttpResponseCodeResult()
 {
   *this = result;
 }
@@ -37,10 +31,11 @@ HttpResponseCodeResult& HttpResponseCodeResult::operator =(const Aws::AmazonWebS
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

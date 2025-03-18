@@ -18,13 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-InputFormatOptions::InputFormatOptions() : 
-    m_csvHasBeenSet(false)
-{
-}
-
 InputFormatOptions::InputFormatOptions(JsonView jsonValue)
-  : InputFormatOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InputFormatOptions& InputFormatOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Csv"))
   {
     m_csv = jsonValue.GetObject("Csv");
-
     m_csvHasBeenSet = true;
   }
-
   return *this;
 }
 

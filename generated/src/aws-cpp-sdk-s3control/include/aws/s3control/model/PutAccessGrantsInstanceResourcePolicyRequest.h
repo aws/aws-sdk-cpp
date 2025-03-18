@@ -21,7 +21,7 @@ namespace Model
   class PutAccessGrantsInstanceResourcePolicyRequest : public S3ControlRequest
   {
   public:
-    AWS_S3CONTROL_API PutAccessGrantsInstanceResourcePolicyRequest();
+    AWS_S3CONTROL_API PutAccessGrantsInstanceResourcePolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline PutAccessGrantsInstanceResourcePolicyRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline PutAccessGrantsInstanceResourcePolicyRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline PutAccessGrantsInstanceResourcePolicyRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    PutAccessGrantsInstanceResourcePolicyRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,28 +57,24 @@ namespace Model
      * <p>The resource policy of the S3 Access Grants instance that you are
      * updating.</p>
      */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
+    inline const Aws::String& GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-    inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-    inline PutAccessGrantsInstanceResourcePolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-    inline PutAccessGrantsInstanceResourcePolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-    inline PutAccessGrantsInstanceResourcePolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    PutAccessGrantsInstanceResourcePolicyRequest& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Organization of the resource policy of the S3 Access Grants instance.</p>
      */
-    inline const Aws::String& GetOrganization() const{ return m_organization; }
+    inline const Aws::String& GetOrganization() const { return m_organization; }
     inline bool OrganizationHasBeenSet() const { return m_organizationHasBeenSet; }
-    inline void SetOrganization(const Aws::String& value) { m_organizationHasBeenSet = true; m_organization = value; }
-    inline void SetOrganization(Aws::String&& value) { m_organizationHasBeenSet = true; m_organization = std::move(value); }
-    inline void SetOrganization(const char* value) { m_organizationHasBeenSet = true; m_organization.assign(value); }
-    inline PutAccessGrantsInstanceResourcePolicyRequest& WithOrganization(const Aws::String& value) { SetOrganization(value); return *this;}
-    inline PutAccessGrantsInstanceResourcePolicyRequest& WithOrganization(Aws::String&& value) { SetOrganization(std::move(value)); return *this;}
-    inline PutAccessGrantsInstanceResourcePolicyRequest& WithOrganization(const char* value) { SetOrganization(value); return *this;}
+    template<typename OrganizationT = Aws::String>
+    void SetOrganization(OrganizationT&& value) { m_organizationHasBeenSet = true; m_organization = std::forward<OrganizationT>(value); }
+    template<typename OrganizationT = Aws::String>
+    PutAccessGrantsInstanceResourcePolicyRequest& WithOrganization(OrganizationT&& value) { SetOrganization(std::forward<OrganizationT>(value)); return *this;}
     ///@}
   private:
 

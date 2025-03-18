@@ -20,13 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ObjectLambdaContentTransformation::ObjectLambdaContentTransformation() : 
-    m_awsLambdaHasBeenSet(false)
-{
-}
-
 ObjectLambdaContentTransformation::ObjectLambdaContentTransformation(const XmlNode& xmlNode)
-  : ObjectLambdaContentTransformation()
 {
   *this = xmlNode;
 }

@@ -35,7 +35,7 @@ namespace Model
   class StorageLensGroupLevelSelectionCriteria
   {
   public:
-    AWS_S3CONTROL_API StorageLensGroupLevelSelectionCriteria();
+    AWS_S3CONTROL_API StorageLensGroupLevelSelectionCriteria() = default;
     AWS_S3CONTROL_API StorageLensGroupLevelSelectionCriteria(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API StorageLensGroupLevelSelectionCriteria& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,15 +47,14 @@ namespace Model
      * <p> Indicates which Storage Lens group ARNs to include in the Storage Lens group
      * aggregation. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetInclude() const{ return m_include; }
+    inline const Aws::Vector<Aws::String>& GetInclude() const { return m_include; }
     inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
-    inline void SetInclude(const Aws::Vector<Aws::String>& value) { m_includeHasBeenSet = true; m_include = value; }
-    inline void SetInclude(Aws::Vector<Aws::String>&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
-    inline StorageLensGroupLevelSelectionCriteria& WithInclude(const Aws::Vector<Aws::String>& value) { SetInclude(value); return *this;}
-    inline StorageLensGroupLevelSelectionCriteria& WithInclude(Aws::Vector<Aws::String>&& value) { SetInclude(std::move(value)); return *this;}
-    inline StorageLensGroupLevelSelectionCriteria& AddInclude(const Aws::String& value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
-    inline StorageLensGroupLevelSelectionCriteria& AddInclude(Aws::String&& value) { m_includeHasBeenSet = true; m_include.push_back(std::move(value)); return *this; }
-    inline StorageLensGroupLevelSelectionCriteria& AddInclude(const char* value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
+    template<typename IncludeT = Aws::Vector<Aws::String>>
+    void SetInclude(IncludeT&& value) { m_includeHasBeenSet = true; m_include = std::forward<IncludeT>(value); }
+    template<typename IncludeT = Aws::Vector<Aws::String>>
+    StorageLensGroupLevelSelectionCriteria& WithInclude(IncludeT&& value) { SetInclude(std::forward<IncludeT>(value)); return *this;}
+    template<typename IncludeT = Aws::String>
+    StorageLensGroupLevelSelectionCriteria& AddInclude(IncludeT&& value) { m_includeHasBeenSet = true; m_include.emplace_back(std::forward<IncludeT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,15 +62,14 @@ namespace Model
      * <p> Indicates which Storage Lens group ARNs to exclude from the Storage Lens
      * group aggregation. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetExclude() const{ return m_exclude; }
+    inline const Aws::Vector<Aws::String>& GetExclude() const { return m_exclude; }
     inline bool ExcludeHasBeenSet() const { return m_excludeHasBeenSet; }
-    inline void SetExclude(const Aws::Vector<Aws::String>& value) { m_excludeHasBeenSet = true; m_exclude = value; }
-    inline void SetExclude(Aws::Vector<Aws::String>&& value) { m_excludeHasBeenSet = true; m_exclude = std::move(value); }
-    inline StorageLensGroupLevelSelectionCriteria& WithExclude(const Aws::Vector<Aws::String>& value) { SetExclude(value); return *this;}
-    inline StorageLensGroupLevelSelectionCriteria& WithExclude(Aws::Vector<Aws::String>&& value) { SetExclude(std::move(value)); return *this;}
-    inline StorageLensGroupLevelSelectionCriteria& AddExclude(const Aws::String& value) { m_excludeHasBeenSet = true; m_exclude.push_back(value); return *this; }
-    inline StorageLensGroupLevelSelectionCriteria& AddExclude(Aws::String&& value) { m_excludeHasBeenSet = true; m_exclude.push_back(std::move(value)); return *this; }
-    inline StorageLensGroupLevelSelectionCriteria& AddExclude(const char* value) { m_excludeHasBeenSet = true; m_exclude.push_back(value); return *this; }
+    template<typename ExcludeT = Aws::Vector<Aws::String>>
+    void SetExclude(ExcludeT&& value) { m_excludeHasBeenSet = true; m_exclude = std::forward<ExcludeT>(value); }
+    template<typename ExcludeT = Aws::Vector<Aws::String>>
+    StorageLensGroupLevelSelectionCriteria& WithExclude(ExcludeT&& value) { SetExclude(std::forward<ExcludeT>(value)); return *this;}
+    template<typename ExcludeT = Aws::String>
+    StorageLensGroupLevelSelectionCriteria& AddExclude(ExcludeT&& value) { m_excludeHasBeenSet = true; m_exclude.emplace_back(std::forward<ExcludeT>(value)); return *this; }
     ///@}
   private:
 

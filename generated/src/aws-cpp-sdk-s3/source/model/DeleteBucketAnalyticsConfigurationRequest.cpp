@@ -17,13 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteBucketAnalyticsConfigurationRequest::DeleteBucketAnalyticsConfigurationRequest() : 
-    m_bucketHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
 
 Aws::String DeleteBucketAnalyticsConfigurationRequest::SerializePayload() const
 {

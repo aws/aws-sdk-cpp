@@ -27,7 +27,7 @@ namespace Model
   class DeleteMultiRegionAccessPointResult
   {
   public:
-    AWS_S3CONTROL_API DeleteMultiRegionAccessPointResult();
+    AWS_S3CONTROL_API DeleteMultiRegionAccessPointResult() = default;
     AWS_S3CONTROL_API DeleteMultiRegionAccessPointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CONTROL_API DeleteMultiRegionAccessPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,47 +38,44 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
      * to determine the status of asynchronous requests.</p>
      */
-    inline const Aws::String& GetRequestTokenARN() const{ return m_requestTokenARN; }
-    inline void SetRequestTokenARN(const Aws::String& value) { m_requestTokenARN = value; }
-    inline void SetRequestTokenARN(Aws::String&& value) { m_requestTokenARN = std::move(value); }
-    inline void SetRequestTokenARN(const char* value) { m_requestTokenARN.assign(value); }
-    inline DeleteMultiRegionAccessPointResult& WithRequestTokenARN(const Aws::String& value) { SetRequestTokenARN(value); return *this;}
-    inline DeleteMultiRegionAccessPointResult& WithRequestTokenARN(Aws::String&& value) { SetRequestTokenARN(std::move(value)); return *this;}
-    inline DeleteMultiRegionAccessPointResult& WithRequestTokenARN(const char* value) { SetRequestTokenARN(value); return *this;}
+    inline const Aws::String& GetRequestTokenARN() const { return m_requestTokenARN; }
+    template<typename RequestTokenARNT = Aws::String>
+    void SetRequestTokenARN(RequestTokenARNT&& value) { m_requestTokenARNHasBeenSet = true; m_requestTokenARN = std::forward<RequestTokenARNT>(value); }
+    template<typename RequestTokenARNT = Aws::String>
+    DeleteMultiRegionAccessPointResult& WithRequestTokenARN(RequestTokenARNT&& value) { SetRequestTokenARN(std::forward<RequestTokenARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * AWS Request Id value
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteMultiRegionAccessPointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteMultiRegionAccessPointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteMultiRegionAccessPointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteMultiRegionAccessPointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * x-amz-id-2 header value, also known as Host Id
      */
-    inline const Aws::String& GetHostId() const{ return m_hostId; }
-    inline void SetHostId(const Aws::String& value) { m_hostId = value; }
-    inline void SetHostId(Aws::String&& value) { m_hostId = std::move(value); }
-    inline void SetHostId(const char* value) { m_hostId.assign(value); }
-    inline DeleteMultiRegionAccessPointResult& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
-    inline DeleteMultiRegionAccessPointResult& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
-    inline DeleteMultiRegionAccessPointResult& WithHostId(const char* value) { SetHostId(value); return *this;}
+    inline const Aws::String& GetHostId() const { return m_hostId; }
+    template<typename HostIdT = Aws::String>
+    void SetHostId(HostIdT&& value) { m_hostIdHasBeenSet = true; m_hostId = std::forward<HostIdT>(value); }
+    template<typename HostIdT = Aws::String>
+    DeleteMultiRegionAccessPointResult& WithHostId(HostIdT&& value) { SetHostId(std::forward<HostIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_requestTokenARN;
+    bool m_requestTokenARNHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_hostId;
+    bool m_hostIdHasBeenSet = false;
   };
 
 } // namespace Model

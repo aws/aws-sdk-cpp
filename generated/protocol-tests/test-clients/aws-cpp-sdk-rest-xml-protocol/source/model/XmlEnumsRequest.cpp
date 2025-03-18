@@ -14,18 +14,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-XmlEnumsRequest::XmlEnumsRequest() : 
-    m_fooEnum1(FooEnum::NOT_SET),
-    m_fooEnum1HasBeenSet(false),
-    m_fooEnum2(FooEnum::NOT_SET),
-    m_fooEnum2HasBeenSet(false),
-    m_fooEnum3(FooEnum::NOT_SET),
-    m_fooEnum3HasBeenSet(false),
-    m_fooEnumListHasBeenSet(false),
-    m_fooEnumSetHasBeenSet(false),
-    m_fooEnumMapHasBeenSet(false)
-{
-}
 
 Aws::String XmlEnumsRequest::SerializePayload() const
 {

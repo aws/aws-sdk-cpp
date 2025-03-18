@@ -14,24 +14,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-XmlListsRequest::XmlListsRequest() : 
-    m_stringListHasBeenSet(false),
-    m_stringSetHasBeenSet(false),
-    m_integerListHasBeenSet(false),
-    m_booleanListHasBeenSet(false),
-    m_timestampListHasBeenSet(false),
-    m_enumListHasBeenSet(false),
-    m_intEnumListHasBeenSet(false),
-    m_nestedStringListHasBeenSet(false),
-    m_renamedListMembersHasBeenSet(false),
-    m_flattenedListHasBeenSet(false),
-    m_flattenedList2HasBeenSet(false),
-    m_flattenedListWithMemberNamespaceHasBeenSet(false),
-    m_flattenedListWithNamespaceHasBeenSet(false),
-    m_structureListHasBeenSet(false),
-    m_flattenedStructureListHasBeenSet(false)
-{
-}
 
 Aws::String XmlListsRequest::SerializePayload() const
 {

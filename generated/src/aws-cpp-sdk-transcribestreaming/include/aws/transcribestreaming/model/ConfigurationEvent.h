@@ -34,7 +34,7 @@ namespace Model
   class ConfigurationEvent
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API ConfigurationEvent();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API ConfigurationEvent() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API ConfigurationEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API ConfigurationEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
     /**
      * <p>Indicates which speaker is on which audio channel.</p>
      */
-    inline const Aws::Vector<ChannelDefinition>& GetChannelDefinitions() const{ return m_channelDefinitions; }
+    inline const Aws::Vector<ChannelDefinition>& GetChannelDefinitions() const { return m_channelDefinitions; }
     inline bool ChannelDefinitionsHasBeenSet() const { return m_channelDefinitionsHasBeenSet; }
-    inline void SetChannelDefinitions(const Aws::Vector<ChannelDefinition>& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = value; }
-    inline void SetChannelDefinitions(Aws::Vector<ChannelDefinition>&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = std::move(value); }
-    inline ConfigurationEvent& WithChannelDefinitions(const Aws::Vector<ChannelDefinition>& value) { SetChannelDefinitions(value); return *this;}
-    inline ConfigurationEvent& WithChannelDefinitions(Aws::Vector<ChannelDefinition>&& value) { SetChannelDefinitions(std::move(value)); return *this;}
-    inline ConfigurationEvent& AddChannelDefinitions(const ChannelDefinition& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.push_back(value); return *this; }
-    inline ConfigurationEvent& AddChannelDefinitions(ChannelDefinition&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.push_back(std::move(value)); return *this; }
+    template<typename ChannelDefinitionsT = Aws::Vector<ChannelDefinition>>
+    void SetChannelDefinitions(ChannelDefinitionsT&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = std::forward<ChannelDefinitionsT>(value); }
+    template<typename ChannelDefinitionsT = Aws::Vector<ChannelDefinition>>
+    ConfigurationEvent& WithChannelDefinitions(ChannelDefinitionsT&& value) { SetChannelDefinitions(std::forward<ChannelDefinitionsT>(value)); return *this;}
+    template<typename ChannelDefinitionsT = ChannelDefinition>
+    ConfigurationEvent& AddChannelDefinitions(ChannelDefinitionsT&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.emplace_back(std::forward<ChannelDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,12 +63,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html">Post-call
      * analytics</a> for more information on this feature.</p>
      */
-    inline const PostCallAnalyticsSettings& GetPostCallAnalyticsSettings() const{ return m_postCallAnalyticsSettings; }
+    inline const PostCallAnalyticsSettings& GetPostCallAnalyticsSettings() const { return m_postCallAnalyticsSettings; }
     inline bool PostCallAnalyticsSettingsHasBeenSet() const { return m_postCallAnalyticsSettingsHasBeenSet; }
-    inline void SetPostCallAnalyticsSettings(const PostCallAnalyticsSettings& value) { m_postCallAnalyticsSettingsHasBeenSet = true; m_postCallAnalyticsSettings = value; }
-    inline void SetPostCallAnalyticsSettings(PostCallAnalyticsSettings&& value) { m_postCallAnalyticsSettingsHasBeenSet = true; m_postCallAnalyticsSettings = std::move(value); }
-    inline ConfigurationEvent& WithPostCallAnalyticsSettings(const PostCallAnalyticsSettings& value) { SetPostCallAnalyticsSettings(value); return *this;}
-    inline ConfigurationEvent& WithPostCallAnalyticsSettings(PostCallAnalyticsSettings&& value) { SetPostCallAnalyticsSettings(std::move(value)); return *this;}
+    template<typename PostCallAnalyticsSettingsT = PostCallAnalyticsSettings>
+    void SetPostCallAnalyticsSettings(PostCallAnalyticsSettingsT&& value) { m_postCallAnalyticsSettingsHasBeenSet = true; m_postCallAnalyticsSettings = std::forward<PostCallAnalyticsSettingsT>(value); }
+    template<typename PostCallAnalyticsSettingsT = PostCallAnalyticsSettings>
+    ConfigurationEvent& WithPostCallAnalyticsSettings(PostCallAnalyticsSettingsT&& value) { SetPostCallAnalyticsSettings(std::forward<PostCallAnalyticsSettingsT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,16 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-PutBucketNotificationConfigurationRequest::PutBucketNotificationConfigurationRequest() : 
-    m_bucketHasBeenSet(false),
-    m_notificationConfigurationHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_skipDestinationValidation(false),
-    m_skipDestinationValidationHasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
-
 Aws::String PutBucketNotificationConfigurationRequest::SerializePayload() const
 {
   XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("NotificationConfiguration");

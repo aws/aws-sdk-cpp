@@ -38,7 +38,7 @@ namespace Model
   class BatchGetItemResult
   {
   public:
-    AWS_DYNAMODB_API BatchGetItemResult();
+    AWS_DYNAMODB_API BatchGetItemResult() = default;
     AWS_DYNAMODB_API BatchGetItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DYNAMODB_API BatchGetItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -49,17 +49,15 @@ namespace Model
      * <code>Responses</code> consists of a table name or ARN, along with a map of
      * attribute data consisting of the data type and attribute value.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>& GetResponses() const{ return m_responses; }
-    inline void SetResponses(const Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>& value) { m_responses = value; }
-    inline void SetResponses(Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>&& value) { m_responses = std::move(value); }
-    inline BatchGetItemResult& WithResponses(const Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>& value) { SetResponses(value); return *this;}
-    inline BatchGetItemResult& WithResponses(Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>&& value) { SetResponses(std::move(value)); return *this;}
-    inline BatchGetItemResult& AddResponses(const Aws::String& key, const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& value) { m_responses.emplace(key, value); return *this; }
-    inline BatchGetItemResult& AddResponses(Aws::String&& key, const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& value) { m_responses.emplace(std::move(key), value); return *this; }
-    inline BatchGetItemResult& AddResponses(const Aws::String& key, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>&& value) { m_responses.emplace(key, std::move(value)); return *this; }
-    inline BatchGetItemResult& AddResponses(Aws::String&& key, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>&& value) { m_responses.emplace(std::move(key), std::move(value)); return *this; }
-    inline BatchGetItemResult& AddResponses(const char* key, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>&& value) { m_responses.emplace(key, std::move(value)); return *this; }
-    inline BatchGetItemResult& AddResponses(const char* key, const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& value) { m_responses.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>& GetResponses() const { return m_responses; }
+    template<typename ResponsesT = Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>>
+    void SetResponses(ResponsesT&& value) { m_responsesHasBeenSet = true; m_responses = std::forward<ResponsesT>(value); }
+    template<typename ResponsesT = Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>>
+    BatchGetItemResult& WithResponses(ResponsesT&& value) { SetResponses(std::forward<ResponsesT>(value)); return *this;}
+    template<typename ResponsesKeyT = Aws::String, typename ResponsesValueT = Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>
+    BatchGetItemResult& AddResponses(ResponsesKeyT&& key, ResponsesValueT&& value) {
+      m_responsesHasBeenSet = true; m_responses.emplace(std::forward<ResponsesKeyT>(key), std::forward<ResponsesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -80,17 +78,15 @@ namespace Model
      * unprocessed keys remaining, the response contains an empty
      * <code>UnprocessedKeys</code> map.</p>
      */
-    inline const Aws::Map<Aws::String, KeysAndAttributes>& GetUnprocessedKeys() const{ return m_unprocessedKeys; }
-    inline void SetUnprocessedKeys(const Aws::Map<Aws::String, KeysAndAttributes>& value) { m_unprocessedKeys = value; }
-    inline void SetUnprocessedKeys(Aws::Map<Aws::String, KeysAndAttributes>&& value) { m_unprocessedKeys = std::move(value); }
-    inline BatchGetItemResult& WithUnprocessedKeys(const Aws::Map<Aws::String, KeysAndAttributes>& value) { SetUnprocessedKeys(value); return *this;}
-    inline BatchGetItemResult& WithUnprocessedKeys(Aws::Map<Aws::String, KeysAndAttributes>&& value) { SetUnprocessedKeys(std::move(value)); return *this;}
-    inline BatchGetItemResult& AddUnprocessedKeys(const Aws::String& key, const KeysAndAttributes& value) { m_unprocessedKeys.emplace(key, value); return *this; }
-    inline BatchGetItemResult& AddUnprocessedKeys(Aws::String&& key, const KeysAndAttributes& value) { m_unprocessedKeys.emplace(std::move(key), value); return *this; }
-    inline BatchGetItemResult& AddUnprocessedKeys(const Aws::String& key, KeysAndAttributes&& value) { m_unprocessedKeys.emplace(key, std::move(value)); return *this; }
-    inline BatchGetItemResult& AddUnprocessedKeys(Aws::String&& key, KeysAndAttributes&& value) { m_unprocessedKeys.emplace(std::move(key), std::move(value)); return *this; }
-    inline BatchGetItemResult& AddUnprocessedKeys(const char* key, KeysAndAttributes&& value) { m_unprocessedKeys.emplace(key, std::move(value)); return *this; }
-    inline BatchGetItemResult& AddUnprocessedKeys(const char* key, const KeysAndAttributes& value) { m_unprocessedKeys.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, KeysAndAttributes>& GetUnprocessedKeys() const { return m_unprocessedKeys; }
+    template<typename UnprocessedKeysT = Aws::Map<Aws::String, KeysAndAttributes>>
+    void SetUnprocessedKeys(UnprocessedKeysT&& value) { m_unprocessedKeysHasBeenSet = true; m_unprocessedKeys = std::forward<UnprocessedKeysT>(value); }
+    template<typename UnprocessedKeysT = Aws::Map<Aws::String, KeysAndAttributes>>
+    BatchGetItemResult& WithUnprocessedKeys(UnprocessedKeysT&& value) { SetUnprocessedKeys(std::forward<UnprocessedKeysT>(value)); return *this;}
+    template<typename UnprocessedKeysKeyT = Aws::String, typename UnprocessedKeysValueT = KeysAndAttributes>
+    BatchGetItemResult& AddUnprocessedKeys(UnprocessedKeysKeyT&& key, UnprocessedKeysValueT&& value) {
+      m_unprocessedKeysHasBeenSet = true; m_unprocessedKeys.emplace(std::forward<UnprocessedKeysKeyT>(key), std::forward<UnprocessedKeysValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -101,34 +97,36 @@ namespace Model
      * </li> <li> <p> <code>CapacityUnits</code> - The total number of capacity units
      * consumed.</p> </li> </ul>
      */
-    inline const Aws::Vector<ConsumedCapacity>& GetConsumedCapacity() const{ return m_consumedCapacity; }
-    inline void SetConsumedCapacity(const Aws::Vector<ConsumedCapacity>& value) { m_consumedCapacity = value; }
-    inline void SetConsumedCapacity(Aws::Vector<ConsumedCapacity>&& value) { m_consumedCapacity = std::move(value); }
-    inline BatchGetItemResult& WithConsumedCapacity(const Aws::Vector<ConsumedCapacity>& value) { SetConsumedCapacity(value); return *this;}
-    inline BatchGetItemResult& WithConsumedCapacity(Aws::Vector<ConsumedCapacity>&& value) { SetConsumedCapacity(std::move(value)); return *this;}
-    inline BatchGetItemResult& AddConsumedCapacity(const ConsumedCapacity& value) { m_consumedCapacity.push_back(value); return *this; }
-    inline BatchGetItemResult& AddConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConsumedCapacity>& GetConsumedCapacity() const { return m_consumedCapacity; }
+    template<typename ConsumedCapacityT = Aws::Vector<ConsumedCapacity>>
+    void SetConsumedCapacity(ConsumedCapacityT&& value) { m_consumedCapacityHasBeenSet = true; m_consumedCapacity = std::forward<ConsumedCapacityT>(value); }
+    template<typename ConsumedCapacityT = Aws::Vector<ConsumedCapacity>>
+    BatchGetItemResult& WithConsumedCapacity(ConsumedCapacityT&& value) { SetConsumedCapacity(std::forward<ConsumedCapacityT>(value)); return *this;}
+    template<typename ConsumedCapacityT = ConsumedCapacity>
+    BatchGetItemResult& AddConsumedCapacity(ConsumedCapacityT&& value) { m_consumedCapacityHasBeenSet = true; m_consumedCapacity.emplace_back(std::forward<ConsumedCapacityT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetItemResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetItemResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetItemResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetItemResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>> m_responses;
+    bool m_responsesHasBeenSet = false;
 
     Aws::Map<Aws::String, KeysAndAttributes> m_unprocessedKeys;
+    bool m_unprocessedKeysHasBeenSet = false;
 
     Aws::Vector<ConsumedCapacity> m_consumedCapacity;
+    bool m_consumedCapacityHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

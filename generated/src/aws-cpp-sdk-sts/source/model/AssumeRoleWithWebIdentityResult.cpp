@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssumeRoleWithWebIdentityResult::AssumeRoleWithWebIdentityResult() : 
-    m_packedPolicySize(0)
-{
-}
-
 AssumeRoleWithWebIdentityResult::AssumeRoleWithWebIdentityResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : AssumeRoleWithWebIdentityResult()
 {
   *this = result;
 }
@@ -44,42 +38,50 @@ AssumeRoleWithWebIdentityResult& AssumeRoleWithWebIdentityResult::operator =(con
     if(!credentialsNode.IsNull())
     {
       m_credentials = credentialsNode;
+      m_credentialsHasBeenSet = true;
     }
     XmlNode subjectFromWebIdentityTokenNode = resultNode.FirstChild("SubjectFromWebIdentityToken");
     if(!subjectFromWebIdentityTokenNode.IsNull())
     {
       m_subjectFromWebIdentityToken = Aws::Utils::Xml::DecodeEscapedXmlText(subjectFromWebIdentityTokenNode.GetText());
+      m_subjectFromWebIdentityTokenHasBeenSet = true;
     }
     XmlNode assumedRoleUserNode = resultNode.FirstChild("AssumedRoleUser");
     if(!assumedRoleUserNode.IsNull())
     {
       m_assumedRoleUser = assumedRoleUserNode;
+      m_assumedRoleUserHasBeenSet = true;
     }
     XmlNode packedPolicySizeNode = resultNode.FirstChild("PackedPolicySize");
     if(!packedPolicySizeNode.IsNull())
     {
       m_packedPolicySize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(packedPolicySizeNode.GetText()).c_str()).c_str());
+      m_packedPolicySizeHasBeenSet = true;
     }
     XmlNode providerNode = resultNode.FirstChild("Provider");
     if(!providerNode.IsNull())
     {
       m_provider = Aws::Utils::Xml::DecodeEscapedXmlText(providerNode.GetText());
+      m_providerHasBeenSet = true;
     }
     XmlNode audienceNode = resultNode.FirstChild("Audience");
     if(!audienceNode.IsNull())
     {
       m_audience = Aws::Utils::Xml::DecodeEscapedXmlText(audienceNode.GetText());
+      m_audienceHasBeenSet = true;
     }
     XmlNode sourceIdentityNode = resultNode.FirstChild("SourceIdentity");
     if(!sourceIdentityNode.IsNull())
     {
       m_sourceIdentity = Aws::Utils::Xml::DecodeEscapedXmlText(sourceIdentityNode.GetText());
+      m_sourceIdentityHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::STS::Model::AssumeRoleWithWebIdentityResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

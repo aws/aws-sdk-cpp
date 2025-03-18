@@ -12,13 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableKinesisStreamingDestinationRequest::DisableKinesisStreamingDestinationRequest() : 
-    m_tableNameHasBeenSet(false),
-    m_streamArnHasBeenSet(false),
-    m_enableKinesisStreamingConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String DisableKinesisStreamingDestinationRequest::SerializePayload() const
 {
   JsonValue payload;

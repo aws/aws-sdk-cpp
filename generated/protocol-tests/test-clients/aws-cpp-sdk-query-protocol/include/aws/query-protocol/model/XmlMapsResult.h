@@ -30,39 +30,39 @@ namespace Model
   class XmlMapsResult
   {
   public:
-    AWS_QUERYPROTOCOL_API XmlMapsResult();
+    AWS_QUERYPROTOCOL_API XmlMapsResult() = default;
     AWS_QUERYPROTOCOL_API XmlMapsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_QUERYPROTOCOL_API XmlMapsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const Aws::Map<Aws::String, GreetingStruct>& GetMyMap() const{ return m_myMap; }
-    inline void SetMyMap(const Aws::Map<Aws::String, GreetingStruct>& value) { m_myMap = value; }
-    inline void SetMyMap(Aws::Map<Aws::String, GreetingStruct>&& value) { m_myMap = std::move(value); }
-    inline XmlMapsResult& WithMyMap(const Aws::Map<Aws::String, GreetingStruct>& value) { SetMyMap(value); return *this;}
-    inline XmlMapsResult& WithMyMap(Aws::Map<Aws::String, GreetingStruct>&& value) { SetMyMap(std::move(value)); return *this;}
-    inline XmlMapsResult& AddMyMap(const Aws::String& key, const GreetingStruct& value) { m_myMap.emplace(key, value); return *this; }
-    inline XmlMapsResult& AddMyMap(Aws::String&& key, const GreetingStruct& value) { m_myMap.emplace(std::move(key), value); return *this; }
-    inline XmlMapsResult& AddMyMap(const Aws::String& key, GreetingStruct&& value) { m_myMap.emplace(key, std::move(value)); return *this; }
-    inline XmlMapsResult& AddMyMap(Aws::String&& key, GreetingStruct&& value) { m_myMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline XmlMapsResult& AddMyMap(const char* key, GreetingStruct&& value) { m_myMap.emplace(key, std::move(value)); return *this; }
-    inline XmlMapsResult& AddMyMap(const char* key, const GreetingStruct& value) { m_myMap.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, GreetingStruct>& GetMyMap() const { return m_myMap; }
+    template<typename MyMapT = Aws::Map<Aws::String, GreetingStruct>>
+    void SetMyMap(MyMapT&& value) { m_myMapHasBeenSet = true; m_myMap = std::forward<MyMapT>(value); }
+    template<typename MyMapT = Aws::Map<Aws::String, GreetingStruct>>
+    XmlMapsResult& WithMyMap(MyMapT&& value) { SetMyMap(std::forward<MyMapT>(value)); return *this;}
+    template<typename MyMapKeyT = Aws::String, typename MyMapValueT = GreetingStruct>
+    XmlMapsResult& AddMyMap(MyMapKeyT&& key, MyMapValueT&& value) {
+      m_myMapHasBeenSet = true; m_myMap.emplace(std::forward<MyMapKeyT>(key), std::forward<MyMapValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline XmlMapsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline XmlMapsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    XmlMapsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, GreetingStruct> m_myMap;
+    bool m_myMapHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

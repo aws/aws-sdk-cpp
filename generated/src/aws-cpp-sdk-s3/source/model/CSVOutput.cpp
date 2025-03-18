@@ -20,18 +20,7 @@ namespace S3
 namespace Model
 {
 
-CSVOutput::CSVOutput() : 
-    m_quoteFields(QuoteFields::NOT_SET),
-    m_quoteFieldsHasBeenSet(false),
-    m_quoteEscapeCharacterHasBeenSet(false),
-    m_recordDelimiterHasBeenSet(false),
-    m_fieldDelimiterHasBeenSet(false),
-    m_quoteCharacterHasBeenSet(false)
-{
-}
-
 CSVOutput::CSVOutput(const XmlNode& xmlNode)
-  : CSVOutput()
 {
   *this = xmlNode;
 }
@@ -45,7 +34,7 @@ CSVOutput& CSVOutput::operator =(const XmlNode& xmlNode)
     XmlNode quoteFieldsNode = resultNode.FirstChild("QuoteFields");
     if(!quoteFieldsNode.IsNull())
     {
-      m_quoteFields = QuoteFieldsMapper::GetQuoteFieldsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(quoteFieldsNode.GetText()).c_str()).c_str());
+      m_quoteFields = QuoteFieldsMapper::GetQuoteFieldsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(quoteFieldsNode.GetText()).c_str()));
       m_quoteFieldsHasBeenSet = true;
     }
     XmlNode quoteEscapeCharacterNode = resultNode.FirstChild("QuoteEscapeCharacter");

@@ -28,52 +28,51 @@ namespace Model
   class GetMultiRegionAccessPointPolicyStatusResult
   {
   public:
-    AWS_S3CONTROL_API GetMultiRegionAccessPointPolicyStatusResult();
+    AWS_S3CONTROL_API GetMultiRegionAccessPointPolicyStatusResult() = default;
     AWS_S3CONTROL_API GetMultiRegionAccessPointPolicyStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CONTROL_API GetMultiRegionAccessPointPolicyStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const PolicyStatus& GetEstablished() const{ return m_established; }
-    inline void SetEstablished(const PolicyStatus& value) { m_established = value; }
-    inline void SetEstablished(PolicyStatus&& value) { m_established = std::move(value); }
-    inline GetMultiRegionAccessPointPolicyStatusResult& WithEstablished(const PolicyStatus& value) { SetEstablished(value); return *this;}
-    inline GetMultiRegionAccessPointPolicyStatusResult& WithEstablished(PolicyStatus&& value) { SetEstablished(std::move(value)); return *this;}
+    inline const PolicyStatus& GetEstablished() const { return m_established; }
+    template<typename EstablishedT = PolicyStatus>
+    void SetEstablished(EstablishedT&& value) { m_establishedHasBeenSet = true; m_established = std::forward<EstablishedT>(value); }
+    template<typename EstablishedT = PolicyStatus>
+    GetMultiRegionAccessPointPolicyStatusResult& WithEstablished(EstablishedT&& value) { SetEstablished(std::forward<EstablishedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * AWS Request Id value
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMultiRegionAccessPointPolicyStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMultiRegionAccessPointPolicyStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMultiRegionAccessPointPolicyStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMultiRegionAccessPointPolicyStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * x-amz-id-2 header value, also known as Host Id
      */
-    inline const Aws::String& GetHostId() const{ return m_hostId; }
-    inline void SetHostId(const Aws::String& value) { m_hostId = value; }
-    inline void SetHostId(Aws::String&& value) { m_hostId = std::move(value); }
-    inline void SetHostId(const char* value) { m_hostId.assign(value); }
-    inline GetMultiRegionAccessPointPolicyStatusResult& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
-    inline GetMultiRegionAccessPointPolicyStatusResult& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
-    inline GetMultiRegionAccessPointPolicyStatusResult& WithHostId(const char* value) { SetHostId(value); return *this;}
+    inline const Aws::String& GetHostId() const { return m_hostId; }
+    template<typename HostIdT = Aws::String>
+    void SetHostId(HostIdT&& value) { m_hostIdHasBeenSet = true; m_hostId = std::forward<HostIdT>(value); }
+    template<typename HostIdT = Aws::String>
+    GetMultiRegionAccessPointPolicyStatusResult& WithHostId(HostIdT&& value) { SetHostId(std::forward<HostIdT>(value)); return *this;}
     ///@}
   private:
 
     PolicyStatus m_established;
+    bool m_establishedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_hostId;
+    bool m_hostIdHasBeenSet = false;
   };
 
 } // namespace Model

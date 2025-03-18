@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-TargetObjectKeyFormat::TargetObjectKeyFormat() : 
-    m_simplePrefixHasBeenSet(false),
-    m_partitionedPrefixHasBeenSet(false)
-{
-}
-
 TargetObjectKeyFormat::TargetObjectKeyFormat(const XmlNode& xmlNode)
-  : TargetObjectKeyFormat()
 {
   *this = xmlNode;
 }

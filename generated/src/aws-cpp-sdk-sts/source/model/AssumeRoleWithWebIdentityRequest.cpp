@@ -10,18 +10,6 @@
 using namespace Aws::STS::Model;
 using namespace Aws::Utils;
 
-AssumeRoleWithWebIdentityRequest::AssumeRoleWithWebIdentityRequest() : 
-    m_roleArnHasBeenSet(false),
-    m_roleSessionNameHasBeenSet(false),
-    m_webIdentityTokenHasBeenSet(false),
-    m_providerIdHasBeenSet(false),
-    m_policyArnsHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false)
-{
-}
-
 Aws::String AssumeRoleWithWebIdentityRequest::SerializePayload() const
 {
   Aws::StringStream ss;

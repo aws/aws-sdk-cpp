@@ -15,21 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateBucketRequest::CreateBucketRequest() : 
-    m_aCL(BucketCannedACL::NOT_SET),
-    m_aCLHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_createBucketConfigurationHasBeenSet(false),
-    m_grantFullControlHasBeenSet(false),
-    m_grantReadHasBeenSet(false),
-    m_grantReadACPHasBeenSet(false),
-    m_grantWriteHasBeenSet(false),
-    m_grantWriteACPHasBeenSet(false),
-    m_objectLockEnabledForBucket(false),
-    m_objectLockEnabledForBucketHasBeenSet(false),
-    m_outpostIdHasBeenSet(false)
-{
-}
 
 Aws::String CreateBucketRequest::SerializePayload() const
 {

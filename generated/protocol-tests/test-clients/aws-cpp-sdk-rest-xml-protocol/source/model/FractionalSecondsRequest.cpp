@@ -14,9 +14,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-FractionalSecondsRequest::FractionalSecondsRequest()
-{
-}
 
 Aws::String FractionalSecondsRequest::SerializePayload() const
 {

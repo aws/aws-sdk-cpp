@@ -20,16 +20,7 @@ namespace QueryProtocol
 namespace Model
 {
 
-StructArg::StructArg() : 
-    m_stringArgHasBeenSet(false),
-    m_otherArg(false),
-    m_otherArgHasBeenSet(false),
-    m_recursiveArgHasBeenSet(false)
-{
-}
-
 StructArg::StructArg(const XmlNode& xmlNode)
-  : StructArg()
 {
   *this = xmlNode;
 }

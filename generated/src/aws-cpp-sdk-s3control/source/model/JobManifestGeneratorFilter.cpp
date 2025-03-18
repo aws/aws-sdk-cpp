@@ -20,23 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-JobManifestGeneratorFilter::JobManifestGeneratorFilter() : 
-    m_eligibleForReplication(false),
-    m_eligibleForReplicationHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_objectReplicationStatusesHasBeenSet(false),
-    m_keyNameConstraintHasBeenSet(false),
-    m_objectSizeGreaterThanBytes(0),
-    m_objectSizeGreaterThanBytesHasBeenSet(false),
-    m_objectSizeLessThanBytes(0),
-    m_objectSizeLessThanBytesHasBeenSet(false),
-    m_matchAnyStorageClassHasBeenSet(false)
-{
-}
-
 JobManifestGeneratorFilter::JobManifestGeneratorFilter(const XmlNode& xmlNode)
-  : JobManifestGeneratorFilter()
 {
   *this = xmlNode;
 }
@@ -69,6 +53,7 @@ JobManifestGeneratorFilter& JobManifestGeneratorFilter::operator =(const XmlNode
     if(!objectReplicationStatusesNode.IsNull())
     {
       XmlNode objectReplicationStatusesMember = objectReplicationStatusesNode.FirstChild("member");
+      m_objectReplicationStatusesHasBeenSet = !objectReplicationStatusesMember.IsNull();
       while(!objectReplicationStatusesMember.IsNull())
       {
         m_objectReplicationStatuses.push_back(ReplicationStatusMapper::GetReplicationStatusForName(StringUtils::Trim(objectReplicationStatusesMember.GetText().c_str())));
@@ -99,6 +84,7 @@ JobManifestGeneratorFilter& JobManifestGeneratorFilter::operator =(const XmlNode
     if(!matchAnyStorageClassNode.IsNull())
     {
       XmlNode matchAnyStorageClassMember = matchAnyStorageClassNode.FirstChild("member");
+      m_matchAnyStorageClassHasBeenSet = !matchAnyStorageClassMember.IsNull();
       while(!matchAnyStorageClassMember.IsNull())
       {
         m_matchAnyStorageClass.push_back(S3StorageClassMapper::GetS3StorageClassForName(StringUtils::Trim(matchAnyStorageClassMember.GetText().c_str())));

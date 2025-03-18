@@ -21,7 +21,7 @@ namespace Model
   class GreetingWithErrorsRequest : public JSONRPC10Request
   {
   public:
-    AWS_JSONRPC10_API GreetingWithErrorsRequest();
+    AWS_JSONRPC10_API GreetingWithErrorsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetGreeting() const{ return m_greeting; }
+    inline const Aws::String& GetGreeting() const { return m_greeting; }
     inline bool GreetingHasBeenSet() const { return m_greetingHasBeenSet; }
-    inline void SetGreeting(const Aws::String& value) { m_greetingHasBeenSet = true; m_greeting = value; }
-    inline void SetGreeting(Aws::String&& value) { m_greetingHasBeenSet = true; m_greeting = std::move(value); }
-    inline void SetGreeting(const char* value) { m_greetingHasBeenSet = true; m_greeting.assign(value); }
-    inline GreetingWithErrorsRequest& WithGreeting(const Aws::String& value) { SetGreeting(value); return *this;}
-    inline GreetingWithErrorsRequest& WithGreeting(Aws::String&& value) { SetGreeting(std::move(value)); return *this;}
-    inline GreetingWithErrorsRequest& WithGreeting(const char* value) { SetGreeting(value); return *this;}
+    template<typename GreetingT = Aws::String>
+    void SetGreeting(GreetingT&& value) { m_greetingHasBeenSet = true; m_greeting = std::forward<GreetingT>(value); }
+    template<typename GreetingT = Aws::String>
+    GreetingWithErrorsRequest& WithGreeting(GreetingT&& value) { SetGreeting(std::forward<GreetingT>(value)); return *this;}
     ///@}
   private:
 

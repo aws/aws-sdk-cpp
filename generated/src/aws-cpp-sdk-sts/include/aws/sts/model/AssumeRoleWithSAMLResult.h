@@ -37,7 +37,7 @@ namespace Model
   class AssumeRoleWithSAMLResult
   {
   public:
-    AWS_STS_API AssumeRoleWithSAMLResult();
+    AWS_STS_API AssumeRoleWithSAMLResult() = default;
     AWS_STS_API AssumeRoleWithSAMLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_STS_API AssumeRoleWithSAMLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -49,11 +49,11 @@ namespace Model
      * security token that STS API operations return is not fixed. We strongly
      * recommend that you make no assumptions about the maximum size.</p> 
      */
-    inline const Credentials& GetCredentials() const{ return m_credentials; }
-    inline void SetCredentials(const Credentials& value) { m_credentials = value; }
-    inline void SetCredentials(Credentials&& value) { m_credentials = std::move(value); }
-    inline AssumeRoleWithSAMLResult& WithCredentials(const Credentials& value) { SetCredentials(value); return *this;}
-    inline AssumeRoleWithSAMLResult& WithCredentials(Credentials&& value) { SetCredentials(std::move(value)); return *this;}
+    inline const Credentials& GetCredentials() const { return m_credentials; }
+    template<typename CredentialsT = Credentials>
+    void SetCredentials(CredentialsT&& value) { m_credentialsHasBeenSet = true; m_credentials = std::forward<CredentialsT>(value); }
+    template<typename CredentialsT = Credentials>
+    AssumeRoleWithSAMLResult& WithCredentials(CredentialsT&& value) { SetCredentials(std::forward<CredentialsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,11 +61,11 @@ namespace Model
      * <p>The identifiers for the temporary security credentials that the operation
      * returns.</p>
      */
-    inline const AssumedRoleUser& GetAssumedRoleUser() const{ return m_assumedRoleUser; }
-    inline void SetAssumedRoleUser(const AssumedRoleUser& value) { m_assumedRoleUser = value; }
-    inline void SetAssumedRoleUser(AssumedRoleUser&& value) { m_assumedRoleUser = std::move(value); }
-    inline AssumeRoleWithSAMLResult& WithAssumedRoleUser(const AssumedRoleUser& value) { SetAssumedRoleUser(value); return *this;}
-    inline AssumeRoleWithSAMLResult& WithAssumedRoleUser(AssumedRoleUser&& value) { SetAssumedRoleUser(std::move(value)); return *this;}
+    inline const AssumedRoleUser& GetAssumedRoleUser() const { return m_assumedRoleUser; }
+    template<typename AssumedRoleUserT = AssumedRoleUser>
+    void SetAssumedRoleUser(AssumedRoleUserT&& value) { m_assumedRoleUserHasBeenSet = true; m_assumedRoleUser = std::forward<AssumedRoleUserT>(value); }
+    template<typename AssumedRoleUserT = AssumedRoleUser>
+    AssumeRoleWithSAMLResult& WithAssumedRoleUser(AssumedRoleUserT&& value) { SetAssumedRoleUser(std::forward<AssumedRoleUserT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,8 +75,8 @@ namespace Model
      * size is greater than 100 percent, which means the policies and tags exceeded the
      * allowed space.</p>
      */
-    inline int GetPackedPolicySize() const{ return m_packedPolicySize; }
-    inline void SetPackedPolicySize(int value) { m_packedPolicySize = value; }
+    inline int GetPackedPolicySize() const { return m_packedPolicySize; }
+    inline void SetPackedPolicySize(int value) { m_packedPolicySizeHasBeenSet = true; m_packedPolicySize = value; }
     inline AssumeRoleWithSAMLResult& WithPackedPolicySize(int value) { SetPackedPolicySize(value); return *this;}
     ///@}
 
@@ -85,13 +85,11 @@ namespace Model
      * <p>The value of the <code>NameID</code> element in the <code>Subject</code>
      * element of the SAML assertion.</p>
      */
-    inline const Aws::String& GetSubject() const{ return m_subject; }
-    inline void SetSubject(const Aws::String& value) { m_subject = value; }
-    inline void SetSubject(Aws::String&& value) { m_subject = std::move(value); }
-    inline void SetSubject(const char* value) { m_subject.assign(value); }
-    inline AssumeRoleWithSAMLResult& WithSubject(const Aws::String& value) { SetSubject(value); return *this;}
-    inline AssumeRoleWithSAMLResult& WithSubject(Aws::String&& value) { SetSubject(std::move(value)); return *this;}
-    inline AssumeRoleWithSAMLResult& WithSubject(const char* value) { SetSubject(value); return *this;}
+    inline const Aws::String& GetSubject() const { return m_subject; }
+    template<typename SubjectT = Aws::String>
+    void SetSubject(SubjectT&& value) { m_subjectHasBeenSet = true; m_subject = std::forward<SubjectT>(value); }
+    template<typename SubjectT = Aws::String>
+    AssumeRoleWithSAMLResult& WithSubject(SubjectT&& value) { SetSubject(std::forward<SubjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,26 +103,22 @@ namespace Model
      * returned as <code>transient</code>. If the format includes any other prefix, the
      * format is returned with no modifications.</p>
      */
-    inline const Aws::String& GetSubjectType() const{ return m_subjectType; }
-    inline void SetSubjectType(const Aws::String& value) { m_subjectType = value; }
-    inline void SetSubjectType(Aws::String&& value) { m_subjectType = std::move(value); }
-    inline void SetSubjectType(const char* value) { m_subjectType.assign(value); }
-    inline AssumeRoleWithSAMLResult& WithSubjectType(const Aws::String& value) { SetSubjectType(value); return *this;}
-    inline AssumeRoleWithSAMLResult& WithSubjectType(Aws::String&& value) { SetSubjectType(std::move(value)); return *this;}
-    inline AssumeRoleWithSAMLResult& WithSubjectType(const char* value) { SetSubjectType(value); return *this;}
+    inline const Aws::String& GetSubjectType() const { return m_subjectType; }
+    template<typename SubjectTypeT = Aws::String>
+    void SetSubjectType(SubjectTypeT&& value) { m_subjectTypeHasBeenSet = true; m_subjectType = std::forward<SubjectTypeT>(value); }
+    template<typename SubjectTypeT = Aws::String>
+    AssumeRoleWithSAMLResult& WithSubjectType(SubjectTypeT&& value) { SetSubjectType(std::forward<SubjectTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the <code>Issuer</code> element of the SAML assertion.</p>
      */
-    inline const Aws::String& GetIssuer() const{ return m_issuer; }
-    inline void SetIssuer(const Aws::String& value) { m_issuer = value; }
-    inline void SetIssuer(Aws::String&& value) { m_issuer = std::move(value); }
-    inline void SetIssuer(const char* value) { m_issuer.assign(value); }
-    inline AssumeRoleWithSAMLResult& WithIssuer(const Aws::String& value) { SetIssuer(value); return *this;}
-    inline AssumeRoleWithSAMLResult& WithIssuer(Aws::String&& value) { SetIssuer(std::move(value)); return *this;}
-    inline AssumeRoleWithSAMLResult& WithIssuer(const char* value) { SetIssuer(value); return *this;}
+    inline const Aws::String& GetIssuer() const { return m_issuer; }
+    template<typename IssuerT = Aws::String>
+    void SetIssuer(IssuerT&& value) { m_issuerHasBeenSet = true; m_issuer = std::forward<IssuerT>(value); }
+    template<typename IssuerT = Aws::String>
+    AssumeRoleWithSAMLResult& WithIssuer(IssuerT&& value) { SetIssuer(std::forward<IssuerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,13 +126,11 @@ namespace Model
      * <p> The value of the <code>Recipient</code> attribute of the
      * <code>SubjectConfirmationData</code> element of the SAML assertion. </p>
      */
-    inline const Aws::String& GetAudience() const{ return m_audience; }
-    inline void SetAudience(const Aws::String& value) { m_audience = value; }
-    inline void SetAudience(Aws::String&& value) { m_audience = std::move(value); }
-    inline void SetAudience(const char* value) { m_audience.assign(value); }
-    inline AssumeRoleWithSAMLResult& WithAudience(const Aws::String& value) { SetAudience(value); return *this;}
-    inline AssumeRoleWithSAMLResult& WithAudience(Aws::String&& value) { SetAudience(std::move(value)); return *this;}
-    inline AssumeRoleWithSAMLResult& WithAudience(const char* value) { SetAudience(value); return *this;}
+    inline const Aws::String& GetAudience() const { return m_audience; }
+    template<typename AudienceT = Aws::String>
+    void SetAudience(AudienceT&& value) { m_audienceHasBeenSet = true; m_audience = std::forward<AudienceT>(value); }
+    template<typename AudienceT = Aws::String>
+    AssumeRoleWithSAMLResult& WithAudience(AudienceT&& value) { SetAudience(std::forward<AudienceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,13 +144,11 @@ namespace Model
      * calculated:</p> <p> <code>BASE64 ( SHA1 ( "https://example.com/saml" +
      * "123456789012" + "/MySAMLIdP" ) )</code> </p>
      */
-    inline const Aws::String& GetNameQualifier() const{ return m_nameQualifier; }
-    inline void SetNameQualifier(const Aws::String& value) { m_nameQualifier = value; }
-    inline void SetNameQualifier(Aws::String&& value) { m_nameQualifier = std::move(value); }
-    inline void SetNameQualifier(const char* value) { m_nameQualifier.assign(value); }
-    inline AssumeRoleWithSAMLResult& WithNameQualifier(const Aws::String& value) { SetNameQualifier(value); return *this;}
-    inline AssumeRoleWithSAMLResult& WithNameQualifier(Aws::String&& value) { SetNameQualifier(std::move(value)); return *this;}
-    inline AssumeRoleWithSAMLResult& WithNameQualifier(const char* value) { SetNameQualifier(value); return *this;}
+    inline const Aws::String& GetNameQualifier() const { return m_nameQualifier; }
+    template<typename NameQualifierT = Aws::String>
+    void SetNameQualifier(NameQualifierT&& value) { m_nameQualifierHasBeenSet = true; m_nameQualifier = std::forward<NameQualifierT>(value); }
+    template<typename NameQualifierT = Aws::String>
+    AssumeRoleWithSAMLResult& WithNameQualifier(NameQualifierT&& value) { SetNameQualifier(std::forward<NameQualifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -185,44 +175,52 @@ namespace Model
      * spaces. You can also include underscores or any of the following characters:
      * =,.@-</p>
      */
-    inline const Aws::String& GetSourceIdentity() const{ return m_sourceIdentity; }
-    inline void SetSourceIdentity(const Aws::String& value) { m_sourceIdentity = value; }
-    inline void SetSourceIdentity(Aws::String&& value) { m_sourceIdentity = std::move(value); }
-    inline void SetSourceIdentity(const char* value) { m_sourceIdentity.assign(value); }
-    inline AssumeRoleWithSAMLResult& WithSourceIdentity(const Aws::String& value) { SetSourceIdentity(value); return *this;}
-    inline AssumeRoleWithSAMLResult& WithSourceIdentity(Aws::String&& value) { SetSourceIdentity(std::move(value)); return *this;}
-    inline AssumeRoleWithSAMLResult& WithSourceIdentity(const char* value) { SetSourceIdentity(value); return *this;}
+    inline const Aws::String& GetSourceIdentity() const { return m_sourceIdentity; }
+    template<typename SourceIdentityT = Aws::String>
+    void SetSourceIdentity(SourceIdentityT&& value) { m_sourceIdentityHasBeenSet = true; m_sourceIdentity = std::forward<SourceIdentityT>(value); }
+    template<typename SourceIdentityT = Aws::String>
+    AssumeRoleWithSAMLResult& WithSourceIdentity(SourceIdentityT&& value) { SetSourceIdentity(std::forward<SourceIdentityT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline AssumeRoleWithSAMLResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline AssumeRoleWithSAMLResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    AssumeRoleWithSAMLResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Credentials m_credentials;
+    bool m_credentialsHasBeenSet = false;
 
     AssumedRoleUser m_assumedRoleUser;
+    bool m_assumedRoleUserHasBeenSet = false;
 
-    int m_packedPolicySize;
+    int m_packedPolicySize{0};
+    bool m_packedPolicySizeHasBeenSet = false;
 
     Aws::String m_subject;
+    bool m_subjectHasBeenSet = false;
 
     Aws::String m_subjectType;
+    bool m_subjectTypeHasBeenSet = false;
 
     Aws::String m_issuer;
+    bool m_issuerHasBeenSet = false;
 
     Aws::String m_audience;
+    bool m_audienceHasBeenSet = false;
 
     Aws::String m_nameQualifier;
+    bool m_nameQualifierHasBeenSet = false;
 
     Aws::String m_sourceIdentity;
+    bool m_sourceIdentityHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

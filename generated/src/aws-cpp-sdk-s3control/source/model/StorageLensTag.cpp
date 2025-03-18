@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-StorageLensTag::StorageLensTag() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 StorageLensTag::StorageLensTag(const XmlNode& xmlNode)
-  : StorageLensTag()
 {
   *this = xmlNode;
 }

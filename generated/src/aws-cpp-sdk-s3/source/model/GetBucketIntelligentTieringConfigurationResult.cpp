@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketIntelligentTieringConfigurationResult::GetBucketIntelligentTieringConfigurationResult()
-{
-}
-
 GetBucketIntelligentTieringConfigurationResult::GetBucketIntelligentTieringConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ GetBucketIntelligentTieringConfigurationResult& GetBucketIntelligentTieringConfi
   if(!resultNode.IsNull())
   {
     m_intelligentTieringConfiguration = resultNode;
+    m_intelligentTieringConfigurationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ GetBucketIntelligentTieringConfigurationResult& GetBucketIntelligentTieringConfi
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

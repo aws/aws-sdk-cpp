@@ -18,14 +18,7 @@ namespace RestJsonProtocol
 namespace Model
 {
 
-PayloadConfig::PayloadConfig() : 
-    m_data(0),
-    m_dataHasBeenSet(false)
-{
-}
-
 PayloadConfig::PayloadConfig(JsonView jsonValue)
-  : PayloadConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PayloadConfig& PayloadConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("data"))
   {
     m_data = jsonValue.GetInteger("data");
-
     m_dataHasBeenSet = true;
   }
-
   return *this;
 }
 

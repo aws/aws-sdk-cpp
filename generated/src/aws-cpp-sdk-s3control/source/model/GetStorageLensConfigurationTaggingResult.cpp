@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetStorageLensConfigurationTaggingResult::GetStorageLensConfigurationTaggingResult()
-{
-}
-
 GetStorageLensConfigurationTaggingResult::GetStorageLensConfigurationTaggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,12 +32,14 @@ GetStorageLensConfigurationTaggingResult& GetStorageLensConfigurationTaggingResu
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("Tag");
       }
 
+      m_tagsHasBeenSet = true;
     }
   }
 
@@ -50,12 +48,14 @@ GetStorageLensConfigurationTaggingResult& GetStorageLensConfigurationTaggingResu
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

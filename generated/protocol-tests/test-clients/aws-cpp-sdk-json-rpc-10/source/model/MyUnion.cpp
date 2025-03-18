@@ -19,26 +19,7 @@ namespace JSONRPC10
 namespace Model
 {
 
-MyUnion::MyUnion() : 
-    m_stringValueHasBeenSet(false),
-    m_booleanValue(false),
-    m_booleanValueHasBeenSet(false),
-    m_numberValue(0),
-    m_numberValueHasBeenSet(false),
-    m_blobValueHasBeenSet(false),
-    m_timestampValueHasBeenSet(false),
-    m_enumValue(FooEnum::NOT_SET),
-    m_enumValueHasBeenSet(false),
-    m_intEnumValue(0),
-    m_intEnumValueHasBeenSet(false),
-    m_listValueHasBeenSet(false),
-    m_mapValueHasBeenSet(false),
-    m_structureValueHasBeenSet(false)
-{
-}
-
 MyUnion::MyUnion(JsonView jsonValue)
-  : MyUnion()
 {
   *this = jsonValue;
 }
@@ -48,51 +29,38 @@ MyUnion& MyUnion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stringValue"))
   {
     m_stringValue = jsonValue.GetString("stringValue");
-
     m_stringValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("booleanValue"))
   {
     m_booleanValue = jsonValue.GetBool("booleanValue");
-
     m_booleanValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberValue"))
   {
     m_numberValue = jsonValue.GetInteger("numberValue");
-
     m_numberValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blobValue"))
   {
     m_blobValue = HashingUtils::Base64Decode(jsonValue.GetString("blobValue"));
     m_blobValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestampValue"))
   {
     m_timestampValue = jsonValue.GetDouble("timestampValue");
-
     m_timestampValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enumValue"))
   {
     m_enumValue = FooEnumMapper::GetFooEnumForName(jsonValue.GetString("enumValue"));
-
     m_enumValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intEnumValue"))
   {
     m_intEnumValue = jsonValue.GetInteger("intEnumValue");
-
     m_intEnumValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listValue"))
   {
     Aws::Utils::Array<JsonView> listValueJsonList = jsonValue.GetArray("listValue");
@@ -102,7 +70,6 @@ MyUnion& MyUnion::operator =(JsonView jsonValue)
     }
     m_listValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mapValue"))
   {
     Aws::Map<Aws::String, JsonView> mapValueJsonMap = jsonValue.GetObject("mapValue").GetAllObjects();
@@ -112,14 +79,11 @@ MyUnion& MyUnion::operator =(JsonView jsonValue)
     }
     m_mapValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("structureValue"))
   {
     m_structureValue = jsonValue.GetObject("structureValue");
-
     m_structureValueHasBeenSet = true;
   }
-
   return *this;
 }
 

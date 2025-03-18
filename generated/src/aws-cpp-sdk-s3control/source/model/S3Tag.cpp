@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-S3Tag::S3Tag() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 S3Tag::S3Tag(const XmlNode& xmlNode)
-  : S3Tag()
 {
   *this = xmlNode;
 }

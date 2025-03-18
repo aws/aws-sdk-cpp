@@ -10,10 +10,6 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-XmlIntEnumsRequest::XmlIntEnumsRequest()
-{
-}
-
 Aws::String XmlIntEnumsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

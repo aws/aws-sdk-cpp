@@ -34,7 +34,7 @@ namespace Model
   class S3TablesDestinationResult
   {
   public:
-    AWS_S3_API S3TablesDestinationResult();
+    AWS_S3_API S3TablesDestinationResult() = default;
     AWS_S3_API S3TablesDestinationResult(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API S3TablesDestinationResult& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,14 +48,12 @@ namespace Model
      * must be in the same Region and Amazon Web Services account as the general
      * purpose bucket. </p>
      */
-    inline const Aws::String& GetTableBucketArn() const{ return m_tableBucketArn; }
+    inline const Aws::String& GetTableBucketArn() const { return m_tableBucketArn; }
     inline bool TableBucketArnHasBeenSet() const { return m_tableBucketArnHasBeenSet; }
-    inline void SetTableBucketArn(const Aws::String& value) { m_tableBucketArnHasBeenSet = true; m_tableBucketArn = value; }
-    inline void SetTableBucketArn(Aws::String&& value) { m_tableBucketArnHasBeenSet = true; m_tableBucketArn = std::move(value); }
-    inline void SetTableBucketArn(const char* value) { m_tableBucketArnHasBeenSet = true; m_tableBucketArn.assign(value); }
-    inline S3TablesDestinationResult& WithTableBucketArn(const Aws::String& value) { SetTableBucketArn(value); return *this;}
-    inline S3TablesDestinationResult& WithTableBucketArn(Aws::String&& value) { SetTableBucketArn(std::move(value)); return *this;}
-    inline S3TablesDestinationResult& WithTableBucketArn(const char* value) { SetTableBucketArn(value); return *this;}
+    template<typename TableBucketArnT = Aws::String>
+    void SetTableBucketArn(TableBucketArnT&& value) { m_tableBucketArnHasBeenSet = true; m_tableBucketArn = std::forward<TableBucketArnT>(value); }
+    template<typename TableBucketArnT = Aws::String>
+    S3TablesDestinationResult& WithTableBucketArn(TableBucketArnT&& value) { SetTableBucketArn(std::forward<TableBucketArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * specified metadata table name must be unique within the
      * <code>aws_s3_metadata</code> namespace in the destination table bucket. </p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline S3TablesDestinationResult& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline S3TablesDestinationResult& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline S3TablesDestinationResult& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    S3TablesDestinationResult& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * configuration. The specified metadata table name must be unique within the
      * <code>aws_s3_metadata</code> namespace in the destination table bucket. </p>
      */
-    inline const Aws::String& GetTableArn() const{ return m_tableArn; }
+    inline const Aws::String& GetTableArn() const { return m_tableArn; }
     inline bool TableArnHasBeenSet() const { return m_tableArnHasBeenSet; }
-    inline void SetTableArn(const Aws::String& value) { m_tableArnHasBeenSet = true; m_tableArn = value; }
-    inline void SetTableArn(Aws::String&& value) { m_tableArnHasBeenSet = true; m_tableArn = std::move(value); }
-    inline void SetTableArn(const char* value) { m_tableArnHasBeenSet = true; m_tableArn.assign(value); }
-    inline S3TablesDestinationResult& WithTableArn(const Aws::String& value) { SetTableArn(value); return *this;}
-    inline S3TablesDestinationResult& WithTableArn(Aws::String&& value) { SetTableArn(std::move(value)); return *this;}
-    inline S3TablesDestinationResult& WithTableArn(const char* value) { SetTableArn(value); return *this;}
+    template<typename TableArnT = Aws::String>
+    void SetTableArn(TableArnT&& value) { m_tableArnHasBeenSet = true; m_tableArn = std::forward<TableArnT>(value); }
+    template<typename TableArnT = Aws::String>
+    S3TablesDestinationResult& WithTableArn(TableArnT&& value) { SetTableArn(std::forward<TableArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +89,12 @@ namespace Model
      * <p> The table bucket namespace for the metadata table in your metadata table
      * configuration. This value is always <code>aws_s3_metadata</code>. </p>
      */
-    inline const Aws::String& GetTableNamespace() const{ return m_tableNamespace; }
+    inline const Aws::String& GetTableNamespace() const { return m_tableNamespace; }
     inline bool TableNamespaceHasBeenSet() const { return m_tableNamespaceHasBeenSet; }
-    inline void SetTableNamespace(const Aws::String& value) { m_tableNamespaceHasBeenSet = true; m_tableNamespace = value; }
-    inline void SetTableNamespace(Aws::String&& value) { m_tableNamespaceHasBeenSet = true; m_tableNamespace = std::move(value); }
-    inline void SetTableNamespace(const char* value) { m_tableNamespaceHasBeenSet = true; m_tableNamespace.assign(value); }
-    inline S3TablesDestinationResult& WithTableNamespace(const Aws::String& value) { SetTableNamespace(value); return *this;}
-    inline S3TablesDestinationResult& WithTableNamespace(Aws::String&& value) { SetTableNamespace(std::move(value)); return *this;}
-    inline S3TablesDestinationResult& WithTableNamespace(const char* value) { SetTableNamespace(value); return *this;}
+    template<typename TableNamespaceT = Aws::String>
+    void SetTableNamespace(TableNamespaceT&& value) { m_tableNamespaceHasBeenSet = true; m_tableNamespace = std::forward<TableNamespaceT>(value); }
+    template<typename TableNamespaceT = Aws::String>
+    S3TablesDestinationResult& WithTableNamespace(TableNamespaceT&& value) { SetTableNamespace(std::forward<TableNamespaceT>(value)); return *this;}
     ///@}
   private:
 

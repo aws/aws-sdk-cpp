@@ -31,7 +31,7 @@ namespace Model
   class InventoryFilter
   {
   public:
-    AWS_S3_API InventoryFilter();
+    AWS_S3_API InventoryFilter() = default;
     AWS_S3_API InventoryFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API InventoryFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
      * <p>The prefix that an object must have to be included in the inventory
      * results.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline InventoryFilter& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline InventoryFilter& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline InventoryFilter& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    InventoryFilter& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
   private:
 

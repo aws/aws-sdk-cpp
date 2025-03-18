@@ -28,42 +28,39 @@ namespace Model
   class HttpPrefixHeadersInResponseResult
   {
   public:
-    AWS_RESTJSONPROTOCOL_API HttpPrefixHeadersInResponseResult();
+    AWS_RESTJSONPROTOCOL_API HttpPrefixHeadersInResponseResult() = default;
     AWS_RESTJSONPROTOCOL_API HttpPrefixHeadersInResponseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESTJSONPROTOCOL_API HttpPrefixHeadersInResponseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetPrefixHeaders() const{ return m_prefixHeaders; }
-    inline void SetPrefixHeaders(const Aws::Map<Aws::String, Aws::String>& value) { m_prefixHeaders = value; }
-    inline void SetPrefixHeaders(Aws::Map<Aws::String, Aws::String>&& value) { m_prefixHeaders = std::move(value); }
-    inline HttpPrefixHeadersInResponseResult& WithPrefixHeaders(const Aws::Map<Aws::String, Aws::String>& value) { SetPrefixHeaders(value); return *this;}
-    inline HttpPrefixHeadersInResponseResult& WithPrefixHeaders(Aws::Map<Aws::String, Aws::String>&& value) { SetPrefixHeaders(std::move(value)); return *this;}
-    inline HttpPrefixHeadersInResponseResult& AddPrefixHeaders(const Aws::String& key, const Aws::String& value) { m_prefixHeaders.emplace(key, value); return *this; }
-    inline HttpPrefixHeadersInResponseResult& AddPrefixHeaders(Aws::String&& key, const Aws::String& value) { m_prefixHeaders.emplace(std::move(key), value); return *this; }
-    inline HttpPrefixHeadersInResponseResult& AddPrefixHeaders(const Aws::String& key, Aws::String&& value) { m_prefixHeaders.emplace(key, std::move(value)); return *this; }
-    inline HttpPrefixHeadersInResponseResult& AddPrefixHeaders(Aws::String&& key, Aws::String&& value) { m_prefixHeaders.emplace(std::move(key), std::move(value)); return *this; }
-    inline HttpPrefixHeadersInResponseResult& AddPrefixHeaders(const char* key, Aws::String&& value) { m_prefixHeaders.emplace(key, std::move(value)); return *this; }
-    inline HttpPrefixHeadersInResponseResult& AddPrefixHeaders(Aws::String&& key, const char* value) { m_prefixHeaders.emplace(std::move(key), value); return *this; }
-    inline HttpPrefixHeadersInResponseResult& AddPrefixHeaders(const char* key, const char* value) { m_prefixHeaders.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetPrefixHeaders() const { return m_prefixHeaders; }
+    template<typename PrefixHeadersT = Aws::Map<Aws::String, Aws::String>>
+    void SetPrefixHeaders(PrefixHeadersT&& value) { m_prefixHeadersHasBeenSet = true; m_prefixHeaders = std::forward<PrefixHeadersT>(value); }
+    template<typename PrefixHeadersT = Aws::Map<Aws::String, Aws::String>>
+    HttpPrefixHeadersInResponseResult& WithPrefixHeaders(PrefixHeadersT&& value) { SetPrefixHeaders(std::forward<PrefixHeadersT>(value)); return *this;}
+    template<typename PrefixHeadersKeyT = Aws::String, typename PrefixHeadersValueT = Aws::String>
+    HttpPrefixHeadersInResponseResult& AddPrefixHeaders(PrefixHeadersKeyT&& key, PrefixHeadersValueT&& value) {
+      m_prefixHeadersHasBeenSet = true; m_prefixHeaders.emplace(std::forward<PrefixHeadersKeyT>(key), std::forward<PrefixHeadersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline HttpPrefixHeadersInResponseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline HttpPrefixHeadersInResponseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline HttpPrefixHeadersInResponseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    HttpPrefixHeadersInResponseResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_prefixHeaders;
+    bool m_prefixHeadersHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,7 +35,7 @@ namespace Model
   class LocalSecondaryIndex
   {
   public:
-    AWS_DYNAMODB_API LocalSecondaryIndex();
+    AWS_DYNAMODB_API LocalSecondaryIndex() = default;
     AWS_DYNAMODB_API LocalSecondaryIndex(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API LocalSecondaryIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The name of the local secondary index. The name must be unique among all
      * other indexes on this table.</p>
      */
-    inline const Aws::String& GetIndexName() const{ return m_indexName; }
+    inline const Aws::String& GetIndexName() const { return m_indexName; }
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-    inline LocalSecondaryIndex& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-    inline LocalSecondaryIndex& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-    inline LocalSecondaryIndex& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    template<typename IndexNameT = Aws::String>
+    void SetIndexName(IndexNameT&& value) { m_indexNameHasBeenSet = true; m_indexName = std::forward<IndexNameT>(value); }
+    template<typename IndexNameT = Aws::String>
+    LocalSecondaryIndex& WithIndexName(IndexNameT&& value) { SetIndexName(std::forward<IndexNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,14 @@ namespace Model
      * DynamoDB stores items with the same partition key physically close together, in
      * sorted order by the sort key value.</p> 
      */
-    inline const Aws::Vector<KeySchemaElement>& GetKeySchema() const{ return m_keySchema; }
+    inline const Aws::Vector<KeySchemaElement>& GetKeySchema() const { return m_keySchema; }
     inline bool KeySchemaHasBeenSet() const { return m_keySchemaHasBeenSet; }
-    inline void SetKeySchema(const Aws::Vector<KeySchemaElement>& value) { m_keySchemaHasBeenSet = true; m_keySchema = value; }
-    inline void SetKeySchema(Aws::Vector<KeySchemaElement>&& value) { m_keySchemaHasBeenSet = true; m_keySchema = std::move(value); }
-    inline LocalSecondaryIndex& WithKeySchema(const Aws::Vector<KeySchemaElement>& value) { SetKeySchema(value); return *this;}
-    inline LocalSecondaryIndex& WithKeySchema(Aws::Vector<KeySchemaElement>&& value) { SetKeySchema(std::move(value)); return *this;}
-    inline LocalSecondaryIndex& AddKeySchema(const KeySchemaElement& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
-    inline LocalSecondaryIndex& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(std::move(value)); return *this; }
+    template<typename KeySchemaT = Aws::Vector<KeySchemaElement>>
+    void SetKeySchema(KeySchemaT&& value) { m_keySchemaHasBeenSet = true; m_keySchema = std::forward<KeySchemaT>(value); }
+    template<typename KeySchemaT = Aws::Vector<KeySchemaElement>>
+    LocalSecondaryIndex& WithKeySchema(KeySchemaT&& value) { SetKeySchema(std::forward<KeySchemaT>(value)); return *this;}
+    template<typename KeySchemaT = KeySchemaElement>
+    LocalSecondaryIndex& AddKeySchema(KeySchemaT&& value) { m_keySchemaHasBeenSet = true; m_keySchema.emplace_back(std::forward<KeySchemaT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -85,12 +83,12 @@ namespace Model
      * local secondary index. These are in addition to the primary key attributes and
      * index key attributes, which are automatically projected. </p>
      */
-    inline const Projection& GetProjection() const{ return m_projection; }
+    inline const Projection& GetProjection() const { return m_projection; }
     inline bool ProjectionHasBeenSet() const { return m_projectionHasBeenSet; }
-    inline void SetProjection(const Projection& value) { m_projectionHasBeenSet = true; m_projection = value; }
-    inline void SetProjection(Projection&& value) { m_projectionHasBeenSet = true; m_projection = std::move(value); }
-    inline LocalSecondaryIndex& WithProjection(const Projection& value) { SetProjection(value); return *this;}
-    inline LocalSecondaryIndex& WithProjection(Projection&& value) { SetProjection(std::move(value)); return *this;}
+    template<typename ProjectionT = Projection>
+    void SetProjection(ProjectionT&& value) { m_projectionHasBeenSet = true; m_projection = std::forward<ProjectionT>(value); }
+    template<typename ProjectionT = Projection>
+    LocalSecondaryIndex& WithProjection(ProjectionT&& value) { SetProjection(std::forward<ProjectionT>(value)); return *this;}
     ///@}
   private:
 

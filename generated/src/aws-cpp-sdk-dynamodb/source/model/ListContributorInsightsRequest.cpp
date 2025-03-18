@@ -12,14 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListContributorInsightsRequest::ListContributorInsightsRequest() : 
-    m_tableNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListContributorInsightsRequest::SerializePayload() const
 {
   JsonValue payload;

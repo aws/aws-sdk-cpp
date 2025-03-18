@@ -17,16 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListCallerAccessGrantsRequest::ListCallerAccessGrantsRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_grantScopeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_allowedByApplication(false),
-    m_allowedByApplicationHasBeenSet(false)
-{
-}
 
 Aws::String ListCallerAccessGrantsRequest::SerializePayload() const
 {

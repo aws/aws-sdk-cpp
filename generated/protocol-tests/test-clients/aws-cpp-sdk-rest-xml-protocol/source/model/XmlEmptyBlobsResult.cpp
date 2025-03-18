@@ -17,10 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-XmlEmptyBlobsResult::XmlEmptyBlobsResult()
-{
-}
-
 XmlEmptyBlobsResult::XmlEmptyBlobsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -37,6 +33,7 @@ XmlEmptyBlobsResult& XmlEmptyBlobsResult::operator =(const Aws::AmazonWebService
     if(!dataNode.IsNull())
     {
       m_data = HashingUtils::Base64Decode(Aws::Utils::Xml::DecodeEscapedXmlText(dataNode.GetText()));
+      m_dataHasBeenSet = true;
     }
   }
 
@@ -45,6 +42,7 @@ XmlEmptyBlobsResult& XmlEmptyBlobsResult::operator =(const Aws::AmazonWebService
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

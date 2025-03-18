@@ -30,7 +30,7 @@ namespace Model
   class ProvisionedThroughputOverride
   {
   public:
-    AWS_DYNAMODB_API ProvisionedThroughputOverride();
+    AWS_DYNAMODB_API ProvisionedThroughputOverride() = default;
     AWS_DYNAMODB_API ProvisionedThroughputOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API ProvisionedThroughputOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>Replica-specific read capacity units. If not specified, uses the source
      * table's read capacity settings.</p>
      */
-    inline long long GetReadCapacityUnits() const{ return m_readCapacityUnits; }
+    inline long long GetReadCapacityUnits() const { return m_readCapacityUnits; }
     inline bool ReadCapacityUnitsHasBeenSet() const { return m_readCapacityUnitsHasBeenSet; }
     inline void SetReadCapacityUnits(long long value) { m_readCapacityUnitsHasBeenSet = true; m_readCapacityUnits = value; }
     inline ProvisionedThroughputOverride& WithReadCapacityUnits(long long value) { SetReadCapacityUnits(value); return *this;}
     ///@}
   private:
 
-    long long m_readCapacityUnits;
+    long long m_readCapacityUnits{0};
     bool m_readCapacityUnitsHasBeenSet = false;
   };
 

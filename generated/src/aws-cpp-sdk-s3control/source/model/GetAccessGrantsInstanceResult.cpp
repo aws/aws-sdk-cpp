@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAccessGrantsInstanceResult::GetAccessGrantsInstanceResult()
-{
-}
-
 GetAccessGrantsInstanceResult::GetAccessGrantsInstanceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,26 +32,31 @@ GetAccessGrantsInstanceResult& GetAccessGrantsInstanceResult::operator =(const A
     if(!accessGrantsInstanceArnNode.IsNull())
     {
       m_accessGrantsInstanceArn = Aws::Utils::Xml::DecodeEscapedXmlText(accessGrantsInstanceArnNode.GetText());
+      m_accessGrantsInstanceArnHasBeenSet = true;
     }
     XmlNode accessGrantsInstanceIdNode = resultNode.FirstChild("AccessGrantsInstanceId");
     if(!accessGrantsInstanceIdNode.IsNull())
     {
       m_accessGrantsInstanceId = Aws::Utils::Xml::DecodeEscapedXmlText(accessGrantsInstanceIdNode.GetText());
+      m_accessGrantsInstanceIdHasBeenSet = true;
     }
     XmlNode identityCenterInstanceArnNode = resultNode.FirstChild("IdentityCenterInstanceArn");
     if(!identityCenterInstanceArnNode.IsNull())
     {
       m_identityCenterInstanceArn = Aws::Utils::Xml::DecodeEscapedXmlText(identityCenterInstanceArnNode.GetText());
+      m_identityCenterInstanceArnHasBeenSet = true;
     }
     XmlNode identityCenterApplicationArnNode = resultNode.FirstChild("IdentityCenterApplicationArn");
     if(!identityCenterApplicationArnNode.IsNull())
     {
       m_identityCenterApplicationArn = Aws::Utils::Xml::DecodeEscapedXmlText(identityCenterApplicationArnNode.GetText());
+      m_identityCenterApplicationArnHasBeenSet = true;
     }
     XmlNode createdAtNode = resultNode.FirstChild("CreatedAt");
     if(!createdAtNode.IsNull())
     {
       m_createdAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_createdAtHasBeenSet = true;
     }
   }
 
@@ -64,12 +65,14 @@ GetAccessGrantsInstanceResult& GetAccessGrantsInstanceResult::operator =(const A
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

@@ -35,7 +35,7 @@ namespace Model
   class PutObjectRequest : public StreamingS3Request
   {
   public:
-    AWS_S3_API PutObjectRequest();
+    AWS_S3_API PutObjectRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -82,12 +82,10 @@ namespace Model
      * directory buckets.</p> </li> <li> <p>This functionality is not supported for
      * Amazon S3 on Outposts.</p> </li> </ul> 
      */
-    inline const ObjectCannedACL& GetACL() const{ return m_aCL; }
+    inline ObjectCannedACL GetACL() const { return m_aCL; }
     inline bool ACLHasBeenSet() const { return m_aCLHasBeenSet; }
-    inline void SetACL(const ObjectCannedACL& value) { m_aCLHasBeenSet = true; m_aCL = value; }
-    inline void SetACL(ObjectCannedACL&& value) { m_aCLHasBeenSet = true; m_aCL = std::move(value); }
-    inline PutObjectRequest& WithACL(const ObjectCannedACL& value) { SetACL(value); return *this;}
-    inline PutObjectRequest& WithACL(ObjectCannedACL&& value) { SetACL(std::move(value)); return *this;}
+    inline void SetACL(ObjectCannedACL value) { m_aCLHasBeenSet = true; m_aCL = value; }
+    inline PutObjectRequest& WithACL(ObjectCannedACL value) { SetACL(value); return *this;}
     ///@}
 
     ///@{
@@ -124,14 +122,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
      * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline PutObjectRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline PutObjectRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline PutObjectRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    PutObjectRequest& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,14 +136,12 @@ namespace Model
      * more information, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
      */
-    inline const Aws::String& GetCacheControl() const{ return m_cacheControl; }
+    inline const Aws::String& GetCacheControl() const { return m_cacheControl; }
     inline bool CacheControlHasBeenSet() const { return m_cacheControlHasBeenSet; }
-    inline void SetCacheControl(const Aws::String& value) { m_cacheControlHasBeenSet = true; m_cacheControl = value; }
-    inline void SetCacheControl(Aws::String&& value) { m_cacheControlHasBeenSet = true; m_cacheControl = std::move(value); }
-    inline void SetCacheControl(const char* value) { m_cacheControlHasBeenSet = true; m_cacheControl.assign(value); }
-    inline PutObjectRequest& WithCacheControl(const Aws::String& value) { SetCacheControl(value); return *this;}
-    inline PutObjectRequest& WithCacheControl(Aws::String&& value) { SetCacheControl(std::move(value)); return *this;}
-    inline PutObjectRequest& WithCacheControl(const char* value) { SetCacheControl(value); return *this;}
+    template<typename CacheControlT = Aws::String>
+    void SetCacheControl(CacheControlT&& value) { m_cacheControlHasBeenSet = true; m_cacheControl = std::forward<CacheControlT>(value); }
+    template<typename CacheControlT = Aws::String>
+    PutObjectRequest& WithCacheControl(CacheControlT&& value) { SetCacheControl(std::forward<CacheControlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,14 +150,12 @@ namespace Model
      * see <a
      * href="https://www.rfc-editor.org/rfc/rfc6266#section-4">https://www.rfc-editor.org/rfc/rfc6266#section-4</a>.</p>
      */
-    inline const Aws::String& GetContentDisposition() const{ return m_contentDisposition; }
+    inline const Aws::String& GetContentDisposition() const { return m_contentDisposition; }
     inline bool ContentDispositionHasBeenSet() const { return m_contentDispositionHasBeenSet; }
-    inline void SetContentDisposition(const Aws::String& value) { m_contentDispositionHasBeenSet = true; m_contentDisposition = value; }
-    inline void SetContentDisposition(Aws::String&& value) { m_contentDispositionHasBeenSet = true; m_contentDisposition = std::move(value); }
-    inline void SetContentDisposition(const char* value) { m_contentDispositionHasBeenSet = true; m_contentDisposition.assign(value); }
-    inline PutObjectRequest& WithContentDisposition(const Aws::String& value) { SetContentDisposition(value); return *this;}
-    inline PutObjectRequest& WithContentDisposition(Aws::String&& value) { SetContentDisposition(std::move(value)); return *this;}
-    inline PutObjectRequest& WithContentDisposition(const char* value) { SetContentDisposition(value); return *this;}
+    template<typename ContentDispositionT = Aws::String>
+    void SetContentDisposition(ContentDispositionT&& value) { m_contentDispositionHasBeenSet = true; m_contentDisposition = std::forward<ContentDispositionT>(value); }
+    template<typename ContentDispositionT = Aws::String>
+    PutObjectRequest& WithContentDisposition(ContentDispositionT&& value) { SetContentDisposition(std::forward<ContentDispositionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -173,28 +165,24 @@ namespace Model
      * the Content-Type header field. For more information, see <a
      * href="https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding">https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding</a>.</p>
      */
-    inline const Aws::String& GetContentEncoding() const{ return m_contentEncoding; }
+    inline const Aws::String& GetContentEncoding() const { return m_contentEncoding; }
     inline bool ContentEncodingHasBeenSet() const { return m_contentEncodingHasBeenSet; }
-    inline void SetContentEncoding(const Aws::String& value) { m_contentEncodingHasBeenSet = true; m_contentEncoding = value; }
-    inline void SetContentEncoding(Aws::String&& value) { m_contentEncodingHasBeenSet = true; m_contentEncoding = std::move(value); }
-    inline void SetContentEncoding(const char* value) { m_contentEncodingHasBeenSet = true; m_contentEncoding.assign(value); }
-    inline PutObjectRequest& WithContentEncoding(const Aws::String& value) { SetContentEncoding(value); return *this;}
-    inline PutObjectRequest& WithContentEncoding(Aws::String&& value) { SetContentEncoding(std::move(value)); return *this;}
-    inline PutObjectRequest& WithContentEncoding(const char* value) { SetContentEncoding(value); return *this;}
+    template<typename ContentEncodingT = Aws::String>
+    void SetContentEncoding(ContentEncodingT&& value) { m_contentEncodingHasBeenSet = true; m_contentEncoding = std::forward<ContentEncodingT>(value); }
+    template<typename ContentEncodingT = Aws::String>
+    PutObjectRequest& WithContentEncoding(ContentEncodingT&& value) { SetContentEncoding(std::forward<ContentEncodingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The language the content is in.</p>
      */
-    inline const Aws::String& GetContentLanguage() const{ return m_contentLanguage; }
+    inline const Aws::String& GetContentLanguage() const { return m_contentLanguage; }
     inline bool ContentLanguageHasBeenSet() const { return m_contentLanguageHasBeenSet; }
-    inline void SetContentLanguage(const Aws::String& value) { m_contentLanguageHasBeenSet = true; m_contentLanguage = value; }
-    inline void SetContentLanguage(Aws::String&& value) { m_contentLanguageHasBeenSet = true; m_contentLanguage = std::move(value); }
-    inline void SetContentLanguage(const char* value) { m_contentLanguageHasBeenSet = true; m_contentLanguage.assign(value); }
-    inline PutObjectRequest& WithContentLanguage(const Aws::String& value) { SetContentLanguage(value); return *this;}
-    inline PutObjectRequest& WithContentLanguage(Aws::String&& value) { SetContentLanguage(std::move(value)); return *this;}
-    inline PutObjectRequest& WithContentLanguage(const char* value) { SetContentLanguage(value); return *this;}
+    template<typename ContentLanguageT = Aws::String>
+    void SetContentLanguage(ContentLanguageT&& value) { m_contentLanguageHasBeenSet = true; m_contentLanguage = std::forward<ContentLanguageT>(value); }
+    template<typename ContentLanguageT = Aws::String>
+    PutObjectRequest& WithContentLanguage(ContentLanguageT&& value) { SetContentLanguage(std::forward<ContentLanguageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -203,7 +191,7 @@ namespace Model
      * cannot be determined automatically. For more information, see <a
      * href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length">https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length</a>.</p>
      */
-    inline long long GetContentLength() const{ return m_contentLength; }
+    inline long long GetContentLength() const { return m_contentLength; }
     inline bool ContentLengthHasBeenSet() const { return m_contentLengthHasBeenSet; }
     inline void SetContentLength(long long value) { m_contentLengthHasBeenSet = true; m_contentLength = value; }
     inline PutObjectRequest& WithContentLength(long long value) { SetContentLength(value); return *this;}
@@ -227,14 +215,12 @@ namespace Model
      * Guide</i>.</p>   <p>This functionality is not supported for
      * directory buckets.</p> 
      */
-    inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
+    inline const Aws::String& GetContentMD5() const { return m_contentMD5; }
     inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
-    inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
-    inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
-    inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
-    inline PutObjectRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
-    inline PutObjectRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
-    inline PutObjectRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
+    template<typename ContentMD5T = Aws::String>
+    void SetContentMD5(ContentMD5T&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::forward<ContentMD5T>(value); }
+    template<typename ContentMD5T = Aws::String>
+    PutObjectRequest& WithContentMD5(ContentMD5T&& value) { SetContentMD5(std::forward<ContentMD5T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -266,12 +252,10 @@ namespace Model
      * Services SDKs, <code>CRC32</code> is the default checksum algorithm that's used
      * for performance.</p>
      */
-    inline const ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
+    inline ChecksumAlgorithm GetChecksumAlgorithm() const { return m_checksumAlgorithm; }
     inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
-    inline void SetChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
-    inline void SetChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::move(value); }
-    inline PutObjectRequest& WithChecksumAlgorithm(const ChecksumAlgorithm& value) { SetChecksumAlgorithm(value); return *this;}
-    inline PutObjectRequest& WithChecksumAlgorithm(ChecksumAlgorithm&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
+    inline void SetChecksumAlgorithm(ChecksumAlgorithm value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
+    inline PutObjectRequest& WithChecksumAlgorithm(ChecksumAlgorithm value) { SetChecksumAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -283,14 +267,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumCRC32() const{ return m_checksumCRC32; }
+    inline const Aws::String& GetChecksumCRC32() const { return m_checksumCRC32; }
     inline bool ChecksumCRC32HasBeenSet() const { return m_checksumCRC32HasBeenSet; }
-    inline void SetChecksumCRC32(const Aws::String& value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32 = value; SetChecksumAlgorithm(ChecksumAlgorithm::CRC32); }
-    inline void SetChecksumCRC32(Aws::String&& value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32 = std::move(value); SetChecksumAlgorithm(ChecksumAlgorithm::CRC32); }
+    template<typename ChecksumCRC32T = Aws::String>
+    void SetChecksumCRC32(ChecksumCRC32T&& value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32 = std::forward<ChecksumCRC32T>(value); SetChecksumAlgorithm(ChecksumAlgorithm::CRC32); }
     inline void SetChecksumCRC32(const char* value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32.assign(value); SetChecksumAlgorithm(ChecksumAlgorithm::CRC32); }
-    inline PutObjectRequest& WithChecksumCRC32(const Aws::String& value) { SetChecksumCRC32(value); return *this;}
-    inline PutObjectRequest& WithChecksumCRC32(Aws::String&& value) { SetChecksumCRC32(std::move(value)); return *this;}
-    inline PutObjectRequest& WithChecksumCRC32(const char* value) { SetChecksumCRC32(value); return *this;}
+    template<typename ChecksumCRC32T = Aws::String>
+    PutObjectRequest& WithChecksumCRC32(ChecksumCRC32T&& value) { SetChecksumCRC32(std::forward<ChecksumCRC32T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -302,14 +285,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumCRC32C() const{ return m_checksumCRC32C; }
+    inline const Aws::String& GetChecksumCRC32C() const { return m_checksumCRC32C; }
     inline bool ChecksumCRC32CHasBeenSet() const { return m_checksumCRC32CHasBeenSet; }
-    inline void SetChecksumCRC32C(const Aws::String& value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C = value; SetChecksumAlgorithm(ChecksumAlgorithm::CRC32C); }
-    inline void SetChecksumCRC32C(Aws::String&& value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C = std::move(value); SetChecksumAlgorithm(ChecksumAlgorithm::CRC32C); }
+    template<typename ChecksumCRC32CT = Aws::String>
+    void SetChecksumCRC32C(ChecksumCRC32CT&& value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C = std::forward<ChecksumCRC32CT>(value); SetChecksumAlgorithm(ChecksumAlgorithm::CRC32C); }
     inline void SetChecksumCRC32C(const char* value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C.assign(value); SetChecksumAlgorithm(ChecksumAlgorithm::CRC32C); }
-    inline PutObjectRequest& WithChecksumCRC32C(const Aws::String& value) { SetChecksumCRC32C(value); return *this;}
-    inline PutObjectRequest& WithChecksumCRC32C(Aws::String&& value) { SetChecksumCRC32C(std::move(value)); return *this;}
-    inline PutObjectRequest& WithChecksumCRC32C(const char* value) { SetChecksumCRC32C(value); return *this;}
+    template<typename ChecksumCRC32CT = Aws::String>
+    PutObjectRequest& WithChecksumCRC32C(ChecksumCRC32CT&& value) { SetChecksumCRC32C(std::forward<ChecksumCRC32CT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -322,14 +304,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity in the Amazon S3 User Guide</a>.</p>
      */
-    inline const Aws::String& GetChecksumCRC64NVME() const{ return m_checksumCRC64NVME; }
+    inline const Aws::String& GetChecksumCRC64NVME() const { return m_checksumCRC64NVME; }
     inline bool ChecksumCRC64NVMEHasBeenSet() const { return m_checksumCRC64NVMEHasBeenSet; }
-    inline void SetChecksumCRC64NVME(const Aws::String& value) { m_checksumCRC64NVMEHasBeenSet = true; m_checksumCRC64NVME = value; }
-    inline void SetChecksumCRC64NVME(Aws::String&& value) { m_checksumCRC64NVMEHasBeenSet = true; m_checksumCRC64NVME = std::move(value); }
-    inline void SetChecksumCRC64NVME(const char* value) { m_checksumCRC64NVMEHasBeenSet = true; m_checksumCRC64NVME.assign(value); }
-    inline PutObjectRequest& WithChecksumCRC64NVME(const Aws::String& value) { SetChecksumCRC64NVME(value); return *this;}
-    inline PutObjectRequest& WithChecksumCRC64NVME(Aws::String&& value) { SetChecksumCRC64NVME(std::move(value)); return *this;}
-    inline PutObjectRequest& WithChecksumCRC64NVME(const char* value) { SetChecksumCRC64NVME(value); return *this;}
+    template<typename ChecksumCRC64NVMET = Aws::String>
+    void SetChecksumCRC64NVME(ChecksumCRC64NVMET&& value) { m_checksumCRC64NVMEHasBeenSet = true; m_checksumCRC64NVME = std::forward<ChecksumCRC64NVMET>(value); }
+    template<typename ChecksumCRC64NVMET = Aws::String>
+    PutObjectRequest& WithChecksumCRC64NVME(ChecksumCRC64NVMET&& value) { SetChecksumCRC64NVME(std::forward<ChecksumCRC64NVMET>(value)); return *this;}
     ///@}
 
     ///@{
@@ -341,14 +321,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumSHA1() const{ return m_checksumSHA1; }
+    inline const Aws::String& GetChecksumSHA1() const { return m_checksumSHA1; }
     inline bool ChecksumSHA1HasBeenSet() const { return m_checksumSHA1HasBeenSet; }
-    inline void SetChecksumSHA1(const Aws::String& value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1 = value; SetChecksumAlgorithm(ChecksumAlgorithm::SHA1); }
-    inline void SetChecksumSHA1(Aws::String&& value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1 = std::move(value); SetChecksumAlgorithm(ChecksumAlgorithm::SHA1); }
+    template<typename ChecksumSHA1T = Aws::String>
+    void SetChecksumSHA1(ChecksumSHA1T&& value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1 = std::forward<ChecksumSHA1T>(value); SetChecksumAlgorithm(ChecksumAlgorithm::SHA1); }
     inline void SetChecksumSHA1(const char* value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1.assign(value); SetChecksumAlgorithm(ChecksumAlgorithm::SHA1); }
-    inline PutObjectRequest& WithChecksumSHA1(const Aws::String& value) { SetChecksumSHA1(value); return *this;}
-    inline PutObjectRequest& WithChecksumSHA1(Aws::String&& value) { SetChecksumSHA1(std::move(value)); return *this;}
-    inline PutObjectRequest& WithChecksumSHA1(const char* value) { SetChecksumSHA1(value); return *this;}
+    template<typename ChecksumSHA1T = Aws::String>
+    PutObjectRequest& WithChecksumSHA1(ChecksumSHA1T&& value) { SetChecksumSHA1(std::forward<ChecksumSHA1T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -360,14 +339,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumSHA256() const{ return m_checksumSHA256; }
+    inline const Aws::String& GetChecksumSHA256() const { return m_checksumSHA256; }
     inline bool ChecksumSHA256HasBeenSet() const { return m_checksumSHA256HasBeenSet; }
-    inline void SetChecksumSHA256(const Aws::String& value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256 = value; SetChecksumAlgorithm(ChecksumAlgorithm::SHA256); }
-    inline void SetChecksumSHA256(Aws::String&& value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256 = std::move(value); SetChecksumAlgorithm(ChecksumAlgorithm::SHA256); }
+    template<typename ChecksumSHA256T = Aws::String>
+    void SetChecksumSHA256(ChecksumSHA256T&& value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256 = std::forward<ChecksumSHA256T>(value); SetChecksumAlgorithm(ChecksumAlgorithm::SHA256); }
     inline void SetChecksumSHA256(const char* value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256.assign(value); SetChecksumAlgorithm(ChecksumAlgorithm::SHA256); }
-    inline PutObjectRequest& WithChecksumSHA256(const Aws::String& value) { SetChecksumSHA256(value); return *this;}
-    inline PutObjectRequest& WithChecksumSHA256(Aws::String&& value) { SetChecksumSHA256(std::move(value)); return *this;}
-    inline PutObjectRequest& WithChecksumSHA256(const char* value) { SetChecksumSHA256(value); return *this;}
+    template<typename ChecksumSHA256T = Aws::String>
+    PutObjectRequest& WithChecksumSHA256(ChecksumSHA256T&& value) { SetChecksumSHA256(std::forward<ChecksumSHA256T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -376,12 +354,12 @@ namespace Model
      * information, see <a
      * href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpires() const{ return m_expires; }
+    inline const Aws::Utils::DateTime& GetExpires() const { return m_expires; }
     inline bool ExpiresHasBeenSet() const { return m_expiresHasBeenSet; }
-    inline void SetExpires(const Aws::Utils::DateTime& value) { m_expiresHasBeenSet = true; m_expires = value; }
-    inline void SetExpires(Aws::Utils::DateTime&& value) { m_expiresHasBeenSet = true; m_expires = std::move(value); }
-    inline PutObjectRequest& WithExpires(const Aws::Utils::DateTime& value) { SetExpires(value); return *this;}
-    inline PutObjectRequest& WithExpires(Aws::Utils::DateTime&& value) { SetExpires(std::move(value)); return *this;}
+    template<typename ExpiresT = Aws::Utils::DateTime>
+    void SetExpires(ExpiresT&& value) { m_expiresHasBeenSet = true; m_expires = std::forward<ExpiresT>(value); }
+    template<typename ExpiresT = Aws::Utils::DateTime>
+    PutObjectRequest& WithExpires(ExpiresT&& value) { SetExpires(std::forward<ExpiresT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -397,14 +375,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-requests.html">Conditional
      * requests</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
+    inline const Aws::String& GetIfMatch() const { return m_ifMatch; }
     inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
-    inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
-    inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::move(value); }
-    inline void SetIfMatch(const char* value) { m_ifMatchHasBeenSet = true; m_ifMatch.assign(value); }
-    inline PutObjectRequest& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
-    inline PutObjectRequest& WithIfMatch(Aws::String&& value) { SetIfMatch(std::move(value)); return *this;}
-    inline PutObjectRequest& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
+    template<typename IfMatchT = Aws::String>
+    void SetIfMatch(IfMatchT&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::forward<IfMatchT>(value); }
+    template<typename IfMatchT = Aws::String>
+    PutObjectRequest& WithIfMatch(IfMatchT&& value) { SetIfMatch(std::forward<IfMatchT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -419,14 +395,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-requests.html">Conditional
      * requests</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetIfNoneMatch() const{ return m_ifNoneMatch; }
+    inline const Aws::String& GetIfNoneMatch() const { return m_ifNoneMatch; }
     inline bool IfNoneMatchHasBeenSet() const { return m_ifNoneMatchHasBeenSet; }
-    inline void SetIfNoneMatch(const Aws::String& value) { m_ifNoneMatchHasBeenSet = true; m_ifNoneMatch = value; }
-    inline void SetIfNoneMatch(Aws::String&& value) { m_ifNoneMatchHasBeenSet = true; m_ifNoneMatch = std::move(value); }
-    inline void SetIfNoneMatch(const char* value) { m_ifNoneMatchHasBeenSet = true; m_ifNoneMatch.assign(value); }
-    inline PutObjectRequest& WithIfNoneMatch(const Aws::String& value) { SetIfNoneMatch(value); return *this;}
-    inline PutObjectRequest& WithIfNoneMatch(Aws::String&& value) { SetIfNoneMatch(std::move(value)); return *this;}
-    inline PutObjectRequest& WithIfNoneMatch(const char* value) { SetIfNoneMatch(value); return *this;}
+    template<typename IfNoneMatchT = Aws::String>
+    void SetIfNoneMatch(IfNoneMatchT&& value) { m_ifNoneMatchHasBeenSet = true; m_ifNoneMatch = std::forward<IfNoneMatchT>(value); }
+    template<typename IfNoneMatchT = Aws::String>
+    PutObjectRequest& WithIfNoneMatch(IfNoneMatchT&& value) { SetIfNoneMatch(std::forward<IfNoneMatchT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -436,14 +410,12 @@ namespace Model
      * directory buckets.</p> </li> <li> <p>This functionality is not supported for
      * Amazon S3 on Outposts.</p> </li> </ul> 
      */
-    inline const Aws::String& GetGrantFullControl() const{ return m_grantFullControl; }
+    inline const Aws::String& GetGrantFullControl() const { return m_grantFullControl; }
     inline bool GrantFullControlHasBeenSet() const { return m_grantFullControlHasBeenSet; }
-    inline void SetGrantFullControl(const Aws::String& value) { m_grantFullControlHasBeenSet = true; m_grantFullControl = value; }
-    inline void SetGrantFullControl(Aws::String&& value) { m_grantFullControlHasBeenSet = true; m_grantFullControl = std::move(value); }
-    inline void SetGrantFullControl(const char* value) { m_grantFullControlHasBeenSet = true; m_grantFullControl.assign(value); }
-    inline PutObjectRequest& WithGrantFullControl(const Aws::String& value) { SetGrantFullControl(value); return *this;}
-    inline PutObjectRequest& WithGrantFullControl(Aws::String&& value) { SetGrantFullControl(std::move(value)); return *this;}
-    inline PutObjectRequest& WithGrantFullControl(const char* value) { SetGrantFullControl(value); return *this;}
+    template<typename GrantFullControlT = Aws::String>
+    void SetGrantFullControl(GrantFullControlT&& value) { m_grantFullControlHasBeenSet = true; m_grantFullControl = std::forward<GrantFullControlT>(value); }
+    template<typename GrantFullControlT = Aws::String>
+    PutObjectRequest& WithGrantFullControl(GrantFullControlT&& value) { SetGrantFullControl(std::forward<GrantFullControlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -453,14 +425,12 @@ namespace Model
      * <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
      * </ul> 
      */
-    inline const Aws::String& GetGrantRead() const{ return m_grantRead; }
+    inline const Aws::String& GetGrantRead() const { return m_grantRead; }
     inline bool GrantReadHasBeenSet() const { return m_grantReadHasBeenSet; }
-    inline void SetGrantRead(const Aws::String& value) { m_grantReadHasBeenSet = true; m_grantRead = value; }
-    inline void SetGrantRead(Aws::String&& value) { m_grantReadHasBeenSet = true; m_grantRead = std::move(value); }
-    inline void SetGrantRead(const char* value) { m_grantReadHasBeenSet = true; m_grantRead.assign(value); }
-    inline PutObjectRequest& WithGrantRead(const Aws::String& value) { SetGrantRead(value); return *this;}
-    inline PutObjectRequest& WithGrantRead(Aws::String&& value) { SetGrantRead(std::move(value)); return *this;}
-    inline PutObjectRequest& WithGrantRead(const char* value) { SetGrantRead(value); return *this;}
+    template<typename GrantReadT = Aws::String>
+    void SetGrantRead(GrantReadT&& value) { m_grantReadHasBeenSet = true; m_grantRead = std::forward<GrantReadT>(value); }
+    template<typename GrantReadT = Aws::String>
+    PutObjectRequest& WithGrantRead(GrantReadT&& value) { SetGrantRead(std::forward<GrantReadT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -470,14 +440,12 @@ namespace Model
      * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
      * 
      */
-    inline const Aws::String& GetGrantReadACP() const{ return m_grantReadACP; }
+    inline const Aws::String& GetGrantReadACP() const { return m_grantReadACP; }
     inline bool GrantReadACPHasBeenSet() const { return m_grantReadACPHasBeenSet; }
-    inline void SetGrantReadACP(const Aws::String& value) { m_grantReadACPHasBeenSet = true; m_grantReadACP = value; }
-    inline void SetGrantReadACP(Aws::String&& value) { m_grantReadACPHasBeenSet = true; m_grantReadACP = std::move(value); }
-    inline void SetGrantReadACP(const char* value) { m_grantReadACPHasBeenSet = true; m_grantReadACP.assign(value); }
-    inline PutObjectRequest& WithGrantReadACP(const Aws::String& value) { SetGrantReadACP(value); return *this;}
-    inline PutObjectRequest& WithGrantReadACP(Aws::String&& value) { SetGrantReadACP(std::move(value)); return *this;}
-    inline PutObjectRequest& WithGrantReadACP(const char* value) { SetGrantReadACP(value); return *this;}
+    template<typename GrantReadACPT = Aws::String>
+    void SetGrantReadACP(GrantReadACPT&& value) { m_grantReadACPHasBeenSet = true; m_grantReadACP = std::forward<GrantReadACPT>(value); }
+    template<typename GrantReadACPT = Aws::String>
+    PutObjectRequest& WithGrantReadACP(GrantReadACPT&& value) { SetGrantReadACP(std::forward<GrantReadACPT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -487,28 +455,24 @@ namespace Model
      * <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
      * </ul> 
      */
-    inline const Aws::String& GetGrantWriteACP() const{ return m_grantWriteACP; }
+    inline const Aws::String& GetGrantWriteACP() const { return m_grantWriteACP; }
     inline bool GrantWriteACPHasBeenSet() const { return m_grantWriteACPHasBeenSet; }
-    inline void SetGrantWriteACP(const Aws::String& value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP = value; }
-    inline void SetGrantWriteACP(Aws::String&& value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP = std::move(value); }
-    inline void SetGrantWriteACP(const char* value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP.assign(value); }
-    inline PutObjectRequest& WithGrantWriteACP(const Aws::String& value) { SetGrantWriteACP(value); return *this;}
-    inline PutObjectRequest& WithGrantWriteACP(Aws::String&& value) { SetGrantWriteACP(std::move(value)); return *this;}
-    inline PutObjectRequest& WithGrantWriteACP(const char* value) { SetGrantWriteACP(value); return *this;}
+    template<typename GrantWriteACPT = Aws::String>
+    void SetGrantWriteACP(GrantWriteACPT&& value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP = std::forward<GrantWriteACPT>(value); }
+    template<typename GrantWriteACPT = Aws::String>
+    PutObjectRequest& WithGrantWriteACP(GrantWriteACPT&& value) { SetGrantWriteACP(std::forward<GrantWriteACPT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Object key for which the PUT action was initiated.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline PutObjectRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline PutObjectRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline PutObjectRequest& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    PutObjectRequest& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -519,7 +483,7 @@ namespace Model
      * <p>This functionality is only supported for objects in the Amazon S3 Express One
      * Zone storage class in directory buckets.</p> 
      */
-    inline long long GetWriteOffsetBytes() const{ return m_writeOffsetBytes; }
+    inline long long GetWriteOffsetBytes() const { return m_writeOffsetBytes; }
     inline bool WriteOffsetBytesHasBeenSet() const { return m_writeOffsetBytesHasBeenSet; }
     inline void SetWriteOffsetBytes(long long value) { m_writeOffsetBytesHasBeenSet = true; m_writeOffsetBytes = value; }
     inline PutObjectRequest& WithWriteOffsetBytes(long long value) { SetWriteOffsetBytes(value); return *this;}
@@ -529,19 +493,16 @@ namespace Model
     /**
      * <p>A map of metadata to store with the object in S3.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline PutObjectRequest& WithMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetMetadata(value); return *this;}
-    inline PutObjectRequest& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
-    inline PutObjectRequest& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
-    inline PutObjectRequest& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
-    inline PutObjectRequest& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
-    inline PutObjectRequest& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
-    inline PutObjectRequest& AddMetadata(const char* key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
-    inline PutObjectRequest& AddMetadata(Aws::String&& key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
-    inline PutObjectRequest& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
+    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+    PutObjectRequest& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    template<typename MetadataKeyT = Aws::String, typename MetadataValueT = Aws::String>
+    PutObjectRequest& AddMetadata(MetadataKeyT&& key, MetadataValueT&& value) {
+      m_metadataHasBeenSet = true; m_metadata.emplace(std::forward<MetadataKeyT>(key), std::forward<MetadataValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -602,12 +563,10 @@ namespace Model
      * the encryption request headers must match the default encryption configuration
      * of the directory bucket. </p>  </li> </ul>
      */
-    inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
+    inline ServerSideEncryption GetServerSideEncryption() const { return m_serverSideEncryption; }
     inline bool ServerSideEncryptionHasBeenSet() const { return m_serverSideEncryptionHasBeenSet; }
-    inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = value; }
-    inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = std::move(value); }
-    inline PutObjectRequest& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
-    inline PutObjectRequest& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
+    inline void SetServerSideEncryption(ServerSideEncryption value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = value; }
+    inline PutObjectRequest& WithServerSideEncryption(ServerSideEncryption value) { SetServerSideEncryption(value); return *this;}
     ///@}
 
     ///@{
@@ -622,12 +581,10 @@ namespace Model
      * store newly created objects.</p> </li> <li> <p>Amazon S3 on Outposts only uses
      * the OUTPOSTS Storage Class.</p> </li> </ul> 
      */
-    inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
+    inline StorageClass GetStorageClass() const { return m_storageClass; }
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
-    inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
-    inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
-    inline PutObjectRequest& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
-    inline PutObjectRequest& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
+    inline void SetStorageClass(StorageClass value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+    inline PutObjectRequest& WithStorageClass(StorageClass value) { SetStorageClass(value); return *this;}
     ///@}
 
     ///@{
@@ -650,14 +607,12 @@ namespace Model
      * to Configure Website Page Redirects</a> in the <i>Amazon S3 User Guide</i>. </p>
      *  <p>This functionality is not supported for directory buckets.</p> 
      */
-    inline const Aws::String& GetWebsiteRedirectLocation() const{ return m_websiteRedirectLocation; }
+    inline const Aws::String& GetWebsiteRedirectLocation() const { return m_websiteRedirectLocation; }
     inline bool WebsiteRedirectLocationHasBeenSet() const { return m_websiteRedirectLocationHasBeenSet; }
-    inline void SetWebsiteRedirectLocation(const Aws::String& value) { m_websiteRedirectLocationHasBeenSet = true; m_websiteRedirectLocation = value; }
-    inline void SetWebsiteRedirectLocation(Aws::String&& value) { m_websiteRedirectLocationHasBeenSet = true; m_websiteRedirectLocation = std::move(value); }
-    inline void SetWebsiteRedirectLocation(const char* value) { m_websiteRedirectLocationHasBeenSet = true; m_websiteRedirectLocation.assign(value); }
-    inline PutObjectRequest& WithWebsiteRedirectLocation(const Aws::String& value) { SetWebsiteRedirectLocation(value); return *this;}
-    inline PutObjectRequest& WithWebsiteRedirectLocation(Aws::String&& value) { SetWebsiteRedirectLocation(std::move(value)); return *this;}
-    inline PutObjectRequest& WithWebsiteRedirectLocation(const char* value) { SetWebsiteRedirectLocation(value); return *this;}
+    template<typename WebsiteRedirectLocationT = Aws::String>
+    void SetWebsiteRedirectLocation(WebsiteRedirectLocationT&& value) { m_websiteRedirectLocationHasBeenSet = true; m_websiteRedirectLocation = std::forward<WebsiteRedirectLocationT>(value); }
+    template<typename WebsiteRedirectLocationT = Aws::String>
+    PutObjectRequest& WithWebsiteRedirectLocation(WebsiteRedirectLocationT&& value) { SetWebsiteRedirectLocation(std::forward<WebsiteRedirectLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -666,14 +621,12 @@ namespace Model
      * <code>AES256</code>).</p>  <p>This functionality is not supported for
      * directory buckets.</p> 
      */
-    inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
+    inline const Aws::String& GetSSECustomerAlgorithm() const { return m_sSECustomerAlgorithm; }
     inline bool SSECustomerAlgorithmHasBeenSet() const { return m_sSECustomerAlgorithmHasBeenSet; }
-    inline void SetSSECustomerAlgorithm(const Aws::String& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = value; }
-    inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = std::move(value); }
-    inline void SetSSECustomerAlgorithm(const char* value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm.assign(value); }
-    inline PutObjectRequest& WithSSECustomerAlgorithm(const Aws::String& value) { SetSSECustomerAlgorithm(value); return *this;}
-    inline PutObjectRequest& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(std::move(value)); return *this;}
-    inline PutObjectRequest& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
+    template<typename SSECustomerAlgorithmT = Aws::String>
+    void SetSSECustomerAlgorithm(SSECustomerAlgorithmT&& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = std::forward<SSECustomerAlgorithmT>(value); }
+    template<typename SSECustomerAlgorithmT = Aws::String>
+    PutObjectRequest& WithSSECustomerAlgorithm(SSECustomerAlgorithmT&& value) { SetSSECustomerAlgorithm(std::forward<SSECustomerAlgorithmT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -685,14 +638,12 @@ namespace Model
      * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p> 
      * <p>This functionality is not supported for directory buckets.</p> 
      */
-    inline const Aws::String& GetSSECustomerKey() const{ return m_sSECustomerKey; }
+    inline const Aws::String& GetSSECustomerKey() const { return m_sSECustomerKey; }
     inline bool SSECustomerKeyHasBeenSet() const { return m_sSECustomerKeyHasBeenSet; }
-    inline void SetSSECustomerKey(const Aws::String& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
-    inline void SetSSECustomerKey(Aws::String&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = std::move(value); }
-    inline void SetSSECustomerKey(const char* value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey.assign(value); }
-    inline PutObjectRequest& WithSSECustomerKey(const Aws::String& value) { SetSSECustomerKey(value); return *this;}
-    inline PutObjectRequest& WithSSECustomerKey(Aws::String&& value) { SetSSECustomerKey(std::move(value)); return *this;}
-    inline PutObjectRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
+    template<typename SSECustomerKeyT = Aws::String>
+    void SetSSECustomerKey(SSECustomerKeyT&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = std::forward<SSECustomerKeyT>(value); }
+    template<typename SSECustomerKeyT = Aws::String>
+    PutObjectRequest& WithSSECustomerKey(SSECustomerKeyT&& value) { SetSSECustomerKey(std::forward<SSECustomerKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -702,14 +653,12 @@ namespace Model
      * encryption key was transmitted without error.</p>  <p>This functionality
      * is not supported for directory buckets.</p> 
      */
-    inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
+    inline const Aws::String& GetSSECustomerKeyMD5() const { return m_sSECustomerKeyMD5; }
     inline bool SSECustomerKeyMD5HasBeenSet() const { return m_sSECustomerKeyMD5HasBeenSet; }
-    inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = value; }
-    inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = std::move(value); }
-    inline void SetSSECustomerKeyMD5(const char* value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5.assign(value); }
-    inline PutObjectRequest& WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
-    inline PutObjectRequest& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(std::move(value)); return *this;}
-    inline PutObjectRequest& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
+    template<typename SSECustomerKeyMD5T = Aws::String>
+    void SetSSECustomerKeyMD5(SSECustomerKeyMD5T&& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = std::forward<SSECustomerKeyMD5T>(value); }
+    template<typename SSECustomerKeyMD5T = Aws::String>
+    PutObjectRequest& WithSSECustomerKeyMD5(SSECustomerKeyMD5T&& value) { SetSSECustomerKeyMD5(std::forward<SSECustomerKeyMD5T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -738,14 +687,12 @@ namespace Model
      * Web Services managed key</a> (<code>aws/s3</code>) isn't supported. Incorrect
      * key specification results in an HTTP <code>400 Bad Request</code> error. </p>
      */
-    inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
+    inline const Aws::String& GetSSEKMSKeyId() const { return m_sSEKMSKeyId; }
     inline bool SSEKMSKeyIdHasBeenSet() const { return m_sSEKMSKeyIdHasBeenSet; }
-    inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
-    inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
-    inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
-    inline PutObjectRequest& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
-    inline PutObjectRequest& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
-    inline PutObjectRequest& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
+    template<typename SSEKMSKeyIdT = Aws::String>
+    void SetSSEKMSKeyId(SSEKMSKeyIdT&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::forward<SSEKMSKeyIdT>(value); }
+    template<typename SSEKMSKeyIdT = Aws::String>
+    PutObjectRequest& WithSSEKMSKeyId(SSEKMSKeyIdT&& value) { SetSSEKMSKeyId(std::forward<SSEKMSKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -765,14 +712,12 @@ namespace Model
      * must match the default encryption context - the bucket Amazon Resource Name
      * (ARN). An additional encryption context value is not supported. </p>
      */
-    inline const Aws::String& GetSSEKMSEncryptionContext() const{ return m_sSEKMSEncryptionContext; }
+    inline const Aws::String& GetSSEKMSEncryptionContext() const { return m_sSEKMSEncryptionContext; }
     inline bool SSEKMSEncryptionContextHasBeenSet() const { return m_sSEKMSEncryptionContextHasBeenSet; }
-    inline void SetSSEKMSEncryptionContext(const Aws::String& value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext = value; }
-    inline void SetSSEKMSEncryptionContext(Aws::String&& value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext = std::move(value); }
-    inline void SetSSEKMSEncryptionContext(const char* value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext.assign(value); }
-    inline PutObjectRequest& WithSSEKMSEncryptionContext(const Aws::String& value) { SetSSEKMSEncryptionContext(value); return *this;}
-    inline PutObjectRequest& WithSSEKMSEncryptionContext(Aws::String&& value) { SetSSEKMSEncryptionContext(std::move(value)); return *this;}
-    inline PutObjectRequest& WithSSEKMSEncryptionContext(const char* value) { SetSSEKMSEncryptionContext(value); return *this;}
+    template<typename SSEKMSEncryptionContextT = Aws::String>
+    void SetSSEKMSEncryptionContext(SSEKMSEncryptionContextT&& value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext = std::forward<SSEKMSEncryptionContextT>(value); }
+    template<typename SSEKMSEncryptionContextT = Aws::String>
+    PutObjectRequest& WithSSEKMSEncryptionContext(SSEKMSEncryptionContextT&& value) { SetSSEKMSEncryptionContext(std::forward<SSEKMSEncryptionContextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -798,7 +743,7 @@ namespace Model
      * import jobs</a>. In this case, Amazon S3 makes a call to KMS every time a copy
      * request is made for a KMS-encrypted object.</p>
      */
-    inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
+    inline bool GetBucketKeyEnabled() const { return m_bucketKeyEnabled; }
     inline bool BucketKeyEnabledHasBeenSet() const { return m_bucketKeyEnabledHasBeenSet; }
     inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabledHasBeenSet = true; m_bucketKeyEnabled = value; }
     inline PutObjectRequest& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
@@ -806,12 +751,10 @@ namespace Model
 
     ///@{
     
-    inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
+    inline RequestPayer GetRequestPayer() const { return m_requestPayer; }
     inline bool RequestPayerHasBeenSet() const { return m_requestPayerHasBeenSet; }
-    inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
-    inline void SetRequestPayer(RequestPayer&& value) { m_requestPayerHasBeenSet = true; m_requestPayer = std::move(value); }
-    inline PutObjectRequest& WithRequestPayer(const RequestPayer& value) { SetRequestPayer(value); return *this;}
-    inline PutObjectRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
+    inline void SetRequestPayer(RequestPayer value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
+    inline PutObjectRequest& WithRequestPayer(RequestPayer value) { SetRequestPayer(value); return *this;}
     ///@}
 
     ///@{
@@ -820,14 +763,12 @@ namespace Model
      * parameters. (For example, "Key1=Value1")</p>  <p>This functionality is not
      * supported for directory buckets.</p> 
      */
-    inline const Aws::String& GetTagging() const{ return m_tagging; }
+    inline const Aws::String& GetTagging() const { return m_tagging; }
     inline bool TaggingHasBeenSet() const { return m_taggingHasBeenSet; }
-    inline void SetTagging(const Aws::String& value) { m_taggingHasBeenSet = true; m_tagging = value; }
-    inline void SetTagging(Aws::String&& value) { m_taggingHasBeenSet = true; m_tagging = std::move(value); }
-    inline void SetTagging(const char* value) { m_taggingHasBeenSet = true; m_tagging.assign(value); }
-    inline PutObjectRequest& WithTagging(const Aws::String& value) { SetTagging(value); return *this;}
-    inline PutObjectRequest& WithTagging(Aws::String&& value) { SetTagging(std::move(value)); return *this;}
-    inline PutObjectRequest& WithTagging(const char* value) { SetTagging(value); return *this;}
+    template<typename TaggingT = Aws::String>
+    void SetTagging(TaggingT&& value) { m_taggingHasBeenSet = true; m_tagging = std::forward<TaggingT>(value); }
+    template<typename TaggingT = Aws::String>
+    PutObjectRequest& WithTagging(TaggingT&& value) { SetTagging(std::forward<TaggingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -835,12 +776,10 @@ namespace Model
      * <p>The Object Lock mode that you want to apply to this object.</p> 
      * <p>This functionality is not supported for directory buckets.</p> 
      */
-    inline const ObjectLockMode& GetObjectLockMode() const{ return m_objectLockMode; }
+    inline ObjectLockMode GetObjectLockMode() const { return m_objectLockMode; }
     inline bool ObjectLockModeHasBeenSet() const { return m_objectLockModeHasBeenSet; }
-    inline void SetObjectLockMode(const ObjectLockMode& value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = value; }
-    inline void SetObjectLockMode(ObjectLockMode&& value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = std::move(value); }
-    inline PutObjectRequest& WithObjectLockMode(const ObjectLockMode& value) { SetObjectLockMode(value); return *this;}
-    inline PutObjectRequest& WithObjectLockMode(ObjectLockMode&& value) { SetObjectLockMode(std::move(value)); return *this;}
+    inline void SetObjectLockMode(ObjectLockMode value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = value; }
+    inline PutObjectRequest& WithObjectLockMode(ObjectLockMode value) { SetObjectLockMode(value); return *this;}
     ///@}
 
     ///@{
@@ -849,12 +788,12 @@ namespace Model
      * formatted as a timestamp parameter.</p>  <p>This functionality is not
      * supported for directory buckets.</p> 
      */
-    inline const Aws::Utils::DateTime& GetObjectLockRetainUntilDate() const{ return m_objectLockRetainUntilDate; }
+    inline const Aws::Utils::DateTime& GetObjectLockRetainUntilDate() const { return m_objectLockRetainUntilDate; }
     inline bool ObjectLockRetainUntilDateHasBeenSet() const { return m_objectLockRetainUntilDateHasBeenSet; }
-    inline void SetObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = value; }
-    inline void SetObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = std::move(value); }
-    inline PutObjectRequest& WithObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { SetObjectLockRetainUntilDate(value); return *this;}
-    inline PutObjectRequest& WithObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { SetObjectLockRetainUntilDate(std::move(value)); return *this;}
+    template<typename ObjectLockRetainUntilDateT = Aws::Utils::DateTime>
+    void SetObjectLockRetainUntilDate(ObjectLockRetainUntilDateT&& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = std::forward<ObjectLockRetainUntilDateT>(value); }
+    template<typename ObjectLockRetainUntilDateT = Aws::Utils::DateTime>
+    PutObjectRequest& WithObjectLockRetainUntilDate(ObjectLockRetainUntilDateT&& value) { SetObjectLockRetainUntilDate(std::forward<ObjectLockRetainUntilDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -865,12 +804,10 @@ namespace Model
      * Lock</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>This functionality is
      * not supported for directory buckets.</p> 
      */
-    inline const ObjectLockLegalHoldStatus& GetObjectLockLegalHoldStatus() const{ return m_objectLockLegalHoldStatus; }
+    inline ObjectLockLegalHoldStatus GetObjectLockLegalHoldStatus() const { return m_objectLockLegalHoldStatus; }
     inline bool ObjectLockLegalHoldStatusHasBeenSet() const { return m_objectLockLegalHoldStatusHasBeenSet; }
-    inline void SetObjectLockLegalHoldStatus(const ObjectLockLegalHoldStatus& value) { m_objectLockLegalHoldStatusHasBeenSet = true; m_objectLockLegalHoldStatus = value; }
-    inline void SetObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus&& value) { m_objectLockLegalHoldStatusHasBeenSet = true; m_objectLockLegalHoldStatus = std::move(value); }
-    inline PutObjectRequest& WithObjectLockLegalHoldStatus(const ObjectLockLegalHoldStatus& value) { SetObjectLockLegalHoldStatus(value); return *this;}
-    inline PutObjectRequest& WithObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus&& value) { SetObjectLockLegalHoldStatus(std::move(value)); return *this;}
+    inline void SetObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus value) { m_objectLockLegalHoldStatusHasBeenSet = true; m_objectLockLegalHoldStatus = value; }
+    inline PutObjectRequest& WithObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus value) { SetObjectLockLegalHoldStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -879,35 +816,30 @@ namespace Model
      * provide does not match the actual owner of the bucket, the request fails with
      * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
-    inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
+    inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
-    inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
-    inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
-    inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
-    inline PutObjectRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
-    inline PutObjectRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
-    inline PutObjectRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
+    template<typename ExpectedBucketOwnerT = Aws::String>
+    void SetExpectedBucketOwner(ExpectedBucketOwnerT&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::forward<ExpectedBucketOwnerT>(value); }
+    template<typename ExpectedBucketOwnerT = Aws::String>
+    PutObjectRequest& WithExpectedBucketOwner(ExpectedBucketOwnerT&& value) { SetExpectedBucketOwner(std::forward<ExpectedBucketOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const { return m_customizedAccessLogTag; }
     inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
-    inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }
-    inline void SetCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::move(value); }
-    inline PutObjectRequest& WithCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomizedAccessLogTag(value); return *this;}
-    inline PutObjectRequest& WithCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomizedAccessLogTag(std::move(value)); return *this;}
-    inline PutObjectRequest& AddCustomizedAccessLogTag(const Aws::String& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
-    inline PutObjectRequest& AddCustomizedAccessLogTag(Aws::String&& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
-    inline PutObjectRequest& AddCustomizedAccessLogTag(const Aws::String& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
-    inline PutObjectRequest& AddCustomizedAccessLogTag(Aws::String&& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), std::move(value)); return *this; }
-    inline PutObjectRequest& AddCustomizedAccessLogTag(const char* key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
-    inline PutObjectRequest& AddCustomizedAccessLogTag(Aws::String&& key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
-    inline PutObjectRequest& AddCustomizedAccessLogTag(const char* key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
+    template<typename CustomizedAccessLogTagT = Aws::Map<Aws::String, Aws::String>>
+    void SetCustomizedAccessLogTag(CustomizedAccessLogTagT&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::forward<CustomizedAccessLogTagT>(value); }
+    template<typename CustomizedAccessLogTagT = Aws::Map<Aws::String, Aws::String>>
+    PutObjectRequest& WithCustomizedAccessLogTag(CustomizedAccessLogTagT&& value) { SetCustomizedAccessLogTag(std::forward<CustomizedAccessLogTagT>(value)); return *this;}
+    template<typename CustomizedAccessLogTagKeyT = Aws::String, typename CustomizedAccessLogTagValueT = Aws::String>
+    PutObjectRequest& AddCustomizedAccessLogTag(CustomizedAccessLogTagKeyT&& key, CustomizedAccessLogTagValueT&& value) {
+      m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::forward<CustomizedAccessLogTagKeyT>(key), std::forward<CustomizedAccessLogTagValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    ObjectCannedACL m_aCL;
+    ObjectCannedACL m_aCL{ObjectCannedACL::NOT_SET};
     bool m_aCLHasBeenSet = false;
 
 
@@ -926,13 +858,13 @@ namespace Model
     Aws::String m_contentLanguage;
     bool m_contentLanguageHasBeenSet = false;
 
-    long long m_contentLength;
+    long long m_contentLength{0};
     bool m_contentLengthHasBeenSet = false;
 
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet = false;
 
-    ChecksumAlgorithm m_checksumAlgorithm;
+    ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
     bool m_checksumAlgorithmHasBeenSet = false;
 
     Aws::String m_checksumCRC32;
@@ -950,7 +882,7 @@ namespace Model
     Aws::String m_checksumSHA256;
     bool m_checksumSHA256HasBeenSet = false;
 
-    Aws::Utils::DateTime m_expires;
+    Aws::Utils::DateTime m_expires{};
     bool m_expiresHasBeenSet = false;
 
     Aws::String m_ifMatch;
@@ -974,16 +906,16 @@ namespace Model
     Aws::String m_key;
     bool m_keyHasBeenSet = false;
 
-    long long m_writeOffsetBytes;
+    long long m_writeOffsetBytes{0};
     bool m_writeOffsetBytesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_metadata;
     bool m_metadataHasBeenSet = false;
 
-    ServerSideEncryption m_serverSideEncryption;
+    ServerSideEncryption m_serverSideEncryption{ServerSideEncryption::NOT_SET};
     bool m_serverSideEncryptionHasBeenSet = false;
 
-    StorageClass m_storageClass;
+    StorageClass m_storageClass{StorageClass::NOT_SET};
     bool m_storageClassHasBeenSet = false;
 
     Aws::String m_websiteRedirectLocation;
@@ -1004,22 +936,22 @@ namespace Model
     Aws::String m_sSEKMSEncryptionContext;
     bool m_sSEKMSEncryptionContextHasBeenSet = false;
 
-    bool m_bucketKeyEnabled;
+    bool m_bucketKeyEnabled{false};
     bool m_bucketKeyEnabledHasBeenSet = false;
 
-    RequestPayer m_requestPayer;
+    RequestPayer m_requestPayer{RequestPayer::NOT_SET};
     bool m_requestPayerHasBeenSet = false;
 
     Aws::String m_tagging;
     bool m_taggingHasBeenSet = false;
 
-    ObjectLockMode m_objectLockMode;
+    ObjectLockMode m_objectLockMode{ObjectLockMode::NOT_SET};
     bool m_objectLockModeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_objectLockRetainUntilDate;
+    Aws::Utils::DateTime m_objectLockRetainUntilDate{};
     bool m_objectLockRetainUntilDateHasBeenSet = false;
 
-    ObjectLockLegalHoldStatus m_objectLockLegalHoldStatus;
+    ObjectLockLegalHoldStatus m_objectLockLegalHoldStatus{ObjectLockLegalHoldStatus::NOT_SET};
     bool m_objectLockLegalHoldStatusHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;

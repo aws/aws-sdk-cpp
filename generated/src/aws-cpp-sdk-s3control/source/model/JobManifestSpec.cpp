@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-JobManifestSpec::JobManifestSpec() : 
-    m_format(JobManifestFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_fieldsHasBeenSet(false)
-{
-}
-
 JobManifestSpec::JobManifestSpec(const XmlNode& xmlNode)
-  : JobManifestSpec()
 {
   *this = xmlNode;
 }
@@ -42,13 +34,14 @@ JobManifestSpec& JobManifestSpec::operator =(const XmlNode& xmlNode)
     XmlNode formatNode = resultNode.FirstChild("Format");
     if(!formatNode.IsNull())
     {
-      m_format = JobManifestFormatMapper::GetJobManifestFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()).c_str());
+      m_format = JobManifestFormatMapper::GetJobManifestFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()));
       m_formatHasBeenSet = true;
     }
     XmlNode fieldsNode = resultNode.FirstChild("Fields");
     if(!fieldsNode.IsNull())
     {
       XmlNode fieldsMember = fieldsNode.FirstChild("member");
+      m_fieldsHasBeenSet = !fieldsMember.IsNull();
       while(!fieldsMember.IsNull())
       {
         m_fields.push_back(JobManifestFieldNameMapper::GetJobManifestFieldNameForName(StringUtils::Trim(fieldsMember.GetText().c_str())));

@@ -15,10 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetPublicAccessBlockRequest::GetPublicAccessBlockRequest() : 
-    m_accountIdHasBeenSet(false)
-{
-}
 
 Aws::String GetPublicAccessBlockRequest::SerializePayload() const
 {

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TestGetNoPayloadResult::TestGetNoPayloadResult()
-{
-}
-
 TestGetNoPayloadResult::TestGetNoPayloadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -35,12 +31,14 @@ TestGetNoPayloadResult& TestGetNoPayloadResult::operator =(const Aws::AmazonWebS
   if(testIdIter != headers.end())
   {
     m_testId = testIdIter->second;
+    m_testIdHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

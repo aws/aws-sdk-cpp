@@ -23,7 +23,7 @@ namespace Model
   class CreateAccessGrantsInstanceRequest : public S3ControlRequest
   {
   public:
-    AWS_S3CONTROL_API CreateAccessGrantsInstanceRequest();
+    AWS_S3CONTROL_API CreateAccessGrantsInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline CreateAccessGrantsInstanceRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline CreateAccessGrantsInstanceRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline CreateAccessGrantsInstanceRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    CreateAccessGrantsInstanceRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * API operation to retrieve a list of your Identity Center instances and their
      * ARNs. </p>
      */
-    inline const Aws::String& GetIdentityCenterArn() const{ return m_identityCenterArn; }
+    inline const Aws::String& GetIdentityCenterArn() const { return m_identityCenterArn; }
     inline bool IdentityCenterArnHasBeenSet() const { return m_identityCenterArnHasBeenSet; }
-    inline void SetIdentityCenterArn(const Aws::String& value) { m_identityCenterArnHasBeenSet = true; m_identityCenterArn = value; }
-    inline void SetIdentityCenterArn(Aws::String&& value) { m_identityCenterArnHasBeenSet = true; m_identityCenterArn = std::move(value); }
-    inline void SetIdentityCenterArn(const char* value) { m_identityCenterArnHasBeenSet = true; m_identityCenterArn.assign(value); }
-    inline CreateAccessGrantsInstanceRequest& WithIdentityCenterArn(const Aws::String& value) { SetIdentityCenterArn(value); return *this;}
-    inline CreateAccessGrantsInstanceRequest& WithIdentityCenterArn(Aws::String&& value) { SetIdentityCenterArn(std::move(value)); return *this;}
-    inline CreateAccessGrantsInstanceRequest& WithIdentityCenterArn(const char* value) { SetIdentityCenterArn(value); return *this;}
+    template<typename IdentityCenterArnT = Aws::String>
+    void SetIdentityCenterArn(IdentityCenterArnT&& value) { m_identityCenterArnHasBeenSet = true; m_identityCenterArn = std::forward<IdentityCenterArnT>(value); }
+    template<typename IdentityCenterArnT = Aws::String>
+    CreateAccessGrantsInstanceRequest& WithIdentityCenterArn(IdentityCenterArnT&& value) { SetIdentityCenterArn(std::forward<IdentityCenterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +81,14 @@ namespace Model
      * Tags can help you manage, identify, organize, search for, and filter resources.
      * </p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateAccessGrantsInstanceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateAccessGrantsInstanceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateAccessGrantsInstanceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateAccessGrantsInstanceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateAccessGrantsInstanceRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateAccessGrantsInstanceRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

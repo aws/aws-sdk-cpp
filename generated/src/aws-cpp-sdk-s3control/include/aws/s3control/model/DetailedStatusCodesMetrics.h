@@ -38,7 +38,7 @@ namespace Model
   class DetailedStatusCodesMetrics
   {
   public:
-    AWS_S3CONTROL_API DetailedStatusCodesMetrics();
+    AWS_S3CONTROL_API DetailedStatusCodesMetrics() = default;
     AWS_S3CONTROL_API DetailedStatusCodesMetrics(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API DetailedStatusCodesMetrics& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,14 +50,14 @@ namespace Model
      * <p>A container that indicates whether detailed status code metrics are
      * enabled.</p>
      */
-    inline bool GetIsEnabled() const{ return m_isEnabled; }
+    inline bool GetIsEnabled() const { return m_isEnabled; }
     inline bool IsEnabledHasBeenSet() const { return m_isEnabledHasBeenSet; }
     inline void SetIsEnabled(bool value) { m_isEnabledHasBeenSet = true; m_isEnabled = value; }
     inline DetailedStatusCodesMetrics& WithIsEnabled(bool value) { SetIsEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_isEnabled;
+    bool m_isEnabled{false};
     bool m_isEnabledHasBeenSet = false;
   };
 

@@ -20,16 +20,7 @@ namespace S3
 namespace Model
 {
 
-TopicConfiguration::TopicConfiguration() : 
-    m_idHasBeenSet(false),
-    m_topicArnHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 TopicConfiguration::TopicConfiguration(const XmlNode& xmlNode)
-  : TopicConfiguration()
 {
   *this = xmlNode;
 }
@@ -56,6 +47,7 @@ TopicConfiguration& TopicConfiguration::operator =(const XmlNode& xmlNode)
     if(!eventsNode.IsNull())
     {
       XmlNode eventMember = eventsNode;
+      m_eventsHasBeenSet = !eventMember.IsNull();
       while(!eventMember.IsNull())
       {
         m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventMember.GetText().c_str())));

@@ -23,7 +23,7 @@ namespace Model
   class DocumentTypeAsMapValueRequest : public RestJsonProtocolRequest
   {
   public:
-    AWS_RESTJSONPROTOCOL_API DocumentTypeAsMapValueRequest();
+    AWS_RESTJSONPROTOCOL_API DocumentTypeAsMapValueRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,30 +38,26 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::Utils::Document>& GetDocValuedMap() const{ return m_docValuedMap; }
+    inline const Aws::Map<Aws::String, Aws::Utils::Document>& GetDocValuedMap() const { return m_docValuedMap; }
     inline bool DocValuedMapHasBeenSet() const { return m_docValuedMapHasBeenSet; }
-    inline void SetDocValuedMap(const Aws::Map<Aws::String, Aws::Utils::Document>& value) { m_docValuedMapHasBeenSet = true; m_docValuedMap = value; }
-    inline void SetDocValuedMap(Aws::Map<Aws::String, Aws::Utils::Document>&& value) { m_docValuedMapHasBeenSet = true; m_docValuedMap = std::move(value); }
-    inline DocumentTypeAsMapValueRequest& WithDocValuedMap(const Aws::Map<Aws::String, Aws::Utils::Document>& value) { SetDocValuedMap(value); return *this;}
-    inline DocumentTypeAsMapValueRequest& WithDocValuedMap(Aws::Map<Aws::String, Aws::Utils::Document>&& value) { SetDocValuedMap(std::move(value)); return *this;}
-    inline DocumentTypeAsMapValueRequest& AddDocValuedMap(const Aws::String& key, const Aws::Utils::Document& value) { m_docValuedMapHasBeenSet = true; m_docValuedMap.emplace(key, value); return *this; }
-    inline DocumentTypeAsMapValueRequest& AddDocValuedMap(Aws::String&& key, const Aws::Utils::Document& value) { m_docValuedMapHasBeenSet = true; m_docValuedMap.emplace(std::move(key), value); return *this; }
-    inline DocumentTypeAsMapValueRequest& AddDocValuedMap(const Aws::String& key, Aws::Utils::Document&& value) { m_docValuedMapHasBeenSet = true; m_docValuedMap.emplace(key, std::move(value)); return *this; }
-    inline DocumentTypeAsMapValueRequest& AddDocValuedMap(Aws::String&& key, Aws::Utils::Document&& value) { m_docValuedMapHasBeenSet = true; m_docValuedMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline DocumentTypeAsMapValueRequest& AddDocValuedMap(const char* key, Aws::Utils::Document&& value) { m_docValuedMapHasBeenSet = true; m_docValuedMap.emplace(key, std::move(value)); return *this; }
-    inline DocumentTypeAsMapValueRequest& AddDocValuedMap(const char* key, const Aws::Utils::Document& value) { m_docValuedMapHasBeenSet = true; m_docValuedMap.emplace(key, value); return *this; }
+    template<typename DocValuedMapT = Aws::Map<Aws::String, Aws::Utils::Document>>
+    void SetDocValuedMap(DocValuedMapT&& value) { m_docValuedMapHasBeenSet = true; m_docValuedMap = std::forward<DocValuedMapT>(value); }
+    template<typename DocValuedMapT = Aws::Map<Aws::String, Aws::Utils::Document>>
+    DocumentTypeAsMapValueRequest& WithDocValuedMap(DocValuedMapT&& value) { SetDocValuedMap(std::forward<DocValuedMapT>(value)); return *this;}
+    template<typename DocValuedMapKeyT = Aws::String, typename DocValuedMapValueT = Aws::Utils::Document>
+    DocumentTypeAsMapValueRequest& AddDocValuedMap(DocValuedMapKeyT&& key, DocValuedMapValueT&& value) {
+      m_docValuedMapHasBeenSet = true; m_docValuedMap.emplace(std::forward<DocValuedMapKeyT>(key), std::forward<DocValuedMapValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline DocumentTypeAsMapValueRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DocumentTypeAsMapValueRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DocumentTypeAsMapValueRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DocumentTypeAsMapValueRequest& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 

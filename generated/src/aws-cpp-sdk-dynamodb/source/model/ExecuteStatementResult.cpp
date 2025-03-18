@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ExecuteStatementResult::ExecuteStatementResult()
-{
-}
-
 ExecuteStatementResult::ExecuteStatementResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -42,20 +38,18 @@ ExecuteStatementResult& ExecuteStatementResult::operator =(const Aws::AmazonWebS
       }
       m_items.push_back(std::move(attributeMapMap));
     }
+    m_itemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumedCapacity"))
   {
     m_consumedCapacity = jsonValue.GetObject("ConsumedCapacity");
-
+    m_consumedCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastEvaluatedKey"))
   {
     Aws::Map<Aws::String, JsonView> lastEvaluatedKeyJsonMap = jsonValue.GetObject("LastEvaluatedKey").GetAllObjects();
@@ -63,14 +57,15 @@ ExecuteStatementResult& ExecuteStatementResult::operator =(const Aws::AmazonWebS
     {
       m_lastEvaluatedKey[lastEvaluatedKeyItem.first] = lastEvaluatedKeyItem.second.AsObject();
     }
+    m_lastEvaluatedKeyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

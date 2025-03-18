@@ -38,7 +38,7 @@ namespace Model
   class BillingModeSummary
   {
   public:
-    AWS_DYNAMODB_API BillingModeSummary();
+    AWS_DYNAMODB_API BillingModeSummary() = default;
     AWS_DYNAMODB_API BillingModeSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API BillingModeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,10 @@ namespace Model
      * the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using
      * <code>PAY_PER_REQUEST</code> for unpredictable workloads. </p> </li> </ul>
      */
-    inline const BillingMode& GetBillingMode() const{ return m_billingMode; }
+    inline BillingMode GetBillingMode() const { return m_billingMode; }
     inline bool BillingModeHasBeenSet() const { return m_billingModeHasBeenSet; }
-    inline void SetBillingMode(const BillingMode& value) { m_billingModeHasBeenSet = true; m_billingMode = value; }
-    inline void SetBillingMode(BillingMode&& value) { m_billingModeHasBeenSet = true; m_billingMode = std::move(value); }
-    inline BillingModeSummary& WithBillingMode(const BillingMode& value) { SetBillingMode(value); return *this;}
-    inline BillingModeSummary& WithBillingMode(BillingMode&& value) { SetBillingMode(std::move(value)); return *this;}
+    inline void SetBillingMode(BillingMode value) { m_billingModeHasBeenSet = true; m_billingMode = value; }
+    inline BillingModeSummary& WithBillingMode(BillingMode value) { SetBillingMode(value); return *this;}
     ///@}
 
     ///@{
@@ -67,19 +65,19 @@ namespace Model
      * <p>Represents the time when <code>PAY_PER_REQUEST</code> was last set as the
      * read/write capacity mode.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateToPayPerRequestDateTime() const{ return m_lastUpdateToPayPerRequestDateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdateToPayPerRequestDateTime() const { return m_lastUpdateToPayPerRequestDateTime; }
     inline bool LastUpdateToPayPerRequestDateTimeHasBeenSet() const { return m_lastUpdateToPayPerRequestDateTimeHasBeenSet; }
-    inline void SetLastUpdateToPayPerRequestDateTime(const Aws::Utils::DateTime& value) { m_lastUpdateToPayPerRequestDateTimeHasBeenSet = true; m_lastUpdateToPayPerRequestDateTime = value; }
-    inline void SetLastUpdateToPayPerRequestDateTime(Aws::Utils::DateTime&& value) { m_lastUpdateToPayPerRequestDateTimeHasBeenSet = true; m_lastUpdateToPayPerRequestDateTime = std::move(value); }
-    inline BillingModeSummary& WithLastUpdateToPayPerRequestDateTime(const Aws::Utils::DateTime& value) { SetLastUpdateToPayPerRequestDateTime(value); return *this;}
-    inline BillingModeSummary& WithLastUpdateToPayPerRequestDateTime(Aws::Utils::DateTime&& value) { SetLastUpdateToPayPerRequestDateTime(std::move(value)); return *this;}
+    template<typename LastUpdateToPayPerRequestDateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdateToPayPerRequestDateTime(LastUpdateToPayPerRequestDateTimeT&& value) { m_lastUpdateToPayPerRequestDateTimeHasBeenSet = true; m_lastUpdateToPayPerRequestDateTime = std::forward<LastUpdateToPayPerRequestDateTimeT>(value); }
+    template<typename LastUpdateToPayPerRequestDateTimeT = Aws::Utils::DateTime>
+    BillingModeSummary& WithLastUpdateToPayPerRequestDateTime(LastUpdateToPayPerRequestDateTimeT&& value) { SetLastUpdateToPayPerRequestDateTime(std::forward<LastUpdateToPayPerRequestDateTimeT>(value)); return *this;}
     ///@}
   private:
 
-    BillingMode m_billingMode;
+    BillingMode m_billingMode{BillingMode::NOT_SET};
     bool m_billingModeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateToPayPerRequestDateTime;
+    Aws::Utils::DateTime m_lastUpdateToPayPerRequestDateTime{};
     bool m_lastUpdateToPayPerRequestDateTimeHasBeenSet = false;
   };
 

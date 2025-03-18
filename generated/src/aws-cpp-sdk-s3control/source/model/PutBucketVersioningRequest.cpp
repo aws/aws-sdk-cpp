@@ -15,13 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-PutBucketVersioningRequest::PutBucketVersioningRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_mFAHasBeenSet(false),
-    m_versioningConfigurationHasBeenSet(false)
-{
-}
 
 Aws::String PutBucketVersioningRequest::SerializePayload() const
 {

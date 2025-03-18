@@ -35,7 +35,7 @@ namespace Model
   class ProvisionedThroughput
   {
   public:
-    AWS_DYNAMODB_API ProvisionedThroughput();
+    AWS_DYNAMODB_API ProvisionedThroughput() = default;
     AWS_DYNAMODB_API ProvisionedThroughput(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API ProvisionedThroughput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,7 +51,7 @@ namespace Model
      * Guide</i>.</p> <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code>
      * the value is set to 0.</p>
      */
-    inline long long GetReadCapacityUnits() const{ return m_readCapacityUnits; }
+    inline long long GetReadCapacityUnits() const { return m_readCapacityUnits; }
     inline bool ReadCapacityUnitsHasBeenSet() const { return m_readCapacityUnitsHasBeenSet; }
     inline void SetReadCapacityUnits(long long value) { m_readCapacityUnitsHasBeenSet = true; m_readCapacityUnits = value; }
     inline ProvisionedThroughput& WithReadCapacityUnits(long long value) { SetReadCapacityUnits(value); return *this;}
@@ -66,17 +66,17 @@ namespace Model
      * Guide</i>.</p> <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code>
      * the value is set to 0.</p>
      */
-    inline long long GetWriteCapacityUnits() const{ return m_writeCapacityUnits; }
+    inline long long GetWriteCapacityUnits() const { return m_writeCapacityUnits; }
     inline bool WriteCapacityUnitsHasBeenSet() const { return m_writeCapacityUnitsHasBeenSet; }
     inline void SetWriteCapacityUnits(long long value) { m_writeCapacityUnitsHasBeenSet = true; m_writeCapacityUnits = value; }
     inline ProvisionedThroughput& WithWriteCapacityUnits(long long value) { SetWriteCapacityUnits(value); return *this;}
     ///@}
   private:
 
-    long long m_readCapacityUnits;
+    long long m_readCapacityUnits{0};
     bool m_readCapacityUnitsHasBeenSet = false;
 
-    long long m_writeCapacityUnits;
+    long long m_writeCapacityUnits{0};
     bool m_writeCapacityUnitsHasBeenSet = false;
   };
 

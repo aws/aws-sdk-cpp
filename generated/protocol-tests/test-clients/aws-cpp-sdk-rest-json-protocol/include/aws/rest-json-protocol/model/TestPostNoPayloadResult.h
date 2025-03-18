@@ -27,37 +27,35 @@ namespace Model
   class TestPostNoPayloadResult
   {
   public:
-    AWS_RESTJSONPROTOCOL_API TestPostNoPayloadResult();
+    AWS_RESTJSONPROTOCOL_API TestPostNoPayloadResult() = default;
     AWS_RESTJSONPROTOCOL_API TestPostNoPayloadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESTJSONPROTOCOL_API TestPostNoPayloadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetTestId() const{ return m_testId; }
-    inline void SetTestId(const Aws::String& value) { m_testId = value; }
-    inline void SetTestId(Aws::String&& value) { m_testId = std::move(value); }
-    inline void SetTestId(const char* value) { m_testId.assign(value); }
-    inline TestPostNoPayloadResult& WithTestId(const Aws::String& value) { SetTestId(value); return *this;}
-    inline TestPostNoPayloadResult& WithTestId(Aws::String&& value) { SetTestId(std::move(value)); return *this;}
-    inline TestPostNoPayloadResult& WithTestId(const char* value) { SetTestId(value); return *this;}
+    inline const Aws::String& GetTestId() const { return m_testId; }
+    template<typename TestIdT = Aws::String>
+    void SetTestId(TestIdT&& value) { m_testIdHasBeenSet = true; m_testId = std::forward<TestIdT>(value); }
+    template<typename TestIdT = Aws::String>
+    TestPostNoPayloadResult& WithTestId(TestIdT&& value) { SetTestId(std::forward<TestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline TestPostNoPayloadResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline TestPostNoPayloadResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline TestPostNoPayloadResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    TestPostNoPayloadResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_testId;
+    bool m_testIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

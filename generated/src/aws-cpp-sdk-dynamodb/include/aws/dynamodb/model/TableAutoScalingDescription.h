@@ -35,7 +35,7 @@ namespace Model
   class TableAutoScalingDescription
   {
   public:
-    AWS_DYNAMODB_API TableAutoScalingDescription();
+    AWS_DYNAMODB_API TableAutoScalingDescription() = default;
     AWS_DYNAMODB_API TableAutoScalingDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API TableAutoScalingDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The name of the table.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline TableAutoScalingDescription& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline TableAutoScalingDescription& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline TableAutoScalingDescription& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    TableAutoScalingDescription& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,33 +61,31 @@ namespace Model
      * deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The table is ready for
      * use.</p> </li> </ul>
      */
-    inline const TableStatus& GetTableStatus() const{ return m_tableStatus; }
+    inline TableStatus GetTableStatus() const { return m_tableStatus; }
     inline bool TableStatusHasBeenSet() const { return m_tableStatusHasBeenSet; }
-    inline void SetTableStatus(const TableStatus& value) { m_tableStatusHasBeenSet = true; m_tableStatus = value; }
-    inline void SetTableStatus(TableStatus&& value) { m_tableStatusHasBeenSet = true; m_tableStatus = std::move(value); }
-    inline TableAutoScalingDescription& WithTableStatus(const TableStatus& value) { SetTableStatus(value); return *this;}
-    inline TableAutoScalingDescription& WithTableStatus(TableStatus&& value) { SetTableStatus(std::move(value)); return *this;}
+    inline void SetTableStatus(TableStatus value) { m_tableStatusHasBeenSet = true; m_tableStatus = value; }
+    inline TableAutoScalingDescription& WithTableStatus(TableStatus value) { SetTableStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents replicas of the global table.</p>
      */
-    inline const Aws::Vector<ReplicaAutoScalingDescription>& GetReplicas() const{ return m_replicas; }
+    inline const Aws::Vector<ReplicaAutoScalingDescription>& GetReplicas() const { return m_replicas; }
     inline bool ReplicasHasBeenSet() const { return m_replicasHasBeenSet; }
-    inline void SetReplicas(const Aws::Vector<ReplicaAutoScalingDescription>& value) { m_replicasHasBeenSet = true; m_replicas = value; }
-    inline void SetReplicas(Aws::Vector<ReplicaAutoScalingDescription>&& value) { m_replicasHasBeenSet = true; m_replicas = std::move(value); }
-    inline TableAutoScalingDescription& WithReplicas(const Aws::Vector<ReplicaAutoScalingDescription>& value) { SetReplicas(value); return *this;}
-    inline TableAutoScalingDescription& WithReplicas(Aws::Vector<ReplicaAutoScalingDescription>&& value) { SetReplicas(std::move(value)); return *this;}
-    inline TableAutoScalingDescription& AddReplicas(const ReplicaAutoScalingDescription& value) { m_replicasHasBeenSet = true; m_replicas.push_back(value); return *this; }
-    inline TableAutoScalingDescription& AddReplicas(ReplicaAutoScalingDescription&& value) { m_replicasHasBeenSet = true; m_replicas.push_back(std::move(value)); return *this; }
+    template<typename ReplicasT = Aws::Vector<ReplicaAutoScalingDescription>>
+    void SetReplicas(ReplicasT&& value) { m_replicasHasBeenSet = true; m_replicas = std::forward<ReplicasT>(value); }
+    template<typename ReplicasT = Aws::Vector<ReplicaAutoScalingDescription>>
+    TableAutoScalingDescription& WithReplicas(ReplicasT&& value) { SetReplicas(std::forward<ReplicasT>(value)); return *this;}
+    template<typename ReplicasT = ReplicaAutoScalingDescription>
+    TableAutoScalingDescription& AddReplicas(ReplicasT&& value) { m_replicasHasBeenSet = true; m_replicas.emplace_back(std::forward<ReplicasT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet = false;
 
-    TableStatus m_tableStatus;
+    TableStatus m_tableStatus{TableStatus::NOT_SET};
     bool m_tableStatusHasBeenSet = false;
 
     Aws::Vector<ReplicaAutoScalingDescription> m_replicas;

@@ -19,7 +19,7 @@ namespace Model
   class SimpleScalarPropertiesRequest : public JSONRPC10Request
   {
   public:
-    AWS_JSONRPC10_API SimpleScalarPropertiesRequest();
+    AWS_JSONRPC10_API SimpleScalarPropertiesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     
-    inline double GetFloatValue() const{ return m_floatValue; }
+    inline double GetFloatValue() const { return m_floatValue; }
     inline bool FloatValueHasBeenSet() const { return m_floatValueHasBeenSet; }
     inline void SetFloatValue(double value) { m_floatValueHasBeenSet = true; m_floatValue = value; }
     inline SimpleScalarPropertiesRequest& WithFloatValue(double value) { SetFloatValue(value); return *this;}
@@ -42,17 +42,17 @@ namespace Model
 
     ///@{
     
-    inline double GetDoubleValue() const{ return m_doubleValue; }
+    inline double GetDoubleValue() const { return m_doubleValue; }
     inline bool DoubleValueHasBeenSet() const { return m_doubleValueHasBeenSet; }
     inline void SetDoubleValue(double value) { m_doubleValueHasBeenSet = true; m_doubleValue = value; }
     inline SimpleScalarPropertiesRequest& WithDoubleValue(double value) { SetDoubleValue(value); return *this;}
     ///@}
   private:
 
-    double m_floatValue;
+    double m_floatValue{0.0};
     bool m_floatValueHasBeenSet = false;
 
-    double m_doubleValue;
+    double m_doubleValue{0.0};
     bool m_doubleValueHasBeenSet = false;
   };
 

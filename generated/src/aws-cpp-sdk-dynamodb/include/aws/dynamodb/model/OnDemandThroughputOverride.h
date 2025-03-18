@@ -31,7 +31,7 @@ namespace Model
   class OnDemandThroughputOverride
   {
   public:
-    AWS_DYNAMODB_API OnDemandThroughputOverride();
+    AWS_DYNAMODB_API OnDemandThroughputOverride() = default;
     AWS_DYNAMODB_API OnDemandThroughputOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API OnDemandThroughputOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
     /**
      * <p>Maximum number of read request units for the specified replica table.</p>
      */
-    inline long long GetMaxReadRequestUnits() const{ return m_maxReadRequestUnits; }
+    inline long long GetMaxReadRequestUnits() const { return m_maxReadRequestUnits; }
     inline bool MaxReadRequestUnitsHasBeenSet() const { return m_maxReadRequestUnitsHasBeenSet; }
     inline void SetMaxReadRequestUnits(long long value) { m_maxReadRequestUnitsHasBeenSet = true; m_maxReadRequestUnits = value; }
     inline OnDemandThroughputOverride& WithMaxReadRequestUnits(long long value) { SetMaxReadRequestUnits(value); return *this;}
     ///@}
   private:
 
-    long long m_maxReadRequestUnits;
+    long long m_maxReadRequestUnits{0};
     bool m_maxReadRequestUnitsHasBeenSet = false;
   };
 

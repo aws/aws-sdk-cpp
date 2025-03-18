@@ -20,20 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-S3BucketDestination::S3BucketDestination() : 
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_outputSchemaVersion(OutputSchemaVersion::NOT_SET),
-    m_outputSchemaVersionHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
-{
-}
-
 S3BucketDestination::S3BucketDestination(const XmlNode& xmlNode)
-  : S3BucketDestination()
 {
   *this = xmlNode;
 }
@@ -47,13 +34,13 @@ S3BucketDestination& S3BucketDestination::operator =(const XmlNode& xmlNode)
     XmlNode formatNode = resultNode.FirstChild("Format");
     if(!formatNode.IsNull())
     {
-      m_format = FormatMapper::GetFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()).c_str());
+      m_format = FormatMapper::GetFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()));
       m_formatHasBeenSet = true;
     }
     XmlNode outputSchemaVersionNode = resultNode.FirstChild("OutputSchemaVersion");
     if(!outputSchemaVersionNode.IsNull())
     {
-      m_outputSchemaVersion = OutputSchemaVersionMapper::GetOutputSchemaVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outputSchemaVersionNode.GetText()).c_str()).c_str());
+      m_outputSchemaVersion = OutputSchemaVersionMapper::GetOutputSchemaVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outputSchemaVersionNode.GetText()).c_str()));
       m_outputSchemaVersionHasBeenSet = true;
     }
     XmlNode accountIdNode = resultNode.FirstChild("AccountId");

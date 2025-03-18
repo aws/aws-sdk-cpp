@@ -32,7 +32,7 @@ namespace Model
   class CopyObjectResultDetails
   {
   public:
-    AWS_S3_API CopyObjectResultDetails();
+    AWS_S3_API CopyObjectResultDetails() = default;
     AWS_S3_API CopyObjectResultDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API CopyObjectResultDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,26 +44,24 @@ namespace Model
      * <p>Returns the ETag of the new object. The ETag reflects only changes to the
      * contents of an object, not its metadata.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
+    inline const Aws::String& GetETag() const { return m_eTag; }
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
-    inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
-    inline CopyObjectResultDetails& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline CopyObjectResultDetails& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline CopyObjectResultDetails& WithETag(const char* value) { SetETag(value); return *this;}
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    CopyObjectResultDetails& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Creation date of the object.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
+    inline const Aws::Utils::DateTime& GetLastModified() const { return m_lastModified; }
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
-    inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
-    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
-    inline CopyObjectResultDetails& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
-    inline CopyObjectResultDetails& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
+    template<typename LastModifiedT = Aws::Utils::DateTime>
+    void SetLastModified(LastModifiedT&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::forward<LastModifiedT>(value); }
+    template<typename LastModifiedT = Aws::Utils::DateTime>
+    CopyObjectResultDetails& WithLastModified(LastModifiedT&& value) { SetLastModified(std::forward<LastModifiedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +71,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const ChecksumType& GetChecksumType() const{ return m_checksumType; }
+    inline ChecksumType GetChecksumType() const { return m_checksumType; }
     inline bool ChecksumTypeHasBeenSet() const { return m_checksumTypeHasBeenSet; }
-    inline void SetChecksumType(const ChecksumType& value) { m_checksumTypeHasBeenSet = true; m_checksumType = value; }
-    inline void SetChecksumType(ChecksumType&& value) { m_checksumTypeHasBeenSet = true; m_checksumType = std::move(value); }
-    inline CopyObjectResultDetails& WithChecksumType(const ChecksumType& value) { SetChecksumType(value); return *this;}
-    inline CopyObjectResultDetails& WithChecksumType(ChecksumType&& value) { SetChecksumType(std::move(value)); return *this;}
+    inline void SetChecksumType(ChecksumType value) { m_checksumTypeHasBeenSet = true; m_checksumType = value; }
+    inline CopyObjectResultDetails& WithChecksumType(ChecksumType value) { SetChecksumType(value); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +85,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumCRC32() const{ return m_checksumCRC32; }
+    inline const Aws::String& GetChecksumCRC32() const { return m_checksumCRC32; }
     inline bool ChecksumCRC32HasBeenSet() const { return m_checksumCRC32HasBeenSet; }
-    inline void SetChecksumCRC32(const Aws::String& value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32 = value; }
-    inline void SetChecksumCRC32(Aws::String&& value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32 = std::move(value); }
-    inline void SetChecksumCRC32(const char* value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32.assign(value); }
-    inline CopyObjectResultDetails& WithChecksumCRC32(const Aws::String& value) { SetChecksumCRC32(value); return *this;}
-    inline CopyObjectResultDetails& WithChecksumCRC32(Aws::String&& value) { SetChecksumCRC32(std::move(value)); return *this;}
-    inline CopyObjectResultDetails& WithChecksumCRC32(const char* value) { SetChecksumCRC32(value); return *this;}
+    template<typename ChecksumCRC32T = Aws::String>
+    void SetChecksumCRC32(ChecksumCRC32T&& value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32 = std::forward<ChecksumCRC32T>(value); }
+    template<typename ChecksumCRC32T = Aws::String>
+    CopyObjectResultDetails& WithChecksumCRC32(ChecksumCRC32T&& value) { SetChecksumCRC32(std::forward<ChecksumCRC32T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,14 +101,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumCRC32C() const{ return m_checksumCRC32C; }
+    inline const Aws::String& GetChecksumCRC32C() const { return m_checksumCRC32C; }
     inline bool ChecksumCRC32CHasBeenSet() const { return m_checksumCRC32CHasBeenSet; }
-    inline void SetChecksumCRC32C(const Aws::String& value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C = value; }
-    inline void SetChecksumCRC32C(Aws::String&& value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C = std::move(value); }
-    inline void SetChecksumCRC32C(const char* value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C.assign(value); }
-    inline CopyObjectResultDetails& WithChecksumCRC32C(const Aws::String& value) { SetChecksumCRC32C(value); return *this;}
-    inline CopyObjectResultDetails& WithChecksumCRC32C(Aws::String&& value) { SetChecksumCRC32C(std::move(value)); return *this;}
-    inline CopyObjectResultDetails& WithChecksumCRC32C(const char* value) { SetChecksumCRC32C(value); return *this;}
+    template<typename ChecksumCRC32CT = Aws::String>
+    void SetChecksumCRC32C(ChecksumCRC32CT&& value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C = std::forward<ChecksumCRC32CT>(value); }
+    template<typename ChecksumCRC32CT = Aws::String>
+    CopyObjectResultDetails& WithChecksumCRC32C(ChecksumCRC32CT&& value) { SetChecksumCRC32C(std::forward<ChecksumCRC32CT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,14 +119,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumCRC64NVME() const{ return m_checksumCRC64NVME; }
+    inline const Aws::String& GetChecksumCRC64NVME() const { return m_checksumCRC64NVME; }
     inline bool ChecksumCRC64NVMEHasBeenSet() const { return m_checksumCRC64NVMEHasBeenSet; }
-    inline void SetChecksumCRC64NVME(const Aws::String& value) { m_checksumCRC64NVMEHasBeenSet = true; m_checksumCRC64NVME = value; }
-    inline void SetChecksumCRC64NVME(Aws::String&& value) { m_checksumCRC64NVMEHasBeenSet = true; m_checksumCRC64NVME = std::move(value); }
-    inline void SetChecksumCRC64NVME(const char* value) { m_checksumCRC64NVMEHasBeenSet = true; m_checksumCRC64NVME.assign(value); }
-    inline CopyObjectResultDetails& WithChecksumCRC64NVME(const Aws::String& value) { SetChecksumCRC64NVME(value); return *this;}
-    inline CopyObjectResultDetails& WithChecksumCRC64NVME(Aws::String&& value) { SetChecksumCRC64NVME(std::move(value)); return *this;}
-    inline CopyObjectResultDetails& WithChecksumCRC64NVME(const char* value) { SetChecksumCRC64NVME(value); return *this;}
+    template<typename ChecksumCRC64NVMET = Aws::String>
+    void SetChecksumCRC64NVME(ChecksumCRC64NVMET&& value) { m_checksumCRC64NVMEHasBeenSet = true; m_checksumCRC64NVME = std::forward<ChecksumCRC64NVMET>(value); }
+    template<typename ChecksumCRC64NVMET = Aws::String>
+    CopyObjectResultDetails& WithChecksumCRC64NVME(ChecksumCRC64NVMET&& value) { SetChecksumCRC64NVME(std::forward<ChecksumCRC64NVMET>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,14 +135,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumSHA1() const{ return m_checksumSHA1; }
+    inline const Aws::String& GetChecksumSHA1() const { return m_checksumSHA1; }
     inline bool ChecksumSHA1HasBeenSet() const { return m_checksumSHA1HasBeenSet; }
-    inline void SetChecksumSHA1(const Aws::String& value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1 = value; }
-    inline void SetChecksumSHA1(Aws::String&& value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1 = std::move(value); }
-    inline void SetChecksumSHA1(const char* value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1.assign(value); }
-    inline CopyObjectResultDetails& WithChecksumSHA1(const Aws::String& value) { SetChecksumSHA1(value); return *this;}
-    inline CopyObjectResultDetails& WithChecksumSHA1(Aws::String&& value) { SetChecksumSHA1(std::move(value)); return *this;}
-    inline CopyObjectResultDetails& WithChecksumSHA1(const char* value) { SetChecksumSHA1(value); return *this;}
+    template<typename ChecksumSHA1T = Aws::String>
+    void SetChecksumSHA1(ChecksumSHA1T&& value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1 = std::forward<ChecksumSHA1T>(value); }
+    template<typename ChecksumSHA1T = Aws::String>
+    CopyObjectResultDetails& WithChecksumSHA1(ChecksumSHA1T&& value) { SetChecksumSHA1(std::forward<ChecksumSHA1T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,24 +151,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumSHA256() const{ return m_checksumSHA256; }
+    inline const Aws::String& GetChecksumSHA256() const { return m_checksumSHA256; }
     inline bool ChecksumSHA256HasBeenSet() const { return m_checksumSHA256HasBeenSet; }
-    inline void SetChecksumSHA256(const Aws::String& value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256 = value; }
-    inline void SetChecksumSHA256(Aws::String&& value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256 = std::move(value); }
-    inline void SetChecksumSHA256(const char* value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256.assign(value); }
-    inline CopyObjectResultDetails& WithChecksumSHA256(const Aws::String& value) { SetChecksumSHA256(value); return *this;}
-    inline CopyObjectResultDetails& WithChecksumSHA256(Aws::String&& value) { SetChecksumSHA256(std::move(value)); return *this;}
-    inline CopyObjectResultDetails& WithChecksumSHA256(const char* value) { SetChecksumSHA256(value); return *this;}
+    template<typename ChecksumSHA256T = Aws::String>
+    void SetChecksumSHA256(ChecksumSHA256T&& value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256 = std::forward<ChecksumSHA256T>(value); }
+    template<typename ChecksumSHA256T = Aws::String>
+    CopyObjectResultDetails& WithChecksumSHA256(ChecksumSHA256T&& value) { SetChecksumSHA256(std::forward<ChecksumSHA256T>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_eTag;
     bool m_eTagHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModified;
+    Aws::Utils::DateTime m_lastModified{};
     bool m_lastModifiedHasBeenSet = false;
 
-    ChecksumType m_checksumType;
+    ChecksumType m_checksumType{ChecksumType::NOT_SET};
     bool m_checksumTypeHasBeenSet = false;
 
     Aws::String m_checksumCRC32;

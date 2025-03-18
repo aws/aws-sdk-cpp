@@ -34,7 +34,7 @@ namespace Model
   class BatchStatementResponse
   {
   public:
-    AWS_DYNAMODB_API BatchStatementResponse();
+    AWS_DYNAMODB_API BatchStatementResponse() = default;
     AWS_DYNAMODB_API BatchStatementResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API BatchStatementResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,44 +44,40 @@ namespace Model
     /**
      * <p> The error associated with a failed PartiQL batch statement. </p>
      */
-    inline const BatchStatementError& GetError() const{ return m_error; }
+    inline const BatchStatementError& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const BatchStatementError& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(BatchStatementError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline BatchStatementResponse& WithError(const BatchStatementError& value) { SetError(value); return *this;}
-    inline BatchStatementResponse& WithError(BatchStatementError&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = BatchStatementError>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = BatchStatementError>
+    BatchStatementResponse& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The table name associated with a failed PartiQL batch statement. </p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline BatchStatementResponse& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline BatchStatementResponse& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline BatchStatementResponse& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    BatchStatementResponse& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A DynamoDB item associated with a BatchStatementResponse </p>
      */
-    inline const Aws::Map<Aws::String, AttributeValue>& GetItem() const{ return m_item; }
+    inline const Aws::Map<Aws::String, AttributeValue>& GetItem() const { return m_item; }
     inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
-    inline void SetItem(const Aws::Map<Aws::String, AttributeValue>& value) { m_itemHasBeenSet = true; m_item = value; }
-    inline void SetItem(Aws::Map<Aws::String, AttributeValue>&& value) { m_itemHasBeenSet = true; m_item = std::move(value); }
-    inline BatchStatementResponse& WithItem(const Aws::Map<Aws::String, AttributeValue>& value) { SetItem(value); return *this;}
-    inline BatchStatementResponse& WithItem(Aws::Map<Aws::String, AttributeValue>&& value) { SetItem(std::move(value)); return *this;}
-    inline BatchStatementResponse& AddItem(const Aws::String& key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(key, value); return *this; }
-    inline BatchStatementResponse& AddItem(Aws::String&& key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(std::move(key), value); return *this; }
-    inline BatchStatementResponse& AddItem(const Aws::String& key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(key, std::move(value)); return *this; }
-    inline BatchStatementResponse& AddItem(Aws::String&& key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(std::move(key), std::move(value)); return *this; }
-    inline BatchStatementResponse& AddItem(const char* key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(key, std::move(value)); return *this; }
-    inline BatchStatementResponse& AddItem(const char* key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(key, value); return *this; }
+    template<typename ItemT = Aws::Map<Aws::String, AttributeValue>>
+    void SetItem(ItemT&& value) { m_itemHasBeenSet = true; m_item = std::forward<ItemT>(value); }
+    template<typename ItemT = Aws::Map<Aws::String, AttributeValue>>
+    BatchStatementResponse& WithItem(ItemT&& value) { SetItem(std::forward<ItemT>(value)); return *this;}
+    template<typename ItemKeyT = Aws::String, typename ItemValueT = AttributeValue>
+    BatchStatementResponse& AddItem(ItemKeyT&& key, ItemValueT&& value) {
+      m_itemHasBeenSet = true; m_item.emplace(std::forward<ItemKeyT>(key), std::forward<ItemValueT>(value)); return *this;
+    }
     ///@}
   private:
 

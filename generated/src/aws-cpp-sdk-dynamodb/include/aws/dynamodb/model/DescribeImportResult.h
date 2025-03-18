@@ -28,7 +28,7 @@ namespace Model
   class DescribeImportResult
   {
   public:
-    AWS_DYNAMODB_API DescribeImportResult();
+    AWS_DYNAMODB_API DescribeImportResult() = default;
     AWS_DYNAMODB_API DescribeImportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DYNAMODB_API DescribeImportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,28 +39,28 @@ namespace Model
      * parameters of the import. The import parameters include import status, how many
      * items were processed, and how many errors were encountered. </p>
      */
-    inline const ImportTableDescription& GetImportTableDescription() const{ return m_importTableDescription; }
-    inline void SetImportTableDescription(const ImportTableDescription& value) { m_importTableDescription = value; }
-    inline void SetImportTableDescription(ImportTableDescription&& value) { m_importTableDescription = std::move(value); }
-    inline DescribeImportResult& WithImportTableDescription(const ImportTableDescription& value) { SetImportTableDescription(value); return *this;}
-    inline DescribeImportResult& WithImportTableDescription(ImportTableDescription&& value) { SetImportTableDescription(std::move(value)); return *this;}
+    inline const ImportTableDescription& GetImportTableDescription() const { return m_importTableDescription; }
+    template<typename ImportTableDescriptionT = ImportTableDescription>
+    void SetImportTableDescription(ImportTableDescriptionT&& value) { m_importTableDescriptionHasBeenSet = true; m_importTableDescription = std::forward<ImportTableDescriptionT>(value); }
+    template<typename ImportTableDescriptionT = ImportTableDescription>
+    DescribeImportResult& WithImportTableDescription(ImportTableDescriptionT&& value) { SetImportTableDescription(std::forward<ImportTableDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeImportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeImportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeImportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeImportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ImportTableDescription m_importTableDescription;
+    bool m_importTableDescriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

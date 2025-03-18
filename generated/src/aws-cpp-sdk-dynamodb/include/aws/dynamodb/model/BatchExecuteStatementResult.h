@@ -30,7 +30,7 @@ namespace Model
   class BatchExecuteStatementResult
   {
   public:
-    AWS_DYNAMODB_API BatchExecuteStatementResult();
+    AWS_DYNAMODB_API BatchExecuteStatementResult() = default;
     AWS_DYNAMODB_API BatchExecuteStatementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DYNAMODB_API BatchExecuteStatementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>The response to each PartiQL statement in the batch. The values of the list
      * are ordered according to the ordering of the request statements.</p>
      */
-    inline const Aws::Vector<BatchStatementResponse>& GetResponses() const{ return m_responses; }
-    inline void SetResponses(const Aws::Vector<BatchStatementResponse>& value) { m_responses = value; }
-    inline void SetResponses(Aws::Vector<BatchStatementResponse>&& value) { m_responses = std::move(value); }
-    inline BatchExecuteStatementResult& WithResponses(const Aws::Vector<BatchStatementResponse>& value) { SetResponses(value); return *this;}
-    inline BatchExecuteStatementResult& WithResponses(Aws::Vector<BatchStatementResponse>&& value) { SetResponses(std::move(value)); return *this;}
-    inline BatchExecuteStatementResult& AddResponses(const BatchStatementResponse& value) { m_responses.push_back(value); return *this; }
-    inline BatchExecuteStatementResult& AddResponses(BatchStatementResponse&& value) { m_responses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchStatementResponse>& GetResponses() const { return m_responses; }
+    template<typename ResponsesT = Aws::Vector<BatchStatementResponse>>
+    void SetResponses(ResponsesT&& value) { m_responsesHasBeenSet = true; m_responses = std::forward<ResponsesT>(value); }
+    template<typename ResponsesT = Aws::Vector<BatchStatementResponse>>
+    BatchExecuteStatementResult& WithResponses(ResponsesT&& value) { SetResponses(std::forward<ResponsesT>(value)); return *this;}
+    template<typename ResponsesT = BatchStatementResponse>
+    BatchExecuteStatementResult& AddResponses(ResponsesT&& value) { m_responsesHasBeenSet = true; m_responses.emplace_back(std::forward<ResponsesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,33 @@ namespace Model
      * <p>The capacity units consumed by the entire operation. The values of the list
      * are ordered according to the ordering of the statements.</p>
      */
-    inline const Aws::Vector<ConsumedCapacity>& GetConsumedCapacity() const{ return m_consumedCapacity; }
-    inline void SetConsumedCapacity(const Aws::Vector<ConsumedCapacity>& value) { m_consumedCapacity = value; }
-    inline void SetConsumedCapacity(Aws::Vector<ConsumedCapacity>&& value) { m_consumedCapacity = std::move(value); }
-    inline BatchExecuteStatementResult& WithConsumedCapacity(const Aws::Vector<ConsumedCapacity>& value) { SetConsumedCapacity(value); return *this;}
-    inline BatchExecuteStatementResult& WithConsumedCapacity(Aws::Vector<ConsumedCapacity>&& value) { SetConsumedCapacity(std::move(value)); return *this;}
-    inline BatchExecuteStatementResult& AddConsumedCapacity(const ConsumedCapacity& value) { m_consumedCapacity.push_back(value); return *this; }
-    inline BatchExecuteStatementResult& AddConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConsumedCapacity>& GetConsumedCapacity() const { return m_consumedCapacity; }
+    template<typename ConsumedCapacityT = Aws::Vector<ConsumedCapacity>>
+    void SetConsumedCapacity(ConsumedCapacityT&& value) { m_consumedCapacityHasBeenSet = true; m_consumedCapacity = std::forward<ConsumedCapacityT>(value); }
+    template<typename ConsumedCapacityT = Aws::Vector<ConsumedCapacity>>
+    BatchExecuteStatementResult& WithConsumedCapacity(ConsumedCapacityT&& value) { SetConsumedCapacity(std::forward<ConsumedCapacityT>(value)); return *this;}
+    template<typename ConsumedCapacityT = ConsumedCapacity>
+    BatchExecuteStatementResult& AddConsumedCapacity(ConsumedCapacityT&& value) { m_consumedCapacityHasBeenSet = true; m_consumedCapacity.emplace_back(std::forward<ConsumedCapacityT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchExecuteStatementResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchExecuteStatementResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchExecuteStatementResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchExecuteStatementResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchStatementResponse> m_responses;
+    bool m_responsesHasBeenSet = false;
 
     Aws::Vector<ConsumedCapacity> m_consumedCapacity;
+    bool m_consumedCapacityHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

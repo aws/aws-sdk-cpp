@@ -18,18 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-GlobalSecondaryIndexWarmThroughputDescription::GlobalSecondaryIndexWarmThroughputDescription() : 
-    m_readUnitsPerSecond(0),
-    m_readUnitsPerSecondHasBeenSet(false),
-    m_writeUnitsPerSecond(0),
-    m_writeUnitsPerSecondHasBeenSet(false),
-    m_status(IndexStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 GlobalSecondaryIndexWarmThroughputDescription::GlobalSecondaryIndexWarmThroughputDescription(JsonView jsonValue)
-  : GlobalSecondaryIndexWarmThroughputDescription()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ GlobalSecondaryIndexWarmThroughputDescription& GlobalSecondaryIndexWarmThroughpu
   if(jsonValue.ValueExists("ReadUnitsPerSecond"))
   {
     m_readUnitsPerSecond = jsonValue.GetInt64("ReadUnitsPerSecond");
-
     m_readUnitsPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WriteUnitsPerSecond"))
   {
     m_writeUnitsPerSecond = jsonValue.GetInt64("WriteUnitsPerSecond");
-
     m_writeUnitsPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = IndexStatusMapper::GetIndexStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

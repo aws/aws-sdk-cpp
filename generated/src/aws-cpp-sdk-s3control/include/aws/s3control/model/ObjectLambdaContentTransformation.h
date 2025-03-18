@@ -30,7 +30,7 @@ namespace Model
   class ObjectLambdaContentTransformation
   {
   public:
-    AWS_S3CONTROL_API ObjectLambdaContentTransformation();
+    AWS_S3CONTROL_API ObjectLambdaContentTransformation() = default;
     AWS_S3CONTROL_API ObjectLambdaContentTransformation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API ObjectLambdaContentTransformation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>A container for an Lambda function.</p>
      */
-    inline const AwsLambdaTransformation& GetAwsLambda() const{ return m_awsLambda; }
+    inline const AwsLambdaTransformation& GetAwsLambda() const { return m_awsLambda; }
     inline bool AwsLambdaHasBeenSet() const { return m_awsLambdaHasBeenSet; }
-    inline void SetAwsLambda(const AwsLambdaTransformation& value) { m_awsLambdaHasBeenSet = true; m_awsLambda = value; }
-    inline void SetAwsLambda(AwsLambdaTransformation&& value) { m_awsLambdaHasBeenSet = true; m_awsLambda = std::move(value); }
-    inline ObjectLambdaContentTransformation& WithAwsLambda(const AwsLambdaTransformation& value) { SetAwsLambda(value); return *this;}
-    inline ObjectLambdaContentTransformation& WithAwsLambda(AwsLambdaTransformation&& value) { SetAwsLambda(std::move(value)); return *this;}
+    template<typename AwsLambdaT = AwsLambdaTransformation>
+    void SetAwsLambda(AwsLambdaT&& value) { m_awsLambdaHasBeenSet = true; m_awsLambda = std::forward<AwsLambdaT>(value); }
+    template<typename AwsLambdaT = AwsLambdaTransformation>
+    ObjectLambdaContentTransformation& WithAwsLambda(AwsLambdaT&& value) { SetAwsLambda(std::forward<AwsLambdaT>(value)); return *this;}
     ///@}
   private:
 

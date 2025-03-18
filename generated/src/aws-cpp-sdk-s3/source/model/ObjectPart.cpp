@@ -20,21 +20,7 @@ namespace S3
 namespace Model
 {
 
-ObjectPart::ObjectPart() : 
-    m_partNumber(0),
-    m_partNumberHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_checksumCRC32HasBeenSet(false),
-    m_checksumCRC32CHasBeenSet(false),
-    m_checksumCRC64NVMEHasBeenSet(false),
-    m_checksumSHA1HasBeenSet(false),
-    m_checksumSHA256HasBeenSet(false)
-{
-}
-
 ObjectPart::ObjectPart(const XmlNode& xmlNode)
-  : ObjectPart()
 {
   *this = xmlNode;
 }

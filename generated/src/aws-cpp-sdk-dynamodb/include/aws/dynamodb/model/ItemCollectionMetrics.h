@@ -37,7 +37,7 @@ namespace Model
   class ItemCollectionMetrics
   {
   public:
-    AWS_DYNAMODB_API ItemCollectionMetrics();
+    AWS_DYNAMODB_API ItemCollectionMetrics() = default;
     AWS_DYNAMODB_API ItemCollectionMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API ItemCollectionMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,18 +48,16 @@ namespace Model
      * <p>The partition key value of the item collection. This value is the same as the
      * partition key value of the item.</p>
      */
-    inline const Aws::Map<Aws::String, AttributeValue>& GetItemCollectionKey() const{ return m_itemCollectionKey; }
+    inline const Aws::Map<Aws::String, AttributeValue>& GetItemCollectionKey() const { return m_itemCollectionKey; }
     inline bool ItemCollectionKeyHasBeenSet() const { return m_itemCollectionKeyHasBeenSet; }
-    inline void SetItemCollectionKey(const Aws::Map<Aws::String, AttributeValue>& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey = value; }
-    inline void SetItemCollectionKey(Aws::Map<Aws::String, AttributeValue>&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey = std::move(value); }
-    inline ItemCollectionMetrics& WithItemCollectionKey(const Aws::Map<Aws::String, AttributeValue>& value) { SetItemCollectionKey(value); return *this;}
-    inline ItemCollectionMetrics& WithItemCollectionKey(Aws::Map<Aws::String, AttributeValue>&& value) { SetItemCollectionKey(std::move(value)); return *this;}
-    inline ItemCollectionMetrics& AddItemCollectionKey(const Aws::String& key, const AttributeValue& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey.emplace(key, value); return *this; }
-    inline ItemCollectionMetrics& AddItemCollectionKey(Aws::String&& key, const AttributeValue& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey.emplace(std::move(key), value); return *this; }
-    inline ItemCollectionMetrics& AddItemCollectionKey(const Aws::String& key, AttributeValue&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey.emplace(key, std::move(value)); return *this; }
-    inline ItemCollectionMetrics& AddItemCollectionKey(Aws::String&& key, AttributeValue&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey.emplace(std::move(key), std::move(value)); return *this; }
-    inline ItemCollectionMetrics& AddItemCollectionKey(const char* key, AttributeValue&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey.emplace(key, std::move(value)); return *this; }
-    inline ItemCollectionMetrics& AddItemCollectionKey(const char* key, const AttributeValue& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey.emplace(key, value); return *this; }
+    template<typename ItemCollectionKeyT = Aws::Map<Aws::String, AttributeValue>>
+    void SetItemCollectionKey(ItemCollectionKeyT&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey = std::forward<ItemCollectionKeyT>(value); }
+    template<typename ItemCollectionKeyT = Aws::Map<Aws::String, AttributeValue>>
+    ItemCollectionMetrics& WithItemCollectionKey(ItemCollectionKeyT&& value) { SetItemCollectionKey(std::forward<ItemCollectionKeyT>(value)); return *this;}
+    template<typename ItemCollectionKeyKeyT = Aws::String, typename ItemCollectionKeyValueT = AttributeValue>
+    ItemCollectionMetrics& AddItemCollectionKey(ItemCollectionKeyKeyT&& key, ItemCollectionKeyValueT&& value) {
+      m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey.emplace(std::forward<ItemCollectionKeyKeyT>(key), std::forward<ItemCollectionKeyValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -72,12 +70,12 @@ namespace Model
      * size limit.</p> <p>The estimate is subject to change over time; therefore, do
      * not rely on the precision or accuracy of the estimate.</p>
      */
-    inline const Aws::Vector<double>& GetSizeEstimateRangeGB() const{ return m_sizeEstimateRangeGB; }
+    inline const Aws::Vector<double>& GetSizeEstimateRangeGB() const { return m_sizeEstimateRangeGB; }
     inline bool SizeEstimateRangeGBHasBeenSet() const { return m_sizeEstimateRangeGBHasBeenSet; }
-    inline void SetSizeEstimateRangeGB(const Aws::Vector<double>& value) { m_sizeEstimateRangeGBHasBeenSet = true; m_sizeEstimateRangeGB = value; }
-    inline void SetSizeEstimateRangeGB(Aws::Vector<double>&& value) { m_sizeEstimateRangeGBHasBeenSet = true; m_sizeEstimateRangeGB = std::move(value); }
-    inline ItemCollectionMetrics& WithSizeEstimateRangeGB(const Aws::Vector<double>& value) { SetSizeEstimateRangeGB(value); return *this;}
-    inline ItemCollectionMetrics& WithSizeEstimateRangeGB(Aws::Vector<double>&& value) { SetSizeEstimateRangeGB(std::move(value)); return *this;}
+    template<typename SizeEstimateRangeGBT = Aws::Vector<double>>
+    void SetSizeEstimateRangeGB(SizeEstimateRangeGBT&& value) { m_sizeEstimateRangeGBHasBeenSet = true; m_sizeEstimateRangeGB = std::forward<SizeEstimateRangeGBT>(value); }
+    template<typename SizeEstimateRangeGBT = Aws::Vector<double>>
+    ItemCollectionMetrics& WithSizeEstimateRangeGB(SizeEstimateRangeGBT&& value) { SetSizeEstimateRangeGB(std::forward<SizeEstimateRangeGBT>(value)); return *this;}
     inline ItemCollectionMetrics& AddSizeEstimateRangeGB(double value) { m_sizeEstimateRangeGBHasBeenSet = true; m_sizeEstimateRangeGB.push_back(value); return *this; }
     ///@}
   private:

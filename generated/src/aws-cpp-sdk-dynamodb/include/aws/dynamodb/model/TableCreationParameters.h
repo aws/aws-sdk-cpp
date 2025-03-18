@@ -40,7 +40,7 @@ namespace Model
   class TableCreationParameters
   {
   public:
-    AWS_DYNAMODB_API TableCreationParameters();
+    AWS_DYNAMODB_API TableCreationParameters() = default;
     AWS_DYNAMODB_API TableCreationParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API TableCreationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,28 +50,26 @@ namespace Model
     /**
      * <p> The name of the table created as part of the import operation. </p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline TableCreationParameters& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline TableCreationParameters& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline TableCreationParameters& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    TableCreationParameters& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The attributes of the table created as part of the import operation. </p>
      */
-    inline const Aws::Vector<AttributeDefinition>& GetAttributeDefinitions() const{ return m_attributeDefinitions; }
+    inline const Aws::Vector<AttributeDefinition>& GetAttributeDefinitions() const { return m_attributeDefinitions; }
     inline bool AttributeDefinitionsHasBeenSet() const { return m_attributeDefinitionsHasBeenSet; }
-    inline void SetAttributeDefinitions(const Aws::Vector<AttributeDefinition>& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions = value; }
-    inline void SetAttributeDefinitions(Aws::Vector<AttributeDefinition>&& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions = std::move(value); }
-    inline TableCreationParameters& WithAttributeDefinitions(const Aws::Vector<AttributeDefinition>& value) { SetAttributeDefinitions(value); return *this;}
-    inline TableCreationParameters& WithAttributeDefinitions(Aws::Vector<AttributeDefinition>&& value) { SetAttributeDefinitions(std::move(value)); return *this;}
-    inline TableCreationParameters& AddAttributeDefinitions(const AttributeDefinition& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions.push_back(value); return *this; }
-    inline TableCreationParameters& AddAttributeDefinitions(AttributeDefinition&& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions.push_back(std::move(value)); return *this; }
+    template<typename AttributeDefinitionsT = Aws::Vector<AttributeDefinition>>
+    void SetAttributeDefinitions(AttributeDefinitionsT&& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions = std::forward<AttributeDefinitionsT>(value); }
+    template<typename AttributeDefinitionsT = Aws::Vector<AttributeDefinition>>
+    TableCreationParameters& WithAttributeDefinitions(AttributeDefinitionsT&& value) { SetAttributeDefinitions(std::forward<AttributeDefinitionsT>(value)); return *this;}
+    template<typename AttributeDefinitionsT = AttributeDefinition>
+    TableCreationParameters& AddAttributeDefinitions(AttributeDefinitionsT&& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions.emplace_back(std::forward<AttributeDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,14 +77,14 @@ namespace Model
      * <p> The primary key and option sort key of the table created as part of the
      * import operation. </p>
      */
-    inline const Aws::Vector<KeySchemaElement>& GetKeySchema() const{ return m_keySchema; }
+    inline const Aws::Vector<KeySchemaElement>& GetKeySchema() const { return m_keySchema; }
     inline bool KeySchemaHasBeenSet() const { return m_keySchemaHasBeenSet; }
-    inline void SetKeySchema(const Aws::Vector<KeySchemaElement>& value) { m_keySchemaHasBeenSet = true; m_keySchema = value; }
-    inline void SetKeySchema(Aws::Vector<KeySchemaElement>&& value) { m_keySchemaHasBeenSet = true; m_keySchema = std::move(value); }
-    inline TableCreationParameters& WithKeySchema(const Aws::Vector<KeySchemaElement>& value) { SetKeySchema(value); return *this;}
-    inline TableCreationParameters& WithKeySchema(Aws::Vector<KeySchemaElement>&& value) { SetKeySchema(std::move(value)); return *this;}
-    inline TableCreationParameters& AddKeySchema(const KeySchemaElement& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
-    inline TableCreationParameters& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(std::move(value)); return *this; }
+    template<typename KeySchemaT = Aws::Vector<KeySchemaElement>>
+    void SetKeySchema(KeySchemaT&& value) { m_keySchemaHasBeenSet = true; m_keySchema = std::forward<KeySchemaT>(value); }
+    template<typename KeySchemaT = Aws::Vector<KeySchemaElement>>
+    TableCreationParameters& WithKeySchema(KeySchemaT&& value) { SetKeySchema(std::forward<KeySchemaT>(value)); return *this;}
+    template<typename KeySchemaT = KeySchemaElement>
+    TableCreationParameters& AddKeySchema(KeySchemaT&& value) { m_keySchemaHasBeenSet = true; m_keySchema.emplace_back(std::forward<KeySchemaT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -94,42 +92,40 @@ namespace Model
      * <p> The billing mode for provisioning the table created as part of the import
      * operation. </p>
      */
-    inline const BillingMode& GetBillingMode() const{ return m_billingMode; }
+    inline BillingMode GetBillingMode() const { return m_billingMode; }
     inline bool BillingModeHasBeenSet() const { return m_billingModeHasBeenSet; }
-    inline void SetBillingMode(const BillingMode& value) { m_billingModeHasBeenSet = true; m_billingMode = value; }
-    inline void SetBillingMode(BillingMode&& value) { m_billingModeHasBeenSet = true; m_billingMode = std::move(value); }
-    inline TableCreationParameters& WithBillingMode(const BillingMode& value) { SetBillingMode(value); return *this;}
-    inline TableCreationParameters& WithBillingMode(BillingMode&& value) { SetBillingMode(std::move(value)); return *this;}
+    inline void SetBillingMode(BillingMode value) { m_billingModeHasBeenSet = true; m_billingMode = value; }
+    inline TableCreationParameters& WithBillingMode(BillingMode value) { SetBillingMode(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ProvisionedThroughput& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
+    inline const ProvisionedThroughput& GetProvisionedThroughput() const { return m_provisionedThroughput; }
     inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
-    inline void SetProvisionedThroughput(const ProvisionedThroughput& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
-    inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
-    inline TableCreationParameters& WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
-    inline TableCreationParameters& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
+    template<typename ProvisionedThroughputT = ProvisionedThroughput>
+    void SetProvisionedThroughput(ProvisionedThroughputT&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::forward<ProvisionedThroughputT>(value); }
+    template<typename ProvisionedThroughputT = ProvisionedThroughput>
+    TableCreationParameters& WithProvisionedThroughput(ProvisionedThroughputT&& value) { SetProvisionedThroughput(std::forward<ProvisionedThroughputT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const OnDemandThroughput& GetOnDemandThroughput() const{ return m_onDemandThroughput; }
+    inline const OnDemandThroughput& GetOnDemandThroughput() const { return m_onDemandThroughput; }
     inline bool OnDemandThroughputHasBeenSet() const { return m_onDemandThroughputHasBeenSet; }
-    inline void SetOnDemandThroughput(const OnDemandThroughput& value) { m_onDemandThroughputHasBeenSet = true; m_onDemandThroughput = value; }
-    inline void SetOnDemandThroughput(OnDemandThroughput&& value) { m_onDemandThroughputHasBeenSet = true; m_onDemandThroughput = std::move(value); }
-    inline TableCreationParameters& WithOnDemandThroughput(const OnDemandThroughput& value) { SetOnDemandThroughput(value); return *this;}
-    inline TableCreationParameters& WithOnDemandThroughput(OnDemandThroughput&& value) { SetOnDemandThroughput(std::move(value)); return *this;}
+    template<typename OnDemandThroughputT = OnDemandThroughput>
+    void SetOnDemandThroughput(OnDemandThroughputT&& value) { m_onDemandThroughputHasBeenSet = true; m_onDemandThroughput = std::forward<OnDemandThroughputT>(value); }
+    template<typename OnDemandThroughputT = OnDemandThroughput>
+    TableCreationParameters& WithOnDemandThroughput(OnDemandThroughputT&& value) { SetOnDemandThroughput(std::forward<OnDemandThroughputT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SSESpecification& GetSSESpecification() const{ return m_sSESpecification; }
+    inline const SSESpecification& GetSSESpecification() const { return m_sSESpecification; }
     inline bool SSESpecificationHasBeenSet() const { return m_sSESpecificationHasBeenSet; }
-    inline void SetSSESpecification(const SSESpecification& value) { m_sSESpecificationHasBeenSet = true; m_sSESpecification = value; }
-    inline void SetSSESpecification(SSESpecification&& value) { m_sSESpecificationHasBeenSet = true; m_sSESpecification = std::move(value); }
-    inline TableCreationParameters& WithSSESpecification(const SSESpecification& value) { SetSSESpecification(value); return *this;}
-    inline TableCreationParameters& WithSSESpecification(SSESpecification&& value) { SetSSESpecification(std::move(value)); return *this;}
+    template<typename SSESpecificationT = SSESpecification>
+    void SetSSESpecification(SSESpecificationT&& value) { m_sSESpecificationHasBeenSet = true; m_sSESpecification = std::forward<SSESpecificationT>(value); }
+    template<typename SSESpecificationT = SSESpecification>
+    TableCreationParameters& WithSSESpecification(SSESpecificationT&& value) { SetSSESpecification(std::forward<SSESpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,14 +133,14 @@ namespace Model
      * <p> The Global Secondary Indexes (GSI) of the table to be created as part of the
      * import operation. </p>
      */
-    inline const Aws::Vector<GlobalSecondaryIndex>& GetGlobalSecondaryIndexes() const{ return m_globalSecondaryIndexes; }
+    inline const Aws::Vector<GlobalSecondaryIndex>& GetGlobalSecondaryIndexes() const { return m_globalSecondaryIndexes; }
     inline bool GlobalSecondaryIndexesHasBeenSet() const { return m_globalSecondaryIndexesHasBeenSet; }
-    inline void SetGlobalSecondaryIndexes(const Aws::Vector<GlobalSecondaryIndex>& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes = value; }
-    inline void SetGlobalSecondaryIndexes(Aws::Vector<GlobalSecondaryIndex>&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes = std::move(value); }
-    inline TableCreationParameters& WithGlobalSecondaryIndexes(const Aws::Vector<GlobalSecondaryIndex>& value) { SetGlobalSecondaryIndexes(value); return *this;}
-    inline TableCreationParameters& WithGlobalSecondaryIndexes(Aws::Vector<GlobalSecondaryIndex>&& value) { SetGlobalSecondaryIndexes(std::move(value)); return *this;}
-    inline TableCreationParameters& AddGlobalSecondaryIndexes(const GlobalSecondaryIndex& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.push_back(value); return *this; }
-    inline TableCreationParameters& AddGlobalSecondaryIndexes(GlobalSecondaryIndex&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.push_back(std::move(value)); return *this; }
+    template<typename GlobalSecondaryIndexesT = Aws::Vector<GlobalSecondaryIndex>>
+    void SetGlobalSecondaryIndexes(GlobalSecondaryIndexesT&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes = std::forward<GlobalSecondaryIndexesT>(value); }
+    template<typename GlobalSecondaryIndexesT = Aws::Vector<GlobalSecondaryIndex>>
+    TableCreationParameters& WithGlobalSecondaryIndexes(GlobalSecondaryIndexesT&& value) { SetGlobalSecondaryIndexes(std::forward<GlobalSecondaryIndexesT>(value)); return *this;}
+    template<typename GlobalSecondaryIndexesT = GlobalSecondaryIndex>
+    TableCreationParameters& AddGlobalSecondaryIndexes(GlobalSecondaryIndexesT&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.emplace_back(std::forward<GlobalSecondaryIndexesT>(value)); return *this; }
     ///@}
   private:
 
@@ -157,7 +153,7 @@ namespace Model
     Aws::Vector<KeySchemaElement> m_keySchema;
     bool m_keySchemaHasBeenSet = false;
 
-    BillingMode m_billingMode;
+    BillingMode m_billingMode{BillingMode::NOT_SET};
     bool m_billingModeHasBeenSet = false;
 
     ProvisionedThroughput m_provisionedThroughput;

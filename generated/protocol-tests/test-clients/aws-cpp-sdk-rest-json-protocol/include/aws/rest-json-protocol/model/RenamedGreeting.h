@@ -26,7 +26,7 @@ namespace Model
   class RenamedGreeting
   {
   public:
-    AWS_RESTJSONPROTOCOL_API RenamedGreeting();
+    AWS_RESTJSONPROTOCOL_API RenamedGreeting() = default;
     AWS_RESTJSONPROTOCOL_API RenamedGreeting(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESTJSONPROTOCOL_API RenamedGreeting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESTJSONPROTOCOL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -34,14 +34,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetSalutation() const{ return m_salutation; }
+    inline const Aws::String& GetSalutation() const { return m_salutation; }
     inline bool SalutationHasBeenSet() const { return m_salutationHasBeenSet; }
-    inline void SetSalutation(const Aws::String& value) { m_salutationHasBeenSet = true; m_salutation = value; }
-    inline void SetSalutation(Aws::String&& value) { m_salutationHasBeenSet = true; m_salutation = std::move(value); }
-    inline void SetSalutation(const char* value) { m_salutationHasBeenSet = true; m_salutation.assign(value); }
-    inline RenamedGreeting& WithSalutation(const Aws::String& value) { SetSalutation(value); return *this;}
-    inline RenamedGreeting& WithSalutation(Aws::String&& value) { SetSalutation(std::move(value)); return *this;}
-    inline RenamedGreeting& WithSalutation(const char* value) { SetSalutation(value); return *this;}
+    template<typename SalutationT = Aws::String>
+    void SetSalutation(SalutationT&& value) { m_salutationHasBeenSet = true; m_salutation = std::forward<SalutationT>(value); }
+    template<typename SalutationT = Aws::String>
+    RenamedGreeting& WithSalutation(SalutationT&& value) { SetSalutation(std::forward<SalutationT>(value)); return *this;}
     ///@}
   private:
 

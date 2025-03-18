@@ -10,10 +10,6 @@
 using namespace Aws::EC2Protocol::Model;
 using namespace Aws::Utils;
 
-SimpleScalarXmlPropertiesRequest::SimpleScalarXmlPropertiesRequest()
-{
-}
-
 Aws::String SimpleScalarXmlPropertiesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

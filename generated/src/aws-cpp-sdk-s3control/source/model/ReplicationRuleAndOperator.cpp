@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ReplicationRuleAndOperator::ReplicationRuleAndOperator() : 
-    m_prefixHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ReplicationRuleAndOperator::ReplicationRuleAndOperator(const XmlNode& xmlNode)
-  : ReplicationRuleAndOperator()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ ReplicationRuleAndOperator& ReplicationRuleAndOperator::operator =(const XmlNode
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

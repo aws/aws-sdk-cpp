@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-RoutingRule::RoutingRule() : 
-    m_conditionHasBeenSet(false),
-    m_redirectHasBeenSet(false)
-{
-}
-
 RoutingRule::RoutingRule(const XmlNode& xmlNode)
-  : RoutingRule()
 {
   *this = xmlNode;
 }

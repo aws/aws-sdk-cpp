@@ -33,7 +33,7 @@ namespace Model
   class ExportSummary
   {
   public:
-    AWS_DYNAMODB_API ExportSummary();
+    AWS_DYNAMODB_API ExportSummary() = default;
     AWS_DYNAMODB_API ExportSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API ExportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the export.</p>
      */
-    inline const Aws::String& GetExportArn() const{ return m_exportArn; }
+    inline const Aws::String& GetExportArn() const { return m_exportArn; }
     inline bool ExportArnHasBeenSet() const { return m_exportArnHasBeenSet; }
-    inline void SetExportArn(const Aws::String& value) { m_exportArnHasBeenSet = true; m_exportArn = value; }
-    inline void SetExportArn(Aws::String&& value) { m_exportArnHasBeenSet = true; m_exportArn = std::move(value); }
-    inline void SetExportArn(const char* value) { m_exportArnHasBeenSet = true; m_exportArn.assign(value); }
-    inline ExportSummary& WithExportArn(const Aws::String& value) { SetExportArn(value); return *this;}
-    inline ExportSummary& WithExportArn(Aws::String&& value) { SetExportArn(std::move(value)); return *this;}
-    inline ExportSummary& WithExportArn(const char* value) { SetExportArn(value); return *this;}
+    template<typename ExportArnT = Aws::String>
+    void SetExportArn(ExportArnT&& value) { m_exportArnHasBeenSet = true; m_exportArn = std::forward<ExportArnT>(value); }
+    template<typename ExportArnT = Aws::String>
+    ExportSummary& WithExportArn(ExportArnT&& value) { SetExportArn(std::forward<ExportArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,10 @@ namespace Model
      * <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or
      * FAILED.</p>
      */
-    inline const ExportStatus& GetExportStatus() const{ return m_exportStatus; }
+    inline ExportStatus GetExportStatus() const { return m_exportStatus; }
     inline bool ExportStatusHasBeenSet() const { return m_exportStatusHasBeenSet; }
-    inline void SetExportStatus(const ExportStatus& value) { m_exportStatusHasBeenSet = true; m_exportStatus = value; }
-    inline void SetExportStatus(ExportStatus&& value) { m_exportStatusHasBeenSet = true; m_exportStatus = std::move(value); }
-    inline ExportSummary& WithExportStatus(const ExportStatus& value) { SetExportStatus(value); return *this;}
-    inline ExportSummary& WithExportStatus(ExportStatus&& value) { SetExportStatus(std::move(value)); return *this;}
+    inline void SetExportStatus(ExportStatus value) { m_exportStatusHasBeenSet = true; m_exportStatus = value; }
+    inline ExportSummary& WithExportStatus(ExportStatus value) { SetExportStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -71,22 +67,20 @@ namespace Model
      * <p>The type of export that was performed. Valid values are
      * <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>.</p>
      */
-    inline const ExportType& GetExportType() const{ return m_exportType; }
+    inline ExportType GetExportType() const { return m_exportType; }
     inline bool ExportTypeHasBeenSet() const { return m_exportTypeHasBeenSet; }
-    inline void SetExportType(const ExportType& value) { m_exportTypeHasBeenSet = true; m_exportType = value; }
-    inline void SetExportType(ExportType&& value) { m_exportTypeHasBeenSet = true; m_exportType = std::move(value); }
-    inline ExportSummary& WithExportType(const ExportType& value) { SetExportType(value); return *this;}
-    inline ExportSummary& WithExportType(ExportType&& value) { SetExportType(std::move(value)); return *this;}
+    inline void SetExportType(ExportType value) { m_exportTypeHasBeenSet = true; m_exportType = value; }
+    inline ExportSummary& WithExportType(ExportType value) { SetExportType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_exportArn;
     bool m_exportArnHasBeenSet = false;
 
-    ExportStatus m_exportStatus;
+    ExportStatus m_exportStatus{ExportStatus::NOT_SET};
     bool m_exportStatusHasBeenSet = false;
 
-    ExportType m_exportType;
+    ExportType m_exportType{ExportType::NOT_SET};
     bool m_exportTypeHasBeenSet = false;
   };
 

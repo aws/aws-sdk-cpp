@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-NullAndEmptyHeadersServerResult::NullAndEmptyHeadersServerResult()
-{
-}
-
 NullAndEmptyHeadersServerResult::NullAndEmptyHeadersServerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -39,23 +35,27 @@ NullAndEmptyHeadersServerResult& NullAndEmptyHeadersServerResult::operator =(con
   if(aIter != headers.end())
   {
     m_a = aIter->second;
+    m_aHasBeenSet = true;
   }
 
   const auto& bIter = headers.find("x-b");
   if(bIter != headers.end())
   {
     m_b = bIter->second;
+    m_bHasBeenSet = true;
   }
 
   const auto& cIter = headers.find("x-c");
   if(cIter != headers.end())
   {
+    m_cHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

@@ -18,13 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-TranscriptEvent::TranscriptEvent() : 
-    m_transcriptHasBeenSet(false)
-{
-}
-
 TranscriptEvent::TranscriptEvent(JsonView jsonValue)
-  : TranscriptEvent()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TranscriptEvent& TranscriptEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Transcript"))
   {
     m_transcript = jsonValue.GetObject("Transcript");
-
     m_transcriptHasBeenSet = true;
   }
-
   return *this;
 }
 

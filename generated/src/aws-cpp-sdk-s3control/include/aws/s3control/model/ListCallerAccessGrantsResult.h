@@ -29,7 +29,7 @@ namespace Model
   class ListCallerAccessGrantsResult
   {
   public:
-    AWS_S3CONTROL_API ListCallerAccessGrantsResult();
+    AWS_S3CONTROL_API ListCallerAccessGrantsResult() = default;
     AWS_S3CONTROL_API ListCallerAccessGrantsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CONTROL_API ListCallerAccessGrantsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,13 +40,11 @@ namespace Model
      * this value into a subsequent <code>List Caller Access Grants</code> request in
      * order to retrieve the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCallerAccessGrantsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCallerAccessGrantsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCallerAccessGrantsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCallerAccessGrantsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,49 +53,49 @@ namespace Model
      * and that grant the caller access to the S3 data of the Amazon Web Services
      * account ID that was specified in the request. </p>
      */
-    inline const Aws::Vector<ListCallerAccessGrantsEntry>& GetCallerAccessGrantsList() const{ return m_callerAccessGrantsList; }
-    inline void SetCallerAccessGrantsList(const Aws::Vector<ListCallerAccessGrantsEntry>& value) { m_callerAccessGrantsList = value; }
-    inline void SetCallerAccessGrantsList(Aws::Vector<ListCallerAccessGrantsEntry>&& value) { m_callerAccessGrantsList = std::move(value); }
-    inline ListCallerAccessGrantsResult& WithCallerAccessGrantsList(const Aws::Vector<ListCallerAccessGrantsEntry>& value) { SetCallerAccessGrantsList(value); return *this;}
-    inline ListCallerAccessGrantsResult& WithCallerAccessGrantsList(Aws::Vector<ListCallerAccessGrantsEntry>&& value) { SetCallerAccessGrantsList(std::move(value)); return *this;}
-    inline ListCallerAccessGrantsResult& AddCallerAccessGrantsList(const ListCallerAccessGrantsEntry& value) { m_callerAccessGrantsList.push_back(value); return *this; }
-    inline ListCallerAccessGrantsResult& AddCallerAccessGrantsList(ListCallerAccessGrantsEntry&& value) { m_callerAccessGrantsList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ListCallerAccessGrantsEntry>& GetCallerAccessGrantsList() const { return m_callerAccessGrantsList; }
+    template<typename CallerAccessGrantsListT = Aws::Vector<ListCallerAccessGrantsEntry>>
+    void SetCallerAccessGrantsList(CallerAccessGrantsListT&& value) { m_callerAccessGrantsListHasBeenSet = true; m_callerAccessGrantsList = std::forward<CallerAccessGrantsListT>(value); }
+    template<typename CallerAccessGrantsListT = Aws::Vector<ListCallerAccessGrantsEntry>>
+    ListCallerAccessGrantsResult& WithCallerAccessGrantsList(CallerAccessGrantsListT&& value) { SetCallerAccessGrantsList(std::forward<CallerAccessGrantsListT>(value)); return *this;}
+    template<typename CallerAccessGrantsListT = ListCallerAccessGrantsEntry>
+    ListCallerAccessGrantsResult& AddCallerAccessGrantsList(CallerAccessGrantsListT&& value) { m_callerAccessGrantsListHasBeenSet = true; m_callerAccessGrantsList.emplace_back(std::forward<CallerAccessGrantsListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * AWS Request Id value
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCallerAccessGrantsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCallerAccessGrantsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCallerAccessGrantsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCallerAccessGrantsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * x-amz-id-2 header value, also known as Host Id
      */
-    inline const Aws::String& GetHostId() const{ return m_hostId; }
-    inline void SetHostId(const Aws::String& value) { m_hostId = value; }
-    inline void SetHostId(Aws::String&& value) { m_hostId = std::move(value); }
-    inline void SetHostId(const char* value) { m_hostId.assign(value); }
-    inline ListCallerAccessGrantsResult& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
-    inline ListCallerAccessGrantsResult& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
-    inline ListCallerAccessGrantsResult& WithHostId(const char* value) { SetHostId(value); return *this;}
+    inline const Aws::String& GetHostId() const { return m_hostId; }
+    template<typename HostIdT = Aws::String>
+    void SetHostId(HostIdT&& value) { m_hostIdHasBeenSet = true; m_hostId = std::forward<HostIdT>(value); }
+    template<typename HostIdT = Aws::String>
+    ListCallerAccessGrantsResult& WithHostId(HostIdT&& value) { SetHostId(std::forward<HostIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ListCallerAccessGrantsEntry> m_callerAccessGrantsList;
+    bool m_callerAccessGrantsListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_hostId;
+    bool m_hostIdHasBeenSet = false;
   };
 
 } // namespace Model

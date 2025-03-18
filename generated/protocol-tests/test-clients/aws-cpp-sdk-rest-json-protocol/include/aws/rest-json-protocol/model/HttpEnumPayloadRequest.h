@@ -22,7 +22,7 @@ namespace Model
   class HttpEnumPayloadRequest : public RestJsonProtocolRequest
   {
   public:
-    AWS_RESTJSONPROTOCOL_API HttpEnumPayloadRequest();
+    AWS_RESTJSONPROTOCOL_API HttpEnumPayloadRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,28 +37,24 @@ namespace Model
 
     ///@{
     
-    inline const StringEnum& GetPayload() const{ return m_payload; }
+    inline StringEnum GetPayload() const { return m_payload; }
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-    inline void SetPayload(const StringEnum& value) { m_payloadHasBeenSet = true; m_payload = value; }
-    inline void SetPayload(StringEnum&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-    inline HttpEnumPayloadRequest& WithPayload(const StringEnum& value) { SetPayload(value); return *this;}
-    inline HttpEnumPayloadRequest& WithPayload(StringEnum&& value) { SetPayload(std::move(value)); return *this;}
+    inline void SetPayload(StringEnum value) { m_payloadHasBeenSet = true; m_payload = value; }
+    inline HttpEnumPayloadRequest& WithPayload(StringEnum value) { SetPayload(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline HttpEnumPayloadRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline HttpEnumPayloadRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline HttpEnumPayloadRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    HttpEnumPayloadRequest& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    StringEnum m_payload;
+    StringEnum m_payload{StringEnum::NOT_SET};
     bool m_payloadHasBeenSet = false;
 
     Aws::String m_requestId;

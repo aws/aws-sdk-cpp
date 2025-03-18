@@ -34,7 +34,7 @@ namespace Model
   class KeyNameConstraint
   {
   public:
-    AWS_S3CONTROL_API KeyNameConstraint();
+    AWS_S3CONTROL_API KeyNameConstraint() = default;
     AWS_S3CONTROL_API KeyNameConstraint(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API KeyNameConstraint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,15 +47,14 @@ namespace Model
      * string appears at the start of the object key string. Each KeyNameConstraint
      * filter accepts an array of strings with a length of 1 string.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMatchAnyPrefix() const{ return m_matchAnyPrefix; }
+    inline const Aws::Vector<Aws::String>& GetMatchAnyPrefix() const { return m_matchAnyPrefix; }
     inline bool MatchAnyPrefixHasBeenSet() const { return m_matchAnyPrefixHasBeenSet; }
-    inline void SetMatchAnyPrefix(const Aws::Vector<Aws::String>& value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix = value; }
-    inline void SetMatchAnyPrefix(Aws::Vector<Aws::String>&& value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix = std::move(value); }
-    inline KeyNameConstraint& WithMatchAnyPrefix(const Aws::Vector<Aws::String>& value) { SetMatchAnyPrefix(value); return *this;}
-    inline KeyNameConstraint& WithMatchAnyPrefix(Aws::Vector<Aws::String>&& value) { SetMatchAnyPrefix(std::move(value)); return *this;}
-    inline KeyNameConstraint& AddMatchAnyPrefix(const Aws::String& value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix.push_back(value); return *this; }
-    inline KeyNameConstraint& AddMatchAnyPrefix(Aws::String&& value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix.push_back(std::move(value)); return *this; }
-    inline KeyNameConstraint& AddMatchAnyPrefix(const char* value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix.push_back(value); return *this; }
+    template<typename MatchAnyPrefixT = Aws::Vector<Aws::String>>
+    void SetMatchAnyPrefix(MatchAnyPrefixT&& value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix = std::forward<MatchAnyPrefixT>(value); }
+    template<typename MatchAnyPrefixT = Aws::Vector<Aws::String>>
+    KeyNameConstraint& WithMatchAnyPrefix(MatchAnyPrefixT&& value) { SetMatchAnyPrefix(std::forward<MatchAnyPrefixT>(value)); return *this;}
+    template<typename MatchAnyPrefixT = Aws::String>
+    KeyNameConstraint& AddMatchAnyPrefix(MatchAnyPrefixT&& value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix.emplace_back(std::forward<MatchAnyPrefixT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,15 +63,14 @@ namespace Model
      * string appears at the end of the object key string. Each KeyNameConstraint
      * filter accepts an array of strings with a length of 1 string.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMatchAnySuffix() const{ return m_matchAnySuffix; }
+    inline const Aws::Vector<Aws::String>& GetMatchAnySuffix() const { return m_matchAnySuffix; }
     inline bool MatchAnySuffixHasBeenSet() const { return m_matchAnySuffixHasBeenSet; }
-    inline void SetMatchAnySuffix(const Aws::Vector<Aws::String>& value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix = value; }
-    inline void SetMatchAnySuffix(Aws::Vector<Aws::String>&& value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix = std::move(value); }
-    inline KeyNameConstraint& WithMatchAnySuffix(const Aws::Vector<Aws::String>& value) { SetMatchAnySuffix(value); return *this;}
-    inline KeyNameConstraint& WithMatchAnySuffix(Aws::Vector<Aws::String>&& value) { SetMatchAnySuffix(std::move(value)); return *this;}
-    inline KeyNameConstraint& AddMatchAnySuffix(const Aws::String& value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix.push_back(value); return *this; }
-    inline KeyNameConstraint& AddMatchAnySuffix(Aws::String&& value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix.push_back(std::move(value)); return *this; }
-    inline KeyNameConstraint& AddMatchAnySuffix(const char* value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix.push_back(value); return *this; }
+    template<typename MatchAnySuffixT = Aws::Vector<Aws::String>>
+    void SetMatchAnySuffix(MatchAnySuffixT&& value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix = std::forward<MatchAnySuffixT>(value); }
+    template<typename MatchAnySuffixT = Aws::Vector<Aws::String>>
+    KeyNameConstraint& WithMatchAnySuffix(MatchAnySuffixT&& value) { SetMatchAnySuffix(std::forward<MatchAnySuffixT>(value)); return *this;}
+    template<typename MatchAnySuffixT = Aws::String>
+    KeyNameConstraint& AddMatchAnySuffix(MatchAnySuffixT&& value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix.emplace_back(std::forward<MatchAnySuffixT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -81,15 +79,14 @@ namespace Model
      * string appears anywhere within the object key string. Each KeyNameConstraint
      * filter accepts an array of strings with a length of 1 string.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMatchAnySubstring() const{ return m_matchAnySubstring; }
+    inline const Aws::Vector<Aws::String>& GetMatchAnySubstring() const { return m_matchAnySubstring; }
     inline bool MatchAnySubstringHasBeenSet() const { return m_matchAnySubstringHasBeenSet; }
-    inline void SetMatchAnySubstring(const Aws::Vector<Aws::String>& value) { m_matchAnySubstringHasBeenSet = true; m_matchAnySubstring = value; }
-    inline void SetMatchAnySubstring(Aws::Vector<Aws::String>&& value) { m_matchAnySubstringHasBeenSet = true; m_matchAnySubstring = std::move(value); }
-    inline KeyNameConstraint& WithMatchAnySubstring(const Aws::Vector<Aws::String>& value) { SetMatchAnySubstring(value); return *this;}
-    inline KeyNameConstraint& WithMatchAnySubstring(Aws::Vector<Aws::String>&& value) { SetMatchAnySubstring(std::move(value)); return *this;}
-    inline KeyNameConstraint& AddMatchAnySubstring(const Aws::String& value) { m_matchAnySubstringHasBeenSet = true; m_matchAnySubstring.push_back(value); return *this; }
-    inline KeyNameConstraint& AddMatchAnySubstring(Aws::String&& value) { m_matchAnySubstringHasBeenSet = true; m_matchAnySubstring.push_back(std::move(value)); return *this; }
-    inline KeyNameConstraint& AddMatchAnySubstring(const char* value) { m_matchAnySubstringHasBeenSet = true; m_matchAnySubstring.push_back(value); return *this; }
+    template<typename MatchAnySubstringT = Aws::Vector<Aws::String>>
+    void SetMatchAnySubstring(MatchAnySubstringT&& value) { m_matchAnySubstringHasBeenSet = true; m_matchAnySubstring = std::forward<MatchAnySubstringT>(value); }
+    template<typename MatchAnySubstringT = Aws::Vector<Aws::String>>
+    KeyNameConstraint& WithMatchAnySubstring(MatchAnySubstringT&& value) { SetMatchAnySubstring(std::forward<MatchAnySubstringT>(value)); return *this;}
+    template<typename MatchAnySubstringT = Aws::String>
+    KeyNameConstraint& AddMatchAnySubstring(MatchAnySubstringT&& value) { m_matchAnySubstringHasBeenSet = true; m_matchAnySubstring.emplace_back(std::forward<MatchAnySubstringT>(value)); return *this; }
     ///@}
   private:
 

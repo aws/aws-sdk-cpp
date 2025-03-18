@@ -22,7 +22,7 @@ namespace Model
   class UpdateContinuousBackupsRequest : public DynamoDBRequest
   {
   public:
-    AWS_DYNAMODB_API UpdateContinuousBackupsRequest();
+    AWS_DYNAMODB_API UpdateContinuousBackupsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,26 +44,24 @@ namespace Model
      * <p>The name of the table. You can also provide the Amazon Resource Name (ARN) of
      * the table in this parameter.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline UpdateContinuousBackupsRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline UpdateContinuousBackupsRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline UpdateContinuousBackupsRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    UpdateContinuousBackupsRequest& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents the settings used to enable point in time recovery.</p>
      */
-    inline const PointInTimeRecoverySpecification& GetPointInTimeRecoverySpecification() const{ return m_pointInTimeRecoverySpecification; }
+    inline const PointInTimeRecoverySpecification& GetPointInTimeRecoverySpecification() const { return m_pointInTimeRecoverySpecification; }
     inline bool PointInTimeRecoverySpecificationHasBeenSet() const { return m_pointInTimeRecoverySpecificationHasBeenSet; }
-    inline void SetPointInTimeRecoverySpecification(const PointInTimeRecoverySpecification& value) { m_pointInTimeRecoverySpecificationHasBeenSet = true; m_pointInTimeRecoverySpecification = value; }
-    inline void SetPointInTimeRecoverySpecification(PointInTimeRecoverySpecification&& value) { m_pointInTimeRecoverySpecificationHasBeenSet = true; m_pointInTimeRecoverySpecification = std::move(value); }
-    inline UpdateContinuousBackupsRequest& WithPointInTimeRecoverySpecification(const PointInTimeRecoverySpecification& value) { SetPointInTimeRecoverySpecification(value); return *this;}
-    inline UpdateContinuousBackupsRequest& WithPointInTimeRecoverySpecification(PointInTimeRecoverySpecification&& value) { SetPointInTimeRecoverySpecification(std::move(value)); return *this;}
+    template<typename PointInTimeRecoverySpecificationT = PointInTimeRecoverySpecification>
+    void SetPointInTimeRecoverySpecification(PointInTimeRecoverySpecificationT&& value) { m_pointInTimeRecoverySpecificationHasBeenSet = true; m_pointInTimeRecoverySpecification = std::forward<PointInTimeRecoverySpecificationT>(value); }
+    template<typename PointInTimeRecoverySpecificationT = PointInTimeRecoverySpecification>
+    UpdateContinuousBackupsRequest& WithPointInTimeRecoverySpecification(PointInTimeRecoverySpecificationT&& value) { SetPointInTimeRecoverySpecification(std::forward<PointInTimeRecoverySpecificationT>(value)); return *this;}
     ///@}
   private:
 

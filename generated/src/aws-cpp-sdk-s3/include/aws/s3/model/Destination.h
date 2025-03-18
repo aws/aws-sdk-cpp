@@ -37,7 +37,7 @@ namespace Model
   class Destination
   {
   public:
-    AWS_S3_API Destination();
+    AWS_S3_API Destination() = default;
     AWS_S3_API Destination(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API Destination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,14 +49,12 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to
      * store the results.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline Destination& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline Destination& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline Destination& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    Destination& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3
      * User Guide</i>.</p>
      */
-    inline const Aws::String& GetAccount() const{ return m_account; }
+    inline const Aws::String& GetAccount() const { return m_account; }
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
-    inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
-    inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
-    inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
-    inline Destination& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
-    inline Destination& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
-    inline Destination& WithAccount(const char* value) { SetAccount(value); return *this;}
+    template<typename AccountT = Aws::String>
+    void SetAccount(AccountT&& value) { m_accountHasBeenSet = true; m_account = std::forward<AccountT>(value); }
+    template<typename AccountT = Aws::String>
+    Destination& WithAccount(AccountT&& value) { SetAccount(std::forward<AccountT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +85,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT
      * Bucket replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
      */
-    inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
+    inline StorageClass GetStorageClass() const { return m_storageClass; }
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
-    inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
-    inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
-    inline Destination& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
-    inline Destination& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
+    inline void SetStorageClass(StorageClass value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+    inline Destination& WithStorageClass(StorageClass value) { SetStorageClass(value); return *this;}
     ///@}
 
     ///@{
@@ -105,12 +99,12 @@ namespace Model
      * specified in the replication configuration, the replicas are owned by same
      * Amazon Web Services account that owns the source object.</p>
      */
-    inline const AccessControlTranslation& GetAccessControlTranslation() const{ return m_accessControlTranslation; }
+    inline const AccessControlTranslation& GetAccessControlTranslation() const { return m_accessControlTranslation; }
     inline bool AccessControlTranslationHasBeenSet() const { return m_accessControlTranslationHasBeenSet; }
-    inline void SetAccessControlTranslation(const AccessControlTranslation& value) { m_accessControlTranslationHasBeenSet = true; m_accessControlTranslation = value; }
-    inline void SetAccessControlTranslation(AccessControlTranslation&& value) { m_accessControlTranslationHasBeenSet = true; m_accessControlTranslation = std::move(value); }
-    inline Destination& WithAccessControlTranslation(const AccessControlTranslation& value) { SetAccessControlTranslation(value); return *this;}
-    inline Destination& WithAccessControlTranslation(AccessControlTranslation&& value) { SetAccessControlTranslation(std::move(value)); return *this;}
+    template<typename AccessControlTranslationT = AccessControlTranslation>
+    void SetAccessControlTranslation(AccessControlTranslationT&& value) { m_accessControlTranslationHasBeenSet = true; m_accessControlTranslation = std::forward<AccessControlTranslationT>(value); }
+    template<typename AccessControlTranslationT = AccessControlTranslation>
+    Destination& WithAccessControlTranslation(AccessControlTranslationT&& value) { SetAccessControlTranslation(std::forward<AccessControlTranslationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,12 +113,12 @@ namespace Model
      * <code>SourceSelectionCriteria</code> is specified, you must specify this
      * element.</p>
      */
-    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
     inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
-    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
-    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
-    inline Destination& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
-    inline Destination& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    void SetEncryptionConfiguration(EncryptionConfigurationT&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value); }
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    Destination& WithEncryptionConfiguration(EncryptionConfigurationT&& value) { SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,12 +128,12 @@ namespace Model
      * objects must be replicated. Must be specified together with a
      * <code>Metrics</code> block. </p>
      */
-    inline const ReplicationTime& GetReplicationTime() const{ return m_replicationTime; }
+    inline const ReplicationTime& GetReplicationTime() const { return m_replicationTime; }
     inline bool ReplicationTimeHasBeenSet() const { return m_replicationTimeHasBeenSet; }
-    inline void SetReplicationTime(const ReplicationTime& value) { m_replicationTimeHasBeenSet = true; m_replicationTime = value; }
-    inline void SetReplicationTime(ReplicationTime&& value) { m_replicationTimeHasBeenSet = true; m_replicationTime = std::move(value); }
-    inline Destination& WithReplicationTime(const ReplicationTime& value) { SetReplicationTime(value); return *this;}
-    inline Destination& WithReplicationTime(ReplicationTime&& value) { SetReplicationTime(std::move(value)); return *this;}
+    template<typename ReplicationTimeT = ReplicationTime>
+    void SetReplicationTime(ReplicationTimeT&& value) { m_replicationTimeHasBeenSet = true; m_replicationTime = std::forward<ReplicationTimeT>(value); }
+    template<typename ReplicationTimeT = ReplicationTime>
+    Destination& WithReplicationTime(ReplicationTimeT&& value) { SetReplicationTime(std::forward<ReplicationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -147,12 +141,12 @@ namespace Model
      * <p> A container specifying replication metrics-related settings enabling
      * replication metrics and events. </p>
      */
-    inline const Metrics& GetMetrics() const{ return m_metrics; }
+    inline const Metrics& GetMetrics() const { return m_metrics; }
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
-    inline void SetMetrics(const Metrics& value) { m_metricsHasBeenSet = true; m_metrics = value; }
-    inline void SetMetrics(Metrics&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
-    inline Destination& WithMetrics(const Metrics& value) { SetMetrics(value); return *this;}
-    inline Destination& WithMetrics(Metrics&& value) { SetMetrics(std::move(value)); return *this;}
+    template<typename MetricsT = Metrics>
+    void SetMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics = std::forward<MetricsT>(value); }
+    template<typename MetricsT = Metrics>
+    Destination& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
     ///@}
   private:
 
@@ -162,7 +156,7 @@ namespace Model
     Aws::String m_account;
     bool m_accountHasBeenSet = false;
 
-    StorageClass m_storageClass;
+    StorageClass m_storageClass{StorageClass::NOT_SET};
     bool m_storageClassHasBeenSet = false;
 
     AccessControlTranslation m_accessControlTranslation;

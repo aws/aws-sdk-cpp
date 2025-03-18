@@ -11,25 +11,6 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-SimpleInputParamsRequest::SimpleInputParamsRequest() : 
-    m_fooHasBeenSet(false),
-    m_barHasBeenSet(false),
-    m_baz(false),
-    m_bazHasBeenSet(false),
-    m_bam(0),
-    m_bamHasBeenSet(false),
-    m_floatValue(0.0),
-    m_floatValueHasBeenSet(false),
-    m_boo(0.0),
-    m_booHasBeenSet(false),
-    m_quxHasBeenSet(false),
-    m_fooEnum(FooEnum::NOT_SET),
-    m_fooEnumHasBeenSet(false),
-    m_integerEnum(0),
-    m_integerEnumHasBeenSet(false)
-{
-}
-
 Aws::String SimpleInputParamsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -37,7 +37,7 @@ namespace Model
   class S3SetObjectRetentionOperation
   {
   public:
-    AWS_S3CONTROL_API S3SetObjectRetentionOperation();
+    AWS_S3CONTROL_API S3SetObjectRetentionOperation() = default;
     AWS_S3CONTROL_API S3SetObjectRetentionOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API S3SetObjectRetentionOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,7 +49,7 @@ namespace Model
      * <p>Indicates if the action should be applied to objects in the Batch Operations
      * job even if they have Object Lock <code> GOVERNANCE</code> type in place.</p>
      */
-    inline bool GetBypassGovernanceRetention() const{ return m_bypassGovernanceRetention; }
+    inline bool GetBypassGovernanceRetention() const { return m_bypassGovernanceRetention; }
     inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }
     inline void SetBypassGovernanceRetention(bool value) { m_bypassGovernanceRetentionHasBeenSet = true; m_bypassGovernanceRetention = value; }
     inline S3SetObjectRetentionOperation& WithBypassGovernanceRetention(bool value) { SetBypassGovernanceRetention(value); return *this;}
@@ -63,16 +63,16 @@ namespace Model
      * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User
      * Guide</i>.</p>
      */
-    inline const S3Retention& GetRetention() const{ return m_retention; }
+    inline const S3Retention& GetRetention() const { return m_retention; }
     inline bool RetentionHasBeenSet() const { return m_retentionHasBeenSet; }
-    inline void SetRetention(const S3Retention& value) { m_retentionHasBeenSet = true; m_retention = value; }
-    inline void SetRetention(S3Retention&& value) { m_retentionHasBeenSet = true; m_retention = std::move(value); }
-    inline S3SetObjectRetentionOperation& WithRetention(const S3Retention& value) { SetRetention(value); return *this;}
-    inline S3SetObjectRetentionOperation& WithRetention(S3Retention&& value) { SetRetention(std::move(value)); return *this;}
+    template<typename RetentionT = S3Retention>
+    void SetRetention(RetentionT&& value) { m_retentionHasBeenSet = true; m_retention = std::forward<RetentionT>(value); }
+    template<typename RetentionT = S3Retention>
+    S3SetObjectRetentionOperation& WithRetention(RetentionT&& value) { SetRetention(std::forward<RetentionT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_bypassGovernanceRetention;
+    bool m_bypassGovernanceRetention{false};
     bool m_bypassGovernanceRetentionHasBeenSet = false;
 
     S3Retention m_retention;

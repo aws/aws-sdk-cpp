@@ -20,15 +20,7 @@ namespace S3
 namespace Model
 {
 
-MetricsAndOperator::MetricsAndOperator() : 
-    m_prefixHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_accessPointArnHasBeenSet(false)
-{
-}
-
 MetricsAndOperator::MetricsAndOperator(const XmlNode& xmlNode)
-  : MetricsAndOperator()
 {
   *this = xmlNode;
 }
@@ -49,6 +41,7 @@ MetricsAndOperator& MetricsAndOperator::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagMember = tagsNode;
+      m_tagsHasBeenSet = !tagMember.IsNull();
       while(!tagMember.IsNull())
       {
         m_tags.push_back(tagMember);

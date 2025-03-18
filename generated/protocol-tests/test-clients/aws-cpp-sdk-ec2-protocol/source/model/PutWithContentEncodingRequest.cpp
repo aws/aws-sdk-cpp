@@ -10,12 +10,6 @@
 using namespace Aws::EC2Protocol::Model;
 using namespace Aws::Utils;
 
-PutWithContentEncodingRequest::PutWithContentEncodingRequest() : 
-    m_encodingHasBeenSet(false),
-    m_dataHasBeenSet(false)
-{
-}
-
 Aws::String PutWithContentEncodingRequest::SerializePayload() const
 {
   Aws::StringStream ss;

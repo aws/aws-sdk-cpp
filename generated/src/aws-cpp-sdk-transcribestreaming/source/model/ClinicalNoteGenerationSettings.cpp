@@ -18,15 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-ClinicalNoteGenerationSettings::ClinicalNoteGenerationSettings() : 
-    m_outputBucketNameHasBeenSet(false),
-    m_noteTemplate(MedicalScribeNoteTemplate::NOT_SET),
-    m_noteTemplateHasBeenSet(false)
-{
-}
-
 ClinicalNoteGenerationSettings::ClinicalNoteGenerationSettings(JsonView jsonValue)
-  : ClinicalNoteGenerationSettings()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ClinicalNoteGenerationSettings& ClinicalNoteGenerationSettings::operator =(JsonV
   if(jsonValue.ValueExists("OutputBucketName"))
   {
     m_outputBucketName = jsonValue.GetString("OutputBucketName");
-
     m_outputBucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NoteTemplate"))
   {
     m_noteTemplate = MedicalScribeNoteTemplateMapper::GetMedicalScribeNoteTemplateForName(jsonValue.GetString("NoteTemplate"));
-
     m_noteTemplateHasBeenSet = true;
   }
-
   return *this;
 }
 

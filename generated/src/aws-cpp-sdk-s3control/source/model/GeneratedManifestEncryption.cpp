@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-GeneratedManifestEncryption::GeneratedManifestEncryption() : 
-    m_sSES3HasBeenSet(false),
-    m_sSEKMSHasBeenSet(false)
-{
-}
-
 GeneratedManifestEncryption::GeneratedManifestEncryption(const XmlNode& xmlNode)
-  : GeneratedManifestEncryption()
 {
   *this = xmlNode;
 }

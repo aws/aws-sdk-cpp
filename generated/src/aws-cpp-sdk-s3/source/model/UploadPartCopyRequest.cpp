@@ -17,31 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UploadPartCopyRequest::UploadPartCopyRequest() : 
-    m_bucketHasBeenSet(false),
-    m_copySourceHasBeenSet(false),
-    m_copySourceIfMatchHasBeenSet(false),
-    m_copySourceIfModifiedSinceHasBeenSet(false),
-    m_copySourceIfNoneMatchHasBeenSet(false),
-    m_copySourceIfUnmodifiedSinceHasBeenSet(false),
-    m_copySourceRangeHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_partNumber(0),
-    m_partNumberHasBeenSet(false),
-    m_uploadIdHasBeenSet(false),
-    m_sSECustomerAlgorithmHasBeenSet(false),
-    m_sSECustomerKeyHasBeenSet(false),
-    m_sSECustomerKeyMD5HasBeenSet(false),
-    m_copySourceSSECustomerAlgorithmHasBeenSet(false),
-    m_copySourceSSECustomerKeyHasBeenSet(false),
-    m_copySourceSSECustomerKeyMD5HasBeenSet(false),
-    m_requestPayer(RequestPayer::NOT_SET),
-    m_requestPayerHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_expectedSourceBucketOwnerHasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
 
 bool UploadPartCopyRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const

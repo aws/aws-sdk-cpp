@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-KeyNameConstraint::KeyNameConstraint() : 
-    m_matchAnyPrefixHasBeenSet(false),
-    m_matchAnySuffixHasBeenSet(false),
-    m_matchAnySubstringHasBeenSet(false)
-{
-}
-
 KeyNameConstraint::KeyNameConstraint(const XmlNode& xmlNode)
-  : KeyNameConstraint()
 {
   *this = xmlNode;
 }
@@ -43,6 +35,7 @@ KeyNameConstraint& KeyNameConstraint::operator =(const XmlNode& xmlNode)
     if(!matchAnyPrefixNode.IsNull())
     {
       XmlNode matchAnyPrefixMember = matchAnyPrefixNode.FirstChild("member");
+      m_matchAnyPrefixHasBeenSet = !matchAnyPrefixMember.IsNull();
       while(!matchAnyPrefixMember.IsNull())
       {
         m_matchAnyPrefix.push_back(matchAnyPrefixMember.GetText());
@@ -55,6 +48,7 @@ KeyNameConstraint& KeyNameConstraint::operator =(const XmlNode& xmlNode)
     if(!matchAnySuffixNode.IsNull())
     {
       XmlNode matchAnySuffixMember = matchAnySuffixNode.FirstChild("member");
+      m_matchAnySuffixHasBeenSet = !matchAnySuffixMember.IsNull();
       while(!matchAnySuffixMember.IsNull())
       {
         m_matchAnySuffix.push_back(matchAnySuffixMember.GetText());
@@ -67,6 +61,7 @@ KeyNameConstraint& KeyNameConstraint::operator =(const XmlNode& xmlNode)
     if(!matchAnySubstringNode.IsNull())
     {
       XmlNode matchAnySubstringMember = matchAnySubstringNode.FirstChild("member");
+      m_matchAnySubstringHasBeenSet = !matchAnySubstringMember.IsNull();
       while(!matchAnySubstringMember.IsNull())
       {
         m_matchAnySubstring.push_back(matchAnySubstringMember.GetText());

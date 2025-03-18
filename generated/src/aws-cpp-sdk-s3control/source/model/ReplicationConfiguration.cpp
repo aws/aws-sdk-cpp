@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ReplicationConfiguration::ReplicationConfiguration() : 
-    m_roleHasBeenSet(false),
-    m_rulesHasBeenSet(false)
-{
-}
-
 ReplicationConfiguration::ReplicationConfiguration(const XmlNode& xmlNode)
-  : ReplicationConfiguration()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ ReplicationConfiguration& ReplicationConfiguration::operator =(const XmlNode& xm
     if(!rulesNode.IsNull())
     {
       XmlNode rulesMember = rulesNode.FirstChild("Rule");
+      m_rulesHasBeenSet = !rulesMember.IsNull();
       while(!rulesMember.IsNull())
       {
         m_rules.push_back(rulesMember);

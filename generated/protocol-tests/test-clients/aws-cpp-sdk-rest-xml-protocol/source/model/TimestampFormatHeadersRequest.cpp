@@ -15,17 +15,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-TimestampFormatHeadersRequest::TimestampFormatHeadersRequest() : 
-    m_memberEpochSecondsHasBeenSet(false),
-    m_memberHttpDateHasBeenSet(false),
-    m_memberDateTimeHasBeenSet(false),
-    m_defaultFormatHasBeenSet(false),
-    m_targetEpochSecondsHasBeenSet(false),
-    m_targetHttpDateHasBeenSet(false),
-    m_targetDateTimeHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
 
 Aws::String TimestampFormatHeadersRequest::SerializePayload() const
 {

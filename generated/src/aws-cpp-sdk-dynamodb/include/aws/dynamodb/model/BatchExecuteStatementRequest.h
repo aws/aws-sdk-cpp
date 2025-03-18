@@ -23,7 +23,7 @@ namespace Model
   class BatchExecuteStatementRequest : public DynamoDBRequest
   {
   public:
-    AWS_DYNAMODB_API BatchExecuteStatementRequest();
+    AWS_DYNAMODB_API BatchExecuteStatementRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,31 +40,29 @@ namespace Model
     /**
      * <p>The list of PartiQL statements representing the batch to run.</p>
      */
-    inline const Aws::Vector<BatchStatementRequest>& GetStatements() const{ return m_statements; }
+    inline const Aws::Vector<BatchStatementRequest>& GetStatements() const { return m_statements; }
     inline bool StatementsHasBeenSet() const { return m_statementsHasBeenSet; }
-    inline void SetStatements(const Aws::Vector<BatchStatementRequest>& value) { m_statementsHasBeenSet = true; m_statements = value; }
-    inline void SetStatements(Aws::Vector<BatchStatementRequest>&& value) { m_statementsHasBeenSet = true; m_statements = std::move(value); }
-    inline BatchExecuteStatementRequest& WithStatements(const Aws::Vector<BatchStatementRequest>& value) { SetStatements(value); return *this;}
-    inline BatchExecuteStatementRequest& WithStatements(Aws::Vector<BatchStatementRequest>&& value) { SetStatements(std::move(value)); return *this;}
-    inline BatchExecuteStatementRequest& AddStatements(const BatchStatementRequest& value) { m_statementsHasBeenSet = true; m_statements.push_back(value); return *this; }
-    inline BatchExecuteStatementRequest& AddStatements(BatchStatementRequest&& value) { m_statementsHasBeenSet = true; m_statements.push_back(std::move(value)); return *this; }
+    template<typename StatementsT = Aws::Vector<BatchStatementRequest>>
+    void SetStatements(StatementsT&& value) { m_statementsHasBeenSet = true; m_statements = std::forward<StatementsT>(value); }
+    template<typename StatementsT = Aws::Vector<BatchStatementRequest>>
+    BatchExecuteStatementRequest& WithStatements(StatementsT&& value) { SetStatements(std::forward<StatementsT>(value)); return *this;}
+    template<typename StatementsT = BatchStatementRequest>
+    BatchExecuteStatementRequest& AddStatements(StatementsT&& value) { m_statementsHasBeenSet = true; m_statements.emplace_back(std::forward<StatementsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ReturnConsumedCapacity& GetReturnConsumedCapacity() const{ return m_returnConsumedCapacity; }
+    inline ReturnConsumedCapacity GetReturnConsumedCapacity() const { return m_returnConsumedCapacity; }
     inline bool ReturnConsumedCapacityHasBeenSet() const { return m_returnConsumedCapacityHasBeenSet; }
-    inline void SetReturnConsumedCapacity(const ReturnConsumedCapacity& value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = value; }
-    inline void SetReturnConsumedCapacity(ReturnConsumedCapacity&& value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = std::move(value); }
-    inline BatchExecuteStatementRequest& WithReturnConsumedCapacity(const ReturnConsumedCapacity& value) { SetReturnConsumedCapacity(value); return *this;}
-    inline BatchExecuteStatementRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity&& value) { SetReturnConsumedCapacity(std::move(value)); return *this;}
+    inline void SetReturnConsumedCapacity(ReturnConsumedCapacity value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = value; }
+    inline BatchExecuteStatementRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity value) { SetReturnConsumedCapacity(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchStatementRequest> m_statements;
     bool m_statementsHasBeenSet = false;
 
-    ReturnConsumedCapacity m_returnConsumedCapacity;
+    ReturnConsumedCapacity m_returnConsumedCapacity{ReturnConsumedCapacity::NOT_SET};
     bool m_returnConsumedCapacityHasBeenSet = false;
   };
 

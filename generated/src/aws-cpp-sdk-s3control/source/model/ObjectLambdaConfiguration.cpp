@@ -20,17 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ObjectLambdaConfiguration::ObjectLambdaConfiguration() : 
-    m_supportingAccessPointHasBeenSet(false),
-    m_cloudWatchMetricsEnabled(false),
-    m_cloudWatchMetricsEnabledHasBeenSet(false),
-    m_allowedFeaturesHasBeenSet(false),
-    m_transformationConfigurationsHasBeenSet(false)
-{
-}
-
 ObjectLambdaConfiguration::ObjectLambdaConfiguration(const XmlNode& xmlNode)
-  : ObjectLambdaConfiguration()
 {
   *this = xmlNode;
 }
@@ -57,6 +47,7 @@ ObjectLambdaConfiguration& ObjectLambdaConfiguration::operator =(const XmlNode& 
     if(!allowedFeaturesNode.IsNull())
     {
       XmlNode allowedFeaturesMember = allowedFeaturesNode.FirstChild("AllowedFeature");
+      m_allowedFeaturesHasBeenSet = !allowedFeaturesMember.IsNull();
       while(!allowedFeaturesMember.IsNull())
       {
         m_allowedFeatures.push_back(ObjectLambdaAllowedFeatureMapper::GetObjectLambdaAllowedFeatureForName(StringUtils::Trim(allowedFeaturesMember.GetText().c_str())));
@@ -69,6 +60,7 @@ ObjectLambdaConfiguration& ObjectLambdaConfiguration::operator =(const XmlNode& 
     if(!transformationConfigurationsNode.IsNull())
     {
       XmlNode transformationConfigurationsMember = transformationConfigurationsNode.FirstChild("TransformationConfiguration");
+      m_transformationConfigurationsHasBeenSet = !transformationConfigurationsMember.IsNull();
       while(!transformationConfigurationsMember.IsNull())
       {
         m_transformationConfigurations.push_back(transformationConfigurationsMember);

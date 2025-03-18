@@ -26,7 +26,7 @@ namespace Model
   class ListBucketsRequest : public S3Request
   {
   public:
-    AWS_S3_API ListBucketsRequest();
+    AWS_S3_API ListBucketsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,7 +46,7 @@ namespace Model
      * than the count of buckets that are owned by an Amazon Web Services account,
      * return all the buckets in response.</p>
      */
-    inline int GetMaxBuckets() const{ return m_maxBuckets; }
+    inline int GetMaxBuckets() const { return m_maxBuckets; }
     inline bool MaxBucketsHasBeenSet() const { return m_maxBucketsHasBeenSet; }
     inline void SetMaxBuckets(int value) { m_maxBucketsHasBeenSet = true; m_maxBuckets = value; }
     inline ListBucketsRequest& WithMaxBuckets(int value) { SetMaxBuckets(value); return *this;}
@@ -65,14 +65,12 @@ namespace Model
      * the response, Amazon S3 applies a default page size of 10,000 and provides a
      * continuation token if there are more buckets.</p> 
      */
-    inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
+    inline const Aws::String& GetContinuationToken() const { return m_continuationToken; }
     inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }
-    inline void SetContinuationToken(const Aws::String& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
-    inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::move(value); }
-    inline void SetContinuationToken(const char* value) { m_continuationTokenHasBeenSet = true; m_continuationToken.assign(value); }
-    inline ListBucketsRequest& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
-    inline ListBucketsRequest& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
-    inline ListBucketsRequest& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
+    template<typename ContinuationTokenT = Aws::String>
+    void SetContinuationToken(ContinuationTokenT&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::forward<ContinuationTokenT>(value); }
+    template<typename ContinuationTokenT = Aws::String>
+    ListBucketsRequest& WithContinuationToken(ContinuationTokenT&& value) { SetContinuationToken(std::forward<ContinuationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +78,12 @@ namespace Model
      * <p>Limits the response to bucket names that begin with the specified bucket name
      * prefix.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline ListBucketsRequest& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline ListBucketsRequest& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline ListBucketsRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    ListBucketsRequest& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,35 +100,30 @@ namespace Model
      * <code>us-west-2</code>, the request must be made to an endpoint in Region
      * <code>us-west-2</code>.</p> 
      */
-    inline const Aws::String& GetBucketRegion() const{ return m_bucketRegion; }
+    inline const Aws::String& GetBucketRegion() const { return m_bucketRegion; }
     inline bool BucketRegionHasBeenSet() const { return m_bucketRegionHasBeenSet; }
-    inline void SetBucketRegion(const Aws::String& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = value; }
-    inline void SetBucketRegion(Aws::String&& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = std::move(value); }
-    inline void SetBucketRegion(const char* value) { m_bucketRegionHasBeenSet = true; m_bucketRegion.assign(value); }
-    inline ListBucketsRequest& WithBucketRegion(const Aws::String& value) { SetBucketRegion(value); return *this;}
-    inline ListBucketsRequest& WithBucketRegion(Aws::String&& value) { SetBucketRegion(std::move(value)); return *this;}
-    inline ListBucketsRequest& WithBucketRegion(const char* value) { SetBucketRegion(value); return *this;}
+    template<typename BucketRegionT = Aws::String>
+    void SetBucketRegion(BucketRegionT&& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = std::forward<BucketRegionT>(value); }
+    template<typename BucketRegionT = Aws::String>
+    ListBucketsRequest& WithBucketRegion(BucketRegionT&& value) { SetBucketRegion(std::forward<BucketRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const { return m_customizedAccessLogTag; }
     inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
-    inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }
-    inline void SetCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::move(value); }
-    inline ListBucketsRequest& WithCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomizedAccessLogTag(value); return *this;}
-    inline ListBucketsRequest& WithCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomizedAccessLogTag(std::move(value)); return *this;}
-    inline ListBucketsRequest& AddCustomizedAccessLogTag(const Aws::String& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
-    inline ListBucketsRequest& AddCustomizedAccessLogTag(Aws::String&& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
-    inline ListBucketsRequest& AddCustomizedAccessLogTag(const Aws::String& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
-    inline ListBucketsRequest& AddCustomizedAccessLogTag(Aws::String&& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), std::move(value)); return *this; }
-    inline ListBucketsRequest& AddCustomizedAccessLogTag(const char* key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
-    inline ListBucketsRequest& AddCustomizedAccessLogTag(Aws::String&& key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
-    inline ListBucketsRequest& AddCustomizedAccessLogTag(const char* key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
+    template<typename CustomizedAccessLogTagT = Aws::Map<Aws::String, Aws::String>>
+    void SetCustomizedAccessLogTag(CustomizedAccessLogTagT&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::forward<CustomizedAccessLogTagT>(value); }
+    template<typename CustomizedAccessLogTagT = Aws::Map<Aws::String, Aws::String>>
+    ListBucketsRequest& WithCustomizedAccessLogTag(CustomizedAccessLogTagT&& value) { SetCustomizedAccessLogTag(std::forward<CustomizedAccessLogTagT>(value)); return *this;}
+    template<typename CustomizedAccessLogTagKeyT = Aws::String, typename CustomizedAccessLogTagValueT = Aws::String>
+    ListBucketsRequest& AddCustomizedAccessLogTag(CustomizedAccessLogTagKeyT&& key, CustomizedAccessLogTagValueT&& value) {
+      m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::forward<CustomizedAccessLogTagKeyT>(key), std::forward<CustomizedAccessLogTagValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    int m_maxBuckets;
+    int m_maxBuckets{0};
     bool m_maxBucketsHasBeenSet = false;
 
     Aws::String m_continuationToken;

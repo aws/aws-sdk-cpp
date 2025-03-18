@@ -10,11 +10,6 @@
 using namespace Aws::EC2Protocol::Model;
 using namespace Aws::Utils;
 
-NestedStructuresRequest::NestedStructuresRequest() : 
-    m_nestedHasBeenSet(false)
-{
-}
-
 Aws::String NestedStructuresRequest::SerializePayload() const
 {
   Aws::StringStream ss;

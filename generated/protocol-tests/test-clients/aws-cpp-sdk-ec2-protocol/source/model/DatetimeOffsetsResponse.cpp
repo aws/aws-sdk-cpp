@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DatetimeOffsetsResponse::DatetimeOffsetsResponse()
-{
-}
-
 DatetimeOffsetsResponse::DatetimeOffsetsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DatetimeOffsetsResponse& DatetimeOffsetsResponse::operator =(const Aws::AmazonWe
     if(!datetimeNode.IsNull())
     {
       m_datetime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(datetimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_datetimeHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DatetimeOffsetsResponse& DatetimeOffsetsResponse::operator =(const Aws::AmazonWe
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2Protocol::Model::DatetimeOffsetsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -32,7 +32,7 @@ namespace Model
   class MultiRegionAccessPointsAsyncResponse
   {
   public:
-    AWS_S3CONTROL_API MultiRegionAccessPointsAsyncResponse();
+    AWS_S3CONTROL_API MultiRegionAccessPointsAsyncResponse() = default;
     AWS_S3CONTROL_API MultiRegionAccessPointsAsyncResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API MultiRegionAccessPointsAsyncResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,14 @@ namespace Model
      * <p>A collection of status information for the different Regions that a
      * Multi-Region Access Point supports.</p>
      */
-    inline const Aws::Vector<MultiRegionAccessPointRegionalResponse>& GetRegions() const{ return m_regions; }
+    inline const Aws::Vector<MultiRegionAccessPointRegionalResponse>& GetRegions() const { return m_regions; }
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
-    inline void SetRegions(const Aws::Vector<MultiRegionAccessPointRegionalResponse>& value) { m_regionsHasBeenSet = true; m_regions = value; }
-    inline void SetRegions(Aws::Vector<MultiRegionAccessPointRegionalResponse>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
-    inline MultiRegionAccessPointsAsyncResponse& WithRegions(const Aws::Vector<MultiRegionAccessPointRegionalResponse>& value) { SetRegions(value); return *this;}
-    inline MultiRegionAccessPointsAsyncResponse& WithRegions(Aws::Vector<MultiRegionAccessPointRegionalResponse>&& value) { SetRegions(std::move(value)); return *this;}
-    inline MultiRegionAccessPointsAsyncResponse& AddRegions(const MultiRegionAccessPointRegionalResponse& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
-    inline MultiRegionAccessPointsAsyncResponse& AddRegions(MultiRegionAccessPointRegionalResponse&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
+    template<typename RegionsT = Aws::Vector<MultiRegionAccessPointRegionalResponse>>
+    void SetRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions = std::forward<RegionsT>(value); }
+    template<typename RegionsT = Aws::Vector<MultiRegionAccessPointRegionalResponse>>
+    MultiRegionAccessPointsAsyncResponse& WithRegions(RegionsT&& value) { SetRegions(std::forward<RegionsT>(value)); return *this;}
+    template<typename RegionsT = MultiRegionAccessPointRegionalResponse>
+    MultiRegionAccessPointsAsyncResponse& AddRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions.emplace_back(std::forward<RegionsT>(value)); return *this; }
     ///@}
   private:
 

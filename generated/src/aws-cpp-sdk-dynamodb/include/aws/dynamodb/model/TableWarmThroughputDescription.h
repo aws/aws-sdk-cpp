@@ -32,7 +32,7 @@ namespace Model
   class TableWarmThroughputDescription
   {
   public:
-    AWS_DYNAMODB_API TableWarmThroughputDescription();
+    AWS_DYNAMODB_API TableWarmThroughputDescription() = default;
     AWS_DYNAMODB_API TableWarmThroughputDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API TableWarmThroughputDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>Represents the base table's warm throughput value in read units per
      * second.</p>
      */
-    inline long long GetReadUnitsPerSecond() const{ return m_readUnitsPerSecond; }
+    inline long long GetReadUnitsPerSecond() const { return m_readUnitsPerSecond; }
     inline bool ReadUnitsPerSecondHasBeenSet() const { return m_readUnitsPerSecondHasBeenSet; }
     inline void SetReadUnitsPerSecond(long long value) { m_readUnitsPerSecondHasBeenSet = true; m_readUnitsPerSecond = value; }
     inline TableWarmThroughputDescription& WithReadUnitsPerSecond(long long value) { SetReadUnitsPerSecond(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
      * <p>Represents the base table's warm throughput value in write units per
      * second.</p>
      */
-    inline long long GetWriteUnitsPerSecond() const{ return m_writeUnitsPerSecond; }
+    inline long long GetWriteUnitsPerSecond() const { return m_writeUnitsPerSecond; }
     inline bool WriteUnitsPerSecondHasBeenSet() const { return m_writeUnitsPerSecondHasBeenSet; }
     inline void SetWriteUnitsPerSecond(long long value) { m_writeUnitsPerSecondHasBeenSet = true; m_writeUnitsPerSecond = value; }
     inline TableWarmThroughputDescription& WithWriteUnitsPerSecond(long long value) { SetWriteUnitsPerSecond(value); return *this;}
@@ -64,22 +64,20 @@ namespace Model
     /**
      * <p>Represents warm throughput value of the base table..</p>
      */
-    inline const TableStatus& GetStatus() const{ return m_status; }
+    inline TableStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const TableStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(TableStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline TableWarmThroughputDescription& WithStatus(const TableStatus& value) { SetStatus(value); return *this;}
-    inline TableWarmThroughputDescription& WithStatus(TableStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(TableStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline TableWarmThroughputDescription& WithStatus(TableStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    long long m_readUnitsPerSecond;
+    long long m_readUnitsPerSecond{0};
     bool m_readUnitsPerSecondHasBeenSet = false;
 
-    long long m_writeUnitsPerSecond;
+    long long m_writeUnitsPerSecond{0};
     bool m_writeUnitsPerSecondHasBeenSet = false;
 
-    TableStatus m_status;
+    TableStatus m_status{TableStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

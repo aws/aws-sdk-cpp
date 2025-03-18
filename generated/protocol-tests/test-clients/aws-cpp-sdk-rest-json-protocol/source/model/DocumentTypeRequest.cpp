@@ -13,13 +13,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DocumentTypeRequest::DocumentTypeRequest() : 
-    m_stringValueHasBeenSet(false),
-    m_documentValueHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Aws::String DocumentTypeRequest::SerializePayload() const
 {
   JsonValue payload;

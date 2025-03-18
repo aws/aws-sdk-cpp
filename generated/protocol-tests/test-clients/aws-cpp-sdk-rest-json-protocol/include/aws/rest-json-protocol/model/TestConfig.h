@@ -24,7 +24,7 @@ namespace Model
   class TestConfig
   {
   public:
-    AWS_RESTJSONPROTOCOL_API TestConfig();
+    AWS_RESTJSONPROTOCOL_API TestConfig() = default;
     AWS_RESTJSONPROTOCOL_API TestConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESTJSONPROTOCOL_API TestConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESTJSONPROTOCOL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -32,14 +32,14 @@ namespace Model
 
     ///@{
     
-    inline int GetTimeout() const{ return m_timeout; }
+    inline int GetTimeout() const { return m_timeout; }
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
     inline TestConfig& WithTimeout(int value) { SetTimeout(value); return *this;}
     ///@}
   private:
 
-    int m_timeout;
+    int m_timeout{0};
     bool m_timeoutHasBeenSet = false;
   };
 

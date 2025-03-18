@@ -10,10 +10,6 @@
 using namespace Aws::EC2Protocol::Model;
 using namespace Aws::Utils;
 
-IgnoresWrappingXmlNameRequest::IgnoresWrappingXmlNameRequest()
-{
-}
-
 Aws::String IgnoresWrappingXmlNameRequest::SerializePayload() const
 {
   Aws::StringStream ss;

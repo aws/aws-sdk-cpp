@@ -31,98 +31,94 @@ namespace Model
   class XmlEnumsResponse
   {
   public:
-    AWS_EC2PROTOCOL_API XmlEnumsResponse();
+    AWS_EC2PROTOCOL_API XmlEnumsResponse() = default;
     AWS_EC2PROTOCOL_API XmlEnumsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2PROTOCOL_API XmlEnumsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const FooEnum& GetFooEnum1() const{ return m_fooEnum1; }
-    inline void SetFooEnum1(const FooEnum& value) { m_fooEnum1 = value; }
-    inline void SetFooEnum1(FooEnum&& value) { m_fooEnum1 = std::move(value); }
-    inline XmlEnumsResponse& WithFooEnum1(const FooEnum& value) { SetFooEnum1(value); return *this;}
-    inline XmlEnumsResponse& WithFooEnum1(FooEnum&& value) { SetFooEnum1(std::move(value)); return *this;}
+    inline FooEnum GetFooEnum1() const { return m_fooEnum1; }
+    inline void SetFooEnum1(FooEnum value) { m_fooEnum1HasBeenSet = true; m_fooEnum1 = value; }
+    inline XmlEnumsResponse& WithFooEnum1(FooEnum value) { SetFooEnum1(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const FooEnum& GetFooEnum2() const{ return m_fooEnum2; }
-    inline void SetFooEnum2(const FooEnum& value) { m_fooEnum2 = value; }
-    inline void SetFooEnum2(FooEnum&& value) { m_fooEnum2 = std::move(value); }
-    inline XmlEnumsResponse& WithFooEnum2(const FooEnum& value) { SetFooEnum2(value); return *this;}
-    inline XmlEnumsResponse& WithFooEnum2(FooEnum&& value) { SetFooEnum2(std::move(value)); return *this;}
+    inline FooEnum GetFooEnum2() const { return m_fooEnum2; }
+    inline void SetFooEnum2(FooEnum value) { m_fooEnum2HasBeenSet = true; m_fooEnum2 = value; }
+    inline XmlEnumsResponse& WithFooEnum2(FooEnum value) { SetFooEnum2(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const FooEnum& GetFooEnum3() const{ return m_fooEnum3; }
-    inline void SetFooEnum3(const FooEnum& value) { m_fooEnum3 = value; }
-    inline void SetFooEnum3(FooEnum&& value) { m_fooEnum3 = std::move(value); }
-    inline XmlEnumsResponse& WithFooEnum3(const FooEnum& value) { SetFooEnum3(value); return *this;}
-    inline XmlEnumsResponse& WithFooEnum3(FooEnum&& value) { SetFooEnum3(std::move(value)); return *this;}
+    inline FooEnum GetFooEnum3() const { return m_fooEnum3; }
+    inline void SetFooEnum3(FooEnum value) { m_fooEnum3HasBeenSet = true; m_fooEnum3 = value; }
+    inline XmlEnumsResponse& WithFooEnum3(FooEnum value) { SetFooEnum3(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<FooEnum>& GetFooEnumList() const{ return m_fooEnumList; }
-    inline void SetFooEnumList(const Aws::Vector<FooEnum>& value) { m_fooEnumList = value; }
-    inline void SetFooEnumList(Aws::Vector<FooEnum>&& value) { m_fooEnumList = std::move(value); }
-    inline XmlEnumsResponse& WithFooEnumList(const Aws::Vector<FooEnum>& value) { SetFooEnumList(value); return *this;}
-    inline XmlEnumsResponse& WithFooEnumList(Aws::Vector<FooEnum>&& value) { SetFooEnumList(std::move(value)); return *this;}
-    inline XmlEnumsResponse& AddFooEnumList(const FooEnum& value) { m_fooEnumList.push_back(value); return *this; }
-    inline XmlEnumsResponse& AddFooEnumList(FooEnum&& value) { m_fooEnumList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FooEnum>& GetFooEnumList() const { return m_fooEnumList; }
+    template<typename FooEnumListT = Aws::Vector<FooEnum>>
+    void SetFooEnumList(FooEnumListT&& value) { m_fooEnumListHasBeenSet = true; m_fooEnumList = std::forward<FooEnumListT>(value); }
+    template<typename FooEnumListT = Aws::Vector<FooEnum>>
+    XmlEnumsResponse& WithFooEnumList(FooEnumListT&& value) { SetFooEnumList(std::forward<FooEnumListT>(value)); return *this;}
+    inline XmlEnumsResponse& AddFooEnumList(FooEnum value) { m_fooEnumListHasBeenSet = true; m_fooEnumList.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<FooEnum>& GetFooEnumSet() const{ return m_fooEnumSet; }
-    inline void SetFooEnumSet(const Aws::Vector<FooEnum>& value) { m_fooEnumSet = value; }
-    inline void SetFooEnumSet(Aws::Vector<FooEnum>&& value) { m_fooEnumSet = std::move(value); }
-    inline XmlEnumsResponse& WithFooEnumSet(const Aws::Vector<FooEnum>& value) { SetFooEnumSet(value); return *this;}
-    inline XmlEnumsResponse& WithFooEnumSet(Aws::Vector<FooEnum>&& value) { SetFooEnumSet(std::move(value)); return *this;}
-    inline XmlEnumsResponse& AddFooEnumSet(const FooEnum& value) { m_fooEnumSet.push_back(value); return *this; }
-    inline XmlEnumsResponse& AddFooEnumSet(FooEnum&& value) { m_fooEnumSet.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FooEnum>& GetFooEnumSet() const { return m_fooEnumSet; }
+    template<typename FooEnumSetT = Aws::Vector<FooEnum>>
+    void SetFooEnumSet(FooEnumSetT&& value) { m_fooEnumSetHasBeenSet = true; m_fooEnumSet = std::forward<FooEnumSetT>(value); }
+    template<typename FooEnumSetT = Aws::Vector<FooEnum>>
+    XmlEnumsResponse& WithFooEnumSet(FooEnumSetT&& value) { SetFooEnumSet(std::forward<FooEnumSetT>(value)); return *this;}
+    inline XmlEnumsResponse& AddFooEnumSet(FooEnum value) { m_fooEnumSetHasBeenSet = true; m_fooEnumSet.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, FooEnum>& GetFooEnumMap() const{ return m_fooEnumMap; }
-    inline void SetFooEnumMap(const Aws::Map<Aws::String, FooEnum>& value) { m_fooEnumMap = value; }
-    inline void SetFooEnumMap(Aws::Map<Aws::String, FooEnum>&& value) { m_fooEnumMap = std::move(value); }
-    inline XmlEnumsResponse& WithFooEnumMap(const Aws::Map<Aws::String, FooEnum>& value) { SetFooEnumMap(value); return *this;}
-    inline XmlEnumsResponse& WithFooEnumMap(Aws::Map<Aws::String, FooEnum>&& value) { SetFooEnumMap(std::move(value)); return *this;}
-    inline XmlEnumsResponse& AddFooEnumMap(const Aws::String& key, const FooEnum& value) { m_fooEnumMap.emplace(key, value); return *this; }
-    inline XmlEnumsResponse& AddFooEnumMap(Aws::String&& key, const FooEnum& value) { m_fooEnumMap.emplace(std::move(key), value); return *this; }
-    inline XmlEnumsResponse& AddFooEnumMap(const Aws::String& key, FooEnum&& value) { m_fooEnumMap.emplace(key, std::move(value)); return *this; }
-    inline XmlEnumsResponse& AddFooEnumMap(Aws::String&& key, FooEnum&& value) { m_fooEnumMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline XmlEnumsResponse& AddFooEnumMap(const char* key, FooEnum&& value) { m_fooEnumMap.emplace(key, std::move(value)); return *this; }
-    inline XmlEnumsResponse& AddFooEnumMap(const char* key, const FooEnum& value) { m_fooEnumMap.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, FooEnum>& GetFooEnumMap() const { return m_fooEnumMap; }
+    template<typename FooEnumMapT = Aws::Map<Aws::String, FooEnum>>
+    void SetFooEnumMap(FooEnumMapT&& value) { m_fooEnumMapHasBeenSet = true; m_fooEnumMap = std::forward<FooEnumMapT>(value); }
+    template<typename FooEnumMapT = Aws::Map<Aws::String, FooEnum>>
+    XmlEnumsResponse& WithFooEnumMap(FooEnumMapT&& value) { SetFooEnumMap(std::forward<FooEnumMapT>(value)); return *this;}
+    inline XmlEnumsResponse& AddFooEnumMap(Aws::String key, FooEnum value) {
+      m_fooEnumMapHasBeenSet = true; m_fooEnumMap.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline XmlEnumsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline XmlEnumsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    XmlEnumsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    FooEnum m_fooEnum1;
+    FooEnum m_fooEnum1{FooEnum::NOT_SET};
+    bool m_fooEnum1HasBeenSet = false;
 
-    FooEnum m_fooEnum2;
+    FooEnum m_fooEnum2{FooEnum::NOT_SET};
+    bool m_fooEnum2HasBeenSet = false;
 
-    FooEnum m_fooEnum3;
+    FooEnum m_fooEnum3{FooEnum::NOT_SET};
+    bool m_fooEnum3HasBeenSet = false;
 
     Aws::Vector<FooEnum> m_fooEnumList;
+    bool m_fooEnumListHasBeenSet = false;
 
     Aws::Vector<FooEnum> m_fooEnumSet;
+    bool m_fooEnumSetHasBeenSet = false;
 
     Aws::Map<Aws::String, FooEnum> m_fooEnumMap;
+    bool m_fooEnumMapHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

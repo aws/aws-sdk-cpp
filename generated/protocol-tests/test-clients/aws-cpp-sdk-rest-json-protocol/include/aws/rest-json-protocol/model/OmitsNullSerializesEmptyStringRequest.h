@@ -25,7 +25,7 @@ namespace Model
   class OmitsNullSerializesEmptyStringRequest : public RestJsonProtocolRequest
   {
   public:
-    AWS_RESTJSONPROTOCOL_API OmitsNullSerializesEmptyStringRequest();
+    AWS_RESTJSONPROTOCOL_API OmitsNullSerializesEmptyStringRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,26 +40,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetNullValue() const{ return m_nullValue; }
+    inline const Aws::String& GetNullValue() const { return m_nullValue; }
     inline bool NullValueHasBeenSet() const { return m_nullValueHasBeenSet; }
-    inline void SetNullValue(const Aws::String& value) { m_nullValueHasBeenSet = true; m_nullValue = value; }
-    inline void SetNullValue(Aws::String&& value) { m_nullValueHasBeenSet = true; m_nullValue = std::move(value); }
-    inline void SetNullValue(const char* value) { m_nullValueHasBeenSet = true; m_nullValue.assign(value); }
-    inline OmitsNullSerializesEmptyStringRequest& WithNullValue(const Aws::String& value) { SetNullValue(value); return *this;}
-    inline OmitsNullSerializesEmptyStringRequest& WithNullValue(Aws::String&& value) { SetNullValue(std::move(value)); return *this;}
-    inline OmitsNullSerializesEmptyStringRequest& WithNullValue(const char* value) { SetNullValue(value); return *this;}
+    template<typename NullValueT = Aws::String>
+    void SetNullValue(NullValueT&& value) { m_nullValueHasBeenSet = true; m_nullValue = std::forward<NullValueT>(value); }
+    template<typename NullValueT = Aws::String>
+    OmitsNullSerializesEmptyStringRequest& WithNullValue(NullValueT&& value) { SetNullValue(std::forward<NullValueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetEmptyString() const{ return m_emptyString; }
+    inline const Aws::String& GetEmptyString() const { return m_emptyString; }
     inline bool EmptyStringHasBeenSet() const { return m_emptyStringHasBeenSet; }
-    inline void SetEmptyString(const Aws::String& value) { m_emptyStringHasBeenSet = true; m_emptyString = value; }
-    inline void SetEmptyString(Aws::String&& value) { m_emptyStringHasBeenSet = true; m_emptyString = std::move(value); }
-    inline void SetEmptyString(const char* value) { m_emptyStringHasBeenSet = true; m_emptyString.assign(value); }
-    inline OmitsNullSerializesEmptyStringRequest& WithEmptyString(const Aws::String& value) { SetEmptyString(value); return *this;}
-    inline OmitsNullSerializesEmptyStringRequest& WithEmptyString(Aws::String&& value) { SetEmptyString(std::move(value)); return *this;}
-    inline OmitsNullSerializesEmptyStringRequest& WithEmptyString(const char* value) { SetEmptyString(value); return *this;}
+    template<typename EmptyStringT = Aws::String>
+    void SetEmptyString(EmptyStringT&& value) { m_emptyStringHasBeenSet = true; m_emptyString = std::forward<EmptyStringT>(value); }
+    template<typename EmptyStringT = Aws::String>
+    OmitsNullSerializesEmptyStringRequest& WithEmptyString(EmptyStringT&& value) { SetEmptyString(std::forward<EmptyStringT>(value)); return *this;}
     ///@}
   private:
 

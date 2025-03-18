@@ -35,7 +35,7 @@ namespace Model
   class LifecycleConfiguration
   {
   public:
-    AWS_S3_API LifecycleConfiguration();
+    AWS_S3_API LifecycleConfiguration() = default;
     AWS_S3_API LifecycleConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API LifecycleConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,14 @@ namespace Model
     /**
      * <p>Specifies lifecycle configuration rules for an Amazon S3 bucket. </p>
      */
-    inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<Rule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline LifecycleConfiguration& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
-    inline LifecycleConfiguration& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
-    inline LifecycleConfiguration& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline LifecycleConfiguration& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<Rule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<Rule>>
+    LifecycleConfiguration& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = Rule>
+    LifecycleConfiguration& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
   private:
 

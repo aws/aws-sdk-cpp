@@ -15,11 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-AssociateAccessGrantsIdentityCenterRequest::AssociateAccessGrantsIdentityCenterRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_identityCenterArnHasBeenSet(false)
-{
-}
 
 Aws::String AssociateAccessGrantsIdentityCenterRequest::SerializePayload() const
 {

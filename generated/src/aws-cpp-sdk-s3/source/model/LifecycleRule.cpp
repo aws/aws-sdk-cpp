@@ -20,21 +20,7 @@ namespace S3
 namespace Model
 {
 
-LifecycleRule::LifecycleRule() : 
-    m_expirationHasBeenSet(false),
-    m_iDHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_status(ExpirationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_transitionsHasBeenSet(false),
-    m_noncurrentVersionTransitionsHasBeenSet(false),
-    m_noncurrentVersionExpirationHasBeenSet(false),
-    m_abortIncompleteMultipartUploadHasBeenSet(false)
-{
-}
-
 LifecycleRule::LifecycleRule(const XmlNode& xmlNode)
-  : LifecycleRule()
 {
   *this = xmlNode;
 }
@@ -66,13 +52,14 @@ LifecycleRule& LifecycleRule::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ExpirationStatusMapper::GetExpirationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ExpirationStatusMapper::GetExpirationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode transitionsNode = resultNode.FirstChild("Transition");
     if(!transitionsNode.IsNull())
     {
       XmlNode transitionMember = transitionsNode;
+      m_transitionsHasBeenSet = !transitionMember.IsNull();
       while(!transitionMember.IsNull())
       {
         m_transitions.push_back(transitionMember);
@@ -85,6 +72,7 @@ LifecycleRule& LifecycleRule::operator =(const XmlNode& xmlNode)
     if(!noncurrentVersionTransitionsNode.IsNull())
     {
       XmlNode noncurrentVersionTransitionMember = noncurrentVersionTransitionsNode;
+      m_noncurrentVersionTransitionsHasBeenSet = !noncurrentVersionTransitionMember.IsNull();
       while(!noncurrentVersionTransitionMember.IsNull())
       {
         m_noncurrentVersionTransitions.push_back(noncurrentVersionTransitionMember);

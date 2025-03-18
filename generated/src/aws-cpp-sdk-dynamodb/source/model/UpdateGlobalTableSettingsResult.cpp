@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateGlobalTableSettingsResult::UpdateGlobalTableSettingsResult()
-{
-}
-
 UpdateGlobalTableSettingsResult::UpdateGlobalTableSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ UpdateGlobalTableSettingsResult& UpdateGlobalTableSettingsResult::operator =(con
   if(jsonValue.ValueExists("GlobalTableName"))
   {
     m_globalTableName = jsonValue.GetString("GlobalTableName");
-
+    m_globalTableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaSettings"))
   {
     Aws::Utils::Array<JsonView> replicaSettingsJsonList = jsonValue.GetArray("ReplicaSettings");
@@ -42,14 +37,15 @@ UpdateGlobalTableSettingsResult& UpdateGlobalTableSettingsResult::operator =(con
     {
       m_replicaSettings.push_back(replicaSettingsJsonList[replicaSettingsIndex].AsObject());
     }
+    m_replicaSettingsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

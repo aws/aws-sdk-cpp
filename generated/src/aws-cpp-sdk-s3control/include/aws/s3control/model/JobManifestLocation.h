@@ -33,7 +33,7 @@ namespace Model
   class JobManifestLocation
   {
   public:
-    AWS_S3CONTROL_API JobManifestLocation();
+    AWS_S3CONTROL_API JobManifestLocation() = default;
     AWS_S3CONTROL_API JobManifestLocation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API JobManifestLocation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,14 +50,12 @@ namespace Model
      * XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
      * 
      */
-    inline const Aws::String& GetObjectArn() const{ return m_objectArn; }
+    inline const Aws::String& GetObjectArn() const { return m_objectArn; }
     inline bool ObjectArnHasBeenSet() const { return m_objectArnHasBeenSet; }
-    inline void SetObjectArn(const Aws::String& value) { m_objectArnHasBeenSet = true; m_objectArn = value; }
-    inline void SetObjectArn(Aws::String&& value) { m_objectArnHasBeenSet = true; m_objectArn = std::move(value); }
-    inline void SetObjectArn(const char* value) { m_objectArnHasBeenSet = true; m_objectArn.assign(value); }
-    inline JobManifestLocation& WithObjectArn(const Aws::String& value) { SetObjectArn(value); return *this;}
-    inline JobManifestLocation& WithObjectArn(Aws::String&& value) { SetObjectArn(std::move(value)); return *this;}
-    inline JobManifestLocation& WithObjectArn(const char* value) { SetObjectArn(value); return *this;}
+    template<typename ObjectArnT = Aws::String>
+    void SetObjectArn(ObjectArnT&& value) { m_objectArnHasBeenSet = true; m_objectArn = std::forward<ObjectArnT>(value); }
+    template<typename ObjectArnT = Aws::String>
+    JobManifestLocation& WithObjectArn(ObjectArnT&& value) { SetObjectArn(std::forward<ObjectArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,28 +63,24 @@ namespace Model
      * <p>The optional version ID to identify a specific version of the manifest
      * object.</p>
      */
-    inline const Aws::String& GetObjectVersionId() const{ return m_objectVersionId; }
+    inline const Aws::String& GetObjectVersionId() const { return m_objectVersionId; }
     inline bool ObjectVersionIdHasBeenSet() const { return m_objectVersionIdHasBeenSet; }
-    inline void SetObjectVersionId(const Aws::String& value) { m_objectVersionIdHasBeenSet = true; m_objectVersionId = value; }
-    inline void SetObjectVersionId(Aws::String&& value) { m_objectVersionIdHasBeenSet = true; m_objectVersionId = std::move(value); }
-    inline void SetObjectVersionId(const char* value) { m_objectVersionIdHasBeenSet = true; m_objectVersionId.assign(value); }
-    inline JobManifestLocation& WithObjectVersionId(const Aws::String& value) { SetObjectVersionId(value); return *this;}
-    inline JobManifestLocation& WithObjectVersionId(Aws::String&& value) { SetObjectVersionId(std::move(value)); return *this;}
-    inline JobManifestLocation& WithObjectVersionId(const char* value) { SetObjectVersionId(value); return *this;}
+    template<typename ObjectVersionIdT = Aws::String>
+    void SetObjectVersionId(ObjectVersionIdT&& value) { m_objectVersionIdHasBeenSet = true; m_objectVersionId = std::forward<ObjectVersionIdT>(value); }
+    template<typename ObjectVersionIdT = Aws::String>
+    JobManifestLocation& WithObjectVersionId(ObjectVersionIdT&& value) { SetObjectVersionId(std::forward<ObjectVersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ETag for the specified manifest object.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
+    inline const Aws::String& GetETag() const { return m_eTag; }
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
-    inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
-    inline JobManifestLocation& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline JobManifestLocation& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline JobManifestLocation& WithETag(const char* value) { SetETag(value); return *this;}
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    JobManifestLocation& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
   private:
 

@@ -23,7 +23,7 @@ namespace Model
   class NestedXmlMapsRequest : public RestXmlProtocolRequest
   {
   public:
-    AWS_RESTXMLPROTOCOL_API NestedXmlMapsRequest();
+    AWS_RESTXMLPROTOCOL_API NestedXmlMapsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,34 +36,30 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>>& GetNestedMap() const{ return m_nestedMap; }
+    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>>& GetNestedMap() const { return m_nestedMap; }
     inline bool NestedMapHasBeenSet() const { return m_nestedMapHasBeenSet; }
-    inline void SetNestedMap(const Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>>& value) { m_nestedMapHasBeenSet = true; m_nestedMap = value; }
-    inline void SetNestedMap(Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>>&& value) { m_nestedMapHasBeenSet = true; m_nestedMap = std::move(value); }
-    inline NestedXmlMapsRequest& WithNestedMap(const Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>>& value) { SetNestedMap(value); return *this;}
-    inline NestedXmlMapsRequest& WithNestedMap(Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>>&& value) { SetNestedMap(std::move(value)); return *this;}
-    inline NestedXmlMapsRequest& AddNestedMap(const Aws::String& key, const Aws::Map<Aws::String, FooEnum>& value) { m_nestedMapHasBeenSet = true; m_nestedMap.emplace(key, value); return *this; }
-    inline NestedXmlMapsRequest& AddNestedMap(Aws::String&& key, const Aws::Map<Aws::String, FooEnum>& value) { m_nestedMapHasBeenSet = true; m_nestedMap.emplace(std::move(key), value); return *this; }
-    inline NestedXmlMapsRequest& AddNestedMap(const Aws::String& key, Aws::Map<Aws::String, FooEnum>&& value) { m_nestedMapHasBeenSet = true; m_nestedMap.emplace(key, std::move(value)); return *this; }
-    inline NestedXmlMapsRequest& AddNestedMap(Aws::String&& key, Aws::Map<Aws::String, FooEnum>&& value) { m_nestedMapHasBeenSet = true; m_nestedMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline NestedXmlMapsRequest& AddNestedMap(const char* key, Aws::Map<Aws::String, FooEnum>&& value) { m_nestedMapHasBeenSet = true; m_nestedMap.emplace(key, std::move(value)); return *this; }
-    inline NestedXmlMapsRequest& AddNestedMap(const char* key, const Aws::Map<Aws::String, FooEnum>& value) { m_nestedMapHasBeenSet = true; m_nestedMap.emplace(key, value); return *this; }
+    template<typename NestedMapT = Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>>>
+    void SetNestedMap(NestedMapT&& value) { m_nestedMapHasBeenSet = true; m_nestedMap = std::forward<NestedMapT>(value); }
+    template<typename NestedMapT = Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>>>
+    NestedXmlMapsRequest& WithNestedMap(NestedMapT&& value) { SetNestedMap(std::forward<NestedMapT>(value)); return *this;}
+    template<typename NestedMapKeyT = Aws::String, typename NestedMapValueT = Aws::Map<Aws::String, FooEnum>>
+    NestedXmlMapsRequest& AddNestedMap(NestedMapKeyT&& key, NestedMapValueT&& value) {
+      m_nestedMapHasBeenSet = true; m_nestedMap.emplace(std::forward<NestedMapKeyT>(key), std::forward<NestedMapValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>>& GetFlatNestedMap() const{ return m_flatNestedMap; }
+    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>>& GetFlatNestedMap() const { return m_flatNestedMap; }
     inline bool FlatNestedMapHasBeenSet() const { return m_flatNestedMapHasBeenSet; }
-    inline void SetFlatNestedMap(const Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>>& value) { m_flatNestedMapHasBeenSet = true; m_flatNestedMap = value; }
-    inline void SetFlatNestedMap(Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>>&& value) { m_flatNestedMapHasBeenSet = true; m_flatNestedMap = std::move(value); }
-    inline NestedXmlMapsRequest& WithFlatNestedMap(const Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>>& value) { SetFlatNestedMap(value); return *this;}
-    inline NestedXmlMapsRequest& WithFlatNestedMap(Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>>&& value) { SetFlatNestedMap(std::move(value)); return *this;}
-    inline NestedXmlMapsRequest& AddFlatNestedMap(const Aws::String& key, const Aws::Map<Aws::String, FooEnum>& value) { m_flatNestedMapHasBeenSet = true; m_flatNestedMap.emplace(key, value); return *this; }
-    inline NestedXmlMapsRequest& AddFlatNestedMap(Aws::String&& key, const Aws::Map<Aws::String, FooEnum>& value) { m_flatNestedMapHasBeenSet = true; m_flatNestedMap.emplace(std::move(key), value); return *this; }
-    inline NestedXmlMapsRequest& AddFlatNestedMap(const Aws::String& key, Aws::Map<Aws::String, FooEnum>&& value) { m_flatNestedMapHasBeenSet = true; m_flatNestedMap.emplace(key, std::move(value)); return *this; }
-    inline NestedXmlMapsRequest& AddFlatNestedMap(Aws::String&& key, Aws::Map<Aws::String, FooEnum>&& value) { m_flatNestedMapHasBeenSet = true; m_flatNestedMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline NestedXmlMapsRequest& AddFlatNestedMap(const char* key, Aws::Map<Aws::String, FooEnum>&& value) { m_flatNestedMapHasBeenSet = true; m_flatNestedMap.emplace(key, std::move(value)); return *this; }
-    inline NestedXmlMapsRequest& AddFlatNestedMap(const char* key, const Aws::Map<Aws::String, FooEnum>& value) { m_flatNestedMapHasBeenSet = true; m_flatNestedMap.emplace(key, value); return *this; }
+    template<typename FlatNestedMapT = Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>>>
+    void SetFlatNestedMap(FlatNestedMapT&& value) { m_flatNestedMapHasBeenSet = true; m_flatNestedMap = std::forward<FlatNestedMapT>(value); }
+    template<typename FlatNestedMapT = Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>>>
+    NestedXmlMapsRequest& WithFlatNestedMap(FlatNestedMapT&& value) { SetFlatNestedMap(std::forward<FlatNestedMapT>(value)); return *this;}
+    template<typename FlatNestedMapKeyT = Aws::String, typename FlatNestedMapValueT = Aws::Map<Aws::String, FooEnum>>
+    NestedXmlMapsRequest& AddFlatNestedMap(FlatNestedMapKeyT&& key, FlatNestedMapValueT&& value) {
+      m_flatNestedMapHasBeenSet = true; m_flatNestedMap.emplace(std::forward<FlatNestedMapKeyT>(key), std::forward<FlatNestedMapValueT>(value)); return *this;
+    }
     ///@}
   private:
 

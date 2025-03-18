@@ -33,7 +33,7 @@ namespace Model
   class IncrementalExportSpecification
   {
   public:
-    AWS_DYNAMODB_API IncrementalExportSpecification();
+    AWS_DYNAMODB_API IncrementalExportSpecification() = default;
     AWS_DYNAMODB_API IncrementalExportSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API IncrementalExportSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * incremental export will reflect the table's state including and after this point
      * in time.</p>
      */
-    inline const Aws::Utils::DateTime& GetExportFromTime() const{ return m_exportFromTime; }
+    inline const Aws::Utils::DateTime& GetExportFromTime() const { return m_exportFromTime; }
     inline bool ExportFromTimeHasBeenSet() const { return m_exportFromTimeHasBeenSet; }
-    inline void SetExportFromTime(const Aws::Utils::DateTime& value) { m_exportFromTimeHasBeenSet = true; m_exportFromTime = value; }
-    inline void SetExportFromTime(Aws::Utils::DateTime&& value) { m_exportFromTimeHasBeenSet = true; m_exportFromTime = std::move(value); }
-    inline IncrementalExportSpecification& WithExportFromTime(const Aws::Utils::DateTime& value) { SetExportFromTime(value); return *this;}
-    inline IncrementalExportSpecification& WithExportFromTime(Aws::Utils::DateTime&& value) { SetExportFromTime(std::move(value)); return *this;}
+    template<typename ExportFromTimeT = Aws::Utils::DateTime>
+    void SetExportFromTime(ExportFromTimeT&& value) { m_exportFromTimeHasBeenSet = true; m_exportFromTime = std::forward<ExportFromTimeT>(value); }
+    template<typename ExportFromTimeT = Aws::Utils::DateTime>
+    IncrementalExportSpecification& WithExportFromTime(ExportFromTimeT&& value) { SetExportFromTime(std::forward<ExportFromTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +62,12 @@ namespace Model
      * time. If this is not provided, the latest time with data available will be
      * used.</p>
      */
-    inline const Aws::Utils::DateTime& GetExportToTime() const{ return m_exportToTime; }
+    inline const Aws::Utils::DateTime& GetExportToTime() const { return m_exportToTime; }
     inline bool ExportToTimeHasBeenSet() const { return m_exportToTimeHasBeenSet; }
-    inline void SetExportToTime(const Aws::Utils::DateTime& value) { m_exportToTimeHasBeenSet = true; m_exportToTime = value; }
-    inline void SetExportToTime(Aws::Utils::DateTime&& value) { m_exportToTimeHasBeenSet = true; m_exportToTime = std::move(value); }
-    inline IncrementalExportSpecification& WithExportToTime(const Aws::Utils::DateTime& value) { SetExportToTime(value); return *this;}
-    inline IncrementalExportSpecification& WithExportToTime(Aws::Utils::DateTime&& value) { SetExportToTime(std::move(value)); return *this;}
+    template<typename ExportToTimeT = Aws::Utils::DateTime>
+    void SetExportToTime(ExportToTimeT&& value) { m_exportToTimeHasBeenSet = true; m_exportToTime = std::forward<ExportToTimeT>(value); }
+    template<typename ExportToTimeT = Aws::Utils::DateTime>
+    IncrementalExportSpecification& WithExportToTime(ExportToTimeT&& value) { SetExportToTime(std::forward<ExportToTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,22 +76,20 @@ namespace Model
      * <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>. The default value
      * is <code>NEW_AND_OLD_IMAGES</code>.</p>
      */
-    inline const ExportViewType& GetExportViewType() const{ return m_exportViewType; }
+    inline ExportViewType GetExportViewType() const { return m_exportViewType; }
     inline bool ExportViewTypeHasBeenSet() const { return m_exportViewTypeHasBeenSet; }
-    inline void SetExportViewType(const ExportViewType& value) { m_exportViewTypeHasBeenSet = true; m_exportViewType = value; }
-    inline void SetExportViewType(ExportViewType&& value) { m_exportViewTypeHasBeenSet = true; m_exportViewType = std::move(value); }
-    inline IncrementalExportSpecification& WithExportViewType(const ExportViewType& value) { SetExportViewType(value); return *this;}
-    inline IncrementalExportSpecification& WithExportViewType(ExportViewType&& value) { SetExportViewType(std::move(value)); return *this;}
+    inline void SetExportViewType(ExportViewType value) { m_exportViewTypeHasBeenSet = true; m_exportViewType = value; }
+    inline IncrementalExportSpecification& WithExportViewType(ExportViewType value) { SetExportViewType(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_exportFromTime;
+    Aws::Utils::DateTime m_exportFromTime{};
     bool m_exportFromTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_exportToTime;
+    Aws::Utils::DateTime m_exportToTime{};
     bool m_exportToTimeHasBeenSet = false;
 
-    ExportViewType m_exportViewType;
+    ExportViewType m_exportViewType{ExportViewType::NOT_SET};
     bool m_exportViewTypeHasBeenSet = false;
   };
 

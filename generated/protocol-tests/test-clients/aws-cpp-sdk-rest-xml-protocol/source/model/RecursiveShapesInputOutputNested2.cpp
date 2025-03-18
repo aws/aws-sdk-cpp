@@ -21,14 +21,7 @@ namespace RestXmlProtocol
 namespace Model
 {
 
-RecursiveShapesInputOutputNested2::RecursiveShapesInputOutputNested2() : 
-    m_barHasBeenSet(false),
-    m_recursiveMemberHasBeenSet(false)
-{
-}
-
 RecursiveShapesInputOutputNested2::RecursiveShapesInputOutputNested2(const XmlNode& xmlNode)
-  : RecursiveShapesInputOutputNested2()
 {
   *this = xmlNode;
 }

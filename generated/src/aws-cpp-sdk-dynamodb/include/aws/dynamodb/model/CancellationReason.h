@@ -37,7 +37,7 @@ namespace Model
   class CancellationReason
   {
   public:
-    AWS_DYNAMODB_API CancellationReason();
+    AWS_DYNAMODB_API CancellationReason() = default;
     AWS_DYNAMODB_API CancellationReason(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API CancellationReason& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,46 +47,40 @@ namespace Model
     /**
      * <p>Item in the request which caused the transaction to get cancelled.</p>
      */
-    inline const Aws::Map<Aws::String, AttributeValue>& GetItem() const{ return m_item; }
+    inline const Aws::Map<Aws::String, AttributeValue>& GetItem() const { return m_item; }
     inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
-    inline void SetItem(const Aws::Map<Aws::String, AttributeValue>& value) { m_itemHasBeenSet = true; m_item = value; }
-    inline void SetItem(Aws::Map<Aws::String, AttributeValue>&& value) { m_itemHasBeenSet = true; m_item = std::move(value); }
-    inline CancellationReason& WithItem(const Aws::Map<Aws::String, AttributeValue>& value) { SetItem(value); return *this;}
-    inline CancellationReason& WithItem(Aws::Map<Aws::String, AttributeValue>&& value) { SetItem(std::move(value)); return *this;}
-    inline CancellationReason& AddItem(const Aws::String& key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(key, value); return *this; }
-    inline CancellationReason& AddItem(Aws::String&& key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(std::move(key), value); return *this; }
-    inline CancellationReason& AddItem(const Aws::String& key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(key, std::move(value)); return *this; }
-    inline CancellationReason& AddItem(Aws::String&& key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(std::move(key), std::move(value)); return *this; }
-    inline CancellationReason& AddItem(const char* key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(key, std::move(value)); return *this; }
-    inline CancellationReason& AddItem(const char* key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(key, value); return *this; }
+    template<typename ItemT = Aws::Map<Aws::String, AttributeValue>>
+    void SetItem(ItemT&& value) { m_itemHasBeenSet = true; m_item = std::forward<ItemT>(value); }
+    template<typename ItemT = Aws::Map<Aws::String, AttributeValue>>
+    CancellationReason& WithItem(ItemT&& value) { SetItem(std::forward<ItemT>(value)); return *this;}
+    template<typename ItemKeyT = Aws::String, typename ItemValueT = AttributeValue>
+    CancellationReason& AddItem(ItemKeyT&& key, ItemValueT&& value) {
+      m_itemHasBeenSet = true; m_item.emplace(std::forward<ItemKeyT>(key), std::forward<ItemValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Status code for the result of the cancelled transaction.</p>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline CancellationReason& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline CancellationReason& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline CancellationReason& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    CancellationReason& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Cancellation reason message description.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline CancellationReason& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline CancellationReason& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline CancellationReason& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    CancellationReason& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

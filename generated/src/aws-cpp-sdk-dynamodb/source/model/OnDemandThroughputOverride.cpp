@@ -18,14 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-OnDemandThroughputOverride::OnDemandThroughputOverride() : 
-    m_maxReadRequestUnits(0),
-    m_maxReadRequestUnitsHasBeenSet(false)
-{
-}
-
 OnDemandThroughputOverride::OnDemandThroughputOverride(JsonView jsonValue)
-  : OnDemandThroughputOverride()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ OnDemandThroughputOverride& OnDemandThroughputOverride::operator =(JsonView json
   if(jsonValue.ValueExists("MaxReadRequestUnits"))
   {
     m_maxReadRequestUnits = jsonValue.GetInt64("MaxReadRequestUnits");
-
     m_maxReadRequestUnitsHasBeenSet = true;
   }
-
   return *this;
 }
 

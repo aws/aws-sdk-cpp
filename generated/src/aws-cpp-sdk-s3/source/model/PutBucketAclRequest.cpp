@@ -17,23 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-PutBucketAclRequest::PutBucketAclRequest() : 
-    m_aCL(BucketCannedACL::NOT_SET),
-    m_aCLHasBeenSet(false),
-    m_accessControlPolicyHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_contentMD5HasBeenSet(false),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
-    m_checksumAlgorithmHasBeenSet(false),
-    m_grantFullControlHasBeenSet(false),
-    m_grantReadHasBeenSet(false),
-    m_grantReadACPHasBeenSet(false),
-    m_grantWriteHasBeenSet(false),
-    m_grantWriteACPHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
 
 bool PutBucketAclRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const

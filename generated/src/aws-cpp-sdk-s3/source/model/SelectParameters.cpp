@@ -20,17 +20,7 @@ namespace S3
 namespace Model
 {
 
-SelectParameters::SelectParameters() : 
-    m_inputSerializationHasBeenSet(false),
-    m_expressionType(ExpressionType::NOT_SET),
-    m_expressionTypeHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_outputSerializationHasBeenSet(false)
-{
-}
-
 SelectParameters::SelectParameters(const XmlNode& xmlNode)
-  : SelectParameters()
 {
   *this = xmlNode;
 }
@@ -50,7 +40,7 @@ SelectParameters& SelectParameters::operator =(const XmlNode& xmlNode)
     XmlNode expressionTypeNode = resultNode.FirstChild("ExpressionType");
     if(!expressionTypeNode.IsNull())
     {
-      m_expressionType = ExpressionTypeMapper::GetExpressionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expressionTypeNode.GetText()).c_str()).c_str());
+      m_expressionType = ExpressionTypeMapper::GetExpressionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expressionTypeNode.GetText()).c_str()));
       m_expressionTypeHasBeenSet = true;
     }
     XmlNode expressionNode = resultNode.FirstChild("Expression");

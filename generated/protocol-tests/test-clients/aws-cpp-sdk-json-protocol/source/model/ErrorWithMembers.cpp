@@ -18,20 +18,7 @@ namespace JsonProtocol
 namespace Model
 {
 
-ErrorWithMembers::ErrorWithMembers() : 
-    m_codeHasBeenSet(false),
-    m_complexDataHasBeenSet(false),
-    m_integerField(0),
-    m_integerFieldHasBeenSet(false),
-    m_listFieldHasBeenSet(false),
-    m_mapFieldHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_stringFieldHasBeenSet(false)
-{
-}
-
 ErrorWithMembers::ErrorWithMembers(JsonView jsonValue)
-  : ErrorWithMembers()
 {
   *this = jsonValue;
 }
@@ -41,24 +28,18 @@ ErrorWithMembers& ErrorWithMembers::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComplexData"))
   {
     m_complexData = jsonValue.GetObject("ComplexData");
-
     m_complexDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntegerField"))
   {
     m_integerField = jsonValue.GetInteger("IntegerField");
-
     m_integerFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListField"))
   {
     Aws::Utils::Array<JsonView> listFieldJsonList = jsonValue.GetArray("ListField");
@@ -68,7 +49,6 @@ ErrorWithMembers& ErrorWithMembers::operator =(JsonView jsonValue)
     }
     m_listFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapField"))
   {
     Aws::Map<Aws::String, JsonView> mapFieldJsonMap = jsonValue.GetObject("MapField").GetAllObjects();
@@ -78,21 +58,16 @@ ErrorWithMembers& ErrorWithMembers::operator =(JsonView jsonValue)
     }
     m_mapFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StringField"))
   {
     m_stringField = jsonValue.GetString("StringField");
-
     m_stringFieldHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace RestJsonProtocol
 namespace Model
 {
 
-ComplexNestedErrorData::ComplexNestedErrorData() : 
-    m_fooHasBeenSet(false)
-{
-}
-
 ComplexNestedErrorData::ComplexNestedErrorData(JsonView jsonValue)
-  : ComplexNestedErrorData()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ComplexNestedErrorData& ComplexNestedErrorData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Fooooo"))
   {
     m_foo = jsonValue.GetString("Fooooo");
-
     m_fooHasBeenSet = true;
   }
-
   return *this;
 }
 

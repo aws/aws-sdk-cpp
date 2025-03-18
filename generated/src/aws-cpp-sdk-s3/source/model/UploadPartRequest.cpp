@@ -17,32 +17,6 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 using namespace Aws;
 
-UploadPartRequest::UploadPartRequest() : 
-    m_bucketHasBeenSet(false),
-    m_contentLength(0),
-    m_contentLengthHasBeenSet(false),
-    m_contentMD5HasBeenSet(false),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
-    m_checksumAlgorithmHasBeenSet(false),
-    m_checksumCRC32HasBeenSet(false),
-    m_checksumCRC32CHasBeenSet(false),
-    m_checksumCRC64NVMEHasBeenSet(false),
-    m_checksumSHA1HasBeenSet(false),
-    m_checksumSHA256HasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_partNumber(0),
-    m_partNumberHasBeenSet(false),
-    m_uploadIdHasBeenSet(false),
-    m_sSECustomerAlgorithmHasBeenSet(false),
-    m_sSECustomerKeyHasBeenSet(false),
-    m_sSECustomerKeyMD5HasBeenSet(false),
-    m_requestPayer(RequestPayer::NOT_SET),
-    m_requestPayerHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
-
 
 void UploadPartRequest::AddQueryStringParameters(URI& uri) const
 {
