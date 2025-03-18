@@ -51,7 +51,11 @@ ${className}::${className}(const ${clientConfiguration}& clientConfiguration,
 #if($serviceModel.metadata.serviceId == "S3")
         Aws::MakeShared<${AuthSchemeResolver}>(ALLOCATION_TAG),
 #else
+#if(!$IsMultiAuth)
         Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
+#else
+        Aws::MakeShared<smithy::${AuthSchemeResolver}>(ALLOCATION_TAG, ${metadata.classNamePrefix}EndpointProvider, ${clientConfiguration}),
+#end
 #end
         {
 #if($serviceModel.metadata.serviceId == "S3")
@@ -87,7 +91,11 @@ ${className}::${className}(const AWSCredentials& credentials,
 #if($serviceModel.metadata.serviceId == "S3")
         Aws::MakeShared<${AuthSchemeResolver}>(ALLOCATION_TAG),
 #else
+#if(!$IsMultiAuth)
         Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
+#else
+        Aws::MakeShared<smithy::${AuthSchemeResolver}>(ALLOCATION_TAG, ${metadata.classNamePrefix}EndpointProvider, ${clientConfiguration}),
+#end
 #end
         {
 #if($serviceModel.metadata.serviceId == "S3")
@@ -123,7 +131,11 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
 #if($serviceModel.metadata.serviceId == "S3")
         Aws::MakeShared<${AuthSchemeResolver}>(ALLOCATION_TAG),
 #else
+#if(!$IsMultiAuth)
         Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
+#else
+        Aws::MakeShared<smithy::${AuthSchemeResolver}>(ALLOCATION_TAG, ${metadata.classNamePrefix}EndpointProvider, ${clientConfiguration}),
+#end
 #end
         {
 #if($serviceModel.metadata.serviceId == "S3")
@@ -269,7 +281,11 @@ ${className}::${className}(const Client::ClientConfiguration& clientConfiguratio
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
+#if(!$IsMultiAuth)
       Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
+#else
+      Aws::MakeShared<smithy::${AuthSchemeResolver}>(ALLOCATION_TAG, ${metadata.classNamePrefix}EndpointProvider, ${clientConfiguration}),
+#end
       {
 #foreach($entry in $AuthSchemeMapEntries)
           {$entry{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}}
@@ -285,7 +301,11 @@ ${className}::${className}(const AWSCredentials& credentials,
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
+#if(!$IsMultiAuth)
         Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
+#else
+        Aws::MakeShared<smithy::${AuthSchemeResolver}>(ALLOCATION_TAG, ${metadata.classNamePrefix}EndpointProvider, ${clientConfiguration}),
+#end
         {
 #foreach($entry in $AuthSchemeMapEntries)
           {$entry{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}}
@@ -301,8 +321,11 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
+#if(!$IsMultiAuth)
         Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
-        {
+#else
+        Aws::MakeShared<smithy::${AuthSchemeResolver}>(ALLOCATION_TAG, ${metadata.classNamePrefix}EndpointProvider, ${clientConfiguration}),
+#end        {
 #foreach($entry in $AuthSchemeMapEntries)
           {$entry{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
 #end
