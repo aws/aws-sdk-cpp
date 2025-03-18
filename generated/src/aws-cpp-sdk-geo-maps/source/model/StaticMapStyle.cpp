@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int Satellite_HASH = HashingUtils::HashString("Satellite");
+        static const int Standard_HASH = HashingUtils::HashString("Standard");
 
 
         StaticMapStyle GetStaticMapStyleForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == Satellite_HASH)
           {
             return StaticMapStyle::Satellite;
+          }
+          else if (hashCode == Standard_HASH)
+          {
+            return StaticMapStyle::Standard;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case StaticMapStyle::Satellite:
             return "Satellite";
+          case StaticMapStyle::Standard:
+            return "Standard";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

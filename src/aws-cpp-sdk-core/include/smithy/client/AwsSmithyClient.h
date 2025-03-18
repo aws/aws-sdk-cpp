@@ -20,11 +20,9 @@
 #include <aws/core/utils/FutureOutcome.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/threading/Executor.h>
-#include <aws/core/utils/threading/SameThreadExecutor.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <smithy/identity/signer/built-in/SignerProperties.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeOption.h>
 #include <smithy/client/AwsLegacyClient.h>
 
 namespace smithy {
@@ -204,14 +202,22 @@ namespace client
                                  false/*retryable*/);
         }
 
-        SigningOutcome SignHttpRequest(std::shared_ptr<HttpRequest> httpRequest, const AuthSchemeOption& targetAuthSchemeOption) const override
+        SigningOutcome SignHttpRequest(std::shared_ptr<HttpRequest> httpRequest, const AwsSmithyClientAsyncRequestContext& ctx) const override
         {
-            return AwsClientRequestSigning<AuthSchemesVariantT>::SignRequest(httpRequest, targetAuthSchemeOption, m_authSchemes);
+            return AwsClientRequestSigning<AuthSchemesVariantT>::SignRequest(httpRequest, ctx, m_authSchemes);
         }
 
         bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption) const override
         {
             return AwsClientRequestSigning<AuthSchemesVariantT>::AdjustClockSkew(outcome, authSchemeOption, m_authSchemes);
+        }
+
+        IdentityOutcome ResolveIdentity(const AwsSmithyClientAsyncRequestContext& ctx) const override {
+          return AwsClientRequestSigning<AuthSchemesVariantT>::ResolveIdentity(ctx, m_authSchemes);
+        }
+
+        GetContextEndpointParametersOutcome GetContextEndpointParameters(const AwsSmithyClientAsyncRequestContext& ctx) const override {
+          return GetContextEndpointParametersImpl(ctx);
         }
 
         ResponseT MakeRequestDeserialize(Aws::AmazonWebServiceRequest const * const request,
@@ -354,6 +360,33 @@ namespace client
             SerializerT,
             ResponseT,
             ErrorMarshallerT>>;
+
+        /**
+         * SFINAE implementation for refreshing client context params enabled if the client configuration
+         * type has a AccountId member. If there is a corresponding member we want to use that in the endpoint
+         * calculation and set it as a client context parameter.
+         */
+        template <typename T, typename = void>
+        struct HasAccountId : std::false_type {};
+
+        template<typename T>
+        struct HasAccountId<T, decltype(void(std::declval<T>().accountId))> : std::true_type {};
+
+        template<typename ConfigT = ServiceClientConfigurationT, typename std::enable_if<HasAccountId<ConfigT>::value, int>::type = 0>
+        GetContextEndpointParametersOutcome GetContextEndpointParametersImpl(const AwsSmithyClientAsyncRequestContext& ctx) const {
+          Aws::Vector<Aws::Endpoint::EndpointParameter> endpointParameters;
+          const auto resolvedAccountId = ctx.m_awsIdentity->accountId();
+          if (resolvedAccountId.has_value() && !resolvedAccountId.value().empty() && m_clientConfiguration.accountId.empty()) {
+            endpointParameters.emplace_back("AccountId", resolvedAccountId.value(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+          }
+          return endpointParameters;
+        }
+
+        template<typename ConfigT = ServiceClientConfigurationT, typename std::enable_if<!HasAccountId<ConfigT>::value, int>::type = 0>
+        GetContextEndpointParametersOutcome GetContextEndpointParametersImpl(const AwsSmithyClientAsyncRequestContext& ctx) const {
+          AWS_UNREFERENCED_PARAM(ctx);
+          return Aws::Vector<Aws::Endpoint::EndpointParameter>{};
+        }
     };
 
 } // namespace client

@@ -31,7 +31,8 @@ FieldToMatch::FieldToMatch() :
     m_cookiesHasBeenSet(false),
     m_headerOrderHasBeenSet(false),
     m_jA3FingerprintHasBeenSet(false),
-    m_jA4FingerprintHasBeenSet(false)
+    m_jA4FingerprintHasBeenSet(false),
+    m_uriFragmentHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,13 @@ FieldToMatch& FieldToMatch::operator =(JsonView jsonValue)
     m_jA4FingerprintHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UriFragment"))
+  {
+    m_uriFragment = jsonValue.GetObject("UriFragment");
+
+    m_uriFragmentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -216,6 +224,12 @@ JsonValue FieldToMatch::Jsonize() const
   if(m_jA4FingerprintHasBeenSet)
   {
    payload.WithObject("JA4Fingerprint", m_jA4Fingerprint.Jsonize());
+
+  }
+
+  if(m_uriFragmentHasBeenSet)
+  {
+   payload.WithObject("UriFragment", m_uriFragment.Jsonize());
 
   }
 

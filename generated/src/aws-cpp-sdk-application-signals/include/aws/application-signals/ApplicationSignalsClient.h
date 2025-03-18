@@ -128,6 +128,32 @@ namespace ApplicationSignals
         }
 
         /**
+         * <p>Add or remove time window exclusions for one or more Service Level Objectives
+         * (SLOs).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/BatchUpdateExclusionWindows">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchUpdateExclusionWindowsOutcome BatchUpdateExclusionWindows(const Model::BatchUpdateExclusionWindowsRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchUpdateExclusionWindows that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchUpdateExclusionWindowsRequestT = Model::BatchUpdateExclusionWindowsRequest>
+        Model::BatchUpdateExclusionWindowsOutcomeCallable BatchUpdateExclusionWindowsCallable(const BatchUpdateExclusionWindowsRequestT& request) const
+        {
+            return SubmitCallable(&ApplicationSignalsClient::BatchUpdateExclusionWindows, request);
+        }
+
+        /**
+         * An Async wrapper for BatchUpdateExclusionWindows that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchUpdateExclusionWindowsRequestT = Model::BatchUpdateExclusionWindowsRequest>
+        void BatchUpdateExclusionWindowsAsync(const BatchUpdateExclusionWindowsRequestT& request, const BatchUpdateExclusionWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ApplicationSignalsClient::BatchUpdateExclusionWindows, request, handler, context);
+        }
+
+        /**
          * <p>Creates a service level objective (SLO), which can help you ensure that your
          * critical business operations are meeting customer expectations. Use SLOs to set
          * and track specific target levels for the reliability and availability of your
@@ -337,6 +363,32 @@ namespace ApplicationSignals
         void ListServiceDependentsAsync(const ListServiceDependentsRequestT& request, const ListServiceDependentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ApplicationSignalsClient::ListServiceDependents, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves all exclusion windows configured for a specific SLO.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceLevelObjectiveExclusionWindows">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListServiceLevelObjectiveExclusionWindowsOutcome ListServiceLevelObjectiveExclusionWindows(const Model::ListServiceLevelObjectiveExclusionWindowsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListServiceLevelObjectiveExclusionWindows that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListServiceLevelObjectiveExclusionWindowsRequestT = Model::ListServiceLevelObjectiveExclusionWindowsRequest>
+        Model::ListServiceLevelObjectiveExclusionWindowsOutcomeCallable ListServiceLevelObjectiveExclusionWindowsCallable(const ListServiceLevelObjectiveExclusionWindowsRequestT& request) const
+        {
+            return SubmitCallable(&ApplicationSignalsClient::ListServiceLevelObjectiveExclusionWindows, request);
+        }
+
+        /**
+         * An Async wrapper for ListServiceLevelObjectiveExclusionWindows that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListServiceLevelObjectiveExclusionWindowsRequestT = Model::ListServiceLevelObjectiveExclusionWindowsRequest>
+        void ListServiceLevelObjectiveExclusionWindowsAsync(const ListServiceLevelObjectiveExclusionWindowsRequestT& request, const ListServiceLevelObjectiveExclusionWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ApplicationSignalsClient::ListServiceLevelObjectiveExclusionWindows, request, handler, context);
         }
 
         /**

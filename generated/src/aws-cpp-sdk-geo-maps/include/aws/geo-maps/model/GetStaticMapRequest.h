@@ -7,6 +7,9 @@
 #include <aws/geo-maps/GeoMaps_EXPORTS.h>
 #include <aws/geo-maps/GeoMapsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-maps/model/ColorScheme.h>
+#include <aws/geo-maps/model/LabelSize.h>
+#include <aws/geo-maps/model/MapFeatureMode.h>
 #include <aws/geo-maps/model/ScaleBarUnit.h>
 #include <aws/geo-maps/model/StaticMapStyle.h>
 #include <utility>
@@ -93,6 +96,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>Sets color tone for map, such as dark and light for specific map styles. It
+     * only applies to vector map styles, such as Standard.</p> <p>Example:
+     * <code>Light</code> </p> <p>Default value: <code>Light</code> </p> 
+     * <p>Valid values for <code>ColorScheme</code> are case sensitive.</p> 
+     */
+    inline const ColorScheme& GetColorScheme() const{ return m_colorScheme; }
+    inline bool ColorSchemeHasBeenSet() const { return m_colorSchemeHasBeenSet; }
+    inline void SetColorScheme(const ColorScheme& value) { m_colorSchemeHasBeenSet = true; m_colorScheme = value; }
+    inline void SetColorScheme(ColorScheme&& value) { m_colorSchemeHasBeenSet = true; m_colorScheme = std::move(value); }
+    inline GetStaticMapRequest& WithColorScheme(const ColorScheme& value) { SetColorScheme(value); return *this;}
+    inline GetStaticMapRequest& WithColorScheme(ColorScheme&& value) { SetColorScheme(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Takes in a string to draw geometries on the image. The input is a comma
      * separated format as follows format: <code>[Lon, Lat]</code> </p> <p>Example:
      * <code>line:-122.407653,37.798557,-122.413291,37.802443;color=%23DD0000;width=7;outline-color=#00DD00;outline-width=5yd|point:-122.40572,37.80004;label=Fog
@@ -108,6 +126,17 @@ namespace Model
     inline GetStaticMapRequest& WithCompactOverlay(const Aws::String& value) { SetCompactOverlay(value); return *this;}
     inline GetStaticMapRequest& WithCompactOverlay(Aws::String&& value) { SetCompactOverlay(std::move(value)); return *this;}
     inline GetStaticMapRequest& WithCompactOverlay(const char* value) { SetCompactOverlay(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>It is a flag that takes in true or false. It prevents the labels that are on
+     * the edge of the image from being cut or obscured.</p>
+     */
+    inline bool GetCropLabels() const{ return m_cropLabels; }
+    inline bool CropLabelsHasBeenSet() const { return m_cropLabelsHasBeenSet; }
+    inline void SetCropLabels(bool value) { m_cropLabelsHasBeenSet = true; m_cropLabels = value; }
+    inline GetStaticMapRequest& WithCropLabels(bool value) { SetCropLabels(value); return *this;}
     ///@}
 
     ///@{
@@ -156,6 +185,70 @@ namespace Model
 
     ///@{
     /**
+     * <p>Overrides the label size auto-calculated by <code>FileName</code>. Takes in
+     * one of the values - <code>Small</code> or <code>Large</code>.</p>
+     */
+    inline const LabelSize& GetLabelSize() const{ return m_labelSize; }
+    inline bool LabelSizeHasBeenSet() const { return m_labelSizeHasBeenSet; }
+    inline void SetLabelSize(const LabelSize& value) { m_labelSizeHasBeenSet = true; m_labelSize = value; }
+    inline void SetLabelSize(LabelSize&& value) { m_labelSizeHasBeenSet = true; m_labelSize = std::move(value); }
+    inline GetStaticMapRequest& WithLabelSize(const LabelSize& value) { SetLabelSize(value); return *this;}
+    inline GetStaticMapRequest& WithLabelSize(LabelSize&& value) { SetLabelSize(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the language on the map labels using the BCP 47 language tag,
+     * limited to ISO 639-1 two-letter language codes. If the specified language data
+     * isn't available for the map image, the labels will default to the regional
+     * primary language.</p> <p>Supported codes:</p> <ul> <li> <p> <code>ar</code> </p>
+     * </li> <li> <p> <code>as</code> </p> </li> <li> <p> <code>az</code> </p> </li>
+     * <li> <p> <code>be</code> </p> </li> <li> <p> <code>bg</code> </p> </li> <li> <p>
+     * <code>bn</code> </p> </li> <li> <p> <code>bs</code> </p> </li> <li> <p>
+     * <code>ca</code> </p> </li> <li> <p> <code>cs</code> </p> </li> <li> <p>
+     * <code>cy</code> </p> </li> <li> <p> <code>da</code> </p> </li> <li> <p>
+     * <code>de</code> </p> </li> <li> <p> <code>el</code> </p> </li> <li> <p>
+     * <code>en</code> </p> </li> <li> <p> <code>es</code> </p> </li> <li> <p>
+     * <code>et</code> </p> </li> <li> <p> <code>eu</code> </p> </li> <li> <p>
+     * <code>fi</code> </p> </li> <li> <p> <code>fo</code> </p> </li> <li> <p>
+     * <code>fr</code> </p> </li> <li> <p> <code>ga</code> </p> </li> <li> <p>
+     * <code>gl</code> </p> </li> <li> <p> <code>gn</code> </p> </li> <li> <p>
+     * <code>gu</code> </p> </li> <li> <p> <code>he</code> </p> </li> <li> <p>
+     * <code>hi</code> </p> </li> <li> <p> <code>hr</code> </p> </li> <li> <p>
+     * <code>hu</code> </p> </li> <li> <p> <code>hy</code> </p> </li> <li> <p>
+     * <code>id</code> </p> </li> <li> <p> <code>is</code> </p> </li> <li> <p>
+     * <code>it</code> </p> </li> <li> <p> <code>ja</code> </p> </li> <li> <p>
+     * <code>ka</code> </p> </li> <li> <p> <code>kk</code> </p> </li> <li> <p>
+     * <code>km</code> </p> </li> <li> <p> <code>kn</code> </p> </li> <li> <p>
+     * <code>ko</code> </p> </li> <li> <p> <code>ky</code> </p> </li> <li> <p>
+     * <code>lt</code> </p> </li> <li> <p> <code>lv</code> </p> </li> <li> <p>
+     * <code>mk</code> </p> </li> <li> <p> <code>ml</code> </p> </li> <li> <p>
+     * <code>mr</code> </p> </li> <li> <p> <code>ms</code> </p> </li> <li> <p>
+     * <code>mt</code> </p> </li> <li> <p> <code>my</code> </p> </li> <li> <p>
+     * <code>nl</code> </p> </li> <li> <p> <code>no</code> </p> </li> <li> <p>
+     * <code>or</code> </p> </li> <li> <p> <code>pa</code> </p> </li> <li> <p>
+     * <code>pl</code> </p> </li> <li> <p> <code>pt</code> </p> </li> <li> <p>
+     * <code>ro</code> </p> </li> <li> <p> <code>ru</code> </p> </li> <li> <p>
+     * <code>sk</code> </p> </li> <li> <p> <code>sl</code> </p> </li> <li> <p>
+     * <code>sq</code> </p> </li> <li> <p> <code>sr</code> </p> </li> <li> <p>
+     * <code>sv</code> </p> </li> <li> <p> <code>ta</code> </p> </li> <li> <p>
+     * <code>te</code> </p> </li> <li> <p> <code>th</code> </p> </li> <li> <p>
+     * <code>tr</code> </p> </li> <li> <p> <code>uk</code> </p> </li> <li> <p>
+     * <code>uz</code> </p> </li> <li> <p> <code>vi</code> </p> </li> <li> <p>
+     * <code>zh</code> </p> </li> </ul>
+     */
+    inline const Aws::String& GetLanguage() const{ return m_language; }
+    inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
+    inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
+    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
+    inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
+    inline GetStaticMapRequest& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
+    inline GetStaticMapRequest& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
+    inline GetStaticMapRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Applies additional space (in pixels) around overlay feature to prevent them
      * from being cut or obscured.</p>  <p>Value for max and min is determined
      * by:</p> <p>Min: <code>1</code> </p> <p>Max: <code>min(height, width)/4</code>
@@ -165,6 +258,50 @@ namespace Model
     inline bool PaddingHasBeenSet() const { return m_paddingHasBeenSet; }
     inline void SetPadding(int value) { m_paddingHasBeenSet = true; m_padding = value; }
     inline GetStaticMapRequest& WithPadding(int value) { SetPadding(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the political view, using ISO 3166-2 or ISO 3166-3 country code
+     * format.</p> <p>The following political views are currently supported:</p> <ul>
+     * <li> <p> <code>ARG</code>: Argentina's view on the Southern Patagonian Ice Field
+     * and Tierra Del Fuego, including the Falkland Islands, South Georgia, and South
+     * Sandwich Islands</p> </li> <li> <p> <code>EGY</code>: Egypt's view on Bir
+     * Tawil</p> </li> <li> <p> <code>IND</code>: India's view on Gilgit-Baltistan</p>
+     * </li> <li> <p> <code>KEN</code>: Kenya's view on the Ilemi Triangle</p> </li>
+     * <li> <p> <code>MAR</code>: Morocco's view on Western Sahara</p> </li> <li> <p>
+     * <code>RUS</code>: Russia's view on Crimea</p> </li> <li> <p> <code>SDN</code>:
+     * Sudan's view on the Halaib Triangle</p> </li> <li> <p> <code>SRB</code>:
+     * Serbia's view on Kosovo, Vukovar, and Sarengrad Islands</p> </li> <li> <p>
+     * <code>SUR</code>: Suriname's view on the Courantyne Headwaters and Lawa
+     * Headwaters</p> </li> <li> <p> <code>SYR</code>: Syria's view on the Golan
+     * Heights</p> </li> <li> <p> <code>TUR</code>: Turkey's view on Cyprus and
+     * Northern Cyprus</p> </li> <li> <p> <code>TZA</code>: Tanzania's view on Lake
+     * Malawi</p> </li> <li> <p> <code>URY</code>: Uruguay's view on Rincon de
+     * Artigas</p> </li> <li> <p> <code>VNM</code>: Vietnam's view on the Paracel
+     * Islands and Spratly Islands</p> </li> </ul>
+     */
+    inline const Aws::String& GetPoliticalView() const{ return m_politicalView; }
+    inline bool PoliticalViewHasBeenSet() const { return m_politicalViewHasBeenSet; }
+    inline void SetPoliticalView(const Aws::String& value) { m_politicalViewHasBeenSet = true; m_politicalView = value; }
+    inline void SetPoliticalView(Aws::String&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::move(value); }
+    inline void SetPoliticalView(const char* value) { m_politicalViewHasBeenSet = true; m_politicalView.assign(value); }
+    inline GetStaticMapRequest& WithPoliticalView(const Aws::String& value) { SetPoliticalView(value); return *this;}
+    inline GetStaticMapRequest& WithPoliticalView(Aws::String&& value) { SetPoliticalView(std::move(value)); return *this;}
+    inline GetStaticMapRequest& WithPoliticalView(const char* value) { SetPoliticalView(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Determines if the result image will display icons representing points of
+     * interest on the map.</p>
+     */
+    inline const MapFeatureMode& GetPointsOfInterests() const{ return m_pointsOfInterests; }
+    inline bool PointsOfInterestsHasBeenSet() const { return m_pointsOfInterestsHasBeenSet; }
+    inline void SetPointsOfInterests(const MapFeatureMode& value) { m_pointsOfInterestsHasBeenSet = true; m_pointsOfInterests = value; }
+    inline void SetPointsOfInterests(MapFeatureMode&& value) { m_pointsOfInterestsHasBeenSet = true; m_pointsOfInterests = std::move(value); }
+    inline GetStaticMapRequest& WithPointsOfInterests(const MapFeatureMode& value) { SetPointsOfInterests(value); return *this;}
+    inline GetStaticMapRequest& WithPointsOfInterests(MapFeatureMode&& value) { SetPointsOfInterests(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -212,7 +349,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Style specifies the desired map style for the <code>Style</code> APIs.</p>
+     * <p> <code>Style</code> specifies the desired map style.</p>
      */
     inline const StaticMapStyle& GetStyle() const{ return m_style; }
     inline bool StyleHasBeenSet() const { return m_styleHasBeenSet; }
@@ -253,8 +390,14 @@ namespace Model
     Aws::String m_center;
     bool m_centerHasBeenSet = false;
 
+    ColorScheme m_colorScheme;
+    bool m_colorSchemeHasBeenSet = false;
+
     Aws::String m_compactOverlay;
     bool m_compactOverlayHasBeenSet = false;
+
+    bool m_cropLabels;
+    bool m_cropLabelsHasBeenSet = false;
 
     Aws::String m_geoJsonOverlay;
     bool m_geoJsonOverlayHasBeenSet = false;
@@ -265,8 +408,20 @@ namespace Model
     Aws::String m_key;
     bool m_keyHasBeenSet = false;
 
+    LabelSize m_labelSize;
+    bool m_labelSizeHasBeenSet = false;
+
+    Aws::String m_language;
+    bool m_languageHasBeenSet = false;
+
     int m_padding;
     bool m_paddingHasBeenSet = false;
+
+    Aws::String m_politicalView;
+    bool m_politicalViewHasBeenSet = false;
+
+    MapFeatureMode m_pointsOfInterests;
+    bool m_pointsOfInterestsHasBeenSet = false;
 
     long long m_radius;
     bool m_radiusHasBeenSet = false;

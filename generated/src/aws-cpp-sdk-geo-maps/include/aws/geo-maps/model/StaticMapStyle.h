@@ -16,7 +16,8 @@ namespace Model
   enum class StaticMapStyle
   {
     NOT_SET,
-    Satellite
+    Satellite,
+    Standard
   };
 
 namespace StaticMapStyleMapper
