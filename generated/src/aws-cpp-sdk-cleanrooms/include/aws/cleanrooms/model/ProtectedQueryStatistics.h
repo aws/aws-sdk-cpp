@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The duration of the protected query, from creation until query
-     * completion.</p>
+     * <p>The duration of the protected query, from creation until query completion, in
+     * milliseconds.</p>
      */
     inline long long GetTotalDurationInMillis() const{ return m_totalDurationInMillis; }
     inline bool TotalDurationInMillisHasBeenSet() const { return m_totalDurationInMillisHasBeenSet; }

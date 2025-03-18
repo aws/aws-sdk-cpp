@@ -16,7 +16,9 @@ namespace Model
   enum class AnalysisMethod
   {
     NOT_SET,
-    DIRECT_QUERY
+    DIRECT_QUERY,
+    DIRECT_JOB,
+    MULTIPLE
   };
 
 namespace AnalysisMethodMapper

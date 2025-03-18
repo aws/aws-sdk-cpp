@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     CAN_QUERY,
-    CAN_RECEIVE_RESULTS
+    CAN_RECEIVE_RESULTS,
+    CAN_RUN_JOB
   };
 
 namespace MemberAbilityMapper

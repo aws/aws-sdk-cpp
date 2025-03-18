@@ -26,6 +26,8 @@ M2tsSettings::M2tsSettings() :
     m_audioFramesPerPes(0),
     m_audioFramesPerPesHasBeenSet(false),
     m_audioPidsHasBeenSet(false),
+    m_audioPtsOffsetDelta(0),
+    m_audioPtsOffsetDeltaHasBeenSet(false),
     m_bitrate(0),
     m_bitrateHasBeenSet(false),
     m_bufferModel(M2tsBufferModel::NOT_SET),
@@ -137,6 +139,13 @@ M2tsSettings& M2tsSettings::operator =(JsonView jsonValue)
       m_audioPids.push_back(audioPidsJsonList[audioPidsIndex].AsInteger());
     }
     m_audioPidsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("audioPtsOffsetDelta"))
+  {
+    m_audioPtsOffsetDelta = jsonValue.GetInteger("audioPtsOffsetDelta");
+
+    m_audioPtsOffsetDeltaHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("bitrate"))
@@ -439,6 +448,12 @@ JsonValue M2tsSettings::Jsonize() const
      audioPidsJsonList[audioPidsIndex].AsInteger(m_audioPids[audioPidsIndex]);
    }
    payload.WithArray("audioPids", std::move(audioPidsJsonList));
+
+  }
+
+  if(m_audioPtsOffsetDeltaHasBeenSet)
+  {
+   payload.WithInteger("audioPtsOffsetDelta", m_audioPtsOffsetDelta);
 
   }
 

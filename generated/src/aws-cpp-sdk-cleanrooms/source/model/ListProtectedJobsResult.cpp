@@ -1,0 +1,57 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/cleanrooms/model/ListProtectedJobsResult.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::CleanRooms::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+ListProtectedJobsResult::ListProtectedJobsResult()
+{
+}
+
+ListProtectedJobsResult::ListProtectedJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+{
+  *this = result;
+}
+
+ListProtectedJobsResult& ListProtectedJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+{
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
+  if(jsonValue.ValueExists("protectedJobs"))
+  {
+    Aws::Utils::Array<JsonView> protectedJobsJsonList = jsonValue.GetArray("protectedJobs");
+    for(unsigned protectedJobsIndex = 0; protectedJobsIndex < protectedJobsJsonList.GetLength(); ++protectedJobsIndex)
+    {
+      m_protectedJobs.push_back(protectedJobsJsonList[protectedJobsIndex].AsObject());
+    }
+  }
+
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
+
+  return *this;
+}

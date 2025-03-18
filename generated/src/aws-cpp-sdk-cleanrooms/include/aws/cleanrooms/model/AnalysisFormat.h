@@ -16,7 +16,8 @@ namespace Model
   enum class AnalysisFormat
   {
     NOT_SET,
-    SQL
+    SQL,
+    PYSPARK_1_0
   };
 
 namespace AnalysisFormatMapper

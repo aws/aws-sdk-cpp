@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -108,6 +109,37 @@ namespace Model
     inline DomainNameConfig& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
     inline DomainNameConfig& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+    inline DomainNameConfig& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+    inline DomainNameConfig& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+    inline DomainNameConfig& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    inline DomainNameConfig& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+    inline DomainNameConfig& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+    inline DomainNameConfig& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+    inline DomainNameConfig& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+    inline DomainNameConfig& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+    inline DomainNameConfig& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the domain name.</p>
+     */
+    inline const Aws::String& GetDomainNameArn() const{ return m_domainNameArn; }
+    inline bool DomainNameArnHasBeenSet() const { return m_domainNameArnHasBeenSet; }
+    inline void SetDomainNameArn(const Aws::String& value) { m_domainNameArnHasBeenSet = true; m_domainNameArn = value; }
+    inline void SetDomainNameArn(Aws::String&& value) { m_domainNameArnHasBeenSet = true; m_domainNameArn = std::move(value); }
+    inline void SetDomainNameArn(const char* value) { m_domainNameArnHasBeenSet = true; m_domainNameArn.assign(value); }
+    inline DomainNameConfig& WithDomainNameArn(const Aws::String& value) { SetDomainNameArn(value); return *this;}
+    inline DomainNameConfig& WithDomainNameArn(Aws::String&& value) { SetDomainNameArn(std::move(value)); return *this;}
+    inline DomainNameConfig& WithDomainNameArn(const char* value) { SetDomainNameArn(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_domainName;
@@ -124,6 +156,12 @@ namespace Model
 
     Aws::String m_hostedZoneId;
     bool m_hostedZoneIdHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
+
+    Aws::String m_domainNameArn;
+    bool m_domainNameArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,6 +10,7 @@
 #include <aws/cleanrooms/model/AnalysisSchema.h>
 #include <aws/cleanrooms/model/AnalysisFormat.h>
 #include <aws/cleanrooms/model/AnalysisSource.h>
+#include <aws/cleanrooms/model/AnalysisSourceMetadata.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanrooms/model/AnalysisParameter.h>
 #include <aws/cleanrooms/model/AnalysisTemplateValidationStatusDetail.h>
@@ -207,6 +208,18 @@ namespace Model
 
     ///@{
     /**
+     * <p> The source metadata for the collaboration analysis template.</p>
+     */
+    inline const AnalysisSourceMetadata& GetSourceMetadata() const{ return m_sourceMetadata; }
+    inline bool SourceMetadataHasBeenSet() const { return m_sourceMetadataHasBeenSet; }
+    inline void SetSourceMetadata(const AnalysisSourceMetadata& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = value; }
+    inline void SetSourceMetadata(AnalysisSourceMetadata&& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = std::move(value); }
+    inline CollaborationAnalysisTemplate& WithSourceMetadata(const AnalysisSourceMetadata& value) { SetSourceMetadata(value); return *this;}
+    inline CollaborationAnalysisTemplate& WithSourceMetadata(AnalysisSourceMetadata&& value) { SetSourceMetadata(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The analysis parameters that have been specified in the analysis
      * template.</p>
      */
@@ -270,6 +283,9 @@ namespace Model
 
     AnalysisSource m_source;
     bool m_sourceHasBeenSet = false;
+
+    AnalysisSourceMetadata m_sourceMetadata;
+    bool m_sourceMetadataHasBeenSet = false;
 
     Aws::Vector<AnalysisParameter> m_analysisParameters;
     bool m_analysisParametersHasBeenSet = false;

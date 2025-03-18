@@ -7,6 +7,8 @@
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cleanrooms/model/ConfiguredTableAssociationAnalysisRuleType.h>
 #include <utility>
 
 namespace Aws
@@ -150,6 +152,21 @@ namespace Model
     inline ConfiguredTableAssociationSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
     inline ConfiguredTableAssociationSummary& WithArn(const char* value) { SetArn(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The analysis rule types that are associated with the configured table
+     * associations in this summary. </p>
+     */
+    inline const Aws::Vector<ConfiguredTableAssociationAnalysisRuleType>& GetAnalysisRuleTypes() const{ return m_analysisRuleTypes; }
+    inline bool AnalysisRuleTypesHasBeenSet() const { return m_analysisRuleTypesHasBeenSet; }
+    inline void SetAnalysisRuleTypes(const Aws::Vector<ConfiguredTableAssociationAnalysisRuleType>& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes = value; }
+    inline void SetAnalysisRuleTypes(Aws::Vector<ConfiguredTableAssociationAnalysisRuleType>&& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes = std::move(value); }
+    inline ConfiguredTableAssociationSummary& WithAnalysisRuleTypes(const Aws::Vector<ConfiguredTableAssociationAnalysisRuleType>& value) { SetAnalysisRuleTypes(value); return *this;}
+    inline ConfiguredTableAssociationSummary& WithAnalysisRuleTypes(Aws::Vector<ConfiguredTableAssociationAnalysisRuleType>&& value) { SetAnalysisRuleTypes(std::move(value)); return *this;}
+    inline ConfiguredTableAssociationSummary& AddAnalysisRuleTypes(const ConfiguredTableAssociationAnalysisRuleType& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes.push_back(value); return *this; }
+    inline ConfiguredTableAssociationSummary& AddAnalysisRuleTypes(ConfiguredTableAssociationAnalysisRuleType&& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_configuredTableId;
@@ -175,6 +192,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
+
+    Aws::Vector<ConfiguredTableAssociationAnalysisRuleType> m_analysisRuleTypes;
+    bool m_analysisRuleTypesHasBeenSet = false;
   };
 
 } // namespace Model

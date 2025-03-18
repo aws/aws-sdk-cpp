@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     AUTO,
-    SECONDS
+    SECONDS,
+    MILLISECONDS
   };
 
 namespace TsPtsOffsetMapper

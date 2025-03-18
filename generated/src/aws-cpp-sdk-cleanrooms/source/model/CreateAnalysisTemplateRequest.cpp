@@ -20,7 +20,8 @@ CreateAnalysisTemplateRequest::CreateAnalysisTemplateRequest() :
     m_formatHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_analysisParametersHasBeenSet(false)
+    m_analysisParametersHasBeenSet(false),
+    m_schemaHasBeenSet(false)
 {
 }
 
@@ -70,6 +71,12 @@ Aws::String CreateAnalysisTemplateRequest::SerializePayload() const
      analysisParametersJsonList[analysisParametersIndex].AsObject(m_analysisParameters[analysisParametersIndex].Jsonize());
    }
    payload.WithArray("analysisParameters", std::move(analysisParametersJsonList));
+
+  }
+
+  if(m_schemaHasBeenSet)
+  {
+   payload.WithObject("schema", m_schema.Jsonize());
 
   }
 

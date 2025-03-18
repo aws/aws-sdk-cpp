@@ -62,6 +62,7 @@
 #include <aws/cleanrooms/model/GetIdNamespaceAssociationRequest.h>
 #include <aws/cleanrooms/model/GetMembershipRequest.h>
 #include <aws/cleanrooms/model/GetPrivacyBudgetTemplateRequest.h>
+#include <aws/cleanrooms/model/GetProtectedJobRequest.h>
 #include <aws/cleanrooms/model/GetProtectedQueryRequest.h>
 #include <aws/cleanrooms/model/GetSchemaRequest.h>
 #include <aws/cleanrooms/model/GetSchemaAnalysisRuleRequest.h>
@@ -81,11 +82,13 @@
 #include <aws/cleanrooms/model/ListMembershipsRequest.h>
 #include <aws/cleanrooms/model/ListPrivacyBudgetTemplatesRequest.h>
 #include <aws/cleanrooms/model/ListPrivacyBudgetsRequest.h>
+#include <aws/cleanrooms/model/ListProtectedJobsRequest.h>
 #include <aws/cleanrooms/model/ListProtectedQueriesRequest.h>
 #include <aws/cleanrooms/model/ListSchemasRequest.h>
 #include <aws/cleanrooms/model/ListTagsForResourceRequest.h>
 #include <aws/cleanrooms/model/PopulateIdMappingTableRequest.h>
 #include <aws/cleanrooms/model/PreviewPrivacyImpactRequest.h>
+#include <aws/cleanrooms/model/StartProtectedJobRequest.h>
 #include <aws/cleanrooms/model/StartProtectedQueryRequest.h>
 #include <aws/cleanrooms/model/TagResourceRequest.h>
 #include <aws/cleanrooms/model/UntagResourceRequest.h>
@@ -100,6 +103,7 @@
 #include <aws/cleanrooms/model/UpdateIdNamespaceAssociationRequest.h>
 #include <aws/cleanrooms/model/UpdateMembershipRequest.h>
 #include <aws/cleanrooms/model/UpdatePrivacyBudgetTemplateRequest.h>
+#include <aws/cleanrooms/model/UpdateProtectedJobRequest.h>
 #include <aws/cleanrooms/model/UpdateProtectedQueryRequest.h>
 
 #include <smithy/tracing/TracingUtils.h>
@@ -1763,6 +1767,46 @@ GetPrivacyBudgetTemplateOutcome CleanRoomsClient::GetPrivacyBudgetTemplate(const
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetProtectedJobOutcome CleanRoomsClient::GetProtectedJob(const GetProtectedJobRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetProtectedJob);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetProtectedJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetProtectedJob", "Required field: MembershipIdentifier, is not set");
+    return GetProtectedJobOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  if (!request.ProtectedJobIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetProtectedJob", "Required field: ProtectedJobIdentifier, is not set");
+    return GetProtectedJobOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProtectedJobIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetProtectedJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetProtectedJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetProtectedJob",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetProtectedJobOutcome>(
+    [&]()-> GetProtectedJobOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetProtectedJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/protectedJobs/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProtectedJobIdentifier());
+      return GetProtectedJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetProtectedQueryOutcome CleanRoomsClient::GetProtectedQuery(const GetProtectedQueryRequest& request) const
 {
   AWS_OPERATION_GUARD(GetProtectedQuery);
@@ -2423,6 +2467,40 @@ ListPrivacyBudgetsOutcome CleanRoomsClient::ListPrivacyBudgets(const ListPrivacy
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListProtectedJobsOutcome CleanRoomsClient::ListProtectedJobs(const ListProtectedJobsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListProtectedJobs);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProtectedJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListProtectedJobs", "Required field: MembershipIdentifier, is not set");
+    return ListProtectedJobsOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListProtectedJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListProtectedJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListProtectedJobs",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListProtectedJobsOutcome>(
+    [&]()-> ListProtectedJobsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProtectedJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/protectedJobs");
+      return ListProtectedJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListProtectedQueriesOutcome CleanRoomsClient::ListProtectedQueries(const ListProtectedQueriesRequest& request) const
 {
   AWS_OPERATION_GUARD(ListProtectedQueries);
@@ -2593,6 +2671,40 @@ PreviewPrivacyImpactOutcome CleanRoomsClient::PreviewPrivacyImpact(const Preview
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
       endpointResolutionOutcome.GetResult().AddPathSegments("/previewprivacyimpact");
       return PreviewPrivacyImpactOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StartProtectedJobOutcome CleanRoomsClient::StartProtectedJob(const StartProtectedJobRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartProtectedJob);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartProtectedJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartProtectedJob", "Required field: MembershipIdentifier, is not set");
+    return StartProtectedJobOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartProtectedJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartProtectedJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartProtectedJob",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartProtectedJobOutcome>(
+    [&]()-> StartProtectedJobOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartProtectedJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/protectedJobs");
+      return StartProtectedJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -3124,6 +3236,46 @@ UpdatePrivacyBudgetTemplateOutcome CleanRoomsClient::UpdatePrivacyBudgetTemplate
       endpointResolutionOutcome.GetResult().AddPathSegments("/privacybudgettemplates/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrivacyBudgetTemplateIdentifier());
       return UpdatePrivacyBudgetTemplateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateProtectedJobOutcome CleanRoomsClient::UpdateProtectedJob(const UpdateProtectedJobRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateProtectedJob);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProtectedJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateProtectedJob", "Required field: MembershipIdentifier, is not set");
+    return UpdateProtectedJobOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  if (!request.ProtectedJobIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateProtectedJob", "Required field: ProtectedJobIdentifier, is not set");
+    return UpdateProtectedJobOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProtectedJobIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateProtectedJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateProtectedJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateProtectedJob",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateProtectedJobOutcome>(
+    [&]()-> UpdateProtectedJobOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateProtectedJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/protectedJobs/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProtectedJobIdentifier());
+      return UpdateProtectedJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

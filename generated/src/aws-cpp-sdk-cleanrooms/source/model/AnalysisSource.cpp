@@ -19,7 +19,8 @@ namespace Model
 {
 
 AnalysisSource::AnalysisSource() : 
-    m_textHasBeenSet(false)
+    m_textHasBeenSet(false),
+    m_artifactsHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,13 @@ AnalysisSource& AnalysisSource::operator =(JsonView jsonValue)
     m_textHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("artifacts"))
+  {
+    m_artifacts = jsonValue.GetObject("artifacts");
+
+    m_artifactsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue AnalysisSource::Jsonize() const
   if(m_textHasBeenSet)
   {
    payload.WithString("text", m_text);
+
+  }
+
+  if(m_artifactsHasBeenSet)
+  {
+   payload.WithObject("artifacts", m_artifacts.Jsonize());
 
   }
 

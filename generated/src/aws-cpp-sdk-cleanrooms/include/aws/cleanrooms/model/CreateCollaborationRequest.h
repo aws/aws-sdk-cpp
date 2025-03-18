@@ -11,6 +11,7 @@
 #include <aws/cleanrooms/model/MLMemberAbilities.h>
 #include <aws/cleanrooms/model/DataEncryptionMetadata.h>
 #include <aws/cleanrooms/model/CollaborationQueryLogStatus.h>
+#include <aws/cleanrooms/model/CollaborationJobLogStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/cleanrooms/model/PaymentConfiguration.h>
 #include <aws/cleanrooms/model/AnalyticsEngine.h>
@@ -100,11 +101,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ML abilities granted to the collaboration creator.</p> <p>Custom ML
-     * modeling is in beta release and is subject to change. For beta terms and
-     * conditions, see <i>Betas and Previews</i> in the <a
-     * href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
-     * Terms</a>.</p>
+     * <p>The ML abilities granted to the collaboration creator.</p>
      */
     inline const MLMemberAbilities& GetCreatorMLMemberAbilities() const{ return m_creatorMLMemberAbilities; }
     inline bool CreatorMLMemberAbilitiesHasBeenSet() const { return m_creatorMLMemberAbilitiesHasBeenSet; }
@@ -144,7 +141,9 @@ namespace Model
     ///@{
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * collaboration.</p>
+     * collaboration.</p> <p>When <code>ENABLED</code>, Clean Rooms logs details about
+     * queries run within this collaboration and those logs can be viewed in Amazon
+     * CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
      */
     inline const CollaborationQueryLogStatus& GetQueryLogStatus() const{ return m_queryLogStatus; }
     inline bool QueryLogStatusHasBeenSet() const { return m_queryLogStatusHasBeenSet; }
@@ -152,6 +151,21 @@ namespace Model
     inline void SetQueryLogStatus(CollaborationQueryLogStatus&& value) { m_queryLogStatusHasBeenSet = true; m_queryLogStatus = std::move(value); }
     inline CreateCollaborationRequest& WithQueryLogStatus(const CollaborationQueryLogStatus& value) { SetQueryLogStatus(value); return *this;}
     inline CreateCollaborationRequest& WithQueryLogStatus(CollaborationQueryLogStatus&& value) { SetQueryLogStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether job logs are enabled for this collaboration. </p> <p>When
+     * <code>ENABLED</code>, Clean Rooms logs details about jobs run within this
+     * collaboration; those logs can be viewed in Amazon CloudWatch Logs. The default
+     * value is <code>DISABLED</code>.</p>
+     */
+    inline const CollaborationJobLogStatus& GetJobLogStatus() const{ return m_jobLogStatus; }
+    inline bool JobLogStatusHasBeenSet() const { return m_jobLogStatusHasBeenSet; }
+    inline void SetJobLogStatus(const CollaborationJobLogStatus& value) { m_jobLogStatusHasBeenSet = true; m_jobLogStatus = value; }
+    inline void SetJobLogStatus(CollaborationJobLogStatus&& value) { m_jobLogStatusHasBeenSet = true; m_jobLogStatus = std::move(value); }
+    inline CreateCollaborationRequest& WithJobLogStatus(const CollaborationJobLogStatus& value) { SetJobLogStatus(value); return *this;}
+    inline CreateCollaborationRequest& WithJobLogStatus(CollaborationJobLogStatus&& value) { SetJobLogStatus(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -227,6 +241,9 @@ namespace Model
 
     CollaborationQueryLogStatus m_queryLogStatus;
     bool m_queryLogStatusHasBeenSet = false;
+
+    CollaborationJobLogStatus m_jobLogStatus;
+    bool m_jobLogStatusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

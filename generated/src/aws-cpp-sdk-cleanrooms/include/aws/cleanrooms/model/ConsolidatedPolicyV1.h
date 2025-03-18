@@ -1,0 +1,92 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/cleanrooms/model/ConsolidatedPolicyList.h>
+#include <aws/cleanrooms/model/ConsolidatedPolicyAggregation.h>
+#include <aws/cleanrooms/model/ConsolidatedPolicyCustom.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace CleanRooms
+{
+namespace Model
+{
+
+  /**
+   * <p>Controls on the analysis specifications that can be run on a configured
+   * table.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ConsolidatedPolicyV1">AWS
+   * API Reference</a></p>
+   */
+  class ConsolidatedPolicyV1
+  {
+  public:
+    AWS_CLEANROOMS_API ConsolidatedPolicyV1();
+    AWS_CLEANROOMS_API ConsolidatedPolicyV1(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLEANROOMS_API ConsolidatedPolicyV1& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    ///@{
+    /**
+     * <p> The list of consolidated policies.</p>
+     */
+    inline const ConsolidatedPolicyList& GetList() const{ return m_list; }
+    inline bool ListHasBeenSet() const { return m_listHasBeenSet; }
+    inline void SetList(const ConsolidatedPolicyList& value) { m_listHasBeenSet = true; m_list = value; }
+    inline void SetList(ConsolidatedPolicyList&& value) { m_listHasBeenSet = true; m_list = std::move(value); }
+    inline ConsolidatedPolicyV1& WithList(const ConsolidatedPolicyList& value) { SetList(value); return *this;}
+    inline ConsolidatedPolicyV1& WithList(ConsolidatedPolicyList&& value) { SetList(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The aggregation setting for the consolidated policy.</p>
+     */
+    inline const ConsolidatedPolicyAggregation& GetAggregation() const{ return m_aggregation; }
+    inline bool AggregationHasBeenSet() const { return m_aggregationHasBeenSet; }
+    inline void SetAggregation(const ConsolidatedPolicyAggregation& value) { m_aggregationHasBeenSet = true; m_aggregation = value; }
+    inline void SetAggregation(ConsolidatedPolicyAggregation&& value) { m_aggregationHasBeenSet = true; m_aggregation = std::move(value); }
+    inline ConsolidatedPolicyV1& WithAggregation(const ConsolidatedPolicyAggregation& value) { SetAggregation(value); return *this;}
+    inline ConsolidatedPolicyV1& WithAggregation(ConsolidatedPolicyAggregation&& value) { SetAggregation(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Custom policy</p>
+     */
+    inline const ConsolidatedPolicyCustom& GetCustom() const{ return m_custom; }
+    inline bool CustomHasBeenSet() const { return m_customHasBeenSet; }
+    inline void SetCustom(const ConsolidatedPolicyCustom& value) { m_customHasBeenSet = true; m_custom = value; }
+    inline void SetCustom(ConsolidatedPolicyCustom&& value) { m_customHasBeenSet = true; m_custom = std::move(value); }
+    inline ConsolidatedPolicyV1& WithCustom(const ConsolidatedPolicyCustom& value) { SetCustom(value); return *this;}
+    inline ConsolidatedPolicyV1& WithCustom(ConsolidatedPolicyCustom&& value) { SetCustom(std::move(value)); return *this;}
+    ///@}
+  private:
+
+    ConsolidatedPolicyList m_list;
+    bool m_listHasBeenSet = false;
+
+    ConsolidatedPolicyAggregation m_aggregation;
+    bool m_aggregationHasBeenSet = false;
+
+    ConsolidatedPolicyCustom m_custom;
+    bool m_customHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace CleanRooms
+} // namespace Aws

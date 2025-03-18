@@ -23,7 +23,9 @@ DomainNameConfig::DomainNameConfig() :
     m_descriptionHasBeenSet(false),
     m_certificateArnHasBeenSet(false),
     m_appsyncDomainNameHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false)
+    m_hostedZoneIdHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_domainNameArnHasBeenSet(false)
 {
 }
 
@@ -70,6 +72,23 @@ DomainNameConfig& DomainNameConfig::operator =(JsonView jsonValue)
     m_hostedZoneIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("domainNameArn"))
+  {
+    m_domainNameArn = jsonValue.GetString("domainNameArn");
+
+    m_domainNameArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -104,6 +123,23 @@ JsonValue DomainNameConfig::Jsonize() const
   if(m_hostedZoneIdHasBeenSet)
   {
    payload.WithString("hostedZoneId", m_hostedZoneId);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_domainNameArnHasBeenSet)
+  {
+   payload.WithString("domainNameArn", m_domainNameArn);
 
   }
 

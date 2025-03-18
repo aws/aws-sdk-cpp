@@ -95,6 +95,19 @@ namespace Model
 
     ///@{
     /**
+     * Manually specify the difference in PTS offset that will be applied to the audio
+     * track, in seconds or milliseconds, when you set PTS offset to Seconds or
+     * Milliseconds. Enter an integer from -10000 to 10000. Leave blank to keep the
+     * default value 0.
+     */
+    inline int GetAudioPtsOffsetDelta() const{ return m_audioPtsOffsetDelta; }
+    inline bool AudioPtsOffsetDeltaHasBeenSet() const { return m_audioPtsOffsetDeltaHasBeenSet; }
+    inline void SetAudioPtsOffsetDelta(int value) { m_audioPtsOffsetDeltaHasBeenSet = true; m_audioPtsOffsetDelta = value; }
+    inline M3u8Settings& WithAudioPtsOffsetDelta(int value) { SetAudioPtsOffsetDelta(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
      * Presentation Timestamp (PTS) values greater than or equal to the first video
      * packet PTS (MediaConvert drops captions and data packets with lesser PTS
@@ -229,8 +242,9 @@ namespace Model
      * offset: Keep the default value, Auto. We recommend that you choose Auto for the
      * widest player compatibility. The initial PTS will be at least two seconds and
      * vary depending on your output's bitrate, HRD buffer size and HRD buffer initial
-     * fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then
-     * specify the number of seconds with PTS offset.
+     * fill percentage. To manually specify an initial PTS offset: Choose Seconds or
+     * Milliseconds. Then specify the number of seconds or milliseconds with PTS
+     * offset.
      */
     inline const TsPtsOffset& GetPtsOffsetMode() const{ return m_ptsOffsetMode; }
     inline bool PtsOffsetModeHasBeenSet() const { return m_ptsOffsetModeHasBeenSet; }
@@ -322,6 +336,9 @@ namespace Model
 
     Aws::Vector<int> m_audioPids;
     bool m_audioPidsHasBeenSet = false;
+
+    int m_audioPtsOffsetDelta;
+    bool m_audioPtsOffsetDeltaHasBeenSet = false;
 
     M3u8DataPtsControl m_dataPTSControl;
     bool m_dataPTSControlHasBeenSet = false;

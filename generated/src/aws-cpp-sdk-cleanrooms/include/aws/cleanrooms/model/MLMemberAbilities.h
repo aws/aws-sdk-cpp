@@ -25,11 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The ML member abilities for a collaboration member.</p> <p>Custom ML modeling
-   * is in beta release and is subject to change. For beta terms and conditions, see
-   * <i>Betas and Previews</i> in the <a
-   * href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
-   * Terms</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>The ML member abilities for a collaboration member.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/MLMemberAbilities">AWS
    * API Reference</a></p>
    */
@@ -44,12 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The custom ML member abilities for a collaboration member. The inference
-     * feature is not available in the custom ML modeling beta.</p> <p>Custom ML
-     * modeling is in beta release and is subject to change. For beta terms and
-     * conditions, see <i>Betas and Previews</i> in the <a
-     * href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
-     * Terms</a>.</p>
+     * <p>The custom ML member abilities for a collaboration member. </p>
      */
     inline const Aws::Vector<CustomMLMemberAbility>& GetCustomMLMemberAbilities() const{ return m_customMLMemberAbilities; }
     inline bool CustomMLMemberAbilitiesHasBeenSet() const { return m_customMLMemberAbilitiesHasBeenSet; }

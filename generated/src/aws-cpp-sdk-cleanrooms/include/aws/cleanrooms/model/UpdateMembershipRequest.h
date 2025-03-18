@@ -8,7 +8,9 @@
 #include <aws/cleanrooms/CleanRoomsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cleanrooms/model/MembershipQueryLogStatus.h>
+#include <aws/cleanrooms/model/MembershipJobLogStatus.h>
 #include <aws/cleanrooms/model/MembershipProtectedQueryResultConfiguration.h>
+#include <aws/cleanrooms/model/MembershipProtectedJobResultConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -51,7 +53,9 @@ namespace Model
     ///@{
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * membership.</p>
+     * membership.</p> <p>When <code>ENABLED</code>, Clean Rooms logs details about
+     * queries run within this collaboration and those logs can be viewed in Amazon
+     * CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
      */
     inline const MembershipQueryLogStatus& GetQueryLogStatus() const{ return m_queryLogStatus; }
     inline bool QueryLogStatusHasBeenSet() const { return m_queryLogStatusHasBeenSet; }
@@ -59,6 +63,21 @@ namespace Model
     inline void SetQueryLogStatus(MembershipQueryLogStatus&& value) { m_queryLogStatusHasBeenSet = true; m_queryLogStatus = std::move(value); }
     inline UpdateMembershipRequest& WithQueryLogStatus(const MembershipQueryLogStatus& value) { SetQueryLogStatus(value); return *this;}
     inline UpdateMembershipRequest& WithQueryLogStatus(MembershipQueryLogStatus&& value) { SetQueryLogStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An indicator as to whether job logging has been enabled or disabled for the
+     * collaboration. </p> <p>When <code>ENABLED</code>, Clean Rooms logs details about
+     * jobs run within this collaboration and those logs can be viewed in Amazon
+     * CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+     */
+    inline const MembershipJobLogStatus& GetJobLogStatus() const{ return m_jobLogStatus; }
+    inline bool JobLogStatusHasBeenSet() const { return m_jobLogStatusHasBeenSet; }
+    inline void SetJobLogStatus(const MembershipJobLogStatus& value) { m_jobLogStatusHasBeenSet = true; m_jobLogStatus = value; }
+    inline void SetJobLogStatus(MembershipJobLogStatus&& value) { m_jobLogStatusHasBeenSet = true; m_jobLogStatus = std::move(value); }
+    inline UpdateMembershipRequest& WithJobLogStatus(const MembershipJobLogStatus& value) { SetJobLogStatus(value); return *this;}
+    inline UpdateMembershipRequest& WithJobLogStatus(MembershipJobLogStatus&& value) { SetJobLogStatus(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,6 +92,18 @@ namespace Model
     inline UpdateMembershipRequest& WithDefaultResultConfiguration(const MembershipProtectedQueryResultConfiguration& value) { SetDefaultResultConfiguration(value); return *this;}
     inline UpdateMembershipRequest& WithDefaultResultConfiguration(MembershipProtectedQueryResultConfiguration&& value) { SetDefaultResultConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The default job result configuration.</p>
+     */
+    inline const MembershipProtectedJobResultConfiguration& GetDefaultJobResultConfiguration() const{ return m_defaultJobResultConfiguration; }
+    inline bool DefaultJobResultConfigurationHasBeenSet() const { return m_defaultJobResultConfigurationHasBeenSet; }
+    inline void SetDefaultJobResultConfiguration(const MembershipProtectedJobResultConfiguration& value) { m_defaultJobResultConfigurationHasBeenSet = true; m_defaultJobResultConfiguration = value; }
+    inline void SetDefaultJobResultConfiguration(MembershipProtectedJobResultConfiguration&& value) { m_defaultJobResultConfigurationHasBeenSet = true; m_defaultJobResultConfiguration = std::move(value); }
+    inline UpdateMembershipRequest& WithDefaultJobResultConfiguration(const MembershipProtectedJobResultConfiguration& value) { SetDefaultJobResultConfiguration(value); return *this;}
+    inline UpdateMembershipRequest& WithDefaultJobResultConfiguration(MembershipProtectedJobResultConfiguration&& value) { SetDefaultJobResultConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_membershipIdentifier;
@@ -81,8 +112,14 @@ namespace Model
     MembershipQueryLogStatus m_queryLogStatus;
     bool m_queryLogStatusHasBeenSet = false;
 
+    MembershipJobLogStatus m_jobLogStatus;
+    bool m_jobLogStatusHasBeenSet = false;
+
     MembershipProtectedQueryResultConfiguration m_defaultResultConfiguration;
     bool m_defaultResultConfigurationHasBeenSet = false;
+
+    MembershipProtectedJobResultConfiguration m_defaultJobResultConfiguration;
+    bool m_defaultJobResultConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

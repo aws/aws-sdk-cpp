@@ -19,10 +19,10 @@ namespace CleanRooms
    * <p>Welcome to the <i>Clean Rooms API Reference</i>.</p> <p>Clean Rooms is an
    * Amazon Web Services service that helps multiple parties to join their data
    * together in a secure collaboration workspace. In the collaboration, members who
-   * can query and receive results can get insights into the collective datasets
-   * without either party getting access to the other party's raw data.</p> <p>To
-   * learn more about Clean Rooms concepts, procedures, and best practices, see the
-   * <a
+   * can run queries and jobs and receive results can get insights into the
+   * collective datasets without either party getting access to the other party's raw
+   * data.</p> <p>To learn more about Clean Rooms concepts, procedures, and best
+   * practices, see the <a
    * href="https://docs.aws.amazon.com/clean-rooms/latest/userguide/what-is.html">Clean
    * Rooms User Guide</a>.</p> <p>To learn more about SQL commands, functions, and
    * conditions supported in Clean Rooms, see the <a
@@ -1140,6 +1140,31 @@ namespace CleanRooms
         }
 
         /**
+         * <p>Returns job processing metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetProtectedJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetProtectedJobOutcome GetProtectedJob(const Model::GetProtectedJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetProtectedJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetProtectedJobRequestT = Model::GetProtectedJobRequest>
+        Model::GetProtectedJobOutcomeCallable GetProtectedJobCallable(const GetProtectedJobRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::GetProtectedJob, request);
+        }
+
+        /**
+         * An Async wrapper for GetProtectedJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetProtectedJobRequestT = Model::GetProtectedJobRequest>
+        void GetProtectedJobAsync(const GetProtectedJobRequestT& request, const GetProtectedJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::GetProtectedJob, request, handler, context);
+        }
+
+        /**
          * <p>Returns query processing metadata.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetProtectedQuery">AWS
          * API Reference</a></p>
@@ -1628,6 +1653,32 @@ namespace CleanRooms
         }
 
         /**
+         * <p>Lists protected jobs, sorted by most recent job.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListProtectedJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListProtectedJobsOutcome ListProtectedJobs(const Model::ListProtectedJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListProtectedJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListProtectedJobsRequestT = Model::ListProtectedJobsRequest>
+        Model::ListProtectedJobsOutcomeCallable ListProtectedJobsCallable(const ListProtectedJobsRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::ListProtectedJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListProtectedJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListProtectedJobsRequestT = Model::ListProtectedJobsRequest>
+        void ListProtectedJobsAsync(const ListProtectedJobsRequestT& request, const ListProtectedJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::ListProtectedJobs, request, handler, context);
+        }
+
+        /**
          * <p>Lists protected queries, sorted by the most recent query.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListProtectedQueries">AWS
@@ -1755,6 +1806,32 @@ namespace CleanRooms
         void PreviewPrivacyImpactAsync(const PreviewPrivacyImpactRequestT& request, const PreviewPrivacyImpactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CleanRoomsClient::PreviewPrivacyImpact, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a protected job that is started by Clean Rooms.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/StartProtectedJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartProtectedJobOutcome StartProtectedJob(const Model::StartProtectedJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartProtectedJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartProtectedJobRequestT = Model::StartProtectedJobRequest>
+        Model::StartProtectedJobOutcomeCallable StartProtectedJobCallable(const StartProtectedJobRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::StartProtectedJob, request);
+        }
+
+        /**
+         * An Async wrapper for StartProtectedJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartProtectedJobRequestT = Model::StartProtectedJobRequest>
+        void StartProtectedJobAsync(const StartProtectedJobRequestT& request, const StartProtectedJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::StartProtectedJob, request, handler, context);
         }
 
         /**
@@ -2112,6 +2189,32 @@ namespace CleanRooms
         void UpdatePrivacyBudgetTemplateAsync(const UpdatePrivacyBudgetTemplateRequestT& request, const UpdatePrivacyBudgetTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CleanRoomsClient::UpdatePrivacyBudgetTemplate, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the processing of a currently running job.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateProtectedJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateProtectedJobOutcome UpdateProtectedJob(const Model::UpdateProtectedJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateProtectedJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateProtectedJobRequestT = Model::UpdateProtectedJobRequest>
+        Model::UpdateProtectedJobOutcomeCallable UpdateProtectedJobCallable(const UpdateProtectedJobRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::UpdateProtectedJob, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateProtectedJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateProtectedJobRequestT = Model::UpdateProtectedJobRequest>
+        void UpdateProtectedJobAsync(const UpdateProtectedJobRequestT& request, const UpdateProtectedJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::UpdateProtectedJob, request, handler, context);
         }
 
         /**

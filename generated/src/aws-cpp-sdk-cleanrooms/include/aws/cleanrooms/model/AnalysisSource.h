@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cleanrooms/model/AnalysisTemplateArtifacts.h>
 #include <utility>
 
 namespace Aws
@@ -51,10 +52,25 @@ namespace Model
     inline AnalysisSource& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
     inline AnalysisSource& WithText(const char* value) { SetText(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The artifacts of the analysis source.</p>
+     */
+    inline const AnalysisTemplateArtifacts& GetArtifacts() const{ return m_artifacts; }
+    inline bool ArtifactsHasBeenSet() const { return m_artifactsHasBeenSet; }
+    inline void SetArtifacts(const AnalysisTemplateArtifacts& value) { m_artifactsHasBeenSet = true; m_artifacts = value; }
+    inline void SetArtifacts(AnalysisTemplateArtifacts&& value) { m_artifactsHasBeenSet = true; m_artifacts = std::move(value); }
+    inline AnalysisSource& WithArtifacts(const AnalysisTemplateArtifacts& value) { SetArtifacts(value); return *this;}
+    inline AnalysisSource& WithArtifacts(AnalysisTemplateArtifacts&& value) { SetArtifacts(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_text;
     bool m_textHasBeenSet = false;
+
+    AnalysisTemplateArtifacts m_artifacts;
+    bool m_artifactsHasBeenSet = false;
   };
 
 } // namespace Model

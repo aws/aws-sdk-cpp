@@ -32,6 +32,7 @@ CollaborationAnalysisTemplate::CollaborationAnalysisTemplate() :
     m_format(AnalysisFormat::NOT_SET),
     m_formatHasBeenSet(false),
     m_sourceHasBeenSet(false),
+    m_sourceMetadataHasBeenSet(false),
     m_analysisParametersHasBeenSet(false),
     m_validationsHasBeenSet(false)
 {
@@ -129,6 +130,13 @@ CollaborationAnalysisTemplate& CollaborationAnalysisTemplate::operator =(JsonVie
     m_sourceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sourceMetadata"))
+  {
+    m_sourceMetadata = jsonValue.GetObject("sourceMetadata");
+
+    m_sourceMetadataHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("analysisParameters"))
   {
     Aws::Utils::Array<JsonView> analysisParametersJsonList = jsonValue.GetArray("analysisParameters");
@@ -222,6 +230,12 @@ JsonValue CollaborationAnalysisTemplate::Jsonize() const
   if(m_sourceHasBeenSet)
   {
    payload.WithObject("source", m_source.Jsonize());
+
+  }
+
+  if(m_sourceMetadataHasBeenSet)
+  {
+   payload.WithObject("sourceMetadata", m_sourceMetadata.Jsonize());
 
   }
 

@@ -16,8 +16,11 @@ CreateMembershipRequest::CreateMembershipRequest() :
     m_collaborationIdentifierHasBeenSet(false),
     m_queryLogStatus(MembershipQueryLogStatus::NOT_SET),
     m_queryLogStatusHasBeenSet(false),
+    m_jobLogStatus(MembershipJobLogStatus::NOT_SET),
+    m_jobLogStatusHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_defaultResultConfigurationHasBeenSet(false),
+    m_defaultJobResultConfigurationHasBeenSet(false),
     m_paymentConfigurationHasBeenSet(false)
 {
 }
@@ -37,6 +40,11 @@ Aws::String CreateMembershipRequest::SerializePayload() const
    payload.WithString("queryLogStatus", MembershipQueryLogStatusMapper::GetNameForMembershipQueryLogStatus(m_queryLogStatus));
   }
 
+  if(m_jobLogStatusHasBeenSet)
+  {
+   payload.WithString("jobLogStatus", MembershipJobLogStatusMapper::GetNameForMembershipJobLogStatus(m_jobLogStatus));
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
@@ -51,6 +59,12 @@ Aws::String CreateMembershipRequest::SerializePayload() const
   if(m_defaultResultConfigurationHasBeenSet)
   {
    payload.WithObject("defaultResultConfiguration", m_defaultResultConfiguration.Jsonize());
+
+  }
+
+  if(m_defaultJobResultConfigurationHasBeenSet)
+  {
+   payload.WithObject("defaultJobResultConfiguration", m_defaultJobResultConfiguration.Jsonize());
 
   }
 

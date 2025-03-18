@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int SQL_HASH = HashingUtils::HashString("SQL");
+        static const int PYSPARK_1_0_HASH = HashingUtils::HashString("PYSPARK_1_0");
 
 
         AnalysisFormat GetAnalysisFormatForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == SQL_HASH)
           {
             return AnalysisFormat::SQL;
+          }
+          else if (hashCode == PYSPARK_1_0_HASH)
+          {
+            return AnalysisFormat::PYSPARK_1_0;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case AnalysisFormat::SQL:
             return "SQL";
+          case AnalysisFormat::PYSPARK_1_0:
+            return "PYSPARK_1_0";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

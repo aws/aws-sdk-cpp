@@ -129,6 +129,19 @@ namespace Model
 
     ///@{
     /**
+     * Manually specify the difference in PTS offset that will be applied to the audio
+     * track, in seconds or milliseconds, when you set PTS offset to Seconds or
+     * Milliseconds. Enter an integer from -10000 to 10000. Leave blank to keep the
+     * default value 0.
+     */
+    inline int GetAudioPtsOffsetDelta() const{ return m_audioPtsOffsetDelta; }
+    inline bool AudioPtsOffsetDeltaHasBeenSet() const { return m_audioPtsOffsetDeltaHasBeenSet; }
+    inline void SetAudioPtsOffsetDelta(int value) { m_audioPtsOffsetDeltaHasBeenSet = true; m_audioPtsOffsetDelta = value; }
+    inline M2tsSettings& WithAudioPtsOffsetDelta(int value) { SetAudioPtsOffsetDelta(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * Specify the output bitrate of the transport stream in bits per second. Setting
      * to 0 lets the muxer automatically determine the appropriate bitrate. Other
      * common values are 3750000, 7500000, and 15000000.
@@ -487,8 +500,9 @@ namespace Model
      * offset: Keep the default value, Auto. We recommend that you choose Auto for the
      * widest player compatibility. The initial PTS will be at least two seconds and
      * vary depending on your output's bitrate, HRD buffer size and HRD buffer initial
-     * fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then
-     * specify the number of seconds with PTS offset.
+     * fill percentage. To manually specify an initial PTS offset: Choose Seconds or
+     * Milliseconds. Then specify the number of seconds or milliseconds with PTS
+     * offset.
      */
     inline const TsPtsOffset& GetPtsOffsetMode() const{ return m_ptsOffsetMode; }
     inline bool PtsOffsetModeHasBeenSet() const { return m_ptsOffsetModeHasBeenSet; }
@@ -650,6 +664,9 @@ namespace Model
 
     Aws::Vector<int> m_audioPids;
     bool m_audioPidsHasBeenSet = false;
+
+    int m_audioPtsOffsetDelta;
+    bool m_audioPtsOffsetDeltaHasBeenSet = false;
 
     int m_bitrate;
     bool m_bitrateHasBeenSet = false;

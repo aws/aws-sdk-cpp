@@ -24,6 +24,8 @@ M3u8Settings::M3u8Settings() :
     m_audioFramesPerPes(0),
     m_audioFramesPerPesHasBeenSet(false),
     m_audioPidsHasBeenSet(false),
+    m_audioPtsOffsetDelta(0),
+    m_audioPtsOffsetDeltaHasBeenSet(false),
     m_dataPTSControl(M3u8DataPtsControl::NOT_SET),
     m_dataPTSControlHasBeenSet(false),
     m_maxPcrInterval(0),
@@ -93,6 +95,13 @@ M3u8Settings& M3u8Settings::operator =(JsonView jsonValue)
       m_audioPids.push_back(audioPidsJsonList[audioPidsIndex].AsInteger());
     }
     m_audioPidsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("audioPtsOffsetDelta"))
+  {
+    m_audioPtsOffsetDelta = jsonValue.GetInteger("audioPtsOffsetDelta");
+
+    m_audioPtsOffsetDeltaHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("dataPTSControl"))
@@ -247,6 +256,12 @@ JsonValue M3u8Settings::Jsonize() const
      audioPidsJsonList[audioPidsIndex].AsInteger(m_audioPids[audioPidsIndex]);
    }
    payload.WithArray("audioPids", std::move(audioPidsJsonList));
+
+  }
+
+  if(m_audioPtsOffsetDeltaHasBeenSet)
+  {
+   payload.WithInteger("audioPtsOffsetDelta", m_audioPtsOffsetDelta);
 
   }
 

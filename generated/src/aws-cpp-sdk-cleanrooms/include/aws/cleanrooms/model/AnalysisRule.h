@@ -9,6 +9,8 @@
 #include <aws/cleanrooms/model/AnalysisRuleType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/cleanrooms/model/AnalysisRulePolicy.h>
+#include <aws/cleanrooms/model/ConfiguredTableAssociationAnalysisRulePolicy.h>
+#include <aws/cleanrooms/model/ConsolidatedPolicy.h>
 #include <utility>
 
 namespace Aws
@@ -116,6 +118,28 @@ namespace Model
     inline AnalysisRule& WithPolicy(const AnalysisRulePolicy& value) { SetPolicy(value); return *this;}
     inline AnalysisRule& WithPolicy(AnalysisRulePolicy&& value) { SetPolicy(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const ConfiguredTableAssociationAnalysisRulePolicy& GetCollaborationPolicy() const{ return m_collaborationPolicy; }
+    inline bool CollaborationPolicyHasBeenSet() const { return m_collaborationPolicyHasBeenSet; }
+    inline void SetCollaborationPolicy(const ConfiguredTableAssociationAnalysisRulePolicy& value) { m_collaborationPolicyHasBeenSet = true; m_collaborationPolicy = value; }
+    inline void SetCollaborationPolicy(ConfiguredTableAssociationAnalysisRulePolicy&& value) { m_collaborationPolicyHasBeenSet = true; m_collaborationPolicy = std::move(value); }
+    inline AnalysisRule& WithCollaborationPolicy(const ConfiguredTableAssociationAnalysisRulePolicy& value) { SetCollaborationPolicy(value); return *this;}
+    inline AnalysisRule& WithCollaborationPolicy(ConfiguredTableAssociationAnalysisRulePolicy&& value) { SetCollaborationPolicy(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The consolidated policy for the analysis rule.</p>
+     */
+    inline const ConsolidatedPolicy& GetConsolidatedPolicy() const{ return m_consolidatedPolicy; }
+    inline bool ConsolidatedPolicyHasBeenSet() const { return m_consolidatedPolicyHasBeenSet; }
+    inline void SetConsolidatedPolicy(const ConsolidatedPolicy& value) { m_consolidatedPolicyHasBeenSet = true; m_consolidatedPolicy = value; }
+    inline void SetConsolidatedPolicy(ConsolidatedPolicy&& value) { m_consolidatedPolicyHasBeenSet = true; m_consolidatedPolicy = std::move(value); }
+    inline AnalysisRule& WithConsolidatedPolicy(const ConsolidatedPolicy& value) { SetConsolidatedPolicy(value); return *this;}
+    inline AnalysisRule& WithConsolidatedPolicy(ConsolidatedPolicy&& value) { SetConsolidatedPolicy(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_collaborationId;
@@ -135,6 +159,12 @@ namespace Model
 
     AnalysisRulePolicy m_policy;
     bool m_policyHasBeenSet = false;
+
+    ConfiguredTableAssociationAnalysisRulePolicy m_collaborationPolicy;
+    bool m_collaborationPolicyHasBeenSet = false;
+
+    ConsolidatedPolicy m_consolidatedPolicy;
+    bool m_consolidatedPolicyHasBeenSet = false;
   };
 
 } // namespace Model
