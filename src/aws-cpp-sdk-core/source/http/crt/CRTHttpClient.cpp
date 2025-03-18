@@ -4,14 +4,12 @@
  */
 
 #include <aws/core/http/crt/CRTHttpClient.h>
-#include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/http/standard/StandardHttpRequest.h>
-#include <aws/core/utils/ratelimiter/RateLimiterInterface.h>
-#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/utils/crypto/Hash.h>
-#include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/logging/LogMacros.h>
-
+#include <aws/core/utils/ratelimiter/RateLimiterInterface.h>
+#include <aws/core/utils/stream/AwsChunkedStream.h>
 #include <aws/crt/http/HttpConnectionManager.h>
 #include <aws/crt/http/HttpRequestResponse.h>
 
@@ -30,8 +28,7 @@ public:
         m_rateLimiter(rateLimiter),
         m_client(client),
         m_currentRequest(request),
-        m_isStreaming(isStreaming),
-        m_chunkEnd(false)
+        m_isStreaming(isStreaming)
     {
     }
 
@@ -43,20 +40,6 @@ protected:
         {
             return false;
         }
-
-        bool isAwsChunked = m_currentRequest.HasHeader(Aws::Http::CONTENT_ENCODING_HEADER) &&
-            m_currentRequest.GetHeaderValue(Aws::Http::CONTENT_ENCODING_HEADER) == Aws::Http::AWS_CHUNKED_VALUE;
-
-        size_t amountToRead = buffer.capacity - buffer.len;
-        uint8_t* originalBufferPos = buffer.buffer;
-
-        // aws-chunk = hex(chunk-size) + CRLF + chunk-data + CRLF
-        // Needs to reserve bytes of sizeof(hex(chunk-size)) + sizeof(CRLF) + sizeof(CRLF)
-        if (isAwsChunked)
-        {
-            Aws::String amountToReadHexString = Aws::Utils::StringUtils::ToHexString(amountToRead);
-            amountToRead -= (amountToReadHexString.size() + 4);
-        }        
 
         // initial check to see if we should avoid reading for the moment.
         if (!m_rateLimiter || (m_rateLimiter && m_rateLimiter->ApplyCost(0) == std::chrono::milliseconds(0))) {
@@ -89,47 +72,8 @@ protected:
                     return true;
                 }
             }
-            
+
             size_t amountRead = newPos - currentPos;
-
-            if (isAwsChunked)
-            {
-                // if we have a chunk to wrap, wrap it, be sure to update the running checksum.
-                if (amountRead > 0)
-                {
-                    if (m_currentRequest.GetRequestHash().second != nullptr)
-                    {
-                        m_currentRequest.GetRequestHash().second->Update(reinterpret_cast<unsigned char*>(originalBufferPos), amountRead);
-                    }
-
-                    Aws::String hex = Aws::Utils::StringUtils::ToHexString(amountRead);
-                    // this is safe because of the isAwsChunked branch above.
-                    // I don't see a aws_byte_buf equivalent of memmove. This is lifted from the curl implementation.
-                    memmove(originalBufferPos + hex.size() + 2, originalBufferPos, amountRead);
-                    memmove(originalBufferPos + hex.size() + 2 + amountRead, "\r\n", 2);
-                    memmove(originalBufferPos, hex.c_str(), hex.size());
-                    memmove(originalBufferPos + hex.size(), "\r\n", 2);
-                    amountRead += hex.size() + 4;
-                }
-                else if (!m_chunkEnd)
-                {
-                    // if we didn't read anything, then lets finish up the chunk and send it.
-                    // the reference implementation seems to assume only one chunk is allowed, because the chunkEnd bit is never updated.
-                    // keep that same behavior here.
-                    Aws::StringStream chunkedTrailer;
-                    chunkedTrailer << "0\r\n";
-                    if (m_currentRequest.GetRequestHash().second != nullptr)
-                    {
-                        chunkedTrailer << "x-amz-checksum-" << m_currentRequest.GetRequestHash().first << ":"
-                            << Aws::Utils::HashingUtils::Base64Encode(m_currentRequest.GetRequestHash().second->GetHash().GetResult()) << "\r\n";
-                    }
-                    chunkedTrailer << "\r\n";
-                    amountRead = chunkedTrailer.str().size();
-                    memcpy(originalBufferPos, chunkedTrailer.str().c_str(), amountRead);
-                    m_chunkEnd = true;
-                }
-                buffer.len += amountRead;
-            }
 
             auto& sentHandler = m_currentRequest.GetDataSentEventHandler();
             if (sentHandler)
@@ -153,7 +97,6 @@ private:
     const Aws::Http::HttpClient& m_client;
     const Aws::Http::HttpRequest& m_currentRequest;
     bool m_isStreaming;
-    bool m_chunkEnd;
 };
 
 // Just a wrapper around a Condition Variable and a mutex, which handles wait and timed waits while protecting
@@ -430,7 +373,11 @@ namespace Aws
             if (request->GetContentBody())
             {
                 bool isStreaming = request->IsEventStreamRequest();
-                crtRequest->SetBody(Aws::MakeShared<SDKAdaptingInputStream>(CRT_HTTP_CLIENT_TAG, m_configuration.writeRateLimiter, request->GetContentBody(), *this, *request, isStreaming));
+                if (request->HasHeader(Aws::Http::CONTENT_ENCODING_HEADER) && request->GetHeaderValue(Aws::Http::CONTENT_ENCODING_HEADER) == Aws::Http::AWS_CHUNKED_VALUE) {
+                  crtRequest->SetBody(Aws::MakeShared<Aws::Utils::Stream::AwsChunkedStream<>>(CRT_HTTP_CLIENT_TAG, request.get(), request->GetContentBody()));
+                } else {
+                  crtRequest->SetBody(Aws::MakeShared<SDKAdaptingInputStream>(CRT_HTTP_CLIENT_TAG, m_configuration.writeRateLimiter, request->GetContentBody(), *this, *request, isStreaming));
+                }
             }
 
             Crt::Http::HttpRequestOptions requestOptions;
