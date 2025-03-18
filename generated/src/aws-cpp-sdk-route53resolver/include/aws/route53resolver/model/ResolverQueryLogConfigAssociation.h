@@ -43,7 +43,7 @@ namespace Model
   class ResolverQueryLogConfigAssociation
   {
   public:
-    AWS_ROUTE53RESOLVER_API ResolverQueryLogConfigAssociation();
+    AWS_ROUTE53RESOLVER_API ResolverQueryLogConfigAssociation() = default;
     AWS_ROUTE53RESOLVER_API ResolverQueryLogConfigAssociation(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RESOLVER_API ResolverQueryLogConfigAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,28 +53,24 @@ namespace Model
     /**
      * <p>The ID of the query logging association.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ResolverQueryLogConfigAssociation& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ResolverQueryLogConfigAssociation& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ResolverQueryLogConfigAssociation& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ResolverQueryLogConfigAssociation& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the query logging configuration that a VPC is associated with.</p>
      */
-    inline const Aws::String& GetResolverQueryLogConfigId() const{ return m_resolverQueryLogConfigId; }
+    inline const Aws::String& GetResolverQueryLogConfigId() const { return m_resolverQueryLogConfigId; }
     inline bool ResolverQueryLogConfigIdHasBeenSet() const { return m_resolverQueryLogConfigIdHasBeenSet; }
-    inline void SetResolverQueryLogConfigId(const Aws::String& value) { m_resolverQueryLogConfigIdHasBeenSet = true; m_resolverQueryLogConfigId = value; }
-    inline void SetResolverQueryLogConfigId(Aws::String&& value) { m_resolverQueryLogConfigIdHasBeenSet = true; m_resolverQueryLogConfigId = std::move(value); }
-    inline void SetResolverQueryLogConfigId(const char* value) { m_resolverQueryLogConfigIdHasBeenSet = true; m_resolverQueryLogConfigId.assign(value); }
-    inline ResolverQueryLogConfigAssociation& WithResolverQueryLogConfigId(const Aws::String& value) { SetResolverQueryLogConfigId(value); return *this;}
-    inline ResolverQueryLogConfigAssociation& WithResolverQueryLogConfigId(Aws::String&& value) { SetResolverQueryLogConfigId(std::move(value)); return *this;}
-    inline ResolverQueryLogConfigAssociation& WithResolverQueryLogConfigId(const char* value) { SetResolverQueryLogConfigId(value); return *this;}
+    template<typename ResolverQueryLogConfigIdT = Aws::String>
+    void SetResolverQueryLogConfigId(ResolverQueryLogConfigIdT&& value) { m_resolverQueryLogConfigIdHasBeenSet = true; m_resolverQueryLogConfigId = std::forward<ResolverQueryLogConfigIdT>(value); }
+    template<typename ResolverQueryLogConfigIdT = Aws::String>
+    ResolverQueryLogConfigAssociation& WithResolverQueryLogConfigId(ResolverQueryLogConfigIdT&& value) { SetResolverQueryLogConfigId(std::forward<ResolverQueryLogConfigIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,12 @@ namespace Model
      * <p>The ID of the Amazon VPC that is associated with the query logging
      * configuration.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline ResolverQueryLogConfigAssociation& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline ResolverQueryLogConfigAssociation& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ResolverQueryLogConfigAssociation& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    ResolverQueryLogConfigAssociation& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,12 +98,10 @@ namespace Model
      * <code>FAILED</code>: Resolver either couldn't create or couldn't delete the
      * query logging association.</p> </li> </ul>
      */
-    inline const ResolverQueryLogConfigAssociationStatus& GetStatus() const{ return m_status; }
+    inline ResolverQueryLogConfigAssociationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ResolverQueryLogConfigAssociationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ResolverQueryLogConfigAssociationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ResolverQueryLogConfigAssociation& WithStatus(const ResolverQueryLogConfigAssociationStatus& value) { SetStatus(value); return *this;}
-    inline ResolverQueryLogConfigAssociation& WithStatus(ResolverQueryLogConfigAssociationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ResolverQueryLogConfigAssociationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ResolverQueryLogConfigAssociation& WithStatus(ResolverQueryLogConfigAssociationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -122,12 +114,10 @@ namespace Model
      * the value of <code>Status</code> is a value other than <code>FAILED</code>,
      * <code>Error</code> is null. </p>
      */
-    inline const ResolverQueryLogConfigAssociationError& GetError() const{ return m_error; }
+    inline ResolverQueryLogConfigAssociationError GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const ResolverQueryLogConfigAssociationError& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(ResolverQueryLogConfigAssociationError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline ResolverQueryLogConfigAssociation& WithError(const ResolverQueryLogConfigAssociationError& value) { SetError(value); return *this;}
-    inline ResolverQueryLogConfigAssociation& WithError(ResolverQueryLogConfigAssociationError&& value) { SetError(std::move(value)); return *this;}
+    inline void SetError(ResolverQueryLogConfigAssociationError value) { m_errorHasBeenSet = true; m_error = value; }
+    inline ResolverQueryLogConfigAssociation& WithError(ResolverQueryLogConfigAssociationError value) { SetError(value); return *this;}
     ///@}
 
     ///@{
@@ -136,14 +126,12 @@ namespace Model
      * <code>Error</code> is null, the value of <code>ErrorMessage</code> also is
      * null.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline ResolverQueryLogConfigAssociation& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline ResolverQueryLogConfigAssociation& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline ResolverQueryLogConfigAssociation& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    ResolverQueryLogConfigAssociation& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,14 +139,12 @@ namespace Model
      * <p>The date and time that the VPC was associated with the query logging
      * configuration, in Unix time format and Coordinated Universal Time (UTC).</p>
      */
-    inline const Aws::String& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::String& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::String& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::String&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline void SetCreationTime(const char* value) { m_creationTimeHasBeenSet = true; m_creationTime.assign(value); }
-    inline ResolverQueryLogConfigAssociation& WithCreationTime(const Aws::String& value) { SetCreationTime(value); return *this;}
-    inline ResolverQueryLogConfigAssociation& WithCreationTime(Aws::String&& value) { SetCreationTime(std::move(value)); return *this;}
-    inline ResolverQueryLogConfigAssociation& WithCreationTime(const char* value) { SetCreationTime(value); return *this;}
+    template<typename CreationTimeT = Aws::String>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::String>
+    ResolverQueryLogConfigAssociation& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -171,10 +157,10 @@ namespace Model
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    ResolverQueryLogConfigAssociationStatus m_status;
+    ResolverQueryLogConfigAssociationStatus m_status{ResolverQueryLogConfigAssociationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    ResolverQueryLogConfigAssociationError m_error;
+    ResolverQueryLogConfigAssociationError m_error{ResolverQueryLogConfigAssociationError::NOT_SET};
     bool m_errorHasBeenSet = false;
 
     Aws::String m_errorMessage;

@@ -12,22 +12,6 @@ using namespace Aws::AutoScalingPlans::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetScalingPlanResourceForecastDataRequest::GetScalingPlanResourceForecastDataRequest() : 
-    m_scalingPlanNameHasBeenSet(false),
-    m_scalingPlanVersion(0),
-    m_scalingPlanVersionHasBeenSet(false),
-    m_serviceNamespace(ServiceNamespace::NOT_SET),
-    m_serviceNamespaceHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_scalableDimension(ScalableDimension::NOT_SET),
-    m_scalableDimensionHasBeenSet(false),
-    m_forecastDataType(ForecastDataType::NOT_SET),
-    m_forecastDataTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 Aws::String GetScalingPlanResourceForecastDataRequest::SerializePayload() const
 {
   JsonValue payload;

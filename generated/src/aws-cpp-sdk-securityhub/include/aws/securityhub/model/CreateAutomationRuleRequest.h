@@ -26,7 +26,7 @@ namespace Model
   class CreateAutomationRuleRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API CreateAutomationRuleRequest();
+    AWS_SECURITYHUB_API CreateAutomationRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,19 +41,16 @@ namespace Model
     /**
      * <p> User-defined tags associated with an automation rule. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateAutomationRuleRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateAutomationRuleRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateAutomationRuleRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateAutomationRuleRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateAutomationRuleRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateAutomationRuleRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateAutomationRuleRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateAutomationRuleRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateAutomationRuleRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateAutomationRuleRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateAutomationRuleRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -65,12 +62,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html">
      * <code>BatchUpdateAutomationRules</code> </a>. </p>
      */
-    inline const RuleStatus& GetRuleStatus() const{ return m_ruleStatus; }
+    inline RuleStatus GetRuleStatus() const { return m_ruleStatus; }
     inline bool RuleStatusHasBeenSet() const { return m_ruleStatusHasBeenSet; }
-    inline void SetRuleStatus(const RuleStatus& value) { m_ruleStatusHasBeenSet = true; m_ruleStatus = value; }
-    inline void SetRuleStatus(RuleStatus&& value) { m_ruleStatusHasBeenSet = true; m_ruleStatus = std::move(value); }
-    inline CreateAutomationRuleRequest& WithRuleStatus(const RuleStatus& value) { SetRuleStatus(value); return *this;}
-    inline CreateAutomationRuleRequest& WithRuleStatus(RuleStatus&& value) { SetRuleStatus(std::move(value)); return *this;}
+    inline void SetRuleStatus(RuleStatus value) { m_ruleStatusHasBeenSet = true; m_ruleStatus = value; }
+    inline CreateAutomationRuleRequest& WithRuleStatus(RuleStatus value) { SetRuleStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -79,7 +74,7 @@ namespace Model
      * action is applied to findings. Security Hub applies rules with lower values for
      * this parameter first. </p>
      */
-    inline int GetRuleOrder() const{ return m_ruleOrder; }
+    inline int GetRuleOrder() const { return m_ruleOrder; }
     inline bool RuleOrderHasBeenSet() const { return m_ruleOrderHasBeenSet; }
     inline void SetRuleOrder(int value) { m_ruleOrderHasBeenSet = true; m_ruleOrder = value; }
     inline CreateAutomationRuleRequest& WithRuleOrder(int value) { SetRuleOrder(value); return *this;}
@@ -89,28 +84,24 @@ namespace Model
     /**
      * <p> The name of the rule. </p>
      */
-    inline const Aws::String& GetRuleName() const{ return m_ruleName; }
+    inline const Aws::String& GetRuleName() const { return m_ruleName; }
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-    inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-    inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-    inline CreateAutomationRuleRequest& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-    inline CreateAutomationRuleRequest& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-    inline CreateAutomationRuleRequest& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    template<typename RuleNameT = Aws::String>
+    void SetRuleName(RuleNameT&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::forward<RuleNameT>(value); }
+    template<typename RuleNameT = Aws::String>
+    CreateAutomationRuleRequest& WithRuleName(RuleNameT&& value) { SetRuleName(std::forward<RuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A description of the rule. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateAutomationRuleRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateAutomationRuleRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateAutomationRuleRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateAutomationRuleRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,7 +113,7 @@ namespace Model
      * rule criteria and doesn't evaluate other rules for the finding. By default, a
      * rule isn't terminal. </p>
      */
-    inline bool GetIsTerminal() const{ return m_isTerminal; }
+    inline bool GetIsTerminal() const { return m_isTerminal; }
     inline bool IsTerminalHasBeenSet() const { return m_isTerminalHasBeenSet; }
     inline void SetIsTerminal(bool value) { m_isTerminalHasBeenSet = true; m_isTerminal = value; }
     inline CreateAutomationRuleRequest& WithIsTerminal(bool value) { SetIsTerminal(value); return *this;}
@@ -135,12 +126,12 @@ namespace Model
      * matches the conditions specified in this parameter, Security Hub applies the
      * rule action to the finding. </p>
      */
-    inline const AutomationRulesFindingFilters& GetCriteria() const{ return m_criteria; }
+    inline const AutomationRulesFindingFilters& GetCriteria() const { return m_criteria; }
     inline bool CriteriaHasBeenSet() const { return m_criteriaHasBeenSet; }
-    inline void SetCriteria(const AutomationRulesFindingFilters& value) { m_criteriaHasBeenSet = true; m_criteria = value; }
-    inline void SetCriteria(AutomationRulesFindingFilters&& value) { m_criteriaHasBeenSet = true; m_criteria = std::move(value); }
-    inline CreateAutomationRuleRequest& WithCriteria(const AutomationRulesFindingFilters& value) { SetCriteria(value); return *this;}
-    inline CreateAutomationRuleRequest& WithCriteria(AutomationRulesFindingFilters&& value) { SetCriteria(std::move(value)); return *this;}
+    template<typename CriteriaT = AutomationRulesFindingFilters>
+    void SetCriteria(CriteriaT&& value) { m_criteriaHasBeenSet = true; m_criteria = std::forward<CriteriaT>(value); }
+    template<typename CriteriaT = AutomationRulesFindingFilters>
+    CreateAutomationRuleRequest& WithCriteria(CriteriaT&& value) { SetCriteria(std::forward<CriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,24 +139,24 @@ namespace Model
      * <p> One or more actions to update finding fields if a finding matches the
      * conditions specified in <code>Criteria</code>. </p>
      */
-    inline const Aws::Vector<AutomationRulesAction>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<AutomationRulesAction>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<AutomationRulesAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<AutomationRulesAction>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline CreateAutomationRuleRequest& WithActions(const Aws::Vector<AutomationRulesAction>& value) { SetActions(value); return *this;}
-    inline CreateAutomationRuleRequest& WithActions(Aws::Vector<AutomationRulesAction>&& value) { SetActions(std::move(value)); return *this;}
-    inline CreateAutomationRuleRequest& AddActions(const AutomationRulesAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline CreateAutomationRuleRequest& AddActions(AutomationRulesAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<AutomationRulesAction>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<AutomationRulesAction>>
+    CreateAutomationRuleRequest& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = AutomationRulesAction>
+    CreateAutomationRuleRequest& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    RuleStatus m_ruleStatus;
+    RuleStatus m_ruleStatus{RuleStatus::NOT_SET};
     bool m_ruleStatusHasBeenSet = false;
 
-    int m_ruleOrder;
+    int m_ruleOrder{0};
     bool m_ruleOrderHasBeenSet = false;
 
     Aws::String m_ruleName;
@@ -174,7 +165,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    bool m_isTerminal;
+    bool m_isTerminal{false};
     bool m_isTerminalHasBeenSet = false;
 
     AutomationRulesFindingFilters m_criteria;

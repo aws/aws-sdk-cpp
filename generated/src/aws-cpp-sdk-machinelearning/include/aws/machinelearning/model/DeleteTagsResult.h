@@ -33,7 +33,7 @@ namespace Model
   class DeleteTagsResult
   {
   public:
-    AWS_MACHINELEARNING_API DeleteTagsResult();
+    AWS_MACHINELEARNING_API DeleteTagsResult() = default;
     AWS_MACHINELEARNING_API DeleteTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MACHINELEARNING_API DeleteTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,43 +42,40 @@ namespace Model
     /**
      * <p>The ID of the ML object from which tags were deleted.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceId.assign(value); }
-    inline DeleteTagsResult& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline DeleteTagsResult& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline DeleteTagsResult& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    DeleteTagsResult& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the ML object from which tags were deleted.</p>
      */
-    inline const TaggableResourceType& GetResourceType() const{ return m_resourceType; }
-    inline void SetResourceType(const TaggableResourceType& value) { m_resourceType = value; }
-    inline void SetResourceType(TaggableResourceType&& value) { m_resourceType = std::move(value); }
-    inline DeleteTagsResult& WithResourceType(const TaggableResourceType& value) { SetResourceType(value); return *this;}
-    inline DeleteTagsResult& WithResourceType(TaggableResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline TaggableResourceType GetResourceType() const { return m_resourceType; }
+    inline void SetResourceType(TaggableResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline DeleteTagsResult& WithResourceType(TaggableResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteTagsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteTagsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteTagsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteTagsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceId;
+    bool m_resourceIdHasBeenSet = false;
 
-    TaggableResourceType m_resourceType;
+    TaggableResourceType m_resourceType{TaggableResourceType::NOT_SET};
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

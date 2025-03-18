@@ -12,19 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCustomActionTypeRequest::CreateCustomActionTypeRequest() : 
-    m_category(ActionCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_configurationPropertiesHasBeenSet(false),
-    m_inputArtifactDetailsHasBeenSet(false),
-    m_outputArtifactDetailsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCustomActionTypeRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RejectPredictionsResult::RejectPredictionsResult()
-{
-}
-
 RejectPredictionsResult::RejectPredictionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ RejectPredictionsResult& RejectPredictionsResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("assetId"))
   {
     m_assetId = jsonValue.GetString("assetId");
-
+    m_assetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetRevision"))
   {
     m_assetRevision = jsonValue.GetString("assetRevision");
-
+    m_assetRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
+    m_domainIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

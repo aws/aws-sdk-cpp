@@ -29,7 +29,7 @@ namespace Model
   class SearchMessageTemplatesResult
   {
   public:
-    AWS_QCONNECT_API SearchMessageTemplatesResult();
+    AWS_QCONNECT_API SearchMessageTemplatesResult() = default;
     AWS_QCONNECT_API SearchMessageTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QCONNECT_API SearchMessageTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline SearchMessageTemplatesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchMessageTemplatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchMessageTemplatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchMessageTemplatesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The results of the message template search.</p>
      */
-    inline const Aws::Vector<MessageTemplateSearchResultData>& GetResults() const{ return m_results; }
-    inline void SetResults(const Aws::Vector<MessageTemplateSearchResultData>& value) { m_results = value; }
-    inline void SetResults(Aws::Vector<MessageTemplateSearchResultData>&& value) { m_results = std::move(value); }
-    inline SearchMessageTemplatesResult& WithResults(const Aws::Vector<MessageTemplateSearchResultData>& value) { SetResults(value); return *this;}
-    inline SearchMessageTemplatesResult& WithResults(Aws::Vector<MessageTemplateSearchResultData>&& value) { SetResults(std::move(value)); return *this;}
-    inline SearchMessageTemplatesResult& AddResults(const MessageTemplateSearchResultData& value) { m_results.push_back(value); return *this; }
-    inline SearchMessageTemplatesResult& AddResults(MessageTemplateSearchResultData&& value) { m_results.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MessageTemplateSearchResultData>& GetResults() const { return m_results; }
+    template<typename ResultsT = Aws::Vector<MessageTemplateSearchResultData>>
+    void SetResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results = std::forward<ResultsT>(value); }
+    template<typename ResultsT = Aws::Vector<MessageTemplateSearchResultData>>
+    SearchMessageTemplatesResult& WithResults(ResultsT&& value) { SetResults(std::forward<ResultsT>(value)); return *this;}
+    template<typename ResultsT = MessageTemplateSearchResultData>
+    SearchMessageTemplatesResult& AddResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results.emplace_back(std::forward<ResultsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SearchMessageTemplatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SearchMessageTemplatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SearchMessageTemplatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SearchMessageTemplatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<MessageTemplateSearchResultData> m_results;
+    bool m_resultsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,7 +21,7 @@ namespace Model
   class RevokeSignatureRequest : public SignerRequest
   {
   public:
-    AWS_SIGNER_API RevokeSignatureRequest();
+    AWS_SIGNER_API RevokeSignatureRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,42 +36,36 @@ namespace Model
     /**
      * <p>ID of the signing job to be revoked.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline RevokeSignatureRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline RevokeSignatureRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline RevokeSignatureRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    RevokeSignatureRequest& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>AWS account ID of the job owner.</p>
      */
-    inline const Aws::String& GetJobOwner() const{ return m_jobOwner; }
+    inline const Aws::String& GetJobOwner() const { return m_jobOwner; }
     inline bool JobOwnerHasBeenSet() const { return m_jobOwnerHasBeenSet; }
-    inline void SetJobOwner(const Aws::String& value) { m_jobOwnerHasBeenSet = true; m_jobOwner = value; }
-    inline void SetJobOwner(Aws::String&& value) { m_jobOwnerHasBeenSet = true; m_jobOwner = std::move(value); }
-    inline void SetJobOwner(const char* value) { m_jobOwnerHasBeenSet = true; m_jobOwner.assign(value); }
-    inline RevokeSignatureRequest& WithJobOwner(const Aws::String& value) { SetJobOwner(value); return *this;}
-    inline RevokeSignatureRequest& WithJobOwner(Aws::String&& value) { SetJobOwner(std::move(value)); return *this;}
-    inline RevokeSignatureRequest& WithJobOwner(const char* value) { SetJobOwner(value); return *this;}
+    template<typename JobOwnerT = Aws::String>
+    void SetJobOwner(JobOwnerT&& value) { m_jobOwnerHasBeenSet = true; m_jobOwner = std::forward<JobOwnerT>(value); }
+    template<typename JobOwnerT = Aws::String>
+    RevokeSignatureRequest& WithJobOwner(JobOwnerT&& value) { SetJobOwner(std::forward<JobOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for revoking the signing job.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline RevokeSignatureRequest& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline RevokeSignatureRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline RevokeSignatureRequest& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    RevokeSignatureRequest& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 

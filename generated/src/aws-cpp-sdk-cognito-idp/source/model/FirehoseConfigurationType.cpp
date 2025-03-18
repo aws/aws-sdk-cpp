@@ -18,13 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-FirehoseConfigurationType::FirehoseConfigurationType() : 
-    m_streamArnHasBeenSet(false)
-{
-}
-
 FirehoseConfigurationType::FirehoseConfigurationType(JsonView jsonValue)
-  : FirehoseConfigurationType()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FirehoseConfigurationType& FirehoseConfigurationType::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("StreamArn"))
   {
     m_streamArn = jsonValue.GetString("StreamArn");
-
     m_streamArnHasBeenSet = true;
   }
-
   return *this;
 }
 

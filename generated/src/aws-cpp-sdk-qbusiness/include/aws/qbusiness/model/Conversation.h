@@ -33,7 +33,7 @@ namespace Model
   class Conversation
   {
   public:
-    AWS_QBUSINESS_API Conversation();
+    AWS_QBUSINESS_API Conversation() = default;
     AWS_QBUSINESS_API Conversation(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Conversation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,40 +43,36 @@ namespace Model
     /**
      * <p>The identifier of the Amazon Q Business conversation.</p>
      */
-    inline const Aws::String& GetConversationId() const{ return m_conversationId; }
+    inline const Aws::String& GetConversationId() const { return m_conversationId; }
     inline bool ConversationIdHasBeenSet() const { return m_conversationIdHasBeenSet; }
-    inline void SetConversationId(const Aws::String& value) { m_conversationIdHasBeenSet = true; m_conversationId = value; }
-    inline void SetConversationId(Aws::String&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::move(value); }
-    inline void SetConversationId(const char* value) { m_conversationIdHasBeenSet = true; m_conversationId.assign(value); }
-    inline Conversation& WithConversationId(const Aws::String& value) { SetConversationId(value); return *this;}
-    inline Conversation& WithConversationId(Aws::String&& value) { SetConversationId(std::move(value)); return *this;}
-    inline Conversation& WithConversationId(const char* value) { SetConversationId(value); return *this;}
+    template<typename ConversationIdT = Aws::String>
+    void SetConversationId(ConversationIdT&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::forward<ConversationIdT>(value); }
+    template<typename ConversationIdT = Aws::String>
+    Conversation& WithConversationId(ConversationIdT&& value) { SetConversationId(std::forward<ConversationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The title of the conversation.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline Conversation& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline Conversation& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline Conversation& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    Conversation& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The start time of the conversation.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline Conversation& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline Conversation& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    Conversation& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -86,7 +82,7 @@ namespace Model
     Aws::String m_title;
     bool m_titleHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
   };
 

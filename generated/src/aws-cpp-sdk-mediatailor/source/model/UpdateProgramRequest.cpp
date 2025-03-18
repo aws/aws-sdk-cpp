@@ -12,15 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateProgramRequest::UpdateProgramRequest() : 
-    m_adBreaksHasBeenSet(false),
-    m_channelNameHasBeenSet(false),
-    m_programNameHasBeenSet(false),
-    m_scheduleConfigurationHasBeenSet(false),
-    m_audienceMediaHasBeenSet(false)
-{
-}
-
 Aws::String UpdateProgramRequest::SerializePayload() const
 {
   JsonValue payload;

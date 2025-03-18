@@ -18,20 +18,7 @@ namespace mgn
 namespace Model
 {
 
-LifeCycle::LifeCycle() : 
-    m_addedToServiceDateTimeHasBeenSet(false),
-    m_elapsedReplicationDurationHasBeenSet(false),
-    m_firstByteDateTimeHasBeenSet(false),
-    m_lastCutoverHasBeenSet(false),
-    m_lastSeenByServiceDateTimeHasBeenSet(false),
-    m_lastTestHasBeenSet(false),
-    m_state(LifeCycleState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 LifeCycle::LifeCycle(JsonView jsonValue)
-  : LifeCycle()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ LifeCycle& LifeCycle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("addedToServiceDateTime"))
   {
     m_addedToServiceDateTime = jsonValue.GetString("addedToServiceDateTime");
-
     m_addedToServiceDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("elapsedReplicationDuration"))
   {
     m_elapsedReplicationDuration = jsonValue.GetString("elapsedReplicationDuration");
-
     m_elapsedReplicationDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firstByteDateTime"))
   {
     m_firstByteDateTime = jsonValue.GetString("firstByteDateTime");
-
     m_firstByteDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastCutover"))
   {
     m_lastCutover = jsonValue.GetObject("lastCutover");
-
     m_lastCutoverHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastSeenByServiceDateTime"))
   {
     m_lastSeenByServiceDateTime = jsonValue.GetString("lastSeenByServiceDateTime");
-
     m_lastSeenByServiceDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastTest"))
   {
     m_lastTest = jsonValue.GetObject("lastTest");
-
     m_lastTestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = LifeCycleStateMapper::GetLifeCycleStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

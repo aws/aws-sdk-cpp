@@ -35,7 +35,7 @@ namespace Model
   class ListOpenIDConnectProvidersResult
   {
   public:
-    AWS_IAM_API ListOpenIDConnectProvidersResult();
+    AWS_IAM_API ListOpenIDConnectProvidersResult() = default;
     AWS_IAM_API ListOpenIDConnectProvidersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_IAM_API ListOpenIDConnectProvidersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,28 +45,30 @@ namespace Model
      * <p>The list of IAM OIDC provider resource objects defined in the Amazon Web
      * Services account.</p>
      */
-    inline const Aws::Vector<OpenIDConnectProviderListEntry>& GetOpenIDConnectProviderList() const{ return m_openIDConnectProviderList; }
-    inline void SetOpenIDConnectProviderList(const Aws::Vector<OpenIDConnectProviderListEntry>& value) { m_openIDConnectProviderList = value; }
-    inline void SetOpenIDConnectProviderList(Aws::Vector<OpenIDConnectProviderListEntry>&& value) { m_openIDConnectProviderList = std::move(value); }
-    inline ListOpenIDConnectProvidersResult& WithOpenIDConnectProviderList(const Aws::Vector<OpenIDConnectProviderListEntry>& value) { SetOpenIDConnectProviderList(value); return *this;}
-    inline ListOpenIDConnectProvidersResult& WithOpenIDConnectProviderList(Aws::Vector<OpenIDConnectProviderListEntry>&& value) { SetOpenIDConnectProviderList(std::move(value)); return *this;}
-    inline ListOpenIDConnectProvidersResult& AddOpenIDConnectProviderList(const OpenIDConnectProviderListEntry& value) { m_openIDConnectProviderList.push_back(value); return *this; }
-    inline ListOpenIDConnectProvidersResult& AddOpenIDConnectProviderList(OpenIDConnectProviderListEntry&& value) { m_openIDConnectProviderList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OpenIDConnectProviderListEntry>& GetOpenIDConnectProviderList() const { return m_openIDConnectProviderList; }
+    template<typename OpenIDConnectProviderListT = Aws::Vector<OpenIDConnectProviderListEntry>>
+    void SetOpenIDConnectProviderList(OpenIDConnectProviderListT&& value) { m_openIDConnectProviderListHasBeenSet = true; m_openIDConnectProviderList = std::forward<OpenIDConnectProviderListT>(value); }
+    template<typename OpenIDConnectProviderListT = Aws::Vector<OpenIDConnectProviderListEntry>>
+    ListOpenIDConnectProvidersResult& WithOpenIDConnectProviderList(OpenIDConnectProviderListT&& value) { SetOpenIDConnectProviderList(std::forward<OpenIDConnectProviderListT>(value)); return *this;}
+    template<typename OpenIDConnectProviderListT = OpenIDConnectProviderListEntry>
+    ListOpenIDConnectProvidersResult& AddOpenIDConnectProviderList(OpenIDConnectProviderListT&& value) { m_openIDConnectProviderListHasBeenSet = true; m_openIDConnectProviderList.emplace_back(std::forward<OpenIDConnectProviderListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListOpenIDConnectProvidersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListOpenIDConnectProvidersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListOpenIDConnectProvidersResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<OpenIDConnectProviderListEntry> m_openIDConnectProviderList;
+    bool m_openIDConnectProviderListHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

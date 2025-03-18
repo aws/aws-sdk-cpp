@@ -25,7 +25,7 @@ namespace Model
   class CancelUpdateStackRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API CancelUpdateStackRequest();
+    AWS_CLOUDFORMATION_API CancelUpdateStackRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,14 +51,12 @@ namespace Model
      * "arn:aws:cloudformation:*:*:stack/ * / *" }] }</code> </p>  <p>The name or
      * the unique stack ID that's associated with the stack.</p>
      */
-    inline const Aws::String& GetStackName() const{ return m_stackName; }
+    inline const Aws::String& GetStackName() const { return m_stackName; }
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-    inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-    inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-    inline CancelUpdateStackRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-    inline CancelUpdateStackRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-    inline CancelUpdateStackRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+    template<typename StackNameT = Aws::String>
+    void SetStackName(StackNameT&& value) { m_stackNameHasBeenSet = true; m_stackName = std::forward<StackNameT>(value); }
+    template<typename StackNameT = Aws::String>
+    CancelUpdateStackRequest& WithStackName(StackNameT&& value) { SetStackName(std::forward<StackNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * might retry <code>CancelUpdateStack</code> requests to ensure that
      * CloudFormation successfully received them.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CancelUpdateStackRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CancelUpdateStackRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CancelUpdateStackRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CancelUpdateStackRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
   private:
 

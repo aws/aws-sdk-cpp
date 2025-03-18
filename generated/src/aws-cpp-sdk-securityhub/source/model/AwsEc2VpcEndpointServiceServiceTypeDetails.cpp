@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2VpcEndpointServiceServiceTypeDetails::AwsEc2VpcEndpointServiceServiceTypeDetails() : 
-    m_serviceTypeHasBeenSet(false)
-{
-}
-
 AwsEc2VpcEndpointServiceServiceTypeDetails::AwsEc2VpcEndpointServiceServiceTypeDetails(JsonView jsonValue)
-  : AwsEc2VpcEndpointServiceServiceTypeDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsEc2VpcEndpointServiceServiceTypeDetails& AwsEc2VpcEndpointServiceServiceTypeD
   if(jsonValue.ValueExists("ServiceType"))
   {
     m_serviceType = jsonValue.GetString("ServiceType");
-
     m_serviceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

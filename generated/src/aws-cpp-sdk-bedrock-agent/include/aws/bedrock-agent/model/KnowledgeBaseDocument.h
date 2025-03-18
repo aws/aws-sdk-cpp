@@ -33,7 +33,7 @@ namespace Model
   class KnowledgeBaseDocument
   {
   public:
-    AWS_BEDROCKAGENT_API KnowledgeBaseDocument();
+    AWS_BEDROCKAGENT_API KnowledgeBaseDocument() = default;
     AWS_BEDROCKAGENT_API KnowledgeBaseDocument(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API KnowledgeBaseDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Contains the content of the document.</p>
      */
-    inline const DocumentContent& GetContent() const{ return m_content; }
+    inline const DocumentContent& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const DocumentContent& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(DocumentContent&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline KnowledgeBaseDocument& WithContent(const DocumentContent& value) { SetContent(value); return *this;}
-    inline KnowledgeBaseDocument& WithContent(DocumentContent&& value) { SetContent(std::move(value)); return *this;}
+    template<typename ContentT = DocumentContent>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = DocumentContent>
+    KnowledgeBaseDocument& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the metadata to associate with the document.</p>
      */
-    inline const DocumentMetadata& GetMetadata() const{ return m_metadata; }
+    inline const DocumentMetadata& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const DocumentMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(DocumentMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline KnowledgeBaseDocument& WithMetadata(const DocumentMetadata& value) { SetMetadata(value); return *this;}
-    inline KnowledgeBaseDocument& WithMetadata(DocumentMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    template<typename MetadataT = DocumentMetadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = DocumentMetadata>
+    KnowledgeBaseDocument& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
   private:
 

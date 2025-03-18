@@ -28,7 +28,7 @@ namespace Model
   class DeleteFileCacheResult
   {
   public:
-    AWS_FSX_API DeleteFileCacheResult();
+    AWS_FSX_API DeleteFileCacheResult() = default;
     AWS_FSX_API DeleteFileCacheResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FSX_API DeleteFileCacheResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The ID of the cache that's being deleted.</p>
      */
-    inline const Aws::String& GetFileCacheId() const{ return m_fileCacheId; }
-    inline void SetFileCacheId(const Aws::String& value) { m_fileCacheId = value; }
-    inline void SetFileCacheId(Aws::String&& value) { m_fileCacheId = std::move(value); }
-    inline void SetFileCacheId(const char* value) { m_fileCacheId.assign(value); }
-    inline DeleteFileCacheResult& WithFileCacheId(const Aws::String& value) { SetFileCacheId(value); return *this;}
-    inline DeleteFileCacheResult& WithFileCacheId(Aws::String&& value) { SetFileCacheId(std::move(value)); return *this;}
-    inline DeleteFileCacheResult& WithFileCacheId(const char* value) { SetFileCacheId(value); return *this;}
+    inline const Aws::String& GetFileCacheId() const { return m_fileCacheId; }
+    template<typename FileCacheIdT = Aws::String>
+    void SetFileCacheId(FileCacheIdT&& value) { m_fileCacheIdHasBeenSet = true; m_fileCacheId = std::forward<FileCacheIdT>(value); }
+    template<typename FileCacheIdT = Aws::String>
+    DeleteFileCacheResult& WithFileCacheId(FileCacheIdT&& value) { SetFileCacheId(std::forward<FileCacheIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,30 +50,29 @@ namespace Model
      * <code>DeleteFileCache</code> operation is successful, this status is
      * <code>DELETING</code>.</p>
      */
-    inline const FileCacheLifecycle& GetLifecycle() const{ return m_lifecycle; }
-    inline void SetLifecycle(const FileCacheLifecycle& value) { m_lifecycle = value; }
-    inline void SetLifecycle(FileCacheLifecycle&& value) { m_lifecycle = std::move(value); }
-    inline DeleteFileCacheResult& WithLifecycle(const FileCacheLifecycle& value) { SetLifecycle(value); return *this;}
-    inline DeleteFileCacheResult& WithLifecycle(FileCacheLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
+    inline FileCacheLifecycle GetLifecycle() const { return m_lifecycle; }
+    inline void SetLifecycle(FileCacheLifecycle value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
+    inline DeleteFileCacheResult& WithLifecycle(FileCacheLifecycle value) { SetLifecycle(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteFileCacheResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteFileCacheResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteFileCacheResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteFileCacheResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_fileCacheId;
+    bool m_fileCacheIdHasBeenSet = false;
 
-    FileCacheLifecycle m_lifecycle;
+    FileCacheLifecycle m_lifecycle{FileCacheLifecycle::NOT_SET};
+    bool m_lifecycleHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

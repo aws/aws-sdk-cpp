@@ -13,17 +13,6 @@ using namespace Aws::LookoutforVision::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartModelPackagingJobRequest::StartModelPackagingJobRequest() : 
-    m_projectNameHasBeenSet(false),
-    m_modelVersionHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String StartModelPackagingJobRequest::SerializePayload() const
 {
   JsonValue payload;

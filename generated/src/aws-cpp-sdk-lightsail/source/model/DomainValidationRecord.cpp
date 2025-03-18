@@ -18,17 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-DomainValidationRecord::DomainValidationRecord() : 
-    m_domainNameHasBeenSet(false),
-    m_resourceRecordHasBeenSet(false),
-    m_dnsRecordCreationStateHasBeenSet(false),
-    m_validationStatus(CertificateDomainValidationStatus::NOT_SET),
-    m_validationStatusHasBeenSet(false)
-{
-}
-
 DomainValidationRecord::DomainValidationRecord(JsonView jsonValue)
-  : DomainValidationRecord()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ DomainValidationRecord& DomainValidationRecord::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceRecord"))
   {
     m_resourceRecord = jsonValue.GetObject("resourceRecord");
-
     m_resourceRecordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dnsRecordCreationState"))
   {
     m_dnsRecordCreationState = jsonValue.GetObject("dnsRecordCreationState");
-
     m_dnsRecordCreationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validationStatus"))
   {
     m_validationStatus = CertificateDomainValidationStatusMapper::GetCertificateDomainValidationStatusForName(jsonValue.GetString("validationStatus"));
-
     m_validationStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

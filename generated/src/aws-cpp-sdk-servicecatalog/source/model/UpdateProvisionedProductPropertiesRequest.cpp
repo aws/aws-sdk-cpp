@@ -12,15 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateProvisionedProductPropertiesRequest::UpdateProvisionedProductPropertiesRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_provisionedProductIdHasBeenSet(false),
-    m_provisionedProductPropertiesHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_idempotencyTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateProvisionedProductPropertiesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-RedshiftServerlessConfiguration::RedshiftServerlessConfiguration() : 
-    m_authConfigurationHasBeenSet(false),
-    m_workgroupArnHasBeenSet(false)
-{
-}
-
 RedshiftServerlessConfiguration::RedshiftServerlessConfiguration(JsonView jsonValue)
-  : RedshiftServerlessConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RedshiftServerlessConfiguration& RedshiftServerlessConfiguration::operator =(Jso
   if(jsonValue.ValueExists("authConfiguration"))
   {
     m_authConfiguration = jsonValue.GetObject("authConfiguration");
-
     m_authConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workgroupArn"))
   {
     m_workgroupArn = jsonValue.GetString("workgroupArn");
-
     m_workgroupArnHasBeenSet = true;
   }
-
   return *this;
 }
 

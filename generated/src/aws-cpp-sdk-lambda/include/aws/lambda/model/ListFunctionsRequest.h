@@ -26,7 +26,7 @@ namespace Model
   class ListFunctionsRequest : public LambdaRequest
   {
   public:
-    AWS_LAMBDA_API ListFunctionsRequest();
+    AWS_LAMBDA_API ListFunctionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * (N. Virginia). If specified, you must set <code>FunctionVersion</code> to
      * <code>ALL</code>.</p>
      */
-    inline const Aws::String& GetMasterRegion() const{ return m_masterRegion; }
+    inline const Aws::String& GetMasterRegion() const { return m_masterRegion; }
     inline bool MasterRegionHasBeenSet() const { return m_masterRegionHasBeenSet; }
-    inline void SetMasterRegion(const Aws::String& value) { m_masterRegionHasBeenSet = true; m_masterRegion = value; }
-    inline void SetMasterRegion(Aws::String&& value) { m_masterRegionHasBeenSet = true; m_masterRegion = std::move(value); }
-    inline void SetMasterRegion(const char* value) { m_masterRegionHasBeenSet = true; m_masterRegion.assign(value); }
-    inline ListFunctionsRequest& WithMasterRegion(const Aws::String& value) { SetMasterRegion(value); return *this;}
-    inline ListFunctionsRequest& WithMasterRegion(Aws::String&& value) { SetMasterRegion(std::move(value)); return *this;}
-    inline ListFunctionsRequest& WithMasterRegion(const char* value) { SetMasterRegion(value); return *this;}
+    template<typename MasterRegionT = Aws::String>
+    void SetMasterRegion(MasterRegionT&& value) { m_masterRegionHasBeenSet = true; m_masterRegion = std::forward<MasterRegionT>(value); }
+    template<typename MasterRegionT = Aws::String>
+    ListFunctionsRequest& WithMasterRegion(MasterRegionT&& value) { SetMasterRegion(std::forward<MasterRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,10 @@ namespace Model
      * <p>Set to <code>ALL</code> to include entries for all published versions of each
      * function.</p>
      */
-    inline const FunctionVersion& GetFunctionVersion() const{ return m_functionVersion; }
+    inline FunctionVersion GetFunctionVersion() const { return m_functionVersion; }
     inline bool FunctionVersionHasBeenSet() const { return m_functionVersionHasBeenSet; }
-    inline void SetFunctionVersion(const FunctionVersion& value) { m_functionVersionHasBeenSet = true; m_functionVersion = value; }
-    inline void SetFunctionVersion(FunctionVersion&& value) { m_functionVersionHasBeenSet = true; m_functionVersion = std::move(value); }
-    inline ListFunctionsRequest& WithFunctionVersion(const FunctionVersion& value) { SetFunctionVersion(value); return *this;}
-    inline ListFunctionsRequest& WithFunctionVersion(FunctionVersion&& value) { SetFunctionVersion(std::move(value)); return *this;}
+    inline void SetFunctionVersion(FunctionVersion value) { m_functionVersionHasBeenSet = true; m_functionVersion = value; }
+    inline ListFunctionsRequest& WithFunctionVersion(FunctionVersion value) { SetFunctionVersion(value); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * <p>Specify the pagination token that's returned by a previous request to
      * retrieve the next page of results.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListFunctionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListFunctionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListFunctionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListFunctionsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,7 +85,7 @@ namespace Model
      * <code>ListFunctions</code> returns a maximum of 50 items in each response, even
      * if you set the number higher.</p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline ListFunctionsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -101,13 +95,13 @@ namespace Model
     Aws::String m_masterRegion;
     bool m_masterRegionHasBeenSet = false;
 
-    FunctionVersion m_functionVersion;
+    FunctionVersion m_functionVersion{FunctionVersion::NOT_SET};
     bool m_functionVersionHasBeenSet = false;
 
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
   };
 

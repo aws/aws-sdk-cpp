@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FontWeight::FontWeight() : 
-    m_name(FontWeightName::NOT_SET),
-    m_nameHasBeenSet(false)
-{
-}
-
 FontWeight::FontWeight(JsonView jsonValue)
-  : FontWeight()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ FontWeight& FontWeight::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = FontWeightNameMapper::GetFontWeightNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

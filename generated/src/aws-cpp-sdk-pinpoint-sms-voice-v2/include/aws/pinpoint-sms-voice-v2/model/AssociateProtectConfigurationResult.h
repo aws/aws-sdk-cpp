@@ -27,7 +27,7 @@ namespace Model
   class AssociateProtectConfigurationResult
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API AssociateProtectConfigurationResult();
+    AWS_PINPOINTSMSVOICEV2_API AssociateProtectConfigurationResult() = default;
     AWS_PINPOINTSMSVOICEV2_API AssociateProtectConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTSMSVOICEV2_API AssociateProtectConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,75 +36,70 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the configuration set.</p>
      */
-    inline const Aws::String& GetConfigurationSetArn() const{ return m_configurationSetArn; }
-    inline void SetConfigurationSetArn(const Aws::String& value) { m_configurationSetArn = value; }
-    inline void SetConfigurationSetArn(Aws::String&& value) { m_configurationSetArn = std::move(value); }
-    inline void SetConfigurationSetArn(const char* value) { m_configurationSetArn.assign(value); }
-    inline AssociateProtectConfigurationResult& WithConfigurationSetArn(const Aws::String& value) { SetConfigurationSetArn(value); return *this;}
-    inline AssociateProtectConfigurationResult& WithConfigurationSetArn(Aws::String&& value) { SetConfigurationSetArn(std::move(value)); return *this;}
-    inline AssociateProtectConfigurationResult& WithConfigurationSetArn(const char* value) { SetConfigurationSetArn(value); return *this;}
+    inline const Aws::String& GetConfigurationSetArn() const { return m_configurationSetArn; }
+    template<typename ConfigurationSetArnT = Aws::String>
+    void SetConfigurationSetArn(ConfigurationSetArnT&& value) { m_configurationSetArnHasBeenSet = true; m_configurationSetArn = std::forward<ConfigurationSetArnT>(value); }
+    template<typename ConfigurationSetArnT = Aws::String>
+    AssociateProtectConfigurationResult& WithConfigurationSetArn(ConfigurationSetArnT&& value) { SetConfigurationSetArn(std::forward<ConfigurationSetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the ConfigurationSet.</p>
      */
-    inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
-    inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetName = value; }
-    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetName = std::move(value); }
-    inline void SetConfigurationSetName(const char* value) { m_configurationSetName.assign(value); }
-    inline AssociateProtectConfigurationResult& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-    inline AssociateProtectConfigurationResult& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-    inline AssociateProtectConfigurationResult& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+    inline const Aws::String& GetConfigurationSetName() const { return m_configurationSetName; }
+    template<typename ConfigurationSetNameT = Aws::String>
+    void SetConfigurationSetName(ConfigurationSetNameT&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::forward<ConfigurationSetNameT>(value); }
+    template<typename ConfigurationSetNameT = Aws::String>
+    AssociateProtectConfigurationResult& WithConfigurationSetName(ConfigurationSetNameT&& value) { SetConfigurationSetName(std::forward<ConfigurationSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the protect configuration.</p>
      */
-    inline const Aws::String& GetProtectConfigurationArn() const{ return m_protectConfigurationArn; }
-    inline void SetProtectConfigurationArn(const Aws::String& value) { m_protectConfigurationArn = value; }
-    inline void SetProtectConfigurationArn(Aws::String&& value) { m_protectConfigurationArn = std::move(value); }
-    inline void SetProtectConfigurationArn(const char* value) { m_protectConfigurationArn.assign(value); }
-    inline AssociateProtectConfigurationResult& WithProtectConfigurationArn(const Aws::String& value) { SetProtectConfigurationArn(value); return *this;}
-    inline AssociateProtectConfigurationResult& WithProtectConfigurationArn(Aws::String&& value) { SetProtectConfigurationArn(std::move(value)); return *this;}
-    inline AssociateProtectConfigurationResult& WithProtectConfigurationArn(const char* value) { SetProtectConfigurationArn(value); return *this;}
+    inline const Aws::String& GetProtectConfigurationArn() const { return m_protectConfigurationArn; }
+    template<typename ProtectConfigurationArnT = Aws::String>
+    void SetProtectConfigurationArn(ProtectConfigurationArnT&& value) { m_protectConfigurationArnHasBeenSet = true; m_protectConfigurationArn = std::forward<ProtectConfigurationArnT>(value); }
+    template<typename ProtectConfigurationArnT = Aws::String>
+    AssociateProtectConfigurationResult& WithProtectConfigurationArn(ProtectConfigurationArnT&& value) { SetProtectConfigurationArn(std::forward<ProtectConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the protect configuration.</p>
      */
-    inline const Aws::String& GetProtectConfigurationId() const{ return m_protectConfigurationId; }
-    inline void SetProtectConfigurationId(const Aws::String& value) { m_protectConfigurationId = value; }
-    inline void SetProtectConfigurationId(Aws::String&& value) { m_protectConfigurationId = std::move(value); }
-    inline void SetProtectConfigurationId(const char* value) { m_protectConfigurationId.assign(value); }
-    inline AssociateProtectConfigurationResult& WithProtectConfigurationId(const Aws::String& value) { SetProtectConfigurationId(value); return *this;}
-    inline AssociateProtectConfigurationResult& WithProtectConfigurationId(Aws::String&& value) { SetProtectConfigurationId(std::move(value)); return *this;}
-    inline AssociateProtectConfigurationResult& WithProtectConfigurationId(const char* value) { SetProtectConfigurationId(value); return *this;}
+    inline const Aws::String& GetProtectConfigurationId() const { return m_protectConfigurationId; }
+    template<typename ProtectConfigurationIdT = Aws::String>
+    void SetProtectConfigurationId(ProtectConfigurationIdT&& value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId = std::forward<ProtectConfigurationIdT>(value); }
+    template<typename ProtectConfigurationIdT = Aws::String>
+    AssociateProtectConfigurationResult& WithProtectConfigurationId(ProtectConfigurationIdT&& value) { SetProtectConfigurationId(std::forward<ProtectConfigurationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssociateProtectConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssociateProtectConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssociateProtectConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssociateProtectConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_configurationSetArn;
+    bool m_configurationSetArnHasBeenSet = false;
 
     Aws::String m_configurationSetName;
+    bool m_configurationSetNameHasBeenSet = false;
 
     Aws::String m_protectConfigurationArn;
+    bool m_protectConfigurationArnHasBeenSet = false;
 
     Aws::String m_protectConfigurationId;
+    bool m_protectConfigurationIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

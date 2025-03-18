@@ -26,7 +26,7 @@ namespace Model
   class UpdateTrafficPolicyInstanceRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API UpdateTrafficPolicyInstanceRequest();
+    AWS_ROUTE53_API UpdateTrafficPolicyInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ID of the traffic policy instance that you want to update.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateTrafficPolicyInstanceRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateTrafficPolicyInstanceRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateTrafficPolicyInstanceRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateTrafficPolicyInstanceRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * <p>The TTL that you want Amazon Route 53 to assign to all of the updated
      * resource record sets.</p>
      */
-    inline long long GetTTL() const{ return m_tTL; }
+    inline long long GetTTL() const { return m_tTL; }
     inline bool TTLHasBeenSet() const { return m_tTLHasBeenSet; }
     inline void SetTTL(long long value) { m_tTLHasBeenSet = true; m_tTL = value; }
     inline UpdateTrafficPolicyInstanceRequest& WithTTL(long long value) { SetTTL(value); return *this;}
@@ -67,14 +65,12 @@ namespace Model
      * <p>The ID of the traffic policy that you want Amazon Route 53 to use to update
      * resource record sets for the specified traffic policy instance.</p>
      */
-    inline const Aws::String& GetTrafficPolicyId() const{ return m_trafficPolicyId; }
+    inline const Aws::String& GetTrafficPolicyId() const { return m_trafficPolicyId; }
     inline bool TrafficPolicyIdHasBeenSet() const { return m_trafficPolicyIdHasBeenSet; }
-    inline void SetTrafficPolicyId(const Aws::String& value) { m_trafficPolicyIdHasBeenSet = true; m_trafficPolicyId = value; }
-    inline void SetTrafficPolicyId(Aws::String&& value) { m_trafficPolicyIdHasBeenSet = true; m_trafficPolicyId = std::move(value); }
-    inline void SetTrafficPolicyId(const char* value) { m_trafficPolicyIdHasBeenSet = true; m_trafficPolicyId.assign(value); }
-    inline UpdateTrafficPolicyInstanceRequest& WithTrafficPolicyId(const Aws::String& value) { SetTrafficPolicyId(value); return *this;}
-    inline UpdateTrafficPolicyInstanceRequest& WithTrafficPolicyId(Aws::String&& value) { SetTrafficPolicyId(std::move(value)); return *this;}
-    inline UpdateTrafficPolicyInstanceRequest& WithTrafficPolicyId(const char* value) { SetTrafficPolicyId(value); return *this;}
+    template<typename TrafficPolicyIdT = Aws::String>
+    void SetTrafficPolicyId(TrafficPolicyIdT&& value) { m_trafficPolicyIdHasBeenSet = true; m_trafficPolicyId = std::forward<TrafficPolicyIdT>(value); }
+    template<typename TrafficPolicyIdT = Aws::String>
+    UpdateTrafficPolicyInstanceRequest& WithTrafficPolicyId(TrafficPolicyIdT&& value) { SetTrafficPolicyId(std::forward<TrafficPolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,7 +78,7 @@ namespace Model
      * <p>The version of the traffic policy that you want Amazon Route 53 to use to
      * update resource record sets for the specified traffic policy instance.</p>
      */
-    inline int GetTrafficPolicyVersion() const{ return m_trafficPolicyVersion; }
+    inline int GetTrafficPolicyVersion() const { return m_trafficPolicyVersion; }
     inline bool TrafficPolicyVersionHasBeenSet() const { return m_trafficPolicyVersionHasBeenSet; }
     inline void SetTrafficPolicyVersion(int value) { m_trafficPolicyVersionHasBeenSet = true; m_trafficPolicyVersion = value; }
     inline UpdateTrafficPolicyInstanceRequest& WithTrafficPolicyVersion(int value) { SetTrafficPolicyVersion(value); return *this;}
@@ -92,13 +88,13 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    long long m_tTL;
+    long long m_tTL{0};
     bool m_tTLHasBeenSet = false;
 
     Aws::String m_trafficPolicyId;
     bool m_trafficPolicyIdHasBeenSet = false;
 
-    int m_trafficPolicyVersion;
+    int m_trafficPolicyVersion{0};
     bool m_trafficPolicyVersionHasBeenSet = false;
   };
 

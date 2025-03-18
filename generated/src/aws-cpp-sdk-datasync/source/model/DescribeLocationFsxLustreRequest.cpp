@@ -12,11 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeLocationFsxLustreRequest::DescribeLocationFsxLustreRequest() : 
-    m_locationArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLocationFsxLustreRequest::SerializePayload() const
 {
   JsonValue payload;

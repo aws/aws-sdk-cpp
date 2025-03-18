@@ -12,16 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConfiguredModelAlgorithmAssociationRequest::CreateConfiguredModelAlgorithmAssociationRequest() : 
-    m_membershipIdentifierHasBeenSet(false),
-    m_configuredModelAlgorithmArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_privacyConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateConfiguredModelAlgorithmAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

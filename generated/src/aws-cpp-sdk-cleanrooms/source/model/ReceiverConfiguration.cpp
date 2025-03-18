@@ -18,15 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ReceiverConfiguration::ReceiverConfiguration() : 
-    m_analysisType(AnalysisType::NOT_SET),
-    m_analysisTypeHasBeenSet(false),
-    m_configurationDetailsHasBeenSet(false)
-{
-}
-
 ReceiverConfiguration::ReceiverConfiguration(JsonView jsonValue)
-  : ReceiverConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ReceiverConfiguration& ReceiverConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("analysisType"))
   {
     m_analysisType = AnalysisTypeMapper::GetAnalysisTypeForName(jsonValue.GetString("analysisType"));
-
     m_analysisTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationDetails"))
   {
     m_configurationDetails = jsonValue.GetObject("configurationDetails");
-
     m_configurationDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

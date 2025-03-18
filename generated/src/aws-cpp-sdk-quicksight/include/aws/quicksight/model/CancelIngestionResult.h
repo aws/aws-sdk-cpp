@@ -27,7 +27,7 @@ namespace Model
   class CancelIngestionResult
   {
   public:
-    AWS_QUICKSIGHT_API CancelIngestionResult();
+    AWS_QUICKSIGHT_API CancelIngestionResult() = default;
     AWS_QUICKSIGHT_API CancelIngestionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API CancelIngestionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,56 +36,54 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline CancelIngestionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CancelIngestionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CancelIngestionResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CancelIngestionResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An ID for the ingestion.</p>
      */
-    inline const Aws::String& GetIngestionId() const{ return m_ingestionId; }
-    inline void SetIngestionId(const Aws::String& value) { m_ingestionId = value; }
-    inline void SetIngestionId(Aws::String&& value) { m_ingestionId = std::move(value); }
-    inline void SetIngestionId(const char* value) { m_ingestionId.assign(value); }
-    inline CancelIngestionResult& WithIngestionId(const Aws::String& value) { SetIngestionId(value); return *this;}
-    inline CancelIngestionResult& WithIngestionId(Aws::String&& value) { SetIngestionId(std::move(value)); return *this;}
-    inline CancelIngestionResult& WithIngestionId(const char* value) { SetIngestionId(value); return *this;}
+    inline const Aws::String& GetIngestionId() const { return m_ingestionId; }
+    template<typename IngestionIdT = Aws::String>
+    void SetIngestionId(IngestionIdT&& value) { m_ingestionIdHasBeenSet = true; m_ingestionId = std::forward<IngestionIdT>(value); }
+    template<typename IngestionIdT = Aws::String>
+    CancelIngestionResult& WithIngestionId(IngestionIdT&& value) { SetIngestionId(std::forward<IngestionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CancelIngestionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CancelIngestionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CancelIngestionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CancelIngestionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline CancelIngestionResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_ingestionId;
+    bool m_ingestionIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

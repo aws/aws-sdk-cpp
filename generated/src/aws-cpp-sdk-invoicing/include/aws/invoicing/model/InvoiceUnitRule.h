@@ -34,7 +34,7 @@ namespace Model
   class InvoiceUnitRule
   {
   public:
-    AWS_INVOICING_API InvoiceUnitRule();
+    AWS_INVOICING_API InvoiceUnitRule() = default;
     AWS_INVOICING_API InvoiceUnitRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_INVOICING_API InvoiceUnitRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INVOICING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,15 +45,14 @@ namespace Model
      * <p>The list of <code>LINKED_ACCOUNT</code> IDs where charges are included within
      * the invoice unit. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetLinkedAccounts() const{ return m_linkedAccounts; }
+    inline const Aws::Vector<Aws::String>& GetLinkedAccounts() const { return m_linkedAccounts; }
     inline bool LinkedAccountsHasBeenSet() const { return m_linkedAccountsHasBeenSet; }
-    inline void SetLinkedAccounts(const Aws::Vector<Aws::String>& value) { m_linkedAccountsHasBeenSet = true; m_linkedAccounts = value; }
-    inline void SetLinkedAccounts(Aws::Vector<Aws::String>&& value) { m_linkedAccountsHasBeenSet = true; m_linkedAccounts = std::move(value); }
-    inline InvoiceUnitRule& WithLinkedAccounts(const Aws::Vector<Aws::String>& value) { SetLinkedAccounts(value); return *this;}
-    inline InvoiceUnitRule& WithLinkedAccounts(Aws::Vector<Aws::String>&& value) { SetLinkedAccounts(std::move(value)); return *this;}
-    inline InvoiceUnitRule& AddLinkedAccounts(const Aws::String& value) { m_linkedAccountsHasBeenSet = true; m_linkedAccounts.push_back(value); return *this; }
-    inline InvoiceUnitRule& AddLinkedAccounts(Aws::String&& value) { m_linkedAccountsHasBeenSet = true; m_linkedAccounts.push_back(std::move(value)); return *this; }
-    inline InvoiceUnitRule& AddLinkedAccounts(const char* value) { m_linkedAccountsHasBeenSet = true; m_linkedAccounts.push_back(value); return *this; }
+    template<typename LinkedAccountsT = Aws::Vector<Aws::String>>
+    void SetLinkedAccounts(LinkedAccountsT&& value) { m_linkedAccountsHasBeenSet = true; m_linkedAccounts = std::forward<LinkedAccountsT>(value); }
+    template<typename LinkedAccountsT = Aws::Vector<Aws::String>>
+    InvoiceUnitRule& WithLinkedAccounts(LinkedAccountsT&& value) { SetLinkedAccounts(std::forward<LinkedAccountsT>(value)); return *this;}
+    template<typename LinkedAccountsT = Aws::String>
+    InvoiceUnitRule& AddLinkedAccounts(LinkedAccountsT&& value) { m_linkedAccountsHasBeenSet = true; m_linkedAccounts.emplace_back(std::forward<LinkedAccountsT>(value)); return *this; }
     ///@}
   private:
 

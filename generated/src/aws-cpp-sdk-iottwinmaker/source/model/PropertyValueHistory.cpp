@@ -18,14 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-PropertyValueHistory::PropertyValueHistory() : 
-    m_entityPropertyReferenceHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 PropertyValueHistory::PropertyValueHistory(JsonView jsonValue)
-  : PropertyValueHistory()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PropertyValueHistory& PropertyValueHistory::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("entityPropertyReference"))
   {
     m_entityPropertyReference = jsonValue.GetObject("entityPropertyReference");
-
     m_entityPropertyReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -48,7 +39,6 @@ PropertyValueHistory& PropertyValueHistory::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

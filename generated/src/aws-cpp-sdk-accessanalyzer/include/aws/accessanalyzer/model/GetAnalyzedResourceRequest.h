@@ -28,7 +28,7 @@ namespace Model
   class GetAnalyzedResourceRequest : public AccessAnalyzerRequest
   {
   public:
-    AWS_ACCESSANALYZER_API GetAnalyzedResourceRequest();
+    AWS_ACCESSANALYZER_API GetAnalyzedResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,28 +47,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
      * of the analyzer</a> to retrieve information from.</p>
      */
-    inline const Aws::String& GetAnalyzerArn() const{ return m_analyzerArn; }
+    inline const Aws::String& GetAnalyzerArn() const { return m_analyzerArn; }
     inline bool AnalyzerArnHasBeenSet() const { return m_analyzerArnHasBeenSet; }
-    inline void SetAnalyzerArn(const Aws::String& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = value; }
-    inline void SetAnalyzerArn(Aws::String&& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = std::move(value); }
-    inline void SetAnalyzerArn(const char* value) { m_analyzerArnHasBeenSet = true; m_analyzerArn.assign(value); }
-    inline GetAnalyzedResourceRequest& WithAnalyzerArn(const Aws::String& value) { SetAnalyzerArn(value); return *this;}
-    inline GetAnalyzedResourceRequest& WithAnalyzerArn(Aws::String&& value) { SetAnalyzerArn(std::move(value)); return *this;}
-    inline GetAnalyzedResourceRequest& WithAnalyzerArn(const char* value) { SetAnalyzerArn(value); return *this;}
+    template<typename AnalyzerArnT = Aws::String>
+    void SetAnalyzerArn(AnalyzerArnT&& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = std::forward<AnalyzerArnT>(value); }
+    template<typename AnalyzerArnT = Aws::String>
+    GetAnalyzedResourceRequest& WithAnalyzerArn(AnalyzerArnT&& value) { SetAnalyzerArn(std::forward<AnalyzerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the resource to retrieve information about.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline GetAnalyzedResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline GetAnalyzedResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline GetAnalyzedResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    GetAnalyzedResourceRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
   private:
 

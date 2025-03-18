@@ -35,7 +35,7 @@ namespace Model
   class RelayAuthentication
   {
   public:
-    AWS_MAILMANAGER_API RelayAuthentication();
+    AWS_MAILMANAGER_API RelayAuthentication() = default;
     AWS_MAILMANAGER_API RelayAuthentication(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API RelayAuthentication& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * <p>Keep an empty structure if the relay destination server does not require SMTP
      * credential authentication.</p>
      */
-    inline const NoAuthentication& GetNoAuthentication() const{ return m_noAuthentication; }
+    inline const NoAuthentication& GetNoAuthentication() const { return m_noAuthentication; }
     inline bool NoAuthenticationHasBeenSet() const { return m_noAuthenticationHasBeenSet; }
-    inline void SetNoAuthentication(const NoAuthentication& value) { m_noAuthenticationHasBeenSet = true; m_noAuthentication = value; }
-    inline void SetNoAuthentication(NoAuthentication&& value) { m_noAuthenticationHasBeenSet = true; m_noAuthentication = std::move(value); }
-    inline RelayAuthentication& WithNoAuthentication(const NoAuthentication& value) { SetNoAuthentication(value); return *this;}
-    inline RelayAuthentication& WithNoAuthentication(NoAuthentication&& value) { SetNoAuthentication(std::move(value)); return *this;}
+    template<typename NoAuthenticationT = NoAuthentication>
+    void SetNoAuthentication(NoAuthenticationT&& value) { m_noAuthenticationHasBeenSet = true; m_noAuthentication = std::forward<NoAuthenticationT>(value); }
+    template<typename NoAuthenticationT = NoAuthentication>
+    RelayAuthentication& WithNoAuthentication(NoAuthenticationT&& value) { SetNoAuthentication(std::forward<NoAuthenticationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +59,12 @@ namespace Model
      * <p>The ARN of the secret created in secrets manager where the relay server's
      * SMTP credentials are stored.</p>
      */
-    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+    inline const Aws::String& GetSecretArn() const { return m_secretArn; }
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-    inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-    inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-    inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-    inline RelayAuthentication& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-    inline RelayAuthentication& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-    inline RelayAuthentication& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+    template<typename SecretArnT = Aws::String>
+    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
+    template<typename SecretArnT = Aws::String>
+    RelayAuthentication& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
   private:
 

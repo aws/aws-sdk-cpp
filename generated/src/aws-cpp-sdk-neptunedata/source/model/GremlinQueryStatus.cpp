@@ -18,15 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-GremlinQueryStatus::GremlinQueryStatus() : 
-    m_queryIdHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_queryEvalStatsHasBeenSet(false)
-{
-}
-
 GremlinQueryStatus::GremlinQueryStatus(JsonView jsonValue)
-  : GremlinQueryStatus()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ GremlinQueryStatus& GremlinQueryStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("queryId"))
   {
     m_queryId = jsonValue.GetString("queryId");
-
     m_queryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryString"))
   {
     m_queryString = jsonValue.GetString("queryString");
-
     m_queryStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryEvalStats"))
   {
     m_queryEvalStats = jsonValue.GetObject("queryEvalStats");
-
     m_queryEvalStatsHasBeenSet = true;
   }
-
   return *this;
 }
 

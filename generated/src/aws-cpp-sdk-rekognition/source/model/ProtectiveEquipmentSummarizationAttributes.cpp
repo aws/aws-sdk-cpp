@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-ProtectiveEquipmentSummarizationAttributes::ProtectiveEquipmentSummarizationAttributes() : 
-    m_minConfidence(0.0),
-    m_minConfidenceHasBeenSet(false),
-    m_requiredEquipmentTypesHasBeenSet(false)
-{
-}
-
 ProtectiveEquipmentSummarizationAttributes::ProtectiveEquipmentSummarizationAttributes(JsonView jsonValue)
-  : ProtectiveEquipmentSummarizationAttributes()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ProtectiveEquipmentSummarizationAttributes& ProtectiveEquipmentSummarizationAttr
   if(jsonValue.ValueExists("MinConfidence"))
   {
     m_minConfidence = jsonValue.GetDouble("MinConfidence");
-
     m_minConfidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequiredEquipmentTypes"))
   {
     Aws::Utils::Array<JsonView> requiredEquipmentTypesJsonList = jsonValue.GetArray("RequiredEquipmentTypes");
@@ -49,7 +39,6 @@ ProtectiveEquipmentSummarizationAttributes& ProtectiveEquipmentSummarizationAttr
     }
     m_requiredEquipmentTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

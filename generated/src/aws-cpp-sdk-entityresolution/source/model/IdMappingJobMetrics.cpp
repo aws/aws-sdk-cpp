@@ -18,24 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-IdMappingJobMetrics::IdMappingJobMetrics() : 
-    m_inputRecords(0),
-    m_inputRecordsHasBeenSet(false),
-    m_recordsNotProcessed(0),
-    m_recordsNotProcessedHasBeenSet(false),
-    m_totalMappedRecords(0),
-    m_totalMappedRecordsHasBeenSet(false),
-    m_totalMappedSourceRecords(0),
-    m_totalMappedSourceRecordsHasBeenSet(false),
-    m_totalMappedTargetRecords(0),
-    m_totalMappedTargetRecordsHasBeenSet(false),
-    m_totalRecordsProcessed(0),
-    m_totalRecordsProcessedHasBeenSet(false)
-{
-}
-
 IdMappingJobMetrics::IdMappingJobMetrics(JsonView jsonValue)
-  : IdMappingJobMetrics()
 {
   *this = jsonValue;
 }
@@ -45,45 +28,33 @@ IdMappingJobMetrics& IdMappingJobMetrics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("inputRecords"))
   {
     m_inputRecords = jsonValue.GetInteger("inputRecords");
-
     m_inputRecordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordsNotProcessed"))
   {
     m_recordsNotProcessed = jsonValue.GetInteger("recordsNotProcessed");
-
     m_recordsNotProcessedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalMappedRecords"))
   {
     m_totalMappedRecords = jsonValue.GetInteger("totalMappedRecords");
-
     m_totalMappedRecordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalMappedSourceRecords"))
   {
     m_totalMappedSourceRecords = jsonValue.GetInteger("totalMappedSourceRecords");
-
     m_totalMappedSourceRecordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalMappedTargetRecords"))
   {
     m_totalMappedTargetRecords = jsonValue.GetInteger("totalMappedTargetRecords");
-
     m_totalMappedTargetRecordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalRecordsProcessed"))
   {
     m_totalRecordsProcessed = jsonValue.GetInteger("totalRecordsProcessed");
-
     m_totalRecordsProcessedHasBeenSet = true;
   }
-
   return *this;
 }
 

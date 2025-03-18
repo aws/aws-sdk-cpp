@@ -18,17 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-TextValidation::TextValidation() : 
-    m_minLength(0),
-    m_minLengthHasBeenSet(false),
-    m_maxLength(0),
-    m_maxLengthHasBeenSet(false),
-    m_patternHasBeenSet(false)
-{
-}
-
 TextValidation::TextValidation(JsonView jsonValue)
-  : TextValidation()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ TextValidation& TextValidation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MinLength"))
   {
     m_minLength = jsonValue.GetInteger("MinLength");
-
     m_minLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxLength"))
   {
     m_maxLength = jsonValue.GetInteger("MaxLength");
-
     m_maxLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pattern"))
   {
     m_pattern = jsonValue.GetString("Pattern");
-
     m_patternHasBeenSet = true;
   }
-
   return *this;
 }
 

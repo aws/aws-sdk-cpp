@@ -12,13 +12,6 @@ using namespace Aws::signer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RevokeSignatureRequest::RevokeSignatureRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_jobOwnerHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 Aws::String RevokeSignatureRequest::SerializePayload() const
 {
   JsonValue payload;

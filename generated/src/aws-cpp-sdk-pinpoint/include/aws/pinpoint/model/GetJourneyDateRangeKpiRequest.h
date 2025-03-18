@@ -26,7 +26,7 @@ namespace Model
   class GetJourneyDateRangeKpiRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API GetJourneyDateRangeKpiRequest();
+    AWS_PINPOINT_API GetJourneyDateRangeKpiRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline GetJourneyDateRangeKpiRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline GetJourneyDateRangeKpiRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline GetJourneyDateRangeKpiRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    GetJourneyDateRangeKpiRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,26 +59,24 @@ namespace Model
      * format and use Coordinated Universal Time (UTC), for example:
      * 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline GetJourneyDateRangeKpiRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetJourneyDateRangeKpiRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetJourneyDateRangeKpiRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the journey.</p>
      */
-    inline const Aws::String& GetJourneyId() const{ return m_journeyId; }
+    inline const Aws::String& GetJourneyId() const { return m_journeyId; }
     inline bool JourneyIdHasBeenSet() const { return m_journeyIdHasBeenSet; }
-    inline void SetJourneyId(const Aws::String& value) { m_journeyIdHasBeenSet = true; m_journeyId = value; }
-    inline void SetJourneyId(Aws::String&& value) { m_journeyIdHasBeenSet = true; m_journeyId = std::move(value); }
-    inline void SetJourneyId(const char* value) { m_journeyIdHasBeenSet = true; m_journeyId.assign(value); }
-    inline GetJourneyDateRangeKpiRequest& WithJourneyId(const Aws::String& value) { SetJourneyId(value); return *this;}
-    inline GetJourneyDateRangeKpiRequest& WithJourneyId(Aws::String&& value) { SetJourneyId(std::move(value)); return *this;}
-    inline GetJourneyDateRangeKpiRequest& WithJourneyId(const char* value) { SetJourneyId(value); return *this;}
+    template<typename JourneyIdT = Aws::String>
+    void SetJourneyId(JourneyIdT&& value) { m_journeyIdHasBeenSet = true; m_journeyId = std::forward<JourneyIdT>(value); }
+    template<typename JourneyIdT = Aws::String>
+    GetJourneyDateRangeKpiRequest& WithJourneyId(JourneyIdT&& value) { SetJourneyId(std::forward<JourneyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +89,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
-    inline const Aws::String& GetKpiName() const{ return m_kpiName; }
+    inline const Aws::String& GetKpiName() const { return m_kpiName; }
     inline bool KpiNameHasBeenSet() const { return m_kpiNameHasBeenSet; }
-    inline void SetKpiName(const Aws::String& value) { m_kpiNameHasBeenSet = true; m_kpiName = value; }
-    inline void SetKpiName(Aws::String&& value) { m_kpiNameHasBeenSet = true; m_kpiName = std::move(value); }
-    inline void SetKpiName(const char* value) { m_kpiNameHasBeenSet = true; m_kpiName.assign(value); }
-    inline GetJourneyDateRangeKpiRequest& WithKpiName(const Aws::String& value) { SetKpiName(value); return *this;}
-    inline GetJourneyDateRangeKpiRequest& WithKpiName(Aws::String&& value) { SetKpiName(std::move(value)); return *this;}
-    inline GetJourneyDateRangeKpiRequest& WithKpiName(const char* value) { SetKpiName(value); return *this;}
+    template<typename KpiNameT = Aws::String>
+    void SetKpiName(KpiNameT&& value) { m_kpiNameHasBeenSet = true; m_kpiName = std::forward<KpiNameT>(value); }
+    template<typename KpiNameT = Aws::String>
+    GetJourneyDateRangeKpiRequest& WithKpiName(KpiNameT&& value) { SetKpiName(std::forward<KpiNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,14 +103,12 @@ namespace Model
      * response. This parameter is not supported for application, campaign, and journey
      * metrics.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetJourneyDateRangeKpiRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetJourneyDateRangeKpiRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetJourneyDateRangeKpiRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetJourneyDateRangeKpiRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,14 +117,12 @@ namespace Model
      * This parameter is not supported for application, campaign, and journey
      * metrics.</p>
      */
-    inline const Aws::String& GetPageSize() const{ return m_pageSize; }
+    inline const Aws::String& GetPageSize() const { return m_pageSize; }
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
-    inline void SetPageSize(const Aws::String& value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
-    inline void SetPageSize(Aws::String&& value) { m_pageSizeHasBeenSet = true; m_pageSize = std::move(value); }
-    inline void SetPageSize(const char* value) { m_pageSizeHasBeenSet = true; m_pageSize.assign(value); }
-    inline GetJourneyDateRangeKpiRequest& WithPageSize(const Aws::String& value) { SetPageSize(value); return *this;}
-    inline GetJourneyDateRangeKpiRequest& WithPageSize(Aws::String&& value) { SetPageSize(std::move(value)); return *this;}
-    inline GetJourneyDateRangeKpiRequest& WithPageSize(const char* value) { SetPageSize(value); return *this;}
+    template<typename PageSizeT = Aws::String>
+    void SetPageSize(PageSizeT&& value) { m_pageSizeHasBeenSet = true; m_pageSize = std::forward<PageSizeT>(value); }
+    template<typename PageSizeT = Aws::String>
+    GetJourneyDateRangeKpiRequest& WithPageSize(PageSizeT&& value) { SetPageSize(std::forward<PageSizeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,19 +133,19 @@ namespace Model
      * 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be
      * fewer than 90 days from the current day.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline GetJourneyDateRangeKpiRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetJourneyDateRangeKpiRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetJourneyDateRangeKpiRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
     Aws::String m_journeyId;
@@ -170,7 +160,7 @@ namespace Model
     Aws::String m_pageSize;
     bool m_pageSizeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
   };
 

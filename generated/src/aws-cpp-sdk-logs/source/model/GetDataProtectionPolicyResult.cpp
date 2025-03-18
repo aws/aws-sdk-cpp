@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDataProtectionPolicyResult::GetDataProtectionPolicyResult() : 
-    m_lastUpdatedTime(0)
-{
-}
-
 GetDataProtectionPolicyResult::GetDataProtectionPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetDataProtectionPolicyResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ GetDataProtectionPolicyResult& GetDataProtectionPolicyResult::operator =(const A
   if(jsonValue.ValueExists("logGroupIdentifier"))
   {
     m_logGroupIdentifier = jsonValue.GetString("logGroupIdentifier");
-
+    m_logGroupIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyDocument"))
   {
     m_policyDocument = jsonValue.GetString("policyDocument");
-
+    m_policyDocumentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetInt64("lastUpdatedTime");
-
+    m_lastUpdatedTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

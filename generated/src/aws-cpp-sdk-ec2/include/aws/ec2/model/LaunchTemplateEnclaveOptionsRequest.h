@@ -33,7 +33,7 @@ namespace Model
   class LaunchTemplateEnclaveOptionsRequest
   {
   public:
-    AWS_EC2_API LaunchTemplateEnclaveOptionsRequest();
+    AWS_EC2_API LaunchTemplateEnclaveOptionsRequest() = default;
     AWS_EC2_API LaunchTemplateEnclaveOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API LaunchTemplateEnclaveOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,14 @@ namespace Model
      * <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this
      * parameter to <code>true</code>.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline LaunchTemplateEnclaveOptionsRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

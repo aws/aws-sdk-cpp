@@ -35,7 +35,7 @@ namespace Model
   class PatchComplianceData
   {
   public:
-    AWS_SSM_API PatchComplianceData();
+    AWS_SSM_API PatchComplianceData() = default;
     AWS_SSM_API PatchComplianceData(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API PatchComplianceData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The title of the patch.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline PatchComplianceData& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline PatchComplianceData& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline PatchComplianceData& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    PatchComplianceData& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operating system-specific ID of the patch.</p>
      */
-    inline const Aws::String& GetKBId() const{ return m_kBId; }
+    inline const Aws::String& GetKBId() const { return m_kBId; }
     inline bool KBIdHasBeenSet() const { return m_kBIdHasBeenSet; }
-    inline void SetKBId(const Aws::String& value) { m_kBIdHasBeenSet = true; m_kBId = value; }
-    inline void SetKBId(Aws::String&& value) { m_kBIdHasBeenSet = true; m_kBId = std::move(value); }
-    inline void SetKBId(const char* value) { m_kBIdHasBeenSet = true; m_kBId.assign(value); }
-    inline PatchComplianceData& WithKBId(const Aws::String& value) { SetKBId(value); return *this;}
-    inline PatchComplianceData& WithKBId(Aws::String&& value) { SetKBId(std::move(value)); return *this;}
-    inline PatchComplianceData& WithKBId(const char* value) { SetKBId(value); return *this;}
+    template<typename KBIdT = Aws::String>
+    void SetKBId(KBIdT&& value) { m_kBIdHasBeenSet = true; m_kBId = std::forward<KBIdT>(value); }
+    template<typename KBIdT = Aws::String>
+    PatchComplianceData& WithKBId(KBIdT&& value) { SetKBId(std::forward<KBIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * <p>The classification of the patch, such as <code>SecurityUpdates</code>,
      * <code>Updates</code>, and <code>CriticalUpdates</code>.</p>
      */
-    inline const Aws::String& GetClassification() const{ return m_classification; }
+    inline const Aws::String& GetClassification() const { return m_classification; }
     inline bool ClassificationHasBeenSet() const { return m_classificationHasBeenSet; }
-    inline void SetClassification(const Aws::String& value) { m_classificationHasBeenSet = true; m_classification = value; }
-    inline void SetClassification(Aws::String&& value) { m_classificationHasBeenSet = true; m_classification = std::move(value); }
-    inline void SetClassification(const char* value) { m_classificationHasBeenSet = true; m_classification.assign(value); }
-    inline PatchComplianceData& WithClassification(const Aws::String& value) { SetClassification(value); return *this;}
-    inline PatchComplianceData& WithClassification(Aws::String&& value) { SetClassification(std::move(value)); return *this;}
-    inline PatchComplianceData& WithClassification(const char* value) { SetClassification(value); return *this;}
+    template<typename ClassificationT = Aws::String>
+    void SetClassification(ClassificationT&& value) { m_classificationHasBeenSet = true; m_classification = std::forward<ClassificationT>(value); }
+    template<typename ClassificationT = Aws::String>
+    PatchComplianceData& WithClassification(ClassificationT&& value) { SetClassification(std::forward<ClassificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +83,12 @@ namespace Model
      * <p>The severity of the patch such as <code>Critical</code>,
      * <code>Important</code>, and <code>Moderate</code>.</p>
      */
-    inline const Aws::String& GetSeverity() const{ return m_severity; }
+    inline const Aws::String& GetSeverity() const { return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
-    inline void SetSeverity(const Aws::String& value) { m_severityHasBeenSet = true; m_severity = value; }
-    inline void SetSeverity(Aws::String&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
-    inline void SetSeverity(const char* value) { m_severityHasBeenSet = true; m_severity.assign(value); }
-    inline PatchComplianceData& WithSeverity(const Aws::String& value) { SetSeverity(value); return *this;}
-    inline PatchComplianceData& WithSeverity(Aws::String&& value) { SetSeverity(std::move(value)); return *this;}
-    inline PatchComplianceData& WithSeverity(const char* value) { SetSeverity(value); return *this;}
+    template<typename SeverityT = Aws::String>
+    void SetSeverity(SeverityT&& value) { m_severityHasBeenSet = true; m_severity = std::forward<SeverityT>(value); }
+    template<typename SeverityT = Aws::String>
+    PatchComplianceData& WithSeverity(SeverityT&& value) { SetSeverity(std::forward<SeverityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,12 +99,10 @@ namespace Model
      * patch compliance</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
-    inline const PatchComplianceDataState& GetState() const{ return m_state; }
+    inline PatchComplianceDataState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const PatchComplianceDataState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(PatchComplianceDataState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline PatchComplianceData& WithState(const PatchComplianceDataState& value) { SetState(value); return *this;}
-    inline PatchComplianceData& WithState(PatchComplianceDataState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(PatchComplianceDataState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline PatchComplianceData& WithState(PatchComplianceDataState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -120,12 +110,12 @@ namespace Model
      * <p>The date/time the patch was installed on the managed node. Not all operating
      * systems provide this level of information.</p>
      */
-    inline const Aws::Utils::DateTime& GetInstalledTime() const{ return m_installedTime; }
+    inline const Aws::Utils::DateTime& GetInstalledTime() const { return m_installedTime; }
     inline bool InstalledTimeHasBeenSet() const { return m_installedTimeHasBeenSet; }
-    inline void SetInstalledTime(const Aws::Utils::DateTime& value) { m_installedTimeHasBeenSet = true; m_installedTime = value; }
-    inline void SetInstalledTime(Aws::Utils::DateTime&& value) { m_installedTimeHasBeenSet = true; m_installedTime = std::move(value); }
-    inline PatchComplianceData& WithInstalledTime(const Aws::Utils::DateTime& value) { SetInstalledTime(value); return *this;}
-    inline PatchComplianceData& WithInstalledTime(Aws::Utils::DateTime&& value) { SetInstalledTime(std::move(value)); return *this;}
+    template<typename InstalledTimeT = Aws::Utils::DateTime>
+    void SetInstalledTime(InstalledTimeT&& value) { m_installedTimeHasBeenSet = true; m_installedTime = std::forward<InstalledTimeT>(value); }
+    template<typename InstalledTimeT = Aws::Utils::DateTime>
+    PatchComplianceData& WithInstalledTime(InstalledTimeT&& value) { SetInstalledTime(std::forward<InstalledTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,14 +125,12 @@ namespace Model
      * only for patches with a status of <code>Missing</code> or
      * <code>Failed</code>.</p> 
      */
-    inline const Aws::String& GetCVEIds() const{ return m_cVEIds; }
+    inline const Aws::String& GetCVEIds() const { return m_cVEIds; }
     inline bool CVEIdsHasBeenSet() const { return m_cVEIdsHasBeenSet; }
-    inline void SetCVEIds(const Aws::String& value) { m_cVEIdsHasBeenSet = true; m_cVEIds = value; }
-    inline void SetCVEIds(Aws::String&& value) { m_cVEIdsHasBeenSet = true; m_cVEIds = std::move(value); }
-    inline void SetCVEIds(const char* value) { m_cVEIdsHasBeenSet = true; m_cVEIds.assign(value); }
-    inline PatchComplianceData& WithCVEIds(const Aws::String& value) { SetCVEIds(value); return *this;}
-    inline PatchComplianceData& WithCVEIds(Aws::String&& value) { SetCVEIds(std::move(value)); return *this;}
-    inline PatchComplianceData& WithCVEIds(const char* value) { SetCVEIds(value); return *this;}
+    template<typename CVEIdsT = Aws::String>
+    void SetCVEIds(CVEIdsT&& value) { m_cVEIdsHasBeenSet = true; m_cVEIds = std::forward<CVEIdsT>(value); }
+    template<typename CVEIdsT = Aws::String>
+    PatchComplianceData& WithCVEIds(CVEIdsT&& value) { SetCVEIds(std::forward<CVEIdsT>(value)); return *this;}
     ///@}
   private:
 
@@ -158,10 +146,10 @@ namespace Model
     Aws::String m_severity;
     bool m_severityHasBeenSet = false;
 
-    PatchComplianceDataState m_state;
+    PatchComplianceDataState m_state{PatchComplianceDataState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_installedTime;
+    Aws::Utils::DateTime m_installedTime{};
     bool m_installedTimeHasBeenSet = false;
 
     Aws::String m_cVEIds;

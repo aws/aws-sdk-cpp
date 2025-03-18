@@ -12,14 +12,6 @@ using namespace Aws::ComprehendMedical::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSNOMEDCTInferenceJobsRequest::ListSNOMEDCTInferenceJobsRequest() : 
-    m_filterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListSNOMEDCTInferenceJobsRequest::SerializePayload() const
 {
   JsonValue payload;

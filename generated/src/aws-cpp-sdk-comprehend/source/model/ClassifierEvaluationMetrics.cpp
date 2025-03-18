@@ -18,28 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-ClassifierEvaluationMetrics::ClassifierEvaluationMetrics() : 
-    m_accuracy(0.0),
-    m_accuracyHasBeenSet(false),
-    m_precision(0.0),
-    m_precisionHasBeenSet(false),
-    m_recall(0.0),
-    m_recallHasBeenSet(false),
-    m_f1Score(0.0),
-    m_f1ScoreHasBeenSet(false),
-    m_microPrecision(0.0),
-    m_microPrecisionHasBeenSet(false),
-    m_microRecall(0.0),
-    m_microRecallHasBeenSet(false),
-    m_microF1Score(0.0),
-    m_microF1ScoreHasBeenSet(false),
-    m_hammingLoss(0.0),
-    m_hammingLossHasBeenSet(false)
-{
-}
-
 ClassifierEvaluationMetrics::ClassifierEvaluationMetrics(JsonView jsonValue)
-  : ClassifierEvaluationMetrics()
 {
   *this = jsonValue;
 }
@@ -49,59 +28,43 @@ ClassifierEvaluationMetrics& ClassifierEvaluationMetrics::operator =(JsonView js
   if(jsonValue.ValueExists("Accuracy"))
   {
     m_accuracy = jsonValue.GetDouble("Accuracy");
-
     m_accuracyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Precision"))
   {
     m_precision = jsonValue.GetDouble("Precision");
-
     m_precisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Recall"))
   {
     m_recall = jsonValue.GetDouble("Recall");
-
     m_recallHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("F1Score"))
   {
     m_f1Score = jsonValue.GetDouble("F1Score");
-
     m_f1ScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MicroPrecision"))
   {
     m_microPrecision = jsonValue.GetDouble("MicroPrecision");
-
     m_microPrecisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MicroRecall"))
   {
     m_microRecall = jsonValue.GetDouble("MicroRecall");
-
     m_microRecallHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MicroF1Score"))
   {
     m_microF1Score = jsonValue.GetDouble("MicroF1Score");
-
     m_microF1ScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HammingLoss"))
   {
     m_hammingLoss = jsonValue.GetDouble("HammingLoss");
-
     m_hammingLossHasBeenSet = true;
   }
-
   return *this;
 }
 

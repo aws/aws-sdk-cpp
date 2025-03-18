@@ -34,7 +34,7 @@ namespace Model
   class DnsConfigChange
   {
   public:
-    AWS_SERVICEDISCOVERY_API DnsConfigChange();
+    AWS_SERVICEDISCOVERY_API DnsConfigChange() = default;
     AWS_SERVICEDISCOVERY_API DnsConfigChange(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API DnsConfigChange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * <p>An array that contains one <code>DnsRecord</code> object for each Route 53
      * record that you want Cloud Map to create when you register an instance.</p>
      */
-    inline const Aws::Vector<DnsRecord>& GetDnsRecords() const{ return m_dnsRecords; }
+    inline const Aws::Vector<DnsRecord>& GetDnsRecords() const { return m_dnsRecords; }
     inline bool DnsRecordsHasBeenSet() const { return m_dnsRecordsHasBeenSet; }
-    inline void SetDnsRecords(const Aws::Vector<DnsRecord>& value) { m_dnsRecordsHasBeenSet = true; m_dnsRecords = value; }
-    inline void SetDnsRecords(Aws::Vector<DnsRecord>&& value) { m_dnsRecordsHasBeenSet = true; m_dnsRecords = std::move(value); }
-    inline DnsConfigChange& WithDnsRecords(const Aws::Vector<DnsRecord>& value) { SetDnsRecords(value); return *this;}
-    inline DnsConfigChange& WithDnsRecords(Aws::Vector<DnsRecord>&& value) { SetDnsRecords(std::move(value)); return *this;}
-    inline DnsConfigChange& AddDnsRecords(const DnsRecord& value) { m_dnsRecordsHasBeenSet = true; m_dnsRecords.push_back(value); return *this; }
-    inline DnsConfigChange& AddDnsRecords(DnsRecord&& value) { m_dnsRecordsHasBeenSet = true; m_dnsRecords.push_back(std::move(value)); return *this; }
+    template<typename DnsRecordsT = Aws::Vector<DnsRecord>>
+    void SetDnsRecords(DnsRecordsT&& value) { m_dnsRecordsHasBeenSet = true; m_dnsRecords = std::forward<DnsRecordsT>(value); }
+    template<typename DnsRecordsT = Aws::Vector<DnsRecord>>
+    DnsConfigChange& WithDnsRecords(DnsRecordsT&& value) { SetDnsRecords(std::forward<DnsRecordsT>(value)); return *this;}
+    template<typename DnsRecordsT = DnsRecord>
+    DnsConfigChange& AddDnsRecords(DnsRecordsT&& value) { m_dnsRecordsHasBeenSet = true; m_dnsRecords.emplace_back(std::forward<DnsRecordsT>(value)); return *this; }
     ///@}
   private:
 

@@ -27,7 +27,7 @@ namespace Model
   class StartWorkflowRunResult
   {
   public:
-    AWS_CODECATALYST_API StartWorkflowRunResult();
+    AWS_CODECATALYST_API StartWorkflowRunResult() = default;
     AWS_CODECATALYST_API StartWorkflowRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECATALYST_API StartWorkflowRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,75 +36,70 @@ namespace Model
     /**
      * <p>The name of the space.</p>
      */
-    inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
-    inline void SetSpaceName(const Aws::String& value) { m_spaceName = value; }
-    inline void SetSpaceName(Aws::String&& value) { m_spaceName = std::move(value); }
-    inline void SetSpaceName(const char* value) { m_spaceName.assign(value); }
-    inline StartWorkflowRunResult& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
-    inline StartWorkflowRunResult& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
-    inline StartWorkflowRunResult& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+    inline const Aws::String& GetSpaceName() const { return m_spaceName; }
+    template<typename SpaceNameT = Aws::String>
+    void SetSpaceName(SpaceNameT&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::forward<SpaceNameT>(value); }
+    template<typename SpaceNameT = Aws::String>
+    StartWorkflowRunResult& WithSpaceName(SpaceNameT&& value) { SetSpaceName(std::forward<SpaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the project in the space.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
-    inline void SetProjectName(const Aws::String& value) { m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectName.assign(value); }
-    inline StartWorkflowRunResult& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline StartWorkflowRunResult& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline StartWorkflowRunResult& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    StartWorkflowRunResult& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The system-generated unique ID of the workflow run.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline StartWorkflowRunResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline StartWorkflowRunResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline StartWorkflowRunResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    StartWorkflowRunResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The system-generated unique ID of the workflow.</p>
      */
-    inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
-    inline void SetWorkflowId(const Aws::String& value) { m_workflowId = value; }
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowId = std::move(value); }
-    inline void SetWorkflowId(const char* value) { m_workflowId.assign(value); }
-    inline StartWorkflowRunResult& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
-    inline StartWorkflowRunResult& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
-    inline StartWorkflowRunResult& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+    inline const Aws::String& GetWorkflowId() const { return m_workflowId; }
+    template<typename WorkflowIdT = Aws::String>
+    void SetWorkflowId(WorkflowIdT&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::forward<WorkflowIdT>(value); }
+    template<typename WorkflowIdT = Aws::String>
+    StartWorkflowRunResult& WithWorkflowId(WorkflowIdT&& value) { SetWorkflowId(std::forward<WorkflowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartWorkflowRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartWorkflowRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartWorkflowRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartWorkflowRunResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_spaceName;
+    bool m_spaceNameHasBeenSet = false;
 
     Aws::String m_projectName;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_workflowId;
+    bool m_workflowIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

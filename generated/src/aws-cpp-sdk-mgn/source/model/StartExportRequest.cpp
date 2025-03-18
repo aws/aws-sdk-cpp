@@ -12,13 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartExportRequest::StartExportRequest() : 
-    m_s3BucketHasBeenSet(false),
-    m_s3BucketOwnerHasBeenSet(false),
-    m_s3KeyHasBeenSet(false)
-{
-}
-
 Aws::String StartExportRequest::SerializePayload() const
 {
   JsonValue payload;

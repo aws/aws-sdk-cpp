@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ImportWorkspaceImageResult::ImportWorkspaceImageResult()
-{
-}
-
 ImportWorkspaceImageResult::ImportWorkspaceImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ ImportWorkspaceImageResult& ImportWorkspaceImageResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("ImageId"))
   {
     m_imageId = jsonValue.GetString("ImageId");
-
+    m_imageIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

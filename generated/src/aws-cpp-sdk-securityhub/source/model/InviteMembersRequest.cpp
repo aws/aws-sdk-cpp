@@ -12,11 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-InviteMembersRequest::InviteMembersRequest() : 
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 Aws::String InviteMembersRequest::SerializePayload() const
 {
   JsonValue payload;

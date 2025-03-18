@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialCategoricalDataColor::GeospatialCategoricalDataColor() : 
-    m_colorHasBeenSet(false),
-    m_dataValueHasBeenSet(false)
-{
-}
-
 GeospatialCategoricalDataColor::GeospatialCategoricalDataColor(JsonView jsonValue)
-  : GeospatialCategoricalDataColor()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GeospatialCategoricalDataColor& GeospatialCategoricalDataColor::operator =(JsonV
   if(jsonValue.ValueExists("Color"))
   {
     m_color = jsonValue.GetString("Color");
-
     m_colorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataValue"))
   {
     m_dataValue = jsonValue.GetString("DataValue");
-
     m_dataValueHasBeenSet = true;
   }
-
   return *this;
 }
 

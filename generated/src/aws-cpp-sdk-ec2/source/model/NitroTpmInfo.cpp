@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NitroTpmInfo::NitroTpmInfo() : 
-    m_supportedVersionsHasBeenSet(false)
-{
-}
-
 NitroTpmInfo::NitroTpmInfo(const XmlNode& xmlNode)
-  : NitroTpmInfo()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ NitroTpmInfo& NitroTpmInfo::operator =(const XmlNode& xmlNode)
     if(!supportedVersionsNode.IsNull())
     {
       XmlNode supportedVersionsMember = supportedVersionsNode.FirstChild("item");
+      m_supportedVersionsHasBeenSet = !supportedVersionsMember.IsNull();
       while(!supportedVersionsMember.IsNull())
       {
         m_supportedVersions.push_back(supportedVersionsMember.GetText());

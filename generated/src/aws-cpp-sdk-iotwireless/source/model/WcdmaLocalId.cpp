@@ -18,16 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-WcdmaLocalId::WcdmaLocalId() : 
-    m_uarfcndl(0),
-    m_uarfcndlHasBeenSet(false),
-    m_psc(0),
-    m_pscHasBeenSet(false)
-{
-}
-
 WcdmaLocalId::WcdmaLocalId(JsonView jsonValue)
-  : WcdmaLocalId()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ WcdmaLocalId& WcdmaLocalId::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Uarfcndl"))
   {
     m_uarfcndl = jsonValue.GetInteger("Uarfcndl");
-
     m_uarfcndlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Psc"))
   {
     m_psc = jsonValue.GetInteger("Psc");
-
     m_pscHasBeenSet = true;
   }
-
   return *this;
 }
 

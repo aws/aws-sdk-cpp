@@ -28,7 +28,7 @@ namespace Model
   class UpdateServiceLevelObjectiveResult
   {
   public:
-    AWS_APPLICATIONSIGNALS_API UpdateServiceLevelObjectiveResult();
+    AWS_APPLICATIONSIGNALS_API UpdateServiceLevelObjectiveResult() = default;
     AWS_APPLICATIONSIGNALS_API UpdateServiceLevelObjectiveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONSIGNALS_API UpdateServiceLevelObjectiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A structure that contains information about the SLO that you just
      * updated.</p>
      */
-    inline const ServiceLevelObjective& GetSlo() const{ return m_slo; }
-    inline void SetSlo(const ServiceLevelObjective& value) { m_slo = value; }
-    inline void SetSlo(ServiceLevelObjective&& value) { m_slo = std::move(value); }
-    inline UpdateServiceLevelObjectiveResult& WithSlo(const ServiceLevelObjective& value) { SetSlo(value); return *this;}
-    inline UpdateServiceLevelObjectiveResult& WithSlo(ServiceLevelObjective&& value) { SetSlo(std::move(value)); return *this;}
+    inline const ServiceLevelObjective& GetSlo() const { return m_slo; }
+    template<typename SloT = ServiceLevelObjective>
+    void SetSlo(SloT&& value) { m_sloHasBeenSet = true; m_slo = std::forward<SloT>(value); }
+    template<typename SloT = ServiceLevelObjective>
+    UpdateServiceLevelObjectiveResult& WithSlo(SloT&& value) { SetSlo(std::forward<SloT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateServiceLevelObjectiveResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateServiceLevelObjectiveResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateServiceLevelObjectiveResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateServiceLevelObjectiveResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ServiceLevelObjective m_slo;
+    bool m_sloHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

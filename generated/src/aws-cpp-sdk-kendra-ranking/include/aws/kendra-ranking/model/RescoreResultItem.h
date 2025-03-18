@@ -32,7 +32,7 @@ namespace Model
   class RescoreResultItem
   {
   public:
-    AWS_KENDRARANKING_API RescoreResultItem();
+    AWS_KENDRARANKING_API RescoreResultItem() = default;
     AWS_KENDRARANKING_API RescoreResultItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRARANKING_API RescoreResultItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRARANKING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The identifier of the document from the search service.</p>
      */
-    inline const Aws::String& GetDocumentId() const{ return m_documentId; }
+    inline const Aws::String& GetDocumentId() const { return m_documentId; }
     inline bool DocumentIdHasBeenSet() const { return m_documentIdHasBeenSet; }
-    inline void SetDocumentId(const Aws::String& value) { m_documentIdHasBeenSet = true; m_documentId = value; }
-    inline void SetDocumentId(Aws::String&& value) { m_documentIdHasBeenSet = true; m_documentId = std::move(value); }
-    inline void SetDocumentId(const char* value) { m_documentIdHasBeenSet = true; m_documentId.assign(value); }
-    inline RescoreResultItem& WithDocumentId(const Aws::String& value) { SetDocumentId(value); return *this;}
-    inline RescoreResultItem& WithDocumentId(Aws::String&& value) { SetDocumentId(std::move(value)); return *this;}
-    inline RescoreResultItem& WithDocumentId(const char* value) { SetDocumentId(value); return *this;}
+    template<typename DocumentIdT = Aws::String>
+    void SetDocumentId(DocumentIdT&& value) { m_documentIdHasBeenSet = true; m_documentId = std::forward<DocumentIdT>(value); }
+    template<typename DocumentIdT = Aws::String>
+    RescoreResultItem& WithDocumentId(DocumentIdT&& value) { SetDocumentId(std::forward<DocumentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p>The relevancy score or rank that Amazon Kendra Intelligent Ranking gives to
      * the result.</p>
      */
-    inline double GetScore() const{ return m_score; }
+    inline double GetScore() const { return m_score; }
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
     inline RescoreResultItem& WithScore(double value) { SetScore(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_documentId;
     bool m_documentIdHasBeenSet = false;
 
-    double m_score;
+    double m_score{0.0};
     bool m_scoreHasBeenSet = false;
   };
 

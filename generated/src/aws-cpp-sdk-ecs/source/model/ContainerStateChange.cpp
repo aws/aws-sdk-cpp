@@ -18,20 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ContainerStateChange::ContainerStateChange() : 
-    m_containerNameHasBeenSet(false),
-    m_imageDigestHasBeenSet(false),
-    m_runtimeIdHasBeenSet(false),
-    m_exitCode(0),
-    m_exitCodeHasBeenSet(false),
-    m_networkBindingsHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 ContainerStateChange::ContainerStateChange(JsonView jsonValue)
-  : ContainerStateChange()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ ContainerStateChange& ContainerStateChange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("containerName"))
   {
     m_containerName = jsonValue.GetString("containerName");
-
     m_containerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageDigest"))
   {
     m_imageDigest = jsonValue.GetString("imageDigest");
-
     m_imageDigestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runtimeId"))
   {
     m_runtimeId = jsonValue.GetString("runtimeId");
-
     m_runtimeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exitCode"))
   {
     m_exitCode = jsonValue.GetInteger("exitCode");
-
     m_exitCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkBindings"))
   {
     Aws::Utils::Array<JsonView> networkBindingsJsonList = jsonValue.GetArray("networkBindings");
@@ -75,21 +54,16 @@ ContainerStateChange& ContainerStateChange::operator =(JsonView jsonValue)
     }
     m_networkBindingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

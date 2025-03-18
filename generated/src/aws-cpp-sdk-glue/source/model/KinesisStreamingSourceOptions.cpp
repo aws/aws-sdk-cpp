@@ -18,44 +18,7 @@ namespace Glue
 namespace Model
 {
 
-KinesisStreamingSourceOptions::KinesisStreamingSourceOptions() : 
-    m_endpointUrlHasBeenSet(false),
-    m_streamNameHasBeenSet(false),
-    m_classificationHasBeenSet(false),
-    m_delimiterHasBeenSet(false),
-    m_startingPosition(StartingPosition::NOT_SET),
-    m_startingPositionHasBeenSet(false),
-    m_maxFetchTimeInMs(0),
-    m_maxFetchTimeInMsHasBeenSet(false),
-    m_maxFetchRecordsPerShard(0),
-    m_maxFetchRecordsPerShardHasBeenSet(false),
-    m_maxRecordPerRead(0),
-    m_maxRecordPerReadHasBeenSet(false),
-    m_addIdleTimeBetweenReads(false),
-    m_addIdleTimeBetweenReadsHasBeenSet(false),
-    m_idleTimeBetweenReadsInMs(0),
-    m_idleTimeBetweenReadsInMsHasBeenSet(false),
-    m_describeShardInterval(0),
-    m_describeShardIntervalHasBeenSet(false),
-    m_numRetries(0),
-    m_numRetriesHasBeenSet(false),
-    m_retryIntervalMs(0),
-    m_retryIntervalMsHasBeenSet(false),
-    m_maxRetryIntervalMs(0),
-    m_maxRetryIntervalMsHasBeenSet(false),
-    m_avoidEmptyBatches(false),
-    m_avoidEmptyBatchesHasBeenSet(false),
-    m_streamArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_roleSessionNameHasBeenSet(false),
-    m_addRecordTimestampHasBeenSet(false),
-    m_emitConsumerLagMetricsHasBeenSet(false),
-    m_startingTimestampHasBeenSet(false)
-{
-}
-
 KinesisStreamingSourceOptions::KinesisStreamingSourceOptions(JsonView jsonValue)
-  : KinesisStreamingSourceOptions()
 {
   *this = jsonValue;
 }
@@ -65,150 +28,108 @@ KinesisStreamingSourceOptions& KinesisStreamingSourceOptions::operator =(JsonVie
   if(jsonValue.ValueExists("EndpointUrl"))
   {
     m_endpointUrl = jsonValue.GetString("EndpointUrl");
-
     m_endpointUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamName"))
   {
     m_streamName = jsonValue.GetString("StreamName");
-
     m_streamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Classification"))
   {
     m_classification = jsonValue.GetString("Classification");
-
     m_classificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Delimiter"))
   {
     m_delimiter = jsonValue.GetString("Delimiter");
-
     m_delimiterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartingPosition"))
   {
     m_startingPosition = StartingPositionMapper::GetStartingPositionForName(jsonValue.GetString("StartingPosition"));
-
     m_startingPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxFetchTimeInMs"))
   {
     m_maxFetchTimeInMs = jsonValue.GetInt64("MaxFetchTimeInMs");
-
     m_maxFetchTimeInMsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxFetchRecordsPerShard"))
   {
     m_maxFetchRecordsPerShard = jsonValue.GetInt64("MaxFetchRecordsPerShard");
-
     m_maxFetchRecordsPerShardHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxRecordPerRead"))
   {
     m_maxRecordPerRead = jsonValue.GetInt64("MaxRecordPerRead");
-
     m_maxRecordPerReadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddIdleTimeBetweenReads"))
   {
     m_addIdleTimeBetweenReads = jsonValue.GetBool("AddIdleTimeBetweenReads");
-
     m_addIdleTimeBetweenReadsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdleTimeBetweenReadsInMs"))
   {
     m_idleTimeBetweenReadsInMs = jsonValue.GetInt64("IdleTimeBetweenReadsInMs");
-
     m_idleTimeBetweenReadsInMsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DescribeShardInterval"))
   {
     m_describeShardInterval = jsonValue.GetInt64("DescribeShardInterval");
-
     m_describeShardIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumRetries"))
   {
     m_numRetries = jsonValue.GetInteger("NumRetries");
-
     m_numRetriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetryIntervalMs"))
   {
     m_retryIntervalMs = jsonValue.GetInt64("RetryIntervalMs");
-
     m_retryIntervalMsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxRetryIntervalMs"))
   {
     m_maxRetryIntervalMs = jsonValue.GetInt64("MaxRetryIntervalMs");
-
     m_maxRetryIntervalMsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvoidEmptyBatches"))
   {
     m_avoidEmptyBatches = jsonValue.GetBool("AvoidEmptyBatches");
-
     m_avoidEmptyBatchesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamArn"))
   {
     m_streamArn = jsonValue.GetString("StreamArn");
-
     m_streamArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleSessionName"))
   {
     m_roleSessionName = jsonValue.GetString("RoleSessionName");
-
     m_roleSessionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddRecordTimestamp"))
   {
     m_addRecordTimestamp = jsonValue.GetString("AddRecordTimestamp");
-
     m_addRecordTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmitConsumerLagMetrics"))
   {
     m_emitConsumerLagMetrics = jsonValue.GetString("EmitConsumerLagMetrics");
-
     m_emitConsumerLagMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartingTimestamp"))
   {
     m_startingTimestamp = jsonValue.GetString("StartingTimestamp");
-
     m_startingTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

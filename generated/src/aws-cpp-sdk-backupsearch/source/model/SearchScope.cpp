@@ -18,17 +18,7 @@ namespace BackupSearch
 namespace Model
 {
 
-SearchScope::SearchScope() : 
-    m_backupResourceTypesHasBeenSet(false),
-    m_backupResourceCreationTimeHasBeenSet(false),
-    m_sourceResourceArnsHasBeenSet(false),
-    m_backupResourceArnsHasBeenSet(false),
-    m_backupResourceTagsHasBeenSet(false)
-{
-}
-
 SearchScope::SearchScope(JsonView jsonValue)
-  : SearchScope()
 {
   *this = jsonValue;
 }
@@ -44,14 +34,11 @@ SearchScope& SearchScope::operator =(JsonView jsonValue)
     }
     m_backupResourceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupResourceCreationTime"))
   {
     m_backupResourceCreationTime = jsonValue.GetObject("BackupResourceCreationTime");
-
     m_backupResourceCreationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceResourceArns"))
   {
     Aws::Utils::Array<JsonView> sourceResourceArnsJsonList = jsonValue.GetArray("SourceResourceArns");
@@ -61,7 +48,6 @@ SearchScope& SearchScope::operator =(JsonView jsonValue)
     }
     m_sourceResourceArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupResourceArns"))
   {
     Aws::Utils::Array<JsonView> backupResourceArnsJsonList = jsonValue.GetArray("BackupResourceArns");
@@ -71,7 +57,6 @@ SearchScope& SearchScope::operator =(JsonView jsonValue)
     }
     m_backupResourceArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupResourceTags"))
   {
     Aws::Map<Aws::String, JsonView> backupResourceTagsJsonMap = jsonValue.GetObject("BackupResourceTags").GetAllObjects();
@@ -81,7 +66,6 @@ SearchScope& SearchScope::operator =(JsonView jsonValue)
     }
     m_backupResourceTagsHasBeenSet = true;
   }
-
   return *this;
 }
 

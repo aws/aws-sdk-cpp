@@ -12,10 +12,6 @@ using namespace Aws::SMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteServerCatalogRequest::DeleteServerCatalogRequest()
-{
-}
-
 Aws::String DeleteServerCatalogRequest::SerializePayload() const
 {
   return "{}";

@@ -18,22 +18,7 @@ namespace ARCZonalShift
 namespace Model
 {
 
-ManagedResourceSummary::ManagedResourceSummary() : 
-    m_appliedWeightsHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_autoshiftsHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_practiceRunStatus(ZonalAutoshiftStatus::NOT_SET),
-    m_practiceRunStatusHasBeenSet(false),
-    m_zonalAutoshiftStatus(ZonalAutoshiftStatus::NOT_SET),
-    m_zonalAutoshiftStatusHasBeenSet(false),
-    m_zonalShiftsHasBeenSet(false)
-{
-}
-
 ManagedResourceSummary::ManagedResourceSummary(JsonView jsonValue)
-  : ManagedResourceSummary()
 {
   *this = jsonValue;
 }
@@ -49,14 +34,11 @@ ManagedResourceSummary& ManagedResourceSummary::operator =(JsonView jsonValue)
     }
     m_appliedWeightsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoshifts"))
   {
     Aws::Utils::Array<JsonView> autoshiftsJsonList = jsonValue.GetArray("autoshifts");
@@ -66,7 +48,6 @@ ManagedResourceSummary& ManagedResourceSummary::operator =(JsonView jsonValue)
     }
     m_autoshiftsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("availabilityZones"))
   {
     Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("availabilityZones");
@@ -76,28 +57,21 @@ ManagedResourceSummary& ManagedResourceSummary::operator =(JsonView jsonValue)
     }
     m_availabilityZonesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("practiceRunStatus"))
   {
     m_practiceRunStatus = ZonalAutoshiftStatusMapper::GetZonalAutoshiftStatusForName(jsonValue.GetString("practiceRunStatus"));
-
     m_practiceRunStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("zonalAutoshiftStatus"))
   {
     m_zonalAutoshiftStatus = ZonalAutoshiftStatusMapper::GetZonalAutoshiftStatusForName(jsonValue.GetString("zonalAutoshiftStatus"));
-
     m_zonalAutoshiftStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("zonalShifts"))
   {
     Aws::Utils::Array<JsonView> zonalShiftsJsonList = jsonValue.GetArray("zonalShifts");
@@ -107,7 +81,6 @@ ManagedResourceSummary& ManagedResourceSummary::operator =(JsonView jsonValue)
     }
     m_zonalShiftsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTagsForResourceResult::ListTagsForResourceResult() : 
-    m_statusCode(0)
-{
-}
-
 ListTagsForResourceResult::ListTagsForResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListTagsForResourceResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ ListTagsForResourceResult& ListTagsForResourceResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = jsonValue.GetInteger("statusCode");
-
+    m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -44,14 +37,15 @@ ListTagsForResourceResult& ListTagsForResourceResult::operator =(const Aws::Amaz
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

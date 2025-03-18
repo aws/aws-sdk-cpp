@@ -26,7 +26,7 @@ namespace Model
   class UpdateTransformerRequest : public B2BIRequest
   {
   public:
-    AWS_B2BI_API UpdateTransformerRequest();
+    AWS_B2BI_API UpdateTransformerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>Specifies the system-assigned unique identifier for the transformer.</p>
      */
-    inline const Aws::String& GetTransformerId() const{ return m_transformerId; }
+    inline const Aws::String& GetTransformerId() const { return m_transformerId; }
     inline bool TransformerIdHasBeenSet() const { return m_transformerIdHasBeenSet; }
-    inline void SetTransformerId(const Aws::String& value) { m_transformerIdHasBeenSet = true; m_transformerId = value; }
-    inline void SetTransformerId(Aws::String&& value) { m_transformerIdHasBeenSet = true; m_transformerId = std::move(value); }
-    inline void SetTransformerId(const char* value) { m_transformerIdHasBeenSet = true; m_transformerId.assign(value); }
-    inline UpdateTransformerRequest& WithTransformerId(const Aws::String& value) { SetTransformerId(value); return *this;}
-    inline UpdateTransformerRequest& WithTransformerId(Aws::String&& value) { SetTransformerId(std::move(value)); return *this;}
-    inline UpdateTransformerRequest& WithTransformerId(const char* value) { SetTransformerId(value); return *this;}
+    template<typename TransformerIdT = Aws::String>
+    void SetTransformerId(TransformerIdT&& value) { m_transformerIdHasBeenSet = true; m_transformerId = std::forward<TransformerIdT>(value); }
+    template<typename TransformerIdT = Aws::String>
+    UpdateTransformerRequest& WithTransformerId(TransformerIdT&& value) { SetTransformerId(std::forward<TransformerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specify a new name for the transformer, if you want to update it.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateTransformerRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateTransformerRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateTransformerRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateTransformerRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +68,10 @@ namespace Model
      * <p>Specifies the transformer's status. You can update the state of the
      * transformer from <code>inactive</code> to <code>active</code>.</p>
      */
-    inline const TransformerStatus& GetStatus() const{ return m_status; }
+    inline TransformerStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const TransformerStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(TransformerStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline UpdateTransformerRequest& WithStatus(const TransformerStatus& value) { SetStatus(value); return *this;}
-    inline UpdateTransformerRequest& WithStatus(TransformerStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(TransformerStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateTransformerRequest& WithStatus(TransformerStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +79,12 @@ namespace Model
      * <p>To update, specify the <code>InputConversion</code> object, which contains
      * the format options for the inbound transformation.</p>
      */
-    inline const InputConversion& GetInputConversion() const{ return m_inputConversion; }
+    inline const InputConversion& GetInputConversion() const { return m_inputConversion; }
     inline bool InputConversionHasBeenSet() const { return m_inputConversionHasBeenSet; }
-    inline void SetInputConversion(const InputConversion& value) { m_inputConversionHasBeenSet = true; m_inputConversion = value; }
-    inline void SetInputConversion(InputConversion&& value) { m_inputConversionHasBeenSet = true; m_inputConversion = std::move(value); }
-    inline UpdateTransformerRequest& WithInputConversion(const InputConversion& value) { SetInputConversion(value); return *this;}
-    inline UpdateTransformerRequest& WithInputConversion(InputConversion&& value) { SetInputConversion(std::move(value)); return *this;}
+    template<typename InputConversionT = InputConversion>
+    void SetInputConversion(InputConversionT&& value) { m_inputConversionHasBeenSet = true; m_inputConversion = std::forward<InputConversionT>(value); }
+    template<typename InputConversionT = InputConversion>
+    UpdateTransformerRequest& WithInputConversion(InputConversionT&& value) { SetInputConversion(std::forward<InputConversionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,12 +92,12 @@ namespace Model
      * <p>Specify the structure that contains the mapping template and its language
      * (either XSLT or JSONATA).</p>
      */
-    inline const Mapping& GetMapping() const{ return m_mapping; }
+    inline const Mapping& GetMapping() const { return m_mapping; }
     inline bool MappingHasBeenSet() const { return m_mappingHasBeenSet; }
-    inline void SetMapping(const Mapping& value) { m_mappingHasBeenSet = true; m_mapping = value; }
-    inline void SetMapping(Mapping&& value) { m_mappingHasBeenSet = true; m_mapping = std::move(value); }
-    inline UpdateTransformerRequest& WithMapping(const Mapping& value) { SetMapping(value); return *this;}
-    inline UpdateTransformerRequest& WithMapping(Mapping&& value) { SetMapping(std::move(value)); return *this;}
+    template<typename MappingT = Mapping>
+    void SetMapping(MappingT&& value) { m_mappingHasBeenSet = true; m_mapping = std::forward<MappingT>(value); }
+    template<typename MappingT = Mapping>
+    UpdateTransformerRequest& WithMapping(MappingT&& value) { SetMapping(std::forward<MappingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,12 +105,12 @@ namespace Model
      * <p>To update, specify the <code>OutputConversion</code> object, which contains
      * the format options for the outbound transformation.</p>
      */
-    inline const OutputConversion& GetOutputConversion() const{ return m_outputConversion; }
+    inline const OutputConversion& GetOutputConversion() const { return m_outputConversion; }
     inline bool OutputConversionHasBeenSet() const { return m_outputConversionHasBeenSet; }
-    inline void SetOutputConversion(const OutputConversion& value) { m_outputConversionHasBeenSet = true; m_outputConversion = value; }
-    inline void SetOutputConversion(OutputConversion&& value) { m_outputConversionHasBeenSet = true; m_outputConversion = std::move(value); }
-    inline UpdateTransformerRequest& WithOutputConversion(const OutputConversion& value) { SetOutputConversion(value); return *this;}
-    inline UpdateTransformerRequest& WithOutputConversion(OutputConversion&& value) { SetOutputConversion(std::move(value)); return *this;}
+    template<typename OutputConversionT = OutputConversion>
+    void SetOutputConversion(OutputConversionT&& value) { m_outputConversionHasBeenSet = true; m_outputConversion = std::forward<OutputConversionT>(value); }
+    template<typename OutputConversionT = OutputConversion>
+    UpdateTransformerRequest& WithOutputConversion(OutputConversionT&& value) { SetOutputConversion(std::forward<OutputConversionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,12 +118,12 @@ namespace Model
      * <p>Specify a structure that contains the Amazon S3 bucket and an array of the
      * corresponding keys used to identify the location for your sample documents.</p>
      */
-    inline const SampleDocuments& GetSampleDocuments() const{ return m_sampleDocuments; }
+    inline const SampleDocuments& GetSampleDocuments() const { return m_sampleDocuments; }
     inline bool SampleDocumentsHasBeenSet() const { return m_sampleDocumentsHasBeenSet; }
-    inline void SetSampleDocuments(const SampleDocuments& value) { m_sampleDocumentsHasBeenSet = true; m_sampleDocuments = value; }
-    inline void SetSampleDocuments(SampleDocuments&& value) { m_sampleDocumentsHasBeenSet = true; m_sampleDocuments = std::move(value); }
-    inline UpdateTransformerRequest& WithSampleDocuments(const SampleDocuments& value) { SetSampleDocuments(value); return *this;}
-    inline UpdateTransformerRequest& WithSampleDocuments(SampleDocuments&& value) { SetSampleDocuments(std::move(value)); return *this;}
+    template<typename SampleDocumentsT = SampleDocuments>
+    void SetSampleDocuments(SampleDocumentsT&& value) { m_sampleDocumentsHasBeenSet = true; m_sampleDocuments = std::forward<SampleDocumentsT>(value); }
+    template<typename SampleDocumentsT = SampleDocuments>
+    UpdateTransformerRequest& WithSampleDocuments(SampleDocumentsT&& value) { SetSampleDocuments(std::forward<SampleDocumentsT>(value)); return *this;}
     ///@}
   private:
 
@@ -139,7 +133,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    TransformerStatus m_status;
+    TransformerStatus m_status{TransformerStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     InputConversion m_inputConversion;

@@ -18,15 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-MediaInsightsConfiguration::MediaInsightsConfiguration() : 
-    m_disabled(false),
-    m_disabledHasBeenSet(false),
-    m_configurationArnHasBeenSet(false)
-{
-}
-
 MediaInsightsConfiguration::MediaInsightsConfiguration(JsonView jsonValue)
-  : MediaInsightsConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MediaInsightsConfiguration& MediaInsightsConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("Disabled"))
   {
     m_disabled = jsonValue.GetBool("Disabled");
-
     m_disabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationArn"))
   {
     m_configurationArn = jsonValue.GetString("ConfigurationArn");
-
     m_configurationArnHasBeenSet = true;
   }
-
   return *this;
 }
 

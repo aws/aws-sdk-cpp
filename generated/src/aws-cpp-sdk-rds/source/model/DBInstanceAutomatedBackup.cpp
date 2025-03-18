@@ -20,52 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBInstanceAutomatedBackup::DBInstanceAutomatedBackup() : 
-    m_dBInstanceArnHasBeenSet(false),
-    m_dbiResourceIdHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_restoreWindowHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_instanceCreateTimeHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_optionGroupNameHasBeenSet(false),
-    m_tdeCredentialArnHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_dBInstanceAutomatedBackupsArnHasBeenSet(false),
-    m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false),
-    m_backupTargetHasBeenSet(false),
-    m_storageThroughput(0),
-    m_storageThroughputHasBeenSet(false),
-    m_awsBackupRecoveryPointArnHasBeenSet(false),
-    m_dedicatedLogVolume(false),
-    m_dedicatedLogVolumeHasBeenSet(false),
-    m_multiTenant(false),
-    m_multiTenantHasBeenSet(false)
-{
-}
-
 DBInstanceAutomatedBackup::DBInstanceAutomatedBackup(const XmlNode& xmlNode)
-  : DBInstanceAutomatedBackup()
 {
   *this = xmlNode;
 }
@@ -230,6 +185,7 @@ DBInstanceAutomatedBackup& DBInstanceAutomatedBackup::operator =(const XmlNode& 
     if(!dBInstanceAutomatedBackupsReplicationsNode.IsNull())
     {
       XmlNode dBInstanceAutomatedBackupsReplicationsMember = dBInstanceAutomatedBackupsReplicationsNode.FirstChild("DBInstanceAutomatedBackupsReplication");
+      m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = !dBInstanceAutomatedBackupsReplicationsMember.IsNull();
       while(!dBInstanceAutomatedBackupsReplicationsMember.IsNull())
       {
         m_dBInstanceAutomatedBackupsReplications.push_back(dBInstanceAutomatedBackupsReplicationsMember);

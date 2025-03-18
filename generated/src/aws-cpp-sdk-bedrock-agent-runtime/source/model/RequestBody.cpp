@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RequestBody::RequestBody() : 
-    m_contentHasBeenSet(false)
-{
-}
-
 RequestBody::RequestBody(JsonView jsonValue)
-  : RequestBody()
 {
   *this = jsonValue;
 }
@@ -47,7 +41,6 @@ RequestBody& RequestBody::operator =(JsonView jsonValue)
     }
     m_contentHasBeenSet = true;
   }
-
   return *this;
 }
 

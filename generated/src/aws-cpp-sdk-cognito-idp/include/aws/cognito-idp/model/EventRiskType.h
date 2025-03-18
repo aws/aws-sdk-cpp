@@ -35,7 +35,7 @@ namespace Model
   class EventRiskType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API EventRiskType();
+    AWS_COGNITOIDENTITYPROVIDER_API EventRiskType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API EventRiskType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API EventRiskType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * applied the adaptive authentication automated response that you configured. If
      * <code>Block</code>, your user pool prevented the attempt.</p>
      */
-    inline const RiskDecisionType& GetRiskDecision() const{ return m_riskDecision; }
+    inline RiskDecisionType GetRiskDecision() const { return m_riskDecision; }
     inline bool RiskDecisionHasBeenSet() const { return m_riskDecisionHasBeenSet; }
-    inline void SetRiskDecision(const RiskDecisionType& value) { m_riskDecisionHasBeenSet = true; m_riskDecision = value; }
-    inline void SetRiskDecision(RiskDecisionType&& value) { m_riskDecisionHasBeenSet = true; m_riskDecision = std::move(value); }
-    inline EventRiskType& WithRiskDecision(const RiskDecisionType& value) { SetRiskDecision(value); return *this;}
-    inline EventRiskType& WithRiskDecision(RiskDecisionType&& value) { SetRiskDecision(std::move(value)); return *this;}
+    inline void SetRiskDecision(RiskDecisionType value) { m_riskDecisionHasBeenSet = true; m_riskDecision = value; }
+    inline EventRiskType& WithRiskDecision(RiskDecisionType value) { SetRiskDecision(value); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,10 @@ namespace Model
      * <p>The risk level that adaptive authentication assessed for the authentication
      * event.</p>
      */
-    inline const RiskLevelType& GetRiskLevel() const{ return m_riskLevel; }
+    inline RiskLevelType GetRiskLevel() const { return m_riskLevel; }
     inline bool RiskLevelHasBeenSet() const { return m_riskLevelHasBeenSet; }
-    inline void SetRiskLevel(const RiskLevelType& value) { m_riskLevelHasBeenSet = true; m_riskLevel = value; }
-    inline void SetRiskLevel(RiskLevelType&& value) { m_riskLevelHasBeenSet = true; m_riskLevel = std::move(value); }
-    inline EventRiskType& WithRiskLevel(const RiskLevelType& value) { SetRiskLevel(value); return *this;}
-    inline EventRiskType& WithRiskLevel(RiskLevelType&& value) { SetRiskLevel(std::move(value)); return *this;}
+    inline void SetRiskLevel(RiskLevelType value) { m_riskLevelHasBeenSet = true; m_riskLevel = value; }
+    inline EventRiskType& WithRiskLevel(RiskLevelType value) { SetRiskLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -74,20 +70,20 @@ namespace Model
      * <p>Indicates whether compromised credentials were detected during an
      * authentication event.</p>
      */
-    inline bool GetCompromisedCredentialsDetected() const{ return m_compromisedCredentialsDetected; }
+    inline bool GetCompromisedCredentialsDetected() const { return m_compromisedCredentialsDetected; }
     inline bool CompromisedCredentialsDetectedHasBeenSet() const { return m_compromisedCredentialsDetectedHasBeenSet; }
     inline void SetCompromisedCredentialsDetected(bool value) { m_compromisedCredentialsDetectedHasBeenSet = true; m_compromisedCredentialsDetected = value; }
     inline EventRiskType& WithCompromisedCredentialsDetected(bool value) { SetCompromisedCredentialsDetected(value); return *this;}
     ///@}
   private:
 
-    RiskDecisionType m_riskDecision;
+    RiskDecisionType m_riskDecision{RiskDecisionType::NOT_SET};
     bool m_riskDecisionHasBeenSet = false;
 
-    RiskLevelType m_riskLevel;
+    RiskLevelType m_riskLevel{RiskLevelType::NOT_SET};
     bool m_riskLevelHasBeenSet = false;
 
-    bool m_compromisedCredentialsDetected;
+    bool m_compromisedCredentialsDetected{false};
     bool m_compromisedCredentialsDetectedHasBeenSet = false;
   };
 

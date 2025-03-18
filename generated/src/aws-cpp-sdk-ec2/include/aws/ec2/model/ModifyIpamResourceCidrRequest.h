@@ -21,7 +21,7 @@ namespace Model
   class ModifyIpamResourceCidrRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ModifyIpamResourceCidrRequest();
+    AWS_EC2_API ModifyIpamResourceCidrRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ModifyIpamResourceCidrRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -53,70 +53,60 @@ namespace Model
     /**
      * <p>The ID of the resource you want to modify.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline ModifyIpamResourceCidrRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline ModifyIpamResourceCidrRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ModifyIpamResourceCidrRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    ModifyIpamResourceCidrRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CIDR of the resource you want to modify.</p>
      */
-    inline const Aws::String& GetResourceCidr() const{ return m_resourceCidr; }
+    inline const Aws::String& GetResourceCidr() const { return m_resourceCidr; }
     inline bool ResourceCidrHasBeenSet() const { return m_resourceCidrHasBeenSet; }
-    inline void SetResourceCidr(const Aws::String& value) { m_resourceCidrHasBeenSet = true; m_resourceCidr = value; }
-    inline void SetResourceCidr(Aws::String&& value) { m_resourceCidrHasBeenSet = true; m_resourceCidr = std::move(value); }
-    inline void SetResourceCidr(const char* value) { m_resourceCidrHasBeenSet = true; m_resourceCidr.assign(value); }
-    inline ModifyIpamResourceCidrRequest& WithResourceCidr(const Aws::String& value) { SetResourceCidr(value); return *this;}
-    inline ModifyIpamResourceCidrRequest& WithResourceCidr(Aws::String&& value) { SetResourceCidr(std::move(value)); return *this;}
-    inline ModifyIpamResourceCidrRequest& WithResourceCidr(const char* value) { SetResourceCidr(value); return *this;}
+    template<typename ResourceCidrT = Aws::String>
+    void SetResourceCidr(ResourceCidrT&& value) { m_resourceCidrHasBeenSet = true; m_resourceCidr = std::forward<ResourceCidrT>(value); }
+    template<typename ResourceCidrT = Aws::String>
+    ModifyIpamResourceCidrRequest& WithResourceCidr(ResourceCidrT&& value) { SetResourceCidr(std::forward<ResourceCidrT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region of the resource you want to modify.</p>
      */
-    inline const Aws::String& GetResourceRegion() const{ return m_resourceRegion; }
+    inline const Aws::String& GetResourceRegion() const { return m_resourceRegion; }
     inline bool ResourceRegionHasBeenSet() const { return m_resourceRegionHasBeenSet; }
-    inline void SetResourceRegion(const Aws::String& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = value; }
-    inline void SetResourceRegion(Aws::String&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = std::move(value); }
-    inline void SetResourceRegion(const char* value) { m_resourceRegionHasBeenSet = true; m_resourceRegion.assign(value); }
-    inline ModifyIpamResourceCidrRequest& WithResourceRegion(const Aws::String& value) { SetResourceRegion(value); return *this;}
-    inline ModifyIpamResourceCidrRequest& WithResourceRegion(Aws::String&& value) { SetResourceRegion(std::move(value)); return *this;}
-    inline ModifyIpamResourceCidrRequest& WithResourceRegion(const char* value) { SetResourceRegion(value); return *this;}
+    template<typename ResourceRegionT = Aws::String>
+    void SetResourceRegion(ResourceRegionT&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = std::forward<ResourceRegionT>(value); }
+    template<typename ResourceRegionT = Aws::String>
+    ModifyIpamResourceCidrRequest& WithResourceRegion(ResourceRegionT&& value) { SetResourceRegion(std::forward<ResourceRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the current scope that the resource CIDR is in.</p>
      */
-    inline const Aws::String& GetCurrentIpamScopeId() const{ return m_currentIpamScopeId; }
+    inline const Aws::String& GetCurrentIpamScopeId() const { return m_currentIpamScopeId; }
     inline bool CurrentIpamScopeIdHasBeenSet() const { return m_currentIpamScopeIdHasBeenSet; }
-    inline void SetCurrentIpamScopeId(const Aws::String& value) { m_currentIpamScopeIdHasBeenSet = true; m_currentIpamScopeId = value; }
-    inline void SetCurrentIpamScopeId(Aws::String&& value) { m_currentIpamScopeIdHasBeenSet = true; m_currentIpamScopeId = std::move(value); }
-    inline void SetCurrentIpamScopeId(const char* value) { m_currentIpamScopeIdHasBeenSet = true; m_currentIpamScopeId.assign(value); }
-    inline ModifyIpamResourceCidrRequest& WithCurrentIpamScopeId(const Aws::String& value) { SetCurrentIpamScopeId(value); return *this;}
-    inline ModifyIpamResourceCidrRequest& WithCurrentIpamScopeId(Aws::String&& value) { SetCurrentIpamScopeId(std::move(value)); return *this;}
-    inline ModifyIpamResourceCidrRequest& WithCurrentIpamScopeId(const char* value) { SetCurrentIpamScopeId(value); return *this;}
+    template<typename CurrentIpamScopeIdT = Aws::String>
+    void SetCurrentIpamScopeId(CurrentIpamScopeIdT&& value) { m_currentIpamScopeIdHasBeenSet = true; m_currentIpamScopeId = std::forward<CurrentIpamScopeIdT>(value); }
+    template<typename CurrentIpamScopeIdT = Aws::String>
+    ModifyIpamResourceCidrRequest& WithCurrentIpamScopeId(CurrentIpamScopeIdT&& value) { SetCurrentIpamScopeId(std::forward<CurrentIpamScopeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the scope you want to transfer the resource CIDR to.</p>
      */
-    inline const Aws::String& GetDestinationIpamScopeId() const{ return m_destinationIpamScopeId; }
+    inline const Aws::String& GetDestinationIpamScopeId() const { return m_destinationIpamScopeId; }
     inline bool DestinationIpamScopeIdHasBeenSet() const { return m_destinationIpamScopeIdHasBeenSet; }
-    inline void SetDestinationIpamScopeId(const Aws::String& value) { m_destinationIpamScopeIdHasBeenSet = true; m_destinationIpamScopeId = value; }
-    inline void SetDestinationIpamScopeId(Aws::String&& value) { m_destinationIpamScopeIdHasBeenSet = true; m_destinationIpamScopeId = std::move(value); }
-    inline void SetDestinationIpamScopeId(const char* value) { m_destinationIpamScopeIdHasBeenSet = true; m_destinationIpamScopeId.assign(value); }
-    inline ModifyIpamResourceCidrRequest& WithDestinationIpamScopeId(const Aws::String& value) { SetDestinationIpamScopeId(value); return *this;}
-    inline ModifyIpamResourceCidrRequest& WithDestinationIpamScopeId(Aws::String&& value) { SetDestinationIpamScopeId(std::move(value)); return *this;}
-    inline ModifyIpamResourceCidrRequest& WithDestinationIpamScopeId(const char* value) { SetDestinationIpamScopeId(value); return *this;}
+    template<typename DestinationIpamScopeIdT = Aws::String>
+    void SetDestinationIpamScopeId(DestinationIpamScopeIdT&& value) { m_destinationIpamScopeIdHasBeenSet = true; m_destinationIpamScopeId = std::forward<DestinationIpamScopeIdT>(value); }
+    template<typename DestinationIpamScopeIdT = Aws::String>
+    ModifyIpamResourceCidrRequest& WithDestinationIpamScopeId(DestinationIpamScopeIdT&& value) { SetDestinationIpamScopeId(std::forward<DestinationIpamScopeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,14 +115,14 @@ namespace Model
      * the resource is discovered by IPAM and you can view details about the resource’s
      * CIDR.</p>
      */
-    inline bool GetMonitored() const{ return m_monitored; }
+    inline bool GetMonitored() const { return m_monitored; }
     inline bool MonitoredHasBeenSet() const { return m_monitoredHasBeenSet; }
     inline void SetMonitored(bool value) { m_monitoredHasBeenSet = true; m_monitored = value; }
     inline ModifyIpamResourceCidrRequest& WithMonitored(bool value) { SetMonitored(value); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_resourceId;
@@ -150,7 +140,7 @@ namespace Model
     Aws::String m_destinationIpamScopeId;
     bool m_destinationIpamScopeIdHasBeenSet = false;
 
-    bool m_monitored;
+    bool m_monitored{false};
     bool m_monitoredHasBeenSet = false;
   };
 

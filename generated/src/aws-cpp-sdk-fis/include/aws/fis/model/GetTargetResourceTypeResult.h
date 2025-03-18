@@ -28,7 +28,7 @@ namespace Model
   class GetTargetResourceTypeResult
   {
   public:
-    AWS_FIS_API GetTargetResourceTypeResult();
+    AWS_FIS_API GetTargetResourceTypeResult() = default;
     AWS_FIS_API GetTargetResourceTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FIS_API GetTargetResourceTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the resource type.</p>
      */
-    inline const TargetResourceType& GetTargetResourceType() const{ return m_targetResourceType; }
-    inline void SetTargetResourceType(const TargetResourceType& value) { m_targetResourceType = value; }
-    inline void SetTargetResourceType(TargetResourceType&& value) { m_targetResourceType = std::move(value); }
-    inline GetTargetResourceTypeResult& WithTargetResourceType(const TargetResourceType& value) { SetTargetResourceType(value); return *this;}
-    inline GetTargetResourceTypeResult& WithTargetResourceType(TargetResourceType&& value) { SetTargetResourceType(std::move(value)); return *this;}
+    inline const TargetResourceType& GetTargetResourceType() const { return m_targetResourceType; }
+    template<typename TargetResourceTypeT = TargetResourceType>
+    void SetTargetResourceType(TargetResourceTypeT&& value) { m_targetResourceTypeHasBeenSet = true; m_targetResourceType = std::forward<TargetResourceTypeT>(value); }
+    template<typename TargetResourceTypeT = TargetResourceType>
+    GetTargetResourceTypeResult& WithTargetResourceType(TargetResourceTypeT&& value) { SetTargetResourceType(std::forward<TargetResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTargetResourceTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTargetResourceTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTargetResourceTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTargetResourceTypeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TargetResourceType m_targetResourceType;
+    bool m_targetResourceTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

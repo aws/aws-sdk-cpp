@@ -21,7 +21,7 @@ namespace Model
   class ChangePasswordRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API ChangePasswordRequest();
+    AWS_IAM_API ChangePasswordRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The IAM user's current password.</p>
      */
-    inline const Aws::String& GetOldPassword() const{ return m_oldPassword; }
+    inline const Aws::String& GetOldPassword() const { return m_oldPassword; }
     inline bool OldPasswordHasBeenSet() const { return m_oldPasswordHasBeenSet; }
-    inline void SetOldPassword(const Aws::String& value) { m_oldPasswordHasBeenSet = true; m_oldPassword = value; }
-    inline void SetOldPassword(Aws::String&& value) { m_oldPasswordHasBeenSet = true; m_oldPassword = std::move(value); }
-    inline void SetOldPassword(const char* value) { m_oldPasswordHasBeenSet = true; m_oldPassword.assign(value); }
-    inline ChangePasswordRequest& WithOldPassword(const Aws::String& value) { SetOldPassword(value); return *this;}
-    inline ChangePasswordRequest& WithOldPassword(Aws::String&& value) { SetOldPassword(std::move(value)); return *this;}
-    inline ChangePasswordRequest& WithOldPassword(const char* value) { SetOldPassword(value); return *this;}
+    template<typename OldPasswordT = Aws::String>
+    void SetOldPassword(OldPasswordT&& value) { m_oldPasswordHasBeenSet = true; m_oldPassword = std::forward<OldPasswordT>(value); }
+    template<typename OldPasswordT = Aws::String>
+    ChangePasswordRequest& WithOldPassword(OldPasswordT&& value) { SetOldPassword(std::forward<OldPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * Management Console, might restrict the ability to type certain characters
      * because they have special meaning within that tool.</p>
      */
-    inline const Aws::String& GetNewPassword() const{ return m_newPassword; }
+    inline const Aws::String& GetNewPassword() const { return m_newPassword; }
     inline bool NewPasswordHasBeenSet() const { return m_newPasswordHasBeenSet; }
-    inline void SetNewPassword(const Aws::String& value) { m_newPasswordHasBeenSet = true; m_newPassword = value; }
-    inline void SetNewPassword(Aws::String&& value) { m_newPasswordHasBeenSet = true; m_newPassword = std::move(value); }
-    inline void SetNewPassword(const char* value) { m_newPasswordHasBeenSet = true; m_newPassword.assign(value); }
-    inline ChangePasswordRequest& WithNewPassword(const Aws::String& value) { SetNewPassword(value); return *this;}
-    inline ChangePasswordRequest& WithNewPassword(Aws::String&& value) { SetNewPassword(std::move(value)); return *this;}
-    inline ChangePasswordRequest& WithNewPassword(const char* value) { SetNewPassword(value); return *this;}
+    template<typename NewPasswordT = Aws::String>
+    void SetNewPassword(NewPasswordT&& value) { m_newPasswordHasBeenSet = true; m_newPassword = std::forward<NewPasswordT>(value); }
+    template<typename NewPasswordT = Aws::String>
+    ChangePasswordRequest& WithNewPassword(NewPasswordT&& value) { SetNewPassword(std::forward<NewPasswordT>(value)); return *this;}
     ///@}
   private:
 

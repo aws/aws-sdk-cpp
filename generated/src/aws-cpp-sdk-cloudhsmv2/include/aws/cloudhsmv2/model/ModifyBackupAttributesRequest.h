@@ -21,7 +21,7 @@ namespace Model
   class ModifyBackupAttributesRequest : public CloudHSMV2Request
   {
   public:
-    AWS_CLOUDHSMV2_API ModifyBackupAttributesRequest();
+    AWS_CLOUDHSMV2_API ModifyBackupAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use
      * the <a>DescribeBackups</a> operation.</p>
      */
-    inline const Aws::String& GetBackupId() const{ return m_backupId; }
+    inline const Aws::String& GetBackupId() const { return m_backupId; }
     inline bool BackupIdHasBeenSet() const { return m_backupIdHasBeenSet; }
-    inline void SetBackupId(const Aws::String& value) { m_backupIdHasBeenSet = true; m_backupId = value; }
-    inline void SetBackupId(Aws::String&& value) { m_backupIdHasBeenSet = true; m_backupId = std::move(value); }
-    inline void SetBackupId(const char* value) { m_backupIdHasBeenSet = true; m_backupId.assign(value); }
-    inline ModifyBackupAttributesRequest& WithBackupId(const Aws::String& value) { SetBackupId(value); return *this;}
-    inline ModifyBackupAttributesRequest& WithBackupId(Aws::String&& value) { SetBackupId(std::move(value)); return *this;}
-    inline ModifyBackupAttributesRequest& WithBackupId(const char* value) { SetBackupId(value); return *this;}
+    template<typename BackupIdT = Aws::String>
+    void SetBackupId(BackupIdT&& value) { m_backupIdHasBeenSet = true; m_backupId = std::forward<BackupIdT>(value); }
+    template<typename BackupIdT = Aws::String>
+    ModifyBackupAttributesRequest& WithBackupId(BackupIdT&& value) { SetBackupId(std::forward<BackupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * policy. <code>False</code> means the service applies the backup retention policy
      * defined at the cluster.</p>
      */
-    inline bool GetNeverExpires() const{ return m_neverExpires; }
+    inline bool GetNeverExpires() const { return m_neverExpires; }
     inline bool NeverExpiresHasBeenSet() const { return m_neverExpiresHasBeenSet; }
     inline void SetNeverExpires(bool value) { m_neverExpiresHasBeenSet = true; m_neverExpires = value; }
     inline ModifyBackupAttributesRequest& WithNeverExpires(bool value) { SetNeverExpires(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_backupId;
     bool m_backupIdHasBeenSet = false;
 
-    bool m_neverExpires;
+    bool m_neverExpires{false};
     bool m_neverExpiresHasBeenSet = false;
   };
 

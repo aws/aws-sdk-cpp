@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEventSubscriptionsResult::DescribeEventSubscriptionsResult()
-{
-}
-
 DescribeEventSubscriptionsResult::DescribeEventSubscriptionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeEventSubscriptionsResult& DescribeEventSubscriptionsResult::operator =(c
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode eventSubscriptionsListNode = resultNode.FirstChild("EventSubscriptionsList");
     if(!eventSubscriptionsListNode.IsNull())
     {
       XmlNode eventSubscriptionsListMember = eventSubscriptionsListNode.FirstChild("EventSubscription");
+      m_eventSubscriptionsListHasBeenSet = !eventSubscriptionsListMember.IsNull();
       while(!eventSubscriptionsListMember.IsNull())
       {
         m_eventSubscriptionsList.push_back(eventSubscriptionsListMember);
         eventSubscriptionsListMember = eventSubscriptionsListMember.NextNode("EventSubscription");
       }
 
+      m_eventSubscriptionsListHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::DocDB::Model::DescribeEventSubscriptionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

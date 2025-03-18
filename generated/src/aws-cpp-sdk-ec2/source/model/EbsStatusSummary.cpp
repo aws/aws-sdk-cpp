@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-EbsStatusSummary::EbsStatusSummary() : 
-    m_detailsHasBeenSet(false),
-    m_status(SummaryStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 EbsStatusSummary::EbsStatusSummary(const XmlNode& xmlNode)
-  : EbsStatusSummary()
 {
   *this = xmlNode;
 }
@@ -43,6 +35,7 @@ EbsStatusSummary& EbsStatusSummary::operator =(const XmlNode& xmlNode)
     if(!detailsNode.IsNull())
     {
       XmlNode detailsMember = detailsNode.FirstChild("item");
+      m_detailsHasBeenSet = !detailsMember.IsNull();
       while(!detailsMember.IsNull())
       {
         m_details.push_back(detailsMember);
@@ -54,7 +47,7 @@ EbsStatusSummary& EbsStatusSummary::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = SummaryStatusMapper::GetSummaryStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = SummaryStatusMapper::GetSummaryStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
   }

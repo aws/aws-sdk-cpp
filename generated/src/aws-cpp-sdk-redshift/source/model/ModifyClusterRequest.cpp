@@ -10,50 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-ModifyClusterRequest::ModifyClusterRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_clusterTypeHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_numberOfNodes(0),
-    m_numberOfNodesHasBeenSet(false),
-    m_clusterSecurityGroupsHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false),
-    m_masterUserPasswordHasBeenSet(false),
-    m_clusterParameterGroupNameHasBeenSet(false),
-    m_automatedSnapshotRetentionPeriod(0),
-    m_automatedSnapshotRetentionPeriodHasBeenSet(false),
-    m_manualSnapshotRetentionPeriod(0),
-    m_manualSnapshotRetentionPeriodHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_clusterVersionHasBeenSet(false),
-    m_allowVersionUpgrade(false),
-    m_allowVersionUpgradeHasBeenSet(false),
-    m_hsmClientCertificateIdentifierHasBeenSet(false),
-    m_hsmConfigurationIdentifierHasBeenSet(false),
-    m_newClusterIdentifierHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_elasticIpHasBeenSet(false),
-    m_enhancedVpcRouting(false),
-    m_enhancedVpcRoutingHasBeenSet(false),
-    m_maintenanceTrackNameHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_availabilityZoneRelocation(false),
-    m_availabilityZoneRelocationHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_manageMasterPassword(false),
-    m_manageMasterPasswordHasBeenSet(false),
-    m_masterPasswordSecretKmsKeyIdHasBeenSet(false),
-    m_ipAddressTypeHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false)
-{
-}
-
 Aws::String ModifyClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

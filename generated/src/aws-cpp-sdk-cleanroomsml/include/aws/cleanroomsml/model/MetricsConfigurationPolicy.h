@@ -32,7 +32,7 @@ namespace Model
   class MetricsConfigurationPolicy
   {
   public:
-    AWS_CLEANROOMSML_API MetricsConfigurationPolicy();
+    AWS_CLEANROOMSML_API MetricsConfigurationPolicy() = default;
     AWS_CLEANROOMSML_API MetricsConfigurationPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API MetricsConfigurationPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The noise level for the generated metrics.</p>
      */
-    inline const NoiseLevelType& GetNoiseLevel() const{ return m_noiseLevel; }
+    inline NoiseLevelType GetNoiseLevel() const { return m_noiseLevel; }
     inline bool NoiseLevelHasBeenSet() const { return m_noiseLevelHasBeenSet; }
-    inline void SetNoiseLevel(const NoiseLevelType& value) { m_noiseLevelHasBeenSet = true; m_noiseLevel = value; }
-    inline void SetNoiseLevel(NoiseLevelType&& value) { m_noiseLevelHasBeenSet = true; m_noiseLevel = std::move(value); }
-    inline MetricsConfigurationPolicy& WithNoiseLevel(const NoiseLevelType& value) { SetNoiseLevel(value); return *this;}
-    inline MetricsConfigurationPolicy& WithNoiseLevel(NoiseLevelType&& value) { SetNoiseLevel(std::move(value)); return *this;}
+    inline void SetNoiseLevel(NoiseLevelType value) { m_noiseLevelHasBeenSet = true; m_noiseLevel = value; }
+    inline MetricsConfigurationPolicy& WithNoiseLevel(NoiseLevelType value) { SetNoiseLevel(value); return *this;}
     ///@}
   private:
 
-    NoiseLevelType m_noiseLevel;
+    NoiseLevelType m_noiseLevel{NoiseLevelType::NOT_SET};
     bool m_noiseLevelHasBeenSet = false;
   };
 

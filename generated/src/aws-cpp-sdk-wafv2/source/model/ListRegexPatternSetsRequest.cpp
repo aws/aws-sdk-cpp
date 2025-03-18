@@ -12,15 +12,6 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRegexPatternSetsRequest::ListRegexPatternSetsRequest() : 
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_nextMarkerHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListRegexPatternSetsRequest::SerializePayload() const
 {
   JsonValue payload;

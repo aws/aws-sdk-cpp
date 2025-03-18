@@ -27,7 +27,7 @@ namespace Model
   class TranslatePinDataResult
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API TranslatePinDataResult();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API TranslatePinDataResult() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API TranslatePinDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API TranslatePinDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The outgoing encrypted PIN block data after translation.</p>
      */
-    inline const Aws::String& GetPinBlock() const{ return m_pinBlock; }
-    inline void SetPinBlock(const Aws::String& value) { m_pinBlock = value; }
-    inline void SetPinBlock(Aws::String&& value) { m_pinBlock = std::move(value); }
-    inline void SetPinBlock(const char* value) { m_pinBlock.assign(value); }
-    inline TranslatePinDataResult& WithPinBlock(const Aws::String& value) { SetPinBlock(value); return *this;}
-    inline TranslatePinDataResult& WithPinBlock(Aws::String&& value) { SetPinBlock(std::move(value)); return *this;}
-    inline TranslatePinDataResult& WithPinBlock(const char* value) { SetPinBlock(value); return *this;}
+    inline const Aws::String& GetPinBlock() const { return m_pinBlock; }
+    template<typename PinBlockT = Aws::String>
+    void SetPinBlock(PinBlockT&& value) { m_pinBlockHasBeenSet = true; m_pinBlock = std::forward<PinBlockT>(value); }
+    template<typename PinBlockT = Aws::String>
+    TranslatePinDataResult& WithPinBlock(PinBlockT&& value) { SetPinBlock(std::forward<PinBlockT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,13 +49,11 @@ namespace Model
      * Payment Cryptography uses to encrypt outgoing PIN block data after
      * translation.</p>
      */
-    inline const Aws::String& GetKeyArn() const{ return m_keyArn; }
-    inline void SetKeyArn(const Aws::String& value) { m_keyArn = value; }
-    inline void SetKeyArn(Aws::String&& value) { m_keyArn = std::move(value); }
-    inline void SetKeyArn(const char* value) { m_keyArn.assign(value); }
-    inline TranslatePinDataResult& WithKeyArn(const Aws::String& value) { SetKeyArn(value); return *this;}
-    inline TranslatePinDataResult& WithKeyArn(Aws::String&& value) { SetKeyArn(std::move(value)); return *this;}
-    inline TranslatePinDataResult& WithKeyArn(const char* value) { SetKeyArn(value); return *this;}
+    inline const Aws::String& GetKeyArn() const { return m_keyArn; }
+    template<typename KeyArnT = Aws::String>
+    void SetKeyArn(KeyArnT&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::forward<KeyArnT>(value); }
+    template<typename KeyArnT = Aws::String>
+    TranslatePinDataResult& WithKeyArn(KeyArnT&& value) { SetKeyArn(std::forward<KeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,34 +63,34 @@ namespace Model
      * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
      * according to the CMAC specification.</p>
      */
-    inline const Aws::String& GetKeyCheckValue() const{ return m_keyCheckValue; }
-    inline void SetKeyCheckValue(const Aws::String& value) { m_keyCheckValue = value; }
-    inline void SetKeyCheckValue(Aws::String&& value) { m_keyCheckValue = std::move(value); }
-    inline void SetKeyCheckValue(const char* value) { m_keyCheckValue.assign(value); }
-    inline TranslatePinDataResult& WithKeyCheckValue(const Aws::String& value) { SetKeyCheckValue(value); return *this;}
-    inline TranslatePinDataResult& WithKeyCheckValue(Aws::String&& value) { SetKeyCheckValue(std::move(value)); return *this;}
-    inline TranslatePinDataResult& WithKeyCheckValue(const char* value) { SetKeyCheckValue(value); return *this;}
+    inline const Aws::String& GetKeyCheckValue() const { return m_keyCheckValue; }
+    template<typename KeyCheckValueT = Aws::String>
+    void SetKeyCheckValue(KeyCheckValueT&& value) { m_keyCheckValueHasBeenSet = true; m_keyCheckValue = std::forward<KeyCheckValueT>(value); }
+    template<typename KeyCheckValueT = Aws::String>
+    TranslatePinDataResult& WithKeyCheckValue(KeyCheckValueT&& value) { SetKeyCheckValue(std::forward<KeyCheckValueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline TranslatePinDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline TranslatePinDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline TranslatePinDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    TranslatePinDataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_pinBlock;
+    bool m_pinBlockHasBeenSet = false;
 
     Aws::String m_keyArn;
+    bool m_keyArnHasBeenSet = false;
 
     Aws::String m_keyCheckValue;
+    bool m_keyCheckValueHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

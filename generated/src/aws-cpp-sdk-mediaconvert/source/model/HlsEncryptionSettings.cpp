@@ -18,23 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-HlsEncryptionSettings::HlsEncryptionSettings() : 
-    m_constantInitializationVectorHasBeenSet(false),
-    m_encryptionMethod(HlsEncryptionType::NOT_SET),
-    m_encryptionMethodHasBeenSet(false),
-    m_initializationVectorInManifest(HlsInitializationVectorInManifest::NOT_SET),
-    m_initializationVectorInManifestHasBeenSet(false),
-    m_offlineEncrypted(HlsOfflineEncrypted::NOT_SET),
-    m_offlineEncryptedHasBeenSet(false),
-    m_spekeKeyProviderHasBeenSet(false),
-    m_staticKeyProviderHasBeenSet(false),
-    m_type(HlsKeyProviderType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 HlsEncryptionSettings::HlsEncryptionSettings(JsonView jsonValue)
-  : HlsEncryptionSettings()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ HlsEncryptionSettings& HlsEncryptionSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("constantInitializationVector"))
   {
     m_constantInitializationVector = jsonValue.GetString("constantInitializationVector");
-
     m_constantInitializationVectorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionMethod"))
   {
     m_encryptionMethod = HlsEncryptionTypeMapper::GetHlsEncryptionTypeForName(jsonValue.GetString("encryptionMethod"));
-
     m_encryptionMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("initializationVectorInManifest"))
   {
     m_initializationVectorInManifest = HlsInitializationVectorInManifestMapper::GetHlsInitializationVectorInManifestForName(jsonValue.GetString("initializationVectorInManifest"));
-
     m_initializationVectorInManifestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("offlineEncrypted"))
   {
     m_offlineEncrypted = HlsOfflineEncryptedMapper::GetHlsOfflineEncryptedForName(jsonValue.GetString("offlineEncrypted"));
-
     m_offlineEncryptedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("spekeKeyProvider"))
   {
     m_spekeKeyProvider = jsonValue.GetObject("spekeKeyProvider");
-
     m_spekeKeyProviderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("staticKeyProvider"))
   {
     m_staticKeyProvider = jsonValue.GetObject("staticKeyProvider");
-
     m_staticKeyProviderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = HlsKeyProviderTypeMapper::GetHlsKeyProviderTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-Diagnostics::Diagnostics() : 
-    m_errorCode(LifecycleErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_scriptNameHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_logTailHasBeenSet(false)
-{
-}
-
 Diagnostics::Diagnostics(JsonView jsonValue)
-  : Diagnostics()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Diagnostics& Diagnostics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = LifecycleErrorCodeMapper::GetLifecycleErrorCodeForName(jsonValue.GetString("errorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scriptName"))
   {
     m_scriptName = jsonValue.GetString("scriptName");
-
     m_scriptNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logTail"))
   {
     m_logTail = jsonValue.GetString("logTail");
-
     m_logTailHasBeenSet = true;
   }
-
   return *this;
 }
 

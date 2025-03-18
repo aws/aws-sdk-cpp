@@ -10,12 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DeletePolicyRequest::DeletePolicyRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_policyNameHasBeenSet(false)
-{
-}
-
 Aws::String DeletePolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

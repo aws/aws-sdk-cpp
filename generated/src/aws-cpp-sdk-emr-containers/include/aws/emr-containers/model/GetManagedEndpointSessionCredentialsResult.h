@@ -29,7 +29,7 @@ namespace Model
   class GetManagedEndpointSessionCredentialsResult
   {
   public:
-    AWS_EMRCONTAINERS_API GetManagedEndpointSessionCredentialsResult();
+    AWS_EMRCONTAINERS_API GetManagedEndpointSessionCredentialsResult() = default;
     AWS_EMRCONTAINERS_API GetManagedEndpointSessionCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EMRCONTAINERS_API GetManagedEndpointSessionCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,56 +38,56 @@ namespace Model
     /**
      * <p>The identifier of the session token returned.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetManagedEndpointSessionCredentialsResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetManagedEndpointSessionCredentialsResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetManagedEndpointSessionCredentialsResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetManagedEndpointSessionCredentialsResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The structure containing the session credentials.</p>
      */
-    inline const Credentials& GetCredentials() const{ return m_credentials; }
-    inline void SetCredentials(const Credentials& value) { m_credentials = value; }
-    inline void SetCredentials(Credentials&& value) { m_credentials = std::move(value); }
-    inline GetManagedEndpointSessionCredentialsResult& WithCredentials(const Credentials& value) { SetCredentials(value); return *this;}
-    inline GetManagedEndpointSessionCredentialsResult& WithCredentials(Credentials&& value) { SetCredentials(std::move(value)); return *this;}
+    inline const Credentials& GetCredentials() const { return m_credentials; }
+    template<typename CredentialsT = Credentials>
+    void SetCredentials(CredentialsT&& value) { m_credentialsHasBeenSet = true; m_credentials = std::forward<CredentialsT>(value); }
+    template<typename CredentialsT = Credentials>
+    GetManagedEndpointSessionCredentialsResult& WithCredentials(CredentialsT&& value) { SetCredentials(std::forward<CredentialsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the session token will expire.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpiresAt() const{ return m_expiresAt; }
-    inline void SetExpiresAt(const Aws::Utils::DateTime& value) { m_expiresAt = value; }
-    inline void SetExpiresAt(Aws::Utils::DateTime&& value) { m_expiresAt = std::move(value); }
-    inline GetManagedEndpointSessionCredentialsResult& WithExpiresAt(const Aws::Utils::DateTime& value) { SetExpiresAt(value); return *this;}
-    inline GetManagedEndpointSessionCredentialsResult& WithExpiresAt(Aws::Utils::DateTime&& value) { SetExpiresAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetExpiresAt() const { return m_expiresAt; }
+    template<typename ExpiresAtT = Aws::Utils::DateTime>
+    void SetExpiresAt(ExpiresAtT&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = std::forward<ExpiresAtT>(value); }
+    template<typename ExpiresAtT = Aws::Utils::DateTime>
+    GetManagedEndpointSessionCredentialsResult& WithExpiresAt(ExpiresAtT&& value) { SetExpiresAt(std::forward<ExpiresAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetManagedEndpointSessionCredentialsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetManagedEndpointSessionCredentialsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetManagedEndpointSessionCredentialsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetManagedEndpointSessionCredentialsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Credentials m_credentials;
+    bool m_credentialsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiresAt;
+    Aws::Utils::DateTime m_expiresAt{};
+    bool m_expiresAtHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

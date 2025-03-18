@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCertificateProviderRequest::DescribeCertificateProviderRequest() : 
-    m_certificateProviderNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCertificateProviderRequest::SerializePayload() const
 {
   return {};

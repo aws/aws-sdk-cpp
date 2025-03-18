@@ -30,7 +30,7 @@ namespace Model
   class ViewSunElevationInput
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API ViewSunElevationInput();
+    AWS_SAGEMAKERGEOSPATIAL_API ViewSunElevationInput() = default;
     AWS_SAGEMAKERGEOSPATIAL_API ViewSunElevationInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API ViewSunElevationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The lower bound to view the sun elevation.</p>
      */
-    inline double GetLowerBound() const{ return m_lowerBound; }
+    inline double GetLowerBound() const { return m_lowerBound; }
     inline bool LowerBoundHasBeenSet() const { return m_lowerBoundHasBeenSet; }
     inline void SetLowerBound(double value) { m_lowerBoundHasBeenSet = true; m_lowerBound = value; }
     inline ViewSunElevationInput& WithLowerBound(double value) { SetLowerBound(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The upper bound to view the sun elevation.</p>
      */
-    inline double GetUpperBound() const{ return m_upperBound; }
+    inline double GetUpperBound() const { return m_upperBound; }
     inline bool UpperBoundHasBeenSet() const { return m_upperBoundHasBeenSet; }
     inline void SetUpperBound(double value) { m_upperBoundHasBeenSet = true; m_upperBound = value; }
     inline ViewSunElevationInput& WithUpperBound(double value) { SetUpperBound(value); return *this;}
     ///@}
   private:
 
-    double m_lowerBound;
+    double m_lowerBound{0.0};
     bool m_lowerBoundHasBeenSet = false;
 
-    double m_upperBound;
+    double m_upperBound{0.0};
     bool m_upperBoundHasBeenSet = false;
   };
 

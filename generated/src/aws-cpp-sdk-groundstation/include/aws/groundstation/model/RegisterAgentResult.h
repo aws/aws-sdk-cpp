@@ -27,7 +27,7 @@ namespace Model
   class RegisterAgentResult
   {
   public:
-    AWS_GROUNDSTATION_API RegisterAgentResult();
+    AWS_GROUNDSTATION_API RegisterAgentResult() = default;
     AWS_GROUNDSTATION_API RegisterAgentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GROUNDSTATION_API RegisterAgentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>UUID of registered agent.</p>
      */
-    inline const Aws::String& GetAgentId() const{ return m_agentId; }
-    inline void SetAgentId(const Aws::String& value) { m_agentId = value; }
-    inline void SetAgentId(Aws::String&& value) { m_agentId = std::move(value); }
-    inline void SetAgentId(const char* value) { m_agentId.assign(value); }
-    inline RegisterAgentResult& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-    inline RegisterAgentResult& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-    inline RegisterAgentResult& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    RegisterAgentResult& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RegisterAgentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RegisterAgentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RegisterAgentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RegisterAgentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_agentId;
+    bool m_agentIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,13 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRecommendationTemplateRequest::DeleteRecommendationTemplateRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_recommendationTemplateArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRecommendationTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

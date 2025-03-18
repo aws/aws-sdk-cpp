@@ -18,23 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ProtectedJob::ProtectedJob() : 
-    m_idHasBeenSet(false),
-    m_membershipIdHasBeenSet(false),
-    m_membershipArnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_jobParametersHasBeenSet(false),
-    m_status(ProtectedJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_resultConfigurationHasBeenSet(false),
-    m_statisticsHasBeenSet(false),
-    m_resultHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 ProtectedJob::ProtectedJob(JsonView jsonValue)
-  : ProtectedJob()
 {
   *this = jsonValue;
 }
@@ -44,73 +28,53 @@ ProtectedJob& ProtectedJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipId"))
   {
     m_membershipId = jsonValue.GetString("membershipId");
-
     m_membershipIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipArn"))
   {
     m_membershipArn = jsonValue.GetString("membershipArn");
-
     m_membershipArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetDouble("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobParameters"))
   {
     m_jobParameters = jsonValue.GetObject("jobParameters");
-
     m_jobParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ProtectedJobStatusMapper::GetProtectedJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resultConfiguration"))
   {
     m_resultConfiguration = jsonValue.GetObject("resultConfiguration");
-
     m_resultConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statistics"))
   {
     m_statistics = jsonValue.GetObject("statistics");
-
     m_statisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("result"))
   {
     m_result = jsonValue.GetObject("result");
-
     m_resultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetObject("error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

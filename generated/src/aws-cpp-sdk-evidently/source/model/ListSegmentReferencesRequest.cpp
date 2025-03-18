@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListSegmentReferencesRequest::ListSegmentReferencesRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_segmentHasBeenSet(false),
-    m_type(SegmentReferenceResourceType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String ListSegmentReferencesRequest::SerializePayload() const
 {
   return {};

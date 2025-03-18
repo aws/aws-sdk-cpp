@@ -18,13 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-ConnectivityResourceConfigurationArn::ConnectivityResourceConfigurationArn() : 
-    m_resourceConfigurationArnHasBeenSet(false)
-{
-}
-
 ConnectivityResourceConfigurationArn::ConnectivityResourceConfigurationArn(JsonView jsonValue)
-  : ConnectivityResourceConfigurationArn()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ConnectivityResourceConfigurationArn& ConnectivityResourceConfigurationArn::oper
   if(jsonValue.ValueExists("ResourceConfigurationArn"))
   {
     m_resourceConfigurationArn = jsonValue.GetString("ResourceConfigurationArn");
-
     m_resourceConfigurationArnHasBeenSet = true;
   }
-
   return *this;
 }
 

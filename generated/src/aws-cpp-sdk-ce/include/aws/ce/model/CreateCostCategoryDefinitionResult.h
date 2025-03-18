@@ -27,7 +27,7 @@ namespace Model
   class CreateCostCategoryDefinitionResult
   {
   public:
-    AWS_COSTEXPLORER_API CreateCostCategoryDefinitionResult();
+    AWS_COSTEXPLORER_API CreateCostCategoryDefinitionResult() = default;
     AWS_COSTEXPLORER_API CreateCostCategoryDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COSTEXPLORER_API CreateCostCategoryDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The unique identifier for your newly created Cost Category. </p>
      */
-    inline const Aws::String& GetCostCategoryArn() const{ return m_costCategoryArn; }
-    inline void SetCostCategoryArn(const Aws::String& value) { m_costCategoryArn = value; }
-    inline void SetCostCategoryArn(Aws::String&& value) { m_costCategoryArn = std::move(value); }
-    inline void SetCostCategoryArn(const char* value) { m_costCategoryArn.assign(value); }
-    inline CreateCostCategoryDefinitionResult& WithCostCategoryArn(const Aws::String& value) { SetCostCategoryArn(value); return *this;}
-    inline CreateCostCategoryDefinitionResult& WithCostCategoryArn(Aws::String&& value) { SetCostCategoryArn(std::move(value)); return *this;}
-    inline CreateCostCategoryDefinitionResult& WithCostCategoryArn(const char* value) { SetCostCategoryArn(value); return *this;}
+    inline const Aws::String& GetCostCategoryArn() const { return m_costCategoryArn; }
+    template<typename CostCategoryArnT = Aws::String>
+    void SetCostCategoryArn(CostCategoryArnT&& value) { m_costCategoryArnHasBeenSet = true; m_costCategoryArn = std::forward<CostCategoryArnT>(value); }
+    template<typename CostCategoryArnT = Aws::String>
+    CreateCostCategoryDefinitionResult& WithCostCategoryArn(CostCategoryArnT&& value) { SetCostCategoryArn(std::forward<CostCategoryArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,32 +48,31 @@ namespace Model
      * <p>The Cost Category's effective start date. It can only be a billing start date
      * (first day of the month).</p>
      */
-    inline const Aws::String& GetEffectiveStart() const{ return m_effectiveStart; }
-    inline void SetEffectiveStart(const Aws::String& value) { m_effectiveStart = value; }
-    inline void SetEffectiveStart(Aws::String&& value) { m_effectiveStart = std::move(value); }
-    inline void SetEffectiveStart(const char* value) { m_effectiveStart.assign(value); }
-    inline CreateCostCategoryDefinitionResult& WithEffectiveStart(const Aws::String& value) { SetEffectiveStart(value); return *this;}
-    inline CreateCostCategoryDefinitionResult& WithEffectiveStart(Aws::String&& value) { SetEffectiveStart(std::move(value)); return *this;}
-    inline CreateCostCategoryDefinitionResult& WithEffectiveStart(const char* value) { SetEffectiveStart(value); return *this;}
+    inline const Aws::String& GetEffectiveStart() const { return m_effectiveStart; }
+    template<typename EffectiveStartT = Aws::String>
+    void SetEffectiveStart(EffectiveStartT&& value) { m_effectiveStartHasBeenSet = true; m_effectiveStart = std::forward<EffectiveStartT>(value); }
+    template<typename EffectiveStartT = Aws::String>
+    CreateCostCategoryDefinitionResult& WithEffectiveStart(EffectiveStartT&& value) { SetEffectiveStart(std::forward<EffectiveStartT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCostCategoryDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCostCategoryDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCostCategoryDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCostCategoryDefinitionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_costCategoryArn;
+    bool m_costCategoryArnHasBeenSet = false;
 
     Aws::String m_effectiveStart;
+    bool m_effectiveStartHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,17 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListInferenceSchedulersRequest::ListInferenceSchedulersRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_inferenceSchedulerNameBeginsWithHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_status(InferenceSchedulerStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String ListInferenceSchedulersRequest::SerializePayload() const
 {
   JsonValue payload;

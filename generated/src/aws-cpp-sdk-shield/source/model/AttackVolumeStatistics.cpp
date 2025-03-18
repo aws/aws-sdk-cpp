@@ -18,14 +18,7 @@ namespace Shield
 namespace Model
 {
 
-AttackVolumeStatistics::AttackVolumeStatistics() : 
-    m_max(0.0),
-    m_maxHasBeenSet(false)
-{
-}
-
 AttackVolumeStatistics::AttackVolumeStatistics(JsonView jsonValue)
-  : AttackVolumeStatistics()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AttackVolumeStatistics& AttackVolumeStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Max"))
   {
     m_max = jsonValue.GetDouble("Max");
-
     m_maxHasBeenSet = true;
   }
-
   return *this;
 }
 

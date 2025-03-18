@@ -33,7 +33,7 @@ namespace Model
   class AuthenticationConfiguration
   {
   public:
-    AWS_FIREHOSE_API AuthenticationConfiguration();
+    AWS_FIREHOSE_API AuthenticationConfiguration() = default;
     AWS_FIREHOSE_API AuthenticationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API AuthenticationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>The ARN of the role used to access the Amazon MSK cluster.</p>
      */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+    inline const Aws::String& GetRoleARN() const { return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-    inline AuthenticationConfiguration& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-    inline AuthenticationConfiguration& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-    inline AuthenticationConfiguration& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    template<typename RoleARNT = Aws::String>
+    void SetRoleARN(RoleARNT&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::forward<RoleARNT>(value); }
+    template<typename RoleARNT = Aws::String>
+    AuthenticationConfiguration& WithRoleARN(RoleARNT&& value) { SetRoleARN(std::forward<RoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of connectivity used to access the Amazon MSK cluster.</p>
      */
-    inline const Connectivity& GetConnectivity() const{ return m_connectivity; }
+    inline Connectivity GetConnectivity() const { return m_connectivity; }
     inline bool ConnectivityHasBeenSet() const { return m_connectivityHasBeenSet; }
-    inline void SetConnectivity(const Connectivity& value) { m_connectivityHasBeenSet = true; m_connectivity = value; }
-    inline void SetConnectivity(Connectivity&& value) { m_connectivityHasBeenSet = true; m_connectivity = std::move(value); }
-    inline AuthenticationConfiguration& WithConnectivity(const Connectivity& value) { SetConnectivity(value); return *this;}
-    inline AuthenticationConfiguration& WithConnectivity(Connectivity&& value) { SetConnectivity(std::move(value)); return *this;}
+    inline void SetConnectivity(Connectivity value) { m_connectivityHasBeenSet = true; m_connectivity = value; }
+    inline AuthenticationConfiguration& WithConnectivity(Connectivity value) { SetConnectivity(value); return *this;}
     ///@}
   private:
 
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet = false;
 
-    Connectivity m_connectivity;
+    Connectivity m_connectivity{Connectivity::NOT_SET};
     bool m_connectivityHasBeenSet = false;
   };
 

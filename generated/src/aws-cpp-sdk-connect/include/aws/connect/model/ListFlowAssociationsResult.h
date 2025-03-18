@@ -29,7 +29,7 @@ namespace Model
   class ListFlowAssociationsResult
   {
   public:
-    AWS_CONNECT_API ListFlowAssociationsResult();
+    AWS_CONNECT_API ListFlowAssociationsResult() = default;
     AWS_CONNECT_API ListFlowAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API ListFlowAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Summary of flow associations.</p>
      */
-    inline const Aws::Vector<FlowAssociationSummary>& GetFlowAssociationSummaryList() const{ return m_flowAssociationSummaryList; }
-    inline void SetFlowAssociationSummaryList(const Aws::Vector<FlowAssociationSummary>& value) { m_flowAssociationSummaryList = value; }
-    inline void SetFlowAssociationSummaryList(Aws::Vector<FlowAssociationSummary>&& value) { m_flowAssociationSummaryList = std::move(value); }
-    inline ListFlowAssociationsResult& WithFlowAssociationSummaryList(const Aws::Vector<FlowAssociationSummary>& value) { SetFlowAssociationSummaryList(value); return *this;}
-    inline ListFlowAssociationsResult& WithFlowAssociationSummaryList(Aws::Vector<FlowAssociationSummary>&& value) { SetFlowAssociationSummaryList(std::move(value)); return *this;}
-    inline ListFlowAssociationsResult& AddFlowAssociationSummaryList(const FlowAssociationSummary& value) { m_flowAssociationSummaryList.push_back(value); return *this; }
-    inline ListFlowAssociationsResult& AddFlowAssociationSummaryList(FlowAssociationSummary&& value) { m_flowAssociationSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FlowAssociationSummary>& GetFlowAssociationSummaryList() const { return m_flowAssociationSummaryList; }
+    template<typename FlowAssociationSummaryListT = Aws::Vector<FlowAssociationSummary>>
+    void SetFlowAssociationSummaryList(FlowAssociationSummaryListT&& value) { m_flowAssociationSummaryListHasBeenSet = true; m_flowAssociationSummaryList = std::forward<FlowAssociationSummaryListT>(value); }
+    template<typename FlowAssociationSummaryListT = Aws::Vector<FlowAssociationSummary>>
+    ListFlowAssociationsResult& WithFlowAssociationSummaryList(FlowAssociationSummaryListT&& value) { SetFlowAssociationSummaryList(std::forward<FlowAssociationSummaryListT>(value)); return *this;}
+    template<typename FlowAssociationSummaryListT = FlowAssociationSummary>
+    ListFlowAssociationsResult& AddFlowAssociationSummaryList(FlowAssociationSummaryListT&& value) { m_flowAssociationSummaryListHasBeenSet = true; m_flowAssociationSummaryList.emplace_back(std::forward<FlowAssociationSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListFlowAssociationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFlowAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFlowAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFlowAssociationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListFlowAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListFlowAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListFlowAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListFlowAssociationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FlowAssociationSummary> m_flowAssociationSummaryList;
+    bool m_flowAssociationSummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

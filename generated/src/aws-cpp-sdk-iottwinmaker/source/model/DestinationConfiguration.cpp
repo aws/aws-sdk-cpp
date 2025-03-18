@@ -18,16 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-DestinationConfiguration::DestinationConfiguration() : 
-    m_type(DestinationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_s3ConfigurationHasBeenSet(false),
-    m_iotTwinMakerConfigurationHasBeenSet(false)
-{
-}
-
 DestinationConfiguration::DestinationConfiguration(JsonView jsonValue)
-  : DestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DestinationConfiguration& DestinationConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("type"))
   {
     m_type = DestinationTypeMapper::GetDestinationTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Configuration"))
   {
     m_s3Configuration = jsonValue.GetObject("s3Configuration");
-
     m_s3ConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iotTwinMakerConfiguration"))
   {
     m_iotTwinMakerConfiguration = jsonValue.GetObject("iotTwinMakerConfiguration");
-
     m_iotTwinMakerConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

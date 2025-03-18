@@ -28,33 +28,35 @@ namespace Model
   class DeleteCacheClusterResult
   {
   public:
-    AWS_ELASTICACHE_API DeleteCacheClusterResult();
+    AWS_ELASTICACHE_API DeleteCacheClusterResult() = default;
     AWS_ELASTICACHE_API DeleteCacheClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICACHE_API DeleteCacheClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const CacheCluster& GetCacheCluster() const{ return m_cacheCluster; }
-    inline void SetCacheCluster(const CacheCluster& value) { m_cacheCluster = value; }
-    inline void SetCacheCluster(CacheCluster&& value) { m_cacheCluster = std::move(value); }
-    inline DeleteCacheClusterResult& WithCacheCluster(const CacheCluster& value) { SetCacheCluster(value); return *this;}
-    inline DeleteCacheClusterResult& WithCacheCluster(CacheCluster&& value) { SetCacheCluster(std::move(value)); return *this;}
+    inline const CacheCluster& GetCacheCluster() const { return m_cacheCluster; }
+    template<typename CacheClusterT = CacheCluster>
+    void SetCacheCluster(CacheClusterT&& value) { m_cacheClusterHasBeenSet = true; m_cacheCluster = std::forward<CacheClusterT>(value); }
+    template<typename CacheClusterT = CacheCluster>
+    DeleteCacheClusterResult& WithCacheCluster(CacheClusterT&& value) { SetCacheCluster(std::forward<CacheClusterT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteCacheClusterResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteCacheClusterResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteCacheClusterResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     CacheCluster m_cacheCluster;
+    bool m_cacheClusterHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

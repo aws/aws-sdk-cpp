@@ -32,7 +32,7 @@ namespace Model
   class TabularResolvedAttributes
   {
   public:
-    AWS_SAGEMAKER_API TabularResolvedAttributes();
+    AWS_SAGEMAKER_API TabularResolvedAttributes() = default;
     AWS_SAGEMAKER_API TabularResolvedAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TabularResolvedAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,16 +46,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
      * SageMaker Autopilot problem types</a>.</p>
      */
-    inline const ProblemType& GetProblemType() const{ return m_problemType; }
+    inline ProblemType GetProblemType() const { return m_problemType; }
     inline bool ProblemTypeHasBeenSet() const { return m_problemTypeHasBeenSet; }
-    inline void SetProblemType(const ProblemType& value) { m_problemTypeHasBeenSet = true; m_problemType = value; }
-    inline void SetProblemType(ProblemType&& value) { m_problemTypeHasBeenSet = true; m_problemType = std::move(value); }
-    inline TabularResolvedAttributes& WithProblemType(const ProblemType& value) { SetProblemType(value); return *this;}
-    inline TabularResolvedAttributes& WithProblemType(ProblemType&& value) { SetProblemType(std::move(value)); return *this;}
+    inline void SetProblemType(ProblemType value) { m_problemTypeHasBeenSet = true; m_problemType = value; }
+    inline TabularResolvedAttributes& WithProblemType(ProblemType value) { SetProblemType(value); return *this;}
     ///@}
   private:
 
-    ProblemType m_problemType;
+    ProblemType m_problemType{ProblemType::NOT_SET};
     bool m_problemTypeHasBeenSet = false;
   };
 

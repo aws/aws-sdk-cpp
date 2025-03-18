@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AssetBundleExportJobDataSetOverrideProperties::AssetBundleExportJobDataSetOverrideProperties() : 
-    m_arnHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
-{
-}
-
 AssetBundleExportJobDataSetOverrideProperties::AssetBundleExportJobDataSetOverrideProperties(JsonView jsonValue)
-  : AssetBundleExportJobDataSetOverrideProperties()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AssetBundleExportJobDataSetOverrideProperties& AssetBundleExportJobDataSetOverri
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Properties"))
   {
     Aws::Utils::Array<JsonView> propertiesJsonList = jsonValue.GetArray("Properties");
@@ -48,7 +39,6 @@ AssetBundleExportJobDataSetOverrideProperties& AssetBundleExportJobDataSetOverri
     }
     m_propertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

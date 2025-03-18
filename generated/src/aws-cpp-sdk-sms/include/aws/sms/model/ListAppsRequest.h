@@ -22,7 +22,7 @@ namespace Model
   class ListAppsRequest : public SMSRequest
   {
   public:
-    AWS_SMS_API ListAppsRequest();
+    AWS_SMS_API ListAppsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,29 +39,26 @@ namespace Model
     /**
      * <p>The unique application IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAppIds() const{ return m_appIds; }
+    inline const Aws::Vector<Aws::String>& GetAppIds() const { return m_appIds; }
     inline bool AppIdsHasBeenSet() const { return m_appIdsHasBeenSet; }
-    inline void SetAppIds(const Aws::Vector<Aws::String>& value) { m_appIdsHasBeenSet = true; m_appIds = value; }
-    inline void SetAppIds(Aws::Vector<Aws::String>&& value) { m_appIdsHasBeenSet = true; m_appIds = std::move(value); }
-    inline ListAppsRequest& WithAppIds(const Aws::Vector<Aws::String>& value) { SetAppIds(value); return *this;}
-    inline ListAppsRequest& WithAppIds(Aws::Vector<Aws::String>&& value) { SetAppIds(std::move(value)); return *this;}
-    inline ListAppsRequest& AddAppIds(const Aws::String& value) { m_appIdsHasBeenSet = true; m_appIds.push_back(value); return *this; }
-    inline ListAppsRequest& AddAppIds(Aws::String&& value) { m_appIdsHasBeenSet = true; m_appIds.push_back(std::move(value)); return *this; }
-    inline ListAppsRequest& AddAppIds(const char* value) { m_appIdsHasBeenSet = true; m_appIds.push_back(value); return *this; }
+    template<typename AppIdsT = Aws::Vector<Aws::String>>
+    void SetAppIds(AppIdsT&& value) { m_appIdsHasBeenSet = true; m_appIds = std::forward<AppIdsT>(value); }
+    template<typename AppIdsT = Aws::Vector<Aws::String>>
+    ListAppsRequest& WithAppIds(AppIdsT&& value) { SetAppIds(std::forward<AppIdsT>(value)); return *this;}
+    template<typename AppIdsT = Aws::String>
+    ListAppsRequest& AddAppIds(AppIdsT&& value) { m_appIdsHasBeenSet = true; m_appIds.emplace_back(std::forward<AppIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token for the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAppsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAppsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAppsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAppsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,7 +67,7 @@ namespace Model
      * is 100. To retrieve the remaining results, make another call with the returned
      * <code>NextToken</code> value. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAppsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -83,7 +80,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

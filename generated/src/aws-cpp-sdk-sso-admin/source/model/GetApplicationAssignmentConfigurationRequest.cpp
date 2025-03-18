@@ -12,11 +12,6 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetApplicationAssignmentConfigurationRequest::GetApplicationAssignmentConfigurationRequest() : 
-    m_applicationArnHasBeenSet(false)
-{
-}
-
 Aws::String GetApplicationAssignmentConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

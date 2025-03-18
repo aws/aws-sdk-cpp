@@ -18,18 +18,7 @@ namespace SSM
 namespace Model
 {
 
-InventoryItem::InventoryItem() : 
-    m_typeNameHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_captureTimeHasBeenSet(false),
-    m_contentHashHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_contextHasBeenSet(false)
-{
-}
-
 InventoryItem::InventoryItem(JsonView jsonValue)
-  : InventoryItem()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ InventoryItem& InventoryItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TypeName"))
   {
     m_typeName = jsonValue.GetString("TypeName");
-
     m_typeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaVersion"))
   {
     m_schemaVersion = jsonValue.GetString("SchemaVersion");
-
     m_schemaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CaptureTime"))
   {
     m_captureTime = jsonValue.GetString("CaptureTime");
-
     m_captureTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentHash"))
   {
     m_contentHash = jsonValue.GetString("ContentHash");
-
     m_contentHashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     Aws::Utils::Array<JsonView> contentJsonList = jsonValue.GetArray("Content");
@@ -79,7 +60,6 @@ InventoryItem& InventoryItem::operator =(JsonView jsonValue)
     }
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Context"))
   {
     Aws::Map<Aws::String, JsonView> contextJsonMap = jsonValue.GetObject("Context").GetAllObjects();
@@ -89,7 +69,6 @@ InventoryItem& InventoryItem::operator =(JsonView jsonValue)
     }
     m_contextHasBeenSet = true;
   }
-
   return *this;
 }
 

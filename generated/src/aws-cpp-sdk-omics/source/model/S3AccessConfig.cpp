@@ -18,13 +18,7 @@ namespace Omics
 namespace Model
 {
 
-S3AccessConfig::S3AccessConfig() : 
-    m_accessLogLocationHasBeenSet(false)
-{
-}
-
 S3AccessConfig::S3AccessConfig(JsonView jsonValue)
-  : S3AccessConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ S3AccessConfig& S3AccessConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessLogLocation"))
   {
     m_accessLogLocation = jsonValue.GetString("accessLogLocation");
-
     m_accessLogLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

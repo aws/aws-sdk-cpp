@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-TagCondition::TagCondition() : 
-    m_tagKeyHasBeenSet(false),
-    m_tagValueHasBeenSet(false)
-{
-}
-
 TagCondition::TagCondition(JsonView jsonValue)
-  : TagCondition()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TagCondition& TagCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TagKey"))
   {
     m_tagKey = jsonValue.GetString("TagKey");
-
     m_tagKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagValue"))
   {
     m_tagValue = jsonValue.GetString("TagValue");
-
     m_tagValueHasBeenSet = true;
   }
-
   return *this;
 }
 

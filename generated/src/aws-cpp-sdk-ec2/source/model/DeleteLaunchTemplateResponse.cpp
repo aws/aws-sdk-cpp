@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteLaunchTemplateResponse::DeleteLaunchTemplateResponse()
-{
-}
-
 DeleteLaunchTemplateResponse::DeleteLaunchTemplateResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DeleteLaunchTemplateResponse& DeleteLaunchTemplateResponse::operator =(const Aws
     if(!launchTemplateNode.IsNull())
     {
       m_launchTemplate = launchTemplateNode;
+      m_launchTemplateHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DeleteLaunchTemplateResponse& DeleteLaunchTemplateResponse::operator =(const Aws
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteLaunchTemplateResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

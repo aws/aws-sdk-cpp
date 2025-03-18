@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListSAMLProvidersResult::ListSAMLProvidersResult()
-{
-}
-
 ListSAMLProvidersResult::ListSAMLProvidersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ ListSAMLProvidersResult& ListSAMLProvidersResult::operator =(const Aws::AmazonWe
     if(!sAMLProviderListNode.IsNull())
     {
       XmlNode sAMLProviderListMember = sAMLProviderListNode.FirstChild("member");
+      m_sAMLProviderListHasBeenSet = !sAMLProviderListMember.IsNull();
       while(!sAMLProviderListMember.IsNull())
       {
         m_sAMLProviderList.push_back(sAMLProviderListMember);
         sAMLProviderListMember = sAMLProviderListMember.NextNode("member");
       }
 
+      m_sAMLProviderListHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::ListSAMLProvidersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

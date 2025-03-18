@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-InvokedIntentSample::InvokedIntentSample() : 
-    m_intentNameHasBeenSet(false)
-{
-}
-
 InvokedIntentSample::InvokedIntentSample(JsonView jsonValue)
-  : InvokedIntentSample()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InvokedIntentSample& InvokedIntentSample::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("intentName"))
   {
     m_intentName = jsonValue.GetString("intentName");
-
     m_intentNameHasBeenSet = true;
   }
-
   return *this;
 }
 

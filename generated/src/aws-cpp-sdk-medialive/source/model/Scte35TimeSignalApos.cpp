@@ -18,18 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-Scte35TimeSignalApos::Scte35TimeSignalApos() : 
-    m_adAvailOffset(0),
-    m_adAvailOffsetHasBeenSet(false),
-    m_noRegionalBlackoutFlag(Scte35AposNoRegionalBlackoutBehavior::NOT_SET),
-    m_noRegionalBlackoutFlagHasBeenSet(false),
-    m_webDeliveryAllowedFlag(Scte35AposWebDeliveryAllowedBehavior::NOT_SET),
-    m_webDeliveryAllowedFlagHasBeenSet(false)
-{
-}
-
 Scte35TimeSignalApos::Scte35TimeSignalApos(JsonView jsonValue)
-  : Scte35TimeSignalApos()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Scte35TimeSignalApos& Scte35TimeSignalApos::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("adAvailOffset"))
   {
     m_adAvailOffset = jsonValue.GetInteger("adAvailOffset");
-
     m_adAvailOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("noRegionalBlackoutFlag"))
   {
     m_noRegionalBlackoutFlag = Scte35AposNoRegionalBlackoutBehaviorMapper::GetScte35AposNoRegionalBlackoutBehaviorForName(jsonValue.GetString("noRegionalBlackoutFlag"));
-
     m_noRegionalBlackoutFlagHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("webDeliveryAllowedFlag"))
   {
     m_webDeliveryAllowedFlag = Scte35AposWebDeliveryAllowedBehaviorMapper::GetScte35AposWebDeliveryAllowedBehaviorForName(jsonValue.GetString("webDeliveryAllowedFlag"));
-
     m_webDeliveryAllowedFlagHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class CreateBotReplicaResult
   {
   public:
-    AWS_LEXMODELSV2_API CreateBotReplicaResult();
+    AWS_LEXMODELSV2_API CreateBotReplicaResult() = default;
     AWS_LEXMODELSV2_API CreateBotReplicaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API CreateBotReplicaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,26 +38,22 @@ namespace Model
     /**
      * <p>The unique bot ID of the replicated bot generated.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
-    inline void SetBotId(const Aws::String& value) { m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botId.assign(value); }
-    inline CreateBotReplicaResult& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline CreateBotReplicaResult& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline CreateBotReplicaResult& WithBotId(const char* value) { SetBotId(value); return *this;}
+    inline const Aws::String& GetBotId() const { return m_botId; }
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    CreateBotReplicaResult& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The region of the replicated bot generated.</p>
      */
-    inline const Aws::String& GetReplicaRegion() const{ return m_replicaRegion; }
-    inline void SetReplicaRegion(const Aws::String& value) { m_replicaRegion = value; }
-    inline void SetReplicaRegion(Aws::String&& value) { m_replicaRegion = std::move(value); }
-    inline void SetReplicaRegion(const char* value) { m_replicaRegion.assign(value); }
-    inline CreateBotReplicaResult& WithReplicaRegion(const Aws::String& value) { SetReplicaRegion(value); return *this;}
-    inline CreateBotReplicaResult& WithReplicaRegion(Aws::String&& value) { SetReplicaRegion(std::move(value)); return *this;}
-    inline CreateBotReplicaResult& WithReplicaRegion(const char* value) { SetReplicaRegion(value); return *this;}
+    inline const Aws::String& GetReplicaRegion() const { return m_replicaRegion; }
+    template<typename ReplicaRegionT = Aws::String>
+    void SetReplicaRegion(ReplicaRegionT&& value) { m_replicaRegionHasBeenSet = true; m_replicaRegion = std::forward<ReplicaRegionT>(value); }
+    template<typename ReplicaRegionT = Aws::String>
+    CreateBotReplicaResult& WithReplicaRegion(ReplicaRegionT&& value) { SetReplicaRegion(std::forward<ReplicaRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,60 +61,60 @@ namespace Model
      * <p>The source region for the source bot used for the replicated bot
      * generated.</p>
      */
-    inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
-    inline void SetSourceRegion(const Aws::String& value) { m_sourceRegion = value; }
-    inline void SetSourceRegion(Aws::String&& value) { m_sourceRegion = std::move(value); }
-    inline void SetSourceRegion(const char* value) { m_sourceRegion.assign(value); }
-    inline CreateBotReplicaResult& WithSourceRegion(const Aws::String& value) { SetSourceRegion(value); return *this;}
-    inline CreateBotReplicaResult& WithSourceRegion(Aws::String&& value) { SetSourceRegion(std::move(value)); return *this;}
-    inline CreateBotReplicaResult& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
+    inline const Aws::String& GetSourceRegion() const { return m_sourceRegion; }
+    template<typename SourceRegionT = Aws::String>
+    void SetSourceRegion(SourceRegionT&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::forward<SourceRegionT>(value); }
+    template<typename SourceRegionT = Aws::String>
+    CreateBotReplicaResult& WithSourceRegion(SourceRegionT&& value) { SetSourceRegion(std::forward<SourceRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation date and time of the replicated bot generated.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTime = std::move(value); }
-    inline CreateBotReplicaResult& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline CreateBotReplicaResult& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    CreateBotReplicaResult& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operational status of the replicated bot generated.</p>
      */
-    inline const BotReplicaStatus& GetBotReplicaStatus() const{ return m_botReplicaStatus; }
-    inline void SetBotReplicaStatus(const BotReplicaStatus& value) { m_botReplicaStatus = value; }
-    inline void SetBotReplicaStatus(BotReplicaStatus&& value) { m_botReplicaStatus = std::move(value); }
-    inline CreateBotReplicaResult& WithBotReplicaStatus(const BotReplicaStatus& value) { SetBotReplicaStatus(value); return *this;}
-    inline CreateBotReplicaResult& WithBotReplicaStatus(BotReplicaStatus&& value) { SetBotReplicaStatus(std::move(value)); return *this;}
+    inline BotReplicaStatus GetBotReplicaStatus() const { return m_botReplicaStatus; }
+    inline void SetBotReplicaStatus(BotReplicaStatus value) { m_botReplicaStatusHasBeenSet = true; m_botReplicaStatus = value; }
+    inline CreateBotReplicaResult& WithBotReplicaStatus(BotReplicaStatus value) { SetBotReplicaStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateBotReplicaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateBotReplicaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateBotReplicaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateBotReplicaResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_botId;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_replicaRegion;
+    bool m_replicaRegionHasBeenSet = false;
 
     Aws::String m_sourceRegion;
+    bool m_sourceRegionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
+    bool m_creationDateTimeHasBeenSet = false;
 
-    BotReplicaStatus m_botReplicaStatus;
+    BotReplicaStatus m_botReplicaStatus{BotReplicaStatus::NOT_SET};
+    bool m_botReplicaStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

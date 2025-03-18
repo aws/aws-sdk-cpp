@@ -22,7 +22,7 @@ namespace Model
   class GetMetricsRequest : public IoTWirelessRequest
   {
   public:
-    AWS_IOTWIRELESS_API GetMetricsRequest();
+    AWS_IOTWIRELESS_API GetMetricsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,14 @@ namespace Model
     /**
      * <p>The list of queries to retrieve the summary metrics.</p>
      */
-    inline const Aws::Vector<SummaryMetricQuery>& GetSummaryMetricQueries() const{ return m_summaryMetricQueries; }
+    inline const Aws::Vector<SummaryMetricQuery>& GetSummaryMetricQueries() const { return m_summaryMetricQueries; }
     inline bool SummaryMetricQueriesHasBeenSet() const { return m_summaryMetricQueriesHasBeenSet; }
-    inline void SetSummaryMetricQueries(const Aws::Vector<SummaryMetricQuery>& value) { m_summaryMetricQueriesHasBeenSet = true; m_summaryMetricQueries = value; }
-    inline void SetSummaryMetricQueries(Aws::Vector<SummaryMetricQuery>&& value) { m_summaryMetricQueriesHasBeenSet = true; m_summaryMetricQueries = std::move(value); }
-    inline GetMetricsRequest& WithSummaryMetricQueries(const Aws::Vector<SummaryMetricQuery>& value) { SetSummaryMetricQueries(value); return *this;}
-    inline GetMetricsRequest& WithSummaryMetricQueries(Aws::Vector<SummaryMetricQuery>&& value) { SetSummaryMetricQueries(std::move(value)); return *this;}
-    inline GetMetricsRequest& AddSummaryMetricQueries(const SummaryMetricQuery& value) { m_summaryMetricQueriesHasBeenSet = true; m_summaryMetricQueries.push_back(value); return *this; }
-    inline GetMetricsRequest& AddSummaryMetricQueries(SummaryMetricQuery&& value) { m_summaryMetricQueriesHasBeenSet = true; m_summaryMetricQueries.push_back(std::move(value)); return *this; }
+    template<typename SummaryMetricQueriesT = Aws::Vector<SummaryMetricQuery>>
+    void SetSummaryMetricQueries(SummaryMetricQueriesT&& value) { m_summaryMetricQueriesHasBeenSet = true; m_summaryMetricQueries = std::forward<SummaryMetricQueriesT>(value); }
+    template<typename SummaryMetricQueriesT = Aws::Vector<SummaryMetricQuery>>
+    GetMetricsRequest& WithSummaryMetricQueries(SummaryMetricQueriesT&& value) { SetSummaryMetricQueries(std::forward<SummaryMetricQueriesT>(value)); return *this;}
+    template<typename SummaryMetricQueriesT = SummaryMetricQuery>
+    GetMetricsRequest& AddSummaryMetricQueries(SummaryMetricQueriesT&& value) { m_summaryMetricQueriesHasBeenSet = true; m_summaryMetricQueries.emplace_back(std::forward<SummaryMetricQueriesT>(value)); return *this; }
     ///@}
   private:
 

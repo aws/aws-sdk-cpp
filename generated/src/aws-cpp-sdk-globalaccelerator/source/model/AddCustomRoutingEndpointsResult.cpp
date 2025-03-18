@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AddCustomRoutingEndpointsResult::AddCustomRoutingEndpointsResult()
-{
-}
-
 AddCustomRoutingEndpointsResult::AddCustomRoutingEndpointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ AddCustomRoutingEndpointsResult& AddCustomRoutingEndpointsResult::operator =(con
     {
       m_endpointDescriptions.push_back(endpointDescriptionsJsonList[endpointDescriptionsIndex].AsObject());
     }
+    m_endpointDescriptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointGroupArn"))
   {
     m_endpointGroupArn = jsonValue.GetString("EndpointGroupArn");
-
+    m_endpointGroupArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

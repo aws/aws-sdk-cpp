@@ -12,16 +12,6 @@ using namespace Aws::SMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAppRequest::UpdateAppRequest() : 
-    m_appIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_roleNameHasBeenSet(false),
-    m_serverGroupsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAppRequest::SerializePayload() const
 {
   JsonValue payload;

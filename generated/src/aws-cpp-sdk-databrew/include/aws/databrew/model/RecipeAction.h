@@ -35,7 +35,7 @@ namespace Model
   class RecipeAction
   {
   public:
-    AWS_GLUEDATABREW_API RecipeAction();
+    AWS_GLUEDATABREW_API RecipeAction() = default;
     AWS_GLUEDATABREW_API RecipeAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API RecipeAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,33 +45,28 @@ namespace Model
     /**
      * <p>The name of a valid DataBrew transformation to be performed on the data.</p>
      */
-    inline const Aws::String& GetOperation() const{ return m_operation; }
+    inline const Aws::String& GetOperation() const { return m_operation; }
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
-    inline void SetOperation(const Aws::String& value) { m_operationHasBeenSet = true; m_operation = value; }
-    inline void SetOperation(Aws::String&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
-    inline void SetOperation(const char* value) { m_operationHasBeenSet = true; m_operation.assign(value); }
-    inline RecipeAction& WithOperation(const Aws::String& value) { SetOperation(value); return *this;}
-    inline RecipeAction& WithOperation(Aws::String&& value) { SetOperation(std::move(value)); return *this;}
-    inline RecipeAction& WithOperation(const char* value) { SetOperation(value); return *this;}
+    template<typename OperationT = Aws::String>
+    void SetOperation(OperationT&& value) { m_operationHasBeenSet = true; m_operation = std::forward<OperationT>(value); }
+    template<typename OperationT = Aws::String>
+    RecipeAction& WithOperation(OperationT&& value) { SetOperation(std::forward<OperationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contextual parameters for the transformation.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline RecipeAction& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-    inline RecipeAction& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-    inline RecipeAction& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline RecipeAction& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline RecipeAction& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline RecipeAction& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline RecipeAction& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline RecipeAction& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline RecipeAction& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    RecipeAction& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+    RecipeAction& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 

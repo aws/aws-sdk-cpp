@@ -18,19 +18,7 @@ namespace ResourceExplorer2
 namespace Model
 {
 
-Resource::Resource() : 
-    m_arnHasBeenSet(false),
-    m_lastReportedAtHasBeenSet(false),
-    m_owningAccountIdHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_serviceHasBeenSet(false)
-{
-}
-
 Resource::Resource(JsonView jsonValue)
-  : Resource()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ Resource& Resource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastReportedAt"))
   {
     m_lastReportedAt = jsonValue.GetString("LastReportedAt");
-
     m_lastReportedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwningAccountId"))
   {
     m_owningAccountId = jsonValue.GetString("OwningAccountId");
-
     m_owningAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Properties"))
   {
     Aws::Utils::Array<JsonView> propertiesJsonList = jsonValue.GetArray("Properties");
@@ -67,28 +49,21 @@ Resource& Resource::operator =(JsonView jsonValue)
     }
     m_propertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Service"))
   {
     m_service = jsonValue.GetString("Service");
-
     m_serviceHasBeenSet = true;
   }
-
   return *this;
 }
 
