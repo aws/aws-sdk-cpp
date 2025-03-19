@@ -27,8 +27,9 @@ namespace Model
 {
 
   /**
-   * A savings plan that reserves a certain amount of outbound bandwidth usage at a
-   * discounted rate each month over a period of time.<p><h3>See Also:</h3>   <a
+   * <p> A savings plan that reserves a certain amount of outbound bandwidth usage at
+   * a discounted rate each month over a period of time. </p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Offering">AWS
    * API Reference</a></p>
    */
@@ -43,8 +44,8 @@ namespace Model
 
     ///@{
     /**
-     * The type of currency that is used for billing. The currencyCode used for all
-     * reservations is US dollars.
+     * <p> The type of currency that is used for billing. The currencyCode used for all
+     * reservations is US dollars.</p>
      */
     inline const Aws::String& GetCurrencyCode() const { return m_currencyCode; }
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
@@ -56,7 +57,7 @@ namespace Model
 
     ///@{
     /**
-     * The length of time that your reservation would be active.
+     * <p> The length of time that your reservation would be active.</p>
      */
     inline int GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
@@ -66,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * The unit of measurement for the duration of the offering.
+     * <p> The unit of measurement for the duration of the offering.</p>
      */
     inline DurationUnits GetDurationUnits() const { return m_durationUnits; }
     inline bool DurationUnitsHasBeenSet() const { return m_durationUnitsHasBeenSet; }
@@ -76,7 +77,8 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
+     * <p> The Amazon Resource Name (ARN) that MediaConnect assigns to the
+     * offering.</p>
      */
     inline const Aws::String& GetOfferingArn() const { return m_offeringArn; }
     inline bool OfferingArnHasBeenSet() const { return m_offeringArnHasBeenSet; }
@@ -88,7 +90,7 @@ namespace Model
 
     ///@{
     /**
-     * A description of the offering.
+     * <p> A description of the offering.</p>
      */
     inline const Aws::String& GetOfferingDescription() const { return m_offeringDescription; }
     inline bool OfferingDescriptionHasBeenSet() const { return m_offeringDescriptionHasBeenSet; }
@@ -100,8 +102,8 @@ namespace Model
 
     ///@{
     /**
-     * The cost of a single unit. This value, in combination with priceUnits, makes up
-     * the rate.
+     * <p> The cost of a single unit. This value, in combination with priceUnits, makes
+     * up the rate.</p>
      */
     inline const Aws::String& GetPricePerUnit() const { return m_pricePerUnit; }
     inline bool PricePerUnitHasBeenSet() const { return m_pricePerUnitHasBeenSet; }
@@ -113,8 +115,8 @@ namespace Model
 
     ///@{
     /**
-     * The unit of measurement that is used for billing. This value, in combination
-     * with pricePerUnit, makes up the rate.
+     * <p> The unit of measurement that is used for billing. This value, in combination
+     * with pricePerUnit, makes up the rate.</p>
      */
     inline PriceUnits GetPriceUnits() const { return m_priceUnits; }
     inline bool PriceUnitsHasBeenSet() const { return m_priceUnitsHasBeenSet; }
@@ -124,8 +126,8 @@ namespace Model
 
     ///@{
     /**
-     * A definition of the amount of outbound bandwidth that you would be reserving if
-     * you purchase the offering.
+     * <p> A definition of the amount of outbound bandwidth that you would be reserving
+     * if you purchase the offering.</p>
      */
     inline const ResourceSpecification& GetResourceSpecification() const { return m_resourceSpecification; }
     inline bool ResourceSpecificationHasBeenSet() const { return m_resourceSpecificationHasBeenSet; }

@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * Force the deregistration of an instance. Force will deregister an instance, even
-     * if there are bridges running on it.
+     * <p> Force the deregistration of an instance. Force will deregister an instance,
+     * even if there are bridges running on it.</p>
      */
     inline bool GetForce() const { return m_force; }
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
@@ -51,8 +51,8 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Name (ARN) of the gateway that contains the instance that
-     * you want to deregister.
+     * <p> The Amazon Resource Name (ARN) of the gateway that contains the instance
+     * that you want to deregister.</p>
      */
     inline const Aws::String& GetGatewayInstanceArn() const { return m_gatewayInstanceArn; }
     inline bool GatewayInstanceArnHasBeenSet() const { return m_gatewayInstanceArnHasBeenSet; }

@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * Attributes related to the transport stream that are used in a source or
-   * output.<p><h3>See Also:</h3>   <a
+   * <p> Attributes related to the transport stream that are used in a source or
+   * output.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Transport">AWS
    * API Reference</a></p>
    */
@@ -42,9 +42,9 @@ namespace Model
 
     ///@{
     /**
-     * The range of IP addresses that should be allowed to initiate output requests to
-     * this flow. These IP addresses should be in the form of a Classless Inter-Domain
-     * Routing (CIDR) block; for example, 10.0.0.0/16.
+     * <p> The range of IP addresses that should be allowed to initiate output requests
+     * to this flow. These IP addresses should be in the form of a Classless
+     * Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16</p>
      */
     inline const Aws::Vector<Aws::String>& GetCidrAllowList() const { return m_cidrAllowList; }
     inline bool CidrAllowListHasBeenSet() const { return m_cidrAllowListHasBeenSet; }
@@ -58,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
+     * <p> The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.</p>
      */
     inline int GetMaxBitrate() const { return m_maxBitrate; }
     inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
@@ -68,8 +68,8 @@ namespace Model
 
     ///@{
     /**
-     * The maximum latency in milliseconds. This parameter applies only to RIST-based,
-     * Zixi-based, and Fujitsu-based streams.
+     * <p> The maximum latency in milliseconds. This parameter applies only to
+     * RIST-based and Zixi-based streams.</p>
      */
     inline int GetMaxLatency() const { return m_maxLatency; }
     inline bool MaxLatencyHasBeenSet() const { return m_maxLatencyHasBeenSet; }
@@ -79,7 +79,8 @@ namespace Model
 
     ///@{
     /**
-     * The size of the buffer (in milliseconds) to use to sync incoming source data.
+     * <p> The size of the buffer (in milliseconds) to use to sync incoming source
+     * data.</p>
      */
     inline int GetMaxSyncBuffer() const { return m_maxSyncBuffer; }
     inline bool MaxSyncBufferHasBeenSet() const { return m_maxSyncBufferHasBeenSet; }
@@ -89,11 +90,11 @@ namespace Model
 
     ///@{
     /**
-     * The minimum latency in milliseconds for SRT-based streams. In streams that use
-     * the SRT protocol, this value that you set on your MediaConnect source or output
-     * represents the minimal potential latency of that connection. The latency of the
-     * stream is set to the highest number between the sender’s minimum latency and the
-     * receiver’s minimum latency.
+     * <p> The minimum latency in milliseconds for SRT-based streams. In streams that
+     * use the SRT protocol, this value that you set on your MediaConnect source or
+     * output represents the minimal potential latency of that connection. The latency
+     * of the stream is set to the highest number between the sender’s minimum latency
+     * and the receiver’s minimum latency.</p>
      */
     inline int GetMinLatency() const { return m_minLatency; }
     inline bool MinLatencyHasBeenSet() const { return m_minLatencyHasBeenSet; }
@@ -103,7 +104,9 @@ namespace Model
 
     ///@{
     /**
-     * The protocol that is used by the source or output.
+     * <p> The protocol that is used by the source or output.</p>  <p>Elemental
+     * MediaConnect no longer supports the Fujitsu QoS protocol. This reference is
+     * maintained for legacy purposes only.</p> 
      */
     inline Protocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
@@ -113,7 +116,7 @@ namespace Model
 
     ///@{
     /**
-     * The remote ID for the Zixi-pull stream.
+     * <p> The remote ID for the Zixi-pull stream.</p>
      */
     inline const Aws::String& GetRemoteId() const { return m_remoteId; }
     inline bool RemoteIdHasBeenSet() const { return m_remoteIdHasBeenSet; }
@@ -125,8 +128,8 @@ namespace Model
 
     ///@{
     /**
-     * The port that the flow uses to send outbound requests to initiate connection
-     * with the sender.
+     * <p> The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.</p>
      */
     inline int GetSenderControlPort() const { return m_senderControlPort; }
     inline bool SenderControlPortHasBeenSet() const { return m_senderControlPortHasBeenSet; }
@@ -136,8 +139,8 @@ namespace Model
 
     ///@{
     /**
-     * The IP address that the flow communicates with to initiate connection with the
-     * sender.
+     * <p> The IP address that the flow communicates with to initiate connection with
+     * the sender.</p>
      */
     inline const Aws::String& GetSenderIpAddress() const { return m_senderIpAddress; }
     inline bool SenderIpAddressHasBeenSet() const { return m_senderIpAddressHasBeenSet; }
@@ -149,7 +152,8 @@ namespace Model
 
     ///@{
     /**
-     * The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+     * <p> The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC
+     * streams.</p>
      */
     inline int GetSmoothingLatency() const { return m_smoothingLatency; }
     inline bool SmoothingLatencyHasBeenSet() const { return m_smoothingLatencyHasBeenSet; }
@@ -159,7 +163,7 @@ namespace Model
 
     ///@{
     /**
-     * Source IP or domain name for SRT-caller protocol.
+     * <p> Source IP or domain name for SRT-caller protocol.</p>
      */
     inline const Aws::String& GetSourceListenerAddress() const { return m_sourceListenerAddress; }
     inline bool SourceListenerAddressHasBeenSet() const { return m_sourceListenerAddressHasBeenSet; }
@@ -171,7 +175,7 @@ namespace Model
 
     ///@{
     /**
-     * Source port for SRT-caller protocol.
+     * <p> Source port for SRT-caller protocol.</p>
      */
     inline int GetSourceListenerPort() const { return m_sourceListenerPort; }
     inline bool SourceListenerPortHasBeenSet() const { return m_sourceListenerPortHasBeenSet; }
@@ -181,8 +185,8 @@ namespace Model
 
     ///@{
     /**
-     * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi and SRT caller-based streams.
+     * <p> The stream ID that you want to use for this transport. This parameter
+     * applies only to Zixi and SRT caller-based streams.</p>
      */
     inline const Aws::String& GetStreamId() const { return m_streamId; }
     inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
@@ -190,6 +194,29 @@ namespace Model
     void SetStreamId(StreamIdT&& value) { m_streamIdHasBeenSet = true; m_streamId = std::forward<StreamIdT>(value); }
     template<typename StreamIdT = Aws::String>
     Transport& WithStreamId(StreamIdT&& value) { SetStreamId(std::forward<StreamIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A quality setting for the NDI Speed HQ encoder. </p>
+     */
+    inline int GetNdiSpeedHqQuality() const { return m_ndiSpeedHqQuality; }
+    inline bool NdiSpeedHqQualityHasBeenSet() const { return m_ndiSpeedHqQualityHasBeenSet; }
+    inline void SetNdiSpeedHqQuality(int value) { m_ndiSpeedHqQualityHasBeenSet = true; m_ndiSpeedHqQuality = value; }
+    inline Transport& WithNdiSpeedHqQuality(int value) { SetNdiSpeedHqQuality(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A suffix for the names of the NDI sources that the flow creates. If a custom
+     * name isn't specified, MediaConnect uses the output name. </p>
+     */
+    inline const Aws::String& GetNdiProgramName() const { return m_ndiProgramName; }
+    inline bool NdiProgramNameHasBeenSet() const { return m_ndiProgramNameHasBeenSet; }
+    template<typename NdiProgramNameT = Aws::String>
+    void SetNdiProgramName(NdiProgramNameT&& value) { m_ndiProgramNameHasBeenSet = true; m_ndiProgramName = std::forward<NdiProgramNameT>(value); }
+    template<typename NdiProgramNameT = Aws::String>
+    Transport& WithNdiProgramName(NdiProgramNameT&& value) { SetNdiProgramName(std::forward<NdiProgramNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -231,6 +258,12 @@ namespace Model
 
     Aws::String m_streamId;
     bool m_streamIdHasBeenSet = false;
+
+    int m_ndiSpeedHqQuality{0};
+    bool m_ndiSpeedHqQualityHasBeenSet = false;
+
+    Aws::String m_ndiProgramName;
+    bool m_ndiProgramNameHasBeenSet = false;
   };
 
 } // namespace Model

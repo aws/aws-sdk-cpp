@@ -94,6 +94,16 @@ Transport& Transport::operator =(JsonView jsonValue)
     m_streamId = jsonValue.GetString("streamId");
     m_streamIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ndiSpeedHqQuality"))
+  {
+    m_ndiSpeedHqQuality = jsonValue.GetInteger("ndiSpeedHqQuality");
+    m_ndiSpeedHqQualityHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ndiProgramName"))
+  {
+    m_ndiProgramName = jsonValue.GetString("ndiProgramName");
+    m_ndiProgramNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -180,6 +190,18 @@ JsonValue Transport::Jsonize() const
   if(m_streamIdHasBeenSet)
   {
    payload.WithString("streamId", m_streamId);
+
+  }
+
+  if(m_ndiSpeedHqQualityHasBeenSet)
+  {
+   payload.WithInteger("ndiSpeedHqQuality", m_ndiSpeedHqQuality);
+
+  }
+
+  if(m_ndiProgramNameHasBeenSet)
+  {
+   payload.WithString("ndiProgramName", m_ndiProgramName);
 
   }
 

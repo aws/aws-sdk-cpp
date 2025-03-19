@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Name (ARN) of the instance.
+     * <p> The ARN of the instance.</p>
      */
     inline const Aws::String& GetGatewayInstanceArn() const { return m_gatewayInstanceArn; }
     template<typename GatewayInstanceArnT = Aws::String>
@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * The status of the instance.
+     * <p> The status of the instance.</p>
      */
     inline InstanceState GetInstanceState() const { return m_instanceState; }
     inline void SetInstanceState(InstanceState value) { m_instanceStateHasBeenSet = true; m_instanceState = value; }

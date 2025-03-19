@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * Update the flow source of the bridge.<p><h3>See Also:</h3>   <a
+   * <p> Update the flow source of the bridge. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeFlowSourceRequest">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the cloud flow to use as a source of this bridge.
+     * <p> The Amazon Resource Name (ARN) that identifies the MediaConnect resource
+     * from which to delete tags.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
@@ -52,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the VPC interface attachment to use for this source.
+     * <p>The name of the VPC interface attachment to use for this source. </p>
      */
     inline const VpcInterfaceAttachment& GetFlowVpcInterfaceAttachment() const { return m_flowVpcInterfaceAttachment; }
     inline bool FlowVpcInterfaceAttachmentHasBeenSet() const { return m_flowVpcInterfaceAttachmentHasBeenSet; }

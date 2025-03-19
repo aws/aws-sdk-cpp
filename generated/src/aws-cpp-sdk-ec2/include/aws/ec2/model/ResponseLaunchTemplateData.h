@@ -259,8 +259,7 @@ namespace Model
     ///@{
     /**
      * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
-     * January 8, 2024. For workloads that require graphics acceleration, we recommend
-     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
+     * January 8, 2024.</p> 
      */
     inline const Aws::Vector<ElasticGpuSpecificationResponse>& GetElasticGpuSpecifications() const { return m_elasticGpuSpecifications; }
     inline bool ElasticGpuSpecificationsHasBeenSet() const { return m_elasticGpuSpecificationsHasBeenSet; }
@@ -278,15 +277,7 @@ namespace Model
      * elastic inference accelerator to associate with the instance. Elastic inference
      * accelerators are a resource you can attach to your Amazon EC2 instances to
      * accelerate your Deep Learning (DL) inference workloads.</p> <p>You cannot
-     * specify accelerators from different generations in the same request.</p> 
-     * <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers
-     * to Amazon Elastic Inference (EI), and will help current customers migrate their
-     * workloads to options that offer better price and performance. After April 15,
-     * 2023, new customers will not be able to launch instances with Amazon EI
-     * accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers
-     * who have used Amazon EI at least once during the past 30-day period are
-     * considered current customers and will be able to continue using the service.</p>
-     * 
+     * specify accelerators from different generations in the same request.</p>
      */
     inline const Aws::Vector<LaunchTemplateElasticInferenceAcceleratorResponse>& GetElasticInferenceAccelerators() const { return m_elasticInferenceAccelerators; }
     inline bool ElasticInferenceAcceleratorsHasBeenSet() const { return m_elasticInferenceAcceleratorsHasBeenSet; }

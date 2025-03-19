@@ -32,9 +32,10 @@ namespace Model
 {
 
   /**
-   * A Bridge is the connection between your datacenter's Instances and the AWS
-   * cloud. A bridge can be used to send video from the AWS cloud to your datacenter
-   * or from your datacenter to the AWS cloud.<p><h3>See Also:</h3>   <a
+   * <p> A Bridge is the connection between your data center's Instances and the
+   * Amazon Web Services cloud. A bridge can be used to send video from the Amazon
+   * Web Services cloud to your data center or from your data center to the Amazon
+   * Web Services cloud.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Bridge">AWS
    * API Reference</a></p>
    */
@@ -49,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Number (ARN) of the bridge.
+     * <p> The Amazon Resource Number (ARN) of the bridge.</p>
      */
     inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }
@@ -60,7 +61,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> Messages with details about the bridge. </p>
+     */
     inline const Aws::Vector<MessageDetail>& GetBridgeMessages() const { return m_bridgeMessages; }
     inline bool BridgeMessagesHasBeenSet() const { return m_bridgeMessagesHasBeenSet; }
     template<typename BridgeMessagesT = Aws::Vector<MessageDetail>>
@@ -72,7 +75,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>The state of the bridge. </p>
+     */
     inline BridgeState GetBridgeState() const { return m_bridgeState; }
     inline bool BridgeStateHasBeenSet() const { return m_bridgeStateHasBeenSet; }
     inline void SetBridgeState(BridgeState value) { m_bridgeStateHasBeenSet = true; m_bridgeState = value; }
@@ -80,7 +85,10 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> An egress bridge is a cloud-to-ground bridge. The content comes from an
+     * existing MediaConnect flow and is delivered to your premises. </p>
+     */
     inline const EgressGatewayBridge& GetEgressGatewayBridge() const { return m_egressGatewayBridge; }
     inline bool EgressGatewayBridgeHasBeenSet() const { return m_egressGatewayBridgeHasBeenSet; }
     template<typename EgressGatewayBridgeT = EgressGatewayBridge>
@@ -90,7 +98,10 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> An ingress bridge is a ground-to-cloud bridge. The content originates at
+     * your premises and is delivered to the cloud. </p>
+     */
     inline const IngressGatewayBridge& GetIngressGatewayBridge() const { return m_ingressGatewayBridge; }
     inline bool IngressGatewayBridgeHasBeenSet() const { return m_ingressGatewayBridgeHasBeenSet; }
     template<typename IngressGatewayBridgeT = IngressGatewayBridge>
@@ -101,7 +112,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the bridge.
+     * <p> The name of the bridge.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -113,7 +124,7 @@ namespace Model
 
     ///@{
     /**
-     * The outputs on this bridge.
+     * <p> The outputs on this bridge.</p>
      */
     inline const Aws::Vector<BridgeOutput>& GetOutputs() const { return m_outputs; }
     inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
@@ -127,7 +138,7 @@ namespace Model
 
     ///@{
     /**
-     * The placement Amazon Resource Number (ARN) of the bridge.
+     * <p> The placement Amazon Resource Number (ARN) of the bridge.</p>
      */
     inline const Aws::String& GetPlacementArn() const { return m_placementArn; }
     inline bool PlacementArnHasBeenSet() const { return m_placementArnHasBeenSet; }
@@ -138,7 +149,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The settings for source failover. </p>
+     */
     inline const FailoverConfig& GetSourceFailoverConfig() const { return m_sourceFailoverConfig; }
     inline bool SourceFailoverConfigHasBeenSet() const { return m_sourceFailoverConfigHasBeenSet; }
     template<typename SourceFailoverConfigT = FailoverConfig>
@@ -149,7 +162,7 @@ namespace Model
 
     ///@{
     /**
-     * The sources on this bridge.
+     * <p> The sources on this bridge.</p>
      */
     inline const Aws::Vector<BridgeSource>& GetSources() const { return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }

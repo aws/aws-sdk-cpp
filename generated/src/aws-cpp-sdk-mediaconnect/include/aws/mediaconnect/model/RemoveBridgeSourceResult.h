@@ -33,7 +33,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p> The ARN of the bridge from which the source was removed. </p>
+     */
     inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     template<typename BridgeArnT = Aws::String>
     void SetBridgeArn(BridgeArnT&& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = std::forward<BridgeArnT>(value); }
@@ -42,7 +44,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The name of the bridge source that was removed. </p>
+     */
     inline const Aws::String& GetSourceName() const { return m_sourceName; }
     template<typename SourceNameT = Aws::String>
     void SetSourceName(SourceNameT&& value) { m_sourceNameHasBeenSet = true; m_sourceName = std::forward<SourceNameT>(value); }

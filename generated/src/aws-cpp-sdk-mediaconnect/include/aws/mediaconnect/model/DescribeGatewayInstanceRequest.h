@@ -34,8 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Name (ARN) of the gateway instance that you want to
-     * describe.
+     * <p> The Amazon Resource Name (ARN) of the gateway instance that you want to
+     * describe.</p>
      */
     inline const Aws::String& GetGatewayInstanceArn() const { return m_gatewayInstanceArn; }
     inline bool GatewayInstanceArnHasBeenSet() const { return m_gatewayInstanceArnHasBeenSet; }

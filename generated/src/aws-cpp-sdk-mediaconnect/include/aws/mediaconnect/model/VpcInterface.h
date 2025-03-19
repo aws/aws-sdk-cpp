@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * The settings for a VPC Source.<p><h3>See Also:</h3>   <a
+   * <p> The settings for a VPC source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/VpcInterface">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * Immutable and has to be a unique against other VpcInterfaces in this Flow.
+     * <p> Immutable and has to be a unique against other VpcInterfaces in this
+     * Flow.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -53,7 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * IDs of the network interfaces created in customer's account by MediaConnect.
+     * <p> IDs of the network interfaces created in customer's account by
+     * MediaConnect.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNetworkInterfaceIds() const { return m_networkInterfaceIds; }
     inline bool NetworkInterfaceIdsHasBeenSet() const { return m_networkInterfaceIdsHasBeenSet; }
@@ -67,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * The type of network interface.
+     * <p> The type of network interface.</p>
      */
     inline NetworkInterfaceType GetNetworkInterfaceType() const { return m_networkInterfaceType; }
     inline bool NetworkInterfaceTypeHasBeenSet() const { return m_networkInterfaceTypeHasBeenSet; }
@@ -77,7 +79,7 @@ namespace Model
 
     ///@{
     /**
-     * Role Arn MediaConnect can assumes to create ENIs in customer's account
+     * <p> A role Arn MediaConnect can assume to create ENIs in your account.</p>
      */
     inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -89,7 +91,7 @@ namespace Model
 
     ///@{
     /**
-     * Security Group IDs to be used on ENI.
+     * <p> Security Group IDs to be used on ENI.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
@@ -103,7 +105,7 @@ namespace Model
 
     ///@{
     /**
-     * Subnet must be in the AZ of the Flow
+     * <p> Subnet must be in the AZ of the Flow. </p>
      */
     inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }

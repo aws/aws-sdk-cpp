@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the flow that was deleted.
+     * <p> The ARN of the flow that was deleted.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     template<typename FlowArnT = Aws::String>
@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * The status of the flow when the DeleteFlow process begins.
+     * <p> The status of the flow when the <code>DeleteFlow</code> process begins.</p>
      */
     inline Status GetStatus() const { return m_status; }
     inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }

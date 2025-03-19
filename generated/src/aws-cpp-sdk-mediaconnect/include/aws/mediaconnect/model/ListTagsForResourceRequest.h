@@ -34,8 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
-     * resource for which to list the tags.
+     * <p> The Amazon Resource Name (ARN) that identifies the MediaConnect resource for
+     * which to list the tags.</p>
      */
     inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

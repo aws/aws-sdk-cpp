@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * The settings for source failover.<p><h3>See Also:</h3>   <a
+   * <p> The settings for source failover.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/FailoverConfig">AWS
    * API Reference</a></p>
    */
@@ -41,9 +41,9 @@ namespace Model
 
     ///@{
     /**
-     * The type of failover you choose for this flow. MERGE combines the source streams
-     * into a single stream, allowing graceful recovery from any single-source loss.
-     * FAILOVER allows switching between different streams.
+     * <p> The type of failover you choose for this flow. MERGE combines the source
+     * streams into a single stream, allowing graceful recovery from any single-source
+     * loss. FAILOVER allows switching between different streams.</p>
      */
     inline FailoverMode GetFailoverMode() const { return m_failoverMode; }
     inline bool FailoverModeHasBeenSet() const { return m_failoverModeHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * Search window time to look for dash-7 packets
+     * <p> Search window time to look for dash-7 packets.</p>
      */
     inline int GetRecoveryWindow() const { return m_recoveryWindow; }
     inline bool RecoveryWindowHasBeenSet() const { return m_recoveryWindowHasBeenSet; }
@@ -63,8 +63,8 @@ namespace Model
 
     ///@{
     /**
-     * The priority you want to assign to a source. You can have a primary stream and a
-     * backup stream or two equally prioritized streams.
+     * <p> The priority you want to assign to a source. You can have a primary stream
+     * and a backup stream or two equally prioritized streams.</p>
      */
     inline const SourcePriority& GetSourcePriority() const { return m_sourcePriority; }
     inline bool SourcePriorityHasBeenSet() const { return m_sourcePriorityHasBeenSet; }
@@ -75,7 +75,11 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>The state of source failover on the flow. If the state is inactive, the flow
+     * can have only one source. If the state is active, the flow can have one or two
+     * sources. </p>
+     */
     inline State GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
     inline void SetState(State value) { m_stateHasBeenSet = true; m_state = value; }

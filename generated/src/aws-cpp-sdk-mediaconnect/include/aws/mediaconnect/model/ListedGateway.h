@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * Provides a summary of a gateway, including its name, ARN, and status.<p><h3>See
+   * <p> A summary of a gateway, including its name, ARN, and status.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListedGateway">AWS
    * API Reference</a></p>
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Name (ARN) of the gateway.
+     * <p> The Amazon Resource Name (ARN) of the gateway.</p>
      */
     inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
     inline bool GatewayArnHasBeenSet() const { return m_gatewayArnHasBeenSet; }
@@ -52,7 +52,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The status of the gateway.</p>
+     */
     inline GatewayState GetGatewayState() const { return m_gatewayState; }
     inline bool GatewayStateHasBeenSet() const { return m_gatewayStateHasBeenSet; }
     inline void SetGatewayState(GatewayState value) { m_gatewayStateHasBeenSet = true; m_gatewayState = value; }
@@ -61,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the gateway.
+     * <p> The name of the gateway.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

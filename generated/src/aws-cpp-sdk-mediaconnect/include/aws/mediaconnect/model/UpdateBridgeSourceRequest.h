@@ -19,10 +19,6 @@ namespace Model
 {
 
   /**
-   * The fields that you want to update in the bridge source.<p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeSourceRequest">AWS
-   * API Reference</a></p>
    */
   class UpdateBridgeSourceRequest : public MediaConnectRequest
   {
@@ -40,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the bridge that you want to update.
+     * <p> The Amazon Resource Name (ARN) of the bridge that you want to update.</p>
      */
     inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }
@@ -51,7 +47,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The name of the flow that you want to update.</p>
+     */
     inline const UpdateBridgeFlowSourceRequest& GetFlowSource() const { return m_flowSource; }
     inline bool FlowSourceHasBeenSet() const { return m_flowSourceHasBeenSet; }
     template<typename FlowSourceT = UpdateBridgeFlowSourceRequest>
@@ -61,7 +59,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The network for the bridge source. </p>
+     */
     inline const UpdateBridgeNetworkSourceRequest& GetNetworkSource() const { return m_networkSource; }
     inline bool NetworkSourceHasBeenSet() const { return m_networkSourceHasBeenSet; }
     template<typename NetworkSourceT = UpdateBridgeNetworkSourceRequest>
@@ -72,7 +72,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the source that you want to update.
+     * <p> The name of the source that you want to update. </p>
      */
     inline const Aws::String& GetSourceName() const { return m_sourceName; }
     inline bool SourceNameHasBeenSet() const { return m_sourceNameHasBeenSet; }

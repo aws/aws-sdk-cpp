@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * The metadata of the transport stream in the current flow's source.<p><h3>See
-   * Also:</h3>   <a
+   * <p> The metadata of the transport stream in the current flow's
+   * source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TransportMediaInfo">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * The list of transport stream programs in the current flow's source.
+     * <p> The list of transport stream programs in the current flow's source.</p>
      */
     inline const Aws::Vector<TransportStreamProgram>& GetPrograms() const { return m_programs; }
     inline bool ProgramsHasBeenSet() const { return m_programsHasBeenSet; }

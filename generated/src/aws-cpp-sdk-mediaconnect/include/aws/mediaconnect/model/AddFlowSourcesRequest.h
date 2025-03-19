@@ -19,9 +19,6 @@ namespace Model
 {
 
   /**
-   * A request to add sources to the flow.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowSourcesRequest">AWS
-   * API Reference</a></p>
    */
   class AddFlowSourcesRequest : public MediaConnectRequest
   {
@@ -39,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * The flow that you want to mutate.
+     * <p> The Amazon Resource Name (ARN) of the flow that you want to update.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
@@ -51,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * A list of sources that you want to add.
+     * <p> A list of sources that you want to add to the flow.</p>
      */
     inline const Aws::Vector<SetSourceRequest>& GetSources() const { return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }

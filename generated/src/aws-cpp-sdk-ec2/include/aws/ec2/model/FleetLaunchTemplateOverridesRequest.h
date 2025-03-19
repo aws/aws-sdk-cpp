@@ -158,18 +158,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The block device mapping, which defines the EBS volumes and instance store
-     * volumes to attach to the instance at launch. For more information, see <a
+     * <p>The block device mappings, which define the EBS volumes and instance store
+     * volumes to attach to the instance at launch.</p> <p>Supported only for fleets of
+     * type <code>instant</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
      * device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2
-     * User Guide</i>.</p> <p>To override a block device mapping specified in the
-     * launch template:</p> <ul> <li> <p>Specify the exact same <code>DeviceName</code>
-     * here as specified in the launch template.</p> </li> <li> <p>Only specify the
-     * parameters you want to change.</p> </li> <li> <p>Any parameters you don't
-     * specify here will keep their original launch template values.</p> </li> </ul>
-     * <p>To add a new block device mapping:</p> <ul> <li> <p>Specify a
-     * <code>DeviceName</code> that doesn't exist in the launch template.</p> </li>
-     * <li> <p>Specify all desired parameters here.</p> </li> </ul>
+     * User Guide</i>.</p>
      */
     inline const Aws::Vector<FleetBlockDeviceMappingRequest>& GetBlockDeviceMappings() const { return m_blockDeviceMappings; }
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }

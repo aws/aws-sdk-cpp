@@ -113,6 +113,16 @@ AddOutputRequest& AddOutputRequest::operator =(JsonView jsonValue)
     m_outputStatus = OutputStatusMapper::GetOutputStatusForName(jsonValue.GetString("outputStatus"));
     m_outputStatusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ndiSpeedHqQuality"))
+  {
+    m_ndiSpeedHqQuality = jsonValue.GetInteger("ndiSpeedHqQuality");
+    m_ndiSpeedHqQualityHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ndiProgramName"))
+  {
+    m_ndiProgramName = jsonValue.GetString("ndiProgramName");
+    m_ndiProgramNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -222,6 +232,18 @@ JsonValue AddOutputRequest::Jsonize() const
   if(m_outputStatusHasBeenSet)
   {
    payload.WithString("outputStatus", OutputStatusMapper::GetNameForOutputStatus(m_outputStatus));
+  }
+
+  if(m_ndiSpeedHqQualityHasBeenSet)
+  {
+   payload.WithInteger("ndiSpeedHqQuality", m_ndiSpeedHqQuality);
+
+  }
+
+  if(m_ndiProgramNameHasBeenSet)
+  {
+   payload.WithString("ndiProgramName", m_ndiProgramName);
+
   }
 
   return payload;

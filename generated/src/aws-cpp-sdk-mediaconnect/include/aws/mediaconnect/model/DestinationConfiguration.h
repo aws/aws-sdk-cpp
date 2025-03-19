@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * The transport parameters that are associated with an outbound media
-   * stream.<p><h3>See Also:</h3>   <a
+   * <p> The transport parameters that you want to associate with an outbound media
+   * stream.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DestinationConfiguration">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * The IP address where contents of the media stream will be sent.
+     * <p>The IP address where you want MediaConnect to send contents of the media
+     * stream.</p>
      */
     inline const Aws::String& GetDestinationIp() const { return m_destinationIp; }
     inline bool DestinationIpHasBeenSet() const { return m_destinationIpHasBeenSet; }
@@ -53,8 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * The port to use when the content of the media stream is distributed to the
-     * output.
+     * <p> The port that you want MediaConnect to use when it distributes the media
+     * stream to the output.</p>
      */
     inline int GetDestinationPort() const { return m_destinationPort; }
     inline bool DestinationPortHasBeenSet() const { return m_destinationPortHasBeenSet; }
@@ -64,7 +65,8 @@ namespace Model
 
     ///@{
     /**
-     * The VPC interface that is used for the media stream associated with the output.
+     * <p> The VPC interface that you want to use for the media stream associated with
+     * the output.</p>
      */
     inline const Interface& GetInterface() const { return m_interface; }
     inline bool InterfaceHasBeenSet() const { return m_interfaceHasBeenSet; }
@@ -76,10 +78,10 @@ namespace Model
 
     ///@{
     /**
-     * The IP address that the receiver requires in order to establish a connection
+     * <p>The IP address that the receiver requires in order to establish a connection
      * with the flow. This value is represented by the elastic network interface IP
      * address of the VPC. This field applies only to outputs that use the CDI or ST
-     * 2110 JPEG XS protocol.
+     * 2110 JPEG XS or protocol. </p>
      */
     inline const Aws::String& GetOutboundIp() const { return m_outboundIp; }
     inline bool OutboundIpHasBeenSet() const { return m_outboundIpHasBeenSet; }

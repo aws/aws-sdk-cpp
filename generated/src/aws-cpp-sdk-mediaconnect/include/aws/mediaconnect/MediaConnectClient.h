@@ -16,7 +16,23 @@ namespace Aws
 namespace MediaConnect
 {
   /**
-   * API for AWS Elemental MediaConnect
+   * <p>Welcome to the Elemental MediaConnect API reference. </p> <p>MediaConnect is
+   * a service that lets you ingest live video content into the cloud and distribute
+   * it to destinations all over the world, both inside and outside the Amazon Web
+   * Services cloud. This API reference provides descriptions, syntax, and usage
+   * examples for each of the actions and data types that are supported by
+   * MediaConnect. </p> <p>Use the following links to get started with the
+   * MediaConnect API:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/mediaconnect/latest/api/API_Operations.html">Actions</a>:
+   * An alphabetical list of all MediaConnect API operations.</p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/mediaconnect/latest/api/API_Types.html">Data
+   * types</a>: An alphabetical list of all MediaConnect data types.</p> </li> <li>
+   * <p> <a
+   * href="https://docs.aws.amazon.com/mediaconnect/latest/api/CommonParameters.html">Common
+   * parameters</a>: Parameters that all operations can use.</p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/mediaconnect/latest/api/CommonErrors.html">Common
+   * errors</a>: Client and server errors that all operations can return.</p> </li>
+   * </ul>
    */
   class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MediaConnectClient>
   {
@@ -77,7 +93,7 @@ namespace MediaConnect
         virtual ~MediaConnectClient();
 
         /**
-         * Adds outputs to an existing bridge.<p><h3>See Also:</h3>   <a
+         * <p> Adds outputs to an existing bridge.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeOutputs">AWS
          * API Reference</a></p>
          */
@@ -102,7 +118,7 @@ namespace MediaConnect
         }
 
         /**
-         * Adds sources to an existing bridge.<p><h3>See Also:</h3>   <a
+         * <p> Adds sources to an existing bridge.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeSources">AWS
          * API Reference</a></p>
          */
@@ -127,9 +143,9 @@ namespace MediaConnect
         }
 
         /**
-         * Adds media streams to an existing flow. After you add a media stream to a flow,
-         * you can associate it with a source and/or an output that uses the ST 2110 JPEG
-         * XS or CDI protocol.<p><h3>See Also:</h3>   <a
+         * <p> Adds media streams to an existing flow. After you add a media stream to a
+         * flow, you can associate it with a source and/or an output that uses the ST 2110
+         * JPEG XS or CDI protocol.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowMediaStreams">AWS
          * API Reference</a></p>
          */
@@ -154,8 +170,8 @@ namespace MediaConnect
         }
 
         /**
-         * Adds outputs to an existing flow. You can create up to 50 outputs per
-         * flow.<p><h3>See Also:</h3>   <a
+         * <p> Adds outputs to an existing flow. You can create up to 50 outputs per
+         * flow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowOutputs">AWS
          * API Reference</a></p>
          */
@@ -180,7 +196,7 @@ namespace MediaConnect
         }
 
         /**
-         * Adds Sources to flow<p><h3>See Also:</h3>   <a
+         * <p> Adds sources to a flow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowSources">AWS
          * API Reference</a></p>
          */
@@ -205,7 +221,7 @@ namespace MediaConnect
         }
 
         /**
-         * Adds VPC interfaces to flow<p><h3>See Also:</h3>   <a
+         * <p> Adds VPC interfaces to a flow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowVpcInterfaces">AWS
          * API Reference</a></p>
          */
@@ -230,8 +246,8 @@ namespace MediaConnect
         }
 
         /**
-         * Creates a new bridge. The request must include one source.<p><h3>See Also:</h3> 
-         * <a
+         * <p> Creates a new bridge. The request must include one source.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateBridge">AWS
          * API Reference</a></p>
          */
@@ -256,9 +272,9 @@ namespace MediaConnect
         }
 
         /**
-         * Creates a new flow. The request must include one source. The request optionally
-         * can include outputs (up to 50) and entitlements (up to 50).<p><h3>See Also:</h3>
-         * <a
+         * <p> Creates a new flow. The request must include one source. The request
+         * optionally can include outputs (up to 50) and entitlements (up to
+         * 50).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateFlow">AWS
          * API Reference</a></p>
          */
@@ -283,8 +299,8 @@ namespace MediaConnect
         }
 
         /**
-         * Creates a new gateway. The request must include at least one network (up to
-         * 4).<p><h3>See Also:</h3>   <a
+         * <p> Creates a new gateway. The request must include at least one network (up to
+         * four).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateGateway">AWS
          * API Reference</a></p>
          */
@@ -309,8 +325,8 @@ namespace MediaConnect
         }
 
         /**
-         * Deletes a bridge. Before you can delete a bridge, you must stop the
-         * bridge.<p><h3>See Also:</h3>   <a
+         * <p> Deletes a bridge. Before you can delete a bridge, you must stop the
+         * bridge.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteBridge">AWS
          * API Reference</a></p>
          */
@@ -335,8 +351,8 @@ namespace MediaConnect
         }
 
         /**
-         * Deletes a flow. Before you can delete a flow, you must stop the flow.<p><h3>See
-         * Also:</h3>   <a
+         * <p> Deletes a flow. Before you can delete a flow, you must stop the
+         * flow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteFlow">AWS
          * API Reference</a></p>
          */
@@ -361,8 +377,8 @@ namespace MediaConnect
         }
 
         /**
-         * Deletes a gateway. Before you can delete a gateway, you must deregister its
-         * instances and delete its bridges.<p><h3>See Also:</h3>   <a
+         * <p> Deletes a gateway. Before you can delete a gateway, you must deregister its
+         * instances and delete its bridges.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteGateway">AWS
          * API Reference</a></p>
          */
@@ -387,9 +403,10 @@ namespace MediaConnect
         }
 
         /**
-         * Deregisters an instance. Before you deregister an instance, all bridges running
-         * on the instance must be stopped. If you want to deregister an instance without
-         * stopping the bridges, you must use the --force option.<p><h3>See Also:</h3>   <a
+         * <p> Deregisters an instance. Before you deregister an instance, all bridges
+         * running on the instance must be stopped. If you want to deregister an instance
+         * without stopping the bridges, you must use the --force option.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeregisterGatewayInstance">AWS
          * API Reference</a></p>
          */
@@ -414,7 +431,7 @@ namespace MediaConnect
         }
 
         /**
-         * Displays the details of a bridge.<p><h3>See Also:</h3>   <a
+         * <p> Displays the details of a bridge.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeBridge">AWS
          * API Reference</a></p>
          */
@@ -439,9 +456,9 @@ namespace MediaConnect
         }
 
         /**
-         * Displays the details of a flow. The response includes the flow ARN, name, and
-         * Availability Zone, as well as details about the source, outputs, and
-         * entitlements.<p><h3>See Also:</h3>   <a
+         * <p> Displays the details of a flow. The response includes the flow Amazon
+         * Resource Name (ARN), name, and Availability Zone, as well as details about the
+         * source, outputs, and entitlements.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeFlow">AWS
          * API Reference</a></p>
          */
@@ -466,8 +483,10 @@ namespace MediaConnect
         }
 
         /**
-         * Displays details of the flow's source stream. The response contains information
-         * about the contents of the stream and its programs.<p><h3>See Also:</h3>   <a
+         * <p> The <code>DescribeFlowSourceMetadata</code> API is used to view information
+         * about the flow's source transport stream and programs. This API displays status
+         * messages about the flow's source as well as details about the program's video,
+         * audio, and other data. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeFlowSourceMetadata">AWS
          * API Reference</a></p>
          */
@@ -492,8 +511,7 @@ namespace MediaConnect
         }
 
         /**
-         * Displays the thumbnail details of a flow's source stream.<p><h3>See Also:</h3>  
-         * <a
+         * <p> Describes the thumbnail for the flow source. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeFlowSourceThumbnail">AWS
          * API Reference</a></p>
          */
@@ -518,9 +536,9 @@ namespace MediaConnect
         }
 
         /**
-         * Displays the details of a gateway. The response includes the gateway ARN, name,
-         * and CIDR blocks, as well as details about the networks.<p><h3>See Also:</h3>  
-         * <a
+         * <p> Displays the details of a gateway. The response includes the gateway Amazon
+         * Resource Name (ARN), name, and CIDR blocks, as well as details about the
+         * networks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeGateway">AWS
          * API Reference</a></p>
          */
@@ -545,7 +563,7 @@ namespace MediaConnect
         }
 
         /**
-         * Displays the details of an instance.<p><h3>See Also:</h3>   <a
+         * <p> Displays the details of an instance. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeGatewayInstance">AWS
          * API Reference</a></p>
          */
@@ -570,9 +588,9 @@ namespace MediaConnect
         }
 
         /**
-         * Displays the details of an offering. The response includes the offering
+         * <p> Displays the details of an offering. The response includes the offering
          * description, duration, outbound bandwidth, price, and Amazon Resource Name
-         * (ARN).<p><h3>See Also:</h3>   <a
+         * (ARN).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeOffering">AWS
          * API Reference</a></p>
          */
@@ -597,10 +615,10 @@ namespace MediaConnect
         }
 
         /**
-         * Displays the details of a reservation. The response includes the reservation
+         * <p> Displays the details of a reservation. The response includes the reservation
          * name, state, start date and time, and the details of the offering that make up
          * the rest of the reservation (such as price, duration, and outbound
-         * bandwidth).<p><h3>See Also:</h3>   <a
+         * bandwidth).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeReservation">AWS
          * API Reference</a></p>
          */
@@ -625,7 +643,7 @@ namespace MediaConnect
         }
 
         /**
-         * Grants entitlements to an existing flow.<p><h3>See Also:</h3>   <a
+         * <p> Grants entitlements to an existing flow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GrantFlowEntitlements">AWS
          * API Reference</a></p>
          */
@@ -650,9 +668,9 @@ namespace MediaConnect
         }
 
         /**
-         * Displays a list of bridges that are associated with this account and an
-         * optionally specified Arn. This request returns a paginated result.<p><h3>See
-         * Also:</h3>   <a
+         * <p> Displays a list of bridges that are associated with this account and an
+         * optionally specified Amazon Resource Name (ARN). This request returns a
+         * paginated result.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListBridges">AWS
          * API Reference</a></p>
          */
@@ -677,8 +695,8 @@ namespace MediaConnect
         }
 
         /**
-         * Displays a list of all entitlements that have been granted to this account. This
-         * request returns 20 results per page.<p><h3>See Also:</h3>   <a
+         * <p> Displays a list of all entitlements that have been granted to this account.
+         * This request returns 20 results per page.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListEntitlements">AWS
          * API Reference</a></p>
          */
@@ -703,8 +721,8 @@ namespace MediaConnect
         }
 
         /**
-         * Displays a list of flows that are associated with this account. This request
-         * returns a paginated result.<p><h3>See Also:</h3>   <a
+         * <p> Displays a list of flows that are associated with this account. This request
+         * returns a paginated result.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListFlows">AWS
          * API Reference</a></p>
          */
@@ -729,10 +747,10 @@ namespace MediaConnect
         }
 
         /**
-         * Displays a list of instances associated with the AWS account. This request
-         * returns a paginated result. You can use the filterArn property to display only
-         * the instances associated with the selected Gateway Amazon Resource Name
-         * (ARN).<p><h3>See Also:</h3>   <a
+         * <p> Displays a list of instances associated with the Amazon Web Services
+         * account. This request returns a paginated result. You can use the filterArn
+         * property to display only the instances associated with the selected Gateway
+         * Amazon Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListGatewayInstances">AWS
          * API Reference</a></p>
          */
@@ -757,8 +775,8 @@ namespace MediaConnect
         }
 
         /**
-         * Displays a list of gateways that are associated with this account. This request
-         * returns a paginated result.<p><h3>See Also:</h3>   <a
+         * <p> Displays a list of gateways that are associated with this account. This
+         * request returns a paginated result.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListGateways">AWS
          * API Reference</a></p>
          */
@@ -783,10 +801,11 @@ namespace MediaConnect
         }
 
         /**
-         * Displays a list of all offerings that are available to this account in the
-         * current AWS Region. If you have an active reservation (which means you've
-         * purchased an offering that has already started and hasn't expired yet), your
-         * account isn't eligible for other offerings.<p><h3>See Also:</h3>   <a
+         * <p> Displays a list of all offerings that are available to this account in the
+         * current Amazon Web Services Region. If you have an active reservation (which
+         * means you've purchased an offering that has already started and hasn't expired
+         * yet), your account isn't eligible for other offerings.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListOfferings">AWS
          * API Reference</a></p>
          */
@@ -811,9 +830,9 @@ namespace MediaConnect
         }
 
         /**
-         * Displays a list of all reservations that have been purchased by this account in
-         * the current AWS Region. This list includes all reservations in all states (such
-         * as active and expired).<p><h3>See Also:</h3>   <a
+         * <p> Displays a list of all reservations that have been purchased by this account
+         * in the current Amazon Web Services Region. This list includes all reservations
+         * in all states (such as active and expired).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListReservations">AWS
          * API Reference</a></p>
          */
@@ -838,8 +857,7 @@ namespace MediaConnect
         }
 
         /**
-         * List all tags on an AWS Elemental MediaConnect resource<p><h3>See Also:</h3>  
-         * <a
+         * <p> List all tags on a MediaConnect resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -864,8 +882,8 @@ namespace MediaConnect
         }
 
         /**
-         * Submits a request to purchase an offering. If you already have an active
-         * reservation, you can't purchase another offering.<p><h3>See Also:</h3>   <a
+         * <p> Submits a request to purchase an offering. If you already have an active
+         * reservation, you can't purchase another offering.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/PurchaseOffering">AWS
          * API Reference</a></p>
          */
@@ -890,7 +908,7 @@ namespace MediaConnect
         }
 
         /**
-         * Removes an output from a bridge.<p><h3>See Also:</h3>   <a
+         * <p> Removes an output from a bridge.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveBridgeOutput">AWS
          * API Reference</a></p>
          */
@@ -915,7 +933,7 @@ namespace MediaConnect
         }
 
         /**
-         * Removes a source from a bridge.<p><h3>See Also:</h3>   <a
+         * <p> Removes a source from a bridge.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveBridgeSource">AWS
          * API Reference</a></p>
          */
@@ -940,8 +958,9 @@ namespace MediaConnect
         }
 
         /**
-         * Removes a media stream from a flow. This action is only available if the media
-         * stream is not associated with a source or output.<p><h3>See Also:</h3>   <a
+         * <p> Removes a media stream from a flow. This action is only available if the
+         * media stream is not associated with a source or output.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowMediaStream">AWS
          * API Reference</a></p>
          */
@@ -966,11 +985,11 @@ namespace MediaConnect
         }
 
         /**
-         * Removes an output from an existing flow. This request can be made only on an
+         * <p> Removes an output from an existing flow. This request can be made only on an
          * output that does not have an entitlement associated with it. If the output has
          * an entitlement, you must revoke the entitlement instead. When an entitlement is
          * revoked from a flow, the service automatically removes the associated
-         * output.<p><h3>See Also:</h3>   <a
+         * output.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowOutput">AWS
          * API Reference</a></p>
          */
@@ -995,8 +1014,8 @@ namespace MediaConnect
         }
 
         /**
-         * Removes a source from an existing flow. This request can be made only if there
-         * is more than one source on the flow.<p><h3>See Also:</h3>   <a
+         * <p> Removes a source from an existing flow. This request can be made only if
+         * there is more than one source on the flow. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowSource">AWS
          * API Reference</a></p>
          */
@@ -1021,11 +1040,11 @@ namespace MediaConnect
         }
 
         /**
-         * Removes a VPC Interface from an existing flow. This request can be made only on
-         * a VPC interface that does not have a Source or Output associated with it. If the
-         * VPC interface is referenced by a Source or Output, you must first delete or
-         * update the Source or Output to no longer reference the VPC interface.<p><h3>See
-         * Also:</h3>   <a
+         * <p> Removes a VPC Interface from an existing flow. This request can be made only
+         * on a VPC interface that does not have a Source or Output associated with it. If
+         * the VPC interface is referenced by a Source or Output, you must first delete or
+         * update the Source or Output to no longer reference the VPC
+         * interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowVpcInterface">AWS
          * API Reference</a></p>
          */
@@ -1050,9 +1069,9 @@ namespace MediaConnect
         }
 
         /**
-         * Revokes an entitlement from a flow. Once an entitlement is revoked, the content
-         * becomes unavailable to the subscriber and the associated output is
-         * removed.<p><h3>See Also:</h3>   <a
+         * <p> Revokes an entitlement from a flow. Once an entitlement is revoked, the
+         * content becomes unavailable to the subscriber and the associated output is
+         * removed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RevokeFlowEntitlement">AWS
          * API Reference</a></p>
          */
@@ -1077,7 +1096,7 @@ namespace MediaConnect
         }
 
         /**
-         * Starts a flow.<p><h3>See Also:</h3>   <a
+         * <p> Starts a flow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StartFlow">AWS
          * API Reference</a></p>
          */
@@ -1102,7 +1121,7 @@ namespace MediaConnect
         }
 
         /**
-         * Stops a flow.<p><h3>See Also:</h3>   <a
+         * <p> Stops a flow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StopFlow">AWS
          * API Reference</a></p>
          */
@@ -1127,10 +1146,11 @@ namespace MediaConnect
         }
 
         /**
-         * Associates the specified tags to a resource with the specified resourceArn. If
-         * existing tags on a resource are not specified in the request parameters, they
-         * are not changed. When a resource is deleted, the tags associated with that
-         * resource are deleted as well.<p><h3>See Also:</h3>   <a
+         * <p> Associates the specified tags to a resource with the specified
+         * <code>resourceArn</code>. If existing tags on a resource are not specified in
+         * the request parameters, they are not changed. When a resource is deleted, the
+         * tags associated with that resource are deleted as well.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TagResource">AWS
          * API Reference</a></p>
          */
@@ -1155,7 +1175,7 @@ namespace MediaConnect
         }
 
         /**
-         * Deletes specified tags from a resource.<p><h3>See Also:</h3>   <a
+         * <p> Deletes specified tags from a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -1180,7 +1200,7 @@ namespace MediaConnect
         }
 
         /**
-         * Updates the bridge<p><h3>See Also:</h3>   <a
+         * <p> Updates the bridge.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridge">AWS
          * API Reference</a></p>
          */
@@ -1205,7 +1225,7 @@ namespace MediaConnect
         }
 
         /**
-         * Updates an existing bridge output.<p><h3>See Also:</h3>   <a
+         * <p> Updates an existing bridge output.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeOutput">AWS
          * API Reference</a></p>
          */
@@ -1230,7 +1250,7 @@ namespace MediaConnect
         }
 
         /**
-         * Updates an existing bridge source.<p><h3>See Also:</h3>   <a
+         * <p> Updates an existing bridge source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeSource">AWS
          * API Reference</a></p>
          */
@@ -1255,7 +1275,7 @@ namespace MediaConnect
         }
 
         /**
-         * Updates the bridge state<p><h3>See Also:</h3>   <a
+         * <p> Updates the bridge state. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeState">AWS
          * API Reference</a></p>
          */
@@ -1280,7 +1300,7 @@ namespace MediaConnect
         }
 
         /**
-         * Updates flow<p><h3>See Also:</h3>   <a
+         * <p> Updates an existing flow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlow">AWS
          * API Reference</a></p>
          */
@@ -1305,9 +1325,10 @@ namespace MediaConnect
         }
 
         /**
-         * You can change an entitlement's description, subscribers, and encryption. If you
-         * change the subscribers, the service will remove the outputs that are are used by
-         * the subscribers that are removed.<p><h3>See Also:</h3>   <a
+         * <p> Updates an entitlement. You can change an entitlement's description,
+         * subscribers, and encryption. If you change the subscribers, the service will
+         * remove the outputs that are are used by the subscribers that are
+         * removed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowEntitlement">AWS
          * API Reference</a></p>
          */
@@ -1332,7 +1353,7 @@ namespace MediaConnect
         }
 
         /**
-         * Updates an existing media stream.<p><h3>See Also:</h3>   <a
+         * <p> Updates an existing media stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowMediaStream">AWS
          * API Reference</a></p>
          */
@@ -1357,7 +1378,7 @@ namespace MediaConnect
         }
 
         /**
-         * Updates an existing flow output.<p><h3>See Also:</h3>   <a
+         * <p> Updates an existing flow output.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowOutput">AWS
          * API Reference</a></p>
          */
@@ -1382,7 +1403,7 @@ namespace MediaConnect
         }
 
         /**
-         * Updates the source of a flow.<p><h3>See Also:</h3>   <a
+         * <p> Updates the source of a flow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowSource">AWS
          * API Reference</a></p>
          */
@@ -1407,8 +1428,7 @@ namespace MediaConnect
         }
 
         /**
-         * Updates the configuration of an existing Gateway Instance.<p><h3>See Also:</h3> 
-         * <a
+         * <p>Updates an existing gateway instance. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateGatewayInstance">AWS
          * API Reference</a></p>
          */

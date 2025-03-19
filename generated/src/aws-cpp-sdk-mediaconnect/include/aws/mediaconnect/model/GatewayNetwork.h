@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * The network settings for a gateway.<p><h3>See Also:</h3>   <a
+   * <p>The network settings for a gateway. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GatewayNetwork">AWS
    * API Reference</a></p>
    */
@@ -39,9 +39,9 @@ namespace Model
 
     ///@{
     /**
-     * A unique IP address range to use for this network. These IP addresses should be
-     * in the form of a Classless Inter-Domain Routing (CIDR) block; for example,
-     * 10.0.0.0/16.
+     * <p>A unique IP address range to use for this network. These IP addresses should
+     * be in the form of a Classless Inter-Domain Routing (CIDR) block; for example,
+     * 10.0.0.0/16. </p>
      */
     inline const Aws::String& GetCidrBlock() const { return m_cidrBlock; }
     inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
@@ -53,8 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * The name of the network. This name is used to reference the network and must be
-     * unique among networks in this gateway.
+     * <p>The name of the network. This name is used to reference the network and must
+     * be unique among networks in this gateway. </p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

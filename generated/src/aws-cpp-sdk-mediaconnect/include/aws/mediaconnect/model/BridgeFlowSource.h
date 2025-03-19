@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * The source of the bridge. A flow source originates in MediaConnect as an
-   * existing cloud flow.<p><h3>See Also:</h3>   <a
+   * <p> The source of the bridge. A flow source originates in MediaConnect as an
+   * existing cloud flow.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BridgeFlowSource">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the cloud flow used as a source of this bridge.
+     * <p> The ARN of the cloud flow used as a source of this bridge.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the VPC interface attachment to use for this source.
+     * <p> The name of the VPC interface attachment to use for this source.</p>
      */
     inline const VpcInterfaceAttachment& GetFlowVpcInterfaceAttachment() const { return m_flowVpcInterfaceAttachment; }
     inline bool FlowVpcInterfaceAttachmentHasBeenSet() const { return m_flowVpcInterfaceAttachmentHasBeenSet; }
@@ -65,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the flow source.
+     * <p> The name of the flow source.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -77,7 +77,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Number (ARN) of the output.
+     * <p> The Amazon Resource Number (ARN) of the output.</p>
      */
     inline const Aws::String& GetOutputArn() const { return m_outputArn; }
     inline bool OutputArnHasBeenSet() const { return m_outputArnHasBeenSet; }

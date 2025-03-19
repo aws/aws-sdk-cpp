@@ -19,9 +19,6 @@ namespace Model
 {
 
   /**
-   * A request to add outputs to the specified flow.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowOutputsRequest">AWS
-   * API Reference</a></p>
    */
   class AddFlowOutputsRequest : public MediaConnectRequest
   {
@@ -39,7 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * The flow that you want to add outputs to.
+     * <p> The Amazon Resource Name (ARN) of the flow that you want to add outputs
+     * to.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
@@ -51,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * A list of outputs that you want to add.
+     * <p> A list of outputs that you want to add to the flow.</p>
      */
     inline const Aws::Vector<AddOutputRequest>& GetOutputs() const { return m_outputs; }
     inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }

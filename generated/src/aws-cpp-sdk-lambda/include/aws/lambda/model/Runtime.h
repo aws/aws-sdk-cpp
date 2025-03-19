@@ -49,6 +49,7 @@ namespace Model
     java17,
     ruby3_2,
     ruby3_3,
+    ruby3_4,
     python3_11,
     nodejs20_x,
     provided_al2023,

@@ -35,7 +35,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The flow that you requested a description of. </p>
+     */
     inline const Flow& GetFlow() const { return m_flow; }
     template<typename FlowT = Flow>
     void SetFlow(FlowT&& value) { m_flowHasBeenSet = true; m_flow = std::forward<FlowT>(value); }
@@ -44,7 +46,10 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> Any errors that apply currently to the flow. If there are no errors,
+     * MediaConnect will not include this field in the response. </p>
+     */
     inline const Messages& GetMessages() const { return m_messages; }
     template<typename MessagesT = Messages>
     void SetMessages(MessagesT&& value) { m_messagesHasBeenSet = true; m_messages = std::forward<MessagesT>(value); }

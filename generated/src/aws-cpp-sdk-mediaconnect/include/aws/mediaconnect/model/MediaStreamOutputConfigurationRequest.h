@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * The media stream that you want to associate with the output, and the parameters
-   * for that association.<p><h3>See Also:</h3>   <a
+   * <p> The media stream that you want to associate with the output, and the
+   * parameters for that association.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/MediaStreamOutputConfigurationRequest">AWS
    * API Reference</a></p>
    */
@@ -44,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * The transport parameters that you want to associate with the media stream.
+     * <p> The media streams that you want to associate with the output. </p>
      */
     inline const Aws::Vector<DestinationConfigurationRequest>& GetDestinationConfigurations() const { return m_destinationConfigurations; }
     inline bool DestinationConfigurationsHasBeenSet() const { return m_destinationConfigurationsHasBeenSet; }
@@ -58,10 +58,10 @@ namespace Model
 
     ///@{
     /**
-     * The format that will be used to encode the data. For ancillary data streams, set
-     * the encoding name to smpte291. For audio streams, set the encoding name to pcm.
-     * For video, 2110 streams, set the encoding name to raw. For video, JPEG XS
-     * streams, set the encoding name to jxsv.
+     * <p> The format that will be used to encode the data. For ancillary data streams,
+     * set the encoding name to smpte291. For audio streams, set the encoding name to
+     * pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS
+     * streams, set the encoding name to jxsv.</p>
      */
     inline EncodingName GetEncodingName() const { return m_encodingName; }
     inline bool EncodingNameHasBeenSet() const { return m_encodingNameHasBeenSet; }
@@ -71,8 +71,9 @@ namespace Model
 
     ///@{
     /**
-     * A collection of parameters that determine how MediaConnect will convert the
+     * <p> A collection of parameters that determine how MediaConnect will convert the
      * content. These fields only apply to outputs on flows that have a CDI source.
+     * </p>
      */
     inline const EncodingParametersRequest& GetEncodingParameters() const { return m_encodingParameters; }
     inline bool EncodingParametersHasBeenSet() const { return m_encodingParametersHasBeenSet; }
@@ -84,7 +85,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the media stream that is associated with the output.
+     * <p> The name of the media stream that is associated with the output.</p>
      */
     inline const Aws::String& GetMediaStreamName() const { return m_mediaStreamName; }
     inline bool MediaStreamNameHasBeenSet() const { return m_mediaStreamNameHasBeenSet; }

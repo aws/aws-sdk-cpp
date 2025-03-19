@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Name (ARN) of the offering.
+     * <p> The ARN of the offering.</p>
      */
     inline const Aws::String& GetOfferingArn() const { return m_offeringArn; }
     inline bool OfferingArnHasBeenSet() const { return m_offeringArnHasBeenSet; }

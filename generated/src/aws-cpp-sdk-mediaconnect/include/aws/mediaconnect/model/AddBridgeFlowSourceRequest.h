@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * Add a flow source to an existing bridge.<p><h3>See Also:</h3>   <a
+   * <p> Add a flow source to an existing bridge. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeFlowSourceRequest">AWS
    * API Reference</a></p>
    */
@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Number (ARN) of the cloud flow to use as a source of this
-     * bridge.
+     * <p> The Amazon Resource Number (ARN) of the flow to use as a source of this
+     * bridge. </p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the VPC interface attachment to use for this source.
+     * <p>The name of the VPC interface attachment to use for this source. </p>
      */
     inline const VpcInterfaceAttachment& GetFlowVpcInterfaceAttachment() const { return m_flowVpcInterfaceAttachment; }
     inline bool FlowVpcInterfaceAttachmentHasBeenSet() const { return m_flowVpcInterfaceAttachmentHasBeenSet; }
@@ -65,8 +65,8 @@ namespace Model
 
     ///@{
     /**
-     * The name of the flow source. This name is used to reference the source and must
-     * be unique among sources in this bridge.
+     * <p> The name of the flow source. This name is used to reference the source and
+     * must be unique among sources in this bridge. </p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Number (ARN) of the bridge.
+     * <p> The ARN of the bridge that you added outputs to.</p>
      */
     inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     template<typename BridgeArnT = Aws::String>
@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * The outputs that you added to this bridge.
+     * <p> The outputs that you added to this bridge.</p>
      */
     inline const Aws::Vector<BridgeOutput>& GetOutputs() const { return m_outputs; }
     template<typename OutputsT = Aws::Vector<BridgeOutput>>

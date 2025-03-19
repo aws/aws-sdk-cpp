@@ -59,9 +59,8 @@ namespace Model
     /**
      * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
      * that Amazon SageMaker uses to encrypt the processing job output.
-     * <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a
-     * KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all
-     * outputs.</p>
+     * <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, or alias of a
+     * KMS key. The <code>KmsKeyId</code> is applied to all outputs.</p>
      */
     inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }

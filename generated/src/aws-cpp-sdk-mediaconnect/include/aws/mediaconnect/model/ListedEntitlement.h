@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * An entitlement that has been granted to you from other AWS accounts.<p><h3>See
-   * Also:</h3>   <a
+   * <p> An entitlement that has been granted to you from other Amazon Web Services
+   * accounts.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListedEntitlement">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     * <p> Percentage from 0-100 of the data transfer cost to be billed to the
+     * subscriber.</p>
      */
     inline int GetDataTransferSubscriberFeePercent() const { return m_dataTransferSubscriberFeePercent; }
     inline bool DataTransferSubscriberFeePercentHasBeenSet() const { return m_dataTransferSubscriberFeePercentHasBeenSet; }
@@ -50,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the entitlement.
+     * <p> The ARN of the entitlement.</p>
      */
     inline const Aws::String& GetEntitlementArn() const { return m_entitlementArn; }
     inline bool EntitlementArnHasBeenSet() const { return m_entitlementArnHasBeenSet; }
@@ -62,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the entitlement.
+     * <p> The name of the entitlement.</p>
      */
     inline const Aws::String& GetEntitlementName() const { return m_entitlementName; }
     inline bool EntitlementNameHasBeenSet() const { return m_entitlementNameHasBeenSet; }

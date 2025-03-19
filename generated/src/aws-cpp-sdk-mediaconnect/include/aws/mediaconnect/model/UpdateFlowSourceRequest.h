@@ -22,9 +22,6 @@ namespace Model
 {
 
   /**
-   * A request to update the source of a flow.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowSourceRequest">AWS
-   * API Reference</a></p>
    */
   class UpdateFlowSourceRequest : public MediaConnectRequest
   {
@@ -42,8 +39,8 @@ namespace Model
 
     ///@{
     /**
-     * The type of encryption used on the content ingested from this source. Allowable
-     * encryption types: static-key.
+     * <p>The type of encryption that is used on the content ingested from the source.
+     * </p>
      */
     inline const UpdateEncryption& GetDecryption() const { return m_decryption; }
     inline bool DecryptionHasBeenSet() const { return m_decryptionHasBeenSet; }
@@ -55,8 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * A description for the source. This value is not used or seen outside of the
-     * current AWS Elemental MediaConnect account.
+     * <p>A description of the source. This description is not visible outside of the
+     * current Amazon Web Services account. </p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -68,9 +65,9 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the entitlement that allows you to subscribe to this flow. The
-     * entitlement is set by the flow originator, and the ARN is generated as part of
-     * the originator's flow.
+     * <p>The Amazon Resource Name (ARN) of the entitlement that allows you to
+     * subscribe to the flow. The entitlement is set by the content originator, and the
+     * ARN is generated as part of the originator's flow. </p>
      */
     inline const Aws::String& GetEntitlementArn() const { return m_entitlementArn; }
     inline bool EntitlementArnHasBeenSet() const { return m_entitlementArnHasBeenSet; }
@@ -82,7 +79,7 @@ namespace Model
 
     ///@{
     /**
-     * The flow that is associated with the source that you want to update.
+     * <p> The ARN of the flow that you want to update. </p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
@@ -94,7 +91,8 @@ namespace Model
 
     ///@{
     /**
-     * The port that the flow will be listening on for incoming content.
+     * <p>The port that the flow listens on for incoming content. If the protocol of
+     * the source is Zixi, the port must be set to 2088. </p>
      */
     inline int GetIngestPort() const { return m_ingestPort; }
     inline bool IngestPortHasBeenSet() const { return m_ingestPortHasBeenSet; }
@@ -104,7 +102,7 @@ namespace Model
 
     ///@{
     /**
-     * The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
+     * <p>The maximum bitrate for RIST, RTP, and RTP-FEC streams. </p>
      */
     inline int GetMaxBitrate() const { return m_maxBitrate; }
     inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
@@ -114,8 +112,8 @@ namespace Model
 
     ///@{
     /**
-     * The maximum latency in milliseconds. This parameter applies only to RIST-based,
-     * Zixi-based, and Fujitsu-based streams.
+     * <p>The maximum latency in milliseconds. This parameter applies only to
+     * RIST-based and Zixi-based streams. </p>
      */
     inline int GetMaxLatency() const { return m_maxLatency; }
     inline bool MaxLatencyHasBeenSet() const { return m_maxLatencyHasBeenSet; }
@@ -125,7 +123,8 @@ namespace Model
 
     ///@{
     /**
-     * The size of the buffer (in milliseconds) to use to sync incoming source data.
+     * <p>The size of the buffer (in milliseconds) to use to sync incoming source data.
+     * </p>
      */
     inline int GetMaxSyncBuffer() const { return m_maxSyncBuffer; }
     inline bool MaxSyncBufferHasBeenSet() const { return m_maxSyncBufferHasBeenSet; }
@@ -135,8 +134,8 @@ namespace Model
 
     ///@{
     /**
-     * The media streams that are associated with the source, and the parameters for
-     * those associations.
+     * <p>The media stream that is associated with the source, and the parameters for
+     * that association. </p>
      */
     inline const Aws::Vector<MediaStreamSourceConfigurationRequest>& GetMediaStreamSourceConfigurations() const { return m_mediaStreamSourceConfigurations; }
     inline bool MediaStreamSourceConfigurationsHasBeenSet() const { return m_mediaStreamSourceConfigurationsHasBeenSet; }
@@ -150,11 +149,11 @@ namespace Model
 
     ///@{
     /**
-     * The minimum latency in milliseconds for SRT-based streams. In streams that use
-     * the SRT protocol, this value that you set on your MediaConnect source or output
-     * represents the minimal potential latency of that connection. The latency of the
-     * stream is set to the highest number between the sender’s minimum latency and the
-     * receiver’s minimum latency.
+     * <p>The minimum latency in milliseconds for SRT-based streams. In streams that
+     * use the SRT protocol, this value that you set on your MediaConnect source or
+     * output represents the minimal potential latency of that connection. The latency
+     * of the stream is set to the highest number between the sender’s minimum latency
+     * and the receiver’s minimum latency. </p>
      */
     inline int GetMinLatency() const { return m_minLatency; }
     inline bool MinLatencyHasBeenSet() const { return m_minLatencyHasBeenSet; }
@@ -164,7 +163,9 @@ namespace Model
 
     ///@{
     /**
-     * The protocol that is used by the source.
+     * <p>The protocol that the source uses to deliver the content to MediaConnect.
+     * </p>  <p>Elemental MediaConnect no longer supports the Fujitsu QoS
+     * protocol. This reference is maintained for legacy purposes only.</p> 
      */
     inline Protocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
@@ -174,8 +175,8 @@ namespace Model
 
     ///@{
     /**
-     * The port that the flow uses to send outbound requests to initiate connection
-     * with the sender.
+     * <p>The port that the flow uses to send outbound requests to initiate connection
+     * with the sender. </p>
      */
     inline int GetSenderControlPort() const { return m_senderControlPort; }
     inline bool SenderControlPortHasBeenSet() const { return m_senderControlPortHasBeenSet; }
@@ -185,8 +186,8 @@ namespace Model
 
     ///@{
     /**
-     * The IP address that the flow communicates with to initiate connection with the
-     * sender.
+     * <p>The IP address that the flow communicates with to initiate connection with
+     * the sender. </p>
      */
     inline const Aws::String& GetSenderIpAddress() const { return m_senderIpAddress; }
     inline bool SenderIpAddressHasBeenSet() const { return m_senderIpAddressHasBeenSet; }
@@ -198,7 +199,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the source that you want to update.
+     * <p>The ARN of the source that you want to update. </p>
      */
     inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
@@ -210,7 +211,7 @@ namespace Model
 
     ///@{
     /**
-     * Source IP or domain name for SRT-caller protocol.
+     * <p>The source IP or domain name for SRT-caller protocol. </p>
      */
     inline const Aws::String& GetSourceListenerAddress() const { return m_sourceListenerAddress; }
     inline bool SourceListenerAddressHasBeenSet() const { return m_sourceListenerAddressHasBeenSet; }
@@ -222,7 +223,7 @@ namespace Model
 
     ///@{
     /**
-     * Source port for SRT-caller protocol.
+     * <p>Source port for SRT-caller protocol. </p>
      */
     inline int GetSourceListenerPort() const { return m_sourceListenerPort; }
     inline bool SourceListenerPortHasBeenSet() const { return m_sourceListenerPortHasBeenSet; }
@@ -232,8 +233,8 @@ namespace Model
 
     ///@{
     /**
-     * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi and SRT caller-based streams.
+     * <p>The stream ID that you want to use for this transport. This parameter applies
+     * only to Zixi and SRT caller-based streams. </p>
      */
     inline const Aws::String& GetStreamId() const { return m_streamId; }
     inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
@@ -245,7 +246,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the VPC interface to use for this source.
+     * <p>The name of the VPC interface that you want to send your output to.</p>
      */
     inline const Aws::String& GetVpcInterfaceName() const { return m_vpcInterfaceName; }
     inline bool VpcInterfaceNameHasBeenSet() const { return m_vpcInterfaceNameHasBeenSet; }
@@ -257,9 +258,9 @@ namespace Model
 
     ///@{
     /**
-     * The range of IP addresses that should be allowed to contribute content to your
-     * source. These IP addresses should be in the form of a Classless Inter-Domain
-     * Routing (CIDR) block; for example, 10.0.0.0/16.
+     * <p>The range of IP addresses that are allowed to contribute content to your
+     * source. Format the IP addresses as a Classless Inter-Domain Routing (CIDR)
+     * block; for example, 10.0.0.0/16. </p>
      */
     inline const Aws::String& GetWhitelistCidr() const { return m_whitelistCidr; }
     inline bool WhitelistCidrHasBeenSet() const { return m_whitelistCidrHasBeenSet; }
@@ -271,7 +272,8 @@ namespace Model
 
     ///@{
     /**
-     * The source configuration for cloud flows receiving a stream from a bridge.
+     * <p>The source configuration for cloud flows receiving a stream from a bridge.
+     * </p>
      */
     inline const UpdateGatewayBridgeSourceRequest& GetGatewayBridgeSource() const { return m_gatewayBridgeSource; }
     inline bool GatewayBridgeSourceHasBeenSet() const { return m_gatewayBridgeSourceHasBeenSet; }

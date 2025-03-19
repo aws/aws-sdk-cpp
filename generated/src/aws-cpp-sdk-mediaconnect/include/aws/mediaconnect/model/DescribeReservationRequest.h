@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Name (ARN) of the reservation.
+     * <p>The Amazon Resource Name (ARN) of the offering. </p>
      */
     inline const Aws::String& GetReservationArn() const { return m_reservationArn; }
     inline bool ReservationArnHasBeenSet() const { return m_reservationArnHasBeenSet; }

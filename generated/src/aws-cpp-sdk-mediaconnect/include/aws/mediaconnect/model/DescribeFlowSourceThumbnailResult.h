@@ -34,7 +34,10 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The details of the thumbnail, including thumbnail base64 string, timecode and
+     * the time when thumbnail was generated. </p>
+     */
     inline const ThumbnailDetails& GetThumbnailDetails() const { return m_thumbnailDetails; }
     template<typename ThumbnailDetailsT = ThumbnailDetails>
     void SetThumbnailDetails(ThumbnailDetailsT&& value) { m_thumbnailDetailsHasBeenSet = true; m_thumbnailDetails = std::forward<ThumbnailDetailsT>(value); }

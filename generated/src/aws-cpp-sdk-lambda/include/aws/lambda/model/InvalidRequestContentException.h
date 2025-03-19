@@ -24,7 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>The request body could not be parsed as JSON.</p><p><h3>See Also:</h3>   <a
+   * <p>The request body could not be parsed as JSON, or a request header is invalid.
+   * For example, the 'x-amzn-RequestId' header is not a valid UUID
+   * string.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvalidRequestContentException">AWS
    * API Reference</a></p>
    */

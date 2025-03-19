@@ -34,6 +34,12 @@ Aws::String UpdateFlowRequest::SerializePayload() const
 
   }
 
+  if(m_ndiConfigHasBeenSet)
+  {
+   payload.WithObject("ndiConfig", m_ndiConfig.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

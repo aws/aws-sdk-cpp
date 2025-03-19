@@ -53,6 +53,7 @@ namespace Aws
         static const int java17_HASH = HashingUtils::HashString("java17");
         static const int ruby3_2_HASH = HashingUtils::HashString("ruby3.2");
         static const int ruby3_3_HASH = HashingUtils::HashString("ruby3.3");
+        static const int ruby3_4_HASH = HashingUtils::HashString("ruby3.4");
         static const int python3_11_HASH = HashingUtils::HashString("python3.11");
         static const int nodejs20_x_HASH = HashingUtils::HashString("nodejs20.x");
         static const int provided_al2023_HASH = HashingUtils::HashString("provided.al2023");
@@ -197,6 +198,10 @@ namespace Aws
           {
             return Runtime::ruby3_3;
           }
+          else if (hashCode == ruby3_4_HASH)
+          {
+            return Runtime::ruby3_4;
+          }
           else if (hashCode == python3_11_HASH)
           {
             return Runtime::python3_11;
@@ -307,6 +312,8 @@ namespace Aws
             return "ruby3.2";
           case Runtime::ruby3_3:
             return "ruby3.3";
+          case Runtime::ruby3_4:
+            return "ruby3.4";
           case Runtime::python3_11:
             return "python3.11";
           case Runtime::nodejs20_x:

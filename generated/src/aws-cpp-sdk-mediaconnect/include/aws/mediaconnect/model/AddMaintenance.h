@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * Create maintenance setting for a flow<p><h3>See Also:</h3>   <a
+   * <p> Create a maintenance setting for a flow.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddMaintenance">AWS
    * API Reference</a></p>
    */
@@ -40,8 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * A day of a week when the maintenance will happen. Use
-     * Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+     * <p> A day of a week when the maintenance will happen. </p>
      */
     inline MaintenanceDay GetMaintenanceDay() const { return m_maintenanceDay; }
     inline bool MaintenanceDayHasBeenSet() const { return m_maintenanceDayHasBeenSet; }
@@ -51,8 +50,9 @@ namespace Model
 
     ///@{
     /**
-     * UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes
-     * must be 00. Example: 13:00. The default value is 02:00.
+     * <p> UTC time when the maintenance will happen. </p> <p>Use 24-hour HH:MM format.
+     * </p> <p>Minutes must be 00. </p> <p>Example: 13:00. </p> <p>The default value is
+     * 02:00.</p>
      */
     inline const Aws::String& GetMaintenanceStartHour() const { return m_maintenanceStartHour; }
     inline bool MaintenanceStartHourHasBeenSet() const { return m_maintenanceStartHourHasBeenSet; }

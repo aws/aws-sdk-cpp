@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * The details of the thumbnail, including thumbnail base64 string, timecode and
-   * the time when thumbnail was generated.<p><h3>See Also:</h3>   <a
+   * <p> The details of the thumbnail, including thumbnail base64 string, timecode
+   * and the time when thumbnail was generated.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ThumbnailDetails">AWS
    * API Reference</a></p>
    */
@@ -43,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the flow that DescribeFlowSourceThumbnail was performed on.
+     * <p> The ARN of the flow that DescribeFlowSourceThumbnail was performed on.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * Thumbnail Base64 string.
+     * <p>Thumbnail Base64 string. </p>
      */
     inline const Aws::String& GetThumbnail() const { return m_thumbnail; }
     inline bool ThumbnailHasBeenSet() const { return m_thumbnailHasBeenSet; }
@@ -67,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * Status code and messages about the flow source thumbnail.
+     * <p> Status code and messages about the flow source thumbnail.</p>
      */
     inline const Aws::Vector<MessageDetail>& GetThumbnailMessages() const { return m_thumbnailMessages; }
     inline bool ThumbnailMessagesHasBeenSet() const { return m_thumbnailMessagesHasBeenSet; }
@@ -81,7 +81,7 @@ namespace Model
 
     ///@{
     /**
-     * Timecode of thumbnail.
+     * <p> Timecode of thumbnail.</p>
      */
     inline const Aws::String& GetTimecode() const { return m_timecode; }
     inline bool TimecodeHasBeenSet() const { return m_timecodeHasBeenSet; }
@@ -93,7 +93,7 @@ namespace Model
 
     ///@{
     /**
-     * The timestamp of when thumbnail was generated.
+     * <p> The timestamp of when thumbnail was generated.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }

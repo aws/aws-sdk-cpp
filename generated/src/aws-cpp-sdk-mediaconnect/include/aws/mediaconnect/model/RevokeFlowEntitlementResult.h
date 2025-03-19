@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the entitlement that was revoked.
+     * <p> The ARN of the entitlement that was revoked.</p>
      */
     inline const Aws::String& GetEntitlementArn() const { return m_entitlementArn; }
     template<typename EntitlementArnT = Aws::String>
@@ -45,7 +45,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the flow that the entitlement was revoked from.
+     * <p> The ARN of the flow that the entitlement was revoked from.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     template<typename FlowArnT = Aws::String>

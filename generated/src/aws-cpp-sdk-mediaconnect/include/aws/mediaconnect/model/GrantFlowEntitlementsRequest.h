@@ -19,9 +19,6 @@ namespace Model
 {
 
   /**
-   * A request to grant entitlements on a flow.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GrantFlowEntitlementsRequest">AWS
-   * API Reference</a></p>
    */
   class GrantFlowEntitlementsRequest : public MediaConnectRequest
   {
@@ -39,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * The list of entitlements that you want to grant.
+     * <p> The list of entitlements that you want to grant.</p>
      */
     inline const Aws::Vector<GrantEntitlementRequest>& GetEntitlements() const { return m_entitlements; }
     inline bool EntitlementsHasBeenSet() const { return m_entitlementsHasBeenSet; }
@@ -53,7 +50,8 @@ namespace Model
 
     ///@{
     /**
-     * The flow that you want to grant entitlements on.
+     * <p> The Amazon Resource Name (ARN) of the flow that you want to grant
+     * entitlements on.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }

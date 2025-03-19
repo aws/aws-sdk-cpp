@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * The metadata of an elementary transport stream.<p><h3>See Also:</h3>   <a
+   * <p> The metadata of an elementary transport stream.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TransportStream">AWS
    * API Reference</a></p>
    */
@@ -40,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * The number of channels in the audio stream.
+     * <p> The number of channels in the audio stream.</p>
      */
     inline int GetChannels() const { return m_channels; }
     inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
@@ -50,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * The codec used by the stream.
+     * <p> The codec used by the stream.</p>
      */
     inline const Aws::String& GetCodec() const { return m_codec; }
     inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }
@@ -62,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * The frame rate used by the video stream.
+     * <p> The frame rate used by the video stream.</p>
      */
     inline const Aws::String& GetFrameRate() const { return m_frameRate; }
     inline bool FrameRateHasBeenSet() const { return m_frameRateHasBeenSet; }
@@ -73,7 +74,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>The frame resolution used by the video stream. </p>
+     */
     inline const FrameResolution& GetFrameResolution() const { return m_frameResolution; }
     inline bool FrameResolutionHasBeenSet() const { return m_frameResolutionHasBeenSet; }
     template<typename FrameResolutionT = FrameResolution>
@@ -84,7 +87,7 @@ namespace Model
 
     ///@{
     /**
-     * The Packet ID (PID) as it is reported in the Program Map Table.
+     * <p> The Packet ID (PID) as it is reported in the Program Map Table.</p>
      */
     inline int GetPid() const { return m_pid; }
     inline bool PidHasBeenSet() const { return m_pidHasBeenSet; }
@@ -94,7 +97,7 @@ namespace Model
 
     ///@{
     /**
-     * The sample rate used by the audio stream.
+     * <p> The sample rate used by the audio stream.</p>
      */
     inline int GetSampleRate() const { return m_sampleRate; }
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
@@ -104,7 +107,7 @@ namespace Model
 
     ///@{
     /**
-     * The sample bit size used by the audio stream.
+     * <p> The sample bit size used by the audio stream.</p>
      */
     inline int GetSampleSize() const { return m_sampleSize; }
     inline bool SampleSizeHasBeenSet() const { return m_sampleSizeHasBeenSet; }
@@ -114,7 +117,7 @@ namespace Model
 
     ///@{
     /**
-     * The Stream Type as it is reported in the Program Map Table.
+     * <p> The Stream Type as it is reported in the Program Map Table.</p>
      */
     inline const Aws::String& GetStreamType() const { return m_streamType; }
     inline bool StreamTypeHasBeenSet() const { return m_streamTypeHasBeenSet; }

@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * The entitlements that were just granted.
+     * <p> The entitlements that were just granted.</p>
      */
     inline const Aws::Vector<Entitlement>& GetEntitlements() const { return m_entitlements; }
     template<typename EntitlementsT = Aws::Vector<Entitlement>>
@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the flow that these entitlements were granted to.
+     * <p> The ARN of the flow that these entitlements were granted to.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     template<typename FlowArnT = Aws::String>

@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the bridge that you want to update.
+     * <p> The Amazon Resource Name (ARN) of the bridge that you want to update.</p>
      */
     inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }
@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the bridge output that you want to remove.
+     * <p> The name of the bridge output that you want to remove.</p>
      */
     inline const Aws::String& GetOutputName() const { return m_outputName; }
     inline bool OutputNameHasBeenSet() const { return m_outputNameHasBeenSet; }

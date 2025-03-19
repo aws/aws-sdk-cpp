@@ -34,7 +34,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p> The updated flow. </p>
+     */
     inline const Flow& GetFlow() const { return m_flow; }
     template<typename FlowT = Flow>
     void SetFlow(FlowT&& value) { m_flowHasBeenSet = true; m_flow = std::forward<FlowT>(value); }

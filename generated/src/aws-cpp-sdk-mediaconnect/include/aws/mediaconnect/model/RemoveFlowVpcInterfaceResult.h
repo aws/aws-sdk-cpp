@@ -35,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the flow that is associated with the VPC interface you removed.
+     * <p> The ARN of the flow that is associated with the VPC interface you
+     * removed.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     template<typename FlowArnT = Aws::String>
@@ -46,8 +47,8 @@ namespace Model
 
     ///@{
     /**
-     * IDs of network interfaces associated with the removed VPC interface that Media
-     * Connect was unable to remove.
+     * <p> IDs of network interfaces associated with the removed VPC interface that
+     * MediaConnect was unable to remove.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNonDeletedNetworkInterfaceIds() const { return m_nonDeletedNetworkInterfaceIds; }
     template<typename NonDeletedNetworkInterfaceIdsT = Aws::Vector<Aws::String>>
@@ -60,7 +61,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the VPC interface that was removed.
+     * <p> The name of the VPC interface that was removed.</p>
      */
     inline const Aws::String& GetVpcInterfaceName() const { return m_vpcInterfaceName; }
     template<typename VpcInterfaceNameT = Aws::String>

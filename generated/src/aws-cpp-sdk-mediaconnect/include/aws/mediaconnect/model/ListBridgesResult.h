@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * A list of bridge summaries.
+     * <p> A list of bridge summaries.</p>
      */
     inline const Aws::Vector<ListedBridge>& GetBridges() const { return m_bridges; }
     template<typename BridgesT = Aws::Vector<ListedBridge>>
@@ -49,11 +49,12 @@ namespace Model
 
     ///@{
     /**
-     * The token that identifies which batch of results that you want to see. For
-     * example, you submit a ListBridges request with MaxResults set at 5. The service
-     * returns the first batch of results (up to 5) and a NextToken value. To see the
-     * next batch of results, you can submit the ListBridges request a second time and
-     * specify the NextToken value.
+     * <p> The token that identifies the batch of results that you want to see. </p>
+     * <p>For example, you submit a <code>ListBridges</code> request with
+     * <code>MaxResults</code> set at 5. The service returns the first batch of results
+     * (up to 5) and a <code>NextToken</code> value. To see the next batch of results,
+     * you can submit the <code>ListBridges</code> request a second time and specify
+     * the <code>NextToken</code> value.</p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     template<typename NextTokenT = Aws::String>

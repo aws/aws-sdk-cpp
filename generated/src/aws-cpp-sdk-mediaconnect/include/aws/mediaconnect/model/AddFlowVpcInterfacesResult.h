@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the flow that these VPC interfaces were added to.
+     * <p> The ARN of the flow that these VPC interfaces were added to.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     template<typename FlowArnT = Aws::String>
@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * The details of the newly added VPC interfaces.
+     * <p> The details of the newly added VPC interfaces.</p>
      */
     inline const Aws::Vector<VpcInterface>& GetVpcInterfaces() const { return m_vpcInterfaces; }
     template<typename VpcInterfacesT = Aws::Vector<VpcInterface>>

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * Update maintenance setting for a flow<p><h3>See Also:</h3>   <a
+   * <p> Update maintenance setting for a flow.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateMaintenance">AWS
    * API Reference</a></p>
    */
@@ -40,8 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * A day of a week when the maintenance will happen. use
-     * Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+     * <p> A day of a week when the maintenance will happen.</p>
      */
     inline MaintenanceDay GetMaintenanceDay() const { return m_maintenanceDay; }
     inline bool MaintenanceDayHasBeenSet() const { return m_maintenanceDayHasBeenSet; }
@@ -51,8 +50,8 @@ namespace Model
 
     ///@{
     /**
-     * A scheduled date in ISO UTC format when the maintenance will happen. Use
-     * YYYY-MM-DD format. Example: 2021-01-30.
+     * <p> A scheduled date in ISO UTC format when the maintenance will happen. Use
+     * YYYY-MM-DD format. Example: 2021-01-30.</p>
      */
     inline const Aws::String& GetMaintenanceScheduledDate() const { return m_maintenanceScheduledDate; }
     inline bool MaintenanceScheduledDateHasBeenSet() const { return m_maintenanceScheduledDateHasBeenSet; }
@@ -64,8 +63,8 @@ namespace Model
 
     ///@{
     /**
-     * UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes
-     * must be 00. Example: 13:00. The default value is 02:00.
+     * <p> UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes
+     * must be 00. Example: 13:00. The default value is 02:00.</p>
      */
     inline const Aws::String& GetMaintenanceStartHour() const { return m_maintenanceStartHour; }
     inline bool MaintenanceStartHourHasBeenSet() const { return m_maintenanceStartHourHasBeenSet; }

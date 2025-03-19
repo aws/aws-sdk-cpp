@@ -200,8 +200,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The block device mapping, which defines the EBS volumes and instance store
-     * volumes to attach to the instance at launch. For more information, see <a
+     * <p>The block device mappings, which define the EBS volumes and instance store
+     * volumes to attach to the instance at launch.</p> <p>Supported only for fleets of
+     * type <code>instant</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
      * device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2
      * User Guide</i>.</p>

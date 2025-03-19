@@ -34,7 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * The flow that you want to remove a VPC interface from.
+     * <p> The Amazon Resource Name (ARN) of the flow that you want to remove a VPC
+     * interface from.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
@@ -46,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the VPC interface that you want to remove.
+     * <p> The name of the VPC interface that you want to remove.</p>
      */
     inline const Aws::String& GetVpcInterfaceName() const { return m_vpcInterfaceName; }
     inline bool VpcInterfaceNameHasBeenSet() const { return m_vpcInterfaceNameHasBeenSet; }

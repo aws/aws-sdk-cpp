@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the flow that DescribeFlowSourceMetadata was performed on.
+     * <p> The ARN of the flow that DescribeFlowSourceMetadata was performed on.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     template<typename FlowArnT = Aws::String>
@@ -49,8 +49,8 @@ namespace Model
 
     ///@{
     /**
-     * Provides a status code and message regarding issues found with the flow source
-     * metadata.
+     * <p> Provides a status code and message regarding issues found with the flow
+     * source metadata.</p>
      */
     inline const Aws::Vector<MessageDetail>& GetMessages() const { return m_messages; }
     template<typename MessagesT = Aws::Vector<MessageDetail>>
@@ -63,7 +63,8 @@ namespace Model
 
     ///@{
     /**
-     * The timestamp of the most recent change in metadata for this flow’s source.
+     * <p> The timestamp of the most recent change in metadata for this flow’s
+     * source.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     template<typename TimestampT = Aws::Utils::DateTime>
@@ -73,7 +74,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> Information about the flow's transport media. </p>
+     */
     inline const TransportMediaInfo& GetTransportMediaInfo() const { return m_transportMediaInfo; }
     template<typename TransportMediaInfoT = TransportMediaInfo>
     void SetTransportMediaInfo(TransportMediaInfoT&& value) { m_transportMediaInfoHasBeenSet = true; m_transportMediaInfo = std::forward<TransportMediaInfoT>(value); }

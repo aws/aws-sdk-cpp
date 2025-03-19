@@ -41,8 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
-     * resource from which to delete tags.
+     * <p> The Amazon Resource Name (ARN) of the resource that you want to untag. </p>
      */
     inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
@@ -54,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * The keys of the tags to be removed.
+     * <p>The keys of the tags to be removed. </p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const { return m_tagKeys; }
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }

@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Name (ARN) of the flow.
+     * <p> The ARN of the flow that was updated.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     template<typename FlowArnT = Aws::String>
@@ -45,7 +45,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the media stream that was removed.
+     * <p> The name of the media stream that was removed.</p>
      */
     inline const Aws::String& GetMediaStreamName() const { return m_mediaStreamName; }
     template<typename MediaStreamNameT = Aws::String>

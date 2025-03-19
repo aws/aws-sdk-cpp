@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the flow that you added media streams to.
+     * <p> The ARN of the flow that you added media streams to.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     template<typename FlowArnT = Aws::String>
@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * The media streams that you added to the flow.
+     * <p> The media streams that you added to the flow.</p>
      */
     inline const Aws::Vector<MediaStream>& GetMediaStreams() const { return m_mediaStreams; }
     template<typename MediaStreamsT = Aws::Vector<MediaStream>>

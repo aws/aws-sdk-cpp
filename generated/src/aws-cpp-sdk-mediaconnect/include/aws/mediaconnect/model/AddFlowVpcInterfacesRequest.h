@@ -19,9 +19,6 @@ namespace Model
 {
 
   /**
-   * A request to add VPC interfaces to the flow.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowVpcInterfacesRequest">AWS
-   * API Reference</a></p>
    */
   class AddFlowVpcInterfacesRequest : public MediaConnectRequest
   {
@@ -39,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * The flow that you want to mutate.
+     * <p> The Amazon Resource Name (ARN) of the flow that you want to update.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
@@ -51,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * A list of VPC interfaces that you want to add.
+     * <p> A list of VPC interfaces that you want to add to the flow.</p>
      */
     inline const Aws::Vector<VpcInterfaceRequest>& GetVpcInterfaces() const { return m_vpcInterfaces; }
     inline bool VpcInterfacesHasBeenSet() const { return m_vpcInterfacesHasBeenSet; }

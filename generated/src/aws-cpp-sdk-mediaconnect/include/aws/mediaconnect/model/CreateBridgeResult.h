@@ -34,7 +34,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p> The name of the bridge that was created.</p>
+     */
     inline const Bridge& GetBridge() const { return m_bridge; }
     template<typename BridgeT = Bridge>
     void SetBridge(BridgeT&& value) { m_bridgeHasBeenSet = true; m_bridge = std::forward<BridgeT>(value); }

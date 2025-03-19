@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * The output of the bridge. A flow output is delivered to the AWS cloud.<p><h3>See
-   * Also:</h3>   <a
+   * <p> The output of the bridge. A flow output is delivered to the Amazon Web
+   * Services cloud. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BridgeFlowOutput">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Number (ARN) of the cloud flow.
+     * <p> The Amazon Resource Number (ARN) of the cloud flow.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Number (ARN) of the flow source.
+     * <p> The Amazon Resource Number (ARN) of the flow source.</p>
      */
     inline const Aws::String& GetFlowSourceArn() const { return m_flowSourceArn; }
     inline bool FlowSourceArnHasBeenSet() const { return m_flowSourceArnHasBeenSet; }
@@ -64,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the bridge's output.
+     * <p> The name of the bridge's output.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

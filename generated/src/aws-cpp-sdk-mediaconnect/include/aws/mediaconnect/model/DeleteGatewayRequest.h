@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the gateway that you want to delete.
+     * <p> The Amazon Resource Name (ARN) of the gateway that you want to delete.</p>
      */
     inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
     inline bool GatewayArnHasBeenSet() const { return m_gatewayArnHasBeenSet; }

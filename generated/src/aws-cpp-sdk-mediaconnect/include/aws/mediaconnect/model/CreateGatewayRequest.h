@@ -19,10 +19,6 @@ namespace Model
 {
 
   /**
-   * Creates a new gateway. The request must include at least one network (up to
-   * 4).<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateGatewayRequest">AWS
-   * API Reference</a></p>
    */
   class CreateGatewayRequest : public MediaConnectRequest
   {
@@ -40,10 +36,10 @@ namespace Model
 
     ///@{
     /**
-     * The range of IP addresses that are allowed to contribute content or initiate
+     * <p> The range of IP addresses that are allowed to contribute content or initiate
      * output requests for flows communicating with this gateway. These IP addresses
      * should be in the form of a Classless Inter-Domain Routing (CIDR) block; for
-     * example, 10.0.0.0/16.
+     * example, 10.0.0.0/16.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEgressCidrBlocks() const { return m_egressCidrBlocks; }
     inline bool EgressCidrBlocksHasBeenSet() const { return m_egressCidrBlocksHasBeenSet; }
@@ -57,8 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * The name of the gateway. This name can not be modified after the gateway is
-     * created.
+     * <p> The name of the gateway. This name can not be modified after the gateway is
+     * created.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -70,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * The list of networks that you want to add.
+     * <p> The list of networks that you want to add to the gateway.</p>
      */
     inline const Aws::Vector<GatewayNetwork>& GetNetworks() const { return m_networks; }
     inline bool NetworksHasBeenSet() const { return m_networksHasBeenSet; }

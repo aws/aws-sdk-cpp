@@ -34,7 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * The flow that you want to remove a source from.
+     * <p> The Amazon Resource Name (ARN) of the flow that you want to remove a source
+     * from.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
@@ -46,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the source that you want to remove.
+     * <p> The ARN of the source that you want to remove.</p>
      */
     inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }

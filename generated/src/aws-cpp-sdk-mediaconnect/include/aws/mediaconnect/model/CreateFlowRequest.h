@@ -12,6 +12,8 @@
 #include <aws/mediaconnect/model/FailoverConfig.h>
 #include <aws/mediaconnect/model/AddMaintenance.h>
 #include <aws/mediaconnect/model/MonitoringConfig.h>
+#include <aws/mediaconnect/model/FlowSize.h>
+#include <aws/mediaconnect/model/NdiConfig.h>
 #include <aws/mediaconnect/model/GrantEntitlementRequest.h>
 #include <aws/mediaconnect/model/AddMediaStreamRequest.h>
 #include <aws/mediaconnect/model/AddOutputRequest.h>
@@ -26,11 +28,6 @@ namespace Model
 {
 
   /**
-   * Creates a new flow. The request must include one source. The request optionally
-   * can include outputs (up to 50) and entitlements (up to 50).<p><h3>See Also:</h3>
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateFlowRequest">AWS
-   * API Reference</a></p>
    */
   class CreateFlowRequest : public MediaConnectRequest
   {
@@ -48,8 +45,9 @@ namespace Model
 
     ///@{
     /**
-     * The Availability Zone that you want to create the flow in. These options are
-     * limited to the Availability Zones within the current AWS Region.
+     * <p> The Availability Zone that you want to create the flow in. These options are
+     * limited to the Availability Zones within the current Amazon Web Services
+     * Region.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
@@ -61,7 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * The entitlements that you want to grant on a flow.
+     * <p> The entitlements that you want to grant on a flow.</p>
      */
     inline const Aws::Vector<GrantEntitlementRequest>& GetEntitlements() const { return m_entitlements; }
     inline bool EntitlementsHasBeenSet() const { return m_entitlementsHasBeenSet; }
@@ -75,8 +73,8 @@ namespace Model
 
     ///@{
     /**
-     * The media streams that you want to add to the flow. You can associate these
-     * media streams with sources and outputs on the flow.
+     * <p> The media streams that you want to add to the flow. You can associate these
+     * media streams with sources and outputs on the flow.</p>
      */
     inline const Aws::Vector<AddMediaStreamRequest>& GetMediaStreams() const { return m_mediaStreams; }
     inline bool MediaStreamsHasBeenSet() const { return m_mediaStreamsHasBeenSet; }
@@ -90,7 +88,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the flow.
+     * <p> The name of the flow.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -102,7 +100,7 @@ namespace Model
 
     ///@{
     /**
-     * The outputs that you want to add to this flow.
+     * <p> The outputs that you want to add to this flow.</p>
      */
     inline const Aws::Vector<AddOutputRequest>& GetOutputs() const { return m_outputs; }
     inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
@@ -115,7 +113,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The settings for the source that you want to use for the new flow. </p>
+     */
     inline const SetSourceRequest& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
     template<typename SourceT = SetSourceRequest>
@@ -125,7 +125,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The settings for source failover. </p>
+     */
     inline const FailoverConfig& GetSourceFailoverConfig() const { return m_sourceFailoverConfig; }
     inline bool SourceFailoverConfigHasBeenSet() const { return m_sourceFailoverConfigHasBeenSet; }
     template<typename SourceFailoverConfigT = FailoverConfig>
@@ -135,7 +137,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>The sources that are assigned to the flow. </p>
+     */
     inline const Aws::Vector<SetSourceRequest>& GetSources() const { return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
     template<typename SourcesT = Aws::Vector<SetSourceRequest>>
@@ -148,7 +152,7 @@ namespace Model
 
     ///@{
     /**
-     * The VPC interfaces you want on the flow.
+     * <p> The VPC interfaces you want on the flow.</p>
      */
     inline const Aws::Vector<VpcInterfaceRequest>& GetVpcInterfaces() const { return m_vpcInterfaces; }
     inline bool VpcInterfacesHasBeenSet() const { return m_vpcInterfacesHasBeenSet; }
@@ -161,7 +165,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The maintenance settings you want to use for the flow. </p>
+     */
     inline const AddMaintenance& GetMaintenance() const { return m_maintenance; }
     inline bool MaintenanceHasBeenSet() const { return m_maintenanceHasBeenSet; }
     template<typename MaintenanceT = AddMaintenance>
@@ -171,13 +177,40 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The settings for source monitoring. </p>
+     */
     inline const MonitoringConfig& GetSourceMonitoringConfig() const { return m_sourceMonitoringConfig; }
     inline bool SourceMonitoringConfigHasBeenSet() const { return m_sourceMonitoringConfigHasBeenSet; }
     template<typename SourceMonitoringConfigT = MonitoringConfig>
     void SetSourceMonitoringConfig(SourceMonitoringConfigT&& value) { m_sourceMonitoringConfigHasBeenSet = true; m_sourceMonitoringConfig = std::forward<SourceMonitoringConfigT>(value); }
     template<typename SourceMonitoringConfigT = MonitoringConfig>
     CreateFlowRequest& WithSourceMonitoringConfig(SourceMonitoringConfigT&& value) { SetSourceMonitoringConfig(std::forward<SourceMonitoringConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Determines the processing capacity and feature set of the flow. Set this
+     * optional parameter to <code>LARGE</code> if you want to enable NDI outputs on
+     * the flow. </p>
+     */
+    inline FlowSize GetFlowSize() const { return m_flowSize; }
+    inline bool FlowSizeHasBeenSet() const { return m_flowSizeHasBeenSet; }
+    inline void SetFlowSize(FlowSize value) { m_flowSizeHasBeenSet = true; m_flowSize = value; }
+    inline CreateFlowRequest& WithFlowSize(FlowSize value) { SetFlowSize(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Specifies the configuration settings for NDI outputs. Required when the flow
+     * includes NDI outputs. </p>
+     */
+    inline const NdiConfig& GetNdiConfig() const { return m_ndiConfig; }
+    inline bool NdiConfigHasBeenSet() const { return m_ndiConfigHasBeenSet; }
+    template<typename NdiConfigT = NdiConfig>
+    void SetNdiConfig(NdiConfigT&& value) { m_ndiConfigHasBeenSet = true; m_ndiConfig = std::forward<NdiConfigT>(value); }
+    template<typename NdiConfigT = NdiConfig>
+    CreateFlowRequest& WithNdiConfig(NdiConfigT&& value) { SetNdiConfig(std::forward<NdiConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -213,6 +246,12 @@ namespace Model
 
     MonitoringConfig m_sourceMonitoringConfig;
     bool m_sourceMonitoringConfigHasBeenSet = false;
+
+    FlowSize m_flowSize{FlowSize::NOT_SET};
+    bool m_flowSizeHasBeenSet = false;
+
+    NdiConfig m_ndiConfig;
+    bool m_ndiConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the flow that you want to update.
+     * <p>The ARN of the flow that you was updated. </p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     template<typename FlowArnT = Aws::String>
@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * The settings for the source of the flow.
+     * <p>The details of the sources that are assigned to the flow. </p>
      */
     inline const Source& GetSource() const { return m_source; }
     template<typename SourceT = Source>

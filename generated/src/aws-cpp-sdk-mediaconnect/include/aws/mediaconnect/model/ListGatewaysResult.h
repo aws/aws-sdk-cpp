@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * A list of gateway summaries.
+     * <p> A list of gateway summaries.</p>
      */
     inline const Aws::Vector<ListedGateway>& GetGateways() const { return m_gateways; }
     template<typename GatewaysT = Aws::Vector<ListedGateway>>
@@ -49,11 +49,12 @@ namespace Model
 
     ///@{
     /**
-     * The token that identifies which batch of results that you want to see. For
-     * example, you submit a ListGateways request with MaxResults set at 5. The service
-     * returns the first batch of results (up to 5) and a NextToken value. To see the
-     * next batch of results, you can submit the ListGateways request a second time and
-     * specify the NextToken value.
+     * <p> The token that identifies the batch of results that you want to see. </p>
+     * <p>For example, you submit a <code>ListGateways</code> request with
+     * <code>MaxResults</code> set at 5. The service returns the first batch of results
+     * (up to 5) and a <code>NextToken</code> value. To see the next batch of results,
+     * you can submit the <code>ListGateways</code> request a second time and specify
+     * the <code>NextToken</code> value.</p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     template<typename NextTokenT = Aws::String>

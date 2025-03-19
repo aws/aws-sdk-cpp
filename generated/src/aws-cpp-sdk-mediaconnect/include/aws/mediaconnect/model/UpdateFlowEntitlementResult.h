@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * The new configuration of the entitlement that you updated.
+     * <p> The new configuration of the entitlement that you updated.</p>
      */
     inline const Entitlement& GetEntitlement() const { return m_entitlement; }
     template<typename EntitlementT = Entitlement>
@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the flow that this entitlement was granted on.
+     * <p> The ARN of the flow that this entitlement was granted on.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     template<typename FlowArnT = Aws::String>

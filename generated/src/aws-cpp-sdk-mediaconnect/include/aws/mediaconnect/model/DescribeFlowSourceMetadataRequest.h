@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Name (ARN) of the flow.
+     * <p> The Amazon Resource Name (ARN) of the flow.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }

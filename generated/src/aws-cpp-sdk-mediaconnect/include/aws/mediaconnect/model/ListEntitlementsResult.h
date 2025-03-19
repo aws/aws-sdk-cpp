@@ -36,7 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * A list of entitlements that have been granted to you from other AWS accounts.
+     * <p>A list of entitlements that have been granted to you from other Amazon Web
+     * Services accounts. </p>
      */
     inline const Aws::Vector<ListedEntitlement>& GetEntitlements() const { return m_entitlements; }
     template<typename EntitlementsT = Aws::Vector<ListedEntitlement>>
@@ -49,11 +50,12 @@ namespace Model
 
     ///@{
     /**
-     * The token that identifies which batch of results that you want to see. For
-     * example, you submit a ListEntitlements request with MaxResults set at 5. The
-     * service returns the first batch of results (up to 5) and a NextToken value. To
-     * see the next batch of results, you can submit the ListEntitlements request a
-     * second time and specify the NextToken value.
+     * <p>The token that identifies the batch of results that you want to see. </p>
+     * <p>For example, you submit a ListEntitlements request with
+     * <code>MaxResults</code> set at 5. The service returns the first batch of results
+     * (up to 5) and a NextToken value. To see the next batch of results, you can
+     * submit the <code>ListEntitlements</code> request a second time and specify the
+     * <code>NextToken</code> value. </p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     template<typename NextTokenT = Aws::String>

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * The bridge's source.<p><h3>See Also:</h3>   <a
+   * <p> The bridge's source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BridgeSource">AWS
    * API Reference</a></p>
    */
@@ -39,7 +39,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p> The source of the associated flow. </p>
+     */
     inline const BridgeFlowSource& GetFlowSource() const { return m_flowSource; }
     inline bool FlowSourceHasBeenSet() const { return m_flowSourceHasBeenSet; }
     template<typename FlowSourceT = BridgeFlowSource>
@@ -49,7 +51,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The network source for the bridge. </p>
+     */
     inline const BridgeNetworkSource& GetNetworkSource() const { return m_networkSource; }
     inline bool NetworkSourceHasBeenSet() const { return m_networkSourceHasBeenSet; }
     template<typename NetworkSourceT = BridgeNetworkSource>

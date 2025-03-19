@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the flow that these outputs were added to.
+     * <p> The ARN of the flow that these outputs were added to.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     template<typename FlowArnT = Aws::String>
@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * The details of the newly added outputs.
+     * <p> The details of the newly added outputs.</p>
      */
     inline const Aws::Vector<Output>& GetOutputs() const { return m_outputs; }
     template<typename OutputsT = Aws::Vector<Output>>

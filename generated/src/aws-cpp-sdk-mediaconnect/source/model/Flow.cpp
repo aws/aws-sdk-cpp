@@ -120,6 +120,16 @@ Flow& Flow::operator =(JsonView jsonValue)
     m_sourceMonitoringConfig = jsonValue.GetObject("sourceMonitoringConfig");
     m_sourceMonitoringConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("flowSize"))
+  {
+    m_flowSize = FlowSizeMapper::GetFlowSizeForName(jsonValue.GetString("flowSize"));
+    m_flowSizeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ndiConfig"))
+  {
+    m_ndiConfig = jsonValue.GetObject("ndiConfig");
+    m_ndiConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -238,6 +248,17 @@ JsonValue Flow::Jsonize() const
   if(m_sourceMonitoringConfigHasBeenSet)
   {
    payload.WithObject("sourceMonitoringConfig", m_sourceMonitoringConfig.Jsonize());
+
+  }
+
+  if(m_flowSizeHasBeenSet)
+  {
+   payload.WithString("flowSize", FlowSizeMapper::GetNameForFlowSize(m_flowSize));
+  }
+
+  if(m_ndiConfigHasBeenSet)
+  {
+   payload.WithObject("ndiConfig", m_ndiConfig.Jsonize());
 
   }
 

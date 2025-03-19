@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the flow that is associated with the updated output.
+     * <p> The ARN of the flow that is associated with the updated output.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     template<typename FlowArnT = Aws::String>
@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * The new settings of the output that you updated.
+     * <p> The new settings of the output that you updated.</p>
      */
     inline const Output& GetOutput() const { return m_output; }
     template<typename OutputT = Output>

@@ -34,7 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the entitlement that you want to revoke.
+     * <p> The Amazon Resource Name (ARN) of the entitlement that you want to
+     * revoke.</p>
      */
     inline const Aws::String& GetEntitlementArn() const { return m_entitlementArn; }
     inline bool EntitlementArnHasBeenSet() const { return m_entitlementArnHasBeenSet; }
@@ -46,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * The flow that you want to revoke an entitlement from.
+     * <p> The flow that you want to revoke an entitlement from.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }

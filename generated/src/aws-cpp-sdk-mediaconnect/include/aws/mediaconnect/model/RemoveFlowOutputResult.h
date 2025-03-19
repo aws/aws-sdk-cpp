@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the flow that is associated with the output you removed.
+     * <p> The ARN of the flow that the output was removed from. </p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     template<typename FlowArnT = Aws::String>
@@ -45,7 +45,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the output that was removed.
+     * <p> The ARN of the output that was removed. </p>
      */
     inline const Aws::String& GetOutputArn() const { return m_outputArn; }
     template<typename OutputArnT = Aws::String>

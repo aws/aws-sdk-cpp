@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * Add a network output to an existing bridge.<p><h3>See Also:</h3>   <a
+   * <p>Add a network output to an existing bridge. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeNetworkOutputRequest">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * The network output IP Address.
+     * <p> The network output IP Address. </p>
      */
     inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
@@ -52,8 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * The network output name. This name is used to reference the output and must be
-     * unique among outputs in this bridge.
+     * <p> The network output name. This name is used to reference the output and must
+     * be unique among outputs in this bridge. </p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -65,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * The network output's gateway network name.
+     * <p> The network output's gateway network name. </p>
      */
     inline const Aws::String& GetNetworkName() const { return m_networkName; }
     inline bool NetworkNameHasBeenSet() const { return m_networkNameHasBeenSet; }
@@ -77,7 +77,7 @@ namespace Model
 
     ///@{
     /**
-     * The network output port.
+     * <p> The network output port. </p>
      */
     inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
@@ -87,7 +87,9 @@ namespace Model
 
     ///@{
     /**
-     * The network output protocol.
+     * <p> The network output protocol. </p>  <p>Elemental MediaConnect no longer
+     * supports the Fujitsu QoS protocol. This reference is maintained for legacy
+     * purposes only.</p> 
      */
     inline Protocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
@@ -97,7 +99,7 @@ namespace Model
 
     ///@{
     /**
-     * The network output TTL.
+     * <p> The network output TTL. </p>
      */
     inline int GetTtl() const { return m_ttl; }
     inline bool TtlHasBeenSet() const { return m_ttlHasBeenSet; }

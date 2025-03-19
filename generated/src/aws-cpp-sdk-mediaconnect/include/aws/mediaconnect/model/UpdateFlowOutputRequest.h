@@ -23,9 +23,6 @@ namespace Model
 {
 
   /**
-   * The fields that you want to update in the output.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowOutputRequest">AWS
-   * API Reference</a></p>
    */
   class UpdateFlowOutputRequest : public MediaConnectRequest
   {
@@ -43,9 +40,9 @@ namespace Model
 
     ///@{
     /**
-     * The range of IP addresses that should be allowed to initiate output requests to
-     * this flow. These IP addresses should be in the form of a Classless Inter-Domain
-     * Routing (CIDR) block; for example, 10.0.0.0/16.
+     * <p> The range of IP addresses that should be allowed to initiate output requests
+     * to this flow. These IP addresses should be in the form of a Classless
+     * Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCidrAllowList() const { return m_cidrAllowList; }
     inline bool CidrAllowListHasBeenSet() const { return m_cidrAllowListHasBeenSet; }
@@ -59,8 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * A description of the output. This description appears only on the AWS Elemental
-     * MediaConnect console and will not be seen by the end user.
+     * <p> A description of the output. This description appears only on the
+     * MediaConnect console and will not be seen by the end user.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -72,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * The IP address where you want to send the output.
+     * <p> The IP address where you want to send the output.</p>
      */
     inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
@@ -84,9 +81,9 @@ namespace Model
 
     ///@{
     /**
-     * The type of key used for the encryption. If no keyType is provided, the service
-     * will use the default setting (static-key). Allowable encryption types:
-     * static-key.
+     * <p> The type of key used for the encryption. If no <code>keyType</code> is
+     * provided, the service will use the default setting (static-key). Allowable
+     * encryption types: static-key.</p>
      */
     inline const UpdateEncryption& GetEncryption() const { return m_encryption; }
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
@@ -98,7 +95,8 @@ namespace Model
 
     ///@{
     /**
-     * The flow that is associated with the output that you want to update.
+     * <p> The Amazon Resource Name (ARN) of the flow that is associated with the
+     * output that you want to update.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
@@ -110,8 +108,8 @@ namespace Model
 
     ///@{
     /**
-     * The maximum latency in milliseconds. This parameter applies only to RIST-based,
-     * Zixi-based, and Fujitsu-based streams.
+     * <p> The maximum latency in milliseconds. This parameter applies only to
+     * RIST-based and Zixi-based streams.</p>
      */
     inline int GetMaxLatency() const { return m_maxLatency; }
     inline bool MaxLatencyHasBeenSet() const { return m_maxLatencyHasBeenSet; }
@@ -121,8 +119,8 @@ namespace Model
 
     ///@{
     /**
-     * The media streams that are associated with the output, and the parameters for
-     * those associations.
+     * <p> The media streams that are associated with the output, and the parameters
+     * for those associations.</p>
      */
     inline const Aws::Vector<MediaStreamOutputConfigurationRequest>& GetMediaStreamOutputConfigurations() const { return m_mediaStreamOutputConfigurations; }
     inline bool MediaStreamOutputConfigurationsHasBeenSet() const { return m_mediaStreamOutputConfigurationsHasBeenSet; }
@@ -136,11 +134,11 @@ namespace Model
 
     ///@{
     /**
-     * The minimum latency in milliseconds for SRT-based streams. In streams that use
-     * the SRT protocol, this value that you set on your MediaConnect source or output
-     * represents the minimal potential latency of that connection. The latency of the
-     * stream is set to the highest number between the sender’s minimum latency and the
-     * receiver’s minimum latency.
+     * <p> The minimum latency in milliseconds for SRT-based streams. In streams that
+     * use the SRT protocol, this value that you set on your MediaConnect source or
+     * output represents the minimal potential latency of that connection. The latency
+     * of the stream is set to the highest number between the sender’s minimum latency
+     * and the receiver’s minimum latency.</p>
      */
     inline int GetMinLatency() const { return m_minLatency; }
     inline bool MinLatencyHasBeenSet() const { return m_minLatencyHasBeenSet; }
@@ -150,7 +148,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the output that you want to update.
+     * <p> The ARN of the output that you want to update.</p>
      */
     inline const Aws::String& GetOutputArn() const { return m_outputArn; }
     inline bool OutputArnHasBeenSet() const { return m_outputArnHasBeenSet; }
@@ -162,7 +160,7 @@ namespace Model
 
     ///@{
     /**
-     * The port to use when content is distributed to this output.
+     * <p> The port to use when content is distributed to this output.</p>
      */
     inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
@@ -172,7 +170,9 @@ namespace Model
 
     ///@{
     /**
-     * The protocol to use for the output.
+     * <p> The protocol to use for the output.</p>  <p>Elemental MediaConnect no
+     * longer supports the Fujitsu QoS protocol. This reference is maintained for
+     * legacy purposes only.</p> 
      */
     inline Protocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
@@ -182,7 +182,7 @@ namespace Model
 
     ///@{
     /**
-     * The remote ID for the Zixi-pull stream.
+     * <p> The remote ID for the Zixi-pull stream.</p>
      */
     inline const Aws::String& GetRemoteId() const { return m_remoteId; }
     inline bool RemoteIdHasBeenSet() const { return m_remoteIdHasBeenSet; }
@@ -194,8 +194,8 @@ namespace Model
 
     ///@{
     /**
-     * The port that the flow uses to send outbound requests to initiate connection
-     * with the sender.
+     * <p> The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.</p>
      */
     inline int GetSenderControlPort() const { return m_senderControlPort; }
     inline bool SenderControlPortHasBeenSet() const { return m_senderControlPortHasBeenSet; }
@@ -205,8 +205,8 @@ namespace Model
 
     ///@{
     /**
-     * The IP address that the flow communicates with to initiate connection with the
-     * sender.
+     * <p> The IP address that the flow communicates with to initiate connection with
+     * the sender.</p>
      */
     inline const Aws::String& GetSenderIpAddress() const { return m_senderIpAddress; }
     inline bool SenderIpAddressHasBeenSet() const { return m_senderIpAddressHasBeenSet; }
@@ -218,7 +218,8 @@ namespace Model
 
     ///@{
     /**
-     * The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+     * <p> The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC
+     * streams.</p>
      */
     inline int GetSmoothingLatency() const { return m_smoothingLatency; }
     inline bool SmoothingLatencyHasBeenSet() const { return m_smoothingLatencyHasBeenSet; }
@@ -228,8 +229,8 @@ namespace Model
 
     ///@{
     /**
-     * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi and SRT caller-based streams.
+     * <p> The stream ID that you want to use for this transport. This parameter
+     * applies only to Zixi and SRT caller-based streams.</p>
      */
     inline const Aws::String& GetStreamId() const { return m_streamId; }
     inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
@@ -241,7 +242,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the VPC interface attachment to use for this output.
+     * <p> The name of the VPC interface attachment to use for this output.</p>
      */
     inline const VpcInterfaceAttachment& GetVpcInterfaceAttachment() const { return m_vpcInterfaceAttachment; }
     inline bool VpcInterfaceAttachmentHasBeenSet() const { return m_vpcInterfaceAttachmentHasBeenSet; }
@@ -253,14 +254,37 @@ namespace Model
 
     ///@{
     /**
-     * An indication of whether the output should transmit data or not. If you don't
-     * specify the outputStatus field in your request, MediaConnect leaves the value
-     * unchanged.
+     * <p> An indication of whether the output should transmit data or not. If you
+     * don't specify the <code>outputStatus</code> field in your request, MediaConnect
+     * leaves the value unchanged.</p>
      */
     inline OutputStatus GetOutputStatus() const { return m_outputStatus; }
     inline bool OutputStatusHasBeenSet() const { return m_outputStatusHasBeenSet; }
     inline void SetOutputStatus(OutputStatus value) { m_outputStatusHasBeenSet = true; m_outputStatus = value; }
     inline UpdateFlowOutputRequest& WithOutputStatus(OutputStatus value) { SetOutputStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> A suffix for the names of the NDI sources that the flow creates. If a custom
+     * name isn't specified, MediaConnect uses the output name. </p>
+     */
+    inline const Aws::String& GetNdiProgramName() const { return m_ndiProgramName; }
+    inline bool NdiProgramNameHasBeenSet() const { return m_ndiProgramNameHasBeenSet; }
+    template<typename NdiProgramNameT = Aws::String>
+    void SetNdiProgramName(NdiProgramNameT&& value) { m_ndiProgramNameHasBeenSet = true; m_ndiProgramName = std::forward<NdiProgramNameT>(value); }
+    template<typename NdiProgramNameT = Aws::String>
+    UpdateFlowOutputRequest& WithNdiProgramName(NdiProgramNameT&& value) { SetNdiProgramName(std::forward<NdiProgramNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A quality setting for the NDI Speed HQ encoder. </p>
+     */
+    inline int GetNdiSpeedHqQuality() const { return m_ndiSpeedHqQuality; }
+    inline bool NdiSpeedHqQualityHasBeenSet() const { return m_ndiSpeedHqQualityHasBeenSet; }
+    inline void SetNdiSpeedHqQuality(int value) { m_ndiSpeedHqQualityHasBeenSet = true; m_ndiSpeedHqQuality = value; }
+    inline UpdateFlowOutputRequest& WithNdiSpeedHqQuality(int value) { SetNdiSpeedHqQuality(value); return *this;}
     ///@}
   private:
 
@@ -317,6 +341,12 @@ namespace Model
 
     OutputStatus m_outputStatus{OutputStatus::NOT_SET};
     bool m_outputStatusHasBeenSet = false;
+
+    Aws::String m_ndiProgramName;
+    bool m_ndiProgramNameHasBeenSet = false;
+
+    int m_ndiSpeedHqQuality{0};
+    bool m_ndiSpeedHqQualityHasBeenSet = false;
   };
 
 } // namespace Model
