@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * The definition of a media stream that you want to associate with the
-   * source.<p><h3>See Also:</h3>   <a
+   * <p>The media stream that you want to associate with the source, and the
+   * parameters for that association. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/MediaStreamSourceConfigurationRequest">AWS
    * API Reference</a></p>
    */
@@ -43,10 +43,10 @@ namespace Model
 
     ///@{
     /**
-     * The format you want to use to encode the data. For ancillary data streams, set
+     * <p>The format that was used to encode the data. For ancillary data streams, set
      * the encoding name to smpte291. For audio streams, set the encoding name to pcm.
      * For video, 2110 streams, set the encoding name to raw. For video, JPEG XS
-     * streams, set the encoding name to jxsv.
+     * streams, set the encoding name to jxsv. </p>
      */
     inline EncodingName GetEncodingName() const { return m_encodingName; }
     inline bool EncodingNameHasBeenSet() const { return m_encodingNameHasBeenSet; }
@@ -56,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * The transport parameters that you want to associate with the media stream.
+     * <p>The media streams that you want to associate with the source. </p>
      */
     inline const Aws::Vector<InputConfigurationRequest>& GetInputConfigurations() const { return m_inputConfigurations; }
     inline bool InputConfigurationsHasBeenSet() const { return m_inputConfigurationsHasBeenSet; }
@@ -70,7 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the media stream.
+     * <p>The name of the media stream. </p>
      */
     inline const Aws::String& GetMediaStreamName() const { return m_mediaStreamName; }
     inline bool MediaStreamNameHasBeenSet() const { return m_mediaStreamNameHasBeenSet; }

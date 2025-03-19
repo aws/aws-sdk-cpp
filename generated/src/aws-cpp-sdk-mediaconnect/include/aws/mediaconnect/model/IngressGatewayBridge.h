@@ -23,6 +23,13 @@ namespace MediaConnect
 namespace Model
 {
 
+  /**
+   * <p>Create a bridge with the ingress bridge type. An ingress bridge is a
+   * ground-to-cloud bridge. The content originates at your premises and is delivered
+   * to the cloud. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/IngressGatewayBridge">AWS
+   * API Reference</a></p>
+   */
   class IngressGatewayBridge
   {
   public:
@@ -34,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * The ID of the instance running this bridge.
+     * <p>The ID of the instance running this bridge. </p>
      */
     inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
@@ -46,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * The maximum expected bitrate (in bps) of the ingress bridge.
+     * <p>The maximum expected bitrate (in bps) of the ingress bridge. </p>
      */
     inline int GetMaxBitrate() const { return m_maxBitrate; }
     inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
@@ -56,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * The maximum number of outputs on the ingress bridge.
+     * <p>The maximum number of outputs on the ingress bridge. </p>
      */
     inline int GetMaxOutputs() const { return m_maxOutputs; }
     inline bool MaxOutputsHasBeenSet() const { return m_maxOutputsHasBeenSet; }

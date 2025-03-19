@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * The settings for attaching a VPC interface to an resource.<p><h3>See Also:</h3> 
-   * <a
+   * <p> The settings for attaching a VPC interface to an resource. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/VpcInterfaceAttachment">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the VPC interface to use for this resource.
+     * <p> The name of the VPC interface to use for this resource.</p>
      */
     inline const Aws::String& GetVpcInterfaceName() const { return m_vpcInterfaceName; }
     inline bool VpcInterfaceNameHasBeenSet() const { return m_vpcInterfaceNameHasBeenSet; }

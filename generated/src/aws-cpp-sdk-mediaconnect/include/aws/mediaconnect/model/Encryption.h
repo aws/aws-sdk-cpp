@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * Information about the encryption of the flow.<p><h3>See Also:</h3>   <a
+   * <p> Information about the encryption of the flow.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Encryption">AWS
    * API Reference</a></p>
    */
@@ -41,8 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * The type of algorithm that is used for the encryption (such as aes128, aes192,
-     * or aes256).
+     * <p> The type of algorithm that is used for the encryption (such as aes128,
+     * aes192, or aes256).</p>
      */
     inline Algorithm GetAlgorithm() const { return m_algorithm; }
     inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
@@ -52,9 +52,9 @@ namespace Model
 
     ///@{
     /**
-     * A 128-bit, 16-byte hex value represented by a 32-character string, to be used
-     * with the key for encrypting content. This parameter is not valid for static key
-     * encryption.
+     * <p> A 128-bit, 16-byte hex value represented by a 32-character string, to be
+     * used with the key for encrypting content. This parameter is not valid for static
+     * key encryption.</p>
      */
     inline const Aws::String& GetConstantInitializationVector() const { return m_constantInitializationVector; }
     inline bool ConstantInitializationVectorHasBeenSet() const { return m_constantInitializationVectorHasBeenSet; }
@@ -66,9 +66,9 @@ namespace Model
 
     ///@{
     /**
-     * The value of one of the devices that you configured with your digital rights
+     * <p> The value of one of the devices that you configured with your digital rights
      * management (DRM) platform key provider. This parameter is required for SPEKE
-     * encryption and is not valid for static key encryption.
+     * encryption and is not valid for static key encryption.</p>
      */
     inline const Aws::String& GetDeviceId() const { return m_deviceId; }
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
@@ -80,8 +80,8 @@ namespace Model
 
     ///@{
     /**
-     * The type of key that is used for the encryption. If no keyType is provided, the
-     * service will use the default setting (static-key).
+     * <p> The type of key that is used for the encryption. If no keyType is provided,
+     * the service will use the default setting (static-key).</p>
      */
     inline KeyType GetKeyType() const { return m_keyType; }
     inline bool KeyTypeHasBeenSet() const { return m_keyTypeHasBeenSet; }
@@ -91,9 +91,9 @@ namespace Model
 
     ///@{
     /**
-     * The AWS Region that the API Gateway proxy endpoint was created in. This
-     * parameter is required for SPEKE encryption and is not valid for static key
-     * encryption.
+     * <p> The Amazon Web Services Region that the API Gateway proxy endpoint was
+     * created in. This parameter is required for SPEKE encryption and is not valid for
+     * static key encryption.</p>
      */
     inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
@@ -105,10 +105,10 @@ namespace Model
 
     ///@{
     /**
-     * An identifier for the content. The service sends this value to the key server to
-     * identify the current endpoint. The resource ID is also known as the content ID.
-     * This parameter is required for SPEKE encryption and is not valid for static key
-     * encryption.
+     * <p> An identifier for the content. The service sends this value to the key
+     * server to identify the current endpoint. The resource ID is also known as the
+     * content ID. This parameter is required for SPEKE encryption and is not valid for
+     * static key encryption.</p>
      */
     inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
@@ -120,8 +120,8 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the role that you created during setup (when you set up AWS Elemental
-     * MediaConnect as a trusted entity).
+     * <p> The ARN of the role that you created during setup (when you set up
+     * MediaConnect as a trusted entity).</p>
      */
     inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -133,9 +133,9 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the secret that you created in AWS Secrets Manager to store the
+     * <p> The ARN of the secret that you created in Secrets Manager to store the
      * encryption key. This parameter is required for static key encryption and is not
-     * valid for SPEKE encryption.
+     * valid for SPEKE encryption.</p>
      */
     inline const Aws::String& GetSecretArn() const { return m_secretArn; }
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
@@ -147,9 +147,9 @@ namespace Model
 
     ///@{
     /**
-     * The URL from the API Gateway proxy that you set up to talk to your key server.
-     * This parameter is required for SPEKE encryption and is not valid for static key
-     * encryption.
+     * <p> The URL from the API Gateway proxy that you set up to talk to your key
+     * server. This parameter is required for SPEKE encryption and is not valid for
+     * static key encryption.</p>
      */
     inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }

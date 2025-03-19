@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * The settings for source monitoring.<p><h3>See Also:</h3>   <a
+   * <p> The settings for source monitoring. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/MonitoringConfig">AWS
    * API Reference</a></p>
    */
@@ -43,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * The state of thumbnail monitoring.
+     * <p> Indicates whether thumbnails are enabled or disabled.</p>
      */
     inline ThumbnailState GetThumbnailState() const { return m_thumbnailState; }
     inline bool ThumbnailStateHasBeenSet() const { return m_thumbnailStateHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * Contains the settings for audio stream metrics monitoring.
+     * <p> Contains the settings for audio stream metrics monitoring.</p>
      */
     inline const Aws::Vector<AudioMonitoringSetting>& GetAudioMonitoringSettings() const { return m_audioMonitoringSettings; }
     inline bool AudioMonitoringSettingsHasBeenSet() const { return m_audioMonitoringSettingsHasBeenSet; }
@@ -67,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * Indicates whether content quality analysis is enabled or disabled.
+     * <p> Indicates whether content quality analysis is enabled or disabled.</p>
      */
     inline ContentQualityAnalysisState GetContentQualityAnalysisState() const { return m_contentQualityAnalysisState; }
     inline bool ContentQualityAnalysisStateHasBeenSet() const { return m_contentQualityAnalysisStateHasBeenSet; }
@@ -77,7 +77,7 @@ namespace Model
 
     ///@{
     /**
-     * Contains the settings for video stream metrics monitoring.
+     * <p> Contains the settings for video stream metrics monitoring.</p>
      */
     inline const Aws::Vector<VideoMonitoringSetting>& GetVideoMonitoringSettings() const { return m_videoMonitoringSettings; }
     inline bool VideoMonitoringSettingsHasBeenSet() const { return m_videoMonitoringSettingsHasBeenSet; }

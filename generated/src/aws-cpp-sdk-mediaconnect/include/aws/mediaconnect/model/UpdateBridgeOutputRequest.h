@@ -18,10 +18,6 @@ namespace Model
 {
 
   /**
-   * The fields that you want to update in the bridge output.<p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeOutputRequest">AWS
-   * API Reference</a></p>
    */
   class UpdateBridgeOutputRequest : public MediaConnectRequest
   {
@@ -39,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the bridge that you want to update.
+     * <p> The Amazon Resource Name (ARN) of the bridge that you want to update.</p>
      */
     inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }
@@ -50,7 +46,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The network of the bridge output. </p>
+     */
     inline const UpdateBridgeNetworkOutputRequest& GetNetworkOutput() const { return m_networkOutput; }
     inline bool NetworkOutputHasBeenSet() const { return m_networkOutputHasBeenSet; }
     template<typename NetworkOutputT = UpdateBridgeNetworkOutputRequest>
@@ -61,7 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the bridge output that you want to update.
+     * <p> Tname of the output that you want to update. </p>
      */
     inline const Aws::String& GetOutputName() const { return m_outputName; }
     inline bool OutputNameHasBeenSet() const { return m_outputNameHasBeenSet; }

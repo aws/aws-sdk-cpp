@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * The settings for the source of the flow.<p><h3>See Also:</h3>   <a
+   * <p> The settings for the source of the flow.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Source">AWS
    * API Reference</a></p>
    */
@@ -44,7 +44,8 @@ namespace Model
 
     ///@{
     /**
-     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     * <p> Percentage from 0-100 of the data transfer cost to be billed to the
+     * subscriber.</p>
      */
     inline int GetDataTransferSubscriberFeePercent() const { return m_dataTransferSubscriberFeePercent; }
     inline bool DataTransferSubscriberFeePercentHasBeenSet() const { return m_dataTransferSubscriberFeePercentHasBeenSet; }
@@ -54,7 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * The type of encryption that is used on the content ingested from this source.
+     * <p> The type of encryption that is used on the content ingested from this
+     * source.</p>
      */
     inline const Encryption& GetDecryption() const { return m_decryption; }
     inline bool DecryptionHasBeenSet() const { return m_decryptionHasBeenSet; }
@@ -66,8 +68,8 @@ namespace Model
 
     ///@{
     /**
-     * A description for the source. This value is not used or seen outside of the
-     * current AWS Elemental MediaConnect account.
+     * <p> A description for the source. This value is not used or seen outside of the
+     * current MediaConnect account.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -79,9 +81,10 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the entitlement that allows you to subscribe to content that comes
-     * from another AWS account. The entitlement is set by the content originator and
-     * the ARN is generated as part of the originator's flow.
+     * <p> The ARN of the entitlement that allows you to subscribe to content that
+     * comes from another Amazon Web Services account. The entitlement is set by the
+     * content originator and the ARN is generated as part of the originator's
+     * flow.</p>
      */
     inline const Aws::String& GetEntitlementArn() const { return m_entitlementArn; }
     inline bool EntitlementArnHasBeenSet() const { return m_entitlementArnHasBeenSet; }
@@ -93,7 +96,7 @@ namespace Model
 
     ///@{
     /**
-     * The IP address that the flow will be listening on for incoming content.
+     * <p> The IP address that the flow will be listening on for incoming content.</p>
      */
     inline const Aws::String& GetIngestIp() const { return m_ingestIp; }
     inline bool IngestIpHasBeenSet() const { return m_ingestIpHasBeenSet; }
@@ -105,7 +108,7 @@ namespace Model
 
     ///@{
     /**
-     * The port that the flow will be listening on for incoming content.
+     * <p> The port that the flow will be listening on for incoming content.</p>
      */
     inline int GetIngestPort() const { return m_ingestPort; }
     inline bool IngestPortHasBeenSet() const { return m_ingestPortHasBeenSet; }
@@ -115,8 +118,8 @@ namespace Model
 
     ///@{
     /**
-     * The media streams that are associated with the source, and the parameters for
-     * those associations.
+     * <p> The media streams that are associated with the source, and the parameters
+     * for those associations.</p>
      */
     inline const Aws::Vector<MediaStreamSourceConfiguration>& GetMediaStreamSourceConfigurations() const { return m_mediaStreamSourceConfigurations; }
     inline bool MediaStreamSourceConfigurationsHasBeenSet() const { return m_mediaStreamSourceConfigurationsHasBeenSet; }
@@ -130,7 +133,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the source.
+     * <p> The name of the source.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -142,8 +145,8 @@ namespace Model
 
     ///@{
     /**
-     * The port that the flow uses to send outbound requests to initiate connection
-     * with the sender.
+     * <p> The IP address that the flow communicates with to initiate connection with
+     * the sender.</p>
      */
     inline int GetSenderControlPort() const { return m_senderControlPort; }
     inline bool SenderControlPortHasBeenSet() const { return m_senderControlPortHasBeenSet; }
@@ -153,8 +156,8 @@ namespace Model
 
     ///@{
     /**
-     * The IP address that the flow communicates with to initiate connection with the
-     * sender.
+     * <p> The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.</p>
      */
     inline const Aws::String& GetSenderIpAddress() const { return m_senderIpAddress; }
     inline bool SenderIpAddressHasBeenSet() const { return m_senderIpAddressHasBeenSet; }
@@ -166,7 +169,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the source.
+     * <p> The ARN of the source.</p>
      */
     inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
@@ -178,7 +181,7 @@ namespace Model
 
     ///@{
     /**
-     * Attributes related to the transport stream that are used in the source.
+     * <p> Attributes related to the transport stream that are used in the source.</p>
      */
     inline const Transport& GetTransport() const { return m_transport; }
     inline bool TransportHasBeenSet() const { return m_transportHasBeenSet; }
@@ -190,7 +193,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the VPC interface that is used for this source.
+     * <p> The name of the VPC interface that is used for this source.</p>
      */
     inline const Aws::String& GetVpcInterfaceName() const { return m_vpcInterfaceName; }
     inline bool VpcInterfaceNameHasBeenSet() const { return m_vpcInterfaceNameHasBeenSet; }
@@ -202,9 +205,9 @@ namespace Model
 
     ///@{
     /**
-     * The range of IP addresses that should be allowed to contribute content to your
-     * source. These IP addresses should be in the form of a Classless Inter-Domain
-     * Routing (CIDR) block; for example, 10.0.0.0/16.
+     * <p> The range of IP addresses that should be allowed to contribute content to
+     * your source. These IP addresses should be in the form of a Classless
+     * Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.</p>
      */
     inline const Aws::String& GetWhitelistCidr() const { return m_whitelistCidr; }
     inline bool WhitelistCidrHasBeenSet() const { return m_whitelistCidrHasBeenSet; }
@@ -216,7 +219,8 @@ namespace Model
 
     ///@{
     /**
-     * The source configuration for cloud flows receiving a stream from a bridge.
+     * <p> The source configuration for cloud flows receiving a stream from a
+     * bridge.</p>
      */
     inline const GatewayBridgeSource& GetGatewayBridgeSource() const { return m_gatewayBridgeSource; }
     inline bool GatewayBridgeSourceHasBeenSet() const { return m_gatewayBridgeSourceHasBeenSet; }

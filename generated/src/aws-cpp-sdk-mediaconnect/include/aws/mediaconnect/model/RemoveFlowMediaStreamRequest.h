@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Name (ARN) of the flow.
+     * <p> The Amazon Resource Name (ARN) of the flow that you want to update.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the media stream that you want to remove.
+     * <p> The name of the media stream that you want to remove.</p>
      */
     inline const Aws::String& GetMediaStreamName() const { return m_mediaStreamName; }
     inline bool MediaStreamNameHasBeenSet() const { return m_mediaStreamNameHasBeenSet; }

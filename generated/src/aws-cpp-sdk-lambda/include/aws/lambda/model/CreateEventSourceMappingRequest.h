@@ -426,10 +426,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>(Amazon MSK and self-managed Apache Kafka only) The Provisioned Mode
+     * <p>(Amazon MSK and self-managed Apache Kafka only) The provisioned mode
      * configuration for the event source. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">Provisioned
-     * Mode</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">provisioned
+     * mode</a>.</p>
      */
     inline const ProvisionedPollerConfig& GetProvisionedPollerConfig() const { return m_provisionedPollerConfig; }
     inline bool ProvisionedPollerConfigHasBeenSet() const { return m_provisionedPollerConfigHasBeenSet; }

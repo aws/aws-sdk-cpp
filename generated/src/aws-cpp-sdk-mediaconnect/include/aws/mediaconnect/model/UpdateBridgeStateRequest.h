@@ -18,9 +18,6 @@ namespace Model
 {
 
   /**
-   * A request to update the bridge state.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeStateRequest">AWS
-   * API Reference</a></p>
    */
   class UpdateBridgeStateRequest : public MediaConnectRequest
   {
@@ -38,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the bridge that you want to update.
+     * <p> The Amazon Resource Name (ARN) of the bridge that you want to update the
+     * state of. </p>
      */
     inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }
@@ -49,7 +47,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The desired state for the bridge. </p>
+     */
     inline DesiredState GetDesiredState() const { return m_desiredState; }
     inline bool DesiredStateHasBeenSet() const { return m_desiredStateHasBeenSet; }
     inline void SetDesiredState(DesiredState value) { m_desiredStateHasBeenSet = true; m_desiredState = value; }

@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the bridge that you want to delete.
+     * <p> The Amazon Resource Name (ARN) of the bridge that you want to delete.</p>
      */
     inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * Specifies the configuration for video stream metrics monitoring.<p><h3>See
-   * Also:</h3>   <a
+   * <p>Specifies the configuration for video stream metrics
+   * monitoring.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/VideoMonitoringSetting">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * Detects video frames that are black.
+     * <p>Detects video frames that are black. </p>
      */
     inline const BlackFrames& GetBlackFrames() const { return m_blackFrames; }
     inline bool BlackFramesHasBeenSet() const { return m_blackFramesHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * Detects video frames that have not changed.
+     * <p>Detects video frames that have not changed. </p>
      */
     inline const FrozenFrames& GetFrozenFrames() const { return m_frozenFrames; }
     inline bool FrozenFramesHasBeenSet() const { return m_frozenFramesHasBeenSet; }

@@ -23,6 +23,11 @@ namespace MediaConnect
 namespace Model
 {
 
+  /**
+   * <p>The details of an error message. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/MessageDetail">AWS
+   * API Reference</a></p>
+   */
   class MessageDetail
   {
   public:
@@ -34,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * The error code.
+     * <p> The error code.</p>
      */
     inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
@@ -46,8 +51,8 @@ namespace Model
 
     ///@{
     /**
-     * The specific error message that MediaConnect returns to help you understand the
-     * reason that the request did not succeed.
+     * <p> The specific error message that MediaConnect returns to help you understand
+     * the reason that the request did not succeed.</p>
      */
     inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
@@ -59,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the resource.
+     * <p> The name of the resource.</p>
      */
     inline const Aws::String& GetResourceName() const { return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }

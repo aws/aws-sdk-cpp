@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * The settings that you want to use to define the media stream.<p><h3>See
+   * <p> The settings that you want to use to define the media stream.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/FmtpRequest">AWS
    * API Reference</a></p>
@@ -44,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * The format of the audio channel.
+     * <p> The format of the audio channel.</p>
      */
     inline const Aws::String& GetChannelOrder() const { return m_channelOrder; }
     inline bool ChannelOrderHasBeenSet() const { return m_channelOrderHasBeenSet; }
@@ -56,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * The format that is used for the representation of color.
+     * <p> The format that is used for the representation of color.</p>
      */
     inline Colorimetry GetColorimetry() const { return m_colorimetry; }
     inline bool ColorimetryHasBeenSet() const { return m_colorimetryHasBeenSet; }
@@ -66,9 +66,10 @@ namespace Model
 
     ///@{
     /**
-     * The frame rate for the video stream, in frames/second. For example: 60000/1001.
-     * If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if
-     * you specify 60, MediaConnect uses 60/1 as the exactFramerate.
+     * <p> The frame rate for the video stream, in frames/second. For example:
+     * 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For
+     * example, if you specify 60, MediaConnect uses 60/1 as the
+     * <code>exactFramerate</code>.</p>
      */
     inline const Aws::String& GetExactFramerate() const { return m_exactFramerate; }
     inline bool ExactFramerateHasBeenSet() const { return m_exactFramerateHasBeenSet; }
@@ -80,7 +81,7 @@ namespace Model
 
     ///@{
     /**
-     * The pixel aspect ratio (PAR) of the video.
+     * <p> The pixel aspect ratio (PAR) of the video.</p>
      */
     inline const Aws::String& GetPar() const { return m_par; }
     inline bool ParHasBeenSet() const { return m_parHasBeenSet; }
@@ -92,7 +93,7 @@ namespace Model
 
     ///@{
     /**
-     * The encoding range of the video.
+     * <p> The encoding range of the video.</p>
      */
     inline Range GetRange() const { return m_range; }
     inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
@@ -102,7 +103,7 @@ namespace Model
 
     ///@{
     /**
-     * The type of compression that was used to smooth the video’s appearance.
+     * <p> The type of compression that was used to smooth the video’s appearance.</p>
      */
     inline ScanMode GetScanMode() const { return m_scanMode; }
     inline bool ScanModeHasBeenSet() const { return m_scanModeHasBeenSet; }
@@ -112,7 +113,7 @@ namespace Model
 
     ///@{
     /**
-     * The transfer characteristic system (TCS) that is used in the video.
+     * <p> The transfer characteristic system (TCS) that is used in the video.</p>
      */
     inline Tcs GetTcs() const { return m_tcs; }
     inline bool TcsHasBeenSet() const { return m_tcsHasBeenSet; }

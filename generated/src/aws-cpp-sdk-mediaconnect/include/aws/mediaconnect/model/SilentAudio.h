@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * Configures settings for the SilentAudio metric.<p><h3>See Also:</h3>   <a
+   * <p>Configures settings for the <code>SilentAudio</code> metric. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/SilentAudio">AWS
    * API Reference</a></p>
    */
@@ -39,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * Indicates whether the SilentAudio metric is enabled or disabled.
+     * <p>Indicates whether the <code>SilentAudio</code> metric is enabled or disabled.
+     * </p>
      */
     inline State GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
@@ -49,8 +51,8 @@ namespace Model
 
     ///@{
     /**
-     * Specifies the number of consecutive seconds of silence that triggers an event or
-     * alert.
+     * <p>Specifies the number of consecutive seconds of silence that triggers an event
+     * or alert. </p>
      */
     inline int GetThresholdSeconds() const { return m_thresholdSeconds; }
     inline bool ThresholdSecondsHasBeenSet() const { return m_thresholdSecondsHasBeenSet; }

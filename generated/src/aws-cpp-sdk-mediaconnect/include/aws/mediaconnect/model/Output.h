@@ -30,7 +30,7 @@ namespace Model
 {
 
   /**
-   * The settings for an output.<p><h3>See Also:</h3>   <a
+   * <p>The settings for an output. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Output">AWS
    * API Reference</a></p>
    */
@@ -45,7 +45,8 @@ namespace Model
 
     ///@{
     /**
-     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     * <p> Percentage from 0-100 of the data transfer cost to be billed to the
+     * subscriber.</p>
      */
     inline int GetDataTransferSubscriberFeePercent() const { return m_dataTransferSubscriberFeePercent; }
     inline bool DataTransferSubscriberFeePercentHasBeenSet() const { return m_dataTransferSubscriberFeePercentHasBeenSet; }
@@ -55,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * A description of the output.
+     * <p> A description of the output.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -67,7 +68,7 @@ namespace Model
 
     ///@{
     /**
-     * The address where you want to send the output.
+     * <p> The address where you want to send the output.</p>
      */
     inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
@@ -79,8 +80,8 @@ namespace Model
 
     ///@{
     /**
-     * The type of key used for the encryption. If no keyType is provided, the service
-     * will use the default setting (static-key).
+     * <p> The type of key used for the encryption. If no keyType is provided, the
+     * service will use the default setting (static-key).</p>
      */
     inline const Encryption& GetEncryption() const { return m_encryption; }
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
@@ -92,8 +93,8 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the entitlement on the originator''s flow. This value is relevant
-     * only on entitled flows.
+     * <p> The ARN of the entitlement on the originator''s flow. This value is relevant
+     * only on entitled flows.</p>
      */
     inline const Aws::String& GetEntitlementArn() const { return m_entitlementArn; }
     inline bool EntitlementArnHasBeenSet() const { return m_entitlementArnHasBeenSet; }
@@ -105,11 +106,11 @@ namespace Model
 
     ///@{
     /**
-     * The IP address that the receiver requires in order to establish a connection
+     * <p> The IP address that the receiver requires in order to establish a connection
      * with the flow. For public networking, the ListenerAddress is represented by the
      * elastic IP address of the flow. For private networking, the ListenerAddress is
      * represented by the elastic network interface IP address of the VPC. This field
-     * applies only to outputs that use the Zixi pull or SRT listener protocol.
+     * applies only to outputs that use the Zixi pull or SRT listener protocol.</p>
      */
     inline const Aws::String& GetListenerAddress() const { return m_listenerAddress; }
     inline bool ListenerAddressHasBeenSet() const { return m_listenerAddressHasBeenSet; }
@@ -121,8 +122,8 @@ namespace Model
 
     ///@{
     /**
-     * The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant
-     * only for outputs that were added by creating a MediaLive input.
+     * <p> The input ARN of the MediaLive channel. This parameter is relevant only for
+     * outputs that were added by creating a MediaLive input.</p>
      */
     inline const Aws::String& GetMediaLiveInputArn() const { return m_mediaLiveInputArn; }
     inline bool MediaLiveInputArnHasBeenSet() const { return m_mediaLiveInputArnHasBeenSet; }
@@ -134,7 +135,8 @@ namespace Model
 
     ///@{
     /**
-     * The configuration for each media stream that is associated with the output.
+     * <p> The configuration for each media stream that is associated with the
+     * output.</p>
      */
     inline const Aws::Vector<MediaStreamOutputConfiguration>& GetMediaStreamOutputConfigurations() const { return m_mediaStreamOutputConfigurations; }
     inline bool MediaStreamOutputConfigurationsHasBeenSet() const { return m_mediaStreamOutputConfigurationsHasBeenSet; }
@@ -148,7 +150,8 @@ namespace Model
 
     ///@{
     /**
-     * The name of the output. This value must be unique within the current flow.
+     * <p> The name of the output. This value must be unique within the current
+     * flow.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -160,7 +163,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the output.
+     * <p> The ARN of the output.</p>
      */
     inline const Aws::String& GetOutputArn() const { return m_outputArn; }
     inline bool OutputArnHasBeenSet() const { return m_outputArnHasBeenSet; }
@@ -172,7 +175,7 @@ namespace Model
 
     ///@{
     /**
-     * The port to use when content is distributed to this output.
+     * <p> The port to use when content is distributed to this output.</p>
      */
     inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
@@ -182,7 +185,7 @@ namespace Model
 
     ///@{
     /**
-     * Attributes related to the transport stream that are used in the output.
+     * <p> Attributes related to the transport stream that are used in the output.</p>
      */
     inline const Transport& GetTransport() const { return m_transport; }
     inline bool TransportHasBeenSet() const { return m_transportHasBeenSet; }
@@ -194,7 +197,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the VPC interface attachment to use for this output.
+     * <p> The name of the VPC interface attachment to use for this output.</p>
      */
     inline const VpcInterfaceAttachment& GetVpcInterfaceAttachment() const { return m_vpcInterfaceAttachment; }
     inline bool VpcInterfaceAttachmentHasBeenSet() const { return m_vpcInterfaceAttachmentHasBeenSet; }
@@ -206,7 +209,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the bridge that added this output.
+     * <p> The ARN of the bridge added to this output.</p>
      */
     inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }
@@ -218,7 +221,7 @@ namespace Model
 
     ///@{
     /**
-     * The bridge output ports currently in use.
+     * <p> The bridge output ports currently in use.</p>
      */
     inline const Aws::Vector<int>& GetBridgePorts() const { return m_bridgePorts; }
     inline bool BridgePortsHasBeenSet() const { return m_bridgePortsHasBeenSet; }
@@ -231,7 +234,7 @@ namespace Model
 
     ///@{
     /**
-     * An indication of whether the output is transmitting data or not.
+     * <p> An indication of whether the output is transmitting data or not.</p>
      */
     inline OutputStatus GetOutputStatus() const { return m_outputStatus; }
     inline bool OutputStatusHasBeenSet() const { return m_outputStatusHasBeenSet; }

@@ -26,11 +26,10 @@ namespace Model
 {
 
   /**
-   * A single track or stream of media that contains video, audio, or ancillary data.
-   * After you add a media stream to a flow, you can associate it with sources and
-   * outputs on that flow, as long as they use the CDI protocol or the ST 2110 JPEG
-   * XS protocol. Each source or output can consist of one or many media
-   * streams.<p><h3>See Also:</h3>   <a
+   * <p> A media stream represents one component of your content, such as video,
+   * audio, or ancillary data. After you add a media stream to your flow, you can
+   * associate it with sources and outputs that use the ST 2110 JPEG XS or CDI
+   * protocol. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/MediaStream">AWS
    * API Reference</a></p>
    */
@@ -45,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * Attributes that are related to the media stream.
+     * <p> Attributes that are related to the media stream.</p>
      */
     inline const MediaStreamAttributes& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
@@ -57,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * The sample rate for the stream. This value is measured in Hz.
+     * <p> The sample rate for the stream. This value is measured in Hz.</p>
      */
     inline int GetClockRate() const { return m_clockRate; }
     inline bool ClockRateHasBeenSet() const { return m_clockRateHasBeenSet; }
@@ -67,8 +66,8 @@ namespace Model
 
     ///@{
     /**
-     * A description that can help you quickly identify what your media stream is used
-     * for.
+     * <p> A description that can help you quickly identify what your media stream is
+     * used for.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -80,9 +79,9 @@ namespace Model
 
     ///@{
     /**
-     * The format type number (sometimes referred to as RTP payload type) of the media
-     * stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS
-     * outputs, you need to provide this value to the receiver.
+     * <p> The format type number (sometimes referred to as RTP payload type) of the
+     * media stream. MediaConnect assigns this value to the media stream. For ST 2110
+     * JPEG XS outputs, you need to provide this value to the receiver.</p>
      */
     inline int GetFmt() const { return m_fmt; }
     inline bool FmtHasBeenSet() const { return m_fmtHasBeenSet; }
@@ -92,7 +91,7 @@ namespace Model
 
     ///@{
     /**
-     * A unique identifier for the media stream.
+     * <p> A unique identifier for the media stream. </p>
      */
     inline int GetMediaStreamId() const { return m_mediaStreamId; }
     inline bool MediaStreamIdHasBeenSet() const { return m_mediaStreamIdHasBeenSet; }
@@ -102,7 +101,7 @@ namespace Model
 
     ///@{
     /**
-     * A name that helps you distinguish one media stream from another.
+     * <p> A name that helps you distinguish one media stream from another. </p>
      */
     inline const Aws::String& GetMediaStreamName() const { return m_mediaStreamName; }
     inline bool MediaStreamNameHasBeenSet() const { return m_mediaStreamNameHasBeenSet; }
@@ -114,7 +113,7 @@ namespace Model
 
     ///@{
     /**
-     * The type of media stream.
+     * <p> The type of media stream. </p>
      */
     inline MediaStreamType GetMediaStreamType() const { return m_mediaStreamType; }
     inline bool MediaStreamTypeHasBeenSet() const { return m_mediaStreamTypeHasBeenSet; }
@@ -124,7 +123,7 @@ namespace Model
 
     ///@{
     /**
-     * The resolution of the video.
+     * <p> The resolution of the video. </p>
      */
     inline const Aws::String& GetVideoFormat() const { return m_videoFormat; }
     inline bool VideoFormatHasBeenSet() const { return m_videoFormatHasBeenSet; }

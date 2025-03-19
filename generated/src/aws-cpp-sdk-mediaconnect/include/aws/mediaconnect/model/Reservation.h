@@ -28,13 +28,13 @@ namespace Model
 {
 
   /**
-   * A pricing agreement for a discounted rate for a specific outbound bandwidth that
-   * your MediaConnect account will use each month over a specific time period. The
-   * discounted rate in the reservation applies to outbound bandwidth for all flows
-   * from your account until your account reaches the amount of bandwidth in your
-   * reservation. If you use more outbound bandwidth than the agreed upon amount in a
-   * single month, the overage is charged at the on-demand rate.<p><h3>See Also:</h3>
-   * <a
+   * <p> A pricing agreement for a discounted rate for a specific outbound bandwidth
+   * that your MediaConnect account will use each month over a specific time period.
+   * The discounted rate in the reservation applies to outbound bandwidth for all
+   * flows from your account until your account reaches the amount of bandwidth in
+   * your reservation. If you use more outbound bandwidth than the agreed upon amount
+   * in a single month, the overage is charged at the on-demand rate.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Reservation">AWS
    * API Reference</a></p>
    */
@@ -49,8 +49,8 @@ namespace Model
 
     ///@{
     /**
-     * The type of currency that is used for billing. The currencyCode used for your
-     * reservation is US dollars.
+     * <p> The type of currency that is used for billing. The currencyCode used for
+     * your reservation is US dollars.</p>
      */
     inline const Aws::String& GetCurrencyCode() const { return m_currencyCode; }
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
@@ -62,8 +62,8 @@ namespace Model
 
     ///@{
     /**
-     * The length of time that this reservation is active. MediaConnect defines this
-     * value in the offering.
+     * <p> The length of time that this reservation is active. MediaConnect defines
+     * this value in the offering.</p>
      */
     inline int GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
@@ -73,8 +73,8 @@ namespace Model
 
     ///@{
     /**
-     * The unit of measurement for the duration of the reservation. MediaConnect
-     * defines this value in the offering.
+     * <p> The unit of measurement for the duration of the reservation. MediaConnect
+     * defines this value in the offering.</p>
      */
     inline DurationUnits GetDurationUnits() const { return m_durationUnits; }
     inline bool DurationUnitsHasBeenSet() const { return m_durationUnitsHasBeenSet; }
@@ -84,8 +84,8 @@ namespace Model
 
     ///@{
     /**
-     * The day and time that this reservation expires. This value is calculated based
-     * on the start date and time that you set and the offering's duration.
+     * <p> The day and time that this reservation expires. This value is calculated
+     * based on the start date and time that you set and the offering's duration.</p>
      */
     inline const Aws::String& GetEnd() const { return m_end; }
     inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
@@ -97,7 +97,8 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
+     * <p> The Amazon Resource Name (ARN) that MediaConnect assigns to the
+     * offering.</p>
      */
     inline const Aws::String& GetOfferingArn() const { return m_offeringArn; }
     inline bool OfferingArnHasBeenSet() const { return m_offeringArnHasBeenSet; }
@@ -109,7 +110,8 @@ namespace Model
 
     ///@{
     /**
-     * A description of the offering. MediaConnect defines this value in the offering.
+     * <p> A description of the offering. MediaConnect defines this value in the
+     * offering.</p>
      */
     inline const Aws::String& GetOfferingDescription() const { return m_offeringDescription; }
     inline bool OfferingDescriptionHasBeenSet() const { return m_offeringDescriptionHasBeenSet; }
@@ -121,8 +123,8 @@ namespace Model
 
     ///@{
     /**
-     * The cost of a single unit. This value, in combination with priceUnits, makes up
-     * the rate. MediaConnect defines this value in the offering.
+     * <p> The cost of a single unit. This value, in combination with priceUnits, makes
+     * up the rate. MediaConnect defines this value in the offering.</p>
      */
     inline const Aws::String& GetPricePerUnit() const { return m_pricePerUnit; }
     inline bool PricePerUnitHasBeenSet() const { return m_pricePerUnitHasBeenSet; }
@@ -134,9 +136,9 @@ namespace Model
 
     ///@{
     /**
-     * The unit of measurement that is used for billing. This value, in combination
+     * <p> The unit of measurement that is used for billing. This value, in combination
      * with pricePerUnit, makes up the rate. MediaConnect defines this value in the
-     * offering.
+     * offering.</p>
      */
     inline PriceUnits GetPriceUnits() const { return m_priceUnits; }
     inline bool PriceUnitsHasBeenSet() const { return m_priceUnitsHasBeenSet; }
@@ -146,8 +148,8 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Name (ARN) that MediaConnect assigns to the reservation when
-     * you purchase an offering.
+     * <p> The Amazon Resource Name (ARN) that MediaConnect assigns to the reservation
+     * when you purchase an offering.</p>
      */
     inline const Aws::String& GetReservationArn() const { return m_reservationArn; }
     inline bool ReservationArnHasBeenSet() const { return m_reservationArnHasBeenSet; }
@@ -159,7 +161,8 @@ namespace Model
 
     ///@{
     /**
-     * The name that you assigned to the reservation when you purchased the offering.
+     * <p> The name that you assigned to the reservation when you purchased the
+     * offering.</p>
      */
     inline const Aws::String& GetReservationName() const { return m_reservationName; }
     inline bool ReservationNameHasBeenSet() const { return m_reservationNameHasBeenSet; }
@@ -171,7 +174,7 @@ namespace Model
 
     ///@{
     /**
-     * The status of your reservation.
+     * <p> The status of your reservation.</p>
      */
     inline ReservationState GetReservationState() const { return m_reservationState; }
     inline bool ReservationStateHasBeenSet() const { return m_reservationStateHasBeenSet; }
@@ -181,9 +184,9 @@ namespace Model
 
     ///@{
     /**
-     * A definition of the amount of outbound bandwidth that you would be reserving if
-     * you purchase the offering. MediaConnect defines the values that make up the
-     * resourceSpecification in the offering.
+     * <p> A definition of the amount of outbound bandwidth that you would be reserving
+     * if you purchase the offering. MediaConnect defines the values that make up the
+     * resourceSpecification in the offering.</p>
      */
     inline const ResourceSpecification& GetResourceSpecification() const { return m_resourceSpecification; }
     inline bool ResourceSpecificationHasBeenSet() const { return m_resourceSpecificationHasBeenSet; }
@@ -195,8 +198,8 @@ namespace Model
 
     ///@{
     /**
-     * The day and time that the reservation becomes active. You set this value when
-     * you purchase the offering.
+     * <p> The day and time that the reservation becomes active. You set this value
+     * when you purchase the offering.</p>
      */
     inline const Aws::String& GetStart() const { return m_start; }
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }

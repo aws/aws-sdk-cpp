@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * The settings for a flow entitlement.<p><h3>See Also:</h3>   <a
+   * <p> The settings for a flow entitlement.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Entitlement">AWS
    * API Reference</a></p>
    */
@@ -42,7 +42,8 @@ namespace Model
 
     ///@{
     /**
-     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     * <p> Percentage from 0-100 of the data transfer cost to be billed to the
+     * subscriber.</p>
      */
     inline int GetDataTransferSubscriberFeePercent() const { return m_dataTransferSubscriberFeePercent; }
     inline bool DataTransferSubscriberFeePercentHasBeenSet() const { return m_dataTransferSubscriberFeePercentHasBeenSet; }
@@ -52,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * A description of the entitlement.
+     * <p> A description of the entitlement.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -64,8 +65,8 @@ namespace Model
 
     ///@{
     /**
-     * The type of encryption that will be used on the output that is associated with
-     * this entitlement.
+     * <p> The type of encryption that will be used on the output that is associated
+     * with this entitlement.</p>
      */
     inline const Encryption& GetEncryption() const { return m_encryption; }
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
@@ -77,7 +78,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the entitlement.
+     * <p> The ARN of the entitlement. </p>
      */
     inline const Aws::String& GetEntitlementArn() const { return m_entitlementArn; }
     inline bool EntitlementArnHasBeenSet() const { return m_entitlementArnHasBeenSet; }
@@ -89,7 +90,7 @@ namespace Model
 
     ///@{
     /**
-     * An indication of whether the entitlement is enabled.
+     * <p> An indication of whether the entitlement is enabled. </p>
      */
     inline EntitlementStatus GetEntitlementStatus() const { return m_entitlementStatus; }
     inline bool EntitlementStatusHasBeenSet() const { return m_entitlementStatusHasBeenSet; }
@@ -99,7 +100,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the entitlement.
+     * <p> The name of the entitlement. </p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -111,9 +112,9 @@ namespace Model
 
     ///@{
     /**
-     * The AWS account IDs that you want to share your content with. The receiving
-     * accounts (subscribers) will be allowed to create their own flow using your
-     * content as the source.
+     * <p> The Amazon Web Services account IDs that you want to share your content
+     * with. The receiving accounts (subscribers) will be allowed to create their own
+     * flow using your content as the source. </p>
      */
     inline const Aws::Vector<Aws::String>& GetSubscribers() const { return m_subscribers; }
     inline bool SubscribersHasBeenSet() const { return m_subscribersHasBeenSet; }

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * Add a source to an existing bridge.<p><h3>See Also:</h3>   <a
+   * <p> Add an output to a bridge. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeSourceRequest">AWS
    * API Reference</a></p>
    */
@@ -39,7 +39,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p> The source of the flow. </p>
+     */
     inline const AddBridgeFlowSourceRequest& GetFlowSource() const { return m_flowSource; }
     inline bool FlowSourceHasBeenSet() const { return m_flowSourceHasBeenSet; }
     template<typename FlowSourceT = AddBridgeFlowSourceRequest>
@@ -49,7 +51,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The source of the network. </p>
+     */
     inline const AddBridgeNetworkSourceRequest& GetNetworkSource() const { return m_networkSource; }
     inline bool NetworkSourceHasBeenSet() const { return m_networkSourceHasBeenSet; }
     template<typename NetworkSourceT = AddBridgeNetworkSourceRequest>

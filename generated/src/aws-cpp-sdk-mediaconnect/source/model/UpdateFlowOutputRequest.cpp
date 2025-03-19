@@ -120,6 +120,18 @@ Aws::String UpdateFlowOutputRequest::SerializePayload() const
    payload.WithString("outputStatus", OutputStatusMapper::GetNameForOutputStatus(m_outputStatus));
   }
 
+  if(m_ndiProgramNameHasBeenSet)
+  {
+   payload.WithString("ndiProgramName", m_ndiProgramName);
+
+  }
+
+  if(m_ndiSpeedHqQualityHasBeenSet)
+  {
+   payload.WithInteger("ndiSpeedHqQuality", m_ndiSpeedHqQuality);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * The settings related to the multicast source.<p><h3>See Also:</h3>   <a
+   * <p> The settings related to the multicast source. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/MulticastSourceSettings">AWS
    * API Reference</a></p>
    */
@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * The IP address of the source for source-specific multicast (SSM).
+     * <p> The IP address of the source for source-specific multicast (SSM).</p>
      */
     inline const Aws::String& GetMulticastSourceIp() const { return m_multicastSourceIp; }
     inline bool MulticastSourceIpHasBeenSet() const { return m_multicastSourceIpHasBeenSet; }

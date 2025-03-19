@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the flow that is associated with the source you removed.
+     * <p> The ARN of the flow that the source was removed from. </p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     template<typename FlowArnT = Aws::String>
@@ -45,7 +45,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the source that was removed.
+     * <p> The ARN of the source that was removed. </p>
      */
     inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
     template<typename SourceArnT = Aws::String>

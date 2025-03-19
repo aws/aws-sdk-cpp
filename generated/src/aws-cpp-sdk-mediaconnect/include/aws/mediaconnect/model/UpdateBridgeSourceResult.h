@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Number (ARN) of the bridge.
+     * <p> The ARN of the updated bridge source. </p>
      */
     inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     template<typename BridgeArnT = Aws::String>
@@ -45,7 +45,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The updated bridge source. </p>
+     */
     inline const BridgeSource& GetSource() const { return m_source; }
     template<typename SourceT = BridgeSource>
     void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }

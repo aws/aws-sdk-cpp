@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Number (ARN) of the bridge.
+     * <p>The ARN of the updated bridge. </p>
      */
     inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     template<typename BridgeArnT = Aws::String>
@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * The state of the bridge. ACTIVE or STANDBY.
+     * <p> The new state of the bridge. </p>
      */
     inline DesiredState GetDesiredState() const { return m_desiredState; }
     inline void SetDesiredState(DesiredState value) { m_desiredStateHasBeenSet = true; m_desiredState = value; }

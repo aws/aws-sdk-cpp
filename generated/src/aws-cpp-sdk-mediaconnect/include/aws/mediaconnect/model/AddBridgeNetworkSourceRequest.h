@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * Add a network source to an existing bridge.<p><h3>See Also:</h3>   <a
+   * <p> Add a network source to an existing bridge. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeNetworkSourceRequest">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * The network source multicast IP.
+     * <p> The network source multicast IP.</p>
      */
     inline const Aws::String& GetMulticastIp() const { return m_multicastIp; }
     inline bool MulticastIpHasBeenSet() const { return m_multicastIpHasBeenSet; }
@@ -52,7 +52,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The settings related to the multicast source. </p>
+     */
     inline const MulticastSourceSettings& GetMulticastSourceSettings() const { return m_multicastSourceSettings; }
     inline bool MulticastSourceSettingsHasBeenSet() const { return m_multicastSourceSettingsHasBeenSet; }
     template<typename MulticastSourceSettingsT = MulticastSourceSettings>
@@ -63,8 +65,8 @@ namespace Model
 
     ///@{
     /**
-     * The name of the network source. This name is used to reference the source and
-     * must be unique among sources in this bridge.
+     * <p> The name of the network source. This name is used to reference the source
+     * and must be unique among sources in this bridge.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -76,7 +78,7 @@ namespace Model
 
     ///@{
     /**
-     * The network source's gateway network name.
+     * <p> The network source's gateway network name.</p>
      */
     inline const Aws::String& GetNetworkName() const { return m_networkName; }
     inline bool NetworkNameHasBeenSet() const { return m_networkNameHasBeenSet; }
@@ -88,7 +90,7 @@ namespace Model
 
     ///@{
     /**
-     * The network source port.
+     * <p> The network source port.</p>
      */
     inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
@@ -98,7 +100,9 @@ namespace Model
 
     ///@{
     /**
-     * The network source protocol.
+     * <p> The network source protocol.</p>  <p>Elemental MediaConnect no longer
+     * supports the Fujitsu QoS protocol. This reference is maintained for legacy
+     * purposes only.</p> 
      */
     inline Protocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }

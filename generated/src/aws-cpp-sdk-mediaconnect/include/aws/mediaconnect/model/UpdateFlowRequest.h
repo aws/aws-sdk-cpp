@@ -10,6 +10,7 @@
 #include <aws/mediaconnect/model/UpdateFailoverConfig.h>
 #include <aws/mediaconnect/model/UpdateMaintenance.h>
 #include <aws/mediaconnect/model/MonitoringConfig.h>
+#include <aws/mediaconnect/model/NdiConfig.h>
 #include <utility>
 
 namespace Aws
@@ -20,9 +21,6 @@ namespace Model
 {
 
   /**
-   * A request to update flow.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowRequest">AWS
-   * API Reference</a></p>
    */
   class UpdateFlowRequest : public MediaConnectRequest
   {
@@ -40,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * The flow that you want to update.
+     * <p> The Amazon Resource Name (ARN) of the flow that you want to update.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
@@ -51,7 +49,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The settings for source failover. </p>
+     */
     inline const UpdateFailoverConfig& GetSourceFailoverConfig() const { return m_sourceFailoverConfig; }
     inline bool SourceFailoverConfigHasBeenSet() const { return m_sourceFailoverConfigHasBeenSet; }
     template<typename SourceFailoverConfigT = UpdateFailoverConfig>
@@ -61,7 +61,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The maintenance setting of the flow. </p>
+     */
     inline const UpdateMaintenance& GetMaintenance() const { return m_maintenance; }
     inline bool MaintenanceHasBeenSet() const { return m_maintenanceHasBeenSet; }
     template<typename MaintenanceT = UpdateMaintenance>
@@ -71,13 +73,28 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The settings for source monitoring. </p>
+     */
     inline const MonitoringConfig& GetSourceMonitoringConfig() const { return m_sourceMonitoringConfig; }
     inline bool SourceMonitoringConfigHasBeenSet() const { return m_sourceMonitoringConfigHasBeenSet; }
     template<typename SourceMonitoringConfigT = MonitoringConfig>
     void SetSourceMonitoringConfig(SourceMonitoringConfigT&& value) { m_sourceMonitoringConfigHasBeenSet = true; m_sourceMonitoringConfig = std::forward<SourceMonitoringConfigT>(value); }
     template<typename SourceMonitoringConfigT = MonitoringConfig>
     UpdateFlowRequest& WithSourceMonitoringConfig(SourceMonitoringConfigT&& value) { SetSourceMonitoringConfig(std::forward<SourceMonitoringConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Specifies the configuration settings for NDI outputs. Required when the flow
+     * includes NDI outputs. </p>
+     */
+    inline const NdiConfig& GetNdiConfig() const { return m_ndiConfig; }
+    inline bool NdiConfigHasBeenSet() const { return m_ndiConfigHasBeenSet; }
+    template<typename NdiConfigT = NdiConfig>
+    void SetNdiConfig(NdiConfigT&& value) { m_ndiConfigHasBeenSet = true; m_ndiConfig = std::forward<NdiConfigT>(value); }
+    template<typename NdiConfigT = NdiConfig>
+    UpdateFlowRequest& WithNdiConfig(NdiConfigT&& value) { SetNdiConfig(std::forward<NdiConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -92,6 +109,9 @@ namespace Model
 
     MonitoringConfig m_sourceMonitoringConfig;
     bool m_sourceMonitoringConfigHasBeenSet = false;
+
+    NdiConfig m_ndiConfig;
+    bool m_ndiConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * A definition of what is being billed for, including the type and
-   * amount.<p><h3>See Also:</h3>   <a
+   * <p> A definition of what is being billed for, including the type and
+   * amount.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ResourceSpecification">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * The amount of outbound bandwidth that is discounted in the offering.
+     * <p> The amount of outbound bandwidth that is discounted in the offering.</p>
      */
     inline int GetReservedBitrate() const { return m_reservedBitrate; }
     inline bool ReservedBitrateHasBeenSet() const { return m_reservedBitrateHasBeenSet; }
@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * The type of resource and the unit that is being billed for.
+     * <p> The type of resource and the unit that is being billed for.</p>
      */
     inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

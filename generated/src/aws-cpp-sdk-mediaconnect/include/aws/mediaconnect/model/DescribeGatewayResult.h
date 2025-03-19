@@ -34,7 +34,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The gateway that you wanted to describe. </p>
+     */
     inline const Gateway& GetGateway() const { return m_gateway; }
     template<typename GatewayT = Gateway>
     void SetGateway(GatewayT&& value) { m_gatewayHasBeenSet = true; m_gateway = std::forward<GatewayT>(value); }

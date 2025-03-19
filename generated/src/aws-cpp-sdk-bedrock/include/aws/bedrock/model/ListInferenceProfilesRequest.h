@@ -70,7 +70,7 @@ namespace Model
     ///@{
     /**
      * <p>Filters for inference profiles that match the type you specify.</p> <ul> <li>
-     * <p> <code>SYSTEM_DEFINED</code> �� The inference profile is defined by Amazon
+     * <p> <code>SYSTEM_DEFINED</code> – The inference profile is defined by Amazon
      * Bedrock. You can route inference requests across regions with these inference
      * profiles.</p> </li> <li> <p> <code>APPLICATION</code> – The inference profile
      * was created by a user. This type of inference profile can track metrics and

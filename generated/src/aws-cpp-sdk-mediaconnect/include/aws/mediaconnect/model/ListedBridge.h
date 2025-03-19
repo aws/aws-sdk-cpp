@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * Displays details of the selected bridge.<p><h3>See Also:</h3>   <a
+   * <p> Displays details of the selected bridge.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListedBridge">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the bridge.
+     * <p> The ARN of the bridge.</p>
      */
     inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }
@@ -51,7 +51,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>The state of the bridge. </p>
+     */
     inline BridgeState GetBridgeState() const { return m_bridgeState; }
     inline bool BridgeStateHasBeenSet() const { return m_bridgeStateHasBeenSet; }
     inline void SetBridgeState(BridgeState value) { m_bridgeStateHasBeenSet = true; m_bridgeState = value; }
@@ -60,7 +62,7 @@ namespace Model
 
     ///@{
     /**
-     * The type of the bridge.
+     * <p> The type of the bridge.</p>
      */
     inline const Aws::String& GetBridgeType() const { return m_bridgeType; }
     inline bool BridgeTypeHasBeenSet() const { return m_bridgeTypeHasBeenSet; }
@@ -72,7 +74,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the bridge.
+     * <p> The name of the bridge.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -84,7 +86,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the gateway associated with the bridge.
+     * <p> The ARN of the gateway associated with the bridge.</p>
      */
     inline const Aws::String& GetPlacementArn() const { return m_placementArn; }
     inline bool PlacementArnHasBeenSet() const { return m_placementArnHasBeenSet; }

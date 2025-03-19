@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * A collection of parameters that determine how MediaConnect will convert the
+   * <p> A collection of parameters that determine how MediaConnect will convert the
    * content. These fields only apply to outputs on flows that have a CDI
-   * source.<p><h3>See Also:</h3>   <a
+   * source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/EncodingParametersRequest">AWS
    * API Reference</a></p>
    */
@@ -41,11 +41,11 @@ namespace Model
 
     ///@{
     /**
-     * A value that is used to calculate compression for an output. The bitrate of the
-     * output is calculated as follows: Output bitrate = (1 / compressionFactor) *
+     * <p> A value that is used to calculate compression for an output. The bitrate of
+     * the output is calculated as follows: Output bitrate = (1 / compressionFactor) *
      * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG
      * XS protocol, with a flow source that uses the CDI protocol. Valid values are
-     * floating point numbers in the range of 3.0 to 10.0, inclusive.
+     * floating point numbers in the range of 3.0 to 10.0, inclusive.</p>
      */
     inline double GetCompressionFactor() const { return m_compressionFactor; }
     inline bool CompressionFactorHasBeenSet() const { return m_compressionFactorHasBeenSet; }
@@ -55,9 +55,9 @@ namespace Model
 
     ///@{
     /**
-     * A setting on the encoder that drives compression settings. This property only
-     * applies to video media streams associated with outputs that use the ST 2110 JPEG
-     * XS protocol, if at least one source on the flow uses the CDI protocol.
+     * <p> A setting on the encoder that drives compression settings. This property
+     * only applies to video media streams associated with outputs that use the ST 2110
+     * JPEG XS protocol, if at least one source on the flow uses the CDI protocol.</p>
      */
     inline EncoderProfile GetEncoderProfile() const { return m_encoderProfile; }
     inline bool EncoderProfileHasBeenSet() const { return m_encoderProfileHasBeenSet; }

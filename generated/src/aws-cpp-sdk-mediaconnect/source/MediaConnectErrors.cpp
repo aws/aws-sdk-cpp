@@ -37,7 +37,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConnectErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConnectErrors::CONFLICT), RetryableType::RETRYABLE);
   }
   else if (hashCode == CREATE_FLOW420_HASH)
   {

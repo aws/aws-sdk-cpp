@@ -19,9 +19,6 @@ namespace Model
 {
 
   /**
-   * A request to add outputs to the specified bridge.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeOutputsRequest">AWS
-   * API Reference</a></p>
    */
   class AddBridgeOutputsRequest : public MediaConnectRequest
   {
@@ -39,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the bridge that you want to update.
+     * <p> The Amazon Resource Name (ARN) of the bridge that you want to update.</p>
      */
     inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }
@@ -51,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * The outputs that you want to add to this bridge.
+     * <p> The outputs that you want to add to this bridge.</p>
      */
     inline const Aws::Vector<AddBridgeOutputRequest>& GetOutputs() const { return m_outputs; }
     inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }

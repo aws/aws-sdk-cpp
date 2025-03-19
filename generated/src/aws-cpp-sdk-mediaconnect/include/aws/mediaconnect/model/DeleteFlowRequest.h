@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the flow that you want to delete.
+     * <p> The Amazon Resource Name (ARN) of the flow that you want to delete.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }

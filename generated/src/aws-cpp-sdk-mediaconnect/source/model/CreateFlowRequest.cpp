@@ -107,6 +107,17 @@ Aws::String CreateFlowRequest::SerializePayload() const
 
   }
 
+  if(m_flowSizeHasBeenSet)
+  {
+   payload.WithString("flowSize", FlowSizeMapper::GetNameForFlowSize(m_flowSize));
+  }
+
+  if(m_ndiConfigHasBeenSet)
+  {
+   payload.WithObject("ndiConfig", m_ndiConfig.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

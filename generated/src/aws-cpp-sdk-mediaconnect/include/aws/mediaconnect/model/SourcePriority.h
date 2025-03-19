@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * The priority you want to assign to a source. You can have a primary stream and a
-   * backup stream or two equally prioritized streams.<p><h3>See Also:</h3>   <a
+   * <p> The priority you want to assign to a source. You can have a primary stream
+   * and a backup stream or two equally prioritized streams. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/SourcePriority">AWS
    * API Reference</a></p>
    */
@@ -40,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the source you choose as the primary source for this flow.
+     * <p> The name of the source you choose as the primary source for this flow.</p>
      */
     inline const Aws::String& GetPrimarySource() const { return m_primarySource; }
     inline bool PrimarySourceHasBeenSet() const { return m_primarySourceHasBeenSet; }

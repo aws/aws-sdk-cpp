@@ -20,9 +20,6 @@ namespace Model
 {
 
   /**
-   * The entitlement fields that you want to update.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowEntitlementRequest">AWS
-   * API Reference</a></p>
    */
   class UpdateFlowEntitlementRequest : public MediaConnectRequest
   {
@@ -40,9 +37,8 @@ namespace Model
 
     ///@{
     /**
-     * A description of the entitlement. This description appears only on the AWS
-     * Elemental MediaConnect console and will not be seen by the subscriber or end
-     * user.
+     * <p> A description of the entitlement. This description appears only on the
+     * MediaConnect console and will not be seen by the subscriber or end user.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -54,8 +50,8 @@ namespace Model
 
     ///@{
     /**
-     * The type of encryption that will be used on the output associated with this
-     * entitlement. Allowable encryption types: static-key, speke.
+     * <p> The type of encryption that will be used on the output associated with this
+     * entitlement. Allowable encryption types: static-key, speke.</p>
      */
     inline const UpdateEncryption& GetEncryption() const { return m_encryption; }
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
@@ -67,7 +63,8 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the entitlement that you want to update.
+     * <p> The Amazon Resource Name (ARN) of the entitlement that you want to
+     * update.</p>
      */
     inline const Aws::String& GetEntitlementArn() const { return m_entitlementArn; }
     inline bool EntitlementArnHasBeenSet() const { return m_entitlementArnHasBeenSet; }
@@ -79,10 +76,10 @@ namespace Model
 
     ///@{
     /**
-     * An indication of whether you want to enable the entitlement to allow access, or
-     * disable it to stop streaming content to the subscriber’s flow temporarily. If
-     * you don’t specify the entitlementStatus field in your request, MediaConnect
-     * leaves the value unchanged.
+     * <p> An indication of whether you want to enable the entitlement to allow access,
+     * or disable it to stop streaming content to the subscriber’s flow temporarily. If
+     * you don’t specify the <code>entitlementStatus</code> field in your request,
+     * MediaConnect leaves the value unchanged.</p>
      */
     inline EntitlementStatus GetEntitlementStatus() const { return m_entitlementStatus; }
     inline bool EntitlementStatusHasBeenSet() const { return m_entitlementStatusHasBeenSet; }
@@ -92,7 +89,8 @@ namespace Model
 
     ///@{
     /**
-     * The flow that is associated with the entitlement that you want to update.
+     * <p> The ARN of the flow that is associated with the entitlement that you want to
+     * update.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
@@ -104,9 +102,9 @@ namespace Model
 
     ///@{
     /**
-     * The AWS account IDs that you want to share your content with. The receiving
-     * accounts (subscribers) will be allowed to create their own flow using your
-     * content as the source.
+     * <p> The Amazon Web Services account IDs that you want to share your content
+     * with. The receiving accounts (subscribers) will be allowed to create their own
+     * flow using your content as the source.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubscribers() const { return m_subscribers; }
     inline bool SubscribersHasBeenSet() const { return m_subscribersHasBeenSet; }

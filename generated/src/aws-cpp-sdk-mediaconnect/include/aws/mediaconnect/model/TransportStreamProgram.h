@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * The metadata of a single transport stream program.<p><h3>See Also:</h3>   <a
+   * <p> The metadata of a single transport stream program.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TransportStreamProgram">AWS
    * API Reference</a></p>
    */
@@ -41,8 +42,8 @@ namespace Model
 
     ///@{
     /**
-     * The Program Clock Reference (PCR) Packet ID (PID) as it is reported in the
-     * Program Association Table.
+     * <p> The Program Clock Reference (PCR) Packet ID (PID) as it is reported in the
+     * Program Association Table.</p>
      */
     inline int GetPcrPid() const { return m_pcrPid; }
     inline bool PcrPidHasBeenSet() const { return m_pcrPidHasBeenSet; }
@@ -52,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * The program name as it is reported in the Program Association Table.
+     * <p> The program name as it is reported in the Program Association Table.</p>
      */
     inline const Aws::String& GetProgramName() const { return m_programName; }
     inline bool ProgramNameHasBeenSet() const { return m_programNameHasBeenSet; }
@@ -64,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * The program number as it is reported in the Program Association Table.
+     * <p> The program number as it is reported in the Program Association Table.</p>
      */
     inline int GetProgramNumber() const { return m_programNumber; }
     inline bool ProgramNumberHasBeenSet() const { return m_programNumberHasBeenSet; }
@@ -74,7 +75,8 @@ namespace Model
 
     ///@{
     /**
-     * The program Packet ID (PID) as it is reported in the Program Association Table.
+     * <p> The program Packet ID (PID) as it is reported in the Program Association
+     * Table.</p>
      */
     inline int GetProgramPid() const { return m_programPid; }
     inline bool ProgramPidHasBeenSet() const { return m_programPidHasBeenSet; }
@@ -84,8 +86,8 @@ namespace Model
 
     ///@{
     /**
-     * The list of elementary transport streams in the program. The list includes
-     * video, audio, and data streams.
+     * <p> The list of elementary transport streams in the program. The list includes
+     * video, audio, and data streams.</p>
      */
     inline const Aws::Vector<TransportStream>& GetStreams() const { return m_streams; }
     inline bool StreamsHasBeenSet() const { return m_streamsHasBeenSet; }

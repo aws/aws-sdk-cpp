@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * Specifies the configuration for audio stream metrics monitoring.<p><h3>See
-   * Also:</h3>   <a
+   * <p> Specifies the configuration for audio stream metrics
+   * monitoring.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AudioMonitoringSetting">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * Detects periods of silence.
+     * <p> Detects periods of silence. </p>
      */
     inline const SilentAudio& GetSilentAudio() const { return m_silentAudio; }
     inline bool SilentAudioHasBeenSet() const { return m_silentAudioHasBeenSet; }

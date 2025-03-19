@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * The source configuration for cloud flows receiving a stream from a
-   * bridge.<p><h3>See Also:</h3>   <a
+   * <p> The source configuration for cloud flows receiving a stream from a
+   * bridge.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/SetGatewayBridgeSourceRequest">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the bridge feeding this flow.
+     * <p> The ARN of the bridge feeding this flow.</p>
      */
     inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the VPC interface attachment to use for this bridge source.
+     * <p> The name of the VPC interface attachment to use for this bridge source.</p>
      */
     inline const VpcInterfaceAttachment& GetVpcInterfaceAttachment() const { return m_vpcInterfaceAttachment; }
     inline bool VpcInterfaceAttachmentHasBeenSet() const { return m_vpcInterfaceAttachmentHasBeenSet; }

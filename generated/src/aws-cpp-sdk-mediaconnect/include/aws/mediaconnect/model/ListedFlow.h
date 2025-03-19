@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * Provides a summary of a flow, including its ARN, Availability Zone, and source
-   * type.<p><h3>See Also:</h3>   <a
+   * <p> A summary of a flow, including its ARN, Availability Zone, and source
+   * type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListedFlow">AWS
    * API Reference</a></p>
    */
@@ -43,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * The Availability Zone that the flow was created in.
+     * <p> The Availability Zone that the flow was created in.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * A description of the flow.
+     * <p> A description of the flow.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -67,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the flow.
+     * <p> The ARN of the flow.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
@@ -79,7 +79,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the flow.
+     * <p> The name of the flow.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -91,9 +91,10 @@ namespace Model
 
     ///@{
     /**
-     * The type of source. This value is either owned (originated somewhere other than
-     * an AWS Elemental MediaConnect flow owned by another AWS account) or entitled
-     * (originated at an AWS Elemental MediaConnect flow owned by another AWS account).
+     * <p> The type of source. This value is either owned (originated somewhere other
+     * than an MediaConnect flow owned by another Amazon Web Services account) or
+     * entitled (originated at a MediaConnect flow owned by another Amazon Web Services
+     * account).</p>
      */
     inline SourceType GetSourceType() const { return m_sourceType; }
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
@@ -103,7 +104,7 @@ namespace Model
 
     ///@{
     /**
-     * The current status of the flow.
+     * <p> The current status of the flow.</p>
      */
     inline Status GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -112,7 +113,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The maintenance settings for the flow. </p>
+     */
     inline const Maintenance& GetMaintenance() const { return m_maintenance; }
     inline bool MaintenanceHasBeenSet() const { return m_maintenanceHasBeenSet; }
     template<typename MaintenanceT = Maintenance>

@@ -23,6 +23,13 @@ namespace MediaConnect
 namespace Model
 {
 
+  /**
+   * <p> Create a bridge with the egress bridge type. An egress bridge is a
+   * cloud-to-ground bridge. The content comes from an existing MediaConnect flow and
+   * is delivered to your premises. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/EgressGatewayBridge">AWS
+   * API Reference</a></p>
+   */
   class EgressGatewayBridge
   {
   public:
@@ -34,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * The ID of the instance running this bridge.
+     * <p> The ID of the instance running this bridge.</p>
      */
     inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
@@ -46,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * The maximum expected bitrate (in bps) of the egress bridge.
+     * <p> The maximum expected bitrate (in bps) of the egress bridge.</p>
      */
     inline int GetMaxBitrate() const { return m_maxBitrate; }
     inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }

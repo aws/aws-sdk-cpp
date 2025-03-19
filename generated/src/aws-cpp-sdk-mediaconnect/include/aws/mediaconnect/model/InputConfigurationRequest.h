@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * The transport parameters that you want to associate with an incoming media
-   * stream.<p><h3>See Also:</h3>   <a
+   * <p> The transport parameters that you want to associate with an incoming media
+   * stream.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/InputConfigurationRequest">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * The port that you want the flow to listen on for an incoming media stream.
+     * <p> The port that you want the flow to listen on for an incoming media
+     * stream.</p>
      */
     inline int GetInputPort() const { return m_inputPort; }
     inline bool InputPortHasBeenSet() const { return m_inputPortHasBeenSet; }
@@ -50,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * The VPC interface that you want to use for the incoming media stream.
+     * <p> The VPC interface that you want to use for the incoming media stream.</p>
      */
     inline const InterfaceRequest& GetInterface() const { return m_interface; }
     inline bool InterfaceHasBeenSet() const { return m_interfaceHasBeenSet; }

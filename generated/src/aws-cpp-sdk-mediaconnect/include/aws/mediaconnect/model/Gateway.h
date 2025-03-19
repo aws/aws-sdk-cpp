@@ -28,7 +28,8 @@ namespace Model
 {
 
   /**
-   * The settings for a gateway, including its networks.<p><h3>See Also:</h3>   <a
+   * <p>The settings for a gateway, including its networks. </p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Gateway">AWS
    * API Reference</a></p>
    */
@@ -43,9 +44,10 @@ namespace Model
 
     ///@{
     /**
-     * The range of IP addresses that contribute content or initiate output requests
-     * for flows communicating with this gateway. These IP addresses should be in the
-     * form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+     * <p> The range of IP addresses that contribute content or initiate output
+     * requests for flows communicating with this gateway. These IP addresses should be
+     * in the form of a Classless Inter-Domain Routing (CIDR) block; for example,
+     * 10.0.0.0/16.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEgressCidrBlocks() const { return m_egressCidrBlocks; }
     inline bool EgressCidrBlocksHasBeenSet() const { return m_egressCidrBlocksHasBeenSet; }
@@ -59,7 +61,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Name (ARN) of the gateway.
+     * <p> The Amazon Resource Name (ARN) of the gateway.</p>
      */
     inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
     inline bool GatewayArnHasBeenSet() const { return m_gatewayArnHasBeenSet; }
@@ -70,7 +72,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>Messages with information about the gateway. </p>
+     */
     inline const Aws::Vector<MessageDetail>& GetGatewayMessages() const { return m_gatewayMessages; }
     inline bool GatewayMessagesHasBeenSet() const { return m_gatewayMessagesHasBeenSet; }
     template<typename GatewayMessagesT = Aws::Vector<MessageDetail>>
@@ -83,7 +87,7 @@ namespace Model
 
     ///@{
     /**
-     * The current status of the gateway.
+     * <p> The current status of the gateway.</p>
      */
     inline GatewayState GetGatewayState() const { return m_gatewayState; }
     inline bool GatewayStateHasBeenSet() const { return m_gatewayStateHasBeenSet; }
@@ -93,8 +97,8 @@ namespace Model
 
     ///@{
     /**
-     * The name of the gateway. This name can not be modified after the gateway is
-     * created.
+     * <p> The name of the gateway. This name can not be modified after the gateway is
+     * created.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -106,7 +110,7 @@ namespace Model
 
     ///@{
     /**
-     * The list of networks in the gateway.
+     * <p> The list of networks in the gateway.</p>
      */
     inline const Aws::Vector<GatewayNetwork>& GetNetworks() const { return m_networks; }
     inline bool NetworksHasBeenSet() const { return m_networksHasBeenSet; }

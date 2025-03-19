@@ -35,10 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * The availability of the instance to host new bridges. The bridgePlacement
-     * property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be
-     * deployed to this instance. If it is AVAILABLE, new bridges can be added to this
-     * instance.
+     * <p>The state of the instance. <code>ACTIVE</code> or <code>INACTIVE</code>. </p>
      */
     inline BridgePlacement GetBridgePlacement() const { return m_bridgePlacement; }
     inline void SetBridgePlacement(BridgePlacement value) { m_bridgePlacementHasBeenSet = true; m_bridgePlacement = value; }
@@ -47,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Name (ARN) of the instance.
+     * <p>The ARN of the instance that was updated. </p>
      */
     inline const Aws::String& GetGatewayInstanceArn() const { return m_gatewayInstanceArn; }
     template<typename GatewayInstanceArnT = Aws::String>

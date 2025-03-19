@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * The transport parameters that you want to associate with an outbound media
-   * stream.<p><h3>See Also:</h3>   <a
+   * <p>The definition of a media stream that you want to associate with the output.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DestinationConfigurationRequest">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * The IP address where you want MediaConnect to send contents of the media stream.
+     * <p>The IP address where you want MediaConnect to send contents of the media
+     * stream.</p>
      */
     inline const Aws::String& GetDestinationIp() const { return m_destinationIp; }
     inline bool DestinationIpHasBeenSet() const { return m_destinationIpHasBeenSet; }
@@ -53,8 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * The port that you want MediaConnect to use when it distributes the media stream
-     * to the output.
+     * <p> The port that you want MediaConnect to use when it distributes the media
+     * stream to the output.</p>
      */
     inline int GetDestinationPort() const { return m_destinationPort; }
     inline bool DestinationPortHasBeenSet() const { return m_destinationPortHasBeenSet; }
@@ -64,8 +65,8 @@ namespace Model
 
     ///@{
     /**
-     * The VPC interface that you want to use for the media stream associated with the
-     * output.
+     * <p> The VPC interface that you want to use for the media stream associated with
+     * the output.</p>
      */
     inline const InterfaceRequest& GetInterface() const { return m_interface; }
     inline bool InterfaceHasBeenSet() const { return m_interfaceHasBeenSet; }

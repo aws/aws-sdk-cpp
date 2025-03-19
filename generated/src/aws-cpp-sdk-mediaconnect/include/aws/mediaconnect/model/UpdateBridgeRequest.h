@@ -20,9 +20,6 @@ namespace Model
 {
 
   /**
-   * A request to update the bridge.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeRequest">AWS
-   * API Reference</a></p>
    */
   class UpdateBridgeRequest : public MediaConnectRequest
   {
@@ -40,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Number (ARN) of the bridge that you want to update.
+     * <p> TheAmazon Resource Name (ARN) of the bridge that you want to update. </p>
      */
     inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }
@@ -51,7 +48,10 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> A cloud-to-ground bridge. The content comes from an existing MediaConnect
+     * flow and is delivered to your premises. </p>
+     */
     inline const UpdateEgressGatewayBridgeRequest& GetEgressGatewayBridge() const { return m_egressGatewayBridge; }
     inline bool EgressGatewayBridgeHasBeenSet() const { return m_egressGatewayBridgeHasBeenSet; }
     template<typename EgressGatewayBridgeT = UpdateEgressGatewayBridgeRequest>
@@ -61,7 +61,10 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> A ground-to-cloud bridge. The content originates at your premises and is
+     * delivered to the cloud. </p>
+     */
     inline const UpdateIngressGatewayBridgeRequest& GetIngressGatewayBridge() const { return m_ingressGatewayBridge; }
     inline bool IngressGatewayBridgeHasBeenSet() const { return m_ingressGatewayBridgeHasBeenSet; }
     template<typename IngressGatewayBridgeT = UpdateIngressGatewayBridgeRequest>
@@ -71,7 +74,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The settings for source failover. </p>
+     */
     inline const UpdateFailoverConfig& GetSourceFailoverConfig() const { return m_sourceFailoverConfig; }
     inline bool SourceFailoverConfigHasBeenSet() const { return m_sourceFailoverConfigHasBeenSet; }
     template<typename SourceFailoverConfigT = UpdateFailoverConfig>

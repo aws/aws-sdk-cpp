@@ -21,6 +21,11 @@ namespace MediaConnect
 namespace Model
 {
 
+  /**
+   * <p> Update an existing ingress-type bridge. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateIngressGatewayBridgeRequest">AWS
+   * API Reference</a></p>
+   */
   class UpdateIngressGatewayBridgeRequest
   {
   public:
@@ -32,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * The maximum expected bitrate (in bps).
+     * <p> The maximum expected bitrate (in bps).</p>
      */
     inline int GetMaxBitrate() const { return m_maxBitrate; }
     inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
@@ -42,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * The maximum number of expected outputs.
+     * <p> The maximum number of expected outputs.</p>
      */
     inline int GetMaxOutputs() const { return m_maxOutputs; }
     inline bool MaxOutputsHasBeenSet() const { return m_maxOutputsHasBeenSet; }

@@ -380,7 +380,7 @@ Aws::Vector<SageMakerEndpointProviderEndpointTestCase> SageMakerEndpointProvider
   {"For region us-gov-west-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://api.sagemaker.us-gov-west-1.amazonaws.com",
+    {{/*epUrl*/"https://api-fips.sagemaker.us-gov-west-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
@@ -398,7 +398,7 @@ Aws::Vector<SageMakerEndpointProviderEndpointTestCase> SageMakerEndpointProvider
   {"For region us-gov-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://api.sagemaker.us-gov-east-1.amazonaws.com",
+    {{/*epUrl*/"https://api-fips.sagemaker.us-gov-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect

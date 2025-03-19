@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the flow that you started.
+     * <p> The ARN of the flow that you started.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     template<typename FlowArnT = Aws::String>
@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * The status of the flow when the StartFlow process begins.
+     * <p> The status of the flow when the <code>StartFlow</code> process begins.</p>
      */
     inline Status GetStatus() const { return m_status; }
     inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }

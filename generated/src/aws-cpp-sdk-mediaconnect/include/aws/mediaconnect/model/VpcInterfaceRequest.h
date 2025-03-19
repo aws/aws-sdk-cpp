@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * Desired VPC Interface for a Flow<p><h3>See Also:</h3>   <a
+   * <p>The details of the VPC interfaces that you want to add to the flow.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/VpcInterfaceRequest">AWS
    * API Reference</a></p>
    */
@@ -41,8 +42,8 @@ namespace Model
 
     ///@{
     /**
-     * The name of the VPC Interface. This value must be unique within the current
-     * flow.
+     * <p>The name for the VPC interface. This name must be unique within the flow.
+     * </p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -54,8 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * The type of network interface. If this value is not included in the request,
-     * MediaConnect uses ENA as the networkInterfaceType.
+     * <p>The type of network interface. </p>
      */
     inline NetworkInterfaceType GetNetworkInterfaceType() const { return m_networkInterfaceType; }
     inline bool NetworkInterfaceTypeHasBeenSet() const { return m_networkInterfaceTypeHasBeenSet; }
@@ -65,7 +65,8 @@ namespace Model
 
     ///@{
     /**
-     * Role Arn MediaConnect can assumes to create ENIs in customer's account
+     * <p>The Amazon Resource Name (ARN) of the role that you created when you set up
+     * MediaConnect as a trusted service. </p>
      */
     inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -77,7 +78,7 @@ namespace Model
 
     ///@{
     /**
-     * Security Group IDs to be used on ENI.
+     * <p>A virtual firewall to control inbound and outbound traffic. </p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
@@ -91,7 +92,14 @@ namespace Model
 
     ///@{
     /**
-     * Subnet must be in the AZ of the Flow
+     * <p> The subnet IDs that you want to use for your VPC interface. A range of IP
+     * addresses in your VPC. When you create your VPC, you specify a range of IPv4
+     * addresses for the VPC in the form of a Classless Inter-Domain Routing (CIDR)
+     * block; for example, 10.0.0.0/16. This is the primary CIDR block for your VPC.
+     * When you create a subnet for your VPC, you specify the CIDR block for the
+     * subnet, which is a subset of the VPC CIDR block. The subnets that you use across
+     * all VPC interfaces on the flow must be in the same Availability Zone as the
+     * flow. </p>
      */
     inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }

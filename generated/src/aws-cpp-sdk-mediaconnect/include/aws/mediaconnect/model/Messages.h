@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * Messages that provide the state of the flow.<p><h3>See Also:</h3>   <a
+   * <p> Messages that provide the state of the flow.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Messages">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * A list of errors that might have been generated from processes on this flow.
+     * <p> A list of errors that might have been generated from processes on this
+     * flow.</p>
      */
     inline const Aws::Vector<Aws::String>& GetErrors() const { return m_errors; }
     inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * Add an output to a bridge.<p><h3>See Also:</h3>   <a
+   * <p> Add outputs to the specified bridge.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeOutputRequest">AWS
    * API Reference</a></p>
    */
@@ -38,7 +38,10 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p> The network output of the bridge. A network output is delivered to your
+     * premises. </p>
+     */
     inline const AddBridgeNetworkOutputRequest& GetNetworkOutput() const { return m_networkOutput; }
     inline bool NetworkOutputHasBeenSet() const { return m_networkOutputHasBeenSet; }
     template<typename NetworkOutputT = AddBridgeNetworkOutputRequest>

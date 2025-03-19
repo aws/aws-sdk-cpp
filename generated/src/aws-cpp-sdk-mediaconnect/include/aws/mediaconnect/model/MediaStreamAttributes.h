@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * Attributes that are related to the media stream.<p><h3>See Also:</h3>   <a
+   * <p>Attributes that are related to the media stream. </p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/MediaStreamAttributes">AWS
    * API Reference</a></p>
    */
@@ -40,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * A set of parameters that define the media stream.
+     * <p>The settings that you want to use to define the media stream. </p>
      */
     inline const Fmtp& GetFmtp() const { return m_fmtp; }
     inline bool FmtpHasBeenSet() const { return m_fmtpHasBeenSet; }
@@ -52,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * The audio language, in a format that is recognized by the receiver.
+     * <p>The audio language, in a format that is recognized by the receiver. </p>
      */
     inline const Aws::String& GetLang() const { return m_lang; }
     inline bool LangHasBeenSet() const { return m_langHasBeenSet; }

@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * The frame resolution used by the video stream.<p><h3>See Also:</h3>   <a
+   * <p> The frame resolution used by the video stream.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/FrameResolution">AWS
    * API Reference</a></p>
    */
@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * The number of pixels in the height of the video frame.
+     * <p> The number of pixels in the height of the video frame.</p>
      */
     inline int GetFrameHeight() const { return m_frameHeight; }
     inline bool FrameHeightHasBeenSet() const { return m_frameHeightHasBeenSet; }
@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * The number of pixels in the width of the video frame.
+     * <p> The number of pixels in the width of the video frame.</p>
      */
     inline int GetFrameWidth() const { return m_frameWidth; }
     inline bool FrameWidthHasBeenSet() const { return m_frameWidthHasBeenSet; }

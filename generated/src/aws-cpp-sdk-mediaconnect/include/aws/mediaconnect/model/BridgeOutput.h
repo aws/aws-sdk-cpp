@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * The output of the bridge.<p><h3>See Also:</h3>   <a
+   * <p> The output of the bridge.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BridgeOutput">AWS
    * API Reference</a></p>
    */
@@ -39,7 +39,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p> The output of the associated flow. </p>
+     */
     inline const BridgeFlowOutput& GetFlowOutput() const { return m_flowOutput; }
     inline bool FlowOutputHasBeenSet() const { return m_flowOutputHasBeenSet; }
     template<typename FlowOutputT = BridgeFlowOutput>
@@ -49,7 +51,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> The network output for the bridge. </p>
+     */
     inline const BridgeNetworkOutput& GetNetworkOutput() const { return m_networkOutput; }
     inline bool NetworkOutputHasBeenSet() const { return m_networkOutputHasBeenSet; }
     template<typename NetworkOutputT = BridgeNetworkOutput>

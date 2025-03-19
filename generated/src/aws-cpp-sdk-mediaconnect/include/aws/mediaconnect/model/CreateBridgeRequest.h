@@ -23,10 +23,6 @@ namespace Model
 {
 
   /**
-   * Creates a new bridge. The request must include one source.<p><h3>See Also:</h3> 
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateBridgeRequest">AWS
-   * API Reference</a></p>
    */
   class CreateBridgeRequest : public MediaConnectRequest
   {
@@ -44,9 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * Create a bridge with the egress bridge type. An egress bridge is a
-     * cloud-to-ground bridge. The content comes from an existing MediaConnect flow and
-     * is delivered to your premises.
+     * <p>An egress bridge is a cloud-to-ground bridge. The content comes from an
+     * existing MediaConnect flow and is delivered to your premises. </p>
      */
     inline const AddEgressGatewayBridgeRequest& GetEgressGatewayBridge() const { return m_egressGatewayBridge; }
     inline bool EgressGatewayBridgeHasBeenSet() const { return m_egressGatewayBridgeHasBeenSet; }
@@ -58,9 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * Create a bridge with the ingress bridge type. An ingress bridge is a
-     * ground-to-cloud bridge. The content originates at your premises and is delivered
-     * to the cloud.
+     * <p>An ingress bridge is a ground-to-cloud bridge. The content originates at your
+     * premises and is delivered to the cloud. </p>
      */
     inline const AddIngressGatewayBridgeRequest& GetIngressGatewayBridge() const { return m_ingressGatewayBridge; }
     inline bool IngressGatewayBridgeHasBeenSet() const { return m_ingressGatewayBridgeHasBeenSet; }
@@ -72,8 +66,8 @@ namespace Model
 
     ///@{
     /**
-     * The name of the bridge. This name can not be modified after the bridge is
-     * created.
+     * <p> The name of the bridge. This name can not be modified after the bridge is
+     * created.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -85,7 +79,7 @@ namespace Model
 
     ///@{
     /**
-     * The outputs that you want to add to this bridge.
+     * <p> The outputs that you want to add to this bridge.</p>
      */
     inline const Aws::Vector<AddBridgeOutputRequest>& GetOutputs() const { return m_outputs; }
     inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
@@ -99,7 +93,7 @@ namespace Model
 
     ///@{
     /**
-     * The bridge placement Amazon Resource Number (ARN).
+     * <p> The bridge placement Amazon Resource Number (ARN).</p>
      */
     inline const Aws::String& GetPlacementArn() const { return m_placementArn; }
     inline bool PlacementArnHasBeenSet() const { return m_placementArnHasBeenSet; }
@@ -111,7 +105,7 @@ namespace Model
 
     ///@{
     /**
-     * The settings for source failover.
+     * <p> The settings for source failover.</p>
      */
     inline const FailoverConfig& GetSourceFailoverConfig() const { return m_sourceFailoverConfig; }
     inline bool SourceFailoverConfigHasBeenSet() const { return m_sourceFailoverConfigHasBeenSet; }
@@ -123,7 +117,7 @@ namespace Model
 
     ///@{
     /**
-     * The sources that you want to add to this bridge.
+     * <p> The sources that you want to add to this bridge.</p>
      */
     inline const Aws::Vector<AddBridgeSourceRequest>& GetSources() const { return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }

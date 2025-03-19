@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Name (ARN) of the gateway that was deleted.
+     * <p> The ARN of the gateway that was deleted.</p>
      */
     inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
     template<typename GatewayArnT = Aws::String>

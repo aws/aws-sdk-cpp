@@ -19,9 +19,6 @@ namespace Model
 {
 
   /**
-   * A request to add media streams to the flow.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowMediaStreamsRequest">AWS
-   * API Reference</a></p>
    */
   class AddFlowMediaStreamsRequest : public MediaConnectRequest
   {
@@ -39,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Name (ARN) of the flow.
+     * <p> The Amazon Resource Name (ARN) of the flow.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
@@ -51,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * The media streams that you want to add to the flow.
+     * <p> The media streams that you want to add to the flow.</p>
      */
     inline const Aws::Vector<AddMediaStreamRequest>& GetMediaStreams() const { return m_mediaStreams; }
     inline bool MediaStreamsHasBeenSet() const { return m_mediaStreamsHasBeenSet; }

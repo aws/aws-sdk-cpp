@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Number (ARN) of the bridge.
+     * <p> The ARN of the bridge that was updated. </p>
      */
     inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     template<typename BridgeArnT = Aws::String>
@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * The output that you updated.
+     * <p> The bridge output that was updated. </p>
      */
     inline const BridgeOutput& GetOutput() const { return m_output; }
     template<typename OutputT = BridgeOutput>

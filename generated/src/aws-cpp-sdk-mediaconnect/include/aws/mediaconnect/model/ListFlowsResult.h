@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * A list of flow summaries.
+     * <p> A list of flow summaries.</p>
      */
     inline const Aws::Vector<ListedFlow>& GetFlows() const { return m_flows; }
     template<typename FlowsT = Aws::Vector<ListedFlow>>
@@ -49,11 +49,12 @@ namespace Model
 
     ///@{
     /**
-     * The token that identifies which batch of results that you want to see. For
-     * example, you submit a ListFlows request with MaxResults set at 5. The service
-     * returns the first batch of results (up to 5) and a NextToken value. To see the
-     * next batch of results, you can submit the ListFlows request a second time and
-     * specify the NextToken value.
+     * <p> The token that identifies the batch of results that you want to see. </p>
+     * <p>For example, you submit a <code>ListFlows</code> request with MaxResults set
+     * at 5. The service returns the first batch of results (up to 5) and a
+     * <code>NextToken</code> value. To see the next batch of results, you can submit
+     * the <code>ListFlows</code> request a second time and specify the
+     * <code>NextToken</code> value.</p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     template<typename NextTokenT = Aws::String>

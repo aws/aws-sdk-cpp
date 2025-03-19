@@ -34,7 +34,10 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The details of the reservation that you just created when you purchased the
+     * offering. </p>
+     */
     inline const Reservation& GetReservation() const { return m_reservation; }
     template<typename ReservationT = Reservation>
     void SetReservation(ReservationT&& value) { m_reservationHasBeenSet = true; m_reservation = std::forward<ReservationT>(value); }

@@ -34,7 +34,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The offering that you requested a description of. </p>
+     */
     inline const Offering& GetOffering() const { return m_offering; }
     template<typename OfferingT = Offering>
     void SetOffering(OfferingT&& value) { m_offeringHasBeenSet = true; m_offering = std::forward<OfferingT>(value); }

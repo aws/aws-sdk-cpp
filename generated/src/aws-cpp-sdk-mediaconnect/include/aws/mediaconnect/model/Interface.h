@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * The VPC interface that is used for the media stream associated with the source
-   * or output.<p><h3>See Also:</h3>   <a
+   * <p> The VPC interface that is used for the media stream associated with the
+   * source or output.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Interface">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the VPC interface.
+     * <p> The name of the VPC interface.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

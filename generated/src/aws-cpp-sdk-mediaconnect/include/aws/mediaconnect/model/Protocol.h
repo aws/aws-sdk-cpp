@@ -26,7 +26,8 @@ namespace Model
     srt_listener,
     srt_caller,
     fujitsu_qos,
-    udp
+    udp,
+    ndi_speed_hq
   };
 
 namespace ProtocolMapper

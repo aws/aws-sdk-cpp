@@ -19,10 +19,6 @@ namespace Model
 {
 
   /**
-   * The fields that you want to update in the media stream.<p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowMediaStreamRequest">AWS
-   * API Reference</a></p>
    */
   class UpdateFlowMediaStreamRequest : public MediaConnectRequest
   {
@@ -40,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * The attributes that you want to assign to the media stream.
+     * <p> The attributes that you want to assign to the media stream.</p>
      */
     inline const MediaStreamAttributesRequest& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
@@ -52,9 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * The sample rate (in Hz) for the stream. If the media stream type is video or
-     * ancillary data, set this value to 90000. If the media stream type is audio, set
-     * this value to either 48000 or 96000.
+     * <p>The sample rate for the stream. This value in measured in kHz. </p>
      */
     inline int GetClockRate() const { return m_clockRate; }
     inline bool ClockRateHasBeenSet() const { return m_clockRateHasBeenSet; }
@@ -64,7 +58,8 @@ namespace Model
 
     ///@{
     /**
-     * Description
+     * <p>A description that can help you quickly identify what your media stream is
+     * used for. </p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -76,7 +71,8 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Name (ARN) of the flow.
+     * <p> The Amazon Resource Name (ARN) of the flow that is associated with the media
+     * stream that you updated.</p>
      */
     inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
@@ -88,7 +84,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the media stream that you want to update.
+     * <p> The media stream that you updated.</p>
      */
     inline const Aws::String& GetMediaStreamName() const { return m_mediaStreamName; }
     inline bool MediaStreamNameHasBeenSet() const { return m_mediaStreamNameHasBeenSet; }
@@ -100,7 +96,7 @@ namespace Model
 
     ///@{
     /**
-     * The type of media stream.
+     * <p>The type of media stream. </p>
      */
     inline MediaStreamType GetMediaStreamType() const { return m_mediaStreamType; }
     inline bool MediaStreamTypeHasBeenSet() const { return m_mediaStreamTypeHasBeenSet; }
@@ -110,7 +106,7 @@ namespace Model
 
     ///@{
     /**
-     * The resolution of the video.
+     * <p>The resolution of the video. </p>
      */
     inline const Aws::String& GetVideoFormat() const { return m_videoFormat; }
     inline bool VideoFormatHasBeenSet() const { return m_videoFormatHasBeenSet; }

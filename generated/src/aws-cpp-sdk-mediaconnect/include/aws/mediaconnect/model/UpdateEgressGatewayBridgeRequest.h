@@ -21,6 +21,11 @@ namespace MediaConnect
 namespace Model
 {
 
+  /**
+   * <p> Update an existing egress-type bridge.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateEgressGatewayBridgeRequest">AWS
+   * API Reference</a></p>
+   */
   class UpdateEgressGatewayBridgeRequest
   {
   public:
@@ -32,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * Update an existing egress-type bridge.
+     * <p>The maximum expected bitrate (in bps). </p>
      */
     inline int GetMaxBitrate() const { return m_maxBitrate; }
     inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }

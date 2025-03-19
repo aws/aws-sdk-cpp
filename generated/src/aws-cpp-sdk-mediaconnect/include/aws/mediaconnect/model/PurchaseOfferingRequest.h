@@ -17,9 +17,6 @@ namespace Model
 {
 
   /**
-   * A request to purchase a offering.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/PurchaseOfferingRequest">AWS
-   * API Reference</a></p>
    */
   class PurchaseOfferingRequest : public MediaConnectRequest
   {
@@ -37,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * The Amazon Resource Name (ARN) of the offering.
+     * <p> The Amazon Resource Name (ARN) of the offering.</p>
      */
     inline const Aws::String& GetOfferingArn() const { return m_offeringArn; }
     inline bool OfferingArnHasBeenSet() const { return m_offeringArnHasBeenSet; }
@@ -49,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * The name that you want to use for the reservation.
+     * <p> The name that you want to use for the reservation.</p>
      */
     inline const Aws::String& GetReservationName() const { return m_reservationName; }
     inline bool ReservationNameHasBeenSet() const { return m_reservationNameHasBeenSet; }
@@ -61,12 +58,13 @@ namespace Model
 
     ///@{
     /**
-     * The date and time that you want the reservation to begin, in Coordinated
-     * Universal Time (UTC). You can specify any date and time between 12:00am on the
-     * first day of the current month to the current time on today's date, inclusive.
-     * Specify the start in a 24-hour notation. Use the following format:
-     * YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to
-     * specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
+     * <p> The date and time that you want the reservation to begin, in Coordinated
+     * Universal Time (UTC). </p> <p>You can specify any date and time between 12:00am
+     * on the first day of the current month to the current time on today's date,
+     * inclusive. Specify the start in a 24-hour notation. Use the following format:
+     * <code>YYYY-MM-DDTHH:mm:SSZ</code>, where <code>T</code> and <code>Z</code> are
+     * literal characters. For example, to specify 11:30pm on March 5, 2020, enter
+     * <code>2020-03-05T23:30:00Z</code>.</p>
      */
     inline const Aws::String& GetStart() const { return m_start; }
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }

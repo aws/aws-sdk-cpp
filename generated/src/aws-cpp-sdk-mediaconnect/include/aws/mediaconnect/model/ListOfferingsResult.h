@@ -36,11 +36,12 @@ namespace Model
 
     ///@{
     /**
-     * The token that identifies which batch of results that you want to see. For
-     * example, you submit a ListOfferings request with MaxResults set at 5. The
-     * service returns the first batch of results (up to 5) and a NextToken value. To
-     * see the next batch of results, you can submit the ListOfferings request a second
-     * time and specify the NextToken value.
+     * <p> The token that identifies the batch of results that you want to see. </p>
+     * <p>For example, you submit a <code>ListOfferings</code> request with
+     * <code>MaxResults</code> set at 5. The service returns the first batch of results
+     * (up to 5) and a <code>NextToken</code> value. To see the next batch of results,
+     * you can submit the <code>ListOfferings</code> request a second time and specify
+     * the <code>NextToken</code> value.</p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     template<typename NextTokenT = Aws::String>
@@ -51,8 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * A list of offerings that are available to this account in the current AWS
-     * Region.
+     * <p> A list of offerings that are available to this account in the current Amazon
+     * Web Services Region.</p>
      */
     inline const Aws::Vector<Offering>& GetOfferings() const { return m_offerings; }
     template<typename OfferingsT = Aws::Vector<Offering>>
